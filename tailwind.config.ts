@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0A0A0A",
+        background: "#050505",
         surface: {
-          DEFAULT: "#161618",
-          light: "#1C1C1F",
-          border: "#232326",
+          DEFAULT: "#0F0F11",
+          light: "#161618",
+          border: "#1E293B",
         },
         accent: {
           DEFAULT: "#00A19B",
@@ -21,9 +21,9 @@ const config: Config = {
           dim: "#006B67",
         },
         text: {
-          primary: "#F2F2F2",
-          secondary: "#8F8F93",
-          tertiary: "#5A5A5E",
+          primary: "#F8FAFC",
+          secondary: "#94A3B8",
+          tertiary: "#475569",
         },
       },
       fontFamily: {
@@ -40,6 +40,8 @@ const config: Config = {
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       fontSize: {
+        hero: ["6rem", { lineHeight: "1.0", letterSpacing: "-0.04em" }],
+        "hero-lg": ["8rem", { lineHeight: "0.95", letterSpacing: "-0.04em" }],
         display: ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
         h1: ["3rem", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
         h2: ["2.25rem", { lineHeight: "1.3", letterSpacing: "-0.01em" }],
