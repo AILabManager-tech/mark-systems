@@ -1,0 +1,245 @@
+{
+  "common": {
+    "siteName": "Mark Systems",
+    "tagline": "AI Automation & Decision Engineering",
+    "siteDescription": "We engineer intelligent systems that transform raw data into decisive action. Custom AI solutions for predictive analytics, workflow automation, and decision intelligence."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "AI Automation & Decision Engineering",
+    "titleStart": "Engineer Intelligence.",
+    "titleAccent": "Decide Faster.",
+    "description": "We build production-grade AI systems that transform raw data into decisive action — predictive analytics, workflow automation, and decision intelligence platforms engineered for measurable impact.",
+    "ctaPrimary": "Start a Project",
+    "ctaSecondary": "Explore Services"
+  },
+  "servicesSection": {
+    "label": "What We Do",
+    "title": "Intelligent Systems, Engineered to Perform",
+    "description": "From predictive analytics to decision intelligence — we build AI that operates at production scale.",
+    "viewAll": "View All Services"
+  },
+  "servicesPage": {
+    "label": "Our Services",
+    "title": "AI Solutions Engineered for Impact",
+    "description": "Six core capabilities, each designed to transform a specific operational challenge into a measurable competitive advantage."
+  },
+  "services": {
+    "predictive-analytics": {
+      "title": "Predictive Analytics Engines",
+      "shortDescription": "Custom ML models that forecast trends, demand curves, and failure points across operational datasets.",
+      "longDescription": "Turn historical patterns into actionable foresight. Our predictive engines ingest multi-dimensional time-series data, identify non-obvious correlations, and deliver probability-weighted forecasts that integrate directly into your decision workflows.",
+      "capabilities": ["Time-series forecasting", "Anomaly detection", "Demand prediction", "Failure probability modeling", "Real-time model retraining"]
+    },
+    "workflow-automation": {
+      "title": "Workflow Automation Systems",
+      "shortDescription": "End-to-end process automation pipelines that eliminate manual bottlenecks and deliver zero-touch operation.",
+      "longDescription": "From data ingestion to decision output, our automation systems orchestrate complex multi-step processes with built-in error handling, audit trails, and human-in-the-loop escalation when confidence thresholds are not met.",
+      "capabilities": ["Pipeline orchestration", "Event-driven triggers", "Error recovery protocols", "Audit trail generation", "Human-in-the-loop gates"]
+    },
+    "decision-intelligence": {
+      "title": "Decision Intelligence Platforms",
+      "shortDescription": "Structured frameworks that synthesize multi-source data into ranked decisions with confidence scores.",
+      "longDescription": "Our decision platforms aggregate signals from disparate data sources, apply weighted scoring models, run Monte Carlo simulations, and present ranked options with transparent reasoning chains — so stakeholders can act with conviction, not guesswork.",
+      "capabilities": ["Multi-criteria analysis", "Monte Carlo simulation", "Scenario modeling", "Confidence scoring", "Explainable recommendations"]
+    },
+    "nlp-pipelines": {
+      "title": "Natural Language Processing",
+      "shortDescription": "Custom NLP pipelines for document analysis, sentiment extraction, and automated report generation.",
+      "longDescription": "We build production-grade NLP systems that parse, classify, and extract structured intelligence from unstructured text at scale — from regulatory documents and contracts to customer feedback and research papers.",
+      "capabilities": ["Document classification", "Entity extraction", "Sentiment analysis", "Automated summarization", "Multi-language support"]
+    },
+    "computer-vision": {
+      "title": "Computer Vision & Inspection",
+      "shortDescription": "Automated visual inspection systems, defect detection, and image classification on edge or cloud.",
+      "longDescription": "Our vision systems achieve sub-pixel precision for quality inspection, leveraging convolutional and transformer architectures optimized for deployment on edge devices or GPU-accelerated cloud infrastructure.",
+      "capabilities": ["Defect detection", "Object classification", "Dimensional measurement", "Edge deployment", "Real-time video analysis"]
+    },
+    "ai-strategy": {
+      "title": "AI Strategy & Integration",
+      "shortDescription": "Technical advisory for AI adoption roadmaps, model selection, and enterprise system integration.",
+      "longDescription": "We help organizations navigate the AI landscape with clear-eyed technical assessments — from readiness audits and infrastructure planning to vendor evaluation, model selection, and production deployment strategies.",
+      "capabilities": ["Readiness assessment", "Infrastructure planning", "Model evaluation", "Integration architecture", "ROI modeling"]
+    }
+  },
+  "projectsSection": {
+    "label": "Case Studies",
+    "title": "Results That Speak in Numbers",
+    "description": "Real-world AI deployments with quantified impact across industries.",
+    "viewAll": "View All Projects"
+  },
+  "projectsPage": {
+    "label": "Case Studies",
+    "title": "Deployed Intelligence, Measured Impact",
+    "description": "Every project starts with a data challenge and ends with a production system delivering quantified results."
+  },
+  "projects": {
+    "meridian-forecasting": {
+      "title": "Meridian Forecasting Suite",
+      "industry": "Energy & Utilities",
+      "challenge": "Grid load prediction was 72 hours behind real-time demand shifts, causing $2.3M/year in balancing costs.",
+      "solution": "Deployed an LSTM ensemble model processing 14 data streams at 15-minute intervals, integrated with the existing SCADA infrastructure via streaming ingestion layer.",
+      "result": "Achieved 94.7% prediction accuracy at 15-minute intervals. Reduced energy balancing costs by 61% in the first operating quarter.",
+      "metricValue": "94.7%",
+      "metricLabel": "Prediction Accuracy"
+    },
+    "sentinel-quality": {
+      "title": "Sentinel Quality Gate",
+      "industry": "Aerospace Manufacturing",
+      "challenge": "Manual visual inspection caught only 82% of surface micro-defects on turbine blade coatings, with 340 false positives per shift.",
+      "solution": "Deployed a convolutional neural network trained on 45,000 annotated blade images, with edge inference on NVIDIA Jetson modules integrated into the production line.",
+      "result": "99.2% defect detection rate with 89% reduction in false positives. Inspection throughput increased 4x.",
+      "metricValue": "99.2%",
+      "metricLabel": "Defect Detection"
+    },
+    "lexicon-intelligence": {
+      "title": "Lexicon Intelligence Hub",
+      "industry": "Legal & Compliance",
+      "challenge": "Regulatory analysts spent 400+ hours monthly reviewing 12,000+ documents for compliance relevance classification.",
+      "solution": "Built a transformer-based NLP pipeline with fine-tuned classification models, active learning feedback loops, and a priority-ranked review dashboard.",
+      "result": "Automated triage reduced manual review by 78%, flagging critical items in under 90 seconds with 96.3% classification accuracy.",
+      "metricValue": "-78%",
+      "metricLabel": "Manual Review"
+    },
+    "atlas-decision": {
+      "title": "Atlas Decision Matrix",
+      "industry": "Supply Chain & Logistics",
+      "challenge": "Multi-vendor procurement decisions relied on spreadsheets with 15+ variable trade-offs, averaging 3 weeks per sourcing cycle.",
+      "solution": "Engineered a decision intelligence platform with weighted multi-criteria scoring, Monte Carlo simulation for risk assessment, and real-time constraint optimization.",
+      "result": "Sourcing cycle time reduced from 3 weeks to 4 days. Decision confidence scores improved procurement outcomes by 34%.",
+      "metricValue": "4 days",
+      "metricLabel": "Cycle Time"
+    }
+  },
+  "projectCard": {
+    "challenge": "Challenge:",
+    "solution": "Solution:"
+  },
+  "about": {
+    "missionLabel": "Our Mission",
+    "missionTitle": "Decision Infrastructure for the AI Era",
+    "mission": "We engineer intelligent systems that transform raw data into decisive action. At Mark Systems, we don't just build AI — we architect the decision infrastructure that gives organizations an unfair advantage.",
+    "teamLabel": "The Team",
+    "teamTitle": "Built by Engineers, for Engineers",
+    "teamDescription": "Deep expertise across machine learning, systems engineering, and strategic advisory.",
+    "valuesLabel": "Our Principles",
+    "valuesTitle": "How We Operate",
+    "valuesDescription": "Four non-negotiable principles that define every engagement."
+  },
+  "team": {
+    "marcus-chen": {
+      "role": "CEO & Founder",
+      "bio": "Former principal engineer at DeepMind. 15 years building production ML systems across energy, defense, and finance. Founded Mark Systems to bridge the gap between research breakthroughs and operational reality."
+    },
+    "elena-vasquez": {
+      "role": "CTO",
+      "bio": "PhD in Statistical Learning from MIT. Led the machine learning platform team at Stripe before joining Mark Systems. Specializes in building scalable inference pipelines that operate under strict latency constraints."
+    },
+    "james-okafor": {
+      "role": "Head of ML Engineering",
+      "bio": "Previously at Tesla Autopilot and Waymo. Expert in computer vision, edge deployment, and model optimization. Leads our engineering team in delivering production-grade AI systems."
+    },
+    "sarah-kim": {
+      "role": "Head of Strategy",
+      "bio": "Former McKinsey engagement manager specializing in AI transformation. Translates complex technical capabilities into measurable business outcomes for our clients."
+    }
+  },
+  "values": {
+    "0": {
+      "title": "Precision Over Hype",
+      "description": "We ship measurable results, not demos. Every system we build is benchmarked against clearly defined KPIs before deployment."
+    },
+    "1": {
+      "title": "Systems Thinking",
+      "description": "Every component is designed for the whole. We engineer solutions that integrate cleanly into existing infrastructure, not isolated prototypes."
+    },
+    "2": {
+      "title": "Transparent Intelligence",
+      "description": "No black boxes. Our AI systems provide explainable outputs with confidence scores, audit trails, and clear reasoning chains."
+    },
+    "3": {
+      "title": "Relentless Iteration",
+      "description": "Production models improve continuously. We build monitoring, feedback loops, and retraining pipelines into every deployment from day one."
+    }
+  },
+  "contact": {
+    "label": "Get in Touch",
+    "title": "Start a Conversation",
+    "description": "Tell us about your data challenges and we'll design the intelligent system to solve them.",
+    "emailLabel": "Email",
+    "emailAddress": "hello@marksystems.ai",
+    "locationLabel": "Location",
+    "locationCity": "San Francisco, CA",
+    "locationDetail": "Remote-first team"
+  },
+  "contactForm": {
+    "name": "Name",
+    "namePlaceholder": "John Doe",
+    "email": "Email",
+    "emailPlaceholder": "john@company.com",
+    "company": "Company",
+    "companyPlaceholder": "Acme Corp",
+    "serviceInterest": "Service Interest",
+    "selectService": "Select a service",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your project...",
+    "submit": "Send Message",
+    "successTitle": "Message Sent",
+    "successMessage": "Thank you for reaching out. We'll get back to you within 24 hours.",
+    "required": "*"
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "nameMinLength": "Name must be at least 2 characters",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address",
+    "messageRequired": "Message is required",
+    "messageMinLength": "Message must be at least 10 characters"
+  },
+  "cta": {
+    "label": "Ready to Start?",
+    "title": "Let's Engineer Your Advantage",
+    "description": "Tell us about your data challenges. We'll design the intelligent system that turns them into competitive leverage.",
+    "button": "Start a Conversation"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "back": "Back to Home"
+  },
+  "footer": {
+    "description": "Engineering intelligent systems that transform raw data into decisive action.",
+    "navLabel": "Navigation",
+    "connectLabel": "Connect",
+    "copyright": "© {year} Mark Systems. All rights reserved."
+  },
+  "metadata": {
+    "home": {
+      "title": "Mark Systems | AI Automation & Decision Engineering",
+      "description": "We engineer intelligent systems that transform raw data into decisive action. Custom AI solutions for predictive analytics, workflow automation, and decision intelligence."
+    },
+    "services": {
+      "title": "Services",
+      "description": "AI automation and decision engineering services — from predictive analytics to computer vision and strategic advisory."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Case studies showcasing real-world AI deployments with quantified impact across energy, aerospace, legal, and supply chain industries."
+    },
+    "about": {
+      "title": "About",
+      "description": "Meet the team behind Mark Systems — engineers, researchers, and strategists building the next generation of decision infrastructure."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with Mark Systems to discuss your AI automation and decision engineering needs."
+    }
+  }
+}

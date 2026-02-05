@@ -1,0 +1,245 @@
+{
+  "common": {
+    "siteName": "Mark Systems",
+    "tagline": "AI自动化与决策工程",
+    "siteDescription": "我们打造智能系统,将原始数据转化为果断行动。提供预测分析、工作流自动化和决策智能的定制AI解决方案。"
+  },
+  "nav": {
+    "home": "首页",
+    "services": "服务",
+    "projects": "项目案例",
+    "about": "关于我们",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "badge": "AI自动化与决策工程",
+    "titleStart": "工程化智能。",
+    "titleAccent": "更快决策。",
+    "description": "我们构建生产级AI系统,将原始数据转化为果断行动——为可衡量的影响力而设计的预测分析、工作流自动化和决策智能平台。",
+    "ctaPrimary": "启动项目",
+    "ctaSecondary": "探索服务"
+  },
+  "servicesSection": {
+    "label": "我们的业务",
+    "title": "为性能而生的智能系统",
+    "description": "从预测分析到决策智能——我们构建在生产规模下运行的AI系统。",
+    "viewAll": "查看所有服务"
+  },
+  "servicesPage": {
+    "label": "我们的服务",
+    "title": "为影响力而设计的AI解决方案",
+    "description": "六大核心能力,每一项都旨在将特定的运营挑战转化为可衡量的竞争优势。"
+  },
+  "services": {
+    "predictive-analytics": {
+      "title": "预测分析引擎",
+      "shortDescription": "定制机器学习模型,预测运营数据中的趋势、需求曲线和故障点。",
+      "longDescription": "将历史模式转化为可操作的前瞻洞察。我们的预测引擎摄取多维时间序列数据,识别非显性关联,并提供概率加权预测,直接整合到您的决策工作流中。",
+      "capabilities": ["时间序列预测", "异常检测", "需求预测", "故障概率建模", "实时模型重训练"]
+    },
+    "workflow-automation": {
+      "title": "工作流自动化系统",
+      "shortDescription": "端到端流程自动化管道,消除人工瓶颈,实现零人工操作。",
+      "longDescription": "从数据摄取到决策输出,我们的自动化系统编排复杂的多步骤流程,内置错误处理、审计跟踪,以及在置信度阈值未达标时的人工干预升级机制。",
+      "capabilities": ["管道编排", "事件驱动触发", "错误恢复协议", "审计跟踪生成", "人工干预关卡"]
+    },
+    "decision-intelligence": {
+      "title": "决策智能平台",
+      "shortDescription": "结构化框架,将多源数据综合为带置信度评分的排序决策。",
+      "longDescription": "我们的决策平台聚合来自不同数据源的信号,应用加权评分模型,运行蒙特卡洛模拟,并呈现带有透明推理链的排序选项——让利益相关者能够基于确信而非猜测行动。",
+      "capabilities": ["多准则分析", "蒙特卡洛模拟", "场景建模", "置信度评分", "可解释推荐"]
+    },
+    "nlp-pipelines": {
+      "title": "自然语言处理",
+      "shortDescription": "定制NLP管道,用于文档分析、情感提取和自动报告生成。",
+      "longDescription": "我们构建生产级NLP系统,大规模解析、分类并从非结构化文本中提取结构化情报——从监管文件、合同到客户反馈和研究论文。",
+      "capabilities": ["文档分类", "实体提取", "情感分析", "自动摘要", "多语言支持"]
+    },
+    "computer-vision": {
+      "title": "计算机视觉与检测",
+      "shortDescription": "自动化视觉检测系统、缺陷检测和图像分类,支持边缘或云端部署。",
+      "longDescription": "我们的视觉系统在质量检测中达到亚像素级精度,利用卷积和Transformer架构,针对边缘设备或GPU加速云基础设施进行优化部署。",
+      "capabilities": ["缺陷检测", "物体分类", "尺寸测量", "边缘部署", "实时视频分析"]
+    },
+    "ai-strategy": {
+      "title": "AI战略与集成",
+      "shortDescription": "AI采用路线图、模型选择和企业系统集成的技术咨询。",
+      "longDescription": "我们通过清晰的技术评估帮助组织驾驭AI格局——从就绪审计和基础设施规划,到供应商评估、模型选择和生产部署策略。",
+      "capabilities": ["就绪评估", "基础设施规划", "模型评估", "集成架构", "ROI建模"]
+    }
+  },
+  "projectsSection": {
+    "label": "案例研究",
+    "title": "用数字说话的成果",
+    "description": "跨行业的实际AI部署及其量化影响。",
+    "viewAll": "查看所有项目"
+  },
+  "projectsPage": {
+    "label": "案例研究",
+    "title": "已部署的智能,可衡量的影响",
+    "description": "每个项目都始于数据挑战,终于提供量化成果的生产系统。"
+  },
+  "projects": {
+    "meridian-forecasting": {
+      "title": "Meridian预测套件",
+      "industry": "能源与公用事业",
+      "challenge": "电网负载预测滞后实时需求变化72小时,导致每年230万美元的平衡成本。",
+      "solution": "部署LSTM集成模型,以15分钟间隔处理14个数据流,通过流式摄取层与现有SCADA基础设施集成。",
+      "result": "以15分钟间隔实现94.7%的预测准确率。在首个运营季度将能源平衡成本降低61%。",
+      "metricValue": "94.7%",
+      "metricLabel": "预测准确率"
+    },
+    "sentinel-quality": {
+      "title": "Sentinel质量关卡",
+      "industry": "航空航天制造",
+      "challenge": "人工目视检测仅能捕获涡轮叶片涂层表面82%的微缺陷,每班次有340个误报。",
+      "solution": "部署基于45,000张标注叶片图像训练的卷积神经网络,在集成到生产线的NVIDIA Jetson模块上进行边缘推理。",
+      "result": "99.2%的缺陷检测率,误报减少89%。检测吞吐量提高4倍。",
+      "metricValue": "99.2%",
+      "metricLabel": "缺陷检测率"
+    },
+    "lexicon-intelligence": {
+      "title": "Lexicon智能中心",
+      "industry": "法律与合规",
+      "challenge": "监管分析师每月花费400+小时审查12,000+份文档进行合规相关性分类。",
+      "solution": "构建基于Transformer的NLP管道,包含微调分类模型、主动学习反馈循环和优先级排序审查仪表板。",
+      "result": "自动化分类将人工审查减少78%,在90秒内标记关键项目,分类准确率达96.3%。",
+      "metricValue": "-78%",
+      "metricLabel": "人工审查"
+    },
+    "atlas-decision": {
+      "title": "Atlas决策矩阵",
+      "industry": "供应链与物流",
+      "challenge": "多供应商采购决策依赖电子表格处理15+个变量权衡,平均每个采购周期需3周。",
+      "solution": "设计决策智能平台,具备加权多准则评分、蒙特卡洛风险评估模拟和实时约束优化功能。",
+      "result": "采购周期从3周缩短至4天。决策置信度评分将采购成果改善34%。",
+      "metricValue": "4天",
+      "metricLabel": "周期时间"
+    }
+  },
+  "projectCard": {
+    "challenge": "挑战:",
+    "solution": "解决方案:"
+  },
+  "about": {
+    "missionLabel": "我们的使命",
+    "missionTitle": "AI时代的决策基础设施",
+    "mission": "我们打造智能系统,将原始数据转化为果断行动。在Mark Systems,我们不仅仅构建AI——我们架构决策基础设施,为组织创造不公平的竞争优势。",
+    "teamLabel": "团队成员",
+    "teamTitle": "由工程师打造,为工程师服务",
+    "teamDescription": "在机器学习、系统工程和战略咨询领域拥有深厚专业知识。",
+    "valuesLabel": "我们的原则",
+    "valuesTitle": "我们的运作方式",
+    "valuesDescription": "定义每次合作的四项不可妥协原则。"
+  },
+  "team": {
+    "marcus-chen": {
+      "role": "首席执行官兼创始人",
+      "bio": "DeepMind前首席工程师。15年来在能源、国防和金融领域构建生产级机器学习系统。创立Mark Systems以弥合研究突破与运营现实之间的鸿沟。"
+    },
+    "elena-vasquez": {
+      "role": "首席技术官",
+      "bio": "麻省理工学院统计学习博士。在加入Mark Systems前领导Stripe的机器学习平台团队。专注于构建在严格延迟约束下运行的可扩展推理管道。"
+    },
+    "james-okafor": {
+      "role": "机器学习工程主管",
+      "bio": "曾任职于Tesla Autopilot和Waymo。计算机视觉、边缘部署和模型优化专家。领导我们的工程团队交付生产级AI系统。"
+    },
+    "sarah-kim": {
+      "role": "战略主管",
+      "bio": "前McKinsey项目经理,专攻AI转型。为客户将复杂的技术能力转化为可衡量的业务成果。"
+    }
+  },
+  "values": {
+    "0": {
+      "title": "精确胜于炒作",
+      "description": "我们交付可衡量的成果,而非演示。我们构建的每个系统在部署前都根据明确定义的KPI进行基准测试。"
+    },
+    "1": {
+      "title": "系统思维",
+      "description": "每个组件都是为整体而设计。我们设计能够干净集成到现有基础设施的解决方案,而非孤立的原型。"
+    },
+    "2": {
+      "title": "透明智能",
+      "description": "没有黑箱。我们的AI系统提供可解释的输出,包括置信度评分、审计跟踪和清晰的推理链。"
+    },
+    "3": {
+      "title": "持续迭代",
+      "description": "生产模型持续改进。我们从第一天起就将监控、反馈循环和重训练管道构建到每个部署中。"
+    }
+  },
+  "contact": {
+    "label": "联系我们",
+    "title": "开始对话",
+    "description": "告诉我们您的数据挑战,我们将设计智能系统来解决它们。",
+    "emailLabel": "电子邮件",
+    "emailAddress": "hello@marksystems.ai",
+    "locationLabel": "位置",
+    "locationCity": "旧金山, 加州",
+    "locationDetail": "远程优先团队"
+  },
+  "contactForm": {
+    "name": "姓名",
+    "namePlaceholder": "张明",
+    "email": "电子邮件",
+    "emailPlaceholder": "zhangming@gongsi.com",
+    "company": "公司",
+    "companyPlaceholder": "示例科技有限公司",
+    "serviceInterest": "感兴趣的服务",
+    "selectService": "选择服务",
+    "message": "留言",
+    "messagePlaceholder": "告诉我们您的项目需求...",
+    "submit": "发送消息",
+    "successTitle": "消息已发送",
+    "successMessage": "感谢您的联系。我们将在24小时内回复您。",
+    "required": "*"
+  },
+  "validation": {
+    "nameRequired": "姓名为必填项",
+    "nameMinLength": "姓名至少需要2个字符",
+    "emailRequired": "电子邮件为必填项",
+    "emailInvalid": "请输入有效的电子邮件地址",
+    "messageRequired": "留言为必填项",
+    "messageMinLength": "留言至少需要10个字符"
+  },
+  "cta": {
+    "label": "准备开始了吗?",
+    "title": "让我们为您打造竞争优势",
+    "description": "告诉我们您的数据挑战。我们将设计智能系统,将它们转化为竞争杠杆。",
+    "button": "开始对话"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "页面未找到",
+    "description": "您要查找的页面不存在或已被移动。",
+    "back": "返回首页"
+  },
+  "footer": {
+    "description": "打造智能系统,将原始数据转化为果断行动。",
+    "navLabel": "导航",
+    "connectLabel": "联系",
+    "copyright": "© {year} Mark Systems. 保留所有权利。"
+  },
+  "metadata": {
+    "home": {
+      "title": "Mark Systems | AI自动化与决策工程",
+      "description": "我们打造智能系统,将原始数据转化为果断行动。提供预测分析、工作流自动化和决策智能的定制AI解决方案。"
+    },
+    "services": {
+      "title": "服务",
+      "description": "AI自动化和决策工程服务——从预测分析到计算机视觉和战略咨询。"
+    },
+    "projects": {
+      "title": "项目案例",
+      "description": "案例研究展示跨能源、航空航天、法律和供应链行业的实际AI部署及其量化影响。"
+    },
+    "about": {
+      "title": "关于我们",
+      "description": "认识Mark Systems背后的团队——构建下一代决策基础设施的工程师、研究人员和战略家。"
+    },
+    "contact": {
+      "title": "联系我们",
+      "description": "联系Mark Systems,讨论您的AI自动化和决策工程需求。"
+    }
+  }
+}

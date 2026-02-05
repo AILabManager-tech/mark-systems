@@ -1,0 +1,245 @@
+{
+  "common": {
+    "siteName": "Mark Systems",
+    "tagline": "KI-Automatisierung & Entscheidungstechnik",
+    "siteDescription": "Wir entwickeln intelligente Systeme, die Rohdaten in entscheidende Handlungen verwandeln. Maßgeschneiderte KI-Lösungen für prädiktive Analysen, Workflow-Automatisierung und Entscheidungsintelligenz."
+  },
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "projects": "Projekte",
+    "about": "Über uns",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "KI-Automatisierung & Entscheidungstechnik",
+    "titleStart": "Intelligenz entwickeln.",
+    "titleAccent": "Schneller entscheiden.",
+    "description": "Wir entwickeln produktionsreife KI-Systeme, die Rohdaten in entscheidende Handlungen verwandeln – prädiktive Analysen, Workflow-Automatisierung und Entscheidungsintelligenz-Plattformen für messbaren Erfolg.",
+    "ctaPrimary": "Projekt starten",
+    "ctaSecondary": "Leistungen erkunden"
+  },
+  "servicesSection": {
+    "label": "Was wir tun",
+    "title": "Intelligente Systeme, entwickelt für Höchstleistung",
+    "description": "Von prädiktiven Analysen bis zur Entscheidungsintelligenz – wir entwickeln KI, die im Produktionsmaßstab operiert.",
+    "viewAll": "Alle Leistungen ansehen"
+  },
+  "servicesPage": {
+    "label": "Unsere Leistungen",
+    "title": "KI-Lösungen für messbaren Erfolg",
+    "description": "Sechs Kernkompetenzen, jeweils darauf ausgelegt, eine spezifische operative Herausforderung in einen messbaren Wettbewerbsvorteil zu verwandeln."
+  },
+  "services": {
+    "predictive-analytics": {
+      "title": "Prädiktive Analyse-Engines",
+      "shortDescription": "Maßgeschneiderte ML-Modelle, die Trends, Nachfragekurven und Ausfallpunkte über operative Datensätze hinweg prognostizieren.",
+      "longDescription": "Verwandeln Sie historische Muster in umsetzbare Vorhersagen. Unsere prädiktiven Engines verarbeiten mehrdimensionale Zeitreihendaten, identifizieren nicht offensichtliche Korrelationen und liefern wahrscheinlichkeitsgewichtete Prognosen, die sich direkt in Ihre Entscheidungsprozesse integrieren.",
+      "capabilities": ["Zeitreihenprognose", "Anomalieerkennung", "Nachfrageprognose", "Ausfallwahrscheinlichkeitsmodellierung", "Echtzeit-Modell-Retraining"]
+    },
+    "workflow-automation": {
+      "title": "Workflow-Automatisierungssysteme",
+      "shortDescription": "End-to-End-Prozessautomatisierungs-Pipelines, die manuelle Engpässe eliminieren und Zero-Touch-Betrieb ermöglichen.",
+      "longDescription": "Von der Datenerfassung bis zur Entscheidungsausgabe orchestrieren unsere Automatisierungssysteme komplexe mehrstufige Prozesse mit integrierter Fehlerbehandlung, Audit-Trails und Human-in-the-Loop-Eskalation, wenn Konfidenzschwellen nicht erreicht werden.",
+      "capabilities": ["Pipeline-Orchestrierung", "Ereignisgesteuerte Trigger", "Fehlerwiederherstellungsprotokolle", "Audit-Trail-Generierung", "Human-in-the-Loop-Gates"]
+    },
+    "decision-intelligence": {
+      "title": "Entscheidungsintelligenz-Plattformen",
+      "shortDescription": "Strukturierte Frameworks, die Multi-Source-Daten in priorisierte Entscheidungen mit Konfidenzwerten synthetisieren.",
+      "longDescription": "Unsere Entscheidungsplattformen aggregieren Signale aus disparaten Datenquellen, wenden gewichtete Bewertungsmodelle an, führen Monte-Carlo-Simulationen durch und präsentieren priorisierte Optionen mit transparenten Argumentationsketten – damit Entscheidungsträger mit Überzeugung handeln können, nicht nach Vermutungen.",
+      "capabilities": ["Multi-Kriterien-Analyse", "Monte-Carlo-Simulation", "Szenario-Modellierung", "Konfidenz-Bewertung", "Erklärbare Empfehlungen"]
+    },
+    "nlp-pipelines": {
+      "title": "Natural Language Processing",
+      "shortDescription": "Maßgeschneiderte NLP-Pipelines für Dokumentenanalyse, Sentiment-Extraktion und automatisierte Berichtserstellung.",
+      "longDescription": "Wir entwickeln produktionsreife NLP-Systeme, die strukturierte Intelligenz aus unstrukturiertem Text im großen Maßstab parsen, klassifizieren und extrahieren – von regulatorischen Dokumenten und Verträgen bis hin zu Kundenfeedback und Forschungsarbeiten.",
+      "capabilities": ["Dokumentenklassifizierung", "Entitätsextraktion", "Sentiment-Analyse", "Automatisierte Zusammenfassung", "Mehrsprachige Unterstützung"]
+    },
+    "computer-vision": {
+      "title": "Computer Vision & Inspektion",
+      "shortDescription": "Automatisierte visuelle Inspektionssysteme, Defekterkennung und Bildklassifizierung auf Edge oder Cloud.",
+      "longDescription": "Unsere Vision-Systeme erreichen Sub-Pixel-Präzision für Qualitätsinspektionen und nutzen konvolutionale und Transformer-Architekturen, die für den Einsatz auf Edge-Geräten oder GPU-beschleunigter Cloud-Infrastruktur optimiert sind.",
+      "capabilities": ["Defekterkennung", "Objektklassifizierung", "Dimensionsmessung", "Edge-Deployment", "Echtzeit-Videoanalyse"]
+    },
+    "ai-strategy": {
+      "title": "KI-Strategie & Integration",
+      "shortDescription": "Technische Beratung für KI-Einführungs-Roadmaps, Modellauswahl und Enterprise-System-Integration.",
+      "longDescription": "Wir helfen Organisationen, sich in der KI-Landschaft mit nüchternen technischen Bewertungen zurechtzufinden – von Bereitschaftsaudits und Infrastrukturplanung bis hin zu Lieferantenbewertung, Modellauswahl und Produktionsbereitstellungsstrategien.",
+      "capabilities": ["Bereitschaftsbewertung", "Infrastrukturplanung", "Modellevaluierung", "Integrationsarchitektur", "ROI-Modellierung"]
+    }
+  },
+  "projectsSection": {
+    "label": "Fallstudien",
+    "title": "Ergebnisse, die in Zahlen sprechen",
+    "description": "Real-World-KI-Implementierungen mit quantifiziertem Erfolg über verschiedene Branchen hinweg.",
+    "viewAll": "Alle Projekte ansehen"
+  },
+  "projectsPage": {
+    "label": "Fallstudien",
+    "title": "Eingesetzte Intelligenz, messbarer Erfolg",
+    "description": "Jedes Projekt beginnt mit einer Datenherausforderung und endet mit einem Produktionssystem, das quantifizierte Ergebnisse liefert."
+  },
+  "projects": {
+    "meridian-forecasting": {
+      "title": "Meridian Forecasting Suite",
+      "industry": "Energie & Versorgung",
+      "challenge": "Die Netzlastprognose lag 72 Stunden hinter Echtzeit-Nachfrageschwankungen zurück, was zu Ausgleichskosten von 2,3 Mio. USD pro Jahr führte.",
+      "solution": "Implementierung eines LSTM-Ensemble-Modells, das 14 Datenströme in 15-Minuten-Intervallen verarbeitet, integriert mit der bestehenden SCADA-Infrastruktur über eine Streaming-Ingestion-Schicht.",
+      "result": "Erreichte 94.7% Prognosegenauigkeit in 15-Minuten-Intervallen. Reduzierte Energieausgleichskosten um 61% im ersten Betriebsquartal.",
+      "metricValue": "94.7%",
+      "metricLabel": "Prognosegenauigkeit"
+    },
+    "sentinel-quality": {
+      "title": "Sentinel Quality Gate",
+      "industry": "Luft- und Raumfahrtfertigung",
+      "challenge": "Die manuelle Sichtprüfung erkannte nur 82% der Oberflächenmikrodefekte an Turbinenschaufel-Beschichtungen, mit 340 Fehlalarmen pro Schicht.",
+      "solution": "Implementierung eines konvolutionalen neuronalen Netzwerks, trainiert auf 45.000 annotierten Schaufelbildern, mit Edge-Inferenz auf NVIDIA Jetson-Modulen, integriert in die Produktionslinie.",
+      "result": "99.2% Defekterkennungsrate bei 89% Reduzierung der Fehlalarme. Inspektionsdurchsatz um das 4-fache erhöht.",
+      "metricValue": "99.2%",
+      "metricLabel": "Defekterkennung"
+    },
+    "lexicon-intelligence": {
+      "title": "Lexicon Intelligence Hub",
+      "industry": "Recht & Compliance",
+      "challenge": "Regulatorische Analysten verbrachten monatlich über 400 Stunden mit der Überprüfung von über 12.000 Dokumenten zur Klassifizierung der Compliance-Relevanz.",
+      "solution": "Entwicklung einer transformerbasierten NLP-Pipeline mit feinabgestimmten Klassifizierungsmodellen, Active-Learning-Feedbackschleifen und einem nach Priorität geordneten Überprüfungs-Dashboard.",
+      "result": "Automatisierte Triage reduzierte manuelle Überprüfung um 78%, markierte kritische Elemente in unter 90 Sekunden mit 96,3% Klassifizierungsgenauigkeit.",
+      "metricValue": "-78%",
+      "metricLabel": "Manuelle Überprüfung"
+    },
+    "atlas-decision": {
+      "title": "Atlas Decision Matrix",
+      "industry": "Lieferkette & Logistik",
+      "challenge": "Multi-Lieferanten-Beschaffungsentscheidungen basierten auf Tabellenkalkulationen mit über 15 variablen Abwägungen, durchschnittlich 3 Wochen pro Beschaffungszyklus.",
+      "solution": "Entwicklung einer Entscheidungsintelligenz-Plattform mit gewichteter Multi-Kriterien-Bewertung, Monte-Carlo-Simulation zur Risikobewertung und Echtzeit-Constraint-Optimierung.",
+      "result": "Beschaffungszykluszeit von 3 Wochen auf 4 Tage reduziert. Entscheidungskonfidenzwerte verbesserten Beschaffungsergebnisse um 34%.",
+      "metricValue": "4 Tage",
+      "metricLabel": "Zykluszeit"
+    }
+  },
+  "projectCard": {
+    "challenge": "Herausforderung:",
+    "solution": "Lösung:"
+  },
+  "about": {
+    "missionLabel": "Unsere Mission",
+    "missionTitle": "Entscheidungsinfrastruktur für die KI-Ära",
+    "mission": "Wir entwickeln intelligente Systeme, die Rohdaten in entscheidende Handlungen verwandeln. Bei Mark Systems bauen wir nicht nur KI – wir entwickeln die Entscheidungsinfrastruktur, die Organisationen einen unfairen Vorteil verschafft.",
+    "teamLabel": "Das Team",
+    "teamTitle": "Von Ingenieuren für Ingenieure entwickelt",
+    "teamDescription": "Tiefgehende Expertise in Machine Learning, Systemtechnik und strategischer Beratung.",
+    "valuesLabel": "Unsere Prinzipien",
+    "valuesTitle": "Wie wir arbeiten",
+    "valuesDescription": "Vier nicht verhandelbare Prinzipien, die jedes Engagement definieren."
+  },
+  "team": {
+    "marcus-chen": {
+      "role": "CEO & Gründer",
+      "bio": "Ehemaliger Principal Engineer bei DeepMind. 15 Jahre Erfahrung im Aufbau von Produktions-ML-Systemen in den Bereichen Energie, Verteidigung und Finanzen. Gründete Mark Systems, um die Lücke zwischen Forschungsdurchbrüchen und operativer Realität zu schließen."
+    },
+    "elena-vasquez": {
+      "role": "CTO",
+      "bio": "Promotion in Statistical Learning vom MIT. Leitete das Machine-Learning-Plattform-Team bei Stripe, bevor sie zu Mark Systems kam. Spezialisiert auf den Aufbau skalierbarer Inferenz-Pipelines, die unter strikten Latenzbeschränkungen operieren."
+    },
+    "james-okafor": {
+      "role": "Leiter ML Engineering",
+      "bio": "Zuvor bei Tesla Autopilot und Waymo. Experte für Computer Vision, Edge-Deployment und Modelloptimierung. Leitet unser Engineering-Team bei der Bereitstellung produktionsreifer KI-Systeme."
+    },
+    "sarah-kim": {
+      "role": "Leiterin Strategie",
+      "bio": "Ehemalige McKinsey Engagement Managerin mit Spezialisierung auf KI-Transformation. Übersetzt komplexe technische Fähigkeiten in messbare Geschäftsergebnisse für unsere Kunden."
+    }
+  },
+  "values": {
+    "0": {
+      "title": "Präzision statt Hype",
+      "description": "Wir liefern messbare Ergebnisse, keine Demos. Jedes System, das wir entwickeln, wird vor der Bereitstellung gegen klar definierte KPIs gemessen."
+    },
+    "1": {
+      "title": "Systemisches Denken",
+      "description": "Jede Komponente ist für das Ganze konzipiert. Wir entwickeln Lösungen, die sich sauber in bestehende Infrastrukturen integrieren, keine isolierten Prototypen."
+    },
+    "2": {
+      "title": "Transparente Intelligenz",
+      "description": "Keine Black Boxes. Unsere KI-Systeme liefern erklärbare Ausgaben mit Konfidenzwerten, Audit-Trails und klaren Argumentationsketten."
+    },
+    "3": {
+      "title": "Unermüdliche Iteration",
+      "description": "Produktionsmodelle verbessern sich kontinuierlich. Wir integrieren Monitoring, Feedbackschleifen und Retraining-Pipelines von Tag eins an in jede Bereitstellung."
+    }
+  },
+  "contact": {
+    "label": "Kontaktieren Sie uns",
+    "title": "Gespräch beginnen",
+    "description": "Erzählen Sie uns von Ihren Datenherausforderungen und wir entwickeln das intelligente System zu deren Lösung.",
+    "emailLabel": "E-Mail",
+    "emailAddress": "hello@marksystems.ai",
+    "locationLabel": "Standort",
+    "locationCity": "San Francisco, CA",
+    "locationDetail": "Remote-First-Team"
+  },
+  "contactForm": {
+    "name": "Name",
+    "namePlaceholder": "Max Mustermann",
+    "email": "E-Mail",
+    "emailPlaceholder": "max@firma.de",
+    "company": "Unternehmen",
+    "companyPlaceholder": "Beispiel GmbH",
+    "serviceInterest": "Leistungsinteresse",
+    "selectService": "Leistung auswählen",
+    "message": "Nachricht",
+    "messagePlaceholder": "Erzählen Sie uns von Ihrem Projekt...",
+    "submit": "Nachricht senden",
+    "successTitle": "Nachricht gesendet",
+    "successMessage": "Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+    "required": "*"
+  },
+  "validation": {
+    "nameRequired": "Name ist erforderlich",
+    "nameMinLength": "Name muss mindestens 2 Zeichen lang sein",
+    "emailRequired": "E-Mail ist erforderlich",
+    "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "messageRequired": "Nachricht ist erforderlich",
+    "messageMinLength": "Nachricht muss mindestens 10 Zeichen lang sein"
+  },
+  "cta": {
+    "label": "Bereit zu starten?",
+    "title": "Lassen Sie uns Ihren Vorteil entwickeln",
+    "description": "Erzählen Sie uns von Ihren Datenherausforderungen. Wir entwickeln das intelligente System, das sie in Wettbewerbsvorteile verwandelt.",
+    "button": "Gespräch beginnen"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "back": "Zurück zur Startseite"
+  },
+  "footer": {
+    "description": "Entwicklung intelligenter Systeme, die Rohdaten in entscheidende Handlungen verwandeln.",
+    "navLabel": "Navigation",
+    "connectLabel": "Verbinden",
+    "copyright": "© {year} Mark Systems. Alle Rechte vorbehalten."
+  },
+  "metadata": {
+    "home": {
+      "title": "Mark Systems | KI-Automatisierung & Entscheidungstechnik",
+      "description": "Wir entwickeln intelligente Systeme, die Rohdaten in entscheidende Handlungen verwandeln. Maßgeschneiderte KI-Lösungen für prädiktive Analysen, Workflow-Automatisierung und Entscheidungsintelligenz."
+    },
+    "services": {
+      "title": "Leistungen",
+      "description": "KI-Automatisierungs- und Entscheidungstechnik-Dienstleistungen – von prädiktiven Analysen über Computer Vision bis hin zu strategischer Beratung."
+    },
+    "projects": {
+      "title": "Projekte",
+      "description": "Fallstudien, die Real-World-KI-Implementierungen mit quantifiziertem Erfolg in den Bereichen Energie, Luft- und Raumfahrt, Recht und Lieferkette zeigen."
+    },
+    "about": {
+      "title": "Über uns",
+      "description": "Lernen Sie das Team hinter Mark Systems kennen – Ingenieure, Forscher und Strategen, die die nächste Generation der Entscheidungsinfrastruktur aufbauen."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontaktieren Sie Mark Systems, um Ihre Anforderungen an KI-Automatisierung und Entscheidungstechnik zu besprechen."
+    }
+  }
+}

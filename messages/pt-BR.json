@@ -1,0 +1,245 @@
+{
+  "common": {
+    "siteName": "Mark Systems",
+    "tagline": "Automação de IA e Engenharia de Decisão",
+    "siteDescription": "Desenvolvemos sistemas inteligentes que transformam dados brutos em ação decisiva. Soluções personalizadas de IA para análise preditiva, automação de fluxos de trabalho e inteligência de decisão."
+  },
+  "nav": {
+    "home": "Início",
+    "services": "Serviços",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "hero": {
+    "badge": "Automação de IA e Engenharia de Decisão",
+    "titleStart": "Engenharia de Inteligência.",
+    "titleAccent": "Decisões Mais Rápidas.",
+    "description": "Construímos sistemas de IA em nível de produção que transformam dados brutos em ação decisiva — análise preditiva, automação de fluxos de trabalho e plataformas de inteligência de decisão desenvolvidas para gerar impacto mensurável.",
+    "ctaPrimary": "Iniciar um Projeto",
+    "ctaSecondary": "Explorar Serviços"
+  },
+  "servicesSection": {
+    "label": "O Que Fazemos",
+    "title": "Sistemas Inteligentes, Desenvolvidos para Desempenho",
+    "description": "De análise preditiva a inteligência de decisão — construímos IA que opera em escala de produção.",
+    "viewAll": "Ver Todos os Serviços"
+  },
+  "servicesPage": {
+    "label": "Nossos Serviços",
+    "title": "Soluções de IA Desenvolvidas para Impacto",
+    "description": "Seis capacidades centrais, cada uma projetada para transformar um desafio operacional específico em uma vantagem competitiva mensurável."
+  },
+  "services": {
+    "predictive-analytics": {
+      "title": "Motores de Análise Preditiva",
+      "shortDescription": "Modelos de ML personalizados que preveem tendências, curvas de demanda e pontos de falha em conjuntos de dados operacionais.",
+      "longDescription": "Transforme padrões históricos em previsão acionável. Nossos motores preditivos processam dados de séries temporais multidimensionais, identificam correlações não óbvias e entregam previsões ponderadas por probabilidade que se integram diretamente aos seus fluxos de decisão.",
+      "capabilities": ["Previsão de séries temporais", "Detecção de anomalias", "Previsão de demanda", "Modelagem de probabilidade de falha", "Retreinamento de modelo em tempo real"]
+    },
+    "workflow-automation": {
+      "title": "Sistemas de Automação de Fluxos de Trabalho",
+      "shortDescription": "Pipelines de automação de processo ponta a ponta que eliminam gargalos manuais e oferecem operação sem intervenção.",
+      "longDescription": "Da ingestão de dados à saída de decisão, nossos sistemas de automação orquestram processos complexos de várias etapas com tratamento de erros integrado, trilhas de auditoria e escalação com intervenção humana quando os limites de confiança não são atingidos.",
+      "capabilities": ["Orquestração de pipeline", "Gatilhos orientados a eventos", "Protocolos de recuperação de erros", "Geração de trilha de auditoria", "Portões de intervenção humana"]
+    },
+    "decision-intelligence": {
+      "title": "Plataformas de Inteligência de Decisão",
+      "shortDescription": "Estruturas estruturadas que sintetizam dados de múltiplas fontes em decisões classificadas com pontuações de confiança.",
+      "longDescription": "Nossas plataformas de decisão agregam sinais de fontes de dados díspares, aplicam modelos de pontuação ponderada, executam simulações de Monte Carlo e apresentam opções classificadas com cadeias de raciocínio transparentes — para que os stakeholders possam agir com convicção, não com suposições.",
+      "capabilities": ["Análise de múltiplos critérios", "Simulação de Monte Carlo", "Modelagem de cenários", "Pontuação de confiança", "Recomendações explicáveis"]
+    },
+    "nlp-pipelines": {
+      "title": "Processamento de Linguagem Natural",
+      "shortDescription": "Pipelines de NLP personalizados para análise de documentos, extração de sentimento e geração automatizada de relatórios.",
+      "longDescription": "Construímos sistemas de NLP em nível de produção que analisam, classificam e extraem inteligência estruturada de texto não estruturado em escala — desde documentos regulatórios e contratos até feedback de clientes e artigos de pesquisa.",
+      "capabilities": ["Classificação de documentos", "Extração de entidades", "Análise de sentimento", "Resumo automatizado", "Suporte multilíngue"]
+    },
+    "computer-vision": {
+      "title": "Visão Computacional e Inspeção",
+      "shortDescription": "Sistemas automatizados de inspeção visual, detecção de defeitos e classificação de imagens em edge ou nuvem.",
+      "longDescription": "Nossos sistemas de visão alcançam precisão sub-pixel para inspeção de qualidade, aproveitando arquiteturas convolucionais e de transformadores otimizadas para implantação em dispositivos edge ou infraestrutura de nuvem acelerada por GPU.",
+      "capabilities": ["Detecção de defeitos", "Classificação de objetos", "Medição dimensional", "Implantação em edge", "Análise de vídeo em tempo real"]
+    },
+    "ai-strategy": {
+      "title": "Estratégia e Integração de IA",
+      "shortDescription": "Consultoria técnica para roadmaps de adoção de IA, seleção de modelos e integração de sistemas empresariais.",
+      "longDescription": "Ajudamos organizações a navegar no cenário de IA com avaliações técnicas realistas — de auditorias de prontidão e planejamento de infraestrutura a avaliação de fornecedores, seleção de modelos e estratégias de implantação em produção.",
+      "capabilities": ["Avaliação de prontidão", "Planejamento de infraestrutura", "Avaliação de modelos", "Arquitetura de integração", "Modelagem de ROI"]
+    }
+  },
+  "projectsSection": {
+    "label": "Estudos de Caso",
+    "title": "Resultados Que Falam em Números",
+    "description": "Implantações de IA no mundo real com impacto quantificado em diversos setores.",
+    "viewAll": "Ver Todos os Projetos"
+  },
+  "projectsPage": {
+    "label": "Estudos de Caso",
+    "title": "Inteligência Implantada, Impacto Medido",
+    "description": "Todo projeto começa com um desafio de dados e termina com um sistema em produção entregando resultados quantificados."
+  },
+  "projects": {
+    "meridian-forecasting": {
+      "title": "Meridian Forecasting Suite",
+      "industry": "Energia e Serviços Públicos",
+      "challenge": "A previsão de carga da rede estava 72 horas atrás das mudanças de demanda em tempo real, causando US$ 2,3 milhões/ano em custos de balanceamento.",
+      "solution": "Implantamos um modelo ensemble LSTM processando 14 fluxos de dados em intervalos de 15 minutos, integrado à infraestrutura SCADA existente via camada de ingestão de streaming.",
+      "result": "Alcançamos 94,7% de precisão de previsão em intervalos de 15 minutos. Reduzimos os custos de balanceamento de energia em 61% no primeiro trimestre operacional.",
+      "metricValue": "94,7%",
+      "metricLabel": "Precisão de Previsão"
+    },
+    "sentinel-quality": {
+      "title": "Sentinel Quality Gate",
+      "industry": "Manufatura Aeroespacial",
+      "challenge": "A inspeção visual manual detectou apenas 82% dos micro-defeitos de superfície nos revestimentos de pás de turbina, com 340 falsos positivos por turno.",
+      "solution": "Implantamos uma rede neural convolucional treinada em 45.000 imagens anotadas de pás, com inferência em edge em módulos NVIDIA Jetson integrados à linha de produção.",
+      "result": "Taxa de detecção de defeitos de 99,2% com 89% de redução em falsos positivos. O throughput de inspeção aumentou 4x.",
+      "metricValue": "99,2%",
+      "metricLabel": "Detecção de Defeitos"
+    },
+    "lexicon-intelligence": {
+      "title": "Lexicon Intelligence Hub",
+      "industry": "Jurídico e Compliance",
+      "challenge": "Analistas regulatórios gastavam mais de 400 horas mensais revisando mais de 12.000 documentos para classificação de relevância de compliance.",
+      "solution": "Construímos um pipeline de NLP baseado em transformadores com modelos de classificação ajustados, loops de feedback de aprendizado ativo e um painel de revisão classificado por prioridade.",
+      "result": "A triagem automatizada reduziu a revisão manual em 78%, sinalizando itens críticos em menos de 90 segundos com 96,3% de precisão de classificação.",
+      "metricValue": "-78%",
+      "metricLabel": "Revisão Manual"
+    },
+    "atlas-decision": {
+      "title": "Atlas Decision Matrix",
+      "industry": "Cadeia de Suprimentos e Logística",
+      "challenge": "Decisões de aquisição de múltiplos fornecedores dependiam de planilhas com mais de 15 trade-offs variáveis, com média de 3 semanas por ciclo de sourcing.",
+      "solution": "Desenvolvemos uma plataforma de inteligência de decisão com pontuação ponderada de múltiplos critérios, simulação de Monte Carlo para avaliação de risco e otimização de restrições em tempo real.",
+      "result": "O tempo do ciclo de sourcing foi reduzido de 3 semanas para 4 dias. As pontuações de confiança de decisão melhoraram os resultados de aquisição em 34%.",
+      "metricValue": "4 dias",
+      "metricLabel": "Tempo de Ciclo"
+    }
+  },
+  "projectCard": {
+    "challenge": "Desafio:",
+    "solution": "Solução:"
+  },
+  "about": {
+    "missionLabel": "Nossa Missão",
+    "missionTitle": "Infraestrutura de Decisão para a Era da IA",
+    "mission": "Desenvolvemos sistemas inteligentes que transformam dados brutos em ação decisiva. Na Mark Systems, não apenas construímos IA — arquitetamos a infraestrutura de decisão que dá às organizações uma vantagem desleal.",
+    "teamLabel": "A Equipe",
+    "teamTitle": "Construído por Engenheiros, para Engenheiros",
+    "teamDescription": "Profunda expertise em machine learning, engenharia de sistemas e consultoria estratégica.",
+    "valuesLabel": "Nossos Princípios",
+    "valuesTitle": "Como Operamos",
+    "valuesDescription": "Quatro princípios inegociáveis que definem cada engajamento."
+  },
+  "team": {
+    "marcus-chen": {
+      "role": "CEO e Fundador",
+      "bio": "Ex-engenheiro principal na DeepMind. 15 anos construindo sistemas de ML em produção nos setores de energia, defesa e finanças. Fundou a Mark Systems para preencher a lacuna entre avanços de pesquisa e realidade operacional."
+    },
+    "elena-vasquez": {
+      "role": "CTO",
+      "bio": "PhD em Aprendizado Estatístico pelo MIT. Liderou a equipe de plataforma de machine learning na Stripe antes de ingressar na Mark Systems. Especialista em construir pipelines de inferência escaláveis que operam sob restrições rigorosas de latência."
+    },
+    "james-okafor": {
+      "role": "Head de Engenharia de ML",
+      "bio": "Anteriormente no Tesla Autopilot e Waymo. Especialista em visão computacional, implantação em edge e otimização de modelos. Lidera nossa equipe de engenharia na entrega de sistemas de IA em nível de produção."
+    },
+    "sarah-kim": {
+      "role": "Head de Estratégia",
+      "bio": "Ex-gerente de engajamento na McKinsey especializada em transformação de IA. Traduz capacidades técnicas complexas em resultados de negócios mensuráveis para nossos clientes."
+    }
+  },
+  "values": {
+    "0": {
+      "title": "Precisão em Vez de Hype",
+      "description": "Entregamos resultados mensuráveis, não demos. Cada sistema que construímos é benchmarked em relação a KPIs claramente definidos antes da implantação."
+    },
+    "1": {
+      "title": "Pensamento Sistêmico",
+      "description": "Cada componente é projetado para o todo. Desenvolvemos soluções que se integram perfeitamente à infraestrutura existente, não protótipos isolados."
+    },
+    "2": {
+      "title": "Inteligência Transparente",
+      "description": "Sem caixas pretas. Nossos sistemas de IA fornecem saídas explicáveis com pontuações de confiança, trilhas de auditoria e cadeias de raciocínio claras."
+    },
+    "3": {
+      "title": "Iteração Incansável",
+      "description": "Os modelos em produção melhoram continuamente. Construímos monitoramento, loops de feedback e pipelines de retreinamento em cada implantação desde o primeiro dia."
+    }
+  },
+  "contact": {
+    "label": "Entre em Contato",
+    "title": "Inicie uma Conversa",
+    "description": "Conte-nos sobre seus desafios de dados e projetaremos o sistema inteligente para resolvê-los.",
+    "emailLabel": "E-mail",
+    "emailAddress": "hello@marksystems.ai",
+    "locationLabel": "Localização",
+    "locationCity": "San Francisco, CA",
+    "locationDetail": "Equipe remota"
+  },
+  "contactForm": {
+    "name": "Nome",
+    "namePlaceholder": "João Silva",
+    "email": "E-mail",
+    "emailPlaceholder": "joao@empresa.com",
+    "company": "Empresa",
+    "companyPlaceholder": "Empresa Ltda",
+    "serviceInterest": "Interesse em Serviço",
+    "selectService": "Selecione um serviço",
+    "message": "Mensagem",
+    "messagePlaceholder": "Conte-nos sobre seu projeto...",
+    "submit": "Enviar Mensagem",
+    "successTitle": "Mensagem Enviada",
+    "successMessage": "Obrigado por entrar em contato. Retornaremos em até 24 horas.",
+    "required": "*"
+  },
+  "validation": {
+    "nameRequired": "Nome é obrigatório",
+    "nameMinLength": "Nome deve ter pelo menos 2 caracteres",
+    "emailRequired": "E-mail é obrigatório",
+    "emailInvalid": "Por favor, insira um endereço de e-mail válido",
+    "messageRequired": "Mensagem é obrigatória",
+    "messageMinLength": "Mensagem deve ter pelo menos 10 caracteres"
+  },
+  "cta": {
+    "label": "Pronto para Começar?",
+    "title": "Vamos Desenvolver Sua Vantagem",
+    "description": "Conte-nos sobre seus desafios de dados. Projetaremos o sistema inteligente que os transformará em alavancagem competitiva.",
+    "button": "Iniciar uma Conversa"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Página Não Encontrada",
+    "description": "A página que você está procurando não existe ou foi movida.",
+    "back": "Voltar ao Início"
+  },
+  "footer": {
+    "description": "Desenvolvendo sistemas inteligentes que transformam dados brutos em ação decisiva.",
+    "navLabel": "Navegação",
+    "connectLabel": "Conecte-se",
+    "copyright": "© {year} Mark Systems. Todos os direitos reservados."
+  },
+  "metadata": {
+    "home": {
+      "title": "Mark Systems | Automação de IA e Engenharia de Decisão",
+      "description": "Desenvolvemos sistemas inteligentes que transformam dados brutos em ação decisiva. Soluções personalizadas de IA para análise preditiva, automação de fluxos de trabalho e inteligência de decisão."
+    },
+    "services": {
+      "title": "Serviços",
+      "description": "Serviços de automação de IA e engenharia de decisão — de análise preditiva a visão computacional e consultoria estratégica."
+    },
+    "projects": {
+      "title": "Projetos",
+      "description": "Estudos de caso apresentando implantações de IA no mundo real com impacto quantificado nos setores de energia, aeroespacial, jurídico e cadeia de suprimentos."
+    },
+    "about": {
+      "title": "Sobre",
+      "description": "Conheça a equipe por trás da Mark Systems — engenheiros, pesquisadores e estrategistas construindo a próxima geração de infraestrutura de decisão."
+    },
+    "contact": {
+      "title": "Contato",
+      "description": "Entre em contato com a Mark Systems para discutir suas necessidades de automação de IA e engenharia de decisão."
+    }
+  }
+}
