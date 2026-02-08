@@ -1,120 +1,168 @@
 {
   "common": {
     "siteName": "Mark Systems",
-    "tagline": "AI 자동화 & 의사결정 엔지니어링",
-    "siteDescription": "원시 데이터를 결정적 행동으로 전환하는 지능형 시스템을 설계합니다. 예측 분석, 워크플로우 자동화, 의사결정 인텔리전스를 위한 맞춤형 AI 솔루션을 제공합니다."
+    "tagline": "AI 자동화 및 지능형 시스템",
+    "siteDescription": "측정 가능한 결과를 요구하는 비즈니스를 위한 프로덕션급 AI 시스템, 워크플로우 자동화 및 지능형 플랫폼을 설계합니다."
   },
   "nav": {
     "home": "홈",
     "services": "서비스",
     "projects": "프로젝트",
-    "about": "회사소개",
-    "contact": "문의하기"
+    "about": "소개",
+    "contact": "연락처"
   },
   "hero": {
-    "badge": "AI 자동화 & 의사결정 엔지니어링",
-    "titleStart": "지능을 설계합니다.",
-    "titleAccent": "더 빠르게 결정합니다.",
-    "description": "원시 데이터를 결정적 행동으로 전환하는 프로덕션급 AI 시스템을 구축합니다. 측정 가능한 성과를 위해 설계된 예측 분석, 워크플로우 자동화, 의사결정 인텔리전스 플랫폼을 제공합니다.",
+    "badge": "AI 자동화 및 지능형 시스템",
+    "titleStart": "더 스마트하게 자동화하고,",
+    "titleAccent": "더 빠르게 구축하세요.",
+    "description": "AI 기반 자동화 시스템, 프로덕션급 워크플로우, 지능형 플랫폼을 설계하고 배포합니다 — 멀티 에이전트 오케스트레이션부터 산업 자동화까지. 퀘벡에서 개발되어 전 세계에 배포됩니다.",
     "ctaPrimary": "프로젝트 시작하기",
-    "ctaSecondary": "서비스 둘러보기"
+    "ctaSecondary": "서비스 살펴보기"
   },
   "servicesSection": {
-    "label": "우리가 하는 일",
-    "title": "성능을 위해 설계된 지능형 시스템",
-    "description": "예측 분석부터 의사결정 인텔리전스까지 — 프로덕션 규모에서 작동하는 AI를 구축합니다.",
+    "label": "우리가 만드는 것",
+    "title": "자동화에서 지능까지",
+    "description": "실제 배포, 실제 코드, 측정 가능한 결과로 뒷받침되는 6가지 핵심 역량.",
     "viewAll": "모든 서비스 보기"
   },
   "servicesPage": {
-    "label": "서비스",
-    "title": "성과를 위해 설계된 AI 솔루션",
-    "description": "특정 운영 과제를 측정 가능한 경쟁 우위로 전환하도록 설계된 6가지 핵심 역량을 제공합니다."
+    "label": "우리의 서비스",
+    "title": "성과를 제공하는 엔지니어링",
+    "description": "모든 서비스는 프로덕션 경험을 기반으로 합니다 — 195개 이상의 워크플로우 배포, 42,000줄 이상의 AI 인프라, 10년 이상의 산업 엔지니어링 경험."
   },
   "services": {
-    "predictive-analytics": {
-      "title": "예측 분석 엔진",
-      "shortDescription": "운영 데이터셋 전반의 트렌드, 수요 곡선, 장애 지점을 예측하는 맞춤형 ML 모델입니다.",
-      "longDescription": "과거 패턴을 실행 가능한 통찰력으로 전환합니다. 우리의 예측 엔진은 다차원 시계열 데이터를 수집하고, 명확하지 않은 상관관계를 식별하며, 의사결정 워크플로우에 직접 통합되는 확률 가중 예측을 제공합니다.",
-      "capabilities": ["시계열 예측", "이상 징후 감지", "수요 예측", "장애 확률 모델링", "실시간 모델 재학습"]
+    "ai-workflow-automation": {
+      "title": "AI 워크플로우 자동화",
+      "shortDescription": "LLM, RAG 시스템 및 비즈니스 도구를 통합하는 프로덕션 n8n 파이프라인 — 14개 도메인에 걸쳐 195개 이상의 워크플로우.",
+      "longDescription": "AI 모델(GPT-4, Claude, Whisper, Ollama)을 비즈니스 스택(CRM, 이메일, 문서, 음성, IoT)과 연결하는 n8n 기반 엔드투엔드 자동화 파이프라인을 구축합니다. 각 워크플로우에는 오류 처리, 감사 추적, 신뢰 임계값이 충족되지 않을 때 사람의 개입을 위한 게이트가 포함됩니다.",
+      "capabilities": [
+        "n8n 파이프라인 설계",
+        "RAG 및 AI 에이전트 통합",
+        "음성 파이프라인 (STT/TTS)",
+        "CRM 및 이메일 자동화",
+        "문서 OCR 및 분류"
+      ]
     },
-    "workflow-automation": {
-      "title": "워크플로우 자동화 시스템",
-      "shortDescription": "수동 병목 현상을 제거하고 무인 운영을 제공하는 엔드투엔드 프로세스 자동화 파이프라인입니다.",
-      "longDescription": "데이터 수집부터 의사결정 출력까지, 우리의 자동화 시스템은 오류 처리, 감사 추적, 신뢰도 임계값이 충족되지 않을 때의 인간 개입 에스컬레이션이 내장된 복잡한 다단계 프로세스를 조율합니다.",
-      "capabilities": ["파이프라인 오케스트레이션", "이벤트 기반 트리거", "오류 복구 프로토콜", "감사 추적 생성", "인간 개입 게이트"]
+    "ai-systems-architecture": {
+      "title": "AI 시스템 아키텍처",
+      "shortDescription": "수학적으로 증명된 수렴성과 엔터프라이즈급 인프라를 갖춘 멀티 에이전트 오케스트레이션 플랫폼.",
+      "longDescription": "우리의 플래그십 AINOVA OS는 35개 이상의 전문 에이전트, 자체 최적화 수렴 엔진(SOIC), Tree-of-Thoughts 의사 결정 탐색을 갖춘 프로덕션 AI 운영 체제입니다. FastAPI, PostgreSQL, Redis, Kubernetes 기반으로 구축되어 신뢰하고 확장할 수 있는 AI가 필요한 팀을 위해 설계되었습니다.",
+      "capabilities": [
+        "멀티 에이전트 오케스트레이션",
+        "SOIC 수렴 엔진",
+        "Tree-of-Thoughts 최적화",
+        "Kubernetes 배포",
+        "MCP 프로토콜 브리지"
+      ]
     },
-    "decision-intelligence": {
-      "title": "의사결정 인텔리전스 플랫폼",
-      "shortDescription": "다중 소스 데이터를 신뢰도 점수가 포함된 순위화된 의사결정으로 종합하는 구조화된 프레임워크입니다.",
-      "longDescription": "우리의 의사결정 플랫폼은 분산된 데이터 소스의 신호를 집계하고, 가중 점수 모델을 적용하며, 몬테카를로 시뮬레이션을 실행하고, 투명한 추론 체인과 함께 순위화된 옵션을 제시합니다. 이를 통해 이해관계자들은 추측이 아닌 확신을 가지고 행동할 수 있습니다.",
-      "capabilities": ["다기준 분석", "몬테카를로 시뮬레이션", "시나리오 모델링", "신뢰도 점수", "설명 가능한 권장사항"]
+    "fullstack-development": {
+      "title": "풀스택 웹 개발",
+      "shortDescription": "현대적인 웹 애플리케이션 및 몰입형 사이트 — React, Next.js, Three.js — 금융 플랫폼부터 3D 포트폴리오까지.",
+      "longDescription": "React 19, Next.js 14, TypeScript, Tailwind CSS 등 현대적인 스택을 사용하여 프로덕션 웹사이트 및 웹 앱을 제공합니다. AI 챗봇 및 캐나다 규정 준수 계산기를 갖춘 재무 자문 플랫폼부터 WebGL을 사용한 몰입형 3D 포트폴리오까지 — 요구 사항에 맞게 구축합니다.",
+      "capabilities": [
+        "React 및 Next.js 애플리케이션",
+        "Three.js 및 WebGL 경험",
+        "TypeScript 및 Tailwind CSS",
+        "AI 챗봇 통합",
+        "금융 계산기 개발"
+      ]
     },
-    "nlp-pipelines": {
-      "title": "자연어 처리",
-      "shortDescription": "문서 분석, 감성 추출, 자동 보고서 생성을 위한 맞춤형 NLP 파이프라인입니다.",
-      "longDescription": "규제 문서, 계약서, 고객 피드백, 연구 논문 등 비정형 텍스트에서 대규모로 구조화된 인텔리전스를 구문 분석, 분류, 추출하는 프로덕션급 NLP 시스템을 구축합니다.",
-      "capabilities": ["문서 분류", "엔티티 추출", "감성 분석", "자동 요약", "다국어 지원"]
+    "industrial-automation": {
+      "title": "산업 자동화 및 전기 엔지니어링",
+      "shortDescription": "PLC/CNC 시스템, 산업 생산 라인 및 전력망 보호를 설계하고 시운전한 10년 이상의 경험.",
+      "longDescription": "중공업 분야의 선임 전기 엔지니어링 전문 지식: PLC 및 CNC 프로그래밍 및 시운전, 복잡한 생산 라인 설계(방위 산업 고객 포함), HV/MV/LV 전력망 보호 및 조정 시스템 엔지니어링. 모든 프로젝트에 현장에서 검증된 엄격함을 적용합니다.",
+      "capabilities": [
+        "PLC 및 CNC 프로그래밍",
+        "생산 라인 설계",
+        "전력망 보호",
+        "전기 시스템 조정",
+        "산업 시운전"
+      ]
     },
-    "computer-vision": {
-      "title": "컴퓨터 비전 & 검사",
-      "shortDescription": "엣지 또는 클라우드에서 작동하는 자동 시각 검사 시스템, 결함 감지, 이미지 분류입니다.",
-      "longDescription": "우리의 비전 시스템은 품질 검사를 위한 서브픽셀 정밀도를 달성하며, 엣지 디바이스 또는 GPU 가속 클라우드 인프라에 배포하도록 최적화된 컨볼루션 및 트랜스포머 아키텍처를 활용합니다.",
-      "capabilities": ["결함 감지", "객체 분류", "치수 측정", "엣지 배포", "실시간 비디오 분석"]
+    "iot-smart-home": {
+      "title": "IoT 및 스마트 홈 인텔리전스",
+      "shortDescription": "AI 조정 홈 자동화, 로컬 카메라 스트리밍 및 엣지 컴퓨팅 — 프라이버시 우선, 클라우드 독립적.",
+      "longDescription": "로컬로 작동하는 지능형 IoT 시스템을 구축합니다: AI 조정 모션 감지, 시간 및 존재 기반 컨텍스트 자동화, 음성 제어 장치, 클라우드 의존성을 우회하는 리버스 엔지니어링 카메라 스트리밍. 모든 데이터는 네트워크에 보관됩니다.",
+      "capabilities": [
+        "AI 조정 자동화",
+        "로컬 RTSP 스트리밍",
+        "음성 제어 통합",
+        "엣지 컴퓨팅 배포",
+        "프라이버시 우선 아키텍처"
+      ]
     },
-    "ai-strategy": {
-      "title": "AI 전략 & 통합",
-      "shortDescription": "AI 도입 로드맵, 모델 선택, 엔터프라이즈 시스템 통합을 위한 기술 자문입니다.",
-      "longDescription": "준비 상태 감사 및 인프라 계획부터 벤더 평가, 모델 선택, 프로덕션 배포 전략까지, 명확한 기술 평가를 통해 조직이 AI 환경을 탐색할 수 있도록 지원합니다.",
-      "capabilities": ["준비 상태 평가", "인프라 계획", "모델 평가", "통합 아키텍처", "ROI 모델링"]
+    "custom-ai-tools": {
+      "title": "맞춤형 AI 도구 및 통합",
+      "shortDescription": "벤더 중립적 LLM 툴킷, 로컬 우선 코드 어시스턴트 및 멀티 프로바이더 라우팅 — 종속성 제로로 구축.",
+      "longDescription": "특정 문제를 해결하는 맞춤형 AI 도구를 구축합니다: 벤더 종속성이 없는 6개 이상의 프로바이더를 지원하는 멀티 LLM 추상화 레이어, 무료로 오픈소스 모델을 사용하는 로컬 코드 어시스턴트, 비용, 지연 시간 및 기능을 기반으로 OpenAI, Anthropic, Groq, Ollama 간에 요청을 분산하는 지능형 라우터.",
+      "capabilities": [
+        "멀티 LLM 추상화 레이어",
+        "로컬 모델 배포",
+        "지능형 요청 라우팅",
+        "MCP 서버 개발",
+        "Voice-to-LLM 파이프라인"
+      ]
     }
   },
   "projectsSection": {
-    "label": "사례 연구",
-    "title": "숫자로 말하는 성과",
-    "description": "산업 전반에 걸친 정량화된 성과를 보이는 실제 AI 배포 사례입니다.",
+    "label": "케이스 스터디",
+    "title": "구축, 배포, 측정됨",
+    "description": "실제 메트릭을 가진 실제 프로젝트 — 데모나 프로토타입이 아닙니다.",
     "viewAll": "모든 프로젝트 보기"
   },
   "projectsPage": {
-    "label": "사례 연구",
-    "title": "배포된 인텔리전스, 측정된 성과",
-    "description": "모든 프로젝트는 데이터 과제로 시작하여 정량화된 결과를 제공하는 프로덕션 시스템으로 끝납니다."
+    "label": "케이스 스터디",
+    "title": "프로덕션 시스템, 검증된 결과",
+    "description": "아래의 모든 프로젝트는 프로덕션에서 실행됩니다. 코드는 존재하고, 메트릭은 실제이며, 시스템은 라이브입니다."
   },
   "projects": {
-    "meridian-forecasting": {
-      "title": "Meridian Forecasting Suite",
-      "industry": "에너지 & 유틸리티",
-      "challenge": "그리드 부하 예측이 실시간 수요 변화보다 72시간 지연되어 연간 230만 달러의 밸런싱 비용이 발생했습니다.",
-      "solution": "스트리밍 수집 레이어를 통해 기존 SCADA 인프라와 통합된 15분 간격으로 14개 데이터 스트림을 처리하는 LSTM 앙상블 모델을 배포했습니다.",
-      "result": "15분 간격으로 94.7%의 예측 정확도를 달성했습니다. 첫 운영 분기에 에너지 밸런싱 비용을 61% 절감했습니다.",
-      "metricValue": "94.7%",
-      "metricLabel": "예측 정확도"
+    "ainova-os": {
+      "title": "AINOVA OS",
+      "industry": "AI 인프라",
+      "challenge": "기존 AI 에이전트 프레임워크는 프로토타이핑 도구입니다 — 수렴 보장, 엔터프라이즈 보안, 복잡한 멀티 에이전트 워크플로우를 위한 프로덕션급 오케스트레이션이 부족합니다.",
+      "solution": "완전한 AI 운영 체제 설계: 35개 이상의 전문 에이전트, 수학적 증명을 갖춘 자체 최적화 SOIC 수렴 엔진, Tree-of-Thoughts 의사 결정 탐색, BMAD 방법론 통합, Claude Code용 MCP 브리지 — Prometheus 모니터링과 함께 Kubernetes에 배포.",
+      "result": "42,000줄 이상의 프로덕션 Python. 품질 수렴 μ = 9.94/10 (Gold Master 인증). 584개의 테스트 함수. Docker 및 Kubernetes 매니페스트로 완전히 컨테이너화.",
+      "metricValue": "μ 9.94",
+      "metricLabel": "품질 점수",
+      "clientSize": "내부 R&D 프로젝트",
+      "timeline": "8개월 개발",
+      "methodology": "BMAD 아키텍처 + 반복 SOIC 수렴"
     },
-    "sentinel-quality": {
-      "title": "Sentinel Quality Gate",
-      "industry": "항공우주 제조",
-      "challenge": "수동 육안 검사는 터빈 블레이드 코팅의 표면 미세 결함 중 82%만 포착했으며, 교대당 340건의 오탐지가 발생했습니다.",
-      "solution": "생산 라인에 통합된 NVIDIA Jetson 모듈에서 엣지 추론을 통해 45,000개의 주석이 달린 블레이드 이미지로 학습된 컨볼루션 신경망을 배포했습니다.",
-      "result": "99.2%의 결함 감지율과 89%의 오탐지 감소를 달성했습니다. 검사 처리량이 4배 증가했습니다.",
-      "metricValue": "99.2%",
-      "metricLabel": "결함 감지율"
+    "conseiller-placement": {
+      "title": "재무 자문 플랫폼",
+      "industry": "금융 서비스",
+      "challenge": "iA Financial Group의 공인 재무 자문사는 캐나다 금융 규정(RRSP, TFSA, CMHC)을 준수하는 대화형 도구를 갖춘 전문 웹 존재가 필요했습니다.",
+      "solution": "듀얼 스택 플랫폼 구축: Node.js/Express 백엔드(Helmet, rate limiting, input validation)가 있는 프로덕션 웹사이트와 Jest 테스트 커버리지를 갖춘 4개의 캐나다 규정 준수 금융 계산기. 규칙 기반 응답과 LLM 인텔리전스를 결합한 AI 기반 하이브리드 챗봇 추가.",
+      "result": "보안 감사 점수 7.8/10의 완전 작동 플랫폼. 프로덕션의 실제 고객. React 19 + TypeScript로 구축된 자산 추적 대시보드.",
+      "metricValue": "7.8/10",
+      "metricLabel": "보안 점수",
+      "clientSize": "인증 어드바이저 — iA Financial Group",
+      "timeline": "3개월 개발",
+      "methodology": "풀스택 애자일 + 지속적 보안 감사"
     },
-    "lexicon-intelligence": {
-      "title": "Lexicon Intelligence Hub",
-      "industry": "법률 & 규정준수",
-      "challenge": "규제 분석가들이 12,000개 이상의 문서를 규정준수 관련성 분류를 위해 검토하는 데 월 400시간 이상을 소비했습니다.",
-      "solution": "미세 조정된 분류 모델, 능동 학습 피드백 루프, 우선순위 순위가 지정된 검토 대시보드를 갖춘 트랜스포머 기반 NLP 파이프라인을 구축했습니다.",
-      "result": "자동화된 분류로 수동 검토를 78% 줄였으며, 96.3%의 분류 정확도로 90초 이내에 중요 항목을 플래그했습니다.",
-      "metricValue": "-78%",
-      "metricLabel": "수동 검토"
+    "n8n-ecosystem": {
+      "title": "엔터프라이즈 n8n 에코시스템",
+      "industry": "비즈니스 자동화",
+      "challenge": "통합된 자동화 레이어 없이 14개 이상의 기능 도메인에 걸쳐 서로 다른 비즈니스 운영(CRM, 재무, 문서, 커뮤니케이션, IoT) 관리.",
+      "solution": "n8n에서 195개의 프로덕션 워크플로우 설계 및 배포: 52개 AI 기반(RAG, 에이전트, 분류기), 24개 커뮤니케이션 자동화, 18개 문서 처리 파이프라인, 17개 재무 워크플로우, 16개 음성 파이프라인(Whisper + Piper), 7개 IoT 오케스트레이션. SOIC 감사에서 9.90/10 점수를 받은 거버넌스 프레임워크.",
+      "result": "프로덕션의 195개 워크플로우. 57% AI 기반. 12개의 맞춤형 커뮤니티 노드 설치. 워크플로우당 35개 이상의 메타데이터 필드를 갖춘 완전한 거버넌스.",
+      "metricValue": "195",
+      "metricLabel": "워크플로우",
+      "clientSize": "멀티 도메인 인프라(14개 부서)",
+      "timeline": "12개월 이상 지속 개발",
+      "methodology": "반복 배포 + SOIC 거버넌스(9.90/10)"
     },
-    "atlas-decision": {
-      "title": "Atlas Decision Matrix",
-      "industry": "공급망 & 물류",
-      "challenge": "다중 공급업체 조달 결정이 15개 이상의 변수 트레이드오프가 있는 스프레드시트에 의존했으며, 소싱 주기당 평균 3주가 소요되었습니다.",
-      "solution": "가중 다기준 점수, 위험 평가를 위한 몬테카를로 시뮬레이션, 실시간 제약 최적화를 갖춘 의사결정 인텔리전스 플랫폼을 설계했습니다.",
-      "result": "소싱 주기 시간이 3주에서 4일로 단축되었습니다. 의사결정 신뢰도 점수로 조달 성과가 34% 개선되었습니다.",
-      "metricValue": "4일",
-      "metricLabel": "주기 시간"
+    "stark-portfolio": {
+      "title": "몰입형 3D 포트폴리오",
+      "industry": "웹 및 크리에이티브",
+      "challenge": "표준 포트폴리오 사이트는 소음 속에 묻힙니다. 고객은 스크린샷뿐만 아니라 경험 자체를 통해 기술적 숙련도를 보여주는 사이트가 필요했습니다.",
+      "solution": "React 19, Three.js(WebGL 셰이더를 사용한 3D Arc Reactor), Framer Motion 애니메이션, Howler.js 절차적 오디오(6개의 대화형 사운드), 전체 UI를 실시간으로 변환하는 완전한 'Overclock Mode'(색상, 속도, 사운드, 메시징)를 갖춘 시네마틱 포트폴리오 구축.",
+      "result": "Netlify에서 라이브. 373KB gzipped JS 번들. 10개의 완전한 섹션. 모드 변환을 갖춘 실시간 3D 렌더링. CI/CD에서 7초 빌드 시간.",
+      "metricValue": "LIVE",
+      "metricLabel": "프로덕션",
+      "clientSize": "개인 고객 — 기술 전문가",
+      "timeline": "6주 개발",
+      "methodology": "시네마틱 디자인 + WebGL 성능 테스트"
     }
   },
   "projectCard": {
@@ -123,89 +171,77 @@
   },
   "about": {
     "missionLabel": "우리의 미션",
-    "missionTitle": "AI 시대를 위한 의사결정 인프라",
-    "mission": "원시 데이터를 결정적 행동으로 전환하는 지능형 시스템을 설계합니다. Mark Systems에서는 단순히 AI를 구축하는 것이 아니라, 조직에 불공정한 우위를 제공하는 의사결정 인프라를 설계합니다.",
-    "teamLabel": "팀",
-    "teamTitle": "엔지니어가, 엔지니어를 위해 구축합니다",
-    "teamDescription": "머신러닝, 시스템 엔지니어링, 전략 자문 분야의 깊은 전문성을 보유하고 있습니다.",
+    "missionTitle": "실제로 작동하는 자동화",
+    "mission": "Mark Systems는 복잡한 AI 역량을 측정 가능한 결과를 제공하는 프로덕션 시스템으로 전환하기 위해 존재합니다. 우리는 데모를 판매하지 않습니다 — 24시간 연중무휴로 실행되고 숫자로 가치를 증명하는 워크플로우, 에이전트 및 플랫폼을 제공합니다. 10년 이상의 현장 경험을 가진 엔지니어가 구축하여 모든 솔루션은 현실 세계를 위해 설계됩니다.",
+    "teamLabel": "창립자",
+    "teamTitle": "엔지니어링 우선, 항상",
+    "teamDescription": "한 명의 엔지니어. 현장에서 10년 이상. 산업 생산 라인에서 AI 운영 체제까지.",
     "valuesLabel": "우리의 원칙",
     "valuesTitle": "우리의 운영 방식",
-    "valuesDescription": "모든 프로젝트를 정의하는 4가지 타협 불가능한 원칙입니다."
+    "valuesDescription": "모든 참여를 정의하는 4가지 타협할 수 없는 원칙."
   },
   "team": {
-    "marcus-chen": {
-      "role": "CEO & 창립자",
-      "bio": "DeepMind의 전 수석 엔지니어입니다. 에너지, 국방, 금융 분야에서 프로덕션 ML 시스템을 구축한 15년 경력을 보유하고 있습니다. 연구 혁신과 운영 현실 사이의 격차를 메우기 위해 Mark Systems를 설립했습니다."
-    },
-    "elena-vasquez": {
-      "role": "CTO",
-      "bio": "MIT 통계 학습 박사입니다. Mark Systems에 합류하기 전 Stripe에서 머신러닝 플랫폼 팀을 이끌었습니다. 엄격한 지연 시간 제약 하에서 작동하는 확장 가능한 추론 파이프라인 구축을 전문으로 합니다."
-    },
-    "james-okafor": {
-      "role": "ML 엔지니어링 책임자",
-      "bio": "Tesla Autopilot과 Waymo에서 근무했습니다. 컴퓨터 비전, 엣지 배포, 모델 최적화 전문가입니다. 프로덕션급 AI 시스템 제공을 위한 엔지니어링 팀을 이끌고 있습니다."
-    },
-    "sarah-kim": {
-      "role": "전략 책임자",
-      "bio": "AI 전환을 전문으로 하는 전 McKinsey 프로젝트 매니저입니다. 복잡한 기술 역량을 고객을 위한 측정 가능한 비즈니스 성과로 전환합니다."
+    "founder": {
+      "role": "창립자 및 수석 엔지니어",
+      "bio": "산업 자동화(PLC/CNC, 방위 산업 생산 라인, HV 전력망 보호) 분야에서 10년 이상의 경력을 가진 선임 전기 엔지니어. 현재 AI 자동화 시스템 구축 중 — 42,000줄의 AI 운영 체제부터 195개의 프로덕션 n8n 워크플로우까지. 캐나다 퀘벡 기반."
     }
   },
   "values": {
     "0": {
-      "title": "과대광고보다 정밀성",
-      "description": "데모가 아닌 측정 가능한 결과를 제공합니다. 우리가 구축하는 모든 시스템은 배포 전에 명확하게 정의된 KPI를 기준으로 벤치마킹됩니다."
+      "title": "과대 광고보다 정밀함",
+      "description": "우리는 약속이 아니라 측정 가능한 결과를 제공합니다. 모든 시스템은 제공 전에 실제 메트릭으로 벤치마크됩니다 — 유행어도, 마법도 없이, 오직 엔지니어링만."
     },
     "1": {
       "title": "시스템 사고",
-      "description": "모든 구성 요소는 전체를 위해 설계됩니다. 고립된 프로토타입이 아닌, 기존 인프라에 깔끔하게 통합되는 솔루션을 설계합니다."
+      "description": "모든 구성 요소는 전체를 위해 설계됩니다. 우리는 기존 인프라에 통합되는 솔루션을 구축합니다 — 현실과 접촉하면 깨지는 고립된 프로토타입이 아닙니다."
     },
     "2": {
-      "title": "투명한 인텔리전스",
-      "description": "블랙박스는 없습니다. 우리의 AI 시스템은 신뢰도 점수, 감사 추적, 명확한 추론 체인을 갖춘 설명 가능한 출력을 제공합니다."
+      "title": "검증된 엔지니어링",
+      "description": "10년 이상의 산업 현장 경험은 우리가 행복한 경로뿐만 아니라 실패 모드를 위해 구축한다는 것을 의미합니다. AI 시스템에 적용되는 PLC 엄격함."
     },
     "3": {
-      "title": "끊임없는 반복",
-      "description": "프로덕션 모델은 지속적으로 개선됩니다. 첫날부터 모든 배포에 모니터링, 피드백 루프, 재학습 파이프라인을 구축합니다."
+      "title": "벤더 종속성 제로",
+      "description": "멀티 LLM, 멀티 클라우드, 오픈소스 우선. 귀하의 시스템은 귀하의 조건으로 실행됩니다 — 우리는 종속성이 아닌 추상화 레이어를 구축합니다."
     }
   },
   "contact": {
-    "label": "문의하기",
-    "title": "대화를 시작하세요",
-    "description": "귀하의 데이터 과제를 말씀해 주시면, 이를 해결할 지능형 시스템을 설계해 드립니다.",
+    "label": "연락하기",
+    "title": "대화 시작하기",
+    "description": "자동화 과제에 대해 알려주시면 이를 해결하기 위한 시스템을 설계하겠습니다.",
     "emailLabel": "이메일",
-    "emailAddress": "hello@marksystems.ai",
+    "emailAddress": "contact@marksystems.ai",
     "locationLabel": "위치",
-    "locationCity": "샌프란시스코, CA",
-    "locationDetail": "원격 우선 팀"
+    "locationCity": "퀘벡, 캐나다",
+    "locationDetail": "원격 우선 — 전 세계 고객 서비스"
   },
   "contactForm": {
     "name": "이름",
-    "namePlaceholder": "김철수",
+    "namePlaceholder": "귀하의 이름",
     "email": "이메일",
-    "emailPlaceholder": "chulsoo@hoesa.co.kr",
-    "company": "회사명",
-    "companyPlaceholder": "주식회사 예시",
+    "emailPlaceholder": "you@company.com",
+    "company": "회사",
+    "companyPlaceholder": "귀하의 회사",
     "serviceInterest": "관심 서비스",
-    "selectService": "서비스를 선택하세요",
+    "selectService": "서비스 선택",
     "message": "메시지",
-    "messagePlaceholder": "프로젝트에 대해 말씀해 주세요...",
+    "messagePlaceholder": "프로젝트 또는 과제에 대해 알려주세요...",
     "submit": "메시지 보내기",
-    "successTitle": "메시지 전송 완료",
-    "successMessage": "문의해 주셔서 감사합니다. 24시간 내에 연락드리겠습니다.",
+    "successTitle": "메시지 전송됨",
+    "successMessage": "연락해 주셔서 감사합니다. 24시간 이내에 답변드리겠습니다.",
     "required": "*"
   },
   "validation": {
-    "nameRequired": "이름을 입력해 주세요",
+    "nameRequired": "이름은 필수입니다",
     "nameMinLength": "이름은 최소 2자 이상이어야 합니다",
-    "emailRequired": "이메일을 입력해 주세요",
-    "emailInvalid": "유효한 이메일 주소를 입력해 주세요",
-    "messageRequired": "메시지를 입력해 주세요",
+    "emailRequired": "이메일은 필수입니다",
+    "emailInvalid": "유효한 이메일 주소를 입력하세요",
+    "messageRequired": "메시지는 필수입니다",
     "messageMinLength": "메시지는 최소 10자 이상이어야 합니다"
   },
   "cta": {
-    "label": "시작할 준비가 되셨나요?",
-    "title": "귀사의 경쟁 우위를 설계하겠습니다",
-    "description": "귀하의 데이터 과제를 말씀해 주세요. 이를 경쟁력으로 전환할 지능형 시스템을 설계해 드립니다.",
+    "label": "자동화할 준비가 되셨나요?",
+    "title": "실제로 작동하는 무언가를 만들어 봅시다",
+    "description": "자동화 과제에 대해 알려주세요. 이를 경쟁 우위로 전환하는 지능형 시스템을 설계하겠습니다.",
     "button": "대화 시작하기"
   },
   "notFound": {
@@ -215,31 +251,61 @@
     "back": "홈으로 돌아가기"
   },
   "footer": {
-    "description": "원시 데이터를 결정적 행동으로 전환하는 지능형 시스템을 설계합니다.",
-    "navLabel": "내비게이션",
+    "description": "측정 가능한 결과를 제공하는 AI 자동화 시스템 엔지니어링.",
+    "navLabel": "네비게이션",
     "connectLabel": "연결",
     "copyright": "© {year} Mark Systems. All rights reserved."
   },
   "metadata": {
     "home": {
-      "title": "Mark Systems | AI 자동화 & 의사결정 엔지니어링",
-      "description": "원시 데이터를 결정적 행동으로 전환하는 지능형 시스템을 설계합니다. 예측 분석, 워크플로우 자동화, 의사결정 인텔리전스를 위한 맞춤형 AI 솔루션을 제공합니다."
+      "title": "Mark Systems | AI 자동화 및 지능형 시스템",
+      "description": "프로덕션급 AI 자동화, 워크플로우 엔지니어링 및 지능형 플랫폼. 195개 이상의 워크플로우 배포, 42,000줄 이상의 AI 인프라. 캐나다 퀘벡."
     },
     "services": {
       "title": "서비스",
-      "description": "예측 분석부터 컴퓨터 비전 및 전략 자문까지, AI 자동화 및 의사결정 엔지니어링 서비스를 제공합니다."
+      "description": "AI 워크플로우 자동화, 시스템 아키텍처, 풀스택 개발, 산업 자동화, IoT 인텔리전스 및 맞춤형 AI 도구."
     },
     "projects": {
       "title": "프로젝트",
-      "description": "에너지, 항공우주, 법률, 공급망 산업 전반에 걸쳐 정량화된 성과를 보이는 실제 AI 배포 사례 연구입니다."
+      "description": "실제 케이스 스터디: AINOVA OS (AI 운영 체제), 엔터프라이즈 n8n 에코시스템 (195개 워크플로우), 재무 자문 플랫폼 및 몰입형 3D 포트폴리오."
     },
     "about": {
-      "title": "회사소개",
-      "description": "차세대 의사결정 인프라를 구축하는 Mark Systems의 팀 — 엔지니어, 연구원, 전략가들을 만나보세요."
+      "title": "소개",
+      "description": "10년 이상의 엔지니어링 — 산업 생산 라인에서 AI 운영 체제까지. 캐나다 퀘벡 기반."
     },
     "contact": {
-      "title": "문의하기",
-      "description": "AI 자동화 및 의사결정 엔지니어링 요구사항에 대해 논의하려면 Mark Systems에 문의하세요."
+      "title": "연락처",
+      "description": "AI 자동화 및 지능형 시스템 요구 사항에 대해 논의하려면 Mark Systems에 연락하세요."
+    }
+  },
+  "faq": {
+    "label": "자주 묻는 질문",
+    "title": "FAQ — AI 자동화",
+    "items": {
+      "0": {
+        "question": "Mark Systems와 ECI Mark Systems의 관계는?",
+        "answer": "Mark Systems는 몬트리올에 본사를 둔 AI 엔지니어링 회사로, 워크플로우 자동화, 멀티 에이전트 오케스트레이션, 지능형 시스템을 전문으로 합니다. 주거 건설 ERP 소프트웨어 제공업체인 ECI Mark Systems와는 관련이 없습니다."
+      },
+      "1": {
+        "question": "어떤 종류의 AI 자동화를 제공하나요?",
+        "answer": "n8n을 통한 AI 워크플로우 자동화(195개 이상 배포), 멀티 에이전트 시스템 아키텍처(AINOVA OS), 풀스택 웹 개발, 산업 자동화(PLC/CNC), IoT 인텔리전스, 멀티 LLM 라우팅을 갖춘 맞춤형 AI 도구를 제공합니다."
+      },
+      "2": {
+        "question": "AI 자동화 프로젝트 비용은?",
+        "answer": "모든 프로젝트는 고유합니다. 비용은 복잡성, 워크플로우 수, 필요한 통합, 맞춤화 수준에 따라 달라집니다. 자동화 요구 사항에 대한 무료 평가를 위해 문의하세요."
+      },
+      "3": {
+        "question": "퀘벡 외부 고객과도 작업하나요?",
+        "answer": "네, 원격 우선으로 운영하며 전 세계 고객에게 서비스를 제공합니다. AI 자동화, 웹 개발, 산업 엔지니어링 전문 지식은 국제적으로 이용 가능합니다."
+      },
+      "4": {
+        "question": "AINOVA OS란?",
+        "answer": "AINOVA OS는 당사의 프로덕션 AI 운영 체제입니다: 35개 이상의 전문 에이전트, 자체 최적화 SOIC 수렴 엔진(μ=9.94/10), Tree-of-Thoughts 의사결정 탐색, Kubernetes 인프라. 42,000줄 이상의 프로덕션 Python 코드입니다."
+      },
+      "5": {
+        "question": "산업 자동화 전문성은?",
+        "answer": "창립자는 산업 전기 엔지니어링 분야에서 10년 이상의 경험을 보유하고 있습니다: PLC/CNC 프로그래밍, 생산 라인 설계(방위 산업 포함), HV/MV/LV 전력망 보호 시스템 엔지니어링."
+      }
     }
   }
 }

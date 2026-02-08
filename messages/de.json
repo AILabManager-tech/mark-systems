@@ -1,8 +1,8 @@
 {
   "common": {
     "siteName": "Mark Systems",
-    "tagline": "KI-Automatisierung & Entscheidungstechnik",
-    "siteDescription": "Wir entwickeln intelligente Systeme, die Rohdaten in entscheidende Handlungen verwandeln. Maßgeschneiderte KI-Lösungen für prädiktive Analysen, Workflow-Automatisierung und Entscheidungsintelligenz."
+    "tagline": "KI-Automatisierung & Intelligente Systeme",
+    "siteDescription": "Wir entwickeln produktionsreife KI-Systeme, Workflow-Automatisierung und intelligente Plattformen für Unternehmen, die messbare Ergebnisse fordern."
   },
   "nav": {
     "home": "Startseite",
@@ -12,109 +12,157 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "badge": "KI-Automatisierung & Entscheidungstechnik",
-    "titleStart": "Intelligenz entwickeln.",
-    "titleAccent": "Schneller entscheiden.",
-    "description": "Wir entwickeln produktionsreife KI-Systeme, die Rohdaten in entscheidende Handlungen verwandeln – prädiktive Analysen, Workflow-Automatisierung und Entscheidungsintelligenz-Plattformen für messbaren Erfolg.",
+    "badge": "KI-Automatisierung & Intelligente Systeme",
+    "titleStart": "Intelligenter automatisieren.",
+    "titleAccent": "Schneller entwickeln.",
+    "description": "Wir entwerfen und implementieren KI-gestützte Automatisierungssysteme, produktionsreife Workflows und intelligente Plattformen — von Multi-Agenten-Orchestrierung bis zur industriellen Automatisierung. Entwickelt in Quebec, weltweit eingesetzt.",
     "ctaPrimary": "Projekt starten",
-    "ctaSecondary": "Leistungen erkunden"
+    "ctaSecondary": "Unsere Services entdecken"
   },
   "servicesSection": {
-    "label": "Was wir tun",
-    "title": "Intelligente Systeme, entwickelt für Höchstleistung",
-    "description": "Von prädiktiven Analysen bis zur Entscheidungsintelligenz – wir entwickeln KI, die im Produktionsmaßstab operiert.",
-    "viewAll": "Alle Leistungen ansehen"
+    "label": "Was wir entwickeln",
+    "title": "Von Automatisierung zu Intelligenz",
+    "description": "Sechs Kernkompetenzen, gestützt durch reale Implementierungen, echten Code und messbare Ergebnisse.",
+    "viewAll": "Alle Leistungen anzeigen"
   },
   "servicesPage": {
     "label": "Unsere Leistungen",
-    "title": "KI-Lösungen für messbaren Erfolg",
-    "description": "Sechs Kernkompetenzen, jeweils darauf ausgelegt, eine spezifische operative Herausforderung in einen messbaren Wettbewerbsvorteil zu verwandeln."
+    "title": "Engineering mit Resultaten",
+    "description": "Jede Leistung basiert auf Produktionserfahrung — 195+ implementierte Workflows, 42.000+ Zeilen KI-Infrastruktur, 10+ Jahre industrielle Entwicklung."
   },
   "services": {
-    "predictive-analytics": {
-      "title": "Prädiktive Analyse-Engines",
-      "shortDescription": "Maßgeschneiderte ML-Modelle, die Trends, Nachfragekurven und Ausfallpunkte über operative Datensätze hinweg prognostizieren.",
-      "longDescription": "Verwandeln Sie historische Muster in umsetzbare Vorhersagen. Unsere prädiktiven Engines verarbeiten mehrdimensionale Zeitreihendaten, identifizieren nicht offensichtliche Korrelationen und liefern wahrscheinlichkeitsgewichtete Prognosen, die sich direkt in Ihre Entscheidungsprozesse integrieren.",
-      "capabilities": ["Zeitreihenprognose", "Anomalieerkennung", "Nachfrageprognose", "Ausfallwahrscheinlichkeitsmodellierung", "Echtzeit-Modell-Retraining"]
+    "ai-workflow-automation": {
+      "title": "KI-Workflow-Automatisierung",
+      "shortDescription": "Produktionsreife n8n-Pipelines mit LLM-Integration, RAG-Systemen und Business-Tools — 195+ Workflows in 14 Bereichen.",
+      "longDescription": "Wir entwickeln End-to-End-Automatisierungspipelines auf n8n, die KI-Modelle (GPT-4, Claude, Whisper, Ollama) mit Ihrem Business-Stack verbinden — CRM, E-Mail, Dokumente, Sprache, IoT. Jeder Workflow beinhaltet Fehlerbehandlung, Audit-Trails und Human-in-the-Loop-Kontrollen, wenn Konfidenzgrenzen nicht erreicht werden.",
+      "capabilities": [
+        "n8n Pipeline-Design",
+        "RAG & KI-Agenten-Integration",
+        "Sprach-Pipelines (STT/TTS)",
+        "CRM & E-Mail-Automatisierung",
+        "Dokument-OCR & Klassifizierung"
+      ]
     },
-    "workflow-automation": {
-      "title": "Workflow-Automatisierungssysteme",
-      "shortDescription": "End-to-End-Prozessautomatisierungs-Pipelines, die manuelle Engpässe eliminieren und Zero-Touch-Betrieb ermöglichen.",
-      "longDescription": "Von der Datenerfassung bis zur Entscheidungsausgabe orchestrieren unsere Automatisierungssysteme komplexe mehrstufige Prozesse mit integrierter Fehlerbehandlung, Audit-Trails und Human-in-the-Loop-Eskalation, wenn Konfidenzschwellen nicht erreicht werden.",
-      "capabilities": ["Pipeline-Orchestrierung", "Ereignisgesteuerte Trigger", "Fehlerwiederherstellungsprotokolle", "Audit-Trail-Generierung", "Human-in-the-Loop-Gates"]
+    "ai-systems-architecture": {
+      "title": "KI-Systemarchitektur",
+      "shortDescription": "Multi-Agenten-Orchestrierungsplattformen mit mathematisch bewiesener Konvergenz und Enterprise-Infrastruktur.",
+      "longDescription": "Unser Flagship AINOVA OS ist ein produktionsreifes KI-Betriebssystem mit 35+ spezialisierten Agenten, einer selbstoptimierenden Konvergenz-Engine (SOIC) und Tree-of-Thoughts-Entscheidungsexploration. Gebaut auf FastAPI, PostgreSQL, Redis und Kubernetes — konzipiert für Teams, die KI benötigen, der sie vertrauen und die skalierbar ist.",
+      "capabilities": [
+        "Multi-Agenten-Orchestrierung",
+        "SOIC Konvergenz-Engine",
+        "Tree-of-Thoughts-Optimierung",
+        "Kubernetes-Deployment",
+        "MCP-Protokoll-Bridges"
+      ]
     },
-    "decision-intelligence": {
-      "title": "Entscheidungsintelligenz-Plattformen",
-      "shortDescription": "Strukturierte Frameworks, die Multi-Source-Daten in priorisierte Entscheidungen mit Konfidenzwerten synthetisieren.",
-      "longDescription": "Unsere Entscheidungsplattformen aggregieren Signale aus disparaten Datenquellen, wenden gewichtete Bewertungsmodelle an, führen Monte-Carlo-Simulationen durch und präsentieren priorisierte Optionen mit transparenten Argumentationsketten – damit Entscheidungsträger mit Überzeugung handeln können, nicht nach Vermutungen.",
-      "capabilities": ["Multi-Kriterien-Analyse", "Monte-Carlo-Simulation", "Szenario-Modellierung", "Konfidenz-Bewertung", "Erklärbare Empfehlungen"]
+    "fullstack-development": {
+      "title": "Full-Stack-Webentwicklung",
+      "shortDescription": "Moderne Webanwendungen und immersive Websites — React, Next.js, Three.js — von Finanzplattformen bis zu 3D-Portfolios.",
+      "longDescription": "Wir liefern produktionsreife Websites und Web-Apps mit modernen Stacks: React 19, Next.js 14, TypeScript, Tailwind CSS. Von einer Finanzberater-Plattform mit KI-Chatbot und kanadisch-konformen Rechnern bis zu einem immersiven 3D-Portfolio mit WebGL — wir entwickeln, was das Briefing verlangt.",
+      "capabilities": [
+        "React & Next.js-Anwendungen",
+        "Three.js & WebGL-Erlebnisse",
+        "TypeScript & Tailwind CSS",
+        "KI-Chatbot-Integration",
+        "Entwicklung von Finanzrechnern"
+      ]
     },
-    "nlp-pipelines": {
-      "title": "Natural Language Processing",
-      "shortDescription": "Maßgeschneiderte NLP-Pipelines für Dokumentenanalyse, Sentiment-Extraktion und automatisierte Berichtserstellung.",
-      "longDescription": "Wir entwickeln produktionsreife NLP-Systeme, die strukturierte Intelligenz aus unstrukturiertem Text im großen Maßstab parsen, klassifizieren und extrahieren – von regulatorischen Dokumenten und Verträgen bis hin zu Kundenfeedback und Forschungsarbeiten.",
-      "capabilities": ["Dokumentenklassifizierung", "Entitätsextraktion", "Sentiment-Analyse", "Automatisierte Zusammenfassung", "Mehrsprachige Unterstützung"]
+    "industrial-automation": {
+      "title": "Industrielle Automatisierung & Elektrotechnik",
+      "shortDescription": "10+ Jahre Erfahrung im Design und der Inbetriebnahme von PLC/CNC-Systemen, industriellen Produktionslinien und Stromnetzschutz.",
+      "longDescription": "Leitende elektrotechnische Expertise in der Schwerindustrie: Programmierung und Inbetriebnahme von PLCs und CNCs, Design komplexer Produktionslinien (einschließlich Verteidigungs-Sektor), und Engineering von HV/MV/LV-Stromnetzschutz und Koordinationssystemen. Wir bringen praxiserprobte Präzision in jedes Projekt.",
+      "capabilities": [
+        "PLC & CNC-Programmierung",
+        "Produktionslinien-Design",
+        "Stromnetzschutz",
+        "Elektrische Systemkoordination",
+        "Industrielle Inbetriebnahme"
+      ]
     },
-    "computer-vision": {
-      "title": "Computer Vision & Inspektion",
-      "shortDescription": "Automatisierte visuelle Inspektionssysteme, Defekterkennung und Bildklassifizierung auf Edge oder Cloud.",
-      "longDescription": "Unsere Vision-Systeme erreichen Sub-Pixel-Präzision für Qualitätsinspektionen und nutzen konvolutionale und Transformer-Architekturen, die für den Einsatz auf Edge-Geräten oder GPU-beschleunigter Cloud-Infrastruktur optimiert sind.",
-      "capabilities": ["Defekterkennung", "Objektklassifizierung", "Dimensionsmessung", "Edge-Deployment", "Echtzeit-Videoanalyse"]
+    "iot-smart-home": {
+      "title": "IoT & Smart Home Intelligence",
+      "shortDescription": "KI-koordinierte Hausautomatisierung, lokales Kamera-Streaming und Edge Computing — Privacy-First, Cloud-unabhängig.",
+      "longDescription": "Wir entwickeln intelligente IoT-Systeme, die lokal operieren: KI-koordinierte Bewegungserkennung, kontextuelle Automatisierung basierend auf Zeit und Anwesenheit, sprachgesteuerte Geräte und Reverse-Engineered-Kamera-Streaming, das Cloud-Abhängigkeiten umgeht. Alle Daten bleiben in Ihrem Netzwerk.",
+      "capabilities": [
+        "KI-koordinierte Automatisierung",
+        "Lokales RTSP-Streaming",
+        "Sprachsteuerungs-Integration",
+        "Edge-Computing-Deployment",
+        "Privacy-First-Architektur"
+      ]
     },
-    "ai-strategy": {
-      "title": "KI-Strategie & Integration",
-      "shortDescription": "Technische Beratung für KI-Einführungs-Roadmaps, Modellauswahl und Enterprise-System-Integration.",
-      "longDescription": "Wir helfen Organisationen, sich in der KI-Landschaft mit nüchternen technischen Bewertungen zurechtzufinden – von Bereitschaftsaudits und Infrastrukturplanung bis hin zu Lieferantenbewertung, Modellauswahl und Produktionsbereitstellungsstrategien.",
-      "capabilities": ["Bereitschaftsbewertung", "Infrastrukturplanung", "Modellevaluierung", "Integrationsarchitektur", "ROI-Modellierung"]
+    "custom-ai-tools": {
+      "title": "Maßgeschneiderte KI-Tools & Integration",
+      "shortDescription": "Hersteller-agnostische LLM-Toolkits, Local-First-Code-Assistenten und Multi-Provider-Routing — entwickelt für null Vendor-Lock-in.",
+      "longDescription": "Wir entwickeln maßgeschneiderte KI-Tools, die spezifische Probleme lösen: eine Multi-LLM-Abstraktionsschicht mit Unterstützung für 6+ Anbieter ohne Vendor-Lock-in, einen lokalen Code-Assistenten mit Open-Source-Modellen zu null Kosten und einen intelligenten Router, der Anfragen über OpenAI, Anthropic, Groq und Ollama basierend auf Kosten, Latenz und Fähigkeiten verteilt.",
+      "capabilities": [
+        "Multi-LLM-Abstraktionsschichten",
+        "Lokales Modell-Deployment",
+        "Intelligentes Request-Routing",
+        "MCP-Server-Entwicklung",
+        "Voice-to-LLM-Pipelines"
+      ]
     }
   },
   "projectsSection": {
     "label": "Fallstudien",
-    "title": "Ergebnisse, die in Zahlen sprechen",
-    "description": "Real-World-KI-Implementierungen mit quantifiziertem Erfolg über verschiedene Branchen hinweg.",
-    "viewAll": "Alle Projekte ansehen"
+    "title": "Entwickelt, Implementiert, Gemessen",
+    "description": "Echte Projekte mit echten Metriken — keine Demos, keine Prototypen.",
+    "viewAll": "Alle Projekte anzeigen"
   },
   "projectsPage": {
     "label": "Fallstudien",
-    "title": "Eingesetzte Intelligenz, messbarer Erfolg",
-    "description": "Jedes Projekt beginnt mit einer Datenherausforderung und endet mit einem Produktionssystem, das quantifizierte Ergebnisse liefert."
+    "title": "Produktionssysteme, Bewiesene Ergebnisse",
+    "description": "Jedes unten aufgeführte Projekt läuft in Produktion. Der Code existiert, die Metriken sind real, die Systeme sind live."
   },
   "projects": {
-    "meridian-forecasting": {
-      "title": "Meridian Forecasting Suite",
-      "industry": "Energie & Versorgung",
-      "challenge": "Die Netzlastprognose lag 72 Stunden hinter Echtzeit-Nachfrageschwankungen zurück, was zu Ausgleichskosten von 2,3 Mio. USD pro Jahr führte.",
-      "solution": "Implementierung eines LSTM-Ensemble-Modells, das 14 Datenströme in 15-Minuten-Intervallen verarbeitet, integriert mit der bestehenden SCADA-Infrastruktur über eine Streaming-Ingestion-Schicht.",
-      "result": "Erreichte 94.7% Prognosegenauigkeit in 15-Minuten-Intervallen. Reduzierte Energieausgleichskosten um 61% im ersten Betriebsquartal.",
-      "metricValue": "94.7%",
-      "metricLabel": "Prognosegenauigkeit"
+    "ainova-os": {
+      "title": "AINOVA OS",
+      "industry": "KI-Infrastruktur",
+      "challenge": "Bestehende KI-Agenten-Frameworks sind Prototyping-Tools — ihnen fehlen Konvergenzgarantien, Enterprise-Security und produktionsreife Orchestrierung für komplexe Multi-Agenten-Workflows.",
+      "solution": "Entwicklung eines vollständigen KI-Betriebssystems: 35+ spezialisierte Agenten, eine selbstoptimierende SOIC-Konvergenz-Engine mit mathematischem Beweis, Tree-of-Thoughts-Entscheidungsexploration, BMAD-Methodik-Integration und MCP-Bridges für Claude Code — implementiert auf Kubernetes mit Prometheus-Monitoring.",
+      "result": "42.000+ Zeilen produktionsreifes Python. Qualitätskonvergenz μ = 9,94/10 (Gold Master zertifiziert). 584 Testfunktionen. Vollständig containerisiert mit Docker und Kubernetes-Manifesten.",
+      "metricValue": "μ 9,94",
+      "metricLabel": "Qualitätswert",
+      "clientSize": "Internes F&E-Projekt",
+      "timeline": "8 Monate Entwicklung",
+      "methodology": "BMAD-Architektur + iterative SOIC-Konvergenz"
     },
-    "sentinel-quality": {
-      "title": "Sentinel Quality Gate",
-      "industry": "Luft- und Raumfahrtfertigung",
-      "challenge": "Die manuelle Sichtprüfung erkannte nur 82% der Oberflächenmikrodefekte an Turbinenschaufel-Beschichtungen, mit 340 Fehlalarmen pro Schicht.",
-      "solution": "Implementierung eines konvolutionalen neuronalen Netzwerks, trainiert auf 45.000 annotierten Schaufelbildern, mit Edge-Inferenz auf NVIDIA Jetson-Modulen, integriert in die Produktionslinie.",
-      "result": "99.2% Defekterkennungsrate bei 89% Reduzierung der Fehlalarme. Inspektionsdurchsatz um das 4-fache erhöht.",
-      "metricValue": "99.2%",
-      "metricLabel": "Defekterkennung"
+    "conseiller-placement": {
+      "title": "Finanzberater-Plattform",
+      "industry": "Finanzdienstleistungen",
+      "challenge": "Ein zertifizierter Finanzberater bei iA Financial Group benötigte eine professionelle Web-Präsenz mit interaktiven Tools, die den kanadischen Finanzvorschriften entsprechen (RRSP, TFSA, CMHC).",
+      "solution": "Entwicklung einer Dual-Stack-Plattform: eine Produktions-Website mit Node.js/Express-Backend (Helmet, Rate Limiting, Input-Validierung) und 4 kanadisch-konforme Finanzrechner mit Jest-Testabdeckung. Hinzugefügt wurde ein KI-gestützter Hybrid-Chatbot, der regelbasierte Antworten mit LLM-Intelligenz kombiniert.",
+      "result": "Vollständig funktionsfähige Plattform mit einem Sicherheits-Audit-Score von 7,8/10. Echter Kunde in Produktion. Vermögenstracking-Dashboard entwickelt in React 19 + TypeScript.",
+      "metricValue": "7,8/10",
+      "metricLabel": "Sicherheitswert",
+      "clientSize": "Zertifizierter Berater — iA Financial Group",
+      "timeline": "3 Monate Entwicklung",
+      "methodology": "Full-Stack agil + kontinuierliche Sicherheitsaudits"
     },
-    "lexicon-intelligence": {
-      "title": "Lexicon Intelligence Hub",
-      "industry": "Recht & Compliance",
-      "challenge": "Regulatorische Analysten verbrachten monatlich über 400 Stunden mit der Überprüfung von über 12.000 Dokumenten zur Klassifizierung der Compliance-Relevanz.",
-      "solution": "Entwicklung einer transformerbasierten NLP-Pipeline mit feinabgestimmten Klassifizierungsmodellen, Active-Learning-Feedbackschleifen und einem nach Priorität geordneten Überprüfungs-Dashboard.",
-      "result": "Automatisierte Triage reduzierte manuelle Überprüfung um 78%, markierte kritische Elemente in unter 90 Sekunden mit 96,3% Klassifizierungsgenauigkeit.",
-      "metricValue": "-78%",
-      "metricLabel": "Manuelle Überprüfung"
+    "n8n-ecosystem": {
+      "title": "Enterprise n8n-Ökosystem",
+      "industry": "Business-Automatisierung",
+      "challenge": "Verwaltung disparater Geschäftsabläufe — CRM, Finanzen, Dokumente, Kommunikation, IoT — über 14+ funktionale Bereiche ohne einheitliche Automatisierungsschicht.",
+      "solution": "Design und Implementierung von 195 Produktions-Workflows auf n8n: 52 KI-gestützt (RAG, Agenten, Klassifizierer), 24 Kommunikationsautomatisierungen, 18 Dokumentenverarbeitungs-Pipelines, 17 Finanz-Workflows, 16 Sprach-Pipelines (Whisper + Piper) und 7 IoT-Orchestrierungen. Governance-Framework mit 9,90/10 im SOIC-Audit bewertet.",
+      "result": "195 Workflows in Produktion. 57% KI-gestützt. 12 Custom-Community-Nodes installiert. Vollständige Governance mit 35+ Metadatenfeldern pro Workflow.",
+      "metricValue": "195",
+      "metricLabel": "Workflows",
+      "clientSize": "Multi-Domain-Infrastruktur (14 Abteilungen)",
+      "timeline": "12+ Monate kontinuierliche Entwicklung",
+      "methodology": "Iteratives Deployment + SOIC-Governance (9,90/10)"
     },
-    "atlas-decision": {
-      "title": "Atlas Decision Matrix",
-      "industry": "Lieferkette & Logistik",
-      "challenge": "Multi-Lieferanten-Beschaffungsentscheidungen basierten auf Tabellenkalkulationen mit über 15 variablen Abwägungen, durchschnittlich 3 Wochen pro Beschaffungszyklus.",
-      "solution": "Entwicklung einer Entscheidungsintelligenz-Plattform mit gewichteter Multi-Kriterien-Bewertung, Monte-Carlo-Simulation zur Risikobewertung und Echtzeit-Constraint-Optimierung.",
-      "result": "Beschaffungszykluszeit von 3 Wochen auf 4 Tage reduziert. Entscheidungskonfidenzwerte verbesserten Beschaffungsergebnisse um 34%.",
-      "metricValue": "4 Tage",
-      "metricLabel": "Zykluszeit"
+    "stark-portfolio": {
+      "title": "Immersives 3D-Portfolio",
+      "industry": "Web & Kreativ",
+      "challenge": "Standard-Portfolio-Websites verschwinden im Rauschen. Der Kunde benötigte eine Website, die technische Meisterschaft durch das Erlebnis selbst demonstriert — nicht nur durch Screenshots.",
+      "solution": "Entwicklung eines cinematischen Portfolios mit React 19, Three.js (3D Arc Reactor mit WebGL-Shadern), Framer-Motion-Animationen, Howler.js-Prozedural-Audio (6 interaktive Sounds) und einem vollständigen 'Overclock Mode', der die gesamte UI — Farben, Geschwindigkeit, Sounds, Messaging — in Echtzeit transformiert.",
+      "result": "Live auf Netlify. 373KB gzipped JS-Bundle. 10 vollständige Sektionen. Echtzeit-3D-Rendering mit Modus-Transformation. 7-Sekunden Build-Zeit auf CI/CD.",
+      "metricValue": "LIVE",
+      "metricLabel": "Produktion",
+      "clientSize": "Einzelkunde — Tech-Profi",
+      "timeline": "6 Wochen Entwicklung",
+      "methodology": "Cinematisches Design + WebGL-Performance-Tests"
     }
   },
   "projectCard": {
@@ -123,72 +171,60 @@
   },
   "about": {
     "missionLabel": "Unsere Mission",
-    "missionTitle": "Entscheidungsinfrastruktur für die KI-Ära",
-    "mission": "Wir entwickeln intelligente Systeme, die Rohdaten in entscheidende Handlungen verwandeln. Bei Mark Systems bauen wir nicht nur KI – wir entwickeln die Entscheidungsinfrastruktur, die Organisationen einen unfairen Vorteil verschafft.",
-    "teamLabel": "Das Team",
-    "teamTitle": "Von Ingenieuren für Ingenieure entwickelt",
-    "teamDescription": "Tiefgehende Expertise in Machine Learning, Systemtechnik und strategischer Beratung.",
+    "missionTitle": "Automatisierung, die tatsächlich funktioniert",
+    "mission": "Mark Systems existiert, um komplexe KI-Fähigkeiten in Produktionssysteme zu verwandeln, die messbare Ergebnisse liefern. Wir verkaufen keine Demos — wir liefern Workflows, Agenten und Plattformen, die 24/7 laufen und ihren Wert in Zahlen beweisen. Entwickelt von einem Ingenieur mit 10+ Jahren Felderfahrung, ist jede Lösung für die reale Welt konzipiert.",
+    "teamLabel": "Der Gründer",
+    "teamTitle": "Engineering-First, immer",
+    "teamDescription": "Ein Ingenieur. 10+ Jahre im Feld. Von industriellen Produktionslinien bis zu KI-Betriebssystemen.",
     "valuesLabel": "Unsere Prinzipien",
     "valuesTitle": "Wie wir arbeiten",
     "valuesDescription": "Vier nicht verhandelbare Prinzipien, die jedes Engagement definieren."
   },
   "team": {
-    "marcus-chen": {
-      "role": "CEO & Gründer",
-      "bio": "Ehemaliger Principal Engineer bei DeepMind. 15 Jahre Erfahrung im Aufbau von Produktions-ML-Systemen in den Bereichen Energie, Verteidigung und Finanzen. Gründete Mark Systems, um die Lücke zwischen Forschungsdurchbrüchen und operativer Realität zu schließen."
-    },
-    "elena-vasquez": {
-      "role": "CTO",
-      "bio": "Promotion in Statistical Learning vom MIT. Leitete das Machine-Learning-Plattform-Team bei Stripe, bevor sie zu Mark Systems kam. Spezialisiert auf den Aufbau skalierbarer Inferenz-Pipelines, die unter strikten Latenzbeschränkungen operieren."
-    },
-    "james-okafor": {
-      "role": "Leiter ML Engineering",
-      "bio": "Zuvor bei Tesla Autopilot und Waymo. Experte für Computer Vision, Edge-Deployment und Modelloptimierung. Leitet unser Engineering-Team bei der Bereitstellung produktionsreifer KI-Systeme."
-    },
-    "sarah-kim": {
-      "role": "Leiterin Strategie",
-      "bio": "Ehemalige McKinsey Engagement Managerin mit Spezialisierung auf KI-Transformation. Übersetzt komplexe technische Fähigkeiten in messbare Geschäftsergebnisse für unsere Kunden."
+    "founder": {
+      "role": "Gründer & Leitender Ingenieur",
+      "bio": "Leitender Elektroingenieur mit 10+ Jahren in industrieller Automatisierung (PLC/CNC, Produktionslinien im Verteidigungs-Sektor, HV-Stromnetzschutz). Entwickelt jetzt KI-Automatisierungssysteme — von einem 42.000-Zeilen-KI-Betriebssystem bis zu 195 produktionsreifen n8n-Workflows. Ansässig in Quebec, Kanada."
     }
   },
   "values": {
     "0": {
       "title": "Präzision statt Hype",
-      "description": "Wir liefern messbare Ergebnisse, keine Demos. Jedes System, das wir entwickeln, wird vor der Bereitstellung gegen klar definierte KPIs gemessen."
+      "description": "Wir liefern messbare Ergebnisse, keine Versprechen. Jedes System wird vor Auslieferung mit echten Metriken getestet — keine Buzzwords, keine Magie, nur Engineering."
     },
     "1": {
-      "title": "Systemisches Denken",
-      "description": "Jede Komponente ist für das Ganze konzipiert. Wir entwickeln Lösungen, die sich sauber in bestehende Infrastrukturen integrieren, keine isolierten Prototypen."
+      "title": "Systemdenken",
+      "description": "Jede Komponente wird für das Ganze entwickelt. Wir entwickeln Lösungen, die sich in bestehende Infrastruktur integrieren — keine isolierten Prototypen, die beim Kontakt mit der Realität zerbrechen."
     },
     "2": {
-      "title": "Transparente Intelligenz",
-      "description": "Keine Black Boxes. Unsere KI-Systeme liefern erklärbare Ausgaben mit Konfidenzwerten, Audit-Trails und klaren Argumentationsketten."
+      "title": "Kampferprobtes Engineering",
+      "description": "10+ Jahre industrielle Felderfahrung bedeutet, dass wir für Fehlerfälle entwickeln, nicht nur für Happy Paths. PLC-Präzision angewendet auf KI-Systeme."
     },
     "3": {
-      "title": "Unermüdliche Iteration",
-      "description": "Produktionsmodelle verbessern sich kontinuierlich. Wir integrieren Monitoring, Feedbackschleifen und Retraining-Pipelines von Tag eins an in jede Bereitstellung."
+      "title": "Null Vendor-Lock-in",
+      "description": "Multi-LLM, Multi-Cloud, Open-Source-First. Ihre Systeme laufen zu Ihren Bedingungen — wir entwickeln Abstraktionsschichten, keine Abhängigkeiten."
     }
   },
   "contact": {
-    "label": "Kontaktieren Sie uns",
+    "label": "Kontakt aufnehmen",
     "title": "Gespräch beginnen",
-    "description": "Erzählen Sie uns von Ihren Datenherausforderungen und wir entwickeln das intelligente System zu deren Lösung.",
+    "description": "Erzählen Sie uns von Ihren Automatisierungsherausforderungen und wir entwickeln das System, um sie zu lösen.",
     "emailLabel": "E-Mail",
-    "emailAddress": "hello@marksystems.ai",
+    "emailAddress": "contact@marksystems.ai",
     "locationLabel": "Standort",
-    "locationCity": "San Francisco, CA",
-    "locationDetail": "Remote-First-Team"
+    "locationCity": "Quebec, Kanada",
+    "locationDetail": "Remote-First — Kunden weltweit"
   },
   "contactForm": {
     "name": "Name",
-    "namePlaceholder": "Max Mustermann",
+    "namePlaceholder": "Ihr Name",
     "email": "E-Mail",
-    "emailPlaceholder": "max@firma.de",
+    "emailPlaceholder": "ihre@firma.de",
     "company": "Unternehmen",
-    "companyPlaceholder": "Beispiel GmbH",
-    "serviceInterest": "Leistungsinteresse",
+    "companyPlaceholder": "Ihr Unternehmen",
+    "serviceInterest": "Interesse an Leistung",
     "selectService": "Leistung auswählen",
     "message": "Nachricht",
-    "messagePlaceholder": "Erzählen Sie uns von Ihrem Projekt...",
+    "messagePlaceholder": "Erzählen Sie uns von Ihrem Projekt oder Ihrer Herausforderung...",
     "submit": "Nachricht senden",
     "successTitle": "Nachricht gesendet",
     "successMessage": "Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
@@ -203,43 +239,73 @@
     "messageMinLength": "Nachricht muss mindestens 10 Zeichen lang sein"
   },
   "cta": {
-    "label": "Bereit zu starten?",
-    "title": "Lassen Sie uns Ihren Vorteil entwickeln",
-    "description": "Erzählen Sie uns von Ihren Datenherausforderungen. Wir entwickeln das intelligente System, das sie in Wettbewerbsvorteile verwandelt.",
+    "label": "Bereit zu automatisieren?",
+    "title": "Lassen Sie uns etwas entwickeln, das funktioniert",
+    "description": "Erzählen Sie uns von Ihren Automatisierungsherausforderungen. Wir entwickeln das intelligente System, das sie in Wettbewerbsvorteile verwandelt.",
     "button": "Gespräch beginnen"
   },
   "notFound": {
     "code": "404",
     "title": "Seite nicht gefunden",
-    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "description": "Die Seite, die Sie suchen, existiert nicht oder wurde verschoben.",
     "back": "Zurück zur Startseite"
   },
   "footer": {
-    "description": "Entwicklung intelligenter Systeme, die Rohdaten in entscheidende Handlungen verwandeln.",
+    "description": "Engineering von KI-Automatisierungssystemen, die messbare Ergebnisse liefern.",
     "navLabel": "Navigation",
-    "connectLabel": "Verbinden",
+    "connectLabel": "Kontakt",
     "copyright": "© {year} Mark Systems. Alle Rechte vorbehalten."
   },
   "metadata": {
     "home": {
-      "title": "Mark Systems | KI-Automatisierung & Entscheidungstechnik",
-      "description": "Wir entwickeln intelligente Systeme, die Rohdaten in entscheidende Handlungen verwandeln. Maßgeschneiderte KI-Lösungen für prädiktive Analysen, Workflow-Automatisierung und Entscheidungsintelligenz."
+      "title": "Mark Systems | KI-Automatisierung & Intelligente Systeme",
+      "description": "Produktionsreife KI-Automatisierung, Workflow-Engineering und intelligente Plattformen. 195+ implementierte Workflows, 42.000+ Zeilen KI-Infrastruktur. Quebec, Kanada."
     },
     "services": {
       "title": "Leistungen",
-      "description": "KI-Automatisierungs- und Entscheidungstechnik-Dienstleistungen – von prädiktiven Analysen über Computer Vision bis hin zu strategischer Beratung."
+      "description": "KI-Workflow-Automatisierung, Systemarchitektur, Full-Stack-Entwicklung, industrielle Automatisierung, IoT-Intelligenz und maßgeschneiderte KI-Tools."
     },
     "projects": {
       "title": "Projekte",
-      "description": "Fallstudien, die Real-World-KI-Implementierungen mit quantifiziertem Erfolg in den Bereichen Energie, Luft- und Raumfahrt, Recht und Lieferkette zeigen."
+      "description": "Echte Fallstudien: AINOVA OS (KI-Betriebssystem), Enterprise n8n-Ökosystem (195 Workflows), Finanzberater-Plattform und immersives 3D-Portfolio."
     },
     "about": {
       "title": "Über uns",
-      "description": "Lernen Sie das Team hinter Mark Systems kennen – Ingenieure, Forscher und Strategen, die die nächste Generation der Entscheidungsinfrastruktur aufbauen."
+      "description": "10+ Jahre Engineering — von industriellen Produktionslinien bis zu KI-Betriebssystemen. Ansässig in Quebec, Kanada."
     },
     "contact": {
       "title": "Kontakt",
-      "description": "Kontaktieren Sie Mark Systems, um Ihre Anforderungen an KI-Automatisierung und Entscheidungstechnik zu besprechen."
+      "description": "Nehmen Sie Kontakt mit Mark Systems auf, um Ihre KI-Automatisierungs- und intelligente Systembedürfnisse zu besprechen."
+    }
+  },
+  "faq": {
+    "label": "Häufig gestellte Fragen",
+    "title": "FAQ — KI-Automatisierung",
+    "items": {
+      "0": {
+        "question": "Was ist Mark Systems und was ist der Zusammenhang mit ECI Mark Systems?",
+        "answer": "Mark Systems ist ein KI-Ingenieurbüro, spezialisiert auf Workflow-Automatisierung, Multi-Agenten-Orchestrierung und intelligente Systeme mit Sitz in Montreal. Wir haben keine Verbindung zu ECI Mark Systems, einem Anbieter von ERP-Software für den Wohnungsbau."
+      },
+      "1": {
+        "question": "Welche Arten von KI-Automatisierung bieten Sie an?",
+        "answer": "Wir bieten KI-Workflow-Automatisierung über n8n (195+ bereitgestellte Workflows), Multi-Agenten-Systemarchitektur (AINOVA OS), Full-Stack-Webentwicklung, industrielle Automatisierung (PLC/CNC), IoT-Intelligenz und maßgeschneiderte KI-Tools mit Multi-LLM-Routing."
+      },
+      "2": {
+        "question": "Was kostet ein KI-Automatisierungsprojekt?",
+        "answer": "Jedes Projekt ist einzigartig. Die Kosten hängen von der Komplexität, der Anzahl der Workflows, den erforderlichen Integrationen und dem Grad der Anpassung ab. Kontaktieren Sie uns für eine kostenlose Bewertung Ihrer Automatisierungsbedürfnisse."
+      },
+      "3": {
+        "question": "Arbeiten Sie mit Kunden außerhalb von Quebec?",
+        "answer": "Ja, wir arbeiten remote-first und bedienen Kunden weltweit. Unsere Expertise in KI-Automatisierung, Webentwicklung und Industrietechnik ist international verfügbar."
+      },
+      "4": {
+        "question": "Was ist AINOVA OS?",
+        "answer": "AINOVA OS ist unser produktionsfähiges KI-Betriebssystem: 35+ spezialisierte Agenten, eine selbstoptimierende SOIC-Konvergenz-Engine (μ=9,94/10), Tree-of-Thoughts-Entscheidungsexploration und Kubernetes-Infrastruktur. Es umfasst 42.000+ Zeilen produktionsfähigen Python-Code."
+      },
+      "5": {
+        "question": "Was ist Ihre Expertise in industrieller Automatisierung?",
+        "answer": "Unser Gründer verfügt über 10+ Jahre Erfahrung in industrieller Elektrotechnik: PLC/CNC-Programmierung, Produktionsliniendesign (einschließlich Verteidigungssektor) und Schutzsystemtechnik für HV/MV/LV-Stromnetze."
+      }
     }
   }
 }

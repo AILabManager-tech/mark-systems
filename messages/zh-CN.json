@@ -1,245 +1,311 @@
 {
   "common": {
     "siteName": "Mark Systems",
-    "tagline": "AI自动化与决策工程",
-    "siteDescription": "我们打造智能系统,将原始数据转化为果断行动。提供预测分析、工作流自动化和决策智能的定制AI解决方案。"
+    "tagline": "AI 自动化与智能系统",
+    "siteDescription": "我们为追求可衡量成果的企业打造生产级 AI 系统、工作流自动化和智能平台。"
   },
   "nav": {
     "home": "首页",
     "services": "服务",
-    "projects": "项目案例",
-    "about": "关于我们",
-    "contact": "联系我们"
+    "projects": "项目",
+    "about": "关于",
+    "contact": "联系"
   },
   "hero": {
-    "badge": "AI自动化与决策工程",
-    "titleStart": "工程化智能。",
-    "titleAccent": "更快决策。",
-    "description": "我们构建生产级AI系统,将原始数据转化为果断行动——为可衡量的影响力而设计的预测分析、工作流自动化和决策智能平台。",
+    "badge": "AI 自动化与智能系统",
+    "titleStart": "更智能的自动化。",
+    "titleAccent": "更快速的构建。",
+    "description": "我们设计和部署 AI 驱动的自动化系统、生产级工作流和智能平台——从多智能体编排到工业自动化。魁北克工程，全球部署。",
     "ctaPrimary": "启动项目",
-    "ctaSecondary": "探索服务"
+    "ctaSecondary": "探索我们的服务"
   },
   "servicesSection": {
-    "label": "我们的业务",
-    "title": "为性能而生的智能系统",
-    "description": "从预测分析到决策智能——我们构建在生产规模下运行的AI系统。",
+    "label": "我们的能力",
+    "title": "从自动化到智能",
+    "description": "六大核心能力，以真实部署、实际代码和可衡量成果为基础。",
     "viewAll": "查看所有服务"
   },
   "servicesPage": {
     "label": "我们的服务",
-    "title": "为影响力而设计的AI解决方案",
-    "description": "六大核心能力,每一项都旨在将特定的运营挑战转化为可衡量的竞争优势。"
+    "title": "工程交付成果",
+    "description": "每项服务均基于生产经验——已部署 195+ 个工作流，42K+ 行 AI 基础设施代码，10+ 年工业工程经验。"
   },
   "services": {
-    "predictive-analytics": {
-      "title": "预测分析引擎",
-      "shortDescription": "定制机器学习模型,预测运营数据中的趋势、需求曲线和故障点。",
-      "longDescription": "将历史模式转化为可操作的前瞻洞察。我们的预测引擎摄取多维时间序列数据,识别非显性关联,并提供概率加权预测,直接整合到您的决策工作流中。",
-      "capabilities": ["时间序列预测", "异常检测", "需求预测", "故障概率建模", "实时模型重训练"]
+    "ai-workflow-automation": {
+      "title": "AI 工作流自动化",
+      "shortDescription": "生产级 n8n 管道，集成 LLM、RAG 系统和业务工具——涵盖 14 个领域的 195+ 个工作流。",
+      "longDescription": "我们在 n8n 上构建端到端自动化管道，将 AI 模型（GPT-4、Claude、Whisper、Ollama）连接到您的业务系统——CRM、电子邮件、文档、语音、IoT。每个工作流都包含错误处理、审计跟踪，以及在未达到置信度阈值时的人工干预机制。",
+      "capabilities": [
+        "n8n 管道设计",
+        "RAG 与 AI 智能体集成",
+        "语音管道（STT/TTS）",
+        "CRM 与邮件自动化",
+        "文档 OCR 与分类"
+      ]
     },
-    "workflow-automation": {
-      "title": "工作流自动化系统",
-      "shortDescription": "端到端流程自动化管道,消除人工瓶颈,实现零人工操作。",
-      "longDescription": "从数据摄取到决策输出,我们的自动化系统编排复杂的多步骤流程,内置错误处理、审计跟踪,以及在置信度阈值未达标时的人工干预升级机制。",
-      "capabilities": ["管道编排", "事件驱动触发", "错误恢复协议", "审计跟踪生成", "人工干预关卡"]
+    "ai-systems-architecture": {
+      "title": "AI 系统架构",
+      "shortDescription": "具有数学证明收敛性和企业级基础设施的多智能体编排平台。",
+      "longDescription": "我们的旗舰产品 AINOVA OS 是一个生产级 AI 操作系统，拥有 35+ 个专业智能体、自优化收敛引擎（SOIC）和思维树决策探索。基于 FastAPI、PostgreSQL、Redis 和 Kubernetes 构建——为需要可信赖和可扩展 AI 的团队而设计。",
+      "capabilities": [
+        "多智能体编排",
+        "SOIC 收敛引擎",
+        "思维树优化",
+        "Kubernetes 部署",
+        "MCP 协议桥接"
+      ]
     },
-    "decision-intelligence": {
-      "title": "决策智能平台",
-      "shortDescription": "结构化框架,将多源数据综合为带置信度评分的排序决策。",
-      "longDescription": "我们的决策平台聚合来自不同数据源的信号,应用加权评分模型,运行蒙特卡洛模拟,并呈现带有透明推理链的排序选项——让利益相关者能够基于确信而非猜测行动。",
-      "capabilities": ["多准则分析", "蒙特卡洛模拟", "场景建模", "置信度评分", "可解释推荐"]
+    "fullstack-development": {
+      "title": "全栈 Web 开发",
+      "shortDescription": "现代 Web 应用与沉浸式网站——React、Next.js、Three.js——从金融平台到 3D 作品集。",
+      "longDescription": "我们使用现代技术栈交付生产级网站和 Web 应用：React 19、Next.js 14、TypeScript、Tailwind CSS。从带有 AI 聊天机器人和加拿大合规计算器的金融顾问平台，到使用 WebGL 的沉浸式 3D 作品集——我们按需求构建。",
+      "capabilities": [
+        "React 与 Next.js 应用",
+        "Three.js 与 WebGL 体验",
+        "TypeScript 与 Tailwind CSS",
+        "AI 聊天机器人集成",
+        "金融计算器开发"
+      ]
     },
-    "nlp-pipelines": {
-      "title": "自然语言处理",
-      "shortDescription": "定制NLP管道,用于文档分析、情感提取和自动报告生成。",
-      "longDescription": "我们构建生产级NLP系统,大规模解析、分类并从非结构化文本中提取结构化情报——从监管文件、合同到客户反馈和研究论文。",
-      "capabilities": ["文档分类", "实体提取", "情感分析", "自动摘要", "多语言支持"]
+    "industrial-automation": {
+      "title": "工业自动化与电气工程",
+      "shortDescription": "10+ 年 PLC/CNC 系统设计与调试、工业生产线和电网保护经验。",
+      "longDescription": "重工业领域的高级电气工程专业知识：PLC 和 CNC 编程与调试、复杂生产线设计（包括国防部门客户）、以及高压/中压/低压电网保护和协调系统工程。我们为每个项目带来经过实战检验的严谨性。",
+      "capabilities": [
+        "PLC 与 CNC 编程",
+        "生产线设计",
+        "电网保护",
+        "电气系统协调",
+        "工业调试"
+      ]
     },
-    "computer-vision": {
-      "title": "计算机视觉与检测",
-      "shortDescription": "自动化视觉检测系统、缺陷检测和图像分类,支持边缘或云端部署。",
-      "longDescription": "我们的视觉系统在质量检测中达到亚像素级精度,利用卷积和Transformer架构,针对边缘设备或GPU加速云基础设施进行优化部署。",
-      "capabilities": ["缺陷检测", "物体分类", "尺寸测量", "边缘部署", "实时视频分析"]
+    "iot-smart-home": {
+      "title": "IoT 与智能家居智能",
+      "shortDescription": "AI 协调的家庭自动化、本地摄像头流和边缘计算——隐私优先、独立于云端。",
+      "longDescription": "我们构建本地运行的智能 IoT 系统：AI 协调的运动检测、基于时间和存在的上下文自动化、语音控制设备，以及绕过云依赖的反向工程摄像头流。所有数据都保留在您的网络中。",
+      "capabilities": [
+        "AI 协调自动化",
+        "本地 RTSP 流",
+        "语音控制集成",
+        "边缘计算部署",
+        "隐私优先架构"
+      ]
     },
-    "ai-strategy": {
-      "title": "AI战略与集成",
-      "shortDescription": "AI采用路线图、模型选择和企业系统集成的技术咨询。",
-      "longDescription": "我们通过清晰的技术评估帮助组织驾驭AI格局——从就绪审计和基础设施规划,到供应商评估、模型选择和生产部署策略。",
-      "capabilities": ["就绪评估", "基础设施规划", "模型评估", "集成架构", "ROI建模"]
+    "custom-ai-tools": {
+      "title": "定制 AI 工具与集成",
+      "shortDescription": "供应商无关的 LLM 工具包、本地优先的代码助手和多提供商路由——零锁定构建。",
+      "longDescription": "我们构建解决特定问题的定制 AI 工具：支持 6+ 提供商的多 LLM 抽象层，零供应商锁定；使用开源模型的本地代码助手，零成本；以及根据成本、延迟和能力在 OpenAI、Anthropic、Groq 和 Ollama 之间平衡请求的智能路由器。",
+      "capabilities": [
+        "多 LLM 抽象层",
+        "本地模型部署",
+        "智能请求路由",
+        "MCP 服务器开发",
+        "语音到 LLM 管道"
+      ]
     }
   },
   "projectsSection": {
     "label": "案例研究",
-    "title": "用数字说话的成果",
-    "description": "跨行业的实际AI部署及其量化影响。",
+    "title": "构建、部署、测量",
+    "description": "具有真实指标的真实项目——不是演示，不是原型。",
     "viewAll": "查看所有项目"
   },
   "projectsPage": {
     "label": "案例研究",
-    "title": "已部署的智能,可衡量的影响",
-    "description": "每个项目都始于数据挑战,终于提供量化成果的生产系统。"
+    "title": "生产系统，经过验证的成果",
+    "description": "以下每个项目都在生产环境中运行。代码存在，指标真实，系统在线。"
   },
   "projects": {
-    "meridian-forecasting": {
-      "title": "Meridian预测套件",
-      "industry": "能源与公用事业",
-      "challenge": "电网负载预测滞后实时需求变化72小时,导致每年230万美元的平衡成本。",
-      "solution": "部署LSTM集成模型,以15分钟间隔处理14个数据流,通过流式摄取层与现有SCADA基础设施集成。",
-      "result": "以15分钟间隔实现94.7%的预测准确率。在首个运营季度将能源平衡成本降低61%。",
-      "metricValue": "94.7%",
-      "metricLabel": "预测准确率"
+    "ainova-os": {
+      "title": "AINOVA OS",
+      "industry": "AI 基础设施",
+      "challenge": "现有的 AI 智能体框架只是原型工具——它们缺乏收敛性保证、企业安全性，以及用于复杂多智能体工作流的生产级编排。",
+      "solution": "设计了一个完整的 AI 操作系统：35+ 个专业智能体、具有数学证明的自优化 SOIC 收敛引擎、思维树决策探索、BMAD 方法论集成，以及用于 Claude Code 的 MCP 桥接——在 Kubernetes 上部署，配备 Prometheus 监控。",
+      "result": "42,000+ 行生产级 Python 代码。质量收敛 μ = 9.94/10（金牌大师认证）。584 个测试函数。使用 Docker 和 Kubernetes 清单完全容器化。",
+      "metricValue": "μ 9.94",
+      "metricLabel": "质量分数",
+      "clientSize": "内部研发项目",
+      "timeline": "8个月开发",
+      "methodology": "BMAD架构 + 迭代SOIC收敛"
     },
-    "sentinel-quality": {
-      "title": "Sentinel质量关卡",
-      "industry": "航空航天制造",
-      "challenge": "人工目视检测仅能捕获涡轮叶片涂层表面82%的微缺陷,每班次有340个误报。",
-      "solution": "部署基于45,000张标注叶片图像训练的卷积神经网络,在集成到生产线的NVIDIA Jetson模块上进行边缘推理。",
-      "result": "99.2%的缺陷检测率,误报减少89%。检测吞吐量提高4倍。",
-      "metricValue": "99.2%",
-      "metricLabel": "缺陷检测率"
+    "conseiller-placement": {
+      "title": "金融顾问平台",
+      "industry": "金融服务",
+      "challenge": "iA Financial Group 的一位认证金融顾问需要一个具有交互式工具的专业网络平台，符合加拿大金融法规（RRSP、TFSA、CMHC）。",
+      "solution": "构建了一个双栈平台：带有 Node.js/Express 后端（Helmet、速率限制、输入验证）的生产级网站，以及 4 个符合加拿大法规的金融计算器，配有 Jest 测试覆盖。添加了一个 AI 驱动的混合聊天机器人，结合基于规则的响应和 LLM 智能。",
+      "result": "完全运行的平台，安全审计得分 7.8/10。真实客户生产环境。使用 React 19 + TypeScript 构建的财富跟踪仪表板。",
+      "metricValue": "7.8/10",
+      "metricLabel": "安全分数",
+      "clientSize": "认证顾问 — iA金融集团",
+      "timeline": "3个月开发",
+      "methodology": "全栈敏捷 + 持续安全审计"
     },
-    "lexicon-intelligence": {
-      "title": "Lexicon智能中心",
-      "industry": "法律与合规",
-      "challenge": "监管分析师每月花费400+小时审查12,000+份文档进行合规相关性分类。",
-      "solution": "构建基于Transformer的NLP管道,包含微调分类模型、主动学习反馈循环和优先级排序审查仪表板。",
-      "result": "自动化分类将人工审查减少78%,在90秒内标记关键项目,分类准确率达96.3%。",
-      "metricValue": "-78%",
-      "metricLabel": "人工审查"
+    "n8n-ecosystem": {
+      "title": "企业级 n8n 生态系统",
+      "industry": "业务自动化",
+      "challenge": "在 14+ 个功能领域管理分散的业务运营——CRM、财务、文档、通信、IoT——没有统一的自动化层。",
+      "solution": "在 n8n 上设计和部署了 195 个生产工作流：52 个 AI 驱动（RAG、智能体、分类器）、24 个通信自动化、18 个文档处理管道、17 个财务工作流、16 个语音管道（Whisper + Piper）和 7 个 IoT 编排。治理框架在 SOIC 审计中获得 9.90/10 的评分。",
+      "result": "195 个生产工作流。57% 由 AI 驱动。安装了 12 个定制社区节点。完整治理，每个工作流有 35+ 个元数据字段。",
+      "metricValue": "195",
+      "metricLabel": "工作流",
+      "clientSize": "多领域基础设施（14个部门）",
+      "timeline": "12+个月持续开发",
+      "methodology": "迭代部署 + SOIC治理（9.90/10）"
     },
-    "atlas-decision": {
-      "title": "Atlas决策矩阵",
-      "industry": "供应链与物流",
-      "challenge": "多供应商采购决策依赖电子表格处理15+个变量权衡,平均每个采购周期需3周。",
-      "solution": "设计决策智能平台,具备加权多准则评分、蒙特卡洛风险评估模拟和实时约束优化功能。",
-      "result": "采购周期从3周缩短至4天。决策置信度评分将采购成果改善34%。",
-      "metricValue": "4天",
-      "metricLabel": "周期时间"
+    "stark-portfolio": {
+      "title": "沉浸式 3D 作品集",
+      "industry": "Web 与创意",
+      "challenge": "标准作品集网站淹没在噪音中。客户需要一个通过体验本身展示技术精通的网站——而不仅仅是截图。",
+      "solution": "构建了一个电影级作品集，使用 React 19、Three.js（带有 WebGL 着色器的 3D 方舟反应堆）、Framer Motion 动画、Howler.js 程序化音频（6 个交互式声音），以及一个完整的「超频模式」，实时转换整个 UI——颜色、速度、声音、消息。",
+      "result": "在 Netlify 上线。373KB gzipped JS bundle。10 个完整部分。带有模式转换的实时 3D 渲染。CI/CD 上 7 秒构建时间。",
+      "metricValue": "LIVE",
+      "metricLabel": "生产环境",
+      "clientSize": "个人客户 — 技术专业人士",
+      "timeline": "6周开发",
+      "methodology": "电影级设计 + WebGL性能测试"
     }
   },
   "projectCard": {
-    "challenge": "挑战:",
-    "solution": "解决方案:"
+    "challenge": "挑战：",
+    "solution": "解决方案："
   },
   "about": {
     "missionLabel": "我们的使命",
-    "missionTitle": "AI时代的决策基础设施",
-    "mission": "我们打造智能系统,将原始数据转化为果断行动。在Mark Systems,我们不仅仅构建AI——我们架构决策基础设施,为组织创造不公平的竞争优势。",
-    "teamLabel": "团队成员",
-    "teamTitle": "由工程师打造,为工程师服务",
-    "teamDescription": "在机器学习、系统工程和战略咨询领域拥有深厚专业知识。",
+    "missionTitle": "真正有效的自动化",
+    "mission": "Mark Systems 的存在是为了将复杂的 AI 能力转化为提供可衡量成果的生产系统。我们不销售演示——我们交付 7×24 运行并以数字证明其价值的工作流、智能体和平台。由拥有 10+ 年现场经验的工程师打造，每个解决方案都是为现实世界设计的。",
+    "teamLabel": "创始人",
+    "teamTitle": "工程至上，始终如一",
+    "teamDescription": "一位工程师。10+ 年现场经验。从工业生产线到 AI 操作系统。",
     "valuesLabel": "我们的原则",
-    "valuesTitle": "我们的运作方式",
-    "valuesDescription": "定义每次合作的四项不可妥协原则。"
+    "valuesTitle": "我们如何运作",
+    "valuesDescription": "定义每次合作的四个不可谈判的原则。"
   },
   "team": {
-    "marcus-chen": {
-      "role": "首席执行官兼创始人",
-      "bio": "DeepMind前首席工程师。15年来在能源、国防和金融领域构建生产级机器学习系统。创立Mark Systems以弥合研究突破与运营现实之间的鸿沟。"
-    },
-    "elena-vasquez": {
-      "role": "首席技术官",
-      "bio": "麻省理工学院统计学习博士。在加入Mark Systems前领导Stripe的机器学习平台团队。专注于构建在严格延迟约束下运行的可扩展推理管道。"
-    },
-    "james-okafor": {
-      "role": "机器学习工程主管",
-      "bio": "曾任职于Tesla Autopilot和Waymo。计算机视觉、边缘部署和模型优化专家。领导我们的工程团队交付生产级AI系统。"
-    },
-    "sarah-kim": {
-      "role": "战略主管",
-      "bio": "前McKinsey项目经理,专攻AI转型。为客户将复杂的技术能力转化为可衡量的业务成果。"
+    "founder": {
+      "role": "创始人兼首席工程师",
+      "bio": "高级电气工程师，拥有 10+ 年工业自动化经验（PLC/CNC、国防部门生产线、高压电网保护）。现在构建 AI 自动化系统——从 42K 行 AI 操作系统到 195 个生产级 n8n 工作流。位于加拿大魁北克。"
     }
   },
   "values": {
     "0": {
-      "title": "精确胜于炒作",
-      "description": "我们交付可衡量的成果,而非演示。我们构建的每个系统在部署前都根据明确定义的KPI进行基准测试。"
+      "title": "精确而非炒作",
+      "description": "我们交付可衡量的成果，而非承诺。每个系统在交付前都经过实际指标的基准测试——没有流行语，没有魔法，只有工程。"
     },
     "1": {
       "title": "系统思维",
-      "description": "每个组件都是为整体而设计。我们设计能够干净集成到现有基础设施的解决方案,而非孤立的原型。"
+      "description": "每个组件都为整体而设计。我们构建的解决方案集成到现有基础设施中——而不是接触现实就崩溃的孤立原型。"
     },
     "2": {
-      "title": "透明智能",
-      "description": "没有黑箱。我们的AI系统提供可解释的输出,包括置信度评分、审计跟踪和清晰的推理链。"
+      "title": "经过实战检验的工程",
+      "description": "10+ 年的工业现场经验意味着我们为故障模式而构建，而不仅仅是完美路径。将 PLC 的严谨性应用于 AI 系统。"
     },
     "3": {
-      "title": "持续迭代",
-      "description": "生产模型持续改进。我们从第一天起就将监控、反馈循环和重训练管道构建到每个部署中。"
+      "title": "零供应商锁定",
+      "description": "多 LLM、多云、开源优先。您的系统按您的条款运行——我们构建抽象层，而非依赖关系。"
     }
   },
   "contact": {
     "label": "联系我们",
     "title": "开始对话",
-    "description": "告诉我们您的数据挑战,我们将设计智能系统来解决它们。",
-    "emailLabel": "电子邮件",
-    "emailAddress": "hello@marksystems.ai",
+    "description": "告诉我们您的自动化挑战，我们将设计系统来解决它们。",
+    "emailLabel": "邮箱",
+    "emailAddress": "contact@marksystems.ai",
     "locationLabel": "位置",
-    "locationCity": "旧金山, 加州",
-    "locationDetail": "远程优先团队"
+    "locationCity": "加拿大魁北克",
+    "locationDetail": "远程优先——为全球客户服务"
   },
   "contactForm": {
     "name": "姓名",
-    "namePlaceholder": "张明",
-    "email": "电子邮件",
-    "emailPlaceholder": "zhangming@gongsi.com",
+    "namePlaceholder": "您的姓名",
+    "email": "邮箱",
+    "emailPlaceholder": "you@company.com",
     "company": "公司",
-    "companyPlaceholder": "示例科技有限公司",
+    "companyPlaceholder": "您的公司",
     "serviceInterest": "感兴趣的服务",
     "selectService": "选择服务",
     "message": "留言",
-    "messagePlaceholder": "告诉我们您的项目需求...",
+    "messagePlaceholder": "告诉我们您的项目或挑战...",
     "submit": "发送消息",
     "successTitle": "消息已发送",
-    "successMessage": "感谢您的联系。我们将在24小时内回复您。",
+    "successMessage": "感谢您的联系。我们将在 24 小时内回复您。",
     "required": "*"
   },
   "validation": {
     "nameRequired": "姓名为必填项",
-    "nameMinLength": "姓名至少需要2个字符",
-    "emailRequired": "电子邮件为必填项",
-    "emailInvalid": "请输入有效的电子邮件地址",
+    "nameMinLength": "姓名至少需要 2 个字符",
+    "emailRequired": "邮箱为必填项",
+    "emailInvalid": "请输入有效的邮箱地址",
     "messageRequired": "留言为必填项",
-    "messageMinLength": "留言至少需要10个字符"
+    "messageMinLength": "留言至少需要 10 个字符"
   },
   "cta": {
-    "label": "准备开始了吗?",
-    "title": "让我们为您打造竞争优势",
-    "description": "告诉我们您的数据挑战。我们将设计智能系统,将它们转化为竞争杠杆。",
+    "label": "准备好自动化了吗？",
+    "title": "让我们构建有效的系统",
+    "description": "告诉我们您的自动化挑战。我们将设计智能系统，将它们转化为竞争优势。",
     "button": "开始对话"
   },
   "notFound": {
     "code": "404",
     "title": "页面未找到",
-    "description": "您要查找的页面不存在或已被移动。",
+    "description": "您查找的页面不存在或已被移动。",
     "back": "返回首页"
   },
   "footer": {
-    "description": "打造智能系统,将原始数据转化为果断行动。",
+    "description": "打造提供可衡量成果的 AI 自动化系统。",
     "navLabel": "导航",
     "connectLabel": "联系",
     "copyright": "© {year} Mark Systems. 保留所有权利。"
   },
   "metadata": {
     "home": {
-      "title": "Mark Systems | AI自动化与决策工程",
-      "description": "我们打造智能系统,将原始数据转化为果断行动。提供预测分析、工作流自动化和决策智能的定制AI解决方案。"
+      "title": "Mark Systems | AI 自动化与智能系统",
+      "description": "生产级 AI 自动化、工作流工程和智能平台。已部署 195+ 个工作流，42K+ 行 AI 基础设施代码。加拿大魁北克。"
     },
     "services": {
       "title": "服务",
-      "description": "AI自动化和决策工程服务——从预测分析到计算机视觉和战略咨询。"
+      "description": "AI 工作流自动化、系统架构、全栈开发、工业自动化、IoT 智能和定制 AI 工具。"
     },
     "projects": {
-      "title": "项目案例",
-      "description": "案例研究展示跨能源、航空航天、法律和供应链行业的实际AI部署及其量化影响。"
+      "title": "项目",
+      "description": "真实案例研究：AINOVA OS（AI 操作系统）、企业级 n8n 生态系统（195 个工作流）、金融顾问平台和沉浸式 3D 作品集。"
     },
     "about": {
-      "title": "关于我们",
-      "description": "认识Mark Systems背后的团队——构建下一代决策基础设施的工程师、研究人员和战略家。"
+      "title": "关于",
+      "description": "10+ 年工程经验——从工业生产线到 AI 操作系统。位于加拿大魁北克。"
     },
     "contact": {
-      "title": "联系我们",
-      "description": "联系Mark Systems,讨论您的AI自动化和决策工程需求。"
+      "title": "联系",
+      "description": "联系 Mark Systems 讨论您的 AI 自动化和智能系统需求。"
+    }
+  },
+  "faq": {
+    "label": "常见问题",
+    "title": "FAQ — AI自动化",
+    "items": {
+      "0": {
+        "question": "Mark Systems与ECI Mark Systems有什么关系？",
+        "answer": "Mark Systems是一家总部位于蒙特利尔的AI工程公司，专注于工作流自动化、多代理编排和智能系统。我们与ECI Mark Systems（住宅建筑ERP软件提供商）没有任何关系。"
+      },
+      "1": {
+        "question": "你们提供哪些类型的AI自动化？",
+        "answer": "我们提供通过n8n的AI工作流自动化（195+已部署工作流）、多代理系统架构（AINOVA OS）、全栈Web开发、工业自动化（PLC/CNC）、IoT智能和具有多LLM路由的定制AI工具。"
+      },
+      "2": {
+        "question": "AI自动化项目的费用是多少？",
+        "answer": "每个项目都是独特的。费用取决于复杂性、工作流数量、所需集成和定制化水平。请联系我们获取自动化需求的免费评估。"
+      },
+      "3": {
+        "question": "你们与魁北克以外的客户合作吗？",
+        "answer": "是的，我们以远程优先的方式运营，为全球客户提供服务。我们在AI自动化、Web开发和工业工程方面的专业知识可在国际范围内使用。"
+      },
+      "4": {
+        "question": "什么是AINOVA OS？",
+        "answer": "AINOVA OS是我们的生产级AI操作系统：35+专业代理、自优化SOIC收敛引擎（μ=9.94/10）、Tree-of-Thoughts决策探索和Kubernetes基础设施。超过42,000行生产级Python代码。"
+      },
+      "5": {
+        "question": "你们的工业自动化专业知识是什么？",
+        "answer": "我们的创始人拥有10+年工业电气工程经验：PLC/CNC编程、生产线设计（包括国防领域）和HV/MV/LV电网保护系统工程。"
+      }
     }
   }
 }

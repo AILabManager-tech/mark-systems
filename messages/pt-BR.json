@@ -1,8 +1,8 @@
 {
   "common": {
     "siteName": "Mark Systems",
-    "tagline": "Automação de IA e Engenharia de Decisão",
-    "siteDescription": "Desenvolvemos sistemas inteligentes que transformam dados brutos em ação decisiva. Soluções personalizadas de IA para análise preditiva, automação de fluxos de trabalho e inteligência de decisão."
+    "tagline": "Automação com IA e Sistemas Inteligentes",
+    "siteDescription": "Desenvolvemos sistemas de IA prontos para produção, automação de fluxos de trabalho e plataformas inteligentes para empresas que exigem resultados mensuráveis."
   },
   "nav": {
     "home": "Início",
@@ -12,109 +12,157 @@
     "contact": "Contato"
   },
   "hero": {
-    "badge": "Automação de IA e Engenharia de Decisão",
-    "titleStart": "Engenharia de Inteligência.",
-    "titleAccent": "Decisões Mais Rápidas.",
-    "description": "Construímos sistemas de IA em nível de produção que transformam dados brutos em ação decisiva — análise preditiva, automação de fluxos de trabalho e plataformas de inteligência de decisão desenvolvidas para gerar impacto mensurável.",
+    "badge": "Automação com IA e Sistemas Inteligentes",
+    "titleStart": "Automatize com Inteligência.",
+    "titleAccent": "Construa Mais Rápido.",
+    "description": "Projetamos e implantamos sistemas de automação com IA, fluxos de trabalho prontos para produção e plataformas inteligentes — desde orquestração multi-agente até automação industrial. Desenvolvido em Quebec, implantado mundialmente.",
     "ctaPrimary": "Iniciar um Projeto",
-    "ctaSecondary": "Explorar Serviços"
+    "ctaSecondary": "Explorar nossos serviços"
   },
   "servicesSection": {
-    "label": "O Que Fazemos",
-    "title": "Sistemas Inteligentes, Desenvolvidos para Desempenho",
-    "description": "De análise preditiva a inteligência de decisão — construímos IA que opera em escala de produção.",
+    "label": "O Que Construímos",
+    "title": "Da Automação à Inteligência",
+    "description": "Seis capacidades principais respaldadas por implantações reais, código real e resultados mensuráveis.",
     "viewAll": "Ver Todos os Serviços"
   },
   "servicesPage": {
     "label": "Nossos Serviços",
-    "title": "Soluções de IA Desenvolvidas para Impacto",
-    "description": "Seis capacidades centrais, cada uma projetada para transformar um desafio operacional específico em uma vantagem competitiva mensurável."
+    "title": "Engenharia Que Entrega Resultados",
+    "description": "Cada serviço é fundamentado em experiência de produção — 195+ fluxos de trabalho implantados, 42K+ linhas de infraestrutura de IA, 10+ anos de engenharia industrial."
   },
   "services": {
-    "predictive-analytics": {
-      "title": "Motores de Análise Preditiva",
-      "shortDescription": "Modelos de ML personalizados que preveem tendências, curvas de demanda e pontos de falha em conjuntos de dados operacionais.",
-      "longDescription": "Transforme padrões históricos em previsão acionável. Nossos motores preditivos processam dados de séries temporais multidimensionais, identificam correlações não óbvias e entregam previsões ponderadas por probabilidade que se integram diretamente aos seus fluxos de decisão.",
-      "capabilities": ["Previsão de séries temporais", "Detecção de anomalias", "Previsão de demanda", "Modelagem de probabilidade de falha", "Retreinamento de modelo em tempo real"]
+    "ai-workflow-automation": {
+      "title": "Automação de Fluxos de Trabalho com IA",
+      "shortDescription": "Pipelines de produção em n8n integrando LLMs, sistemas RAG e ferramentas de negócios — 195+ fluxos de trabalho em 14 domínios.",
+      "longDescription": "Construímos pipelines de automação completos em n8n que conectam modelos de IA (GPT-4, Claude, Whisper, Ollama) à sua stack de negócios — CRM, email, documentos, voz, IoT. Cada fluxo de trabalho inclui tratamento de erros, trilhas de auditoria e portões human-in-the-loop quando os limites de confiança não são atingidos.",
+      "capabilities": [
+        "Design de pipelines n8n",
+        "Integração RAG e agentes de IA",
+        "Pipelines de voz (STT/TTS)",
+        "Automação de CRM e email",
+        "OCR e classificação de documentos"
+      ]
     },
-    "workflow-automation": {
-      "title": "Sistemas de Automação de Fluxos de Trabalho",
-      "shortDescription": "Pipelines de automação de processo ponta a ponta que eliminam gargalos manuais e oferecem operação sem intervenção.",
-      "longDescription": "Da ingestão de dados à saída de decisão, nossos sistemas de automação orquestram processos complexos de várias etapas com tratamento de erros integrado, trilhas de auditoria e escalação com intervenção humana quando os limites de confiança não são atingidos.",
-      "capabilities": ["Orquestração de pipeline", "Gatilhos orientados a eventos", "Protocolos de recuperação de erros", "Geração de trilha de auditoria", "Portões de intervenção humana"]
+    "ai-systems-architecture": {
+      "title": "Arquitetura de Sistemas de IA",
+      "shortDescription": "Plataformas de orquestração multi-agente com convergência matematicamente comprovada e infraestrutura de nível empresarial.",
+      "longDescription": "Nosso principal produto, o AINOVA OS, é um sistema operacional de IA de produção com 35+ agentes especializados, um motor de convergência auto-otimizável (SOIC) e exploração de decisões Tree-of-Thoughts. Construído em FastAPI, PostgreSQL, Redis e Kubernetes — projetado para equipes que precisam de IA confiável e escalável.",
+      "capabilities": [
+        "Orquestração multi-agente",
+        "Motor de convergência SOIC",
+        "Otimização Tree-of-Thoughts",
+        "Deploy em Kubernetes",
+        "Bridges de protocolo MCP"
+      ]
     },
-    "decision-intelligence": {
-      "title": "Plataformas de Inteligência de Decisão",
-      "shortDescription": "Estruturas estruturadas que sintetizam dados de múltiplas fontes em decisões classificadas com pontuações de confiança.",
-      "longDescription": "Nossas plataformas de decisão agregam sinais de fontes de dados díspares, aplicam modelos de pontuação ponderada, executam simulações de Monte Carlo e apresentam opções classificadas com cadeias de raciocínio transparentes — para que os stakeholders possam agir com convicção, não com suposições.",
-      "capabilities": ["Análise de múltiplos critérios", "Simulação de Monte Carlo", "Modelagem de cenários", "Pontuação de confiança", "Recomendações explicáveis"]
+    "fullstack-development": {
+      "title": "Desenvolvimento Web Full-Stack",
+      "shortDescription": "Aplicações web modernas e sites imersivos — React, Next.js, Three.js — de plataformas financeiras a portfólios 3D.",
+      "longDescription": "Entregamos sites e aplicações web de produção usando stacks modernas: React 19, Next.js 14, TypeScript, Tailwind CSS. De uma plataforma para consultor financeiro com chatbot de IA e calculadoras conformes às normas canadenses a um portfólio 3D imersivo com WebGL — construímos o que o briefing exige.",
+      "capabilities": [
+        "Aplicações React e Next.js",
+        "Experiências Three.js e WebGL",
+        "TypeScript e Tailwind CSS",
+        "Integração de chatbot de IA",
+        "Desenvolvimento de calculadoras financeiras"
+      ]
     },
-    "nlp-pipelines": {
-      "title": "Processamento de Linguagem Natural",
-      "shortDescription": "Pipelines de NLP personalizados para análise de documentos, extração de sentimento e geração automatizada de relatórios.",
-      "longDescription": "Construímos sistemas de NLP em nível de produção que analisam, classificam e extraem inteligência estruturada de texto não estruturado em escala — desde documentos regulatórios e contratos até feedback de clientes e artigos de pesquisa.",
-      "capabilities": ["Classificação de documentos", "Extração de entidades", "Análise de sentimento", "Resumo automatizado", "Suporte multilíngue"]
+    "industrial-automation": {
+      "title": "Automação Industrial e Engenharia Elétrica",
+      "shortDescription": "10+ anos projetando e comissionando sistemas PLC/CNC, linhas de produção industrial e proteção de redes elétricas.",
+      "longDescription": "Expertise em engenharia elétrica sênior em indústria pesada: programação e comissionamento de PLCs e CNCs, projeto de linhas de produção complexas (incluindo clientes do setor de defesa) e engenharia de proteção e coordenação de redes elétricas HV/MV/LV. Trazemos rigor testado em campo para cada projeto.",
+      "capabilities": [
+        "Programação de PLC e CNC",
+        "Projeto de linhas de produção",
+        "Proteção de redes elétricas",
+        "Coordenação de sistemas elétricos",
+        "Comissionamento industrial"
+      ]
     },
-    "computer-vision": {
-      "title": "Visão Computacional e Inspeção",
-      "shortDescription": "Sistemas automatizados de inspeção visual, detecção de defeitos e classificação de imagens em edge ou nuvem.",
-      "longDescription": "Nossos sistemas de visão alcançam precisão sub-pixel para inspeção de qualidade, aproveitando arquiteturas convolucionais e de transformadores otimizadas para implantação em dispositivos edge ou infraestrutura de nuvem acelerada por GPU.",
-      "capabilities": ["Detecção de defeitos", "Classificação de objetos", "Medição dimensional", "Implantação em edge", "Análise de vídeo em tempo real"]
+    "iot-smart-home": {
+      "title": "IoT e Inteligência para Casa Inteligente",
+      "shortDescription": "Automação residencial coordenada por IA, streaming de câmeras local e edge computing — privacidade em primeiro lugar, independente de nuvem.",
+      "longDescription": "Construímos sistemas IoT inteligentes que operam localmente: detecção de movimento coordenada por IA, automação contextual baseada em tempo e presença, dispositivos controlados por voz e streaming de câmeras com engenharia reversa que contorna dependências de nuvem. Todos os dados permanecem na sua rede.",
+      "capabilities": [
+        "Automação coordenada por IA",
+        "Streaming RTSP local",
+        "Integração de controle por voz",
+        "Deploy de edge computing",
+        "Arquitetura com foco em privacidade"
+      ]
     },
-    "ai-strategy": {
-      "title": "Estratégia e Integração de IA",
-      "shortDescription": "Consultoria técnica para roadmaps de adoção de IA, seleção de modelos e integração de sistemas empresariais.",
-      "longDescription": "Ajudamos organizações a navegar no cenário de IA com avaliações técnicas realistas — de auditorias de prontidão e planejamento de infraestrutura a avaliação de fornecedores, seleção de modelos e estratégias de implantação em produção.",
-      "capabilities": ["Avaliação de prontidão", "Planejamento de infraestrutura", "Avaliação de modelos", "Arquitetura de integração", "Modelagem de ROI"]
+    "custom-ai-tools": {
+      "title": "Ferramentas de IA Personalizadas e Integração",
+      "shortDescription": "Kits de ferramentas LLM independentes de fornecedor, assistentes de código local-first e roteamento multi-provedor — construídos para zero lock-in.",
+      "longDescription": "Construímos ferramentas de IA personalizadas que resolvem problemas específicos: uma camada de abstração multi-LLM suportando 6+ provedores com zero vendor lock-in, um assistente de código local usando modelos open-source a custo zero e um roteador inteligente que balanceia requisições entre OpenAI, Anthropic, Groq e Ollama baseado em custo, latência e capacidade.",
+      "capabilities": [
+        "Camadas de abstração multi-LLM",
+        "Deploy de modelos locais",
+        "Roteamento inteligente de requisições",
+        "Desenvolvimento de servidores MCP",
+        "Pipelines voice-to-LLM"
+      ]
     }
   },
   "projectsSection": {
-    "label": "Estudos de Caso",
-    "title": "Resultados Que Falam em Números",
-    "description": "Implantações de IA no mundo real com impacto quantificado em diversos setores.",
+    "label": "Casos de Estudo",
+    "title": "Construído, Implantado, Medido",
+    "description": "Projetos reais com métricas reais — não demos, não protótipos.",
     "viewAll": "Ver Todos os Projetos"
   },
   "projectsPage": {
-    "label": "Estudos de Caso",
-    "title": "Inteligência Implantada, Impacto Medido",
-    "description": "Todo projeto começa com um desafio de dados e termina com um sistema em produção entregando resultados quantificados."
+    "label": "Casos de Estudo",
+    "title": "Sistemas de Produção, Resultados Comprovados",
+    "description": "Todos os projetos abaixo estão em produção. O código existe, as métricas são reais, os sistemas estão ativos."
   },
   "projects": {
-    "meridian-forecasting": {
-      "title": "Meridian Forecasting Suite",
-      "industry": "Energia e Serviços Públicos",
-      "challenge": "A previsão de carga da rede estava 72 horas atrás das mudanças de demanda em tempo real, causando US$ 2,3 milhões/ano em custos de balanceamento.",
-      "solution": "Implantamos um modelo ensemble LSTM processando 14 fluxos de dados em intervalos de 15 minutos, integrado à infraestrutura SCADA existente via camada de ingestão de streaming.",
-      "result": "Alcançamos 94,7% de precisão de previsão em intervalos de 15 minutos. Reduzimos os custos de balanceamento de energia em 61% no primeiro trimestre operacional.",
-      "metricValue": "94,7%",
-      "metricLabel": "Precisão de Previsão"
+    "ainova-os": {
+      "title": "AINOVA OS",
+      "industry": "Infraestrutura de IA",
+      "challenge": "Os frameworks de agentes de IA existentes são ferramentas de prototipagem — faltam garantias de convergência, segurança empresarial e orquestração de nível de produção para fluxos de trabalho multi-agente complexos.",
+      "solution": "Desenvolvemos um sistema operacional de IA completo: 35+ agentes especializados, um motor de convergência SOIC auto-otimizável com prova matemática, exploração de decisões Tree-of-Thoughts, integração da metodologia BMAD e bridges MCP para Claude Code — implantado em Kubernetes com monitoramento Prometheus.",
+      "result": "42.000+ linhas de Python de produção. Convergência de qualidade μ = 9.94/10 (certificado Gold Master). 584 funções de teste. Totalmente containerizado com manifests Docker e Kubernetes.",
+      "metricValue": "μ 9.94",
+      "metricLabel": "Pontuação de Qualidade",
+      "clientSize": "Projeto interno P&D",
+      "timeline": "8 meses de desenvolvimento",
+      "methodology": "Arquitetura BMAD + convergência SOIC iterativa"
     },
-    "sentinel-quality": {
-      "title": "Sentinel Quality Gate",
-      "industry": "Manufatura Aeroespacial",
-      "challenge": "A inspeção visual manual detectou apenas 82% dos micro-defeitos de superfície nos revestimentos de pás de turbina, com 340 falsos positivos por turno.",
-      "solution": "Implantamos uma rede neural convolucional treinada em 45.000 imagens anotadas de pás, com inferência em edge em módulos NVIDIA Jetson integrados à linha de produção.",
-      "result": "Taxa de detecção de defeitos de 99,2% com 89% de redução em falsos positivos. O throughput de inspeção aumentou 4x.",
-      "metricValue": "99,2%",
-      "metricLabel": "Detecção de Defeitos"
+    "conseiller-placement": {
+      "title": "Plataforma para Consultor Financeiro",
+      "industry": "Serviços Financeiros",
+      "challenge": "Um consultor financeiro certificado do iA Financial Group precisava de uma presença web profissional com ferramentas interativas que cumprissem as regulamentações financeiras canadenses (RRSP, TFSA, CMHC).",
+      "solution": "Construímos uma plataforma dual-stack: um site de produção com backend Node.js/Express (Helmet, rate limiting, validação de entrada) e 4 calculadoras financeiras em conformidade com as normas canadenses com cobertura de testes Jest. Adicionamos um chatbot híbrido com IA combinando respostas baseadas em regras com inteligência LLM.",
+      "result": "Plataforma totalmente operacional com pontuação de auditoria de segurança de 7.8/10. Cliente real em produção. Dashboard de acompanhamento de patrimônio construído em React 19 + TypeScript.",
+      "metricValue": "7.8/10",
+      "metricLabel": "Pontuação de Segurança",
+      "clientSize": "Consultor certificado — iA Financial Group",
+      "timeline": "3 meses de desenvolvimento",
+      "methodology": "Full-stack ágil + auditorias de segurança contínuas"
     },
-    "lexicon-intelligence": {
-      "title": "Lexicon Intelligence Hub",
-      "industry": "Jurídico e Compliance",
-      "challenge": "Analistas regulatórios gastavam mais de 400 horas mensais revisando mais de 12.000 documentos para classificação de relevância de compliance.",
-      "solution": "Construímos um pipeline de NLP baseado em transformadores com modelos de classificação ajustados, loops de feedback de aprendizado ativo e um painel de revisão classificado por prioridade.",
-      "result": "A triagem automatizada reduziu a revisão manual em 78%, sinalizando itens críticos em menos de 90 segundos com 96,3% de precisão de classificação.",
-      "metricValue": "-78%",
-      "metricLabel": "Revisão Manual"
+    "n8n-ecosystem": {
+      "title": "Ecossistema n8n Empresarial",
+      "industry": "Automação de Negócios",
+      "challenge": "Gerenciar operações de negócios díspares — CRM, finanças, documentos, comunicações, IoT — em 14+ domínios funcionais sem uma camada de automação unificada.",
+      "solution": "Projetamos e implantamos 195 fluxos de trabalho de produção em n8n: 52 com IA (RAG, agentes, classificadores), 24 automações de comunicação, 18 pipelines de processamento de documentos, 17 fluxos de trabalho financeiros, 16 pipelines de voz (Whisper + Piper) e 7 orquestrações IoT. Framework de governança com pontuação de 9.90/10 em auditoria SOIC.",
+      "result": "195 fluxos de trabalho em produção. 57% com IA. 12 nodes customizados da comunidade instalados. Governança completa com 35+ campos de metadados por fluxo de trabalho.",
+      "metricValue": "195",
+      "metricLabel": "Fluxos de Trabalho",
+      "clientSize": "Infraestrutura multi-domínio (14 departamentos)",
+      "timeline": "12+ meses de desenvolvimento contínuo",
+      "methodology": "Deploy iterativo + governança SOIC (9.90/10)"
     },
-    "atlas-decision": {
-      "title": "Atlas Decision Matrix",
-      "industry": "Cadeia de Suprimentos e Logística",
-      "challenge": "Decisões de aquisição de múltiplos fornecedores dependiam de planilhas com mais de 15 trade-offs variáveis, com média de 3 semanas por ciclo de sourcing.",
-      "solution": "Desenvolvemos uma plataforma de inteligência de decisão com pontuação ponderada de múltiplos critérios, simulação de Monte Carlo para avaliação de risco e otimização de restrições em tempo real.",
-      "result": "O tempo do ciclo de sourcing foi reduzido de 3 semanas para 4 dias. As pontuações de confiança de decisão melhoraram os resultados de aquisição em 34%.",
-      "metricValue": "4 dias",
-      "metricLabel": "Tempo de Ciclo"
+    "stark-portfolio": {
+      "title": "Portfólio 3D Imersivo",
+      "industry": "Web e Criativo",
+      "challenge": "Sites de portfólio padrão se perdem no ruído. O cliente precisava de um site que demonstrasse maestria técnica através da própria experiência — não apenas capturas de tela.",
+      "solution": "Construímos um portfólio cinematográfico com React 19, Three.js (Arc Reactor 3D com shaders WebGL), animações Framer Motion, áudio procedural Howler.js (6 sons interativos) e um 'Modo Overclock' completo que transforma toda a UI — cores, velocidade, sons, mensagens — em tempo real.",
+      "result": "Ao vivo no Netlify. Bundle JS de 373KB gzipped. 10 seções completas. Renderização 3D em tempo real com transformação de modo. Tempo de build de 7 segundos em CI/CD.",
+      "metricValue": "AO VIVO",
+      "metricLabel": "Produção",
+      "clientSize": "Cliente individual — profissional tech",
+      "timeline": "6 semanas de desenvolvimento",
+      "methodology": "Design cinematográfico + testes de performance WebGL"
     }
   },
   "projectCard": {
@@ -123,72 +171,60 @@
   },
   "about": {
     "missionLabel": "Nossa Missão",
-    "missionTitle": "Infraestrutura de Decisão para a Era da IA",
-    "mission": "Desenvolvemos sistemas inteligentes que transformam dados brutos em ação decisiva. Na Mark Systems, não apenas construímos IA — arquitetamos a infraestrutura de decisão que dá às organizações uma vantagem desleal.",
-    "teamLabel": "A Equipe",
-    "teamTitle": "Construído por Engenheiros, para Engenheiros",
-    "teamDescription": "Profunda expertise em machine learning, engenharia de sistemas e consultoria estratégica.",
+    "missionTitle": "Automação Que Realmente Funciona",
+    "mission": "A Mark Systems existe para transformar capacidades complexas de IA em sistemas de produção que entregam resultados mensuráveis. Não vendemos demos — entregamos fluxos de trabalho, agentes e plataformas que funcionam 24/7 e provam seu valor em números. Construído por um engenheiro com 10+ anos de experiência de campo, cada solução é projetada para o mundo real.",
+    "teamLabel": "O Fundador",
+    "teamTitle": "Engenharia em Primeiro Lugar, Sempre",
+    "teamDescription": "Um engenheiro. 10+ anos no campo. De linhas de produção industrial a sistemas operacionais de IA.",
     "valuesLabel": "Nossos Princípios",
     "valuesTitle": "Como Operamos",
     "valuesDescription": "Quatro princípios inegociáveis que definem cada engajamento."
   },
   "team": {
-    "marcus-chen": {
-      "role": "CEO e Fundador",
-      "bio": "Ex-engenheiro principal na DeepMind. 15 anos construindo sistemas de ML em produção nos setores de energia, defesa e finanças. Fundou a Mark Systems para preencher a lacuna entre avanços de pesquisa e realidade operacional."
-    },
-    "elena-vasquez": {
-      "role": "CTO",
-      "bio": "PhD em Aprendizado Estatístico pelo MIT. Liderou a equipe de plataforma de machine learning na Stripe antes de ingressar na Mark Systems. Especialista em construir pipelines de inferência escaláveis que operam sob restrições rigorosas de latência."
-    },
-    "james-okafor": {
-      "role": "Head de Engenharia de ML",
-      "bio": "Anteriormente no Tesla Autopilot e Waymo. Especialista em visão computacional, implantação em edge e otimização de modelos. Lidera nossa equipe de engenharia na entrega de sistemas de IA em nível de produção."
-    },
-    "sarah-kim": {
-      "role": "Head de Estratégia",
-      "bio": "Ex-gerente de engajamento na McKinsey especializada em transformação de IA. Traduz capacidades técnicas complexas em resultados de negócios mensuráveis para nossos clientes."
+    "founder": {
+      "role": "Fundador e Engenheiro Principal",
+      "bio": "Engenheiro elétrico sênior com 10+ anos em automação industrial (PLC/CNC, linhas de produção do setor de defesa, proteção de redes elétricas HV). Agora construindo sistemas de automação com IA — de um sistema operacional de IA de 42K linhas a 195 fluxos de trabalho de produção n8n. Baseado em Quebec, Canadá."
     }
   },
   "values": {
     "0": {
-      "title": "Precisão em Vez de Hype",
-      "description": "Entregamos resultados mensuráveis, não demos. Cada sistema que construímos é benchmarked em relação a KPIs claramente definidos antes da implantação."
+      "title": "Precisão Acima do Hype",
+      "description": "Entregamos resultados mensuráveis, não promessas. Cada sistema é benchmarked com métricas reais antes da entrega — sem buzzwords, sem mágica, apenas engenharia."
     },
     "1": {
       "title": "Pensamento Sistêmico",
-      "description": "Cada componente é projetado para o todo. Desenvolvemos soluções que se integram perfeitamente à infraestrutura existente, não protótipos isolados."
+      "description": "Cada componente é projetado para o todo. Construímos soluções que se integram à infraestrutura existente — não protótipos isolados que quebram ao contato com a realidade."
     },
     "2": {
-      "title": "Inteligência Transparente",
-      "description": "Sem caixas pretas. Nossos sistemas de IA fornecem saídas explicáveis com pontuações de confiança, trilhas de auditoria e cadeias de raciocínio claras."
+      "title": "Engenharia Testada em Batalha",
+      "description": "10+ anos de experiência de campo industrial significam que construímos para modos de falha, não apenas caminhos felizes. Rigor de PLC aplicado a sistemas de IA."
     },
     "3": {
-      "title": "Iteração Incansável",
-      "description": "Os modelos em produção melhoram continuamente. Construímos monitoramento, loops de feedback e pipelines de retreinamento em cada implantação desde o primeiro dia."
+      "title": "Zero Vendor Lock-In",
+      "description": "Multi-LLM, multi-cloud, open-source em primeiro lugar. Seus sistemas funcionam nos seus termos — construímos camadas de abstração, não dependências."
     }
   },
   "contact": {
     "label": "Entre em Contato",
     "title": "Inicie uma Conversa",
-    "description": "Conte-nos sobre seus desafios de dados e projetaremos o sistema inteligente para resolvê-los.",
-    "emailLabel": "E-mail",
-    "emailAddress": "hello@marksystems.ai",
+    "description": "Conte-nos sobre seus desafios de automação e desenvolveremos o sistema para resolvê-los.",
+    "emailLabel": "Email",
+    "emailAddress": "contact@marksystems.ai",
     "locationLabel": "Localização",
-    "locationCity": "San Francisco, CA",
-    "locationDetail": "Equipe remota"
+    "locationCity": "Quebec, Canadá",
+    "locationDetail": "Remote-first — atendendo clientes em todo o mundo"
   },
   "contactForm": {
     "name": "Nome",
-    "namePlaceholder": "João Silva",
-    "email": "E-mail",
-    "emailPlaceholder": "joao@empresa.com",
+    "namePlaceholder": "Seu nome",
+    "email": "Email",
+    "emailPlaceholder": "voce@empresa.com",
     "company": "Empresa",
-    "companyPlaceholder": "Empresa Ltda",
+    "companyPlaceholder": "Sua empresa",
     "serviceInterest": "Interesse em Serviço",
     "selectService": "Selecione um serviço",
     "message": "Mensagem",
-    "messagePlaceholder": "Conte-nos sobre seu projeto...",
+    "messagePlaceholder": "Conte-nos sobre seu projeto ou desafio...",
     "submit": "Enviar Mensagem",
     "successTitle": "Mensagem Enviada",
     "successMessage": "Obrigado por entrar em contato. Retornaremos em até 24 horas.",
@@ -197,15 +233,15 @@
   "validation": {
     "nameRequired": "Nome é obrigatório",
     "nameMinLength": "Nome deve ter pelo menos 2 caracteres",
-    "emailRequired": "E-mail é obrigatório",
-    "emailInvalid": "Por favor, insira um endereço de e-mail válido",
+    "emailRequired": "Email é obrigatório",
+    "emailInvalid": "Por favor, insira um endereço de email válido",
     "messageRequired": "Mensagem é obrigatória",
     "messageMinLength": "Mensagem deve ter pelo menos 10 caracteres"
   },
   "cta": {
-    "label": "Pronto para Começar?",
-    "title": "Vamos Desenvolver Sua Vantagem",
-    "description": "Conte-nos sobre seus desafios de dados. Projetaremos o sistema inteligente que os transformará em alavancagem competitiva.",
+    "label": "Pronto para Automatizar?",
+    "title": "Vamos Construir Algo Que Funciona",
+    "description": "Conte-nos sobre seus desafios de automação. Projetaremos o sistema inteligente que os transformará em vantagem competitiva.",
     "button": "Iniciar uma Conversa"
   },
   "notFound": {
@@ -215,31 +251,61 @@
     "back": "Voltar ao Início"
   },
   "footer": {
-    "description": "Desenvolvendo sistemas inteligentes que transformam dados brutos em ação decisiva.",
+    "description": "Desenvolvendo sistemas de automação com IA que entregam resultados mensuráveis.",
     "navLabel": "Navegação",
     "connectLabel": "Conecte-se",
     "copyright": "© {year} Mark Systems. Todos os direitos reservados."
   },
   "metadata": {
     "home": {
-      "title": "Mark Systems | Automação de IA e Engenharia de Decisão",
-      "description": "Desenvolvemos sistemas inteligentes que transformam dados brutos em ação decisiva. Soluções personalizadas de IA para análise preditiva, automação de fluxos de trabalho e inteligência de decisão."
+      "title": "Mark Systems | Automação com IA e Sistemas Inteligentes",
+      "description": "Automação com IA de nível de produção, engenharia de fluxos de trabalho e plataformas inteligentes. 195+ fluxos de trabalho implantados, 42K+ linhas de infraestrutura de IA. Quebec, Canadá."
     },
     "services": {
       "title": "Serviços",
-      "description": "Serviços de automação de IA e engenharia de decisão — de análise preditiva a visão computacional e consultoria estratégica."
+      "description": "Automação de fluxos de trabalho com IA, arquitetura de sistemas, desenvolvimento full-stack, automação industrial, inteligência IoT e ferramentas de IA personalizadas."
     },
     "projects": {
       "title": "Projetos",
-      "description": "Estudos de caso apresentando implantações de IA no mundo real com impacto quantificado nos setores de energia, aeroespacial, jurídico e cadeia de suprimentos."
+      "description": "Casos de estudo reais: AINOVA OS (sistema operacional de IA), ecossistema n8n empresarial (195 fluxos de trabalho), plataforma para consultor financeiro e portfólio 3D imersivo."
     },
     "about": {
       "title": "Sobre",
-      "description": "Conheça a equipe por trás da Mark Systems — engenheiros, pesquisadores e estrategistas construindo a próxima geração de infraestrutura de decisão."
+      "description": "10+ anos de engenharia — de linhas de produção industrial a sistemas operacionais de IA. Baseado em Quebec, Canadá."
     },
     "contact": {
       "title": "Contato",
-      "description": "Entre em contato com a Mark Systems para discutir suas necessidades de automação de IA e engenharia de decisão."
+      "description": "Entre em contato com a Mark Systems para discutir suas necessidades de automação com IA e sistemas inteligentes."
+    }
+  },
+  "faq": {
+    "label": "Perguntas frequentes",
+    "title": "FAQ — Automação IA",
+    "items": {
+      "0": {
+        "question": "O que é Mark Systems e qual a relação com ECI Mark Systems?",
+        "answer": "Mark Systems é uma empresa de engenharia IA especializada em automação de workflows, orquestração multi-agentes e sistemas inteligentes, sediada em Montreal. Não temos nenhuma relação com a ECI Mark Systems, que é uma fornecedora de software ERP para construção residencial."
+      },
+      "1": {
+        "question": "Que tipos de automação IA vocês oferecem?",
+        "answer": "Oferecemos automação de workflows IA via n8n (195+ workflows implantados), arquitetura de sistemas multi-agentes (AINOVA OS), desenvolvimento web full-stack, automação industrial (PLC/CNC), inteligência IoT e ferramentas IA personalizadas com roteamento multi-LLM."
+      },
+      "2": {
+        "question": "Quanto custa um projeto de automação IA?",
+        "answer": "Cada projeto é único. O custo depende da complexidade, número de workflows, integrações necessárias e nível de personalização. Entre em contato para uma avaliação gratuita das suas necessidades de automação."
+      },
+      "3": {
+        "question": "Vocês trabalham com clientes fora do Quebec?",
+        "answer": "Sim, operamos remotamente e atendemos clientes em todo o mundo. Nossa expertise em automação IA, desenvolvimento web e engenharia industrial está disponível internacionalmente."
+      },
+      "4": {
+        "question": "O que é AINOVA OS?",
+        "answer": "AINOVA OS é nosso sistema operacional IA de produção: 35+ agentes especializados, um motor de convergência SOIC auto-otimizante (μ=9.94/10), exploração de decisões Tree-of-Thoughts e infraestrutura Kubernetes. São 42.000+ linhas de Python de produção."
+      },
+      "5": {
+        "question": "Qual é a expertise de vocês em automação industrial?",
+        "answer": "Nosso fundador tem 10+ anos de experiência em engenharia elétrica industrial: programação PLC/CNC, design de linhas de produção (incluindo setor de defesa) e engenharia de sistemas de proteção de redes elétricas HV/MV/LV."
+      }
     }
   }
 }
