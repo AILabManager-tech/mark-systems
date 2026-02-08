@@ -141,9 +141,7 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
       addressRegion: "QC",
       addressCountry: "CA",
     },
-    sameAs: [
-      "https://github.com/marksystems",
-    ],
+    sameAs: [],
     knowsAbout: [
       "AI Automation",
       "Workflow Automation",

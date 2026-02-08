@@ -12,7 +12,3 @@ export const NAV_HREFS: Record<(typeof NAV_KEYS)[number], string> = {
   about: "/about",
   contact: "/contact",
 };
-
-export const SOCIAL_LINKS = {
-  github: "https://github.com/marksystems",
-} as const;

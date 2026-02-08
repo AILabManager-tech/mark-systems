@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { NAV_KEYS, NAV_HREFS, SOCIAL_LINKS } from "@/lib/constants";
+import { NAV_KEYS, NAV_HREFS } from "@/lib/constants";
 
 export function Footer() {
   const tCommon = useTranslations("common");
@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="border-t border-surface-border">
       <div className="section-container py-16">
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-2">
           <div>
             <Link href="/" className="text-lg font-bold text-text-primary tracking-tight">
               {tCommon("siteName")}
@@ -37,19 +37,6 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="mb-4 font-mono text-xs uppercase tracking-widest text-text-tertiary">
-              {tFooter("connectLabel")}
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="text-sm text-text-secondary transition-colors hover:text-text-primary">
-                  GitHub
-                </a>
-              </li>
             </ul>
           </div>
         </div>
