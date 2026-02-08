@@ -29,6 +29,11 @@ export function ProjectCard({ projectId, compact = false }: ProjectCardProps) {
 
       {!compact && (
         <>
+          <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-text-tertiary">
+            <span>{t("clientSize")}</span>
+            <span>{t("timeline")}</span>
+            <span>{t("methodology")}</span>
+          </div>
           <p className="mb-3 text-sm text-text-secondary">
             <span className="font-medium text-text-primary">{tCard("challenge")} </span>
             {t("challenge")}

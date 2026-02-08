@@ -51,7 +51,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-12 flex gap-4"
         >
-          <Button href="/projects">
+          <Button href="/services">
             {t("ctaSecondary")}
             <ArrowRight className="h-4 w-4" />
           </Button>

@@ -50,16 +50,6 @@ export function Footer() {
                   GitHub
                 </a>
               </li>
-              <li>
-                <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm text-text-secondary transition-colors hover:text-text-primary">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" className="text-sm text-text-secondary transition-colors hover:text-text-primary">
-                  Twitter
-                </a>
-              </li>
             </ul>
           </div>
         </div>

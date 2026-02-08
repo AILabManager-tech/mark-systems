@@ -1,8 +1,8 @@
 {
   "common": {
     "siteName": "Mark Systems",
-    "tagline": "AI Automation & Decision Engineering",
-    "siteDescription": "We engineer intelligent systems that transform raw data into decisive action. Custom AI solutions for predictive analytics, workflow automation, and decision intelligence."
+    "tagline": "AI Automation & Intelligent Systems",
+    "siteDescription": "We engineer production-grade AI systems, workflow automation, and intelligent platforms for businesses that demand measurable results."
   },
   "nav": {
     "home": "Home",
@@ -12,109 +12,121 @@
     "contact": "Contact"
   },
   "hero": {
-    "badge": "AI Automation & Decision Engineering",
-    "titleStart": "Engineer Intelligence.",
-    "titleAccent": "Decide Faster.",
-    "description": "We build production-grade AI systems that transform raw data into decisive action — predictive analytics, workflow automation, and decision intelligence platforms engineered for measurable impact.",
+    "badge": "AI Automation & Intelligent Systems",
+    "titleStart": "Automate Smarter.",
+    "titleAccent": "Build Faster.",
+    "description": "We design and deploy AI-powered automation systems, production-grade workflows, and intelligent platforms — from multi-agent orchestration to industrial automation. Engineered in Quebec, deployed worldwide.",
     "ctaPrimary": "Start a Project",
-    "ctaSecondary": "Explore Services"
+    "ctaSecondary": "Explore Our Services"
   },
   "servicesSection": {
-    "label": "What We Do",
-    "title": "Intelligent Systems, Engineered to Perform",
-    "description": "From predictive analytics to decision intelligence — we build AI that operates at production scale.",
+    "label": "What We Build",
+    "title": "From Automation to Intelligence",
+    "description": "Six core capabilities backed by real deployments, real code, and measurable outcomes.",
     "viewAll": "View All Services"
   },
   "servicesPage": {
     "label": "Our Services",
-    "title": "AI Solutions Engineered for Impact",
-    "description": "Six core capabilities, each designed to transform a specific operational challenge into a measurable competitive advantage."
+    "title": "Engineering That Delivers",
+    "description": "Every service is grounded in production experience — 195+ workflows deployed, 42K+ lines of AI infrastructure, 10+ years of industrial engineering."
   },
   "services": {
-    "predictive-analytics": {
-      "title": "Predictive Analytics Engines",
-      "shortDescription": "Custom ML models that forecast trends, demand curves, and failure points across operational datasets.",
-      "longDescription": "Turn historical patterns into actionable foresight. Our predictive engines ingest multi-dimensional time-series data, identify non-obvious correlations, and deliver probability-weighted forecasts that integrate directly into your decision workflows.",
-      "capabilities": ["Time-series forecasting", "Anomaly detection", "Demand prediction", "Failure probability modeling", "Real-time model retraining"]
+    "ai-workflow-automation": {
+      "title": "AI Workflow Automation",
+      "shortDescription": "Production n8n pipelines integrating LLMs, RAG systems, and business tools — 195+ workflows across 14 domains.",
+      "longDescription": "We build end-to-end automation pipelines on n8n that connect AI models (GPT-4, Claude, Whisper, Ollama) to your business stack — CRM, email, documents, voice, IoT. Each workflow includes error handling, audit trails, and human-in-the-loop gates when confidence thresholds are not met.",
+      "capabilities": ["n8n pipeline design", "RAG & AI agent integration", "Voice pipelines (STT/TTS)", "CRM & email automation", "Document OCR & classification"]
     },
-    "workflow-automation": {
-      "title": "Workflow Automation Systems",
-      "shortDescription": "End-to-end process automation pipelines that eliminate manual bottlenecks and deliver zero-touch operation.",
-      "longDescription": "From data ingestion to decision output, our automation systems orchestrate complex multi-step processes with built-in error handling, audit trails, and human-in-the-loop escalation when confidence thresholds are not met.",
-      "capabilities": ["Pipeline orchestration", "Event-driven triggers", "Error recovery protocols", "Audit trail generation", "Human-in-the-loop gates"]
+    "ai-systems-architecture": {
+      "title": "AI Systems Architecture",
+      "shortDescription": "Multi-agent orchestration platforms with mathematically proven convergence and enterprise-grade infrastructure.",
+      "longDescription": "Our flagship AINOVA OS is a production AI operating system with 35+ specialized agents, a self-optimizing convergence engine (SOIC), and Tree-of-Thoughts decision exploration. Built on FastAPI, PostgreSQL, Redis, and Kubernetes — designed for teams that need AI they can trust and scale.",
+      "capabilities": ["Multi-agent orchestration", "SOIC convergence engine", "Tree-of-Thoughts optimization", "Kubernetes deployment", "MCP protocol bridges"]
     },
-    "decision-intelligence": {
-      "title": "Decision Intelligence Platforms",
-      "shortDescription": "Structured frameworks that synthesize multi-source data into ranked decisions with confidence scores.",
-      "longDescription": "Our decision platforms aggregate signals from disparate data sources, apply weighted scoring models, run Monte Carlo simulations, and present ranked options with transparent reasoning chains — so stakeholders can act with conviction, not guesswork.",
-      "capabilities": ["Multi-criteria analysis", "Monte Carlo simulation", "Scenario modeling", "Confidence scoring", "Explainable recommendations"]
+    "fullstack-development": {
+      "title": "Full-Stack Web Development",
+      "shortDescription": "Modern web applications and immersive sites — React, Next.js, Three.js — from financial platforms to 3D portfolios.",
+      "longDescription": "We deliver production websites and web apps using modern stacks: React 19, Next.js 14, TypeScript, Tailwind CSS. From a financial advisor platform with AI chatbot and Canadian-compliant calculators to an immersive 3D portfolio with WebGL — we build what the brief demands.",
+      "capabilities": ["React & Next.js applications", "Three.js & WebGL experiences", "TypeScript & Tailwind CSS", "AI chatbot integration", "Financial calculator development"]
     },
-    "nlp-pipelines": {
-      "title": "Natural Language Processing",
-      "shortDescription": "Custom NLP pipelines for document analysis, sentiment extraction, and automated report generation.",
-      "longDescription": "We build production-grade NLP systems that parse, classify, and extract structured intelligence from unstructured text at scale — from regulatory documents and contracts to customer feedback and research papers.",
-      "capabilities": ["Document classification", "Entity extraction", "Sentiment analysis", "Automated summarization", "Multi-language support"]
+    "industrial-automation": {
+      "title": "Industrial Automation & Electrical Engineering",
+      "shortDescription": "10+ years designing and commissioning PLC/CNC systems, industrial production lines, and power grid protection.",
+      "longDescription": "Senior electrical engineering expertise across heavy industry: programming and commissioning PLCs and CNCs, designing complex production lines (including defense-sector clients), and engineering HV/MV/LV power grid protection and coordination systems. We bring field-tested rigor to every project.",
+      "capabilities": ["PLC & CNC programming", "Production line design", "Power grid protection", "Electrical system coordination", "Industrial commissioning"]
     },
-    "computer-vision": {
-      "title": "Computer Vision & Inspection",
-      "shortDescription": "Automated visual inspection systems, defect detection, and image classification on edge or cloud.",
-      "longDescription": "Our vision systems achieve sub-pixel precision for quality inspection, leveraging convolutional and transformer architectures optimized for deployment on edge devices or GPU-accelerated cloud infrastructure.",
-      "capabilities": ["Defect detection", "Object classification", "Dimensional measurement", "Edge deployment", "Real-time video analysis"]
+    "iot-smart-home": {
+      "title": "IoT & Smart Home Intelligence",
+      "shortDescription": "AI-coordinated home automation, local camera streaming, and edge computing — privacy-first, cloud-independent.",
+      "longDescription": "We build intelligent IoT systems that operate locally: AI-coordinated motion detection, contextual automation based on time and presence, voice-controlled devices, and reverse-engineered camera streaming that bypasses cloud dependencies. All data stays on your network.",
+      "capabilities": ["AI-coordinated automation", "Local RTSP streaming", "Voice control integration", "Edge computing deployment", "Privacy-first architecture"]
     },
-    "ai-strategy": {
-      "title": "AI Strategy & Integration",
-      "shortDescription": "Technical advisory for AI adoption roadmaps, model selection, and enterprise system integration.",
-      "longDescription": "We help organizations navigate the AI landscape with clear-eyed technical assessments — from readiness audits and infrastructure planning to vendor evaluation, model selection, and production deployment strategies.",
-      "capabilities": ["Readiness assessment", "Infrastructure planning", "Model evaluation", "Integration architecture", "ROI modeling"]
+    "custom-ai-tools": {
+      "title": "Custom AI Tools & Integration",
+      "shortDescription": "Vendor-agnostic LLM toolkits, local-first code assistants, and multi-provider routing — built for zero lock-in.",
+      "longDescription": "We build custom AI tools that solve specific problems: a multi-LLM abstraction layer supporting 6+ providers with zero vendor lock-in, a local code assistant using open-source models at zero cost, and an intelligent router that balances requests across OpenAI, Anthropic, Groq, and Ollama based on cost, latency, and capability.",
+      "capabilities": ["Multi-LLM abstraction layers", "Local model deployment", "Intelligent request routing", "MCP server development", "Voice-to-LLM pipelines"]
     }
   },
   "projectsSection": {
     "label": "Case Studies",
-    "title": "Results That Speak in Numbers",
-    "description": "Real-world AI deployments with quantified impact across industries.",
+    "title": "Built, Deployed, Measured",
+    "description": "Real projects with real metrics — not demos, not prototypes.",
     "viewAll": "View All Projects"
   },
   "projectsPage": {
     "label": "Case Studies",
-    "title": "Deployed Intelligence, Measured Impact",
-    "description": "Every project starts with a data challenge and ends with a production system delivering quantified results."
+    "title": "Production Systems, Proven Results",
+    "description": "Every project below runs in production. The code exists, the metrics are real, the systems are live."
   },
   "projects": {
-    "meridian-forecasting": {
-      "title": "Meridian Forecasting Suite",
-      "industry": "Energy & Utilities",
-      "challenge": "Grid load prediction was 72 hours behind real-time demand shifts, causing $2.3M/year in balancing costs.",
-      "solution": "Deployed an LSTM ensemble model processing 14 data streams at 15-minute intervals, integrated with the existing SCADA infrastructure via streaming ingestion layer.",
-      "result": "Achieved 94.7% prediction accuracy at 15-minute intervals. Reduced energy balancing costs by 61% in the first operating quarter.",
-      "metricValue": "94.7%",
-      "metricLabel": "Prediction Accuracy"
+    "ainova-os": {
+      "title": "AINOVA OS",
+      "industry": "AI Infrastructure",
+      "clientSize": "Internal R&D project",
+      "timeline": "8 months of development",
+      "methodology": "BMAD architecture + iterative SOIC convergence",
+      "challenge": "Existing AI agent frameworks are prototyping tools — they lack convergence guarantees, enterprise security, and production-grade orchestration for complex multi-agent workflows.",
+      "solution": "Engineered a full AI operating system: 35+ specialized agents, a self-optimizing SOIC convergence engine with mathematical proof, Tree-of-Thoughts decision exploration, BMAD methodology integration, and MCP bridges for Claude Code — deployed on Kubernetes with Prometheus monitoring.",
+      "result": "42,000+ lines of production Python. Quality convergence μ = 9.94/10 (Gold Master certified). 584 test functions. Fully containerized with Docker and Kubernetes manifests.",
+      "metricValue": "μ 9.94",
+      "metricLabel": "Quality Score"
     },
-    "sentinel-quality": {
-      "title": "Sentinel Quality Gate",
-      "industry": "Aerospace Manufacturing",
-      "challenge": "Manual visual inspection caught only 82% of surface micro-defects on turbine blade coatings, with 340 false positives per shift.",
-      "solution": "Deployed a convolutional neural network trained on 45,000 annotated blade images, with edge inference on NVIDIA Jetson modules integrated into the production line.",
-      "result": "99.2% defect detection rate with 89% reduction in false positives. Inspection throughput increased 4x.",
-      "metricValue": "99.2%",
-      "metricLabel": "Defect Detection"
+    "conseiller-placement": {
+      "title": "Financial Advisor Platform",
+      "industry": "Financial Services",
+      "clientSize": "Certified advisor — iA Financial Group",
+      "timeline": "3 months of development",
+      "methodology": "Full-stack agile + continuous security audits",
+      "challenge": "A certified financial advisor at iA Financial Group needed a professional web presence with interactive tools that comply with Canadian financial regulations (RRSP, TFSA, CMHC).",
+      "solution": "Built a dual-stack platform: a production website with Node.js/Express backend (Helmet, rate limiting, input validation) and 4 Canadian-compliant financial calculators with Jest test coverage. Added an AI-powered hybrid chatbot combining rule-based responses with LLM intelligence.",
+      "result": "Fully operational platform with security audit score of 7.8/10. Real client in production. Wealth tracking dashboard built in React 19 + TypeScript.",
+      "metricValue": "7.8/10",
+      "metricLabel": "Security Score"
     },
-    "lexicon-intelligence": {
-      "title": "Lexicon Intelligence Hub",
-      "industry": "Legal & Compliance",
-      "challenge": "Regulatory analysts spent 400+ hours monthly reviewing 12,000+ documents for compliance relevance classification.",
-      "solution": "Built a transformer-based NLP pipeline with fine-tuned classification models, active learning feedback loops, and a priority-ranked review dashboard.",
-      "result": "Automated triage reduced manual review by 78%, flagging critical items in under 90 seconds with 96.3% classification accuracy.",
-      "metricValue": "-78%",
-      "metricLabel": "Manual Review"
+    "n8n-ecosystem": {
+      "title": "Enterprise n8n Ecosystem",
+      "industry": "Business Automation",
+      "clientSize": "Multi-domain infrastructure (14 departments)",
+      "timeline": "12+ months of continuous development",
+      "methodology": "Iterative deployment + SOIC governance (9.90/10)",
+      "challenge": "Managing disparate business operations — CRM, finance, documents, communications, IoT — across 14+ functional domains with no unified automation layer.",
+      "solution": "Designed and deployed 195 production workflows on n8n: 52 AI-powered (RAG, agents, classifiers), 24 communication automations, 18 document processing pipelines, 17 finance workflows, 16 voice pipelines (Whisper + Piper), and 7 IoT orchestrations. Governance framework scored 9.90/10 on SOIC audit.",
+      "result": "195 workflows in production. 57% AI-powered. 12 custom community nodes installed. Complete governance with 35+ metadata fields per workflow.",
+      "metricValue": "195",
+      "metricLabel": "Workflows"
     },
-    "atlas-decision": {
-      "title": "Atlas Decision Matrix",
-      "industry": "Supply Chain & Logistics",
-      "challenge": "Multi-vendor procurement decisions relied on spreadsheets with 15+ variable trade-offs, averaging 3 weeks per sourcing cycle.",
-      "solution": "Engineered a decision intelligence platform with weighted multi-criteria scoring, Monte Carlo simulation for risk assessment, and real-time constraint optimization.",
-      "result": "Sourcing cycle time reduced from 3 weeks to 4 days. Decision confidence scores improved procurement outcomes by 34%.",
-      "metricValue": "4 days",
-      "metricLabel": "Cycle Time"
+    "stark-portfolio": {
+      "title": "Immersive 3D Portfolio",
+      "industry": "Web & Creative",
+      "clientSize": "Individual client — tech professional",
+      "timeline": "6 weeks of development",
+      "methodology": "Cinematic design + WebGL performance testing",
+      "challenge": "Standard portfolio sites blend into the noise. The client needed a site that demonstrates technical mastery through the experience itself — not just screenshots.",
+      "solution": "Built a cinematic portfolio with React 19, Three.js (3D Arc Reactor with WebGL shaders), Framer Motion animations, Howler.js procedural audio (6 interactive sounds), and a full 'Overclock Mode' that transforms the entire UI — colors, speed, sounds, messaging — in real time.",
+      "result": "Live on Netlify. 373KB gzipped JS bundle. 10 complete sections. Real-time 3D rendering with mode transformation. 7-second build time on CI/CD.",
+      "metricValue": "LIVE",
+      "metricLabel": "Production"
     }
   },
   "projectCard": {
@@ -123,72 +135,60 @@
   },
   "about": {
     "missionLabel": "Our Mission",
-    "missionTitle": "Decision Infrastructure for the AI Era",
-    "mission": "We engineer intelligent systems that transform raw data into decisive action. At Mark Systems, we don't just build AI — we architect the decision infrastructure that gives organizations an unfair advantage.",
-    "teamLabel": "The Team",
-    "teamTitle": "Built by Engineers, for Engineers",
-    "teamDescription": "Deep expertise across machine learning, systems engineering, and strategic advisory.",
+    "missionTitle": "Automation That Actually Works",
+    "mission": "Mark Systems exists to turn complex AI capabilities into production systems that deliver measurable results. We don't sell demos — we ship workflows, agents, and platforms that run 24/7 and prove their value in numbers. Built by an engineer with 10+ years of field experience, every solution is designed for the real world.",
+    "teamLabel": "The Founder",
+    "teamTitle": "Engineering-First, Always",
+    "teamDescription": "One engineer. 10+ years in the field. From industrial production lines to AI operating systems.",
     "valuesLabel": "Our Principles",
     "valuesTitle": "How We Operate",
     "valuesDescription": "Four non-negotiable principles that define every engagement."
   },
   "team": {
-    "marcus-chen": {
-      "role": "CEO & Founder",
-      "bio": "Former principal engineer at DeepMind. 15 years building production ML systems across energy, defense, and finance. Founded Mark Systems to bridge the gap between research breakthroughs and operational reality."
-    },
-    "elena-vasquez": {
-      "role": "CTO",
-      "bio": "PhD in Statistical Learning from MIT. Led the machine learning platform team at Stripe before joining Mark Systems. Specializes in building scalable inference pipelines that operate under strict latency constraints."
-    },
-    "james-okafor": {
-      "role": "Head of ML Engineering",
-      "bio": "Previously at Tesla Autopilot and Waymo. Expert in computer vision, edge deployment, and model optimization. Leads our engineering team in delivering production-grade AI systems."
-    },
-    "sarah-kim": {
-      "role": "Head of Strategy",
-      "bio": "Former McKinsey engagement manager specializing in AI transformation. Translates complex technical capabilities into measurable business outcomes for our clients."
+    "founder": {
+      "role": "Founder & Lead Engineer",
+      "bio": "Senior electrical engineer with 10+ years in industrial automation (PLC/CNC, defense-sector production lines, HV power grid protection). Now building AI automation systems — from a 42K-line AI operating system to 195 production n8n workflows. Based in Quebec, Canada."
     }
   },
   "values": {
     "0": {
       "title": "Precision Over Hype",
-      "description": "We ship measurable results, not demos. Every system we build is benchmarked against clearly defined KPIs before deployment."
+      "description": "We ship measurable results, not promises. Every system is benchmarked with real metrics before delivery — no buzzwords, no magic, just engineering."
     },
     "1": {
       "title": "Systems Thinking",
-      "description": "Every component is designed for the whole. We engineer solutions that integrate cleanly into existing infrastructure, not isolated prototypes."
+      "description": "Every component is designed for the whole. We build solutions that integrate into existing infrastructure — not isolated prototypes that break on contact with reality."
     },
     "2": {
-      "title": "Transparent Intelligence",
-      "description": "No black boxes. Our AI systems provide explainable outputs with confidence scores, audit trails, and clear reasoning chains."
+      "title": "Battle-Tested Engineering",
+      "description": "10+ years of industrial field experience means we build for failure modes, not just happy paths. PLC rigor applied to AI systems."
     },
     "3": {
-      "title": "Relentless Iteration",
-      "description": "Production models improve continuously. We build monitoring, feedback loops, and retraining pipelines into every deployment from day one."
+      "title": "Zero Vendor Lock-In",
+      "description": "Multi-LLM, multi-cloud, open-source first. Your systems run on your terms — we build abstraction layers, not dependencies."
     }
   },
   "contact": {
     "label": "Get in Touch",
     "title": "Start a Conversation",
-    "description": "Tell us about your data challenges and we'll design the intelligent system to solve them.",
+    "description": "Tell us about your automation challenges and we'll engineer the system to solve them.",
     "emailLabel": "Email",
-    "emailAddress": "hello@marksystems.ai",
+    "emailAddress": "contact@marksystems.ai",
     "locationLabel": "Location",
-    "locationCity": "San Francisco, CA",
-    "locationDetail": "Remote-first team"
+    "locationCity": "Quebec, Canada",
+    "locationDetail": "Remote-first — serving clients worldwide"
   },
   "contactForm": {
     "name": "Name",
-    "namePlaceholder": "John Doe",
+    "namePlaceholder": "Your name",
     "email": "Email",
-    "emailPlaceholder": "john@company.com",
+    "emailPlaceholder": "you@company.com",
     "company": "Company",
-    "companyPlaceholder": "Acme Corp",
+    "companyPlaceholder": "Your company",
     "serviceInterest": "Service Interest",
     "selectService": "Select a service",
     "message": "Message",
-    "messagePlaceholder": "Tell us about your project...",
+    "messagePlaceholder": "Tell us about your project or challenge...",
     "submit": "Send Message",
     "successTitle": "Message Sent",
     "successMessage": "Thank you for reaching out. We'll get back to you within 24 hours.",
@@ -203,9 +203,9 @@
     "messageMinLength": "Message must be at least 10 characters"
   },
   "cta": {
-    "label": "Ready to Start?",
-    "title": "Let's Engineer Your Advantage",
-    "description": "Tell us about your data challenges. We'll design the intelligent system that turns them into competitive leverage.",
+    "label": "Ready to Automate?",
+    "title": "Let's Build Something That Works",
+    "description": "Tell us about your automation challenges. We'll design the intelligent system that turns them into competitive leverage.",
     "button": "Start a Conversation"
   },
   "notFound": {
@@ -215,31 +215,61 @@
     "back": "Back to Home"
   },
   "footer": {
-    "description": "Engineering intelligent systems that transform raw data into decisive action.",
+    "description": "Engineering AI automation systems that deliver measurable results.",
     "navLabel": "Navigation",
     "connectLabel": "Connect",
     "copyright": "© {year} Mark Systems. All rights reserved."
   },
   "metadata": {
     "home": {
-      "title": "Mark Systems | AI Automation & Decision Engineering",
-      "description": "We engineer intelligent systems that transform raw data into decisive action. Custom AI solutions for predictive analytics, workflow automation, and decision intelligence."
+      "title": "Mark Systems — AI Automation & Decision Engineering | Montreal",
+      "description": "Mark Systems builds production-grade AI automation systems in Montreal: multi-agent orchestration, 195+ n8n workflows, intelligent platforms. AI engineering firm — not affiliated with ECI Mark Systems (construction ERP)."
     },
     "services": {
-      "title": "Services",
-      "description": "AI automation and decision engineering services — from predictive analytics to computer vision and strategic advisory."
+      "title": "AI Automation Services — Montreal",
+      "description": "AI automation services in Montreal: n8n workflows, AINOVA OS multi-agent architecture, full-stack web development, PLC/CNC industrial automation, IoT, and custom AI tools."
     },
     "projects": {
-      "title": "Projects",
-      "description": "Case studies showcasing real-world AI deployments with quantified impact across energy, aerospace, legal, and supply chain industries."
+      "title": "AI Automation Case Studies",
+      "description": "Real AI automation case studies: AINOVA OS (AI operating system, μ=9.94), n8n ecosystem (195 workflows), financial platform, and immersive 3D portfolio."
     },
     "about": {
-      "title": "About",
-      "description": "Meet the team behind Mark Systems — engineers, researchers, and strategists building the next generation of decision infrastructure."
+      "title": "About — AI Engineering Montreal",
+      "description": "Mark Systems — 10+ years of engineering, from industrial PLC/CNC production lines to AI operating systems. AI automation firm based in Montreal, Quebec."
     },
     "contact": {
-      "title": "Contact",
-      "description": "Get in touch with Mark Systems to discuss your AI automation and decision engineering needs."
+      "title": "Contact — AI Automation Montreal",
+      "description": "Contact Mark Systems in Montreal to discuss your AI automation challenges, intelligent workflows, and production systems."
+    }
+  },
+  "faq": {
+    "label": "Frequently Asked Questions",
+    "title": "FAQ — AI Automation",
+    "items": {
+      "0": {
+        "question": "What is Mark Systems and how is it related to ECI Mark Systems?",
+        "answer": "Mark Systems is an AI engineering firm specializing in workflow automation, multi-agent orchestration, and intelligent systems, based in Montreal. We have no affiliation with ECI Mark Systems, which is a residential construction ERP software provider."
+      },
+      "1": {
+        "question": "What types of AI automation do you offer?",
+        "answer": "We offer AI workflow automation via n8n (195+ deployed workflows), multi-agent system architecture (AINOVA OS), full-stack web development, industrial automation (PLC/CNC), IoT intelligence, and custom AI tools with multi-LLM routing."
+      },
+      "2": {
+        "question": "How much does an AI automation project cost?",
+        "answer": "Every project is unique. Cost depends on complexity, number of workflows, required integrations, and level of customization. Contact us for a free assessment of your automation needs."
+      },
+      "3": {
+        "question": "Do you work with clients outside Quebec?",
+        "answer": "Yes, we operate remote-first and serve clients worldwide. Our expertise in AI automation, web development, and industrial engineering is available internationally."
+      },
+      "4": {
+        "question": "What is AINOVA OS?",
+        "answer": "AINOVA OS is our production AI operating system: 35+ specialized agents, a self-optimizing SOIC convergence engine (μ=9.94/10), Tree-of-Thoughts decision exploration, and Kubernetes infrastructure. It's 42,000+ lines of production Python."
+      },
+      "5": {
+        "question": "What is your industrial automation expertise?",
+        "answer": "Our founder has 10+ years of industrial electrical engineering experience: PLC/CNC programming, production line design (including defense sector), and HV/MV/LV power grid protection system engineering."
+      }
     }
   }
 }

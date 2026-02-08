@@ -11,7 +11,7 @@ import {
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing, RTL_LOCALES, type Locale } from "@/i18n/routing";
+import { routing, RTL_LOCALES, locales, type Locale } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SITE } from "@/lib/constants";
@@ -64,12 +64,22 @@ const notoSansDevanagari = Noto_Sans({
   weight: ["400", "500", "700"],
 });
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export async function generateMetadata({
   params: { locale },
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "metadata.home" });
+
+  const languages: Record<string, string> = {};
+  for (const loc of locales) {
+    languages[loc] = `${SITE.url}/${loc}`;
+  }
+  languages["x-default"] = `${SITE.url}/fr`;
 
   return {
     title: {
@@ -78,13 +88,88 @@ export async function generateMetadata({
     },
     description: t("description"),
     metadataBase: new URL(SITE.url),
+    alternates: {
+      canonical: `${SITE.url}/${locale}`,
+      languages,
+    },
     openGraph: {
-      title: SITE.name,
+      title: t("title"),
       description: t("description"),
       siteName: SITE.name,
       type: "website",
+      locale: locale,
+      url: `${SITE.url}/${locale}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
+}
+
+function OrganizationJsonLd({ locale }: { locale: string }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "ProfessionalService"],
+    name: "Mark Systems",
+    url: SITE.url,
+    logo: `${SITE.url}/favicon.ico`,
+    description:
+      locale === "fr"
+        ? "Mark Systems — Automatisation IA & Ingénierie Décisionnelle à Montréal. Conception de systèmes IA de production, automatisation de workflows et plateformes intelligentes. Ne pas confondre avec ECI Mark Systems (ERP construction)."
+        : "Mark Systems — AI Automation & Decision Engineering in Montreal. Production-grade AI systems, workflow automation, and intelligent platforms. Not affiliated with ECI Mark Systems (construction ERP).",
+    foundingDate: "2024",
+    areaServed: {
+      "@type": "Place",
+      name: "Worldwide",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Montréal",
+      addressRegion: "QC",
+      addressCountry: "CA",
+    },
+    sameAs: [
+      "https://github.com/marksystems",
+    ],
+    knowsAbout: [
+      "AI Automation",
+      "Workflow Automation",
+      "n8n",
+      "Multi-Agent Systems",
+      "Industrial Automation",
+      "PLC Programming",
+      "Full-Stack Development",
+      "IoT",
+    ],
+    serviceType: [
+      "AI Workflow Automation",
+      "AI Systems Architecture",
+      "Full-Stack Web Development",
+      "Industrial Automation",
+      "IoT Intelligence",
+      "Custom AI Tools",
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
 }
 
 export default async function LocaleLayout({
@@ -107,6 +192,9 @@ export default async function LocaleLayout({
       dir={isRTL ? "rtl" : "ltr"}
       className={`${inter.variable} ${jetbrainsMono.variable} ${notoSansJP.variable} ${notoSansKR.variable} ${notoSansSC.variable} ${notoSansArabic.variable} ${notoSansDevanagari.variable}`}
     >
+      <head>
+        <OrganizationJsonLd locale={locale} />
+      </head>
       <body className="min-h-screen font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
