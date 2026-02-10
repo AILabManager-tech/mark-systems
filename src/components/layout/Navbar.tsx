@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
@@ -48,8 +49,9 @@ export function Navbar() {
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           <Link
             href="/"
-            className="text-xl font-bold uppercase tracking-tighter text-text-primary"
+            className="flex items-center gap-2.5 text-xl font-bold uppercase tracking-tighter text-text-primary"
           >
+            <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8" />
             {tCommon("siteName")}
           </Link>
 

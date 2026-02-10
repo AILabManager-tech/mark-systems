@@ -127,7 +127,7 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
     "@type": ["Organization", "ProfessionalService"],
     name: "Mark Systems",
     url: SITE.url,
-    logo: `${SITE.url}/favicon.ico`,
+    logo: `${SITE.url}/logo.png`,
     description:
       locale === "fr"
         ? "Mark Systems — Automatisation IA & Ingénierie Décisionnelle à Montréal. Conception de systèmes IA de production, automatisation de workflows et plateformes intelligentes. Ne pas confondre avec ECI Mark Systems (ERP construction)."
@@ -193,6 +193,8 @@ export default async function LocaleLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} ${notoSansJP.variable} ${notoSansKR.variable} ${notoSansSC.variable} ${notoSansArabic.variable} ${notoSansDevanagari.variable}`}
     >
       <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <OrganizationJsonLd locale={locale} />
       </head>
       <body className="min-h-screen font-sans antialiased">

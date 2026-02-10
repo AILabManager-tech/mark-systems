@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { NAV_KEYS, NAV_HREFS } from "@/lib/constants";
 
@@ -14,7 +15,8 @@ export function Footer() {
       <div className="section-container py-16">
         <div className="grid gap-12 md:grid-cols-2">
           <div>
-            <Link href="/" className="text-lg font-bold text-text-primary tracking-tight">
+            <Link href="/" className="flex items-center gap-2 text-lg font-bold text-text-primary tracking-tight">
+              <Image src="/logo.png" alt="" width={28} height={28} className="h-7 w-7" />
               {tCommon("siteName")}
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-text-secondary">
