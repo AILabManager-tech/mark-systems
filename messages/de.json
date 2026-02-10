@@ -153,18 +153,6 @@
       "metricValue": "16",
       "metricLabel": "Disziplinen"
     },
-    "conseiller-placement": {
-      "title": "Finanzberater-Plattform",
-      "industry": "Finanzdienstleistungen",
-      "challenge": "Ein zertifizierter Finanzberater bei iA Financial Group benötigte eine professionelle Web-Präsenz mit interaktiven Tools, die den kanadischen Finanzvorschriften entsprechen (RRSP, TFSA, CMHC).",
-      "solution": "Entwicklung einer Dual-Stack-Plattform: eine Produktions-Website mit Node.js/Express-Backend (Helmet, Rate Limiting, Input-Validierung) und 4 kanadisch-konforme Finanzrechner mit Jest-Testabdeckung. Hinzugefügt wurde ein KI-gestützter Hybrid-Chatbot, der regelbasierte Antworten mit LLM-Intelligenz kombiniert.",
-      "result": "Vollständig funktionsfähige Plattform mit einem Sicherheits-Audit-Score von 7,8/10. Echter Kunde in Produktion. Vermögenstracking-Dashboard entwickelt in React 19 + TypeScript.",
-      "metricValue": "7,8/10",
-      "metricLabel": "Sicherheitswert",
-      "clientSize": "Zertifizierter Berater — iA Financial Group",
-      "timeline": "3 Monate Entwicklung",
-      "methodology": "Full-Stack agil + kontinuierliche Sicherheitsaudits"
-    },
     "n8n-ecosystem": {
       "title": "Enterprise n8n-Ökosystem",
       "industry": "Business-Automatisierung",

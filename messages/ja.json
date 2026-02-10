@@ -153,18 +153,6 @@
       "metricValue": "16",
       "metricLabel": "競技種目"
     },
-    "conseiller-placement": {
-      "title": "金融アドバイザープラットフォーム",
-      "industry": "金融サービス",
-      "challenge": "iA Financial Groupの認定金融アドバイザーが、カナダの金融規制(RRSP、TFSA、CMHC)に準拠したインタラクティブツールを備えた専門的なWeb存在感を必要としていました。",
-      "solution": "デュアルスタックプラットフォームを構築:Node.js/Expressバックエンド(Helmet、レート制限、入力検証)を備えた本番Webサイトと、Jestテストカバレッジを持つ4つのカナダ準拠の金融計算機。ルールベースの応答とLLMインテリジェンスを組み合わせたAI搭載ハイブリッドチャットボットを追加。",
-      "result": "セキュリティ監査スコア7.8/10の完全稼働プラットフォーム。本番環境の実際のクライアント。React 19 + TypeScriptで構築された資産追跡ダッシュボード。",
-      "metricValue": "7.8/10",
-      "metricLabel": "セキュリティスコア",
-      "clientSize": "認定アドバイザー — iAフィナンシャルグループ",
-      "timeline": "開発期間3ヶ月",
-      "methodology": "フルスタックアジャイル + 継続的セキュリティ監査"
-    },
     "n8n-ecosystem": {
       "title": "エンタープライズn8nエコシステム",
       "industry": "ビジネスオートメーション",

@@ -117,18 +117,6 @@
       "metricValue": "16",
       "metricLabel": "Disciplines"
     },
-    "conseiller-placement": {
-      "title": "Financial Advisor Platform",
-      "industry": "Financial Services",
-      "clientSize": "Certified advisor — iA Financial Group",
-      "timeline": "3 months of development",
-      "methodology": "Full-stack agile + continuous security audits",
-      "challenge": "A certified financial advisor at iA Financial Group needed a professional web presence with interactive tools that comply with Canadian financial regulations (RRSP, TFSA, CMHC).",
-      "solution": "Built a dual-stack platform: a production website with Node.js/Express backend (Helmet, rate limiting, input validation) and 4 Canadian-compliant financial calculators with Jest test coverage. Added an AI-powered hybrid chatbot combining rule-based responses with LLM intelligence.",
-      "result": "Fully operational platform with security audit score of 7.8/10. Real client in production. Wealth tracking dashboard built in React 19 + TypeScript.",
-      "metricValue": "7.8/10",
-      "metricLabel": "Security Score"
-    },
     "n8n-ecosystem": {
       "title": "Enterprise n8n Ecosystem",
       "industry": "Business Automation",

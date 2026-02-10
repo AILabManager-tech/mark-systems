@@ -2,7 +2,6 @@ export const PROJECT_IDS = [
   "ainova-os",
   "hexstrike-ai",
   "winterpulse",
-  "conseiller-placement",
   "n8n-ecosystem",
   "osiris-scanner",
   "stark-portfolio",
@@ -34,14 +33,6 @@ export const projectTechnologies: Record<ProjectId, string[]> = {
     "Tailwind CSS",
     "Framer Motion",
     "Leaflet",
-  ],
-  "conseiller-placement": [
-    "Node.js",
-    "React",
-    "TypeScript",
-    "Express",
-    "Jest",
-    "Vite",
   ],
   "n8n-ecosystem": [
     "n8n",

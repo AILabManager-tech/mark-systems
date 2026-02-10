@@ -153,18 +153,6 @@
       "metricValue": "16",
       "metricLabel": "Disciplinas"
     },
-    "conseiller-placement": {
-      "title": "Plataforma para Consultor Financeiro",
-      "industry": "Serviços Financeiros",
-      "challenge": "Um consultor financeiro certificado do iA Financial Group precisava de uma presença web profissional com ferramentas interativas que cumprissem as regulamentações financeiras canadenses (RRSP, TFSA, CMHC).",
-      "solution": "Construímos uma plataforma dual-stack: um site de produção com backend Node.js/Express (Helmet, rate limiting, validação de entrada) e 4 calculadoras financeiras em conformidade com as normas canadenses com cobertura de testes Jest. Adicionamos um chatbot híbrido com IA combinando respostas baseadas em regras com inteligência LLM.",
-      "result": "Plataforma totalmente operacional com pontuação de auditoria de segurança de 7.8/10. Cliente real em produção. Dashboard de acompanhamento de patrimônio construído em React 19 + TypeScript.",
-      "metricValue": "7.8/10",
-      "metricLabel": "Pontuação de Segurança",
-      "clientSize": "Consultor certificado — iA Financial Group",
-      "timeline": "3 meses de desenvolvimento",
-      "methodology": "Full-stack ágil + auditorias de segurança contínuas"
-    },
     "n8n-ecosystem": {
       "title": "Ecossistema n8n Empresarial",
       "industry": "Automação de Negócios",

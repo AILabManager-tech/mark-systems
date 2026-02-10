@@ -153,18 +153,6 @@
       "metricValue": "16",
       "metricLabel": "종목"
     },
-    "conseiller-placement": {
-      "title": "재무 자문 플랫폼",
-      "industry": "금융 서비스",
-      "challenge": "iA Financial Group의 공인 재무 자문사는 캐나다 금융 규정(RRSP, TFSA, CMHC)을 준수하는 대화형 도구를 갖춘 전문 웹 존재가 필요했습니다.",
-      "solution": "듀얼 스택 플랫폼 구축: Node.js/Express 백엔드(Helmet, rate limiting, input validation)가 있는 프로덕션 웹사이트와 Jest 테스트 커버리지를 갖춘 4개의 캐나다 규정 준수 금융 계산기. 규칙 기반 응답과 LLM 인텔리전스를 결합한 AI 기반 하이브리드 챗봇 추가.",
-      "result": "보안 감사 점수 7.8/10의 완전 작동 플랫폼. 프로덕션의 실제 고객. React 19 + TypeScript로 구축된 자산 추적 대시보드.",
-      "metricValue": "7.8/10",
-      "metricLabel": "보안 점수",
-      "clientSize": "인증 어드바이저 — iA Financial Group",
-      "timeline": "3개월 개발",
-      "methodology": "풀스택 애자일 + 지속적 보안 감사"
-    },
     "n8n-ecosystem": {
       "title": "엔터프라이즈 n8n 에코시스템",
       "industry": "비즈니스 자동화",

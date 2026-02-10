@@ -153,18 +153,6 @@
       "metricValue": "16",
       "metricLabel": "Disciplinas"
     },
-    "conseiller-placement": {
-      "title": "Plataforma de Asesor Financiero",
-      "industry": "Servicios Financieros",
-      "challenge": "Un asesor financiero certificado en iA Financial Group necesitaba una presencia web profesional con herramientas interactivas que cumplan con las regulaciones financieras canadienses (RRSP, TFSA, CMHC).",
-      "solution": "Construimos una plataforma dual-stack: un sitio web de producción con backend Node.js/Express (Helmet, limitación de tasa, validación de entrada) y 4 calculadoras financieras conformes canadienses con cobertura de pruebas Jest. Agregamos un chatbot híbrido impulsado por IA que combina respuestas basadas en reglas con inteligencia LLM.",
-      "result": "Plataforma completamente operativa con puntuación de auditoría de seguridad de 7.8/10. Cliente real en producción. Dashboard de seguimiento de patrimonio construido en React 19 + TypeScript.",
-      "metricValue": "7.8/10",
-      "metricLabel": "Puntuación de Seguridad",
-      "clientSize": "Asesor certificado — Grupo financiero iA",
-      "timeline": "3 meses de desarrollo",
-      "methodology": "Full-stack ágil + auditorías de seguridad continuas"
-    },
     "n8n-ecosystem": {
       "title": "Ecosistema Empresarial n8n",
       "industry": "Automatización Empresarial",

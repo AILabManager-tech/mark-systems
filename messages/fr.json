@@ -118,18 +118,6 @@
       "metricValue": "16",
       "metricLabel": "Disciplines"
     },
-    "conseiller-placement": {
-      "title": "Plateforme de conseiller financier",
-      "industry": "Services financiers",
-      "clientSize": "Conseiller certifié — Groupe financier iA",
-      "timeline": "3 mois de développement",
-      "methodology": "Full-stack agile + audits de sécurité continus",
-      "challenge": "Un conseiller financier certifié au Groupe financier iA avait besoin d'une présence web professionnelle avec des outils interactifs conformes aux réglementations financières canadiennes (REER, CELI, SCHL).",
-      "solution": "Construit une plateforme dual-stack : un site web de production avec backend Node.js/Express (Helmet, rate limiting, validation d'entrées) et 4 calculateurs financiers conformes aux normes canadiennes avec couverture de tests Jest. Ajouté un chatbot hybride propulsé par IA combinant réponses basées sur des règles avec intelligence LLM.",
-      "result": "Plateforme entièrement opérationnelle avec score d'audit de sécurité de 7.8/10. Vrai client en production. Tableau de bord de suivi de patrimoine construit en React 19 + TypeScript.",
-      "metricValue": "7.8/10",
-      "metricLabel": "Score de sécurité"
-    },
     "n8n-ecosystem": {
       "title": "Écosystème n8n d'entreprise",
       "industry": "Automatisation d'affaires",

@@ -153,18 +153,6 @@
       "metricValue": "16",
       "metricLabel": "विषय"
     },
-    "conseiller-placement": {
-      "title": "वित्तीय सलाहकार प्लेटफ़ॉर्म",
-      "industry": "वित्तीय सेवाएँ",
-      "challenge": "iA Financial Group में एक प्रमाणित वित्तीय सलाहकार को इंटरैक्टिव टूल्स के साथ एक पेशेवर वेब उपस्थिति की आवश्यकता थी जो Canadian वित्तीय नियमों (RRSP, TFSA, CMHC) का अनुपालन करती है।",
-      "solution": "एक dual-stack प्लेटफ़ॉर्म बनाया गया: Node.js/Express backend (Helmet, rate limiting, input validation) के साथ एक उत्पादन वेबसाइट और Jest test coverage के साथ 4 Canadian-अनुपालन वित्तीय कैलकुलेटर। rule-based प्रतिक्रियाओं को LLM बुद्धिमत्ता के साथ संयोजित करने वाला एक AI-संचालित हाइब्रिड chatbot जोड़ा गया।",
-      "result": "7.8/10 के सुरक्षा ऑडिट स्कोर के साथ पूरी तरह से परिचालन प्लेटफ़ॉर्म। उत्पादन में वास्तविक क्लाइंट। React 19 + TypeScript में निर्मित संपत्ति ट्रैकिंग डैशबोर्ड।",
-      "metricValue": "7.8/10",
-      "metricLabel": "सुरक्षा स्कोर",
-      "clientSize": "प्रमाणित सलाहकार — iA Financial Group",
-      "timeline": "3 महीने का विकास",
-      "methodology": "फुल-स्टैक एजाइल + निरंतर सुरक्षा ऑडिट"
-    },
     "n8n-ecosystem": {
       "title": "एंटरप्राइज़ n8n इकोसिस्टम",
       "industry": "व्यापार स्वचालन",

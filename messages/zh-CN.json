@@ -153,18 +153,6 @@
       "metricValue": "16",
       "metricLabel": "项目"
     },
-    "conseiller-placement": {
-      "title": "金融顾问平台",
-      "industry": "金融服务",
-      "challenge": "iA Financial Group 的一位认证金融顾问需要一个具有交互式工具的专业网络平台，符合加拿大金融法规（RRSP、TFSA、CMHC）。",
-      "solution": "构建了一个双栈平台：带有 Node.js/Express 后端（Helmet、速率限制、输入验证）的生产级网站，以及 4 个符合加拿大法规的金融计算器，配有 Jest 测试覆盖。添加了一个 AI 驱动的混合聊天机器人，结合基于规则的响应和 LLM 智能。",
-      "result": "完全运行的平台，安全审计得分 7.8/10。真实客户生产环境。使用 React 19 + TypeScript 构建的财富跟踪仪表板。",
-      "metricValue": "7.8/10",
-      "metricLabel": "安全分数",
-      "clientSize": "认证顾问 — iA金融集团",
-      "timeline": "3个月开发",
-      "methodology": "全栈敏捷 + 持续安全审计"
-    },
     "n8n-ecosystem": {
       "title": "企业级 n8n 生态系统",
       "industry": "业务自动化",
