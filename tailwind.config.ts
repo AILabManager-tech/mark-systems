@@ -27,16 +27,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: [
-          "var(--font-inter)",
-          "var(--font-noto-jp)",
-          "var(--font-noto-kr)",
-          "var(--font-noto-sc)",
-          "var(--font-noto-devanagari)",
-          "var(--font-noto-arabic)",
-          "system-ui",
-          "sans-serif",
-        ],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       fontSize: {

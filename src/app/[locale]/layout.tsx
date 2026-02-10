@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Inter,
-  JetBrains_Mono,
-  Noto_Sans_JP,
-  Noto_Sans_KR,
-  Noto_Sans_SC,
-  Noto_Sans_Arabic,
-  Noto_Sans,
-} from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing, RTL_LOCALES, locales, type Locale } from "@/i18n/routing";
+import { routing, locales, type Locale } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SITE } from "@/lib/constants";
@@ -31,40 +23,6 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  variable: "--font-noto-jp",
-  display: "swap",
-  weight: ["400", "500", "700"],
-});
-
-const notoSansKR = Noto_Sans_KR({
-  subsets: ["latin"],
-  variable: "--font-noto-kr",
-  display: "swap",
-  weight: ["400", "500", "700"],
-});
-
-const notoSansSC = Noto_Sans_SC({
-  subsets: ["latin"],
-  variable: "--font-noto-sc",
-  display: "swap",
-  weight: ["400", "500", "700"],
-});
-
-const notoSansArabic = Noto_Sans_Arabic({
-  subsets: ["arabic"],
-  variable: "--font-noto-arabic",
-  display: "swap",
-  weight: ["400", "500", "700"],
-});
-
-const notoSansDevanagari = Noto_Sans({
-  subsets: ["devanagari"],
-  variable: "--font-noto-devanagari",
-  display: "swap",
-  weight: ["400", "500", "700"],
-});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -81,7 +39,7 @@ export async function generateMetadata({
   for (const loc of locales) {
     languages[loc] = `${SITE.url}/${loc}`;
   }
-  languages["x-default"] = `${SITE.url}/fr`;
+  languages["x-default"] = `${SITE.url}/en`;
 
   return {
     title: {
@@ -186,13 +144,10 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
-  const isRTL = RTL_LOCALES.includes(locale as Locale);
-
   return (
     <html
       lang={locale}
-      dir={isRTL ? "rtl" : "ltr"}
-      className={`${inter.variable} ${jetbrainsMono.variable} ${notoSansJP.variable} ${notoSansKR.variable} ${notoSansSC.variable} ${notoSansArabic.variable} ${notoSansDevanagari.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
