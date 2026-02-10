@@ -94,18 +94,6 @@
       "metricValue": "μ 9.94",
       "metricLabel": "Score de qualité"
     },
-    "hexstrike-ai": {
-      "title": "HexStrike AI",
-      "industry": "Cybersécurité",
-      "clientSize": "Plateforme interne — tests autorisés",
-      "timeline": "6+ mois de développement",
-      "methodology": "Architecture MCP + intégration continue d'outils",
-      "challenge": "Les tests de pénétration manuels sont chronophages (6-12h par application web), sujets aux oublis et difficiles à reproduire — aucune plateforme existante ne combine orchestration IA avec plus de 100 outils de sécurité dans un framework unifié.",
-      "solution": "Conçu un framework MCP de cybersécurité propulsé par l'IA avec 12+ agents autonomes orchestrant 150+ outils intégrés : scan réseau (nmap, masscan), tests web (nuclei, sqlmap, ffuf), analyse binaire (ghidra, radare2), audit cloud (prowler, trivy) et automatisation de CTF. Automation par navigateur via Selenium/Chromium pour les tests web avancés.",
-      "result": "150+ outils de sécurité intégrés. 12+ agents IA autonomes. Énumération de sous-domaines 24x plus rapide. Tests d'applications web 18x plus rapides. Taux de détection de vulnérabilités de 98.7%.",
-      "metricValue": "150+",
-      "metricLabel": "Outils intégrés"
-    },
     "winterpulse": {
       "title": "WinterPulse 2026",
       "industry": "Sport & Événementiel",

@@ -20,10 +20,6 @@ function CaseStudyJsonLd({ locale }: { locale: string }) {
         fr: "AINOVA OS — Système d'exploitation IA",
         en: "AINOVA OS — AI Operating System",
       },
-      "hexstrike-ai": {
-        fr: "HexStrike AI — Framework cybersécurité IA",
-        en: "HexStrike AI — AI Cybersecurity Framework",
-      },
       "winterpulse": {
         fr: "WinterPulse 2026 — Plateforme Jeux Olympiques d'hiver",
         en: "WinterPulse 2026 — Winter Olympics Platform",

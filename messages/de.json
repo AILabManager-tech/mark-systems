@@ -129,18 +129,6 @@
       "timeline": "8 Monate Entwicklung",
       "methodology": "BMAD-Architektur + iterative SOIC-Konvergenz"
     },
-    "hexstrike-ai": {
-      "title": "HexStrike AI",
-      "industry": "Cybersicherheit",
-      "clientSize": "Interne Plattform — autorisierte Tests",
-      "timeline": "6+ Monate Entwicklung",
-      "methodology": "MCP-Architektur + kontinuierliche Tool-Integration",
-      "challenge": "Manuelle Penetrationstests sind zeitaufwändig (6-12h pro Web-App), fehleranfällig und schwer reproduzierbar — keine bestehende Plattform kombiniert KI-Orchestrierung mit über 150 Sicherheitstools in einem einheitlichen Framework.",
-      "solution": "Entwicklung eines KI-gestützten Cybersicherheits-MCP-Frameworks mit 12+ autonomen Agenten, die 150+ integrierte Tools orchestrieren: Netzwerk-Scanning (nmap, masscan), Web-Tests (nuclei, sqlmap, ffuf), Binäranalyse (ghidra, radare2), Cloud-Audit (prowler, trivy) und CTF-Automatisierung.",
-      "result": "150+ integrierte Sicherheitstools. 12+ autonome KI-Agenten. Subdomain-Enumeration 24x schneller. Web-App-Tests 18x schneller. Schwachstellen-Erkennungsrate von 98,7%.",
-      "metricValue": "150+",
-      "metricLabel": "Tools"
-    },
     "winterpulse": {
       "title": "WinterPulse 2026",
       "industry": "Sport & Events",

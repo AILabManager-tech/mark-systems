@@ -93,18 +93,6 @@
       "metricValue": "μ 9.94",
       "metricLabel": "Quality Score"
     },
-    "hexstrike-ai": {
-      "title": "HexStrike AI",
-      "industry": "Cybersecurity",
-      "clientSize": "Internal platform — authorized testing",
-      "timeline": "6+ months of development",
-      "methodology": "MCP architecture + continuous tool integration",
-      "challenge": "Manual penetration testing is time-consuming (6-12h per web app), prone to oversights, and hard to reproduce — no existing platform combines AI orchestration with 150+ security tools in a unified framework.",
-      "solution": "Engineered an AI-powered cybersecurity MCP framework with 12+ autonomous agents orchestrating 150+ integrated tools: network scanning (nmap, masscan), web testing (nuclei, sqlmap, ffuf), binary analysis (ghidra, radare2), cloud auditing (prowler, trivy), and CTF automation. Browser automation via Selenium/Chromium for advanced web testing.",
-      "result": "150+ security tools integrated. 12+ autonomous AI agents. Subdomain enumeration 24x faster. Web app testing 18x faster. 98.7% vulnerability detection rate.",
-      "metricValue": "150+",
-      "metricLabel": "Integrated Tools"
-    },
     "winterpulse": {
       "title": "WinterPulse 2026",
       "industry": "Sports & Events",

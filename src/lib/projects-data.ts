@@ -1,6 +1,5 @@
 export const PROJECT_IDS = [
   "ainova-os",
-  "hexstrike-ai",
   "winterpulse",
   "n8n-ecosystem",
   "osiris-scanner",
@@ -17,14 +16,6 @@ export const projectTechnologies: Record<ProjectId, string[]> = {
     "Redis",
     "Docker",
     "Kubernetes",
-  ],
-  "hexstrike-ai": [
-    "Python",
-    "FastMCP",
-    "Flask",
-    "Selenium",
-    "aiohttp",
-    "150+ Tools",
   ],
   "winterpulse": [
     "Next.js 14",

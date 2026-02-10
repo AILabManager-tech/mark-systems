@@ -129,18 +129,6 @@
       "timeline": "8个月开发",
       "methodology": "BMAD架构 + 迭代SOIC收敛"
     },
-    "hexstrike-ai": {
-      "title": "HexStrike AI",
-      "industry": "网络安全",
-      "clientSize": "内部平台 — 授权测试",
-      "timeline": "6+ 个月开发",
-      "methodology": "MCP 架构 + 持续工具集成",
-      "challenge": "手动渗透测试耗时（每个 Web 应用 6-12 小时），容易遗漏且难以复现——没有现有平台能将 AI 编排与 150+ 安全工具整合在统一框架中。",
-      "solution": "设计了一个 AI 驱动的网络安全 MCP 框架，12+ 自主代理编排 150+ 集成工具：网络扫描（nmap、masscan）、Web 测试（nuclei、sqlmap、ffuf）、二进制分析（ghidra、radare2）、云审计（prowler、trivy）和 CTF 自动化。",
-      "result": "150+ 安全工具集成。12+ 自主 AI 代理。子域名枚举速度提升 24 倍。Web 应用测试速度提升 18 倍。漏洞检测率 98.7%。",
-      "metricValue": "150+",
-      "metricLabel": "集成工具"
-    },
     "winterpulse": {
       "title": "WinterPulse 2026",
       "industry": "体育与赛事",

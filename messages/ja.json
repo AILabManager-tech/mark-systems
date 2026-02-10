@@ -129,18 +129,6 @@
       "timeline": "開発期間8ヶ月",
       "methodology": "BMADアーキテクチャ + 反復SOIC収束"
     },
-    "hexstrike-ai": {
-      "title": "HexStrike AI",
-      "industry": "サイバーセキュリティ",
-      "clientSize": "内部プラットフォーム — 認可済みテスト",
-      "timeline": "6ヶ月以上の開発",
-      "methodology": "MCPアーキテクチャ + 継続的ツール統合",
-      "challenge": "手動のペネトレーションテストは時間がかかり（Webアプリあたり6-12時間）、見落としが起きやすく再現が難しい — AIオーケストレーションと150以上のセキュリティツールを統合フレームワークで組み合わせた既存プラットフォームは存在しませんでした。",
-      "solution": "12以上の自律エージェントが150以上の統合ツールをオーケストレーションするAI搭載サイバーセキュリティMCPフレームワークを設計：ネットワークスキャン（nmap、masscan）、Webテスト（nuclei、sqlmap、ffuf）、バイナリ解析（ghidra、radare2）、クラウド監査（prowler、trivy）、CTF自動化。",
-      "result": "150以上のセキュリティツール統合。12以上の自律AIエージェント。サブドメイン列挙が24倍高速化。Webアプリテストが18倍高速化。脆弱性検出率98.7%。",
-      "metricValue": "150+",
-      "metricLabel": "統合ツール"
-    },
     "winterpulse": {
       "title": "WinterPulse 2026",
       "industry": "スポーツ＆イベント",
