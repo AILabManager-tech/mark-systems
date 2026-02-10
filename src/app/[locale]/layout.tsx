@@ -15,6 +15,8 @@ import { routing, RTL_LOCALES, locales, type Locale } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SITE } from "@/lib/constants";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -208,6 +210,8 @@ export default async function LocaleLayout({
           <Navbar />
           <main id="main-content" className="pt-16 lg:pt-20">{children}</main>
           <Footer />
+          <Analytics />
+          <SpeedInsights />
         </NextIntlClientProvider>
       </body>
     </html>
