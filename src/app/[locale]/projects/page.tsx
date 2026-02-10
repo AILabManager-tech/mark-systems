@@ -20,6 +20,14 @@ function CaseStudyJsonLd({ locale }: { locale: string }) {
         fr: "AINOVA OS — Système d'exploitation IA",
         en: "AINOVA OS — AI Operating System",
       },
+      "hexstrike-ai": {
+        fr: "HexStrike AI — Framework cybersécurité IA",
+        en: "HexStrike AI — AI Cybersecurity Framework",
+      },
+      "winterpulse": {
+        fr: "WinterPulse 2026 — Plateforme Jeux Olympiques d'hiver",
+        en: "WinterPulse 2026 — Winter Olympics Platform",
+      },
       "conseiller-placement": {
         fr: "Plateforme de conseiller financier",
         en: "Financial Advisor Platform",
@@ -27,6 +35,10 @@ function CaseStudyJsonLd({ locale }: { locale: string }) {
       "n8n-ecosystem": {
         fr: "Écosystème n8n d'entreprise — 195 workflows",
         en: "Enterprise n8n Ecosystem — 195 Workflows",
+      },
+      "osiris-scanner": {
+        fr: "OSIRIS Scanner — Audit de sécurité web",
+        en: "OSIRIS Scanner — Web Security Audit",
       },
       "stark-portfolio": {
         fr: "Portfolio 3D immersif",

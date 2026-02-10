@@ -141,6 +141,18 @@
       "metricValue": "150+",
       "metricLabel": "集成工具"
     },
+    "winterpulse": {
+      "title": "WinterPulse 2026",
+      "industry": "体育与赛事",
+      "clientSize": "展示项目 — 2026 年冬奥会",
+      "timeline": "3 周开发",
+      "methodology": "Next.js App Router + Ice & Summit 设计系统",
+      "challenge": "为 2026 年米兰-科尔蒂纳冬季奥运会构建一个综合性网络平台——涵盖 16 个项目、115 场赛事、约 140 名运动员和 9 个比赛场馆，具有实时搜索和交互式 17 天日历。",
+      "solution": "构建了一个使用 TypeScript、Tailwind CSS 和 Framer Motion 的 Next.js 14 应用程序。带有 Ctrl+K 快捷键的模糊搜索系统（Fuse.js）、Leaflet 交互式场馆地图、每日赛事日历、详细的运动员档案，以及采用冰川蓝主题的 'Ice & Summit' 设计系统。51 个单元和集成测试。",
+      "result": "涵盖 16 个奥运项目的完整应用程序。115 场赛事，带有交互式 17 天日历。即时模糊搜索。地图上显示 9 个比赛场馆。51 个测试。Lighthouse 得分 95+。",
+      "metricValue": "16",
+      "metricLabel": "项目"
+    },
     "conseiller-placement": {
       "title": "金融顾问平台",
       "industry": "金融服务",
@@ -164,6 +176,18 @@
       "clientSize": "多领域基础设施（14个部门）",
       "timeline": "12+个月持续开发",
       "methodology": "迭代部署 + SOIC治理（9.90/10）"
+    },
+    "osiris-scanner": {
+      "title": "OSIRIS Scanner",
+      "industry": "安全与审计",
+      "clientSize": "内部工具 — 网站审计",
+      "timeline": "2 个月开发",
+      "methodology": "多轴评分 + 经验校准",
+      "challenge": "系统地评估网站的安全态势、性能和弹性——现有工具（Lighthouse、Observatory）提供部分评分，但缺乏统一视角或全局评分。",
+      "solution": "设计了一个 4 轴审计扫描器：性能（20%）、安全（30%）、入侵（30%）、资源（20%）。集成 Lighthouse 和 Mozilla Observatory，分析 110+ 个已知跟踪器，检测常见漏洞（XSS、点击劫持、缺失头部）。校准的评级系统：优秀 / 合规 / 风险 / 严重。",
+      "result": "具有 4 个加权轴的可操作扫描器。110+ 个跟踪器黑名单。带有 Rich CLI 界面的详细报告。基于真实数据校准的评级。每个网站扫描时间 < 60 秒。",
+      "metricValue": "4轴",
+      "metricLabel": "评分"
     },
     "stark-portfolio": {
       "title": "沉浸式 3D 作品集",

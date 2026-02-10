@@ -105,6 +105,18 @@
       "metricValue": "150+",
       "metricLabel": "Integrated Tools"
     },
+    "winterpulse": {
+      "title": "WinterPulse 2026",
+      "industry": "Sports & Events",
+      "clientSize": "Showcase project — Winter Olympics 2026",
+      "timeline": "3 weeks of development",
+      "methodology": "Next.js App Router + Ice & Summit design system",
+      "challenge": "Build a comprehensive web platform for the 2026 Winter Olympics in Milano-Cortina — covering 16 disciplines, 115 events, ~140 athletes, and 9 competition venues with real-time search and an interactive 17-day calendar.",
+      "solution": "Built a Next.js 14 application with TypeScript, Tailwind CSS, and Framer Motion. Fuzzy search system (Fuse.js) with Ctrl+K shortcut, Leaflet interactive venue map, daily event calendar, detailed athlete profiles, and an 'Ice & Summit' design system with glacial blue theme. 51 unit and integration tests.",
+      "result": "Complete application covering 16 Olympic disciplines. 115 events with interactive 17-day calendar. Instant fuzzy search. 9 competition venues on map. 51 tests. Lighthouse score 95+.",
+      "metricValue": "16",
+      "metricLabel": "Disciplines"
+    },
     "conseiller-placement": {
       "title": "Financial Advisor Platform",
       "industry": "Financial Services",
@@ -128,6 +140,18 @@
       "result": "195 workflows in production. 57% AI-powered. 12 custom community nodes installed. Complete governance with 35+ metadata fields per workflow.",
       "metricValue": "195",
       "metricLabel": "Workflows"
+    },
+    "osiris-scanner": {
+      "title": "OSIRIS Scanner",
+      "industry": "Security & Audit",
+      "clientSize": "Internal tool — website auditing",
+      "timeline": "2 months of development",
+      "methodology": "Multi-axis scoring + empirical calibration",
+      "challenge": "Systematically assess the security posture, performance, and resilience of websites — existing tools (Lighthouse, Observatory) provide partial scores without a unified vision or global scoring.",
+      "solution": "Engineered a 4-axis audit scanner: Performance (20%), Security (30%), Intrusion (30%), Resources (20%). Integrates Lighthouse and Mozilla Observatory, analyzes 110+ known trackers, detects common vulnerabilities (XSS, clickjacking, missing headers). Calibrated grade system: Exemplary / Compliant / At Risk / Critical.",
+      "result": "Operational scanner with 4 weighted axes. 110+ trackers in blocklist. Detailed reports with Rich CLI interface. Grades calibrated on real-world data. Scan time < 60s per site.",
+      "metricValue": "4-Axis",
+      "metricLabel": "Scoring"
     },
     "stark-portfolio": {
       "title": "Immersive 3D Portfolio",

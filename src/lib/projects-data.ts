@@ -1,8 +1,10 @@
 export const PROJECT_IDS = [
   "ainova-os",
   "hexstrike-ai",
+  "winterpulse",
   "conseiller-placement",
   "n8n-ecosystem",
+  "osiris-scanner",
   "stark-portfolio",
 ] as const;
 
@@ -25,6 +27,14 @@ export const projectTechnologies: Record<ProjectId, string[]> = {
     "aiohttp",
     "150+ Tools",
   ],
+  "winterpulse": [
+    "Next.js 14",
+    "React 18",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Leaflet",
+  ],
   "conseiller-placement": [
     "Node.js",
     "React",
@@ -40,6 +50,14 @@ export const projectTechnologies: Record<ProjectId, string[]> = {
     "Whisper",
     "PostgreSQL",
     "Docker",
+  ],
+  "osiris-scanner": [
+    "Python",
+    "Lighthouse",
+    "Mozilla Observatory",
+    "Click CLI",
+    "Rich",
+    "Chromium",
   ],
   "stark-portfolio": [
     "React",

@@ -197,7 +197,7 @@ export default async function LocaleLayout({
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <OrganizationJsonLd locale={locale} />
       </head>
-      <body className="min-h-screen font-sans antialiased">
+      <body className="noise-overlay relative min-h-screen font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <a
             href="#main-content"

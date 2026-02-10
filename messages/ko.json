@@ -141,6 +141,18 @@
       "metricValue": "150+",
       "metricLabel": "통합 도구"
     },
+    "winterpulse": {
+      "title": "WinterPulse 2026",
+      "industry": "스포츠 & 이벤트",
+      "clientSize": "쇼케이스 프로젝트 — 2026 동계 올림픽",
+      "timeline": "3주 개발",
+      "methodology": "Next.js App Router + Ice & Summit 디자인 시스템",
+      "challenge": "밀라노-코르티나 2026 동계 올림픽을 위한 종합 웹 플랫폼 구축 — 16개 종목, 115개 경기, 약 140명의 선수, 9개 경기장을 실시간 검색 및 인터랙티브 17일 캘린더로 포함.",
+      "solution": "TypeScript, Tailwind CSS 및 Framer Motion을 사용한 Next.js 14 애플리케이션 구축. Ctrl+K 단축키를 가진 퍼지 검색 시스템(Fuse.js), Leaflet 인터랙티브 경기장 지도, 일일 경기 캘린더, 상세한 선수 프로필, 빙하 블루 테마의 'Ice & Summit' 디자인 시스템. 51개의 단위 및 통합 테스트.",
+      "result": "16개 올림픽 종목을 포괄하는 완전한 애플리케이션. 인터랙티브 17일 캘린더가 있는 115개 경기. 즉시 퍼지 검색. 지도에 9개 경기장. 51개 테스트. Lighthouse 점수 95+.",
+      "metricValue": "16",
+      "metricLabel": "종목"
+    },
     "conseiller-placement": {
       "title": "재무 자문 플랫폼",
       "industry": "금융 서비스",
@@ -164,6 +176,18 @@
       "clientSize": "멀티 도메인 인프라(14개 부서)",
       "timeline": "12개월 이상 지속 개발",
       "methodology": "반복 배포 + SOIC 거버넌스(9.90/10)"
+    },
+    "osiris-scanner": {
+      "title": "OSIRIS Scanner",
+      "industry": "보안 및 감사",
+      "clientSize": "내부 도구 — 웹사이트 감사",
+      "timeline": "2개월 개발",
+      "methodology": "다축 평가 + 경험적 보정",
+      "challenge": "웹사이트의 보안 태세, 성능 및 복원력을 체계적으로 평가 — 기존 도구(Lighthouse, Observatory)는 통합된 비전이나 글로벌 점수 없이 부분 점수만 제공.",
+      "solution": "4축 감사 스캐너 설계: 성능(20%), 보안(30%), 침입(30%), 리소스(20%). Lighthouse 및 Mozilla Observatory 통합, 110+ 개의 알려진 추적기 분석, 일반적인 취약점(XSS, 클릭재킹, 누락된 헤더) 탐지. 보정된 등급 시스템: 모범 / 준수 / 위험 / 심각.",
+      "result": "4개의 가중치 축을 가진 운영 스캐너. 110+ 추적기 블록리스트. Rich CLI 인터페이스가 있는 상세 보고서. 실제 데이터로 보정된 등급. 사이트당 스캔 시간 < 60초.",
+      "metricValue": "4축",
+      "metricLabel": "평가"
     },
     "stark-portfolio": {
       "title": "몰입형 3D 포트폴리오",

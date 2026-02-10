@@ -141,6 +141,18 @@
       "metricValue": "150+",
       "metricLabel": "統合ツール"
     },
+    "winterpulse": {
+      "title": "WinterPulse 2026",
+      "industry": "スポーツ＆イベント",
+      "clientSize": "ショーケースプロジェクト — 2026年冬季オリンピック",
+      "timeline": "開発期間3週間",
+      "methodology": "Next.js App Router + Ice & Summit デザインシステム",
+      "challenge": "2026年ミラノ・コルティナ冬季オリンピックのための包括的なWebプラットフォームの構築 — 16の競技種目、115のイベント、約140人のアスリート、9つの競技会場をカバーし、リアルタイム検索と17日間のインタラクティブカレンダーを備える。",
+      "solution": "TypeScript、Tailwind CSS、Framer MotionでNext.js 14アプリケーションを構築。Ctrl+Kショートカットを備えたファジー検索システム（Fuse.js）、Leafletインタラクティブ会場マップ、日次イベントカレンダー、詳細なアスリートプロフィール、氷河ブルーテーマの「Ice & Summit」デザインシステム。51のユニットテストと統合テスト。",
+      "result": "16のオリンピック競技種目をカバーする完全なアプリケーション。17日間のインタラクティブカレンダーを備えた115のイベント。瞬時のファジー検索。9つの競技会場をマップ表示。51のテスト。Lighthouseスコア95+。",
+      "metricValue": "16",
+      "metricLabel": "競技種目"
+    },
     "conseiller-placement": {
       "title": "金融アドバイザープラットフォーム",
       "industry": "金融サービス",
@@ -164,6 +176,18 @@
       "clientSize": "マルチドメインインフラ（14部門）",
       "timeline": "12ヶ月以上の継続開発",
       "methodology": "反復デプロイ + SOICガバナンス（9.90/10）"
+    },
+    "osiris-scanner": {
+      "title": "OSIRIS Scanner",
+      "industry": "セキュリティ＆監査",
+      "clientSize": "内部ツール — Webサイト監査",
+      "timeline": "開発期間2ヶ月",
+      "methodology": "マルチ軸スコアリング + 実証的較正",
+      "challenge": "Webサイトのセキュリティ姿勢、パフォーマンス、レジリエンスを体系的に評価 — 既存ツール（Lighthouse、Observatory）は統一されたビジョンやグローバルスコアリングなしに部分的なスコアを提供。",
+      "solution": "4軸監査スキャナーを開発：パフォーマンス（20%）、セキュリティ（30%）、侵入（30%）、リソース（20%）。LighthouseとMozilla Observatoryを統合し、110以上の既知トラッカーを分析、一般的な脆弱性（XSS、クリックジャッキング、欠落ヘッダー）を検出。較正された評価システム：模範的/準拠/リスク有/重大。",
+      "result": "4つの重み付き軸を持つ運用スキャナー。110以上のトラッカーをブロックリストに登録。Rich CLIインターフェースによる詳細レポート。実世界データで較正された評価。サイトあたりスキャン時間< 60秒。",
+      "metricValue": "4軸",
+      "metricLabel": "スコアリング"
     },
     "stark-portfolio": {
       "title": "イマーシブ3Dポートフォリオ",

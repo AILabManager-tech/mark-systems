@@ -141,6 +141,18 @@
       "metricValue": "150+",
       "metricLabel": "Ferramentas"
     },
+    "winterpulse": {
+      "title": "WinterPulse 2026",
+      "industry": "Esporte & Eventos",
+      "clientSize": "Projeto de demonstração — Jogos Olímpicos de Inverno 2026",
+      "timeline": "3 semanas de desenvolvimento",
+      "methodology": "Next.js App Router + sistema de design Ice & Summit",
+      "challenge": "Construir uma plataforma web abrangente para os Jogos Olímpicos de Inverno 2026 em Milano-Cortina — cobrindo 16 disciplinas, 115 eventos, ~140 atletas e 9 locais de competição com busca em tempo real e um calendário interativo de 17 dias.",
+      "solution": "Construímos uma aplicação Next.js 14 com TypeScript, Tailwind CSS e Framer Motion. Sistema de busca difusa (Fuse.js) com atalho Ctrl+K, mapa interativo de locais Leaflet, calendário de eventos diários, perfis detalhados de atletas e um sistema de design 'Ice & Summit' com tema azul glacial. 51 testes unitários e de integração.",
+      "result": "Aplicação completa cobrindo 16 disciplinas olímpicas. 115 eventos com calendário interativo de 17 dias. Busca difusa instantânea. 9 locais de competição no mapa. 51 testes. Pontuação Lighthouse 95+.",
+      "metricValue": "16",
+      "metricLabel": "Disciplinas"
+    },
     "conseiller-placement": {
       "title": "Plataforma para Consultor Financeiro",
       "industry": "Serviços Financeiros",
@@ -164,6 +176,18 @@
       "clientSize": "Infraestrutura multi-domínio (14 departamentos)",
       "timeline": "12+ meses de desenvolvimento contínuo",
       "methodology": "Deploy iterativo + governança SOIC (9.90/10)"
+    },
+    "osiris-scanner": {
+      "title": "OSIRIS Scanner",
+      "industry": "Segurança & Auditoria",
+      "clientSize": "Ferramenta interna — auditoria de websites",
+      "timeline": "2 meses de desenvolvimento",
+      "methodology": "Pontuação multi-eixo + calibração empírica",
+      "challenge": "Avaliar sistematicamente a postura de segurança, desempenho e resiliência de websites — ferramentas existentes (Lighthouse, Observatory) fornecem pontuações parciais sem uma visão unificada ou pontuação global.",
+      "solution": "Desenvolvemos um scanner de auditoria de 4 eixos: Desempenho (20%), Segurança (30%), Intrusão (30%), Recursos (20%). Integra Lighthouse e Mozilla Observatory, analisa 110+ rastreadores conhecidos, detecta vulnerabilidades comuns (XSS, clickjacking, headers ausentes). Sistema de classificação calibrado: Exemplar / Conforme / Em Risco / Crítico.",
+      "result": "Scanner operacional com 4 eixos ponderados. 110+ rastreadores na lista de bloqueio. Relatórios detalhados com interface Rich CLI. Classificações calibradas em dados reais. Tempo de scan < 60s por site.",
+      "metricValue": "4 Eixos",
+      "metricLabel": "Pontuação"
     },
     "stark-portfolio": {
       "title": "Portfólio 3D Imersivo",

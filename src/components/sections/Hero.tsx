@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRef } from "react";
 import { Button } from "@/components/ui/Button";
+import { GlowOrb } from "@/components/motion/GlowOrb";
 import { staggerContainer } from "@/lib/animations";
 
 export function Hero() {
@@ -17,6 +18,27 @@ export function Hero() {
 
   return (
     <section ref={ref} className="relative overflow-hidden">
+      {/* Grid background pattern */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(248,250,252,0.6) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(248,250,252,0.6) 1px, transparent 1px)`,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Animated glow orbs */}
+      <GlowOrb className="-right-32 top-10" size="600px" delay={0} duration={7} />
+      <GlowOrb className="-left-40 bottom-0" size="400px" delay={3} duration={9} />
+
+      {/* Animated scan line */}
+      <motion.div
+        className="pointer-events-none absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"
+        animate={{ top: ["10%", "90%", "10%"] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+      />
+
       <motion.div
         style={{ y, opacity }}
         variants={staggerContainer}
@@ -37,9 +59,11 @@ export function Hero() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-hero font-bold tracking-tight text-text-primary md:text-hero-lg"
+          className="text-hero font-bold tracking-tight md:text-hero-lg"
         >
-          {tCommon("siteName")}
+          <span className="bg-gradient-to-r from-text-primary via-text-primary to-accent bg-clip-text text-transparent">
+            {tCommon("siteName")}
+          </span>
         </motion.h1>
 
         <motion.p
@@ -66,9 +90,6 @@ export function Hero() {
           </Button>
         </motion.div>
       </motion.div>
-
-      {/* Gradient orb */}
-      <div className="pointer-events-none absolute -right-40 top-20 h-[500px] w-[500px] rounded-full bg-accent/5 blur-3xl" />
     </section>
   );
 }
