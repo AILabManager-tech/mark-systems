@@ -7,6 +7,7 @@
   "nav": {
     "home": "首页",
     "services": "服务",
+    "ainova-os": "AiNova OS",
     "projects": "项目",
     "about": "关于",
     "contact": "联系"
@@ -276,6 +277,10 @@
     "contact": {
       "title": "联系",
       "description": "联系 Mark Systems 讨论您的 AI 自动化和智能系统需求。"
+    },
+    "ainova": {
+      "title": "AiNova OS — 生产级AI操作系统 | Mark Systems",
+      "description": "AiNova OS：35+个AI代理、SOIC收敛引擎（μ=9.94/10）、思维树、Kubernetes原生。Mark Systems的生产级AI操作系统。"
     }
   },
   "faq": {
@@ -305,6 +310,136 @@
       "5": {
         "question": "你们的工业自动化专业知识是什么？",
         "answer": "我们的创始人拥有10+年工业电气工程经验：PLC/CNC编程、生产线设计（包括国防领域）和HV/MV/LV电网保护系统工程。"
+      }
+    }
+  },
+  "ainovaBanner": {
+    "label": "旗舰产品",
+    "title": "AiNova OS",
+    "description": "一个拥有35+个代理、SOIC收敛引擎和Kubernetes原生基础设施的生产级AI操作系统。",
+    "metric1Label": "质量评分",
+    "metric1Value": "μ 9.94/10",
+    "metric2Label": "生产代码行数",
+    "metric2Value": "42K+",
+    "button": "探索 AiNova OS"
+  },
+  "ainova": {
+    "hero": {
+      "badge": "AI操作系统",
+      "title": "AiNova OS",
+      "subtitle": "生产级AI操作系统",
+      "description": "35+个专业代理、自优化收敛引擎和企业级基础设施——专为需要在生产环境中可信赖AI的团队而设计。",
+      "ctaPrimary": "联系我们",
+      "ctaSecondary": "在GitHub上查看"
+    },
+    "overview": {
+      "label": "问题与解决方案",
+      "title": "AiNova OS存在的原因",
+      "problemTitle": "问题",
+      "problemPoints": [
+        "AI代理框架是原型工具，不是生产系统",
+        "没有收敛保证——输出不可预测地变化",
+        "安全性是事后考虑，不是设计原则",
+        "从演示扩展到企业需要完全重写"
+      ],
+      "solutionTitle": "解决方案",
+      "solutionPoints": [
+        "专门构建的AI操作系统，拥有35+个专业代理",
+        "具有数学证明的SOIC收敛引擎（μ=9.94/10）",
+        "从第一天起就集成企业安全",
+        "Kubernetes原生基础设施——无需重写即可扩展"
+      ]
+    },
+    "features": {
+      "label": "核心能力",
+      "title": "驱动AiNova OS的力量",
+      "description": "六项基础能力使AiNova OS成为生产级AI操作系统。",
+      "soic": {
+        "title": "SOIC收敛引擎",
+        "description": "自优化智能收敛——在9个维度上数学证明的质量收敛，Gold Master认证μ=9.94/10。"
+      },
+      "tot": {
+        "title": "思维树",
+        "description": "高级决策探索，同时评估多个推理路径，通过结构化审议选择最优解决方案。"
+      },
+      "agents": {
+        "title": "35+个专业代理",
+        "description": "为每个功能构建的专用代理——从代码生成和测试到安全审计和文档——由中央协调器统一编排。"
+      },
+      "security": {
+        "title": "企业安全",
+        "description": "基于角色的访问控制、审计跟踪、输入验证和沙箱执行——安全是设计原则，不是补丁。"
+      },
+      "multi-llm": {
+        "title": "多LLM架构",
+        "description": "供应商无关设计，支持OpenAI、Anthropic、Groq和Ollama——基于成本、延迟和能力的智能路由。"
+      },
+      "k8s": {
+        "title": "Kubernetes原生",
+        "description": "Docker容器化，配备Kubernetes清单、Prometheus监控和Grafana仪表板——从第一天起就为水平扩展而构建。"
+      }
+    },
+    "architecture": {
+      "label": "系统架构",
+      "title": "五层架构",
+      "layers": {
+        "api": {
+          "title": "API网关",
+          "description": "具有身份验证、速率限制和请求验证的FastAPI端点"
+        },
+        "orchestration": {
+          "title": "编排引擎",
+          "description": "SOIC收敛引擎 + 思维树决策探索"
+        },
+        "agents": {
+          "title": "代理层",
+          "description": "35+个专业代理，具有基于角色的能力和沙箱执行"
+        },
+        "infra": {
+          "title": "基础设施",
+          "description": "PostgreSQL、Redis、Docker、Kubernetes，配备Prometheus/Grafana监控"
+        },
+        "integration": {
+          "title": "集成层",
+          "description": "MCP协议桥接、REST API、WebSocket连接、n8n工作流"
+        }
+      }
+    },
+    "metrics": {
+      "label": "数字说话",
+      "title": "生产指标",
+      "qualityScore": "质量评分",
+      "linesOfCode": "代码行数",
+      "testFunctions": "测试函数",
+      "agents": "专业代理",
+      "qualityDimensions": "质量维度"
+    },
+    "comparison": {
+      "label": "竞争格局",
+      "title": "AiNova OS vs. 替代方案",
+      "description": "AiNova OS与流行AI代理框架在7个关键维度上的比较。",
+      "ainovaOs": "AiNova OS",
+      "langraph": "LangGraph",
+      "autogen": "AutoGen",
+      "crewai": "CrewAI",
+      "dimensions": {
+        "convergenceEngine": "收敛引擎",
+        "agentCount": "多代理支持",
+        "productionReady": "生产就绪",
+        "mathProof": "数学证明",
+        "multiLlm": "多LLM支持",
+        "k8sNative": "Kubernetes原生",
+        "mcpBridge": "MCP协议桥接"
+      }
+    },
+    "techStack": {
+      "label": "技术",
+      "title": "技术栈",
+      "categories": {
+        "core": "核心",
+        "infra": "基础设施",
+        "ai": "AI & LLM",
+        "integration": "集成"
       }
     }
   }

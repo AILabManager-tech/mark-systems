@@ -7,6 +7,7 @@
   "nav": {
     "home": "Startseite",
     "services": "Leistungen",
+    "ainova-os": "AiNova OS",
     "projects": "Projekte",
     "about": "Über uns",
     "contact": "Kontakt"
@@ -276,6 +277,10 @@
     "contact": {
       "title": "Kontakt",
       "description": "Nehmen Sie Kontakt mit Mark Systems auf, um Ihre KI-Automatisierungs- und intelligente Systembedürfnisse zu besprechen."
+    },
+    "ainova": {
+      "title": "AiNova OS — KI-Betriebssystem für die Produktion | Mark Systems",
+      "description": "AiNova OS: 35+ KI-Agenten, SOIC-Konvergenzmotor (μ=9.94/10), Tree-of-Thoughts, Kubernetes-nativ. Das Produktions-KI-Betriebssystem von Mark Systems."
     }
   },
   "faq": {
@@ -305,6 +310,136 @@
       "5": {
         "question": "Was ist Ihre Expertise in industrieller Automatisierung?",
         "answer": "Unser Gründer verfügt über 10+ Jahre Erfahrung in industrieller Elektrotechnik: PLC/CNC-Programmierung, Produktionsliniendesign (einschließlich Verteidigungssektor) und Schutzsystemtechnik für HV/MV/LV-Stromnetze."
+      }
+    }
+  },
+  "ainovaBanner": {
+    "label": "Flaggschiff-Produkt",
+    "title": "AiNova OS",
+    "description": "Ein Produktions-KI-Betriebssystem mit 35+ Agenten, SOIC-Konvergenzmotor und Kubernetes-nativer Infrastruktur.",
+    "metric1Label": "Qualitätsbewertung",
+    "metric1Value": "μ 9.94/10",
+    "metric2Label": "Produktionszeilen",
+    "metric2Value": "42K+",
+    "button": "AiNova OS entdecken"
+  },
+  "ainova": {
+    "hero": {
+      "badge": "KI-Betriebssystem",
+      "title": "AiNova OS",
+      "subtitle": "Produktions-KI-Betriebssystem",
+      "description": "35+ spezialisierte Agenten, ein selbstoptimierender Konvergenzmotor und unternehmenstaugliche Infrastruktur — entwickelt für Teams, die vertrauenswürdige KI in der Produktion benötigen.",
+      "ctaPrimary": "Kontaktieren Sie uns",
+      "ctaSecondary": "Auf GitHub ansehen"
+    },
+    "overview": {
+      "label": "Problem & Lösung",
+      "title": "Warum AiNova OS existiert",
+      "problemTitle": "Das Problem",
+      "problemPoints": [
+        "KI-Agenten-Frameworks sind Prototyping-Tools, keine Produktionssysteme",
+        "Keine Konvergenzgarantien — Ergebnisse variieren unvorhersehbar",
+        "Sicherheit ist ein nachträglicher Gedanke, kein Designprinzip",
+        "Die Skalierung von Demo zu Enterprise erfordert eine komplette Neuentwicklung"
+      ],
+      "solutionTitle": "Die Lösung",
+      "solutionPoints": [
+        "Zweckgebautes KI-Betriebssystem mit 35+ spezialisierten Agenten",
+        "SOIC-Konvergenzmotor mit mathematischem Beweis (μ=9.94/10)",
+        "Unternehmenssicherheit von Anfang an integriert",
+        "Kubernetes-native Infrastruktur — skaliert ohne Neuentwicklung"
+      ]
+    },
+    "features": {
+      "label": "Kernfähigkeiten",
+      "title": "Was AiNova OS antreibt",
+      "description": "Sechs grundlegende Fähigkeiten, die AiNova OS zu einem produktionsreifen KI-Betriebssystem machen.",
+      "soic": {
+        "title": "SOIC-Konvergenzmotor",
+        "description": "Self-Optimizing Intelligence Convergence — mathematisch bewiesene Qualitätskonvergenz über 9 Dimensionen mit Gold-Master-Zertifizierung μ=9.94/10."
+      },
+      "tot": {
+        "title": "Tree-of-Thoughts",
+        "description": "Fortgeschrittene Entscheidungserkundung, die mehrere Denkwege gleichzeitig bewertet und optimale Lösungen durch strukturierte Deliberation auswählt."
+      },
+      "agents": {
+        "title": "35+ spezialisierte Agenten",
+        "description": "Zweckgebaute Agenten für jede Funktion — von Codegenerierung und Tests bis hin zu Sicherheitsaudits und Dokumentation — orchestriert von einem zentralen Koordinator."
+      },
+      "security": {
+        "title": "Unternehmenssicherheit",
+        "description": "Rollenbasierte Zugriffskontrolle, Audit-Trails, Eingabevalidierung und Sandbox-Ausführung — Sicherheit ist ein Designprinzip, kein Patch."
+      },
+      "multi-llm": {
+        "title": "Multi-LLM-Architektur",
+        "description": "Anbieterunabhängiges Design mit Unterstützung für OpenAI, Anthropic, Groq und Ollama — intelligentes Routing basierend auf Kosten, Latenz und Fähigkeiten."
+      },
+      "k8s": {
+        "title": "Kubernetes-nativ",
+        "description": "Docker-containerisiert mit Kubernetes-Manifesten, Prometheus-Monitoring und Grafana-Dashboards — von Anfang an für horizontale Skalierung gebaut."
+      }
+    },
+    "architecture": {
+      "label": "Systemarchitektur",
+      "title": "Fünf-Schichten-Architektur",
+      "layers": {
+        "api": {
+          "title": "API-Gateway",
+          "description": "FastAPI-Endpunkte mit Authentifizierung, Rate-Limiting und Anforderungsvalidierung"
+        },
+        "orchestration": {
+          "title": "Orchestrierungsmotor",
+          "description": "SOIC-Konvergenzmotor + Tree-of-Thoughts-Entscheidungserkundung"
+        },
+        "agents": {
+          "title": "Agenten-Schicht",
+          "description": "35+ spezialisierte Agenten mit rollenbasierten Fähigkeiten und Sandbox-Ausführung"
+        },
+        "infra": {
+          "title": "Infrastruktur",
+          "description": "PostgreSQL, Redis, Docker, Kubernetes mit Prometheus/Grafana-Monitoring"
+        },
+        "integration": {
+          "title": "Integrationsschicht",
+          "description": "MCP-Protokollbrücken, REST-APIs, WebSocket-Verbindungen, n8n-Workflows"
+        }
+      }
+    },
+    "metrics": {
+      "label": "In Zahlen",
+      "title": "Produktionsmetriken",
+      "qualityScore": "Qualitätsbewertung",
+      "linesOfCode": "Codezeilen",
+      "testFunctions": "Testfunktionen",
+      "agents": "Spezialisierte Agenten",
+      "qualityDimensions": "Qualitätsdimensionen"
+    },
+    "comparison": {
+      "label": "Wettbewerbslandschaft",
+      "title": "AiNova OS vs. die Alternativen",
+      "description": "Wie sich AiNova OS mit populären KI-Agenten-Frameworks in 7 kritischen Dimensionen vergleicht.",
+      "ainovaOs": "AiNova OS",
+      "langraph": "LangGraph",
+      "autogen": "AutoGen",
+      "crewai": "CrewAI",
+      "dimensions": {
+        "convergenceEngine": "Konvergenzmotor",
+        "agentCount": "Multi-Agenten-Support",
+        "productionReady": "Produktionsreif",
+        "mathProof": "Mathematischer Beweis",
+        "multiLlm": "Multi-LLM-Support",
+        "k8sNative": "Kubernetes-nativ",
+        "mcpBridge": "MCP-Protokollbrücke"
+      }
+    },
+    "techStack": {
+      "label": "Technologie",
+      "title": "Tech-Stack",
+      "categories": {
+        "core": "Core",
+        "infra": "Infrastruktur",
+        "ai": "KI & LLM",
+        "integration": "Integration"
       }
     }
   }

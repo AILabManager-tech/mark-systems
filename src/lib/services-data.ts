@@ -1,10 +1,10 @@
 import {
-  BrainCircuit,
   Workflow,
-  GitBranch,
-  MessageSquareCode,
-  ScanEye,
-  Blocks,
+  BrainCircuit,
+  Globe,
+  Zap,
+  Wifi,
+  Wrench,
   type LucideIcon,
 } from "lucide-react";
 
@@ -14,23 +14,23 @@ export interface ServiceMeta {
 }
 
 export const SERVICE_IDS = [
-  "predictive-analytics",
-  "workflow-automation",
-  "decision-intelligence",
-  "nlp-pipelines",
-  "computer-vision",
-  "ai-strategy",
+  "ai-workflow-automation",
+  "ai-systems-architecture",
+  "fullstack-development",
+  "industrial-automation",
+  "iot-smart-home",
+  "custom-ai-tools",
 ] as const;
 
 export type ServiceId = (typeof SERVICE_IDS)[number];
 
 export const serviceIcons: Record<ServiceId, LucideIcon> = {
-  "predictive-analytics": BrainCircuit,
-  "workflow-automation": Workflow,
-  "decision-intelligence": GitBranch,
-  "nlp-pipelines": MessageSquareCode,
-  "computer-vision": ScanEye,
-  "ai-strategy": Blocks,
+  "ai-workflow-automation": Workflow,
+  "ai-systems-architecture": BrainCircuit,
+  "fullstack-development": Globe,
+  "industrial-automation": Zap,
+  "iot-smart-home": Wifi,
+  "custom-ai-tools": Wrench,
 };
 
 export const services: ServiceMeta[] = SERVICE_IDS.map((id) => ({

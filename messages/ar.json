@@ -7,6 +7,7 @@
   "nav": {
     "home": "الرئيسية",
     "services": "الخدمات",
+    "ainova-os": "AiNova OS",
     "projects": "المشاريع",
     "about": "من نحن",
     "contact": "اتصل بنا"
@@ -276,6 +277,10 @@
     "contact": {
       "title": "اتصل بنا",
       "description": "تواصل مع Mark Systems لمناقشة احتياجاتك من أتمتة الذكاء الاصطناعي والأنظمة الذكية."
+    },
+    "ainova": {
+      "title": "AiNova OS — نظام تشغيل ذكاء اصطناعي للإنتاج | Mark Systems",
+      "description": "AiNova OS: أكثر من 35 وكيل ذكاء اصطناعي، محرك تقارب SOIC (μ=9.94/10)، شجرة الأفكار، Kubernetes أصلي. نظام تشغيل الذكاء الاصطناعي الإنتاجي من Mark Systems."
     }
   },
   "faq": {
@@ -305,6 +310,136 @@
       "5": {
         "question": "ما هي خبرتكم في الأتمتة الصناعية؟",
         "answer": "يمتلك مؤسسنا أكثر من 10 سنوات من الخبرة في الهندسة الكهربائية الصناعية: برمجة PLC/CNC، وتصميم خطوط الإنتاج (بما في ذلك قطاع الدفاع)، وهندسة أنظمة حماية شبكات الطاقة."
+      }
+    }
+  },
+  "ainovaBanner": {
+    "label": "المنتج الرئيسي",
+    "title": "AiNova OS",
+    "description": "نظام تشغيل ذكاء اصطناعي للإنتاج مع أكثر من 35 وكيل، محرك تقارب SOIC وبنية تحتية أصلية لـ Kubernetes.",
+    "metric1Label": "نقاط الجودة",
+    "metric1Value": "μ 9.94/10",
+    "metric2Label": "أسطر كود الإنتاج",
+    "metric2Value": "42K+",
+    "button": "استكشاف AiNova OS"
+  },
+  "ainova": {
+    "hero": {
+      "badge": "نظام تشغيل الذكاء الاصطناعي",
+      "title": "AiNova OS",
+      "subtitle": "نظام تشغيل ذكاء اصطناعي للإنتاج",
+      "description": "أكثر من 35 وكيل متخصص، محرك تقارب ذاتي التحسين وبنية تحتية بمستوى المؤسسات — مصمم للفرق التي تحتاج إلى ذكاء اصطناعي موثوق في الإنتاج.",
+      "ctaPrimary": "اتصل بنا",
+      "ctaSecondary": "عرض على GitHub"
+    },
+    "overview": {
+      "label": "المشكلة والحل",
+      "title": "لماذا يوجد AiNova OS",
+      "problemTitle": "المشكلة",
+      "problemPoints": [
+        "أُطر عمل وكلاء الذكاء الاصطناعي هي أدوات نمذجة أولية، وليست أنظمة إنتاج",
+        "لا ضمانات تقارب — المخرجات تتغير بشكل غير متوقع",
+        "الأمان فكرة لاحقة، وليس مبدأ تصميم",
+        "التوسع من العرض التجريبي إلى المؤسسة يتطلب إعادة كتابة كاملة"
+      ],
+      "solutionTitle": "الحل",
+      "solutionPoints": [
+        "نظام تشغيل ذكاء اصطناعي مبني لغرض محدد مع أكثر من 35 وكيل متخصص",
+        "محرك تقارب SOIC مع إثبات رياضي (μ=9.94/10)",
+        "أمان المؤسسات مدمج منذ اليوم الأول",
+        "بنية تحتية أصلية لـ Kubernetes — توسع بدون إعادة كتابة"
+      ]
+    },
+    "features": {
+      "label": "القدرات الأساسية",
+      "title": "ما الذي يشغّل AiNova OS",
+      "description": "ست قدرات أساسية تجعل من AiNova OS نظام تشغيل ذكاء اصطناعي بجودة الإنتاج.",
+      "soic": {
+        "title": "محرك تقارب SOIC",
+        "description": "Self-Optimizing Intelligence Convergence — تقارب جودة مُثبت رياضياً عبر 9 أبعاد مع شهادة Gold Master μ=9.94/10."
+      },
+      "tot": {
+        "title": "شجرة الأفكار",
+        "description": "استكشاف قرارات متقدم يقيّم مسارات تفكير متعددة في وقت واحد، ويختار الحلول المثلى من خلال مداولة منظمة."
+      },
+      "agents": {
+        "title": "أكثر من 35 وكيل متخصص",
+        "description": "وكلاء مخصصون لكل وظيفة — من توليد الكود والاختبار إلى تدقيق الأمان والتوثيق — يتم تنسيقهم بواسطة منسق مركزي."
+      },
+      "security": {
+        "title": "أمان المؤسسات",
+        "description": "التحكم في الوصول القائم على الأدوار، مسارات التدقيق، التحقق من المدخلات والتنفيذ المعزول — الأمان مبدأ تصميم، وليس ترقيع."
+      },
+      "multi-llm": {
+        "title": "بنية متعددة LLM",
+        "description": "تصميم مستقل عن المزود يدعم OpenAI وAnthropic وGroq وOllama — توجيه ذكي قائم على التكلفة والتأخير والقدرة."
+      },
+      "k8s": {
+        "title": "Kubernetes أصلي",
+        "description": "حاويات Docker مع ملفات Kubernetes، مراقبة Prometheus ولوحات معلومات Grafana — مبني للتوسع الأفقي منذ اليوم الأول."
+      }
+    },
+    "architecture": {
+      "label": "بنية النظام",
+      "title": "بنية من خمس طبقات",
+      "layers": {
+        "api": {
+          "title": "بوابة API",
+          "description": "نقاط نهاية FastAPI مع المصادقة وتحديد المعدل والتحقق من الطلبات"
+        },
+        "orchestration": {
+          "title": "محرك التنسيق",
+          "description": "محرك تقارب SOIC + استكشاف قرارات شجرة الأفكار"
+        },
+        "agents": {
+          "title": "طبقة الوكلاء",
+          "description": "أكثر من 35 وكيل متخصص بقدرات قائمة على الأدوار وتنفيذ معزول"
+        },
+        "infra": {
+          "title": "البنية التحتية",
+          "description": "PostgreSQL وRedis وDocker وKubernetes مع مراقبة Prometheus/Grafana"
+        },
+        "integration": {
+          "title": "طبقة التكامل",
+          "description": "جسور بروتوكول MCP وواجهات REST API واتصالات WebSocket وسير عمل n8n"
+        }
+      }
+    },
+    "metrics": {
+      "label": "بالأرقام",
+      "title": "مقاييس الإنتاج",
+      "qualityScore": "نقاط الجودة",
+      "linesOfCode": "أسطر الكود",
+      "testFunctions": "دوال الاختبار",
+      "agents": "وكلاء متخصصون",
+      "qualityDimensions": "أبعاد الجودة"
+    },
+    "comparison": {
+      "label": "المشهد التنافسي",
+      "title": "AiNova OS مقابل البدائل",
+      "description": "كيف يقارن AiNova OS بأُطر عمل وكلاء الذكاء الاصطناعي الشائعة عبر 7 أبعاد حرجة.",
+      "ainovaOs": "AiNova OS",
+      "langraph": "LangGraph",
+      "autogen": "AutoGen",
+      "crewai": "CrewAI",
+      "dimensions": {
+        "convergenceEngine": "محرك التقارب",
+        "agentCount": "دعم الوكلاء المتعددين",
+        "productionReady": "جاهز للإنتاج",
+        "mathProof": "إثبات رياضي",
+        "multiLlm": "دعم LLM متعدد",
+        "k8sNative": "Kubernetes أصلي",
+        "mcpBridge": "جسر بروتوكول MCP"
+      }
+    },
+    "techStack": {
+      "label": "التكنولوجيا",
+      "title": "المكدس التقني",
+      "categories": {
+        "core": "الأساسي",
+        "infra": "البنية التحتية",
+        "ai": "الذكاء الاصطناعي و LLM",
+        "integration": "التكامل"
       }
     }
   }

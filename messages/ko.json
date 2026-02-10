@@ -7,6 +7,7 @@
   "nav": {
     "home": "홈",
     "services": "서비스",
+    "ainova-os": "AiNova OS",
     "projects": "프로젝트",
     "about": "소개",
     "contact": "연락처"
@@ -276,6 +277,10 @@
     "contact": {
       "title": "연락처",
       "description": "AI 자동화 및 지능형 시스템 요구 사항에 대해 논의하려면 Mark Systems에 연락하세요."
+    },
+    "ainova": {
+      "title": "AiNova OS — 프로덕션 AI 운영 체제 | Mark Systems",
+      "description": "AiNova OS: 35+ AI 에이전트, SOIC 수렴 엔진(μ=9.94/10), Tree-of-Thoughts, Kubernetes 네이티브. Mark Systems의 프로덕션 AI 운영 체제."
     }
   },
   "faq": {
@@ -305,6 +310,136 @@
       "5": {
         "question": "산업 자동화 전문성은?",
         "answer": "창립자는 산업 전기 엔지니어링 분야에서 10년 이상의 경험을 보유하고 있습니다: PLC/CNC 프로그래밍, 생산 라인 설계(방위 산업 포함), HV/MV/LV 전력망 보호 시스템 엔지니어링."
+      }
+    }
+  },
+  "ainovaBanner": {
+    "label": "플래그십 제품",
+    "title": "AiNova OS",
+    "description": "35+ 에이전트, SOIC 수렴 엔진, Kubernetes 네이티브 인프라를 갖춘 프로덕션 AI 운영 체제.",
+    "metric1Label": "품질 점수",
+    "metric1Value": "μ 9.94/10",
+    "metric2Label": "프로덕션 코드 라인",
+    "metric2Value": "42K+",
+    "button": "AiNova OS 탐색"
+  },
+  "ainova": {
+    "hero": {
+      "badge": "AI 운영 체제",
+      "title": "AiNova OS",
+      "subtitle": "프로덕션 AI 운영 체제",
+      "description": "35+ 전문 에이전트, 자기 최적화 수렴 엔진, 엔터프라이즈급 인프라 — 프로덕션에서 신뢰할 수 있는 AI가 필요한 팀을 위해 설계.",
+      "ctaPrimary": "문의하기",
+      "ctaSecondary": "GitHub에서 보기"
+    },
+    "overview": {
+      "label": "문제와 해결책",
+      "title": "AiNova OS가 존재하는 이유",
+      "problemTitle": "문제",
+      "problemPoints": [
+        "AI 에이전트 프레임워크는 프로토타이핑 도구이지 프로덕션 시스템이 아닙니다",
+        "수렴 보장 없음 — 출력이 예측 불가능하게 변동",
+        "보안은 설계 원칙이 아닌 사후 고려 사항",
+        "데모에서 엔터프라이즈로의 확장은 완전한 재작성 필요"
+      ],
+      "solutionTitle": "해결책",
+      "solutionPoints": [
+        "35+ 전문 에이전트를 갖춘 전용 AI 운영 체제",
+        "수학적 증명이 있는 SOIC 수렴 엔진(μ=9.94/10)",
+        "첫날부터 통합된 엔터프라이즈 보안",
+        "Kubernetes 네이티브 인프라 — 재작성 없이 확장"
+      ]
+    },
+    "features": {
+      "label": "핵심 기능",
+      "title": "AiNova OS를 구동하는 것",
+      "description": "AiNova OS를 프로덕션급 AI 운영 체제로 만드는 6가지 기본 기능.",
+      "soic": {
+        "title": "SOIC 수렴 엔진",
+        "description": "Self-Optimizing Intelligence Convergence — 9개 차원에 걸친 수학적으로 증명된 품질 수렴, Gold Master 인증 μ=9.94/10."
+      },
+      "tot": {
+        "title": "Tree-of-Thoughts",
+        "description": "여러 추론 경로를 동시에 평가하고 구조화된 심의를 통해 최적의 솔루션을 선택하는 고급 의사결정 탐색."
+      },
+      "agents": {
+        "title": "35+ 전문 에이전트",
+        "description": "코드 생성 및 테스트에서 보안 감사 및 문서화까지 모든 기능을 위한 전용 에이전트 — 중앙 코디네이터가 오케스트레이션."
+      },
+      "security": {
+        "title": "엔터프라이즈 보안",
+        "description": "역할 기반 접근 제어, 감사 추적, 입력 검증, 샌드박스 실행 — 보안은 패치가 아닌 설계 원칙."
+      },
+      "multi-llm": {
+        "title": "멀티 LLM 아키텍처",
+        "description": "OpenAI, Anthropic, Groq, Ollama를 지원하는 벤더 비의존적 설계 — 비용, 지연 시간, 기능 기반의 지능형 라우팅."
+      },
+      "k8s": {
+        "title": "Kubernetes 네이티브",
+        "description": "Docker 컨테이너화, Kubernetes 매니페스트, Prometheus 모니터링, Grafana 대시보드 — 첫날부터 수평 확장을 위해 구축."
+      }
+    },
+    "architecture": {
+      "label": "시스템 아키텍처",
+      "title": "5계층 아키텍처",
+      "layers": {
+        "api": {
+          "title": "API 게이트웨이",
+          "description": "인증, 속도 제한, 요청 검증을 갖춘 FastAPI 엔드포인트"
+        },
+        "orchestration": {
+          "title": "오케스트레이션 엔진",
+          "description": "SOIC 수렴 엔진 + Tree-of-Thoughts 의사결정 탐색"
+        },
+        "agents": {
+          "title": "에이전트 계층",
+          "description": "역할 기반 기능과 샌드박스 실행을 갖춘 35+ 전문 에이전트"
+        },
+        "infra": {
+          "title": "인프라스트럭처",
+          "description": "PostgreSQL, Redis, Docker, Kubernetes(Prometheus/Grafana 모니터링 포함)"
+        },
+        "integration": {
+          "title": "통합 계층",
+          "description": "MCP 프로토콜 브릿지, REST API, WebSocket 연결, n8n 워크플로우"
+        }
+      }
+    },
+    "metrics": {
+      "label": "숫자로 보기",
+      "title": "프로덕션 메트릭",
+      "qualityScore": "품질 점수",
+      "linesOfCode": "코드 라인 수",
+      "testFunctions": "테스트 함수",
+      "agents": "전문 에이전트",
+      "qualityDimensions": "품질 차원"
+    },
+    "comparison": {
+      "label": "경쟁 환경",
+      "title": "AiNova OS vs. 대안",
+      "description": "AiNova OS가 인기 AI 에이전트 프레임워크와 7가지 핵심 차원에서 어떻게 비교되는지.",
+      "ainovaOs": "AiNova OS",
+      "langraph": "LangGraph",
+      "autogen": "AutoGen",
+      "crewai": "CrewAI",
+      "dimensions": {
+        "convergenceEngine": "수렴 엔진",
+        "agentCount": "멀티 에이전트 지원",
+        "productionReady": "프로덕션 준비",
+        "mathProof": "수학적 증명",
+        "multiLlm": "멀티 LLM 지원",
+        "k8sNative": "Kubernetes 네이티브",
+        "mcpBridge": "MCP 프로토콜 브릿지"
+      }
+    },
+    "techStack": {
+      "label": "기술",
+      "title": "기술 스택",
+      "categories": {
+        "core": "코어",
+        "infra": "인프라",
+        "ai": "AI & LLM",
+        "integration": "통합"
       }
     }
   }

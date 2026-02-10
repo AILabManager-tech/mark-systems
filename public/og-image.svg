@@ -1,0 +1,9 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0A0A0B"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#00A19B"/>
+  <text x="100" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#EDEDED">Mark Systems</text>
+  <text x="100" y="330" font-family="monospace" font-size="24" fill="#00A19B" letter-spacing="4">// AUTOMATISATION IA &amp; INGENIERIE DECISIONNELLE</text>
+  <text x="100" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#8A8A8A">Systemes IA de production | Orchestration multi-agents | Montreal</text>
+  <rect x="100" y="460" width="60" height="3" fill="#00A19B"/>
+  <text x="100" y="510" font-family="monospace" font-size="18" fill="#5A5A5A">marksystems.ca</text>
+</svg>

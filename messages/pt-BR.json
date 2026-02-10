@@ -7,6 +7,7 @@
   "nav": {
     "home": "Início",
     "services": "Serviços",
+    "ainova-os": "AiNova OS",
     "projects": "Projetos",
     "about": "Sobre",
     "contact": "Contato"
@@ -276,6 +277,10 @@
     "contact": {
       "title": "Contato",
       "description": "Entre em contato com a Mark Systems para discutir suas necessidades de automação com IA e sistemas inteligentes."
+    },
+    "ainova": {
+      "title": "AiNova OS — Sistema operacional de IA de produção | Mark Systems",
+      "description": "AiNova OS: 35+ agentes de IA, motor de convergência SOIC (μ=9.94/10), Tree-of-Thoughts, nativo Kubernetes. O sistema operacional de IA de produção da Mark Systems."
     }
   },
   "faq": {
@@ -305,6 +310,136 @@
       "5": {
         "question": "Qual é a expertise de vocês em automação industrial?",
         "answer": "Nosso fundador tem 10+ anos de experiência em engenharia elétrica industrial: programação PLC/CNC, design de linhas de produção (incluindo setor de defesa) e engenharia de sistemas de proteção de redes elétricas HV/MV/LV."
+      }
+    }
+  },
+  "ainovaBanner": {
+    "label": "Produto principal",
+    "title": "AiNova OS",
+    "description": "Um sistema operacional de IA de produção com 35+ agentes, motor de convergência SOIC e infraestrutura nativa Kubernetes.",
+    "metric1Label": "Pontuação de qualidade",
+    "metric1Value": "μ 9.94/10",
+    "metric2Label": "Linhas de produção",
+    "metric2Value": "42K+",
+    "button": "Explorar AiNova OS"
+  },
+  "ainova": {
+    "hero": {
+      "badge": "Sistema operacional de IA",
+      "title": "AiNova OS",
+      "subtitle": "Sistema operacional de IA de produção",
+      "description": "35+ agentes especializados, um motor de convergência auto-otimizante e infraestrutura empresarial — projetado para equipes que precisam de IA confiável em produção.",
+      "ctaPrimary": "Entre em contato",
+      "ctaSecondary": "Ver no GitHub"
+    },
+    "overview": {
+      "label": "O problema e a solução",
+      "title": "Por que o AiNova OS existe",
+      "problemTitle": "O problema",
+      "problemPoints": [
+        "Frameworks de agentes de IA são ferramentas de prototipagem, não sistemas de produção",
+        "Sem garantias de convergência — os resultados variam de forma imprevisível",
+        "A segurança é uma reflexão tardia, não um princípio de design",
+        "Escalar de demo para empresa exige uma reescrita completa"
+      ],
+      "solutionTitle": "A solução",
+      "solutionPoints": [
+        "Sistema operacional de IA projetado com 35+ agentes especializados",
+        "Motor de convergência SOIC com prova matemática (μ=9.94/10)",
+        "Segurança empresarial integrada desde o primeiro dia",
+        "Infraestrutura nativa Kubernetes — escala sem reescritas"
+      ]
+    },
+    "features": {
+      "label": "Capacidades principais",
+      "title": "O que impulsiona o AiNova OS",
+      "description": "Seis capacidades fundamentais que fazem do AiNova OS um sistema operacional de IA de qualidade de produção.",
+      "soic": {
+        "title": "Motor de convergência SOIC",
+        "description": "Self-Optimizing Intelligence Convergence — convergência de qualidade matematicamente provada em 9 dimensões com certificação Gold Master μ=9.94/10."
+      },
+      "tot": {
+        "title": "Tree-of-Thoughts",
+        "description": "Exploração de decisões avançada que avalia múltiplos caminhos de raciocínio simultaneamente, selecionando soluções ideais por deliberação estruturada."
+      },
+      "agents": {
+        "title": "35+ agentes especializados",
+        "description": "Agentes dedicados para cada função — da geração de código e testes à auditoria de segurança e documentação — orquestrados por um coordenador central."
+      },
+      "security": {
+        "title": "Segurança empresarial",
+        "description": "Controle de acesso baseado em funções, trilhas de auditoria, validação de entradas e execução sandboxed — segurança é um princípio de design, não um patch."
+      },
+      "multi-llm": {
+        "title": "Arquitetura multi-LLM",
+        "description": "Design agnóstico de fornecedores suportando OpenAI, Anthropic, Groq e Ollama — roteamento inteligente baseado em custo, latência e capacidade."
+      },
+      "k8s": {
+        "title": "Nativo Kubernetes",
+        "description": "Contêinerizado com Docker e manifestos Kubernetes, monitoramento Prometheus e dashboards Grafana — construído para escalabilidade horizontal desde o primeiro dia."
+      }
+    },
+    "architecture": {
+      "label": "Arquitetura do sistema",
+      "title": "Arquitetura de cinco camadas",
+      "layers": {
+        "api": {
+          "title": "Gateway API",
+          "description": "Endpoints FastAPI com autenticação, limitação de taxa e validação de requisições"
+        },
+        "orchestration": {
+          "title": "Motor de orquestração",
+          "description": "Motor de convergência SOIC + exploração de decisões Tree-of-Thoughts"
+        },
+        "agents": {
+          "title": "Camada de agentes",
+          "description": "35+ agentes especializados com capacidades baseadas em funções e execução sandboxed"
+        },
+        "infra": {
+          "title": "Infraestrutura",
+          "description": "PostgreSQL, Redis, Docker, Kubernetes com monitoramento Prometheus/Grafana"
+        },
+        "integration": {
+          "title": "Camada de integração",
+          "description": "Pontes protocolo MCP, APIs REST, conexões WebSocket, workflows n8n"
+        }
+      }
+    },
+    "metrics": {
+      "label": "Em números",
+      "title": "Métricas de produção",
+      "qualityScore": "Pontuação de qualidade",
+      "linesOfCode": "Linhas de código",
+      "testFunctions": "Funções de teste",
+      "agents": "Agentes especializados",
+      "qualityDimensions": "Dimensões de qualidade"
+    },
+    "comparison": {
+      "label": "Cenário competitivo",
+      "title": "AiNova OS vs. as alternativas",
+      "description": "Como o AiNova OS se compara aos frameworks populares de agentes de IA em 7 dimensões críticas.",
+      "ainovaOs": "AiNova OS",
+      "langraph": "LangGraph",
+      "autogen": "AutoGen",
+      "crewai": "CrewAI",
+      "dimensions": {
+        "convergenceEngine": "Motor de convergência",
+        "agentCount": "Suporte multi-agente",
+        "productionReady": "Pronto para produção",
+        "mathProof": "Prova matemática",
+        "multiLlm": "Suporte multi-LLM",
+        "k8sNative": "Nativo Kubernetes",
+        "mcpBridge": "Ponte protocolo MCP"
+      }
+    },
+    "techStack": {
+      "label": "Tecnologia",
+      "title": "Stack tecnológico",
+      "categories": {
+        "core": "Core",
+        "infra": "Infraestrutura",
+        "ai": "IA & LLM",
+        "integration": "Integração"
       }
     }
   }

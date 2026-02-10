@@ -99,11 +99,13 @@ export async function generateMetadata({
       type: "website",
       locale: locale,
       url: `${SITE.url}/${locale}`,
+      images: [{ url: `${SITE.url}/og-image.svg`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
+      images: [`${SITE.url}/og-image.svg`],
     },
     robots: {
       index: true,
@@ -195,8 +197,14 @@ export default async function LocaleLayout({
       </head>
       <body className="min-h-screen font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+          >
+            {(messages as Record<string, Record<string, string>>)?.common?.skipToContent ?? "Skip to content"}
+          </a>
           <Navbar />
-          <main className="pt-16 lg:pt-20">{children}</main>
+          <main id="main-content" className="pt-16 lg:pt-20">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

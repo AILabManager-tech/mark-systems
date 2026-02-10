@@ -7,6 +7,7 @@
   "nav": {
     "home": "ホーム",
     "services": "サービス",
+    "ainova-os": "AiNova OS",
     "projects": "プロジェクト",
     "about": "会社概要",
     "contact": "お問い合わせ"
@@ -276,6 +277,10 @@
     "contact": {
       "title": "お問い合わせ",
       "description": "AI自動化とインテリジェントシステムのニーズについて、Mark Systemsにお問い合わせください。"
+    },
+    "ainova": {
+      "title": "AiNova OS — 本番AIオペレーティングシステム | Mark Systems",
+      "description": "AiNova OS：35以上のAIエージェント、SOIC収束エンジン（μ=9.94/10）、Tree-of-Thoughts、Kubernetesネイティブ。Mark Systemsの本番AIオペレーティングシステム。"
     }
   },
   "faq": {
@@ -305,6 +310,136 @@
       "5": {
         "question": "産業自動化の専門知識は？",
         "answer": "創業者は産業電気エンジニアリングで10年以上の経験を持っています：PLC/CNCプログラミング、生産ライン設計（防衛セクター含む）、HV/MV/LV電力網保護システムエンジニアリング。"
+      }
+    }
+  },
+  "ainovaBanner": {
+    "label": "フラッグシップ製品",
+    "title": "AiNova OS",
+    "description": "35以上のエージェント、SOIC収束エンジン、Kubernetesネイティブインフラを備えた本番AIオペレーティングシステム。",
+    "metric1Label": "品質スコア",
+    "metric1Value": "μ 9.94/10",
+    "metric2Label": "本番コード行数",
+    "metric2Value": "42K+",
+    "button": "AiNova OSを探索"
+  },
+  "ainova": {
+    "hero": {
+      "badge": "AIオペレーティングシステム",
+      "title": "AiNova OS",
+      "subtitle": "本番AIオペレーティングシステム",
+      "description": "35以上の専門エージェント、自己最適化収束エンジン、エンタープライズグレードのインフラ — 本番環境で信頼できるAIを必要とするチームのために設計。",
+      "ctaPrimary": "お問い合わせ",
+      "ctaSecondary": "GitHubで見る"
+    },
+    "overview": {
+      "label": "問題と解決策",
+      "title": "AiNova OSが存在する理由",
+      "problemTitle": "問題",
+      "problemPoints": [
+        "AIエージェントフレームワークはプロトタイピングツールであり、本番システムではない",
+        "収束保証がない — 出力が予測不能に変動する",
+        "セキュリティは後付けであり、設計原則ではない",
+        "デモからエンタープライズへのスケーリングには完全な書き直しが必要"
+      ],
+      "solutionTitle": "解決策",
+      "solutionPoints": [
+        "35以上の専門エージェントを備えた専用AIオペレーティングシステム",
+        "数学的証明付きSOIC収束エンジン（μ=9.94/10）",
+        "初日からエンタープライズセキュリティを統合",
+        "Kubernetesネイティブインフラ — 書き直しなしでスケール"
+      ]
+    },
+    "features": {
+      "label": "コア機能",
+      "title": "AiNova OSを支えるもの",
+      "description": "AiNova OSを本番グレードのAIオペレーティングシステムにする6つの基本機能。",
+      "soic": {
+        "title": "SOIC収束エンジン",
+        "description": "Self-Optimizing Intelligence Convergence — 9次元にわたる数学的に証明された品質収束、Gold Master認証μ=9.94/10。"
+      },
+      "tot": {
+        "title": "Tree-of-Thoughts",
+        "description": "複数の推論パスを同時に評価し、構造化された審議を通じて最適なソリューションを選択する高度な意思決定探索。"
+      },
+      "agents": {
+        "title": "35以上の専門エージェント",
+        "description": "コード生成とテストからセキュリティ監査とドキュメンテーションまで、あらゆる機能のための専用エージェント — 中央コーディネーターによって統合管理。"
+      },
+      "security": {
+        "title": "エンタープライズセキュリティ",
+        "description": "ロールベースのアクセス制御、監査証跡、入力検証、サンドボックス実行 — セキュリティはパッチではなく設計原則。"
+      },
+      "multi-llm": {
+        "title": "マルチLLMアーキテクチャ",
+        "description": "OpenAI、Anthropic、Groq、Ollamaをサポートするベンダー非依存設計 — コスト、レイテンシ、能力に基づくインテリジェントルーティング。"
+      },
+      "k8s": {
+        "title": "Kubernetesネイティブ",
+        "description": "DockerコンテナとKubernetesマニフェスト、Prometheusモニタリング、Grafanaダッシュボード — 初日から水平スケーリング対応。"
+      }
+    },
+    "architecture": {
+      "label": "システムアーキテクチャ",
+      "title": "5層アーキテクチャ",
+      "layers": {
+        "api": {
+          "title": "APIゲートウェイ",
+          "description": "認証、レート制限、リクエスト検証を備えたFastAPIエンドポイント"
+        },
+        "orchestration": {
+          "title": "オーケストレーションエンジン",
+          "description": "SOIC収束エンジン + Tree-of-Thoughts意思決定探索"
+        },
+        "agents": {
+          "title": "エージェント層",
+          "description": "ロールベースの能力とサンドボックス実行を備えた35以上の専門エージェント"
+        },
+        "infra": {
+          "title": "インフラストラクチャ",
+          "description": "PostgreSQL、Redis、Docker、Kubernetes（Prometheus/Grafanaモニタリング付き）"
+        },
+        "integration": {
+          "title": "統合層",
+          "description": "MCPプロトコルブリッジ、REST API、WebSocket接続、n8nワークフロー"
+        }
+      }
+    },
+    "metrics": {
+      "label": "数字で見る",
+      "title": "本番メトリクス",
+      "qualityScore": "品質スコア",
+      "linesOfCode": "コード行数",
+      "testFunctions": "テスト関数",
+      "agents": "専門エージェント",
+      "qualityDimensions": "品質次元"
+    },
+    "comparison": {
+      "label": "競合状況",
+      "title": "AiNova OS vs. 代替手段",
+      "description": "AiNova OSが人気のAIエージェントフレームワークと7つの重要な次元でどう比較されるか。",
+      "ainovaOs": "AiNova OS",
+      "langraph": "LangGraph",
+      "autogen": "AutoGen",
+      "crewai": "CrewAI",
+      "dimensions": {
+        "convergenceEngine": "収束エンジン",
+        "agentCount": "マルチエージェントサポート",
+        "productionReady": "本番対応",
+        "mathProof": "数学的証明",
+        "multiLlm": "マルチLLMサポート",
+        "k8sNative": "Kubernetesネイティブ",
+        "mcpBridge": "MCPプロトコルブリッジ"
+      }
+    },
+    "techStack": {
+      "label": "テクノロジー",
+      "title": "技術スタック",
+      "categories": {
+        "core": "コア",
+        "infra": "インフラ",
+        "ai": "AI & LLM",
+        "integration": "統合"
       }
     }
   }

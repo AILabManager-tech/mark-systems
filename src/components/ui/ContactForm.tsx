@@ -50,6 +50,21 @@ export function ContactForm() {
       return;
     }
     setErrors({});
+
+    const subject = formData.service
+      ? `[Mark Systems] ${formData.name} — ${formData.service}`
+      : `[Mark Systems] ${formData.name}`;
+    const body = [
+      formData.company ? `Entreprise: ${formData.company}` : "",
+      formData.service ? `Service: ${formData.service}` : "",
+      "",
+      formData.message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const mailto = `mailto:contact@marksystems.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
     setSubmitted(true);
   }
 
@@ -79,16 +94,17 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate aria-label="Formulaire de contact">
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label={t("name")} required error={errors.name} value={formData.name} onChange={(v) => handleChange("name", v)} placeholder={t("namePlaceholder")} />
-        <Field label={t("email")} required type="email" error={errors.email} value={formData.email} onChange={(v) => handleChange("email", v)} placeholder={t("emailPlaceholder")} />
+        <Field id="contact-name" label={t("name")} required error={errors.name} value={formData.name} onChange={(v) => handleChange("name", v)} placeholder={t("namePlaceholder")} />
+        <Field id="contact-email" label={t("email")} required type="email" error={errors.email} value={formData.email} onChange={(v) => handleChange("email", v)} placeholder={t("emailPlaceholder")} />
       </div>
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label={t("company")} value={formData.company} onChange={(v) => handleChange("company", v)} placeholder={t("companyPlaceholder")} />
+        <Field id="contact-company" label={t("company")} value={formData.company} onChange={(v) => handleChange("company", v)} placeholder={t("companyPlaceholder")} />
         <div>
-          <label className="mb-2 block text-sm font-medium text-text-primary">{t("serviceInterest")}</label>
+          <label htmlFor="contact-service" className="mb-2 block text-sm font-medium text-text-primary">{t("serviceInterest")}</label>
           <select
+            id="contact-service"
             value={formData.service}
             onChange={(e) => handleChange("service", e.target.value)}
             className="w-full rounded-sm border border-surface-border bg-surface px-4 py-3 text-sm text-text-primary outline-none transition-colors focus:border-text-tertiary"
@@ -101,40 +117,45 @@ export function ContactForm() {
         </div>
       </div>
       <div>
-        <label className="mb-2 block text-sm font-medium text-text-primary">
+        <label htmlFor="contact-message" className="mb-2 block text-sm font-medium text-text-primary">
           {t("message")} <span className="text-accent">{t("required")}</span>
         </label>
         <textarea
+          id="contact-message"
           rows={5}
           value={formData.message}
           onChange={(e) => handleChange("message", e.target.value)}
           placeholder={t("messagePlaceholder")}
+          aria-describedby={errors.message ? "contact-message-error" : undefined}
           className={cn(
             "w-full resize-none rounded-sm border bg-surface px-4 py-3 text-sm text-text-primary outline-none transition-colors focus:border-text-tertiary",
             errors.message ? "border-red-500/60" : "border-surface-border"
           )}
         />
-        {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message}</p>}
+        {errors.message && <p id="contact-message-error" className="mt-1 text-xs text-red-400">{errors.message}</p>}
       </div>
       <Button type="submit" className="w-full sm:w-auto">{t("submit")}</Button>
     </form>
   );
 }
 
-function Field({ label, required, type = "text", error, value, onChange, placeholder }: {
-  label: string; required?: boolean; type?: string; error?: string; value: string; onChange: (v: string) => void; placeholder?: string;
+function Field({ id, label, required, type = "text", error, value, onChange, placeholder }: {
+  id: string; label: string; required?: boolean; type?: string; error?: string; value: string; onChange: (v: string) => void; placeholder?: string;
 }) {
   const t = useTranslations("contactForm");
+  const errorId = `${id}-error`;
   return (
     <div>
-      <label className="mb-2 block text-sm font-medium text-text-primary">
+      <label htmlFor={id} className="mb-2 block text-sm font-medium text-text-primary">
         {label} {required && <span className="text-accent">{t("required")}</span>}
       </label>
       <input
+        id={id}
         type={type} value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder}
+        aria-describedby={error ? errorId : undefined}
         className={cn("w-full rounded-sm border bg-surface px-4 py-3 text-sm text-text-primary outline-none transition-colors focus:border-text-tertiary", error ? "border-red-500/60" : "border-surface-border")}
       />
-      {error && <p className="mt-1 text-xs text-red-400">{error}</p>}
+      {error && <p id={errorId} className="mt-1 text-xs text-red-400">{error}</p>}
     </div>
   );
 }

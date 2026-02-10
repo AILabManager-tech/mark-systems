@@ -7,6 +7,7 @@
   "nav": {
     "home": "Home",
     "services": "Services",
+    "ainova-os": "AiNova OS",
     "projects": "Projects",
     "about": "About",
     "contact": "Contact"
@@ -240,6 +241,10 @@
     "contact": {
       "title": "Contact — AI Automation Montreal",
       "description": "Contact Mark Systems in Montreal to discuss your AI automation challenges, intelligent workflows, and production systems."
+    },
+    "ainova": {
+      "title": "AiNova OS — Production AI Operating System | Mark Systems",
+      "description": "AiNova OS: 35+ AI agents, SOIC convergence engine (μ=9.94/10), Tree-of-Thoughts, Kubernetes-native. The production AI operating system by Mark Systems."
     }
   },
   "faq": {
@@ -269,6 +274,136 @@
       "5": {
         "question": "What is your industrial automation expertise?",
         "answer": "Our founder has 10+ years of industrial electrical engineering experience: PLC/CNC programming, production line design (including defense sector), and HV/MV/LV power grid protection system engineering."
+      }
+    }
+  },
+  "ainovaBanner": {
+    "label": "Flagship Product",
+    "title": "AiNova OS",
+    "description": "A production AI operating system with 35+ agents, SOIC convergence engine, and Kubernetes-native infrastructure.",
+    "metric1Label": "Quality Score",
+    "metric1Value": "μ 9.94/10",
+    "metric2Label": "Production Lines",
+    "metric2Value": "42K+",
+    "button": "Explore AiNova OS"
+  },
+  "ainova": {
+    "hero": {
+      "badge": "AI Operating System",
+      "title": "AiNova OS",
+      "subtitle": "Production AI Operating System",
+      "description": "35+ specialized agents, a self-optimizing convergence engine, and enterprise-grade infrastructure — engineered for teams that need AI they can trust in production.",
+      "ctaPrimary": "Contact Us",
+      "ctaSecondary": "View on GitHub"
+    },
+    "overview": {
+      "label": "The Problem & Solution",
+      "title": "Why AiNova OS Exists",
+      "problemTitle": "The Problem",
+      "problemPoints": [
+        "AI agent frameworks are prototyping tools, not production systems",
+        "No convergence guarantees — outputs vary unpredictably",
+        "Security is an afterthought, not a design principle",
+        "Scaling from demo to enterprise requires a complete rewrite"
+      ],
+      "solutionTitle": "The Solution",
+      "solutionPoints": [
+        "Purpose-built AI operating system with 35+ specialized agents",
+        "SOIC convergence engine with mathematical proof (μ=9.94/10)",
+        "Enterprise security baked in from day one",
+        "Kubernetes-native infrastructure — scales without rewrites"
+      ]
+    },
+    "features": {
+      "label": "Core Capabilities",
+      "title": "What Powers AiNova OS",
+      "description": "Six foundational capabilities that make AiNova OS a production-grade AI operating system.",
+      "soic": {
+        "title": "SOIC Convergence Engine",
+        "description": "Self-Optimizing Intelligence Convergence — mathematically proven quality convergence across 9 dimensions with μ=9.94/10 Gold Master certification."
+      },
+      "tot": {
+        "title": "Tree-of-Thoughts",
+        "description": "Advanced decision exploration that evaluates multiple reasoning paths simultaneously, selecting optimal solutions through structured deliberation."
+      },
+      "agents": {
+        "title": "35+ Specialized Agents",
+        "description": "Purpose-built agents for every function — from code generation and testing to security auditing and documentation — orchestrated by a central coordinator."
+      },
+      "security": {
+        "title": "Enterprise Security",
+        "description": "Role-based access control, audit trails, input validation, and sandboxed execution — security is a design principle, not a patch."
+      },
+      "multi-llm": {
+        "title": "Multi-LLM Architecture",
+        "description": "Vendor-agnostic design supporting OpenAI, Anthropic, Groq, and Ollama — intelligent routing based on cost, latency, and capability."
+      },
+      "k8s": {
+        "title": "Kubernetes Native",
+        "description": "Docker-containerized with Kubernetes manifests, Prometheus monitoring, and Grafana dashboards — built for horizontal scaling from day one."
+      }
+    },
+    "architecture": {
+      "label": "System Architecture",
+      "title": "Five-Layer Architecture",
+      "layers": {
+        "api": {
+          "title": "API Gateway",
+          "description": "FastAPI endpoints with authentication, rate limiting, and request validation"
+        },
+        "orchestration": {
+          "title": "Orchestration Engine",
+          "description": "SOIC convergence engine + Tree-of-Thoughts decision exploration"
+        },
+        "agents": {
+          "title": "Agent Layer",
+          "description": "35+ specialized agents with role-based capabilities and sandboxed execution"
+        },
+        "infra": {
+          "title": "Infrastructure",
+          "description": "PostgreSQL, Redis, Docker, Kubernetes with Prometheus/Grafana monitoring"
+        },
+        "integration": {
+          "title": "Integration Layer",
+          "description": "MCP protocol bridges, REST APIs, WebSocket connections, n8n workflows"
+        }
+      }
+    },
+    "metrics": {
+      "label": "By the Numbers",
+      "title": "Production Metrics",
+      "qualityScore": "Quality Score",
+      "linesOfCode": "Lines of Code",
+      "testFunctions": "Test Functions",
+      "agents": "Specialized Agents",
+      "qualityDimensions": "Quality Dimensions"
+    },
+    "comparison": {
+      "label": "Competitive Landscape",
+      "title": "AiNova OS vs. The Alternatives",
+      "description": "How AiNova OS compares to popular AI agent frameworks across 7 critical dimensions.",
+      "ainovaOs": "AiNova OS",
+      "langraph": "LangGraph",
+      "autogen": "AutoGen",
+      "crewai": "CrewAI",
+      "dimensions": {
+        "convergenceEngine": "Convergence Engine",
+        "agentCount": "Multi-Agent Support",
+        "productionReady": "Production Ready",
+        "mathProof": "Mathematical Proof",
+        "multiLlm": "Multi-LLM Support",
+        "k8sNative": "Kubernetes Native",
+        "mcpBridge": "MCP Protocol Bridge"
+      }
+    },
+    "techStack": {
+      "label": "Technology",
+      "title": "Tech Stack",
+      "categories": {
+        "core": "Core",
+        "infra": "Infrastructure",
+        "ai": "AI & LLM",
+        "integration": "Integration"
       }
     }
   }

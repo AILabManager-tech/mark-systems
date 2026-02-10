@@ -1,43 +1,43 @@
 export const PROJECT_IDS = [
-  "meridian-forecasting",
-  "sentinel-quality",
-  "lexicon-intelligence",
-  "atlas-decision",
+  "ainova-os",
+  "conseiller-placement",
+  "n8n-ecosystem",
+  "stark-portfolio",
 ] as const;
 
 export type ProjectId = (typeof PROJECT_IDS)[number];
 
 export const projectTechnologies: Record<ProjectId, string[]> = {
-  "meridian-forecasting": [
-    "PyTorch",
-    "Apache Kafka",
-    "TimescaleDB",
-    "FastAPI",
-    "Docker",
-    "AWS",
-  ],
-  "sentinel-quality": [
-    "TensorFlow",
-    "NVIDIA Jetson",
+  "ainova-os": [
     "Python",
-    "OpenCV",
-    "PostgreSQL",
-    "GCP",
-  ],
-  "lexicon-intelligence": [
-    "Hugging Face",
-    "spaCy",
     "FastAPI",
+    "PostgreSQL",
     "Redis",
-    "Elasticsearch",
+    "Docker",
     "Kubernetes",
   ],
-  "atlas-decision": [
-    "Python",
-    "NumPy",
-    "Next.js",
+  "conseiller-placement": [
+    "Node.js",
+    "React",
+    "TypeScript",
+    "Express",
+    "Jest",
+    "Vite",
+  ],
+  "n8n-ecosystem": [
+    "n8n",
+    "GPT-4",
+    "Claude",
+    "Whisper",
     "PostgreSQL",
     "Docker",
-    "Azure",
+  ],
+  "stark-portfolio": [
+    "React",
+    "Three.js",
+    "TypeScript",
+    "Framer Motion",
+    "Tailwind",
+    "Netlify",
   ],
 };

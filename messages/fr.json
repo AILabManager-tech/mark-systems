@@ -2,11 +2,13 @@
   "common": {
     "siteName": "Mark Systems",
     "tagline": "Automatisation IA & Systèmes Intelligents",
-    "siteDescription": "Nous concevons des systèmes IA de qualité production, de l'automatisation de workflows et des plateformes intelligentes pour les entreprises qui exigent des résultats mesurables."
+    "siteDescription": "Nous concevons des systèmes IA de qualité production, de l'automatisation de workflows et des plateformes intelligentes pour les entreprises qui exigent des résultats mesurables.",
+    "skipToContent": "Aller au contenu principal"
   },
   "nav": {
     "home": "Accueil",
     "services": "Services",
+    "ainova-os": "AiNova OS",
     "projects": "Projets",
     "about": "À propos",
     "contact": "Contact"
@@ -28,7 +30,7 @@
   "servicesPage": {
     "label": "Nos services",
     "title": "De l'ingénierie qui livre",
-    "description": "Chaque service est ancré dans l'expérience de production — 195+ workflows déployés, 42K+ lignes d'infrastructure IA, 10+ ans d'ingénierie industrielle."
+    "description": "Chaque service est ancré dans l'expérience de production — 195+ workflows déployés, 84K+ lignes d'infrastructure IA, 10+ ans d'ingénierie industrielle."
   },
   "services": {
     "ai-workflow-automation": {
@@ -40,7 +42,7 @@
     "ai-systems-architecture": {
       "title": "Architecture de systèmes IA",
       "shortDescription": "Plateformes d'orchestration multi-agents avec convergence mathématiquement prouvée et infrastructure de niveau entreprise.",
-      "longDescription": "Notre système phare AINOVA OS est un système d'exploitation IA de production avec 35+ agents spécialisés, un moteur de convergence auto-optimisant (SOIC) et une exploration de décisions Tree-of-Thoughts. Construit sur FastAPI, PostgreSQL, Redis et Kubernetes — conçu pour les équipes qui ont besoin d'une IA fiable et scalable.",
+      "longDescription": "Notre système phare AINOVA OS est un système d'exploitation IA de production avec 21+ agents spécialisés, un moteur de convergence auto-optimisant (SOIC) et une exploration de décisions Tree-of-Thoughts. Construit sur FastAPI, PostgreSQL, Redis et Kubernetes — conçu pour les équipes qui ont besoin d'une IA fiable et scalable.",
       "capabilities": ["Orchestration multi-agents", "Moteur de convergence SOIC", "Optimisation Tree-of-Thoughts", "Déploiement Kubernetes", "Ponts protocole MCP"]
     },
     "fullstack-development": {
@@ -87,8 +89,8 @@
       "timeline": "8 mois de développement",
       "methodology": "Architecture BMAD + convergence SOIC itérative",
       "challenge": "Les frameworks d'agents IA existants sont des outils de prototypage — ils manquent de garanties de convergence, de sécurité d'entreprise et d'orchestration de qualité production pour les workflows multi-agents complexes.",
-      "solution": "Conçu un système d'exploitation IA complet : 35+ agents spécialisés, un moteur de convergence SOIC auto-optimisant avec preuve mathématique, exploration de décisions Tree-of-Thoughts, intégration méthodologie BMAD et ponts MCP pour Claude Code — déployé sur Kubernetes avec monitoring Prometheus.",
-      "result": "42 000+ lignes de Python de production. Convergence de qualité μ = 9.94/10 (certifié Gold Master). 584 fonctions de test. Entièrement conteneurisé avec Docker et manifests Kubernetes.",
+      "solution": "Conçu un système d'exploitation IA complet : 21+ agents spécialisés (12 core + 9 BMAD), un moteur de convergence SOIC auto-optimisant avec preuve mathématique, exploration de décisions Tree-of-Thoughts, intégration méthodologie BMAD et ponts MCP pour Claude Code — déployé sur Kubernetes avec monitoring Prometheus.",
+      "result": "84 000+ lignes de Python de production. Convergence de qualité μ = 9.94/10 (certifié Gold Master). 1 030+ fonctions de test. Entièrement conteneurisé avec Docker et manifests Kubernetes.",
       "metricValue": "μ 9.94",
       "metricLabel": "Score de qualité"
     },
@@ -147,7 +149,7 @@
   "team": {
     "founder": {
       "role": "Fondateur & Ingénieur principal",
-      "bio": "Ingénieur électrique senior avec 10+ ans en automatisation industrielle (PLC/CNC, lignes de production secteur défense, protection de réseaux électriques HT). Maintenant à construire des systèmes d'automatisation IA — d'un système d'exploitation IA de 42K lignes à 195 workflows n8n de production. Basé au Québec, Canada."
+      "bio": "Ingénieur électrique senior avec 10+ ans en automatisation industrielle (PLC/CNC, lignes de production secteur défense, protection de réseaux électriques HT). Maintenant à construire des systèmes d'automatisation IA — d'un système d'exploitation IA de 84K lignes à 195 workflows n8n de production. Basé au Québec, Canada."
     }
   },
   "values": {
@@ -190,8 +192,8 @@
     "message": "Message",
     "messagePlaceholder": "Parlez-nous de votre projet ou défi...",
     "submit": "Envoyer le message",
-    "successTitle": "Message envoyé",
-    "successMessage": "Merci de nous avoir contactés. On va vous revenir dans les 24 heures.",
+    "successTitle": "Votre messagerie va s'ouvrir",
+    "successMessage": "Complétez l'envoi depuis votre client de messagerie. Si rien ne s'ouvre, écrivez-nous directement à contact@marksystems.ai.",
     "required": "*"
   },
   "validation": {
@@ -240,6 +242,10 @@
     "contact": {
       "title": "Contact — Automatisation IA Montréal",
       "description": "Contactez Mark Systems à Montréal pour discuter de vos défis d'automatisation IA, workflows intelligents et systèmes de production."
+    },
+    "ainova": {
+      "title": "AiNova OS — Système d'exploitation IA de production | Mark Systems",
+      "description": "AiNova OS : 21+ agents IA, moteur de convergence SOIC (μ=9.94/10), Tree-of-Thoughts, natif Kubernetes. Le système d'exploitation IA de production par Mark Systems."
     }
   },
   "faq": {
@@ -264,11 +270,141 @@
       },
       "4": {
         "question": "Qu'est-ce qu'AINOVA OS?",
-        "answer": "AINOVA OS est notre système d'exploitation IA de production : 35+ agents spécialisés, un moteur de convergence SOIC auto-optimisant (μ=9.94/10), exploration de décisions Tree-of-Thoughts, et infrastructure Kubernetes. C'est 42 000+ lignes de Python de production."
+        "answer": "AINOVA OS est notre système d'exploitation IA de production : 21+ agents spécialisés (12 core + 9 BMAD), un moteur de convergence SOIC auto-optimisant (μ=9.94/10), exploration de décisions Tree-of-Thoughts, et infrastructure Kubernetes. C'est 84 000+ lignes de Python de production avec 1 030+ fonctions de test."
       },
       "5": {
         "question": "Quelle est votre expertise en automatisation industrielle?",
         "answer": "Notre fondateur possède 10+ ans d'expérience en génie électrique industriel : programmation PLC/CNC, conception de lignes de production (incluant le secteur défense), et ingénierie de systèmes de protection de réseaux électriques HT/MT/BT."
+      }
+    }
+  },
+  "ainovaBanner": {
+    "label": "Produit phare",
+    "title": "AiNova OS",
+    "description": "Un système d'exploitation IA de production avec 21+ agents, moteur de convergence SOIC et infrastructure native Kubernetes.",
+    "metric1Label": "Score de qualité",
+    "metric1Value": "μ 9.94/10",
+    "metric2Label": "Lignes de production",
+    "metric2Value": "84K+",
+    "button": "Explorer AiNova OS"
+  },
+  "ainova": {
+    "hero": {
+      "badge": "Système d'exploitation IA",
+      "title": "AiNova OS",
+      "subtitle": "Système d'exploitation IA de production",
+      "description": "21+ agents spécialisés, un moteur de convergence auto-optimisant et une infrastructure d'entreprise — conçu pour les équipes qui ont besoin d'une IA fiable en production.",
+      "ctaPrimary": "Nous contacter",
+      "ctaSecondary": "Demander une démo"
+    },
+    "overview": {
+      "label": "Le problème & la solution",
+      "title": "Pourquoi AiNova OS existe",
+      "problemTitle": "Le problème",
+      "problemPoints": [
+        "Les frameworks d'agents IA sont des outils de prototypage, pas des systèmes de production",
+        "Aucune garantie de convergence — les résultats varient de façon imprévisible",
+        "La sécurité est une réflexion après coup, pas un principe de conception",
+        "Passer d'une démo à l'entreprise exige une réécriture complète"
+      ],
+      "solutionTitle": "La solution",
+      "solutionPoints": [
+        "Système d'exploitation IA conçu à cet effet avec 21+ agents spécialisés",
+        "Moteur de convergence SOIC avec preuve mathématique (μ=9.94/10)",
+        "Sécurité d'entreprise intégrée dès le premier jour",
+        "Infrastructure native Kubernetes — mise à l'échelle sans réécriture"
+      ]
+    },
+    "features": {
+      "label": "Capacités fondamentales",
+      "title": "Ce qui propulse AiNova OS",
+      "description": "Six capacités fondamentales qui font d'AiNova OS un système d'exploitation IA de qualité production.",
+      "soic": {
+        "title": "Moteur de convergence SOIC",
+        "description": "Self-Optimizing Intelligence Convergence — convergence de qualité mathématiquement prouvée sur 9 dimensions avec certification Gold Master μ=9.94/10."
+      },
+      "tot": {
+        "title": "Tree-of-Thoughts",
+        "description": "Exploration décisionnelle avancée évaluant simultanément plusieurs chemins de raisonnement, sélectionnant les solutions optimales par délibération structurée."
+      },
+      "agents": {
+        "title": "21+ agents spécialisés",
+        "description": "12 agents core et 9 agents BMAD dédiés pour chaque fonction — de la génération de code et tests à l'audit de sécurité et documentation — orchestrés par un coordinateur central."
+      },
+      "security": {
+        "title": "Sécurité d'entreprise",
+        "description": "Contrôle d'accès basé sur les rôles, pistes d'audit, validation des entrées et exécution sandboxée — la sécurité est un principe de conception, pas un correctif."
+      },
+      "multi-llm": {
+        "title": "Architecture multi-LLM",
+        "description": "Conception agnostique aux fournisseurs supportant OpenAI, Anthropic, Groq et Ollama — routage intelligent basé sur le coût, la latence et les capacités."
+      },
+      "k8s": {
+        "title": "Natif Kubernetes",
+        "description": "Conteneurisé avec Docker et manifests Kubernetes, monitoring Prometheus et tableaux de bord Grafana — conçu pour la mise à l'échelle horizontale dès le premier jour."
+      }
+    },
+    "architecture": {
+      "label": "Architecture système",
+      "title": "Architecture en cinq couches",
+      "layers": {
+        "api": {
+          "title": "Passerelle API",
+          "description": "Points d'accès FastAPI avec authentification, limitation de débit et validation des requêtes"
+        },
+        "orchestration": {
+          "title": "Moteur d'orchestration",
+          "description": "Moteur de convergence SOIC + exploration décisionnelle Tree-of-Thoughts"
+        },
+        "agents": {
+          "title": "Couche agents",
+          "description": "21+ agents spécialisés avec capacités basées sur les rôles et exécution sandboxée"
+        },
+        "infra": {
+          "title": "Infrastructure",
+          "description": "PostgreSQL, Redis, Docker, Kubernetes avec monitoring Prometheus/Grafana"
+        },
+        "integration": {
+          "title": "Couche d'intégration",
+          "description": "Ponts protocole MCP, APIs REST, connexions WebSocket, workflows n8n"
+        }
+      }
+    },
+    "metrics": {
+      "label": "En chiffres",
+      "title": "Métriques de production",
+      "qualityScore": "Score de qualité",
+      "linesOfCode": "Lignes de code",
+      "testFunctions": "Fonctions de test",
+      "agents": "Agents spécialisés",
+      "qualityDimensions": "Dimensions de qualité"
+    },
+    "comparison": {
+      "label": "Paysage concurrentiel",
+      "title": "AiNova OS vs. les alternatives",
+      "description": "Comment AiNova OS se compare aux frameworks d'agents IA populaires sur 7 dimensions critiques.",
+      "ainovaOs": "AiNova OS",
+      "langraph": "LangGraph",
+      "autogen": "AutoGen",
+      "crewai": "CrewAI",
+      "dimensions": {
+        "convergenceEngine": "Moteur de convergence",
+        "agentCount": "Support multi-agents",
+        "productionReady": "Prêt pour la production",
+        "mathProof": "Preuve mathématique",
+        "multiLlm": "Support multi-LLM",
+        "k8sNative": "Natif Kubernetes",
+        "mcpBridge": "Pont protocole MCP"
+      }
+    },
+    "techStack": {
+      "label": "Technologie",
+      "title": "Stack technique",
+      "categories": {
+        "core": "Core",
+        "infra": "Infrastructure",
+        "ai": "IA & LLM",
+        "integration": "Intégration"
       }
     }
   }

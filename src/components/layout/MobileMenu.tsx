@@ -29,6 +29,9 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden"
           />
           <motion.nav
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu de navigation"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
