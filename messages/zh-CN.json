@@ -29,7 +29,7 @@
   "servicesPage": {
     "label": "我们的服务",
     "title": "工程交付成果",
-    "description": "每项服务均基于生产经验——已部署 195+ 个工作流，42K+ 行 AI 基础设施代码，10+ 年工业工程经验。"
+    "description": "每项服务均基于生产经验——已部署 195+ 个工作流，84K+ 行 AI 基础设施代码，10+ 年工业工程经验。"
   },
   "services": {
     "ai-workflow-automation": {
@@ -122,12 +122,24 @@
       "industry": "AI 基础设施",
       "challenge": "现有的 AI 智能体框架只是原型工具——它们缺乏收敛性保证、企业安全性，以及用于复杂多智能体工作流的生产级编排。",
       "solution": "设计了一个完整的 AI 操作系统：35+ 个专业智能体、具有数学证明的自优化 SOIC 收敛引擎、思维树决策探索、BMAD 方法论集成，以及用于 Claude Code 的 MCP 桥接——在 Kubernetes 上部署，配备 Prometheus 监控。",
-      "result": "42,000+ 行生产级 Python 代码。质量收敛 μ = 9.94/10（金牌大师认证）。584 个测试函数。使用 Docker 和 Kubernetes 清单完全容器化。",
+      "result": "84,000+ 行生产级 Python 代码。质量收敛 μ = 9.94/10（金牌大师认证）。1,030+ 个测试函数。使用 Docker 和 Kubernetes 清单完全容器化。",
       "metricValue": "μ 9.94",
       "metricLabel": "质量分数",
       "clientSize": "内部研发项目",
       "timeline": "8个月开发",
       "methodology": "BMAD架构 + 迭代SOIC收敛"
+    },
+    "hexstrike-ai": {
+      "title": "HexStrike AI",
+      "industry": "网络安全",
+      "clientSize": "内部平台 — 授权测试",
+      "timeline": "6+ 个月开发",
+      "methodology": "MCP 架构 + 持续工具集成",
+      "challenge": "手动渗透测试耗时（每个 Web 应用 6-12 小时），容易遗漏且难以复现——没有现有平台能将 AI 编排与 150+ 安全工具整合在统一框架中。",
+      "solution": "设计了一个 AI 驱动的网络安全 MCP 框架，12+ 自主代理编排 150+ 集成工具：网络扫描（nmap、masscan）、Web 测试（nuclei、sqlmap、ffuf）、二进制分析（ghidra、radare2）、云审计（prowler、trivy）和 CTF 自动化。",
+      "result": "150+ 安全工具集成。12+ 自主 AI 代理。子域名枚举速度提升 24 倍。Web 应用测试速度提升 18 倍。漏洞检测率 98.7%。",
+      "metricValue": "150+",
+      "metricLabel": "集成工具"
     },
     "conseiller-placement": {
       "title": "金融顾问平台",
@@ -184,7 +196,7 @@
   "team": {
     "founder": {
       "role": "创始人兼首席工程师",
-      "bio": "高级电气工程师，拥有 10+ 年工业自动化经验（PLC/CNC、国防部门生产线、高压电网保护）。现在构建 AI 自动化系统——从 42K 行 AI 操作系统到 195 个生产级 n8n 工作流。位于加拿大魁北克。"
+      "bio": "高级电气工程师，拥有 10+ 年工业自动化经验（PLC/CNC、国防部门生产线、高压电网保护）。现在构建 AI 自动化系统——从 84K 行 AI 操作系统到 195 个生产级 n8n 工作流。位于加拿大魁北克。"
     }
   },
   "values": {
@@ -227,8 +239,10 @@
     "message": "留言",
     "messagePlaceholder": "告诉我们您的项目或挑战...",
     "submit": "发送消息",
+    "sending": "发送中...",
     "successTitle": "消息已发送",
-    "successMessage": "感谢您的联系。我们将在 24 小时内回复您。",
+    "successMessage": "感谢您的来信。我们将在24小时内回复您。",
+    "errorMessage": "发生错误。请重试或直接发送邮件至 contact@marksystems.ai。",
     "required": "*"
   },
   "validation": {
@@ -260,7 +274,7 @@
   "metadata": {
     "home": {
       "title": "Mark Systems | AI 自动化与智能系统",
-      "description": "生产级 AI 自动化、工作流工程和智能平台。已部署 195+ 个工作流，42K+ 行 AI 基础设施代码。加拿大魁北克。"
+      "description": "生产级 AI 自动化、工作流工程和智能平台。已部署 195+ 个工作流，84K+ 行 AI 基础设施代码。加拿大魁北克。"
     },
     "services": {
       "title": "服务",
@@ -305,7 +319,7 @@
       },
       "4": {
         "question": "什么是AINOVA OS？",
-        "answer": "AINOVA OS是我们的生产级AI操作系统：35+专业代理、自优化SOIC收敛引擎（μ=9.94/10）、Tree-of-Thoughts决策探索和Kubernetes基础设施。超过42,000行生产级Python代码。"
+        "answer": "AINOVA OS是我们的生产级AI操作系统：35+专业代理、自优化SOIC收敛引擎（μ=9.94/10）、Tree-of-Thoughts决策探索和Kubernetes基础设施。超过84,000行生产级Python代码。"
       },
       "5": {
         "question": "你们的工业自动化专业知识是什么？",
@@ -320,7 +334,7 @@
     "metric1Label": "质量评分",
     "metric1Value": "μ 9.94/10",
     "metric2Label": "生产代码行数",
-    "metric2Value": "42K+",
+    "metric2Value": "84K+",
     "button": "探索 AiNova OS"
   },
   "ainova": {

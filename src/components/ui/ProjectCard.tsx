@@ -18,7 +18,7 @@ export function ProjectCard({ projectId, compact = false }: ProjectCardProps) {
   return (
     <motion.div
       variants={fadeInUp}
-      className="card-base group flex flex-col"
+      className="card-base group flex flex-col hover:-translate-y-1 hover:shadow-card"
     >
       <span className="mb-2 font-mono text-xs uppercase tracking-wider text-accent">
         {t("industry")}

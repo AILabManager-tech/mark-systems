@@ -29,7 +29,7 @@
   "servicesPage": {
     "label": "우리의 서비스",
     "title": "성과를 제공하는 엔지니어링",
-    "description": "모든 서비스는 프로덕션 경험을 기반으로 합니다 — 195개 이상의 워크플로우 배포, 42,000줄 이상의 AI 인프라, 10년 이상의 산업 엔지니어링 경험."
+    "description": "모든 서비스는 프로덕션 경험을 기반으로 합니다 — 195개 이상의 워크플로우 배포, 84,000줄 이상의 AI 인프라, 10년 이상의 산업 엔지니어링 경험."
   },
   "services": {
     "ai-workflow-automation": {
@@ -122,12 +122,24 @@
       "industry": "AI 인프라",
       "challenge": "기존 AI 에이전트 프레임워크는 프로토타이핑 도구입니다 — 수렴 보장, 엔터프라이즈 보안, 복잡한 멀티 에이전트 워크플로우를 위한 프로덕션급 오케스트레이션이 부족합니다.",
       "solution": "완전한 AI 운영 체제 설계: 35개 이상의 전문 에이전트, 수학적 증명을 갖춘 자체 최적화 SOIC 수렴 엔진, Tree-of-Thoughts 의사 결정 탐색, BMAD 방법론 통합, Claude Code용 MCP 브리지 — Prometheus 모니터링과 함께 Kubernetes에 배포.",
-      "result": "42,000줄 이상의 프로덕션 Python. 품질 수렴 μ = 9.94/10 (Gold Master 인증). 584개의 테스트 함수. Docker 및 Kubernetes 매니페스트로 완전히 컨테이너화.",
+      "result": "84,000줄 이상의 프로덕션 Python. 품질 수렴 μ = 9.94/10 (Gold Master 인증). 1,030개 이상의 테스트 함수. Docker 및 Kubernetes 매니페스트로 완전히 컨테이너화.",
       "metricValue": "μ 9.94",
       "metricLabel": "품질 점수",
       "clientSize": "내부 R&D 프로젝트",
       "timeline": "8개월 개발",
       "methodology": "BMAD 아키텍처 + 반복 SOIC 수렴"
+    },
+    "hexstrike-ai": {
+      "title": "HexStrike AI",
+      "industry": "사이버보안",
+      "clientSize": "내부 플랫폼 — 승인된 테스트",
+      "timeline": "6개월 이상 개발",
+      "methodology": "MCP 아키텍처 + 지속적 도구 통합",
+      "challenge": "수동 침투 테스트는 시간이 많이 걸리고(웹 앱당 6-12시간), 누락이 발생하기 쉬우며 재현이 어렵습니다 — AI 오케스트레이션과 150개 이상의 보안 도구를 통합 프레임워크로 결합한 기존 플랫폼은 없었습니다.",
+      "solution": "12개 이상의 자율 에이전트가 150개 이상의 통합 도구를 오케스트레이션하는 AI 기반 사이버보안 MCP 프레임워크 설계: 네트워크 스캔(nmap, masscan), 웹 테스트(nuclei, sqlmap, ffuf), 바이너리 분석(ghidra, radare2), 클라우드 감사(prowler, trivy) 및 CTF 자동화.",
+      "result": "150개 이상의 보안 도구 통합. 12개 이상의 자율 AI 에이전트. 서브도메인 열거 24배 빠름. 웹 앱 테스트 18배 빠름. 취약점 탐지율 98.7%.",
+      "metricValue": "150+",
+      "metricLabel": "통합 도구"
     },
     "conseiller-placement": {
       "title": "재무 자문 플랫폼",
@@ -184,7 +196,7 @@
   "team": {
     "founder": {
       "role": "창립자 및 수석 엔지니어",
-      "bio": "산업 자동화(PLC/CNC, 방위 산업 생산 라인, HV 전력망 보호) 분야에서 10년 이상의 경력을 가진 선임 전기 엔지니어. 현재 AI 자동화 시스템 구축 중 — 42,000줄의 AI 운영 체제부터 195개의 프로덕션 n8n 워크플로우까지. 캐나다 퀘벡 기반."
+      "bio": "산업 자동화(PLC/CNC, 방위 산업 생산 라인, HV 전력망 보호) 분야에서 10년 이상의 경력을 가진 선임 전기 엔지니어. 현재 AI 자동화 시스템 구축 중 — 84,000줄의 AI 운영 체제부터 195개의 프로덕션 n8n 워크플로우까지. 캐나다 퀘벡 기반."
     }
   },
   "values": {
@@ -227,8 +239,10 @@
     "message": "메시지",
     "messagePlaceholder": "프로젝트 또는 과제에 대해 알려주세요...",
     "submit": "메시지 보내기",
-    "successTitle": "메시지 전송됨",
-    "successMessage": "연락해 주셔서 감사합니다. 24시간 이내에 답변드리겠습니다.",
+    "sending": "전송 중...",
+    "successTitle": "메시지 전송 완료",
+    "successMessage": "문의해 주셔서 감사합니다. 24시간 이내에 답변드리겠습니다.",
+    "errorMessage": "오류가 발생했습니다. 다시 시도하거나 contact@marksystems.ai로 직접 이메일을 보내주세요.",
     "required": "*"
   },
   "validation": {
@@ -260,7 +274,7 @@
   "metadata": {
     "home": {
       "title": "Mark Systems | AI 자동화 및 지능형 시스템",
-      "description": "프로덕션급 AI 자동화, 워크플로우 엔지니어링 및 지능형 플랫폼. 195개 이상의 워크플로우 배포, 42,000줄 이상의 AI 인프라. 캐나다 퀘벡."
+      "description": "프로덕션급 AI 자동화, 워크플로우 엔지니어링 및 지능형 플랫폼. 195개 이상의 워크플로우 배포, 84,000줄 이상의 AI 인프라. 캐나다 퀘벡."
     },
     "services": {
       "title": "서비스",
@@ -305,7 +319,7 @@
       },
       "4": {
         "question": "AINOVA OS란?",
-        "answer": "AINOVA OS는 당사의 프로덕션 AI 운영 체제입니다: 35개 이상의 전문 에이전트, 자체 최적화 SOIC 수렴 엔진(μ=9.94/10), Tree-of-Thoughts 의사결정 탐색, Kubernetes 인프라. 42,000줄 이상의 프로덕션 Python 코드입니다."
+        "answer": "AINOVA OS는 당사의 프로덕션 AI 운영 체제입니다: 35개 이상의 전문 에이전트, 자체 최적화 SOIC 수렴 엔진(μ=9.94/10), Tree-of-Thoughts 의사결정 탐색, Kubernetes 인프라. 84,000줄 이상의 프로덕션 Python 코드입니다."
       },
       "5": {
         "question": "산업 자동화 전문성은?",
@@ -320,7 +334,7 @@
     "metric1Label": "품질 점수",
     "metric1Value": "μ 9.94/10",
     "metric2Label": "프로덕션 코드 라인",
-    "metric2Value": "42K+",
+    "metric2Value": "84K+",
     "button": "AiNova OS 탐색"
   },
   "ainova": {

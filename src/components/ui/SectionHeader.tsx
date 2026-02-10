@@ -1,7 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
+import { fadeInUp, VIEWPORT_CONFIG } from "@/lib/animations";
 
 interface SectionHeaderWithNsProps {
   ns: string;
@@ -34,10 +36,16 @@ export function SectionHeader(props: SectionHeaderProps) {
     : props.description;
 
   return (
-    <div className={cn("mb-16", centered && "text-center", className)}>
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={VIEWPORT_CONFIG}
+      className={cn("mb-16", centered && "text-center", className)}
+    >
       {label && (
         <span className="mb-4 inline-block font-mono text-xs uppercase tracking-widest text-accent">
-          {label}
+          {"// "}{label}
         </span>
       )}
       <h2 className="text-h2 font-bold text-text-primary lg:text-h1">
@@ -48,6 +56,6 @@ export function SectionHeader(props: SectionHeaderProps) {
           {description}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 }

@@ -29,7 +29,7 @@
   "servicesPage": {
     "label": "Our Services",
     "title": "Engineering That Delivers",
-    "description": "Every service is grounded in production experience — 195+ workflows deployed, 42K+ lines of AI infrastructure, 10+ years of industrial engineering."
+    "description": "Every service is grounded in production experience — 195+ workflows deployed, 84K+ lines of AI infrastructure, 10+ years of industrial engineering."
   },
   "services": {
     "ai-workflow-automation": {
@@ -89,9 +89,21 @@
       "methodology": "BMAD architecture + iterative SOIC convergence",
       "challenge": "Existing AI agent frameworks are prototyping tools — they lack convergence guarantees, enterprise security, and production-grade orchestration for complex multi-agent workflows.",
       "solution": "Engineered a full AI operating system: 35+ specialized agents, a self-optimizing SOIC convergence engine with mathematical proof, Tree-of-Thoughts decision exploration, BMAD methodology integration, and MCP bridges for Claude Code — deployed on Kubernetes with Prometheus monitoring.",
-      "result": "42,000+ lines of production Python. Quality convergence μ = 9.94/10 (Gold Master certified). 584 test functions. Fully containerized with Docker and Kubernetes manifests.",
+      "result": "84,000+ lines of production Python. Quality convergence μ = 9.94/10 (Gold Master certified). 1,030+ test functions. Fully containerized with Docker and Kubernetes manifests.",
       "metricValue": "μ 9.94",
       "metricLabel": "Quality Score"
+    },
+    "hexstrike-ai": {
+      "title": "HexStrike AI",
+      "industry": "Cybersecurity",
+      "clientSize": "Internal platform — authorized testing",
+      "timeline": "6+ months of development",
+      "methodology": "MCP architecture + continuous tool integration",
+      "challenge": "Manual penetration testing is time-consuming (6-12h per web app), prone to oversights, and hard to reproduce — no existing platform combines AI orchestration with 150+ security tools in a unified framework.",
+      "solution": "Engineered an AI-powered cybersecurity MCP framework with 12+ autonomous agents orchestrating 150+ integrated tools: network scanning (nmap, masscan), web testing (nuclei, sqlmap, ffuf), binary analysis (ghidra, radare2), cloud auditing (prowler, trivy), and CTF automation. Browser automation via Selenium/Chromium for advanced web testing.",
+      "result": "150+ security tools integrated. 12+ autonomous AI agents. Subdomain enumeration 24x faster. Web app testing 18x faster. 98.7% vulnerability detection rate.",
+      "metricValue": "150+",
+      "metricLabel": "Integrated Tools"
     },
     "conseiller-placement": {
       "title": "Financial Advisor Platform",
@@ -148,7 +160,7 @@
   "team": {
     "founder": {
       "role": "Founder & Lead Engineer",
-      "bio": "Senior electrical engineer with 10+ years in industrial automation (PLC/CNC, defense-sector production lines, HV power grid protection). Now building AI automation systems — from a 42K-line AI operating system to 195 production n8n workflows. Based in Quebec, Canada."
+      "bio": "Senior electrical engineer with 10+ years in industrial automation (PLC/CNC, defense-sector production lines, HV power grid protection). Now building AI automation systems — from a 84K-line AI operating system to 195 production n8n workflows. Based in Quebec, Canada."
     }
   },
   "values": {
@@ -191,8 +203,10 @@
     "message": "Message",
     "messagePlaceholder": "Tell us about your project or challenge...",
     "submit": "Send Message",
+    "sending": "Sending...",
     "successTitle": "Message Sent",
     "successMessage": "Thank you for reaching out. We'll get back to you within 24 hours.",
+    "errorMessage": "Something went wrong. Please try again or email us directly at contact@marksystems.ai.",
     "required": "*"
   },
   "validation": {
@@ -269,7 +283,7 @@
       },
       "4": {
         "question": "What is AINOVA OS?",
-        "answer": "AINOVA OS is our production AI operating system: 35+ specialized agents, a self-optimizing SOIC convergence engine (μ=9.94/10), Tree-of-Thoughts decision exploration, and Kubernetes infrastructure. It's 42,000+ lines of production Python."
+        "answer": "AINOVA OS is our production AI operating system: 35+ specialized agents, a self-optimizing SOIC convergence engine (μ=9.94/10), Tree-of-Thoughts decision exploration, and Kubernetes infrastructure. It's 84,000+ lines of production Python."
       },
       "5": {
         "question": "What is your industrial automation expertise?",
@@ -284,7 +298,7 @@
     "metric1Label": "Quality Score",
     "metric1Value": "μ 9.94/10",
     "metric2Label": "Production Lines",
-    "metric2Value": "42K+",
+    "metric2Value": "84K+",
     "button": "Explore AiNova OS"
   },
   "ainova": {

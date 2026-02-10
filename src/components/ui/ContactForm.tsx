@@ -3,8 +3,10 @@
 import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { SERVICE_IDS } from "@/lib/services-data";
+import { SITE } from "@/lib/constants";
 import { Button } from "./Button";
 import { cn } from "@/lib/utils";
+import { Loader2 } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -20,6 +22,8 @@ interface FormErrors {
   message?: string;
 }
 
+type SubmitState = "idle" | "submitting" | "success" | "error";
+
 const INITIAL: FormData = { name: "", email: "", company: "", service: "", message: "" };
 
 export function ContactForm() {
@@ -29,7 +33,7 @@ export function ContactForm() {
 
   const [formData, setFormData] = useState<FormData>(INITIAL);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [submitState, setSubmitState] = useState<SubmitState>("idle");
 
   function validate(data: FormData): FormErrors {
     const e: FormErrors = {};
@@ -42,7 +46,7 @@ export function ContactForm() {
     return e;
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const validationErrors = validate(formData);
     if (Object.keys(validationErrors).length > 0) {
@@ -50,22 +54,30 @@ export function ContactForm() {
       return;
     }
     setErrors({});
+    setSubmitState("submitting");
 
-    const subject = formData.service
-      ? `[Mark Systems] ${formData.name} — ${formData.service}`
-      : `[Mark Systems] ${formData.name}`;
-    const body = [
-      formData.company ? `Entreprise: ${formData.company}` : "",
-      formData.service ? `Service: ${formData.service}` : "",
-      "",
-      formData.message,
-    ]
-      .filter(Boolean)
-      .join("\n");
+    try {
+      const res = await fetch(`https://formspree.io/f/${SITE.formspreeId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || undefined,
+          service: formData.service || undefined,
+          message: formData.message,
+        }),
+      });
 
-    const mailto = `mailto:contact@marksystems.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    setSubmitted(true);
+      if (res.ok) {
+        setSubmitState("success");
+        setFormData(INITIAL);
+      } else {
+        setSubmitState("error");
+      }
+    } catch {
+      setSubmitState("error");
+    }
   }
 
   function handleChange(field: keyof FormData, value: string) {
@@ -79,10 +91,10 @@ export function ContactForm() {
     }
   }
 
-  if (submitted) {
+  if (submitState === "success") {
     return (
       <div className="card-base py-16 text-center">
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-surface-light text-text-primary">
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-accent/10 text-accent">
           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
           </svg>
@@ -95,6 +107,11 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate aria-label="Formulaire de contact">
+      {submitState === "error" && (
+        <div className="rounded-sm border border-red-500/30 bg-red-500/5 px-4 py-3 text-sm text-red-400">
+          {t("errorMessage")}
+        </div>
+      )}
       <div className="grid gap-6 sm:grid-cols-2">
         <Field id="contact-name" label={t("name")} required error={errors.name} value={formData.name} onChange={(v) => handleChange("name", v)} placeholder={t("namePlaceholder")} />
         <Field id="contact-email" label={t("email")} required type="email" error={errors.email} value={formData.email} onChange={(v) => handleChange("email", v)} placeholder={t("emailPlaceholder")} />
@@ -134,7 +151,16 @@ export function ContactForm() {
         />
         {errors.message && <p id="contact-message-error" className="mt-1 text-xs text-red-400">{errors.message}</p>}
       </div>
-      <Button type="submit" className="w-full sm:w-auto">{t("submit")}</Button>
+      <Button type="submit" className="w-full sm:w-auto" disabled={submitState === "submitting"}>
+        {submitState === "submitting" ? (
+          <>
+            <Loader2 className="h-4 w-4 animate-spin" />
+            {t("sending")}
+          </>
+        ) : (
+          t("submit")
+        )}
+      </Button>
     </form>
   );
 }

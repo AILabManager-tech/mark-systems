@@ -15,6 +15,7 @@ interface ButtonAsButton extends ButtonBaseProps {
   href?: never;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
 }
 
 interface ButtonAsLink extends ButtonBaseProps {
@@ -34,7 +35,7 @@ const variantStyles: Record<Variant, string> = {
 };
 
 const baseStyles =
-  "inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-text-tertiary disabled:opacity-50 disabled:pointer-events-none";
+  "inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3 text-sm font-medium transition-all duration-200 hover:scale-[1.02] hover:shadow-elevated active:scale-[0.98] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-text-tertiary disabled:opacity-50 disabled:pointer-events-none disabled:hover:scale-100";
 
 export function Button({
   variant = "primary",

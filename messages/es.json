@@ -29,7 +29,7 @@
   "servicesPage": {
     "label": "Nuestros Servicios",
     "title": "Ingeniería Que Entrega Resultados",
-    "description": "Cada servicio está basado en experiencia de producción — 195+ flujos de trabajo desplegados, 42K+ líneas de infraestructura IA, 10+ años de ingeniería industrial."
+    "description": "Cada servicio está basado en experiencia de producción — 195+ flujos de trabajo desplegados, 84K+ líneas de infraestructura IA, 10+ años de ingeniería industrial."
   },
   "services": {
     "ai-workflow-automation": {
@@ -122,12 +122,24 @@
       "industry": "Infraestructura IA",
       "challenge": "Los frameworks de agentes IA existentes son herramientas de prototipado — carecen de garantías de convergencia, seguridad empresarial y orquestación de nivel profesional para flujos de trabajo multi-agente complejos.",
       "solution": "Diseñamos un sistema operativo IA completo: 35+ agentes especializados, un motor de convergencia SOIC auto-optimizante con prueba matemática, exploración de decisiones Tree-of-Thoughts, integración metodología BMAD y puentes MCP para Claude Code — desplegado en Kubernetes con monitoreo Prometheus.",
-      "result": "42,000+ líneas de Python de producción. Convergencia de calidad μ = 9.94/10 (certificado Gold Master). 584 funciones de prueba. Completamente contenedorizado con manifiestos Docker y Kubernetes.",
+      "result": "84,000+ líneas de Python de producción. Convergencia de calidad μ = 9.94/10 (certificado Gold Master). 1 030+ funciones de prueba. Completamente contenedorizado con manifiestos Docker y Kubernetes.",
       "metricValue": "μ 9.94",
       "metricLabel": "Puntuación de Calidad",
       "clientSize": "Proyecto interno I+D",
       "timeline": "8 meses de desarrollo",
       "methodology": "Arquitectura BMAD + convergencia SOIC iterativa"
+    },
+    "hexstrike-ai": {
+      "title": "HexStrike AI",
+      "industry": "Ciberseguridad",
+      "clientSize": "Plataforma interna — pruebas autorizadas",
+      "timeline": "6+ meses de desarrollo",
+      "methodology": "Arquitectura MCP + integración continua de herramientas",
+      "challenge": "Las pruebas de penetración manuales son lentas (6-12h por aplicación web), propensas a errores y difíciles de reproducir — ninguna plataforma existente combina orquestación IA con más de 150 herramientas de seguridad en un framework unificado.",
+      "solution": "Diseñamos un framework MCP de ciberseguridad impulsado por IA con 12+ agentes autónomos orquestando 150+ herramientas integradas: escaneo de redes (nmap, masscan), pruebas web (nuclei, sqlmap, ffuf), análisis binario (ghidra, radare2), auditoría cloud (prowler, trivy) y automatización de CTF.",
+      "result": "150+ herramientas de seguridad integradas. 12+ agentes IA autónomos. Enumeración de subdominios 24x más rápida. Pruebas de aplicaciones web 18x más rápidas. Tasa de detección de vulnerabilidades del 98.7%.",
+      "metricValue": "150+",
+      "metricLabel": "Herramientas"
     },
     "conseiller-placement": {
       "title": "Plataforma de Asesor Financiero",
@@ -184,7 +196,7 @@
   "team": {
     "founder": {
       "role": "Fundador e Ingeniero Principal",
-      "bio": "Ingeniero eléctrico senior con 10+ años en automatización industrial (PLC/CNC, líneas de producción del sector defensa, protección de redes eléctricas HV). Ahora construyendo sistemas de automatización IA — desde un sistema operativo IA de 42K líneas hasta 195 flujos de trabajo de producción n8n. Con sede en Quebec, Canadá."
+      "bio": "Ingeniero eléctrico senior con 10+ años en automatización industrial (PLC/CNC, líneas de producción del sector defensa, protección de redes eléctricas HV). Ahora construyendo sistemas de automatización IA — desde un sistema operativo IA de 84K líneas hasta 195 flujos de trabajo de producción n8n. Con sede en Quebec, Canadá."
     }
   },
   "values": {
@@ -227,8 +239,10 @@
     "message": "Mensaje",
     "messagePlaceholder": "Cuéntanos sobre tu proyecto o desafío...",
     "submit": "Enviar Mensaje",
-    "successTitle": "Mensaje Enviado",
-    "successMessage": "Gracias por contactarnos. Te responderemos en 24 horas.",
+    "sending": "Enviando...",
+    "successTitle": "Mensaje enviado",
+    "successMessage": "Gracias por contactarnos. Le responderemos en las próximas 24 horas.",
+    "errorMessage": "Ocurrió un error. Intente de nuevo o escríbanos directamente a contact@marksystems.ai.",
     "required": "*"
   },
   "validation": {
@@ -260,7 +274,7 @@
   "metadata": {
     "home": {
       "title": "Mark Systems | Automatización IA y Sistemas Inteligentes",
-      "description": "Automatización IA de nivel profesional, ingeniería de flujos de trabajo y plataformas inteligentes. 195+ flujos de trabajo desplegados, 42K+ líneas de infraestructura IA. Quebec, Canadá."
+      "description": "Automatización IA de nivel profesional, ingeniería de flujos de trabajo y plataformas inteligentes. 195+ flujos de trabajo desplegados, 84K+ líneas de infraestructura IA. Quebec, Canadá."
     },
     "services": {
       "title": "Servicios",
@@ -305,7 +319,7 @@
       },
       "4": {
         "question": "¿Qué es AINOVA OS?",
-        "answer": "AINOVA OS es nuestro sistema operativo IA de producción: 35+ agentes especializados, un motor de convergencia SOIC auto-optimizante (μ=9.94/10), exploración de decisiones Tree-of-Thoughts e infraestructura Kubernetes. Son 42,000+ líneas de Python de producción."
+        "answer": "AINOVA OS es nuestro sistema operativo IA de producción: 35+ agentes especializados, un motor de convergencia SOIC auto-optimizante (μ=9.94/10), exploración de decisiones Tree-of-Thoughts e infraestructura Kubernetes. Son 84,000+ líneas de Python de producción."
       },
       "5": {
         "question": "¿Cuál es su experiencia en automatización industrial?",
@@ -320,7 +334,7 @@
     "metric1Label": "Puntuación de calidad",
     "metric1Value": "μ 9.94/10",
     "metric2Label": "Líneas de producción",
-    "metric2Value": "42K+",
+    "metric2Value": "84K+",
     "button": "Explorar AiNova OS"
   },
   "ainova": {

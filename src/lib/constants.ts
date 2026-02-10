@@ -1,6 +1,7 @@
 export const SITE = {
   name: "Mark Systems",
   url: "https://marksystems.ca",
+  formspreeId: "xpwdjkql",
 } as const;
 
 export const NAV_KEYS = ["home", "services", "ainova-os", "projects", "about", "contact"] as const;

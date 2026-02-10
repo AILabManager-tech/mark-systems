@@ -22,7 +22,7 @@ export function ServiceCard({
   return (
     <motion.div
       variants={fadeInUp}
-      className="card-base group flex flex-col"
+      className="card-base group flex flex-col hover:-translate-y-1 hover:shadow-card"
     >
       <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-sm bg-surface-light text-accent transition-colors duration-200 group-hover:text-accent-muted">
         <Icon className="h-5 w-5" strokeWidth={1.5} />

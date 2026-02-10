@@ -42,7 +42,7 @@
     "ai-systems-architecture": {
       "title": "Architecture de systèmes IA",
       "shortDescription": "Plateformes d'orchestration multi-agents avec convergence mathématiquement prouvée et infrastructure de niveau entreprise.",
-      "longDescription": "Notre système phare AINOVA OS est un système d'exploitation IA de production avec 21+ agents spécialisés, un moteur de convergence auto-optimisant (SOIC) et une exploration de décisions Tree-of-Thoughts. Construit sur FastAPI, PostgreSQL, Redis et Kubernetes — conçu pour les équipes qui ont besoin d'une IA fiable et scalable.",
+      "longDescription": "Notre système phare AINOVA OS est un système d'exploitation IA de production avec 35+ agents spécialisés, un moteur de convergence auto-optimisant (SOIC) et une exploration de décisions Tree-of-Thoughts. Construit sur FastAPI, PostgreSQL, Redis et Kubernetes — conçu pour les équipes qui ont besoin d'une IA fiable et scalable.",
       "capabilities": ["Orchestration multi-agents", "Moteur de convergence SOIC", "Optimisation Tree-of-Thoughts", "Déploiement Kubernetes", "Ponts protocole MCP"]
     },
     "fullstack-development": {
@@ -89,10 +89,22 @@
       "timeline": "8 mois de développement",
       "methodology": "Architecture BMAD + convergence SOIC itérative",
       "challenge": "Les frameworks d'agents IA existants sont des outils de prototypage — ils manquent de garanties de convergence, de sécurité d'entreprise et d'orchestration de qualité production pour les workflows multi-agents complexes.",
-      "solution": "Conçu un système d'exploitation IA complet : 21+ agents spécialisés (12 core + 9 BMAD), un moteur de convergence SOIC auto-optimisant avec preuve mathématique, exploration de décisions Tree-of-Thoughts, intégration méthodologie BMAD et ponts MCP pour Claude Code — déployé sur Kubernetes avec monitoring Prometheus.",
+      "solution": "Conçu un système d'exploitation IA complet : 35+ agents spécialisés (12 core + 23 BMAD), un moteur de convergence SOIC auto-optimisant avec preuve mathématique, exploration de décisions Tree-of-Thoughts, intégration méthodologie BMAD et ponts MCP pour Claude Code — déployé sur Kubernetes avec monitoring Prometheus.",
       "result": "84 000+ lignes de Python de production. Convergence de qualité μ = 9.94/10 (certifié Gold Master). 1 030+ fonctions de test. Entièrement conteneurisé avec Docker et manifests Kubernetes.",
       "metricValue": "μ 9.94",
       "metricLabel": "Score de qualité"
+    },
+    "hexstrike-ai": {
+      "title": "HexStrike AI",
+      "industry": "Cybersécurité",
+      "clientSize": "Plateforme interne — tests autorisés",
+      "timeline": "6+ mois de développement",
+      "methodology": "Architecture MCP + intégration continue d'outils",
+      "challenge": "Les tests de pénétration manuels sont chronophages (6-12h par application web), sujets aux oublis et difficiles à reproduire — aucune plateforme existante ne combine orchestration IA avec plus de 100 outils de sécurité dans un framework unifié.",
+      "solution": "Conçu un framework MCP de cybersécurité propulsé par l'IA avec 12+ agents autonomes orchestrant 150+ outils intégrés : scan réseau (nmap, masscan), tests web (nuclei, sqlmap, ffuf), analyse binaire (ghidra, radare2), audit cloud (prowler, trivy) et automatisation de CTF. Automation par navigateur via Selenium/Chromium pour les tests web avancés.",
+      "result": "150+ outils de sécurité intégrés. 12+ agents IA autonomes. Énumération de sous-domaines 24x plus rapide. Tests d'applications web 18x plus rapides. Taux de détection de vulnérabilités de 98.7%.",
+      "metricValue": "150+",
+      "metricLabel": "Outils intégrés"
     },
     "conseiller-placement": {
       "title": "Plateforme de conseiller financier",
@@ -192,8 +204,10 @@
     "message": "Message",
     "messagePlaceholder": "Parlez-nous de votre projet ou défi...",
     "submit": "Envoyer le message",
-    "successTitle": "Votre messagerie va s'ouvrir",
-    "successMessage": "Complétez l'envoi depuis votre client de messagerie. Si rien ne s'ouvre, écrivez-nous directement à contact@marksystems.ai.",
+    "sending": "Envoi en cours...",
+    "successTitle": "Message envoyé",
+    "successMessage": "Merci pour votre message. Nous vous répondrons dans les 24 heures.",
+    "errorMessage": "Une erreur est survenue. Réessayez ou écrivez-nous directement à contact@marksystems.ai.",
     "required": "*"
   },
   "validation": {
@@ -245,7 +259,7 @@
     },
     "ainova": {
       "title": "AiNova OS — Système d'exploitation IA de production | Mark Systems",
-      "description": "AiNova OS : 21+ agents IA, moteur de convergence SOIC (μ=9.94/10), Tree-of-Thoughts, natif Kubernetes. Le système d'exploitation IA de production par Mark Systems."
+      "description": "AiNova OS : 35+ agents IA, moteur de convergence SOIC (μ=9.94/10), Tree-of-Thoughts, natif Kubernetes. Le système d'exploitation IA de production par Mark Systems."
     }
   },
   "faq": {
@@ -270,7 +284,7 @@
       },
       "4": {
         "question": "Qu'est-ce qu'AINOVA OS?",
-        "answer": "AINOVA OS est notre système d'exploitation IA de production : 21+ agents spécialisés (12 core + 9 BMAD), un moteur de convergence SOIC auto-optimisant (μ=9.94/10), exploration de décisions Tree-of-Thoughts, et infrastructure Kubernetes. C'est 84 000+ lignes de Python de production avec 1 030+ fonctions de test."
+        "answer": "AINOVA OS est notre système d'exploitation IA de production : 35+ agents spécialisés (12 core + 23 BMAD), un moteur de convergence SOIC auto-optimisant (μ=9.94/10), exploration de décisions Tree-of-Thoughts, et infrastructure Kubernetes. C'est 84 000+ lignes de Python de production avec 1 030+ fonctions de test."
       },
       "5": {
         "question": "Quelle est votre expertise en automatisation industrielle?",
@@ -281,7 +295,7 @@
   "ainovaBanner": {
     "label": "Produit phare",
     "title": "AiNova OS",
-    "description": "Un système d'exploitation IA de production avec 21+ agents, moteur de convergence SOIC et infrastructure native Kubernetes.",
+    "description": "Un système d'exploitation IA de production avec 35+ agents, moteur de convergence SOIC et infrastructure native Kubernetes.",
     "metric1Label": "Score de qualité",
     "metric1Value": "μ 9.94/10",
     "metric2Label": "Lignes de production",
@@ -293,7 +307,7 @@
       "badge": "Système d'exploitation IA",
       "title": "AiNova OS",
       "subtitle": "Système d'exploitation IA de production",
-      "description": "21+ agents spécialisés, un moteur de convergence auto-optimisant et une infrastructure d'entreprise — conçu pour les équipes qui ont besoin d'une IA fiable en production.",
+      "description": "35+ agents spécialisés, un moteur de convergence auto-optimisant et une infrastructure d'entreprise — conçu pour les équipes qui ont besoin d'une IA fiable en production.",
       "ctaPrimary": "Nous contacter",
       "ctaSecondary": "Demander une démo"
     },
@@ -309,7 +323,7 @@
       ],
       "solutionTitle": "La solution",
       "solutionPoints": [
-        "Système d'exploitation IA conçu à cet effet avec 21+ agents spécialisés",
+        "Système d'exploitation IA conçu à cet effet avec 35+ agents spécialisés",
         "Moteur de convergence SOIC avec preuve mathématique (μ=9.94/10)",
         "Sécurité d'entreprise intégrée dès le premier jour",
         "Infrastructure native Kubernetes — mise à l'échelle sans réécriture"
@@ -328,7 +342,7 @@
         "description": "Exploration décisionnelle avancée évaluant simultanément plusieurs chemins de raisonnement, sélectionnant les solutions optimales par délibération structurée."
       },
       "agents": {
-        "title": "21+ agents spécialisés",
+        "title": "35+ agents spécialisés",
         "description": "12 agents core et 9 agents BMAD dédiés pour chaque fonction — de la génération de code et tests à l'audit de sécurité et documentation — orchestrés par un coordinateur central."
       },
       "security": {
@@ -358,7 +372,7 @@
         },
         "agents": {
           "title": "Couche agents",
-          "description": "21+ agents spécialisés avec capacités basées sur les rôles et exécution sandboxée"
+          "description": "35+ agents spécialisés avec capacités basées sur les rôles et exécution sandboxée"
         },
         "infra": {
           "title": "Infrastructure",

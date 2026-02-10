@@ -29,7 +29,7 @@
   "servicesPage": {
     "label": "Unsere Leistungen",
     "title": "Engineering mit Resultaten",
-    "description": "Jede Leistung basiert auf Produktionserfahrung — 195+ implementierte Workflows, 42.000+ Zeilen KI-Infrastruktur, 10+ Jahre industrielle Entwicklung."
+    "description": "Jede Leistung basiert auf Produktionserfahrung — 195+ implementierte Workflows, 84.000+ Zeilen KI-Infrastruktur, 10+ Jahre industrielle Entwicklung."
   },
   "services": {
     "ai-workflow-automation": {
@@ -122,12 +122,24 @@
       "industry": "KI-Infrastruktur",
       "challenge": "Bestehende KI-Agenten-Frameworks sind Prototyping-Tools — ihnen fehlen Konvergenzgarantien, Enterprise-Security und produktionsreife Orchestrierung für komplexe Multi-Agenten-Workflows.",
       "solution": "Entwicklung eines vollständigen KI-Betriebssystems: 35+ spezialisierte Agenten, eine selbstoptimierende SOIC-Konvergenz-Engine mit mathematischem Beweis, Tree-of-Thoughts-Entscheidungsexploration, BMAD-Methodik-Integration und MCP-Bridges für Claude Code — implementiert auf Kubernetes mit Prometheus-Monitoring.",
-      "result": "42.000+ Zeilen produktionsreifes Python. Qualitätskonvergenz μ = 9,94/10 (Gold Master zertifiziert). 584 Testfunktionen. Vollständig containerisiert mit Docker und Kubernetes-Manifesten.",
+      "result": "84.000+ Zeilen produktionsreifes Python. Qualitätskonvergenz μ = 9,94/10 (Gold Master zertifiziert). 1 030+ Testfunktionen. Vollständig containerisiert mit Docker und Kubernetes-Manifesten.",
       "metricValue": "μ 9,94",
       "metricLabel": "Qualitätswert",
       "clientSize": "Internes F&E-Projekt",
       "timeline": "8 Monate Entwicklung",
       "methodology": "BMAD-Architektur + iterative SOIC-Konvergenz"
+    },
+    "hexstrike-ai": {
+      "title": "HexStrike AI",
+      "industry": "Cybersicherheit",
+      "clientSize": "Interne Plattform — autorisierte Tests",
+      "timeline": "6+ Monate Entwicklung",
+      "methodology": "MCP-Architektur + kontinuierliche Tool-Integration",
+      "challenge": "Manuelle Penetrationstests sind zeitaufwändig (6-12h pro Web-App), fehleranfällig und schwer reproduzierbar — keine bestehende Plattform kombiniert KI-Orchestrierung mit über 150 Sicherheitstools in einem einheitlichen Framework.",
+      "solution": "Entwicklung eines KI-gestützten Cybersicherheits-MCP-Frameworks mit 12+ autonomen Agenten, die 150+ integrierte Tools orchestrieren: Netzwerk-Scanning (nmap, masscan), Web-Tests (nuclei, sqlmap, ffuf), Binäranalyse (ghidra, radare2), Cloud-Audit (prowler, trivy) und CTF-Automatisierung.",
+      "result": "150+ integrierte Sicherheitstools. 12+ autonome KI-Agenten. Subdomain-Enumeration 24x schneller. Web-App-Tests 18x schneller. Schwachstellen-Erkennungsrate von 98,7%.",
+      "metricValue": "150+",
+      "metricLabel": "Tools"
     },
     "conseiller-placement": {
       "title": "Finanzberater-Plattform",
@@ -184,7 +196,7 @@
   "team": {
     "founder": {
       "role": "Gründer & Leitender Ingenieur",
-      "bio": "Leitender Elektroingenieur mit 10+ Jahren in industrieller Automatisierung (PLC/CNC, Produktionslinien im Verteidigungs-Sektor, HV-Stromnetzschutz). Entwickelt jetzt KI-Automatisierungssysteme — von einem 42.000-Zeilen-KI-Betriebssystem bis zu 195 produktionsreifen n8n-Workflows. Ansässig in Quebec, Kanada."
+      "bio": "Leitender Elektroingenieur mit 10+ Jahren in industrieller Automatisierung (PLC/CNC, Produktionslinien im Verteidigungs-Sektor, HV-Stromnetzschutz). Entwickelt jetzt KI-Automatisierungssysteme — von einem 84.000-Zeilen-KI-Betriebssystem bis zu 195 produktionsreifen n8n-Workflows. Ansässig in Quebec, Kanada."
     }
   },
   "values": {
@@ -227,8 +239,10 @@
     "message": "Nachricht",
     "messagePlaceholder": "Erzählen Sie uns von Ihrem Projekt oder Ihrer Herausforderung...",
     "submit": "Nachricht senden",
+    "sending": "Wird gesendet...",
     "successTitle": "Nachricht gesendet",
-    "successMessage": "Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+    "successMessage": "Vielen Dank für Ihre Nachricht. Wir melden uns innerhalb von 24 Stunden.",
+    "errorMessage": "Ein Fehler ist aufgetreten. Versuchen Sie es erneut oder schreiben Sie uns direkt an contact@marksystems.ai.",
     "required": "*"
   },
   "validation": {
@@ -260,7 +274,7 @@
   "metadata": {
     "home": {
       "title": "Mark Systems | KI-Automatisierung & Intelligente Systeme",
-      "description": "Produktionsreife KI-Automatisierung, Workflow-Engineering und intelligente Plattformen. 195+ implementierte Workflows, 42.000+ Zeilen KI-Infrastruktur. Quebec, Kanada."
+      "description": "Produktionsreife KI-Automatisierung, Workflow-Engineering und intelligente Plattformen. 195+ implementierte Workflows, 84.000+ Zeilen KI-Infrastruktur. Quebec, Kanada."
     },
     "services": {
       "title": "Leistungen",
@@ -305,7 +319,7 @@
       },
       "4": {
         "question": "Was ist AINOVA OS?",
-        "answer": "AINOVA OS ist unser produktionsfähiges KI-Betriebssystem: 35+ spezialisierte Agenten, eine selbstoptimierende SOIC-Konvergenz-Engine (μ=9,94/10), Tree-of-Thoughts-Entscheidungsexploration und Kubernetes-Infrastruktur. Es umfasst 42.000+ Zeilen produktionsfähigen Python-Code."
+        "answer": "AINOVA OS ist unser produktionsfähiges KI-Betriebssystem: 35+ spezialisierte Agenten, eine selbstoptimierende SOIC-Konvergenz-Engine (μ=9,94/10), Tree-of-Thoughts-Entscheidungsexploration und Kubernetes-Infrastruktur. Es umfasst 84.000+ Zeilen produktionsfähigen Python-Code."
       },
       "5": {
         "question": "Was ist Ihre Expertise in industrieller Automatisierung?",
@@ -320,7 +334,7 @@
     "metric1Label": "Qualitätsbewertung",
     "metric1Value": "μ 9.94/10",
     "metric2Label": "Produktionszeilen",
-    "metric2Value": "42K+",
+    "metric2Value": "84K+",
     "button": "AiNova OS entdecken"
   },
   "ainova": {

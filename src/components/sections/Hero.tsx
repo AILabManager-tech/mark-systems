@@ -1,18 +1,24 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useRef } from "react";
 import { Button } from "@/components/ui/Button";
 import { staggerContainer } from "@/lib/animations";
 
 export function Hero() {
   const t = useTranslations("hero");
   const tCommon = useTranslations("common");
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section className="relative overflow-hidden">
+    <section ref={ref} className="relative overflow-hidden">
       <motion.div
+        style={{ y, opacity }}
         variants={staggerContainer}
         initial="hidden"
         animate="visible"

@@ -99,13 +99,13 @@ export async function generateMetadata({
       type: "website",
       locale: locale,
       url: `${SITE.url}/${locale}`,
-      images: [{ url: `${SITE.url}/og-image.svg`, width: 1200, height: 630 }],
+      images: [{ url: `${SITE.url}/og-image.png`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [`${SITE.url}/og-image.svg`],
+      images: [`${SITE.url}/og-image.png`],
     },
     robots: {
       index: true,
