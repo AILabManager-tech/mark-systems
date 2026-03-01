@@ -37,37 +37,73 @@
       "title": "Automatisation de workflows IA",
       "shortDescription": "Pipelines n8n de production intégrant des LLM, systèmes RAG et outils d'affaires — 195+ workflows à travers 14 domaines.",
       "longDescription": "On construit des pipelines d'automatisation de bout en bout sur n8n qui connectent des modèles IA (GPT-4, Claude, Whisper, Ollama) à votre stack d'affaires — CRM, courriel, documents, voix, IoT. Chaque workflow inclut la gestion d'erreurs, des pistes d'audit et des points de contrôle humain quand les seuils de confiance ne sont pas atteints.",
-      "capabilities": ["Conception de pipelines n8n", "Intégration RAG & agents IA", "Pipelines vocaux (STT/TTS)", "Automatisation CRM & courriel", "OCR & classification de documents"]
+      "capabilities": [
+        "Conception de pipelines n8n",
+        "Intégration RAG & agents IA",
+        "Pipelines vocaux (STT/TTS)",
+        "Automatisation CRM & courriel",
+        "OCR & classification de documents"
+      ]
     },
     "ai-systems-architecture": {
       "title": "Architecture de systèmes IA",
       "shortDescription": "Plateformes d'orchestration multi-agents avec convergence mathématiquement prouvée et infrastructure de niveau entreprise.",
       "longDescription": "Notre système phare AINOVA OS est un système d'exploitation IA de production avec 35+ agents spécialisés, un moteur de convergence auto-optimisant (SOIC) et une exploration de décisions Tree-of-Thoughts. Construit sur FastAPI, PostgreSQL, Redis et Kubernetes — conçu pour les équipes qui ont besoin d'une IA fiable et scalable.",
-      "capabilities": ["Orchestration multi-agents", "Moteur de convergence SOIC", "Optimisation Tree-of-Thoughts", "Déploiement Kubernetes", "Ponts protocole MCP"]
+      "capabilities": [
+        "Orchestration multi-agents",
+        "Moteur de convergence SOIC",
+        "Optimisation Tree-of-Thoughts",
+        "Déploiement Kubernetes",
+        "Ponts protocole MCP"
+      ]
     },
     "fullstack-development": {
       "title": "Développement Web Full-Stack",
       "shortDescription": "Applications web modernes et sites immersifs — React, Next.js, Three.js — des plateformes financières aux portfolios 3D.",
       "longDescription": "On livre des sites web et applications de production avec des stacks modernes : React 19, Next.js 14, TypeScript, Tailwind CSS. D'une plateforme de conseiller financier avec chatbot IA et calculateurs conformes aux normes canadiennes à un portfolio 3D immersif avec WebGL — on construit ce que le mandat exige.",
-      "capabilities": ["Applications React & Next.js", "Expériences Three.js & WebGL", "TypeScript & Tailwind CSS", "Intégration de chatbot IA", "Développement de calculateurs financiers"]
+      "capabilities": [
+        "Applications React & Next.js",
+        "Expériences Three.js & WebGL",
+        "TypeScript & Tailwind CSS",
+        "Intégration de chatbot IA",
+        "Développement de calculateurs financiers"
+      ]
     },
     "industrial-automation": {
       "title": "Automatisation industrielle & Génie électrique",
       "shortDescription": "10+ ans à concevoir et mettre en service des systèmes PLC/CNC, lignes de production industrielles et protection de réseaux électriques.",
       "longDescription": "Expertise senior en génie électrique à travers l'industrie lourde : programmation et mise en service de PLC et CNC, conception de lignes de production complexes (incluant des clients du secteur de la défense), et ingénierie de systèmes de protection et coordination de réseaux électriques HT/MT/BT. On apporte une rigueur éprouvée sur le terrain à chaque projet.",
-      "capabilities": ["Programmation PLC & CNC", "Conception de lignes de production", "Protection de réseaux électriques", "Coordination de systèmes électriques", "Mise en service industrielle"]
+      "capabilities": [
+        "Programmation PLC & CNC",
+        "Conception de lignes de production",
+        "Protection de réseaux électriques",
+        "Coordination de systèmes électriques",
+        "Mise en service industrielle"
+      ]
     },
     "iot-smart-home": {
       "title": "Intelligence IoT & Maison intelligente",
       "shortDescription": "Domotique coordonnée par IA, streaming local de caméras et edge computing — priorité à la vie privée, indépendant du cloud.",
       "longDescription": "On construit des systèmes IoT intelligents qui opèrent localement : détection de mouvement coordonnée par IA, automatisation contextuelle basée sur l'heure et la présence, appareils contrôlés par la voix et streaming de caméras reverse-engineered qui contourne les dépendances cloud. Toutes les données restent sur votre réseau.",
-      "capabilities": ["Automatisation coordonnée par IA", "Streaming RTSP local", "Intégration de contrôle vocal", "Déploiement edge computing", "Architecture priorité vie privée"]
+      "capabilities": [
+        "Automatisation coordonnée par IA",
+        "Streaming RTSP local",
+        "Intégration de contrôle vocal",
+        "Déploiement edge computing",
+        "Architecture priorité vie privée"
+      ]
     },
     "custom-ai-tools": {
       "title": "Outils IA personnalisés & Intégration",
       "shortDescription": "Toolkits LLM agnostiques aux fournisseurs, assistants de code local-first et routage multi-fournisseurs — construit pour zéro dépendance.",
       "longDescription": "On construit des outils IA personnalisés qui résolvent des problèmes spécifiques : une couche d'abstraction multi-LLM supportant 6+ fournisseurs sans aucune dépendance à un vendeur, un assistant de code local utilisant des modèles open-source à coût zéro, et un routeur intelligent qui balance les requêtes entre OpenAI, Anthropic, Groq et Ollama basé sur le coût, la latence et les capacités.",
-      "capabilities": ["Couches d'abstraction multi-LLM", "Déploiement de modèles locaux", "Routage intelligent de requêtes", "Développement de serveurs MCP", "Pipelines voix-vers-LLM"]
+      "capabilities": [
+        "Couches d'abstraction multi-LLM",
+        "Déploiement de modèles locaux",
+        "Routage intelligent de requêtes",
+        "Développement de serveurs MCP",
+        "Pipelines voix-vers-LLM"
+      ]
     }
   },
   "projectsSection": {
@@ -260,6 +296,10 @@
     "ainova": {
       "title": "AiNova OS — Système d'exploitation IA de production | Mark Systems",
       "description": "AiNova OS : 35+ agents IA, moteur de convergence SOIC (μ=9.94/10), Tree-of-Thoughts, natif Kubernetes. Le système d'exploitation IA de production par Mark Systems."
+    },
+    "brief": {
+      "title": "Brief Projet — Mark Systems",
+      "description": "Formulaire de brief pour votre projet web."
     }
   },
   "faq": {
@@ -420,6 +460,153 @@
         "ai": "IA & LLM",
         "integration": "Intégration"
       }
+    }
+  },
+  "brief": {
+    "title": "Brief Projet",
+    "subtitle": "Complétez ce formulaire pour démarrer votre projet web avec Mark Systems.",
+    "steps": {
+      "company": "Entreprise",
+      "site": "Site",
+      "adaptive": "Détails",
+      "legal": "Loi 25",
+      "design": "Design",
+      "seo": "SEO",
+      "review": "Récap"
+    },
+    "nav": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "submit": "Soumettre le brief",
+      "submitting": "Envoi en cours...",
+      "stepOf": "Étape {current} de {total}"
+    },
+    "company": {
+      "title": "Informations de l'entreprise",
+      "name": "Nom de l'entreprise",
+      "namePlaceholder": "ex: Boulangerie Tremblay",
+      "slug": "Slug (URL-friendly)",
+      "slugHelp": "Auto-généré. Lettres minuscules, chiffres et tirets.",
+      "neq": "NEQ (optionnel)",
+      "neqPlaceholder": "10 chiffres",
+      "address": "Adresse du siège",
+      "addressPlaceholder": "123 rue Exemple, Montréal QC",
+      "phone": "Téléphone",
+      "phonePlaceholder": "514-555-0000",
+      "email": "Courriel principal",
+      "emailPlaceholder": "info@entreprise.ca"
+    },
+    "site": {
+      "title": "Configuration du site",
+      "type": "Type de site",
+      "typePlaceholder": "Sélectionnez un type",
+      "pages": "Pages souhaitées",
+      "pagesHelp": "Les pages légales (politique de confidentialité, mentions légales) seront ajoutées automatiquement.",
+      "features": "Fonctionnalités",
+      "languages": "Langues du site",
+      "hosting": "Hébergement",
+      "domain": "Domaine cible (optionnel)",
+      "domainPlaceholder": "monsite.ca"
+    },
+    "adaptive": {
+      "title": "Configuration spécifique",
+      "noQuestions": "Aucune question supplémentaire pour ce type de site.",
+      "paymentProvider": "Fournisseur de paiement",
+      "productCount": "Nombre approximatif de produits",
+      "productCountPlaceholder": "ex: 10-50",
+      "shipping": "Livraison physique requise ?",
+      "shippingZones": "Zones de livraison",
+      "shippingZonesPlaceholder": "Québec, Canada",
+      "inventory": "Gestion d'inventaire requise ?",
+      "displayMode": "Affichage des projets",
+      "caseStudies": "Études de cas détaillées ?",
+      "publishFrequency": "Fréquence de publication",
+      "comments": "Activer les commentaires ?",
+      "categoriesTags": "Catégories et tags ?",
+      "authRequired": "Authentification requise ?",
+      "authMethods": "Méthodes d'authentification",
+      "userTypes": "Types d'utilisateurs",
+      "userTypesPlaceholder": "admin, utilisateur",
+      "realtime": "Fonctionnalités temps réel ?",
+      "newsletterProvider": "Fournisseur infolettre",
+      "analyticsProvider": "Fournisseur analytics"
+    },
+    "legal": {
+      "title": "Conformité Loi 25 du Québec",
+      "mandatory": "OBLIGATOIRE",
+      "rppTitle": "Responsable de la protection des renseignements personnels (RPP)",
+      "rppName": "Nom du RPP",
+      "rppNamePlaceholder": "Jean Tremblay",
+      "rppEmail": "Courriel du RPP",
+      "rppEmailPlaceholder": "confidentialite@entreprise.ca",
+      "rppFunction": "Titre / Fonction",
+      "rppFunctionDefault": "Responsable de la protection des renseignements personnels",
+      "dataCollected": "Types de données collectées",
+      "sensitiveWarning": "La Loi 25 impose des obligations renforcées pour les données sensibles : EFVP obligatoire, consentement explicite requis, mesures de sécurité renforcées.",
+      "purposes": "Finalités du traitement",
+      "retention": "Durée de rétention des données",
+      "retentionPlaceholder": "24 mois",
+      "transferOutsideQc": "Transfert de données hors Québec ?",
+      "transferCountries": "Pays/régions de transfert",
+      "thirdPartyDetected": "Services tiers détectés",
+      "consentMode": "Mode de consentement cookies",
+      "incidentProcess": "Processus d'incident en place ?",
+      "incidentEmail": "Courriel de notification d'incident",
+      "incidentEmailHelp": "Par défaut, le courriel du RPP."
+    },
+    "design": {
+      "title": "Design & Identité visuelle",
+      "palette": "Palette de couleurs (optionnel)",
+      "palettePlaceholder": "ex: #1a1a2e, #16213e, #e94560",
+      "typography": "Typographies préférées (optionnel)",
+      "typographyPlaceholder": "ex: Inter, Playfair Display",
+      "style": "Style visuel",
+      "logoProvided": "Logo fourni ?",
+      "references": "URLs de référence (optionnel)",
+      "referencesPlaceholder": "ex: site1.com, site2.com"
+    },
+    "seo": {
+      "title": "Contexte & SEO",
+      "competitors": "URLs concurrents (optionnel)",
+      "competitorsPlaceholder": "ex: concurrent1.ca, concurrent2.com",
+      "keywords": "Mots-clés SEO prioritaires (optionnel)",
+      "keywordsPlaceholder": "ex: boulangerie montréal, pain artisanal",
+      "freeText": "Contexte libre / notes",
+      "freeTextPlaceholder": "Décrivez votre entreprise, vos objectifs, tout ce qui pourrait nous aider..."
+    },
+    "review": {
+      "title": "Récapitulatif du brief",
+      "edit": "Modifier",
+      "sectionCompany": "Entreprise",
+      "sectionSite": "Site",
+      "sectionAdaptive": "Détails",
+      "sectionLegal": "Loi 25",
+      "sectionDesign": "Design",
+      "sectionSeo": "SEO",
+      "successTitle": "Brief envoyé !",
+      "successMessage": "Votre brief a été envoyé à l'équipe Mark Systems. Nous le traiterons dans les plus brefs délais. Un PDF récapitulatif a été téléchargé sur votre appareil.",
+      "errorMessage": "Une erreur est survenue lors de l'envoi. Veuillez réessayer."
+    },
+    "validation": {
+      "nameRequired": "Le nom est requis (min. 2 caractères)",
+      "emailInvalid": "Courriel invalide",
+      "neqInvalid": "Le NEQ doit contenir exactement 10 chiffres",
+      "addressRequired": "L'adresse est requise (min. 5 caractères)",
+      "phoneRequired": "Le téléphone est requis",
+      "slugInvalid": "Slug invalide (lettres minuscules, chiffres, tirets)",
+      "typeRequired": "Sélectionnez un type de site",
+      "pagesRequired": "Sélectionnez au moins une page",
+      "languagesRequired": "Sélectionnez au moins une langue",
+      "rppNameRequired": "Le nom du RPP est requis",
+      "rppEmailInvalid": "Le courriel du RPP est invalide",
+      "dataRequired": "Sélectionnez au moins un type de données",
+      "purposesRequired": "Sélectionnez au moins une finalité",
+      "retentionRequired": "La durée de rétention est requise"
+    },
+    "labels": {
+      "yes": "Oui",
+      "no": "Non",
+      "required": "*"
     }
   }
 }

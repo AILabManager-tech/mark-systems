@@ -36,37 +36,73 @@
       "title": "AI Workflow Automation",
       "shortDescription": "Production n8n pipelines integrating LLMs, RAG systems, and business tools — 195+ workflows across 14 domains.",
       "longDescription": "We build end-to-end automation pipelines on n8n that connect AI models (GPT-4, Claude, Whisper, Ollama) to your business stack — CRM, email, documents, voice, IoT. Each workflow includes error handling, audit trails, and human-in-the-loop gates when confidence thresholds are not met.",
-      "capabilities": ["n8n pipeline design", "RAG & AI agent integration", "Voice pipelines (STT/TTS)", "CRM & email automation", "Document OCR & classification"]
+      "capabilities": [
+        "n8n pipeline design",
+        "RAG & AI agent integration",
+        "Voice pipelines (STT/TTS)",
+        "CRM & email automation",
+        "Document OCR & classification"
+      ]
     },
     "ai-systems-architecture": {
       "title": "AI Systems Architecture",
       "shortDescription": "Multi-agent orchestration platforms with mathematically proven convergence and enterprise-grade infrastructure.",
       "longDescription": "Our flagship AINOVA OS is a production AI operating system with 35+ specialized agents, a self-optimizing convergence engine (SOIC), and Tree-of-Thoughts decision exploration. Built on FastAPI, PostgreSQL, Redis, and Kubernetes — designed for teams that need AI they can trust and scale.",
-      "capabilities": ["Multi-agent orchestration", "SOIC convergence engine", "Tree-of-Thoughts optimization", "Kubernetes deployment", "MCP protocol bridges"]
+      "capabilities": [
+        "Multi-agent orchestration",
+        "SOIC convergence engine",
+        "Tree-of-Thoughts optimization",
+        "Kubernetes deployment",
+        "MCP protocol bridges"
+      ]
     },
     "fullstack-development": {
       "title": "Full-Stack Web Development",
       "shortDescription": "Modern web applications and immersive sites — React, Next.js, Three.js — from financial platforms to 3D portfolios.",
       "longDescription": "We deliver production websites and web apps using modern stacks: React 19, Next.js 14, TypeScript, Tailwind CSS. From a financial advisor platform with AI chatbot and Canadian-compliant calculators to an immersive 3D portfolio with WebGL — we build what the brief demands.",
-      "capabilities": ["React & Next.js applications", "Three.js & WebGL experiences", "TypeScript & Tailwind CSS", "AI chatbot integration", "Financial calculator development"]
+      "capabilities": [
+        "React & Next.js applications",
+        "Three.js & WebGL experiences",
+        "TypeScript & Tailwind CSS",
+        "AI chatbot integration",
+        "Financial calculator development"
+      ]
     },
     "industrial-automation": {
       "title": "Industrial Automation & Electrical Engineering",
       "shortDescription": "10+ years designing and commissioning PLC/CNC systems, industrial production lines, and power grid protection.",
       "longDescription": "Senior electrical engineering expertise across heavy industry: programming and commissioning PLCs and CNCs, designing complex production lines (including defense-sector clients), and engineering HV/MV/LV power grid protection and coordination systems. We bring field-tested rigor to every project.",
-      "capabilities": ["PLC & CNC programming", "Production line design", "Power grid protection", "Electrical system coordination", "Industrial commissioning"]
+      "capabilities": [
+        "PLC & CNC programming",
+        "Production line design",
+        "Power grid protection",
+        "Electrical system coordination",
+        "Industrial commissioning"
+      ]
     },
     "iot-smart-home": {
       "title": "IoT & Smart Home Intelligence",
       "shortDescription": "AI-coordinated home automation, local camera streaming, and edge computing — privacy-first, cloud-independent.",
       "longDescription": "We build intelligent IoT systems that operate locally: AI-coordinated motion detection, contextual automation based on time and presence, voice-controlled devices, and reverse-engineered camera streaming that bypasses cloud dependencies. All data stays on your network.",
-      "capabilities": ["AI-coordinated automation", "Local RTSP streaming", "Voice control integration", "Edge computing deployment", "Privacy-first architecture"]
+      "capabilities": [
+        "AI-coordinated automation",
+        "Local RTSP streaming",
+        "Voice control integration",
+        "Edge computing deployment",
+        "Privacy-first architecture"
+      ]
     },
     "custom-ai-tools": {
       "title": "Custom AI Tools & Integration",
       "shortDescription": "Vendor-agnostic LLM toolkits, local-first code assistants, and multi-provider routing — built for zero lock-in.",
       "longDescription": "We build custom AI tools that solve specific problems: a multi-LLM abstraction layer supporting 6+ providers with zero vendor lock-in, a local code assistant using open-source models at zero cost, and an intelligent router that balances requests across OpenAI, Anthropic, Groq, and Ollama based on cost, latency, and capability.",
-      "capabilities": ["Multi-LLM abstraction layers", "Local model deployment", "Intelligent request routing", "MCP server development", "Voice-to-LLM pipelines"]
+      "capabilities": [
+        "Multi-LLM abstraction layers",
+        "Local model deployment",
+        "Intelligent request routing",
+        "MCP server development",
+        "Voice-to-LLM pipelines"
+      ]
     }
   },
   "projectsSection": {
@@ -259,6 +295,10 @@
     "ainova": {
       "title": "AiNova OS — Production AI Operating System | Mark Systems",
       "description": "AiNova OS: 35+ AI agents, SOIC convergence engine (μ=9.94/10), Tree-of-Thoughts, Kubernetes-native. The production AI operating system by Mark Systems."
+    },
+    "brief": {
+      "title": "Project Brief — Mark Systems",
+      "description": "Brief form for your web project."
     }
   },
   "faq": {
@@ -419,6 +459,153 @@
         "ai": "AI & LLM",
         "integration": "Integration"
       }
+    }
+  },
+  "brief": {
+    "title": "Project Brief",
+    "subtitle": "Complete this form to start your web project with Mark Systems.",
+    "steps": {
+      "company": "Company",
+      "site": "Site",
+      "adaptive": "Details",
+      "legal": "Law 25",
+      "design": "Design",
+      "seo": "SEO",
+      "review": "Review"
+    },
+    "nav": {
+      "previous": "Previous",
+      "next": "Next",
+      "submit": "Submit brief",
+      "submitting": "Sending...",
+      "stepOf": "Step {current} of {total}"
+    },
+    "company": {
+      "title": "Company Information",
+      "name": "Company name",
+      "namePlaceholder": "e.g. Tremblay Bakery",
+      "slug": "Slug (URL-friendly)",
+      "slugHelp": "Auto-generated. Lowercase letters, numbers and hyphens.",
+      "neq": "NEQ (optional)",
+      "neqPlaceholder": "10 digits",
+      "address": "Headquarters address",
+      "addressPlaceholder": "123 Example St, Montreal QC",
+      "phone": "Phone",
+      "phonePlaceholder": "514-555-0000",
+      "email": "Main email",
+      "emailPlaceholder": "info@company.ca"
+    },
+    "site": {
+      "title": "Site Configuration",
+      "type": "Site type",
+      "typePlaceholder": "Select a type",
+      "pages": "Desired pages",
+      "pagesHelp": "Legal pages (privacy policy, legal notices) will be added automatically.",
+      "features": "Features",
+      "languages": "Site languages",
+      "hosting": "Hosting",
+      "domain": "Target domain (optional)",
+      "domainPlaceholder": "mysite.ca"
+    },
+    "adaptive": {
+      "title": "Specific Configuration",
+      "noQuestions": "No additional questions for this site type.",
+      "paymentProvider": "Payment provider",
+      "productCount": "Approximate number of products",
+      "productCountPlaceholder": "e.g. 10-50",
+      "shipping": "Physical shipping required?",
+      "shippingZones": "Shipping zones",
+      "shippingZonesPlaceholder": "Quebec, Canada",
+      "inventory": "Inventory management required?",
+      "displayMode": "Project display",
+      "caseStudies": "Detailed case studies?",
+      "publishFrequency": "Publishing frequency",
+      "comments": "Enable comments?",
+      "categoriesTags": "Categories and tags?",
+      "authRequired": "Authentication required?",
+      "authMethods": "Authentication methods",
+      "userTypes": "User types",
+      "userTypesPlaceholder": "admin, user",
+      "realtime": "Real-time features?",
+      "newsletterProvider": "Newsletter provider",
+      "analyticsProvider": "Analytics provider"
+    },
+    "legal": {
+      "title": "Quebec Law 25 Compliance",
+      "mandatory": "MANDATORY",
+      "rppTitle": "Privacy Officer (RPP)",
+      "rppName": "RPP name",
+      "rppNamePlaceholder": "John Smith",
+      "rppEmail": "RPP email",
+      "rppEmailPlaceholder": "privacy@company.ca",
+      "rppFunction": "Title / Function",
+      "rppFunctionDefault": "Privacy Officer",
+      "dataCollected": "Types of data collected",
+      "sensitiveWarning": "Law 25 imposes enhanced obligations for sensitive data: mandatory privacy impact assessment, explicit consent required, enhanced security measures.",
+      "purposes": "Processing purposes",
+      "retention": "Data retention period",
+      "retentionPlaceholder": "24 months",
+      "transferOutsideQc": "Data transfer outside Quebec?",
+      "transferCountries": "Transfer countries/regions",
+      "thirdPartyDetected": "Detected third-party services",
+      "consentMode": "Cookie consent mode",
+      "incidentProcess": "Incident process in place?",
+      "incidentEmail": "Incident notification email",
+      "incidentEmailHelp": "Defaults to RPP email."
+    },
+    "design": {
+      "title": "Design & Visual Identity",
+      "palette": "Color palette (optional)",
+      "palettePlaceholder": "e.g. #1a1a2e, #16213e, #e94560",
+      "typography": "Preferred fonts (optional)",
+      "typographyPlaceholder": "e.g. Inter, Playfair Display",
+      "style": "Visual style",
+      "logoProvided": "Logo provided?",
+      "references": "Reference URLs (optional)",
+      "referencesPlaceholder": "e.g. site1.com, site2.com"
+    },
+    "seo": {
+      "title": "Context & SEO",
+      "competitors": "Competitor URLs (optional)",
+      "competitorsPlaceholder": "e.g. competitor1.ca, competitor2.com",
+      "keywords": "Priority SEO keywords (optional)",
+      "keywordsPlaceholder": "e.g. montreal bakery, artisan bread",
+      "freeText": "Free context / notes",
+      "freeTextPlaceholder": "Describe your business, goals, anything that could help us..."
+    },
+    "review": {
+      "title": "Brief Summary",
+      "edit": "Edit",
+      "sectionCompany": "Company",
+      "sectionSite": "Site",
+      "sectionAdaptive": "Details",
+      "sectionLegal": "Law 25",
+      "sectionDesign": "Design",
+      "sectionSeo": "SEO",
+      "successTitle": "Brief submitted!",
+      "successMessage": "Your brief has been sent to the Mark Systems team. We will process it shortly. A summary PDF has been downloaded to your device.",
+      "errorMessage": "An error occurred while sending. Please try again."
+    },
+    "validation": {
+      "nameRequired": "Name is required (min. 2 characters)",
+      "emailInvalid": "Invalid email",
+      "neqInvalid": "NEQ must contain exactly 10 digits",
+      "addressRequired": "Address is required (min. 5 characters)",
+      "phoneRequired": "Phone is required",
+      "slugInvalid": "Invalid slug (lowercase letters, numbers, hyphens)",
+      "typeRequired": "Select a site type",
+      "pagesRequired": "Select at least one page",
+      "languagesRequired": "Select at least one language",
+      "rppNameRequired": "RPP name is required",
+      "rppEmailInvalid": "RPP email is invalid",
+      "dataRequired": "Select at least one data type",
+      "purposesRequired": "Select at least one purpose",
+      "retentionRequired": "Retention period is required"
+    },
+    "labels": {
+      "yes": "Yes",
+      "no": "No",
+      "required": "*"
     }
   }
 }
