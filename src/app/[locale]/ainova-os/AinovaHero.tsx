@@ -8,7 +8,7 @@ import { staggerContainer } from "@/lib/animations";
 import { metricValues } from "@/lib/ainova-data";
 
 export function AinovaHero() {
-  const t = useTranslations("ainova.hero");
+  const t = useTranslations("systems.hero");
 
   return (
     <section className="relative overflow-hidden">

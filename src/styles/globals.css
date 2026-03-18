@@ -38,12 +38,25 @@
   }
 
   .section-padding {
-    @apply py-20 lg:py-28;
+    @apply py-12 lg:py-16;
   }
 
   .card-base {
-    @apply rounded-sm border border-surface-border bg-surface p-6
+    @apply rounded-sm border border-surface-border bg-surface p-5 lg:p-6
            transition-all duration-300 hover:border-accent/30 hover:shadow-subtle;
+  }
+
+  .industrial-panel {
+    @apply relative overflow-hidden rounded-sm border border-surface-border bg-surface;
+  }
+
+  .industrial-panel::before {
+    content: "";
+    @apply absolute inset-x-0 top-0 h-1 bg-accent;
+  }
+
+  .eyebrow-tag {
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.24em] text-accent;
   }
 }
 
@@ -74,6 +87,16 @@
   background-size: 256px 256px;
 }
 
+.scan-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.035) 0,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px,
+    transparent 16px
+  );
+}
+
 /* Reduced motion: disable all animations for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -85,4 +108,3 @@
     scroll-behavior: auto !important;
   }
 }
-

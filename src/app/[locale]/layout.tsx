@@ -10,6 +10,7 @@ import { SITE } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import "@/styles/globals.css";
+import { CookieConsent } from "@/components/cookie-consent";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -90,8 +91,8 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
     logo: `${SITE.url}/logo.png`,
     description:
       locale === "fr"
-        ? "Mark Systems — Automatisation IA & Ingénierie Décisionnelle à Montréal. Conception de systèmes IA de production, automatisation de workflows et plateformes intelligentes. Ne pas confondre avec ECI Mark Systems (ERP construction)."
-        : "Mark Systems — AI Automation & Decision Engineering in Montreal. Production-grade AI systems, workflow automation, and intelligent platforms. Not affiliated with ECI Mark Systems (construction ERP).",
+        ? "Mark Systems aide les PME du Québec avec la refonte de site web, la mise à niveau numérique conforme à la Loi 25 et l'automatisation IA utile. Ne pas confondre avec ECI Mark Systems."
+        : "Mark Systems helps Quebec SMBs with website redesigns, Law 25-ready digital upgrades, and practical AI automation. Not affiliated with ECI Mark Systems.",
     foundingDate: "2024",
     areaServed: {
       "@type": "Place",
@@ -99,28 +100,29 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Montréal",
+      addressLocality: "Québec",
       addressRegion: "QC",
       addressCountry: "CA",
     },
     sameAs: [],
     knowsAbout: [
+      "Website Redesign",
+      "Law 25 Compliance",
       "AI Automation",
       "Workflow Automation",
       "n8n",
-      "Multi-Agent Systems",
-      "Industrial Automation",
-      "PLC Programming",
-      "Full-Stack Development",
-      "IoT",
+      "Lead Qualification",
+      "Document Automation",
+      "Custom Platforms",
+      "Quebec SMB Digital Strategy",
     ],
     serviceType: [
+      "Strategic Website Design",
+      "Website Redesign",
+      "Law 25 Digital Compliance",
       "AI Workflow Automation",
-      "AI Systems Architecture",
-      "Full-Stack Web Development",
-      "Industrial Automation",
-      "IoT Intelligence",
-      "Custom AI Tools",
+      "n8n Automation",
+      "Custom Digital Tools",
     ],
   };
 
@@ -168,6 +170,7 @@ export default async function LocaleLayout({
           <Analytics />
           <SpeedInsights />
         </NextIntlClientProvider>
+              <CookieConsent />
       </body>
     </html>
   );

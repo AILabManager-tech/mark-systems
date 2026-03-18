@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { METRIC_IDS, metricValues } from "@/lib/ainova-data";
 
 export function AinovaMetrics() {
-  const t = useTranslations("ainova.metrics");
+  const t = useTranslations("systems.metrics");
 
   return (
     <section className="section-padding">

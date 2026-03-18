@@ -7,7 +7,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { LAYER_IDS } from "@/lib/ainova-data";
 
 export function AinovaArchitecture() {
-  const t = useTranslations("ainova.architecture");
+  const t = useTranslations("systems.architecture");
 
   return (
     <section className="section-padding border-t border-surface-border">

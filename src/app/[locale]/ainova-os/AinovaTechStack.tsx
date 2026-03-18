@@ -7,7 +7,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { TECH_CATEGORIES } from "@/lib/ainova-data";
 
 export function AinovaTechStack() {
-  const t = useTranslations("ainova.techStack");
+  const t = useTranslations("systems.techStack");
 
   return (
     <section className="section-padding">

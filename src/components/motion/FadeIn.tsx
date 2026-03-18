@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { fadeInUp, VIEWPORT_CONFIG } from "@/lib/animations";
+import { fadeInUp } from "@/lib/animations";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -19,9 +19,8 @@ export function FadeIn({
   return (
     <motion.div
       variants={variants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={VIEWPORT_CONFIG}
+      initial="visible"
+      animate="visible"
       transition={{ delay }}
       className={className}
     >

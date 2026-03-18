@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-import { fadeInUp, VIEWPORT_CONFIG } from "@/lib/animations";
+import { fadeInUp } from "@/lib/animations";
 
 interface SectionHeaderWithNsProps {
   ns: string;
@@ -38,21 +38,21 @@ export function SectionHeader(props: SectionHeaderProps) {
   return (
     <motion.div
       variants={fadeInUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={VIEWPORT_CONFIG}
-      className={cn("mb-16", centered && "text-center", className)}
+      initial="visible"
+      animate="visible"
+      className={cn("mb-12", centered && "text-center", className)}
     >
       {label && (
-        <span className="mb-4 inline-block font-mono text-xs uppercase tracking-widest text-accent">
-          {"// "}{label}
+        <span className="eyebrow-tag mb-5">
+          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+          {label}
         </span>
       )}
-      <h2 className="text-h2 font-bold text-text-primary lg:text-h1">
+      <h2 className="mx-auto max-w-4xl text-h2 font-bold leading-[0.92] text-text-primary lg:text-h1">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 max-w-2xl text-body-lg text-text-secondary lg:mt-6 mx-auto">
+        <p className="mx-auto mt-5 max-w-2xl text-body-lg leading-relaxed text-text-secondary lg:mt-6">
           {description}
         </p>
       )}

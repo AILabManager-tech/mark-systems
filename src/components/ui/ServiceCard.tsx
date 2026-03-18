@@ -22,33 +22,37 @@ export function ServiceCard({
   return (
     <motion.div
       variants={fadeInUp}
-      className="card-base group relative flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-card"
+      className="group industrial-panel flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-card"
     >
-      {/* Hover glow */}
-      <div className="pointer-events-none absolute -inset-px rounded-sm bg-gradient-to-b from-accent/0 via-accent/0 to-accent/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:from-accent/10 group-hover:via-transparent group-hover:to-accent/5" />
-      <div className="relative">
-      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-sm bg-surface-light text-accent transition-colors duration-200 group-hover:bg-accent/10 group-hover:text-accent-muted">
-        <Icon className="h-5 w-5" strokeWidth={1.5} />
-      </div>
-      <h3 className="mb-2 text-h3 font-semibold text-text-primary">
-        {t("title")}
-      </h3>
-      <p className="flex-1 text-sm text-text-secondary leading-relaxed">
-        {showCapabilities ? t("longDescription") : t("shortDescription")}
-      </p>
-      {showCapabilities && (
-        <ul className="mt-4 space-y-2 border-t border-surface-border pt-4">
-          {capabilities.map((cap) => (
-            <li
-              key={cap}
-              className="flex items-center gap-2 font-mono text-xs text-text-secondary"
-            >
-              <span className="h-px w-3 bg-accent" />
-              {cap}
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-accent/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="relative flex h-full flex-col">
+        <div className="mb-5 flex items-center justify-between gap-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-sm border border-accent/20 bg-accent/10 text-accent transition-colors duration-200 group-hover:bg-accent group-hover:text-black">
+            <Icon className="h-5 w-5" strokeWidth={1.5} />
+          </div>
+          <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-text-tertiary">
+            Service
+          </span>
+        </div>
+        <h3 className="mb-3 text-h3 font-semibold uppercase tracking-tight text-text-primary">
+          {t("title")}
+        </h3>
+        <p className="flex-1 text-sm leading-relaxed text-text-secondary">
+          {showCapabilities ? t("longDescription") : t("shortDescription")}
+        </p>
+        {showCapabilities && (
+          <ul className="mt-5 space-y-2 border-t border-surface-border pt-5">
+            {capabilities.map((cap) => (
+              <li
+                key={cap}
+                className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-text-secondary"
+              >
+                <span className="h-px w-4 bg-accent" />
+                {cap}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </motion.div>
   );

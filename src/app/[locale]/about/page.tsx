@@ -30,14 +30,14 @@ function AboutJsonLd({ locale }: { locale: string }) {
       },
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Montréal",
+        addressLocality: "Québec",
         addressRegion: "QC",
         addressCountry: "CA",
       },
       description:
         locale === "fr"
-          ? "Mark Systems conçoit des systèmes d'automatisation IA de production — orchestration multi-agents, workflows intelligents et plateformes d'entreprise."
-          : "Mark Systems builds production-grade AI automation systems — multi-agent orchestration, intelligent workflows, and enterprise platforms.",
+          ? "Mark Systems réunit conception web, conformité numérique et automatisation IA pour aider les PME du Québec à bâtir plus solide."
+          : "Mark Systems combines website design, digital compliance, and AI automation to help Quebec SMBs build on stronger foundations.",
     },
   };
 

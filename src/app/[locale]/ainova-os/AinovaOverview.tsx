@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { slideInLeft, slideInRight } from "@/lib/animations";
 
 export function AinovaOverview() {
-  const t = useTranslations("ainova.overview");
+  const t = useTranslations("systems.overview");
   const problemPoints = t.raw("problemPoints") as string[];
   const solutionPoints = t.raw("solutionPoints") as string[];
 

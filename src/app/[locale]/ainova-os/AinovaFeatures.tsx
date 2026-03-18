@@ -7,7 +7,7 @@ import { StaggerContainer } from "@/components/motion/StaggerContainer";
 import { FEATURE_IDS, featureIcons } from "@/lib/ainova-data";
 
 export function AinovaFeatures() {
-  const t = useTranslations("ainova.features");
+  const t = useTranslations("systems.features");
 
   return (
     <section className="section-padding">

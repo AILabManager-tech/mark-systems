@@ -1,29 +1,45 @@
 export const PROJECT_IDS = [
-  "ainova-os",
-  "winterpulse",
+  "usine-rh",
+  "beaumont-avocats",
+  "estimaweb-qc",
+  "nexos-soic-stack",
   "n8n-ecosystem",
-  "osiris-scanner",
-  "stark-portfolio",
 ] as const;
 
 export type ProjectId = (typeof PROJECT_IDS)[number];
 
 export const projectTechnologies: Record<ProjectId, string[]> = {
-  "ainova-os": [
-    "Python",
-    "FastAPI",
-    "PostgreSQL",
-    "Redis",
-    "Docker",
-    "Kubernetes",
-  ],
-  "winterpulse": [
+  "usine-rh": [
     "Next.js 14",
-    "React 18",
     "TypeScript",
-    "Tailwind CSS",
-    "Framer Motion",
-    "Leaflet",
+    "next-intl",
+    "Vercel",
+    "Loi 25",
+    "SEO local",
+  ],
+  "beaumont-avocats": [
+    "Next.js 14",
+    "TypeScript",
+    "UX writing",
+    "Formulaire qualifiant",
+    "Loi 25",
+    "SEO local",
+  ],
+  "estimaweb-qc": [
+    "Next.js 15",
+    "TypeScript",
+    "Wizard UX",
+    "PDF export",
+    "Lead generation",
+    "Vercel",
+  ],
+  "nexos-soic-stack": [
+    "Python",
+    "Next.js",
+    "FastAPI",
+    "SOIC",
+    "NEXOS",
+    "OSIRIS",
   ],
   "n8n-ecosystem": [
     "n8n",
@@ -32,21 +48,5 @@ export const projectTechnologies: Record<ProjectId, string[]> = {
     "Whisper",
     "PostgreSQL",
     "Docker",
-  ],
-  "osiris-scanner": [
-    "Python",
-    "Lighthouse",
-    "Mozilla Observatory",
-    "Click CLI",
-    "Rich",
-    "Chromium",
-  ],
-  "stark-portfolio": [
-    "React",
-    "Three.js",
-    "TypeScript",
-    "Framer Motion",
-    "Tailwind",
-    "Netlify",
   ],
 };

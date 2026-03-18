@@ -44,10 +44,10 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marksystems.ca/en/ainova-os</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/ainova-os"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/ainova-os"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/ainova-os"/>
+    <loc>https://marksystems.ca/en/systems</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/systems"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/systems"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/systems"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -94,10 +94,10 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marksystems.ca/fr/ainova-os</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/ainova-os"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/ainova-os"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/ainova-os"/>
+    <loc>https://marksystems.ca/fr/systems</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/systems"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/systems"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/systems"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

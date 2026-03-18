@@ -23,10 +23,10 @@ function ContactJsonLd({ locale }: { locale: string }) {
     mainEntity: {
       "@type": "Organization",
       name: "Mark Systems",
-      email: "contact@marksystems.ai",
+      email: "contact@marksystems.ca",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Montréal",
+        addressLocality: "Québec",
         addressRegion: "QC",
         addressCountry: "CA",
       },

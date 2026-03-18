@@ -7,7 +7,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
 
 export function AinovaOSBanner() {
-  const t = useTranslations("ainovaBanner");
+  const t = useTranslations("systemsBanner");
 
   return (
     <section className="section-padding border-t border-surface-border">
@@ -48,7 +48,7 @@ export function AinovaOSBanner() {
                   </div>
                 </div>
               </div>
-              <Button href="/ainova-os">
+              <Button href="/systems">
                 {t("button")}
                 <ArrowRight className="h-4 w-4" />
               </Button>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { staggerContainer, VIEWPORT_CONFIG } from "@/lib/animations";
+import { staggerContainer } from "@/lib/animations";
 
 interface StaggerContainerProps {
   children: React.ReactNode;
@@ -15,9 +15,8 @@ export function StaggerContainer({
   return (
     <motion.div
       variants={staggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={VIEWPORT_CONFIG}
+      initial="visible"
+      animate="visible"
       className={className}
     >
       {children}

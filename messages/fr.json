@@ -1,146 +1,154 @@
 {
   "common": {
     "siteName": "Mark Systems",
-    "tagline": "Automatisation IA & Systèmes Intelligents",
-    "siteDescription": "Nous concevons des systèmes IA de qualité production, de l'automatisation de workflows et des plateformes intelligentes pour les entreprises qui exigent des résultats mesurables.",
-    "skipToContent": "Aller au contenu principal"
+    "tagline": "Sites web stratégiques, conformité Loi 25 et automatisation IA",
+    "siteDescription": "Mark Systems conçoit des sites web stratégiques, des fondations numériques conformes à la Loi 25 et des automatisations IA concrètes pour les PME québécoises.",
+    "skipToContent": "Aller au contenu principal",
+    "consent": {
+      "cookieBanner": "Nous utilisons des témoins pour améliorer votre expérience.",
+      "accept": "Accepter",
+      "decline": "Refuser",
+      "customize": "Personnaliser",
+      "privacyNotice": "Vos données sont protégées conformément à la Loi 25 du Québec.",
+      "privacyLink": "Politique de confidentialité"
+    }
   },
   "nav": {
     "home": "Accueil",
     "services": "Services",
-    "ainova-os": "AiNova OS",
+    "systems": "Systems",
     "projects": "Projets",
     "about": "À propos",
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Automatisation IA & Systèmes Intelligents",
-    "titleStart": "Automatisez plus intelligemment.",
-    "titleAccent": "Construisez plus rapidement.",
-    "description": "Nous concevons et déployons des systèmes d'automatisation propulsés par l'IA, des workflows de qualité production et des plateformes intelligentes — de l'orchestration multi-agents à l'automatisation industrielle. Conçu au Québec, déployé partout dans le monde.",
-    "ctaPrimary": "Démarrer un projet",
-    "ctaSecondary": "Explorer nos services"
+    "badge": "Web stratégique, automatisation, IA appliquée, architecture",
+    "titleStart": "Mark Systems construit",
+    "titleAccent": "des systèmes qui livrent.",
+    "description": "Sites web stratégiques, automatisations métier, produits interactifs, systèmes IA appliqués et architecture technique: Mark Systems aide les PME québécoises à vendre plus clairement, opérer plus vite et reprendre le contrôle sur leur stack numérique.",
+    "ctaPrimary": "Discuter de votre projet",
+    "ctaSecondary": "Voir les services"
   },
   "servicesSection": {
-    "label": "Ce qu'on construit",
-    "title": "De l'automatisation à l'intelligence",
-    "description": "Six capacités fondamentales soutenues par de vrais déploiements, du vrai code et des résultats mesurables.",
+    "label": "Offre principale",
+    "title": "Quatre leviers numériques qui font avancer une PME",
+    "description": "Une offre plus simple, plus lisible et plus vendable: site web, conformité, automatisation et outils sur mesure.",
     "viewAll": "Voir tous les services"
   },
   "servicesPage": {
     "label": "Nos services",
-    "title": "De l'ingénierie qui livre",
-    "description": "Chaque service est ancré dans l'expérience de production — 195+ workflows déployés, 84K+ lignes d'infrastructure IA, 10+ ans d'ingénierie industrielle."
+    "title": "Des services pensés pour vendre aujourd'hui et automatiser demain",
+    "description": "Mark Systems aide d'abord à clarifier la présence numérique, à remettre un site en état et à bâtir une base conforme à la Loi 25, puis à automatiser ce qui ralentit vraiment l'entreprise."
   },
   "services": {
-    "ai-workflow-automation": {
-      "title": "Automatisation de workflows IA",
-      "shortDescription": "Pipelines n8n de production intégrant des LLM, systèmes RAG et outils d'affaires — 195+ workflows à travers 14 domaines.",
-      "longDescription": "On construit des pipelines d'automatisation de bout en bout sur n8n qui connectent des modèles IA (GPT-4, Claude, Whisper, Ollama) à votre stack d'affaires — CRM, courriel, documents, voix, IoT. Chaque workflow inclut la gestion d'erreurs, des pistes d'audit et des points de contrôle humain quand les seuils de confiance ne sont pas atteints.",
+    "web-strategy-redesign": {
+      "title": "Sites web stratégiques & refonte",
+      "shortDescription": "Sites vitrine et refontes complètes ou partielles pour mieux expliquer votre valeur, inspirer confiance et convertir davantage.",
+      "longDescription": "On conçoit ou refond des sites web qui servent un objectif d'affaires clair: mieux positionner votre offre, mieux filtrer les demandes, améliorer l'expérience mobile et donner une présence numérique crédible. Le travail inclut l'architecture de contenu, le design, le développement et l'optimisation du parcours client.",
       "capabilities": [
-        "Conception de pipelines n8n",
-        "Intégration RAG & agents IA",
-        "Pipelines vocaux (STT/TTS)",
-        "Automatisation CRM & courriel",
-        "OCR & classification de documents"
+        "Site vitrine et site de services",
+        "Refonte complète ou partielle",
+        "Architecture de contenu orientée conversion",
+        "Design responsive et performance web",
+        "SEO local Québec et bilingue FR/EN"
       ]
     },
-    "ai-systems-architecture": {
-      "title": "Architecture de systèmes IA",
-      "shortDescription": "Plateformes d'orchestration multi-agents avec convergence mathématiquement prouvée et infrastructure de niveau entreprise.",
-      "longDescription": "Notre système phare AINOVA OS est un système d'exploitation IA de production avec 35+ agents spécialisés, un moteur de convergence auto-optimisant (SOIC) et une exploration de décisions Tree-of-Thoughts. Construit sur FastAPI, PostgreSQL, Redis et Kubernetes — conçu pour les équipes qui ont besoin d'une IA fiable et scalable.",
+    "law-25-digital-foundation": {
+      "title": "Conformité numérique & Loi 25",
+      "shortDescription": "Mise à niveau rapide des éléments essentiels pour réduire le risque: formulaires, consentement, politique, collecte et fondations web.",
+      "longDescription": "On remet en ordre les éléments visibles et prioritaires d'un site en matière de conformité: formulaires mieux cadrés, mentions de consentement, politique de confidentialité, bandeau de témoins, parcours de collecte plus propre et cohérence des informations de contact. L'objectif n'est pas de produire du jargon juridique, mais une base numérique plus sérieuse et plus rassurante.",
       "capabilities": [
-        "Orchestration multi-agents",
-        "Moteur de convergence SOIC",
-        "Optimisation Tree-of-Thoughts",
-        "Déploiement Kubernetes",
-        "Ponts protocole MCP"
+        "Révision des formulaires et consentements",
+        "Politique de confidentialité web",
+        "Bandeau témoins et préférences",
+        "Parcours de collecte plus clair",
+        "Alignement contact, hébergement et mentions"
       ]
     },
-    "fullstack-development": {
-      "title": "Développement Web Full-Stack",
-      "shortDescription": "Applications web modernes et sites immersifs — React, Next.js, Three.js — des plateformes financières aux portfolios 3D.",
-      "longDescription": "On livre des sites web et applications de production avec des stacks modernes : React 19, Next.js 14, TypeScript, Tailwind CSS. D'une plateforme de conseiller financier avec chatbot IA et calculateurs conformes aux normes canadiennes à un portfolio 3D immersif avec WebGL — on construit ce que le mandat exige.",
+    "ai-automation-workflows": {
+      "title": "Automatisation IA & workflows",
+      "shortDescription": "Automatisations utiles et mesurables pour enlever du travail manuel, accélérer les suivis et mieux exploiter vos données.",
+      "longDescription": "C'est ici que se trouve la vocation principale de Mark Systems. On connecte vos outils, vos documents, vos courriels et vos processus pour automatiser les tâches répétitives, résumer l'information utile, qualifier des demandes, orchestrer des suivis et créer des flux de travail assistés par IA qui restent compréhensibles et contrôlables.",
       "capabilities": [
-        "Applications React & Next.js",
-        "Expériences Three.js & WebGL",
-        "TypeScript & Tailwind CSS",
-        "Intégration de chatbot IA",
-        "Développement de calculateurs financiers"
+        "Workflows n8n et orchestrations métier",
+        "Qualification de demandes et tri intelligent",
+        "Traitement de documents et résumés IA",
+        "Automatisation courriel, CRM et notifications",
+        "Intégrations LLM, RAG et garde-fous humains"
       ]
     },
-    "industrial-automation": {
-      "title": "Automatisation industrielle & Génie électrique",
-      "shortDescription": "10+ ans à concevoir et mettre en service des systèmes PLC/CNC, lignes de production industrielles et protection de réseaux électriques.",
-      "longDescription": "Expertise senior en génie électrique à travers l'industrie lourde : programmation et mise en service de PLC et CNC, conception de lignes de production complexes (incluant des clients du secteur de la défense), et ingénierie de systèmes de protection et coordination de réseaux électriques HT/MT/BT. On apporte une rigueur éprouvée sur le terrain à chaque projet.",
+    "custom-platforms-tools": {
+      "title": "Outils internes & plateformes sur mesure",
+      "shortDescription": "Quand un site web ne suffit plus, on conçoit l'outil ou la plateforme qui soutient réellement vos opérations.",
+      "longDescription": "Pour certains mandats, la bonne réponse n'est ni un simple site ni une automatisation isolée. On construit alors des tableaux de bord, portails, configurateurs, formulaires avancés ou mini-plateformes qui soutiennent une opération concrète. C'est l'espace entre la présence web, l'outil interne et le produit numérique sur mesure.",
       "capabilities": [
-        "Programmation PLC & CNC",
-        "Conception de lignes de production",
-        "Protection de réseaux électriques",
-        "Coordination de systèmes électriques",
-        "Mise en service industrielle"
-      ]
-    },
-    "iot-smart-home": {
-      "title": "Intelligence IoT & Maison intelligente",
-      "shortDescription": "Domotique coordonnée par IA, streaming local de caméras et edge computing — priorité à la vie privée, indépendant du cloud.",
-      "longDescription": "On construit des systèmes IoT intelligents qui opèrent localement : détection de mouvement coordonnée par IA, automatisation contextuelle basée sur l'heure et la présence, appareils contrôlés par la voix et streaming de caméras reverse-engineered qui contourne les dépendances cloud. Toutes les données restent sur votre réseau.",
-      "capabilities": [
-        "Automatisation coordonnée par IA",
-        "Streaming RTSP local",
-        "Intégration de contrôle vocal",
-        "Déploiement edge computing",
-        "Architecture priorité vie privée"
-      ]
-    },
-    "custom-ai-tools": {
-      "title": "Outils IA personnalisés & Intégration",
-      "shortDescription": "Toolkits LLM agnostiques aux fournisseurs, assistants de code local-first et routage multi-fournisseurs — construit pour zéro dépendance.",
-      "longDescription": "On construit des outils IA personnalisés qui résolvent des problèmes spécifiques : une couche d'abstraction multi-LLM supportant 6+ fournisseurs sans aucune dépendance à un vendeur, un assistant de code local utilisant des modèles open-source à coût zéro, et un routeur intelligent qui balance les requêtes entre OpenAI, Anthropic, Groq et Ollama basé sur le coût, la latence et les capacités.",
-      "capabilities": [
-        "Couches d'abstraction multi-LLM",
-        "Déploiement de modèles locaux",
-        "Routage intelligent de requêtes",
-        "Développement de serveurs MCP",
-        "Pipelines voix-vers-LLM"
+        "Portails et tableaux de bord",
+        "Formulaires avancés et calculateurs",
+        "Espaces clients ou outils internes",
+        "Ponts entre site web et opérations",
+        "Développement sur mesure avec IA intégrée"
       ]
     }
   },
   "projectsSection": {
     "label": "Études de cas",
-    "title": "Construit, déployé, mesuré",
-    "description": "De vrais projets avec de vraies métriques — pas des démos, pas des prototypes.",
+    "title": "Des livrables réels, du site client à la stack propriétaire",
+    "description": "Des mandats web livrés, des outils de lead generation, une couche d'automatisation n8n et une stack propriétaire qui sert de preuve de profondeur technique.",
     "viewAll": "Voir tous les projets"
   },
   "projectsPage": {
     "label": "Études de cas",
-    "title": "Systèmes de production, résultats prouvés",
-    "description": "Chaque projet ci-dessous roule en production. Le code existe, les métriques sont réelles, les systèmes sont en ligne."
+    "title": "Portfolio Mark Systems",
+    "description": "Une sélection de sites clients, de produits interactifs et de systèmes propriétaires qui montrent comment Mark Systems exécute du front-end jusqu'à l'orchestration."
   },
   "projects": {
-    "ainova-os": {
-      "title": "AINOVA OS",
-      "industry": "Infrastructure IA",
-      "clientSize": "Projet interne R&D",
-      "timeline": "8 mois de développement",
-      "methodology": "Architecture BMAD + convergence SOIC itérative",
-      "challenge": "Les frameworks d'agents IA existants sont des outils de prototypage — ils manquent de garanties de convergence, de sécurité d'entreprise et d'orchestration de qualité production pour les workflows multi-agents complexes.",
-      "solution": "Conçu un système d'exploitation IA complet : 35+ agents spécialisés (12 core + 23 BMAD), un moteur de convergence SOIC auto-optimisant avec preuve mathématique, exploration de décisions Tree-of-Thoughts, intégration méthodologie BMAD et ponts MCP pour Claude Code — déployé sur Kubernetes avec monitoring Prometheus.",
-      "result": "84 000+ lignes de Python de production. Convergence de qualité μ = 9.94/10 (certifié Gold Master). 1 030+ fonctions de test. Entièrement conteneurisé avec Docker et manifests Kubernetes.",
-      "metricValue": "μ 9.94",
-      "metricLabel": "Score de qualité"
+    "usine-rh": {
+      "title": "L'Usine RH",
+      "industry": "Services-conseils RH",
+      "clientSize": "PME industrielles et manufacturières",
+      "timeline": "Mandat site vitrine + fondations conformité",
+      "methodology": "Positionnement, structure d'offre et parcours de confiance",
+      "challenge": "Transformer une offre de consultation RH en un site clair, crédible et orienté PME, capable d'expliquer rapidement la valeur, les services et la méthode sans surcharger la visite.",
+      "solution": "Conçu une présence web structurée autour d'un message fort, d'une offre en 10 services, d'un parcours simple pour les PME et d'éléments de conformité visibles: politique, consentement, gestion des témoins et mentions liées à la Loi 25.",
+      "result": "Un site plus lisible et plus crédible pour une clientèle PME, avec une architecture de contenu claire, un déploiement bilingue FR/EN et une base numérique prête pour les prochaines couches d'automatisation.",
+      "metricValue": "10",
+      "metricLabel": "services structurés"
     },
-    "winterpulse": {
-      "title": "WinterPulse 2026",
-      "industry": "Sport & Événementiel",
-      "clientSize": "Projet vitrine — Jeux Olympiques d'hiver 2026",
-      "timeline": "3 semaines de développement",
-      "methodology": "Next.js App Router + design system Ice & Summit",
-      "challenge": "Créer une plateforme web complète pour les Jeux Olympiques d'hiver 2026 à Milano-Cortina — couvrant 16 disciplines, 115 épreuves, ~140 athlètes et 9 sites de compétition avec recherche en temps réel et calendrier interactif sur 17 jours.",
-      "solution": "Construit une application Next.js 14 avec TypeScript, Tailwind CSS et Framer Motion. Système de recherche floue (Fuse.js) avec raccourci Ctrl+K, carte interactive Leaflet des sites, calendrier journalier des épreuves, fiches athlètes détaillées et design system 'Ice & Summit' avec thème bleu glacier. 51 tests unitaires et d'intégration.",
-      "result": "Application complète couvrant 16 disciplines olympiques. 115 épreuves avec calendrier interactif sur 17 jours. Recherche fuzzy instantanée. 9 sites de compétition sur carte. 51 tests. Score Lighthouse 95+.",
-      "metricValue": "16",
-      "metricLabel": "Disciplines"
+    "beaumont-avocats": {
+      "title": "Beaumont Avocats",
+      "industry": "Cabinet juridique",
+      "clientSize": "Cabinet établi à Québec",
+      "timeline": "Refonte de vitrine professionnelle",
+      "methodology": "Clarté éditoriale, crédibilité et conversion",
+      "challenge": "Présenter un cabinet multidisciplinaire de manière plus claire, plus actuelle et plus rassurante, tout en simplifiant l'accès aux expertises et à la prise de contact.",
+      "solution": "Refondu l'expérience autour de quatre expertises principales, d'un discours plus net, d'un parcours d'évaluation de situation et d'une présence web mieux alignée avec les standards actuels de confiance et de conformité.",
+      "result": "Une vitrine plus stratégique pour un cabinet de plus de 25 ans, avec une meilleure hiérarchie de contenu, des points d'entrée plus clairs et des fondations de collecte plus sérieuses.",
+      "metricValue": "4",
+      "metricLabel": "expertises clés"
+    },
+    "estimaweb-qc": {
+      "title": "EstimaWeb QC",
+      "industry": "Produit interactif / lead generation",
+      "clientSize": "Produit propriétaire Mark Systems",
+      "timeline": "Estimateur web en production continue",
+      "methodology": "UX wizard, logique de chiffrage et capture de leads",
+      "challenge": "Transformer une demande vague de type “combien coûte un site?” en un outil crédible, localisé Québec, capable d'éduquer le prospect tout en qualifiant l'opportunité.",
+      "solution": "Conçu un estimateur complet en Next.js avec parcours multi-étapes, scénarios économique/recommandé/premium, logique sectorielle, export PDF et base de tarification alignée à l'offre Mark Systems.",
+      "result": "Un actif de vente qui combine UX, logique métier et conversion. Le visiteur obtient une estimation structurée; Mark Systems récupère un lead beaucoup mieux qualifié.",
+      "metricValue": "3",
+      "metricLabel": "scénarios chiffrés"
+    },
+    "nexos-soic-stack": {
+      "title": "NEXOS + SOIC + OSIRIS",
+      "industry": "Stack propriétaire",
+      "clientSize": "R&D et production interne",
+      "timeline": "Évolution continue",
+      "methodology": "Convergence qualité, agents spécialisés et tooling réel",
+      "challenge": "Passer d'une logique de prototype à une chaîne capable de cadrer, générer, auditer, corriger et livrer des systèmes web de manière beaucoup plus rigoureuse que l'approche agence standard.",
+      "solution": "Assemblé une stack propriétaire articulée autour de NEXOS pour l'orchestration web, SOIC pour les gates qualité et OSIRIS pour l'audit. Le tout s'appuie sur des agents spécialisés, du tooling réel et des boucles d'auto-correction.",
+      "result": "Une colonne vertébrale technique qui accélère la production, standardise la qualité et sert directement les mandats clients comme les produits internes.",
+      "metricValue": "46",
+      "metricLabel": "agents NEXOS"
     },
     "n8n-ecosystem": {
       "title": "Écosystème n8n d'entreprise",
@@ -152,31 +160,7 @@
       "solution": "Conçu et déployé 195 workflows de production sur n8n : 52 propulsés par IA (RAG, agents, classificateurs), 24 automatisations de communications, 18 pipelines de traitement de documents, 17 workflows financiers, 16 pipelines vocaux (Whisper + Piper) et 7 orchestrations IoT. Cadre de gouvernance noté 9.90/10 sur l'audit SOIC.",
       "result": "195 workflows en production. 57% propulsés par IA. 12 nœuds communautaires personnalisés installés. Gouvernance complète avec 35+ champs de métadonnées par workflow.",
       "metricValue": "195",
-      "metricLabel": "Workflows"
-    },
-    "osiris-scanner": {
-      "title": "OSIRIS Scanner",
-      "industry": "Sécurité & Audit",
-      "clientSize": "Outil interne — audit de sites web",
-      "timeline": "2 mois de développement",
-      "methodology": "Scoring multi-axes + calibration empirique",
-      "challenge": "Évaluer la posture de sécurité, la performance et la résilience de sites web de manière systématique — les outils existants (Lighthouse, Observatory) donnent des scores partiels sans vision unifiée ni scoring global.",
-      "solution": "Conçu un scanner d'audit 4 axes : Performance (20%), Sécurité (30%), Intrusion (30%), Ressources (20%). Intègre Lighthouse et Mozilla Observatory, analyse 110+ trackers connus, détecte les vulnérabilités communes (XSS, clickjacking, headers manquants). Système de grades calibré : Exemplaire / Conforme / À risque / Critique.",
-      "result": "Scanner opérationnel avec 4 axes pondérés. 110+ trackers dans la blocklist. Rapports détaillés avec interface Rich CLI. Grades calibrés sur des données réelles. Temps de scan < 60s par site.",
-      "metricValue": "4 axes",
-      "metricLabel": "Scoring"
-    },
-    "stark-portfolio": {
-      "title": "Portfolio 3D immersif",
-      "industry": "Web & Créatif",
-      "clientSize": "Client individuel — professionnel tech",
-      "timeline": "6 semaines de développement",
-      "methodology": "Design cinématique + tests de performance WebGL",
-      "challenge": "Les sites portfolio standards se fondent dans le bruit. Le client avait besoin d'un site qui démontre la maîtrise technique à travers l'expérience elle-même — pas juste des captures d'écran.",
-      "solution": "Construit un portfolio cinématique avec React 19, Three.js (Arc Reactor 3D avec shaders WebGL), animations Framer Motion, audio procédural Howler.js (6 sons interactifs) et un 'Mode Overclock' complet qui transforme toute l'interface — couleurs, vitesse, sons, messages — en temps réel.",
-      "result": "En ligne sur Netlify. Bundle JS de 373KB gzippé. 10 sections complètes. Rendu 3D en temps réel avec transformation de mode. Temps de build de 7 secondes sur CI/CD.",
-      "metricValue": "EN LIGNE",
-      "metricLabel": "Production"
+      "metricLabel": "workflows"
     }
   },
   "projectCard": {
@@ -185,11 +169,11 @@
   },
   "about": {
     "missionLabel": "Notre mission",
-    "missionTitle": "De l'automatisation qui fonctionne vraiment",
-    "mission": "Mark Systems existe pour transformer des capacités IA complexes en systèmes de production qui livrent des résultats mesurables. On ne vend pas des démos — on livre des workflows, agents et plateformes qui roulent 24/7 et prouvent leur valeur en chiffres. Construit par un ingénieur avec 10+ ans d'expérience sur le terrain, chaque solution est conçue pour le monde réel.",
+    "missionTitle": "Rendre le numérique plus utile, puis plus intelligent",
+    "mission": "Mark Systems aide les PME à se doter d'une présence numérique plus claire, plus crédible et plus conforme, puis à automatiser les opérations qui ralentissent la croissance. Le site web n'est pas la fin du parcours: c'est souvent la première brique avant des workflows, des outils internes et des systèmes IA réellement utiles.",
     "teamLabel": "Le fondateur",
-    "teamTitle": "Ingénierie d'abord, toujours",
-    "teamDescription": "Un ingénieur. 10+ ans sur le terrain. Des lignes de production industrielles aux systèmes d'exploitation IA.",
+    "teamTitle": "Un profil hybride, rare et très terrain",
+    "teamDescription": "Conception web, rigueur d'ingénierie et automatisation IA dans une même pratique.",
     "valuesLabel": "Nos principes",
     "valuesTitle": "Comment on opère",
     "valuesDescription": "Quatre principes non-négociables qui définissent chaque engagement."
@@ -197,7 +181,7 @@
   "team": {
     "founder": {
       "role": "Fondateur & Ingénieur principal",
-      "bio": "Ingénieur électrique senior avec 10+ ans en automatisation industrielle (PLC/CNC, lignes de production secteur défense, protection de réseaux électriques HT). Maintenant à construire des systèmes d'automatisation IA — d'un système d'exploitation IA de 84K lignes à 195 workflows n8n de production. Basé au Québec, Canada."
+      "bio": "Ingénieur senior basé au Québec, avec 10+ ans de terrain en automatisation et systèmes industriels. Cette rigueur se transpose aujourd'hui dans la conception de sites web stratégiques, l'automatisation métier, les outils interactifs et la construction de systèmes numériques plus robustes que le simple site vitrine."
     }
   },
   "values": {
@@ -221,9 +205,9 @@
   "contact": {
     "label": "Nous joindre",
     "title": "Commencer une conversation",
-    "description": "Parlez-nous de vos défis d'automatisation et on va concevoir le système pour les résoudre.",
+    "description": "Parlez-nous de votre site, de votre refonte, de vos enjeux Loi 25 ou d'une automatisation IA que vous voulez enfin rendre concrète.",
     "emailLabel": "Courriel",
-    "emailAddress": "contact@marksystems.ai",
+    "emailAddress": "contact@marksystems.ca",
     "locationLabel": "Emplacement",
     "locationCity": "Québec, Canada",
     "locationDetail": "Télétravail d'abord — au service de clients partout dans le monde"
@@ -243,7 +227,7 @@
     "sending": "Envoi en cours...",
     "successTitle": "Message envoyé",
     "successMessage": "Merci pour votre message. Nous vous répondrons dans les 24 heures.",
-    "errorMessage": "Une erreur est survenue. Réessayez ou écrivez-nous directement à contact@marksystems.ai.",
+    "errorMessage": "Une erreur est survenue. Réessayez ou écrivez-nous directement à contact@marksystems.ca.",
     "required": "*"
   },
   "validation": {
@@ -255,10 +239,10 @@
     "messageMinLength": "Le message doit contenir au moins 10 caractères"
   },
   "cta": {
-    "label": "Prêt à automatiser?",
-    "title": "Construisons quelque chose qui fonctionne",
-    "description": "Parlez-nous de vos défis d'automatisation. On va concevoir le système intelligent qui les transforme en avantage compétitif.",
-    "button": "Commencer une conversation"
+    "label": "Prêt à passer au prochain niveau?",
+    "title": "Commençons par le bon point d'entrée",
+    "description": "Refonte de site, conformité Loi 25, automatisation de tâches ou outil sur mesure: on peut commencer là où le gain est le plus rapide, puis élargir intelligemment.",
+    "button": "Réserver un échange"
   },
   "notFound": {
     "code": "404",
@@ -267,35 +251,35 @@
     "back": "Retour à l'accueil"
   },
   "footer": {
-    "description": "Conception de systèmes d'automatisation IA qui livrent des résultats mesurables.",
+    "description": "Sites web stratégiques, fondations numériques conformes et automatisation IA pour PME québécoises.",
     "navLabel": "Navigation",
     "connectLabel": "Connecter",
     "copyright": "© {year} Mark Systems. Tous droits réservés."
   },
   "metadata": {
     "home": {
-      "title": "Mark Systems — Automatisation IA & Ingénierie Décisionnelle | Montréal",
-      "description": "Mark Systems conçoit des systèmes d'automatisation IA de production à Montréal : orchestration multi-agents, 195+ workflows n8n, plateformes intelligentes. Firme d'ingénierie IA — sans lien avec ECI Mark Systems (ERP construction)."
+      "title": "Sites Web, Loi 25 & Automatisation IA | Mark Systems",
+      "description": "Mark Systems aide les PME du Québec avec la refonte de site web, la mise à niveau numérique conforme à la Loi 25 et l'automatisation IA utile. Sans lien avec ECI Mark Systems."
     },
     "services": {
-      "title": "Services d'automatisation IA — Montréal",
-      "description": "Services d'automatisation IA à Montréal : workflows n8n, architecture multi-agents AINOVA OS, développement web full-stack, automatisation industrielle PLC/CNC, IoT et outils IA personnalisés."
+      "title": "Refonte Web, Loi 25 & IA | Mark Systems Québec",
+      "description": "Services Mark Systems au Québec: sites web stratégiques, refonte, fondations conformes à la Loi 25, automatisation IA, workflows n8n et outils numériques sur mesure."
     },
     "projects": {
-      "title": "Études de cas — Automatisation IA",
-      "description": "Études de cas réelles en automatisation IA : AINOVA OS (système d'exploitation IA, μ=9.94), écosystème n8n (195 workflows), plateforme financière et portfolio 3D immersif."
+      "title": "Études de cas Web & Automatisation | Mark Systems",
+      "description": "Découvrez des projets réels livrés par Mark Systems: sites clients, fondations numériques conformes à la Loi 25, automatisation IA et workflows n8n."
     },
     "about": {
-      "title": "À propos — Ingénierie IA Montréal",
-      "description": "Mark Systems — 10+ ans d'ingénierie, des lignes de production industrielles PLC/CNC aux systèmes d'exploitation IA. Firme d'automatisation IA basée à Montréal, Québec."
+      "title": "À propos — Web, Loi 25 & IA | Mark Systems Québec",
+      "description": "Mark Systems réunit conception web, rigueur d'ingénierie et automatisation IA. Basé au Québec, au service des PME qui veulent bâtir plus solide."
     },
     "contact": {
-      "title": "Contact — Automatisation IA Montréal",
-      "description": "Contactez Mark Systems à Montréal pour discuter de vos défis d'automatisation IA, workflows intelligents et systèmes de production."
+      "title": "Contact — Refonte Web, Loi 25 & IA | Mark Systems Québec",
+      "description": "Contactez Mark Systems pour discuter d'une refonte de site, d'une mise à niveau conforme à la Loi 25 ou d'une automatisation IA adaptée à votre réalité."
     },
-    "ainova": {
-      "title": "AiNova OS — Système d'exploitation IA de production | Mark Systems",
-      "description": "AiNova OS : 35+ agents IA, moteur de convergence SOIC (μ=9.94/10), Tree-of-Thoughts, natif Kubernetes. Le système d'exploitation IA de production par Mark Systems."
+    "systems": {
+      "title": "Systems — Stack, produits et architecture | Mark Systems",
+      "description": "Découvrez la couche technique Mark Systems: NEXOS, SOIC, OSIRIS, automatisation n8n, produits interactifs et stack d'exécution conçue pour livrer du concret."
     },
     "brief": {
       "title": "Brief Projet — Mark Systems",
@@ -304,152 +288,144 @@
   },
   "faq": {
     "label": "Questions fréquentes",
-    "title": "FAQ — Automatisation IA",
+    "title": "FAQ — Sites web, Loi 25 et IA",
     "items": {
       "0": {
         "question": "Qu'est-ce que Mark Systems et quel est le lien avec ECI Mark Systems?",
-        "answer": "Mark Systems est une firme d'ingénierie IA spécialisée en automatisation de workflows, orchestration multi-agents et systèmes intelligents, basée à Montréal. Nous n'avons aucun lien avec ECI Mark Systems, qui est un fournisseur de logiciels ERP pour la construction résidentielle."
+        "answer": "Mark Systems est une firme d'ingénierie IA spécialisée en automatisation de workflows, orchestration multi-agents et systèmes intelligents, basée à Québec. Nous n'avons aucun lien avec ECI Mark Systems, qui est un fournisseur de logiciels ERP pour la construction résidentielle."
       },
       "1": {
-        "question": "Quels types d'automatisation IA proposez-vous?",
-        "answer": "Nous offrons l'automatisation de workflows IA via n8n (195+ workflows déployés), l'architecture de systèmes multi-agents (AINOVA OS), le développement web full-stack, l'automatisation industrielle (PLC/CNC), l'intelligence IoT et la création d'outils IA personnalisés avec routage multi-LLM."
+        "question": "Par quoi commencer si mon entreprise a surtout besoin d'un nouveau site?",
+        "answer": "C'est souvent le bon point de départ. Nous pouvons commencer par une refonte complète ou partielle, clarifier votre offre, remettre vos formulaires et parcours en ordre, intégrer les éléments prioritaires liés à la Loi 25, puis ajouter des automatisations IA quand la base numérique est solide."
       },
       "2": {
-        "question": "Combien coûte un projet d'automatisation IA?",
-        "answer": "Chaque projet est unique. Le coût dépend de la complexité, du nombre de workflows, des intégrations requises et du niveau de personnalisation. Contactez-nous pour une évaluation gratuite de vos besoins d'automatisation."
+        "question": "Pouvez-vous aider avec la conformité Loi 25 sans refaire tout le site?",
+        "answer": "Oui. Dans plusieurs cas, une mise à niveau partielle suffit: formulaires, consentement, politique de confidentialité, bannière témoins, collecte de données et cohérence des pages légales. Si une refonte plus large est nécessaire, nous le dirons clairement."
       },
       "3": {
-        "question": "Travaillez-vous avec des clients hors du Québec?",
-        "answer": "Oui, nous opérons en télétravail et servons des clients partout dans le monde. Notre expertise en automatisation IA, développement web et ingénierie industrielle est disponible internationalement."
+        "question": "Quels types d'automatisation IA proposez-vous réellement?",
+        "answer": "Nous concevons des workflows n8n, des automatisations de courriels et de suivi, du traitement de documents, des intégrations LLM, des résumés et classifications IA, ainsi que des outils plus avancés quand un simple workflow ne suffit plus. L'objectif reste toujours concret: gagner du temps, réduire les oublis et mieux exploiter l'information."
       },
       "4": {
-        "question": "Qu'est-ce qu'AINOVA OS?",
-        "answer": "AINOVA OS est notre système d'exploitation IA de production : 35+ agents spécialisés (12 core + 23 BMAD), un moteur de convergence SOIC auto-optimisant (μ=9.94/10), exploration de décisions Tree-of-Thoughts, et infrastructure Kubernetes. C'est 84 000+ lignes de Python de production avec 1 030+ fonctions de test."
+        "question": "Travaillez-vous avec des clients hors du Québec?",
+        "answer": "Oui, mais le cœur du positionnement est clairement orienté vers les PME québécoises. Cela dit, les mandats peuvent être réalisés à distance et le savoir-faire en conception web, conformité numérique et automatisation IA s'applique aussi ailleurs."
       },
       "5": {
-        "question": "Quelle est votre expertise en automatisation industrielle?",
-        "answer": "Notre fondateur possède 10+ ans d'expérience en génie électrique industriel : programmation PLC/CNC, conception de lignes de production (incluant le secteur défense), et ingénierie de systèmes de protection de réseaux électriques HT/MT/BT."
+        "question": "Pourquoi montrer une page Systems sur un site de services?",
+        "answer": "Parce que Mark Systems ne vend pas seulement du design ou du copywriting. La page Systems montre la couche technique réelle derrière les mandats: outils internes, stack propriétaire, automatisation n8n, qualité outillée et capacité à construire bien plus qu'une simple vitrine."
       }
     }
   },
-  "ainovaBanner": {
-    "label": "Produit phare",
-    "title": "AiNova OS",
-    "description": "Un système d'exploitation IA de production avec 35+ agents, moteur de convergence SOIC et infrastructure native Kubernetes.",
-    "metric1Label": "Score de qualité",
-    "metric1Value": "μ 9.94/10",
-    "metric2Label": "Lignes de production",
-    "metric2Value": "84K+",
-    "button": "Explorer AiNova OS"
+  "systemsBanner": {
+    "label": "Couche technique",
+    "title": "Systems",
+    "description": "Une vitrine publique de la profondeur technique Mark Systems: NEXOS, SOIC, OSIRIS, workflows n8n, estimateurs interactifs et stack de livraison full-stack.",
+    "metric1Label": "Workflows n8n",
+    "metric1Value": "195",
+    "metric2Label": "Agents NEXOS",
+    "metric2Value": "46",
+    "button": "Explorer Systems"
   },
-  "ainova": {
+  "ainovaBanner": {
+    "label": "Couche technique",
+    "title": "Systems",
+    "description": "Une vitrine publique de la profondeur technique Mark Systems: NEXOS, SOIC, OSIRIS, workflows n8n, estimateurs interactifs et stack de livraison full-stack.",
+    "metric1Label": "Workflows n8n",
+    "metric1Value": "195",
+    "metric2Label": "Agents NEXOS",
+    "metric2Value": "46",
+    "button": "Explorer Systems"
+  },
+  "systems": {
     "hero": {
-      "badge": "Système d'exploitation IA",
-      "title": "AiNova OS",
-      "subtitle": "Système d'exploitation IA de production",
-      "description": "35+ agents spécialisés, un moteur de convergence auto-optimisant et une infrastructure d'entreprise — conçu pour les équipes qui ont besoin d'une IA fiable en production.",
+      "badge": "Stack propriétaire Mark Systems",
+      "title": "Systems",
+      "subtitle": "Web, automatisation, qualité et orchestration",
+      "description": "La couche technique publique de Mark Systems. On y retrouve les systèmes, produits et pipelines qui soutiennent les mandats: NEXOS, SOIC, OSIRIS, workflows n8n, estimateurs interactifs et outillage de production.",
       "ctaPrimary": "Nous contacter",
-      "ctaSecondary": "Demander une démo"
+      "ctaSecondary": "Voir les projets"
     },
     "overview": {
-      "label": "Le problème & la solution",
-      "title": "Pourquoi AiNova OS existe",
-      "problemTitle": "Le problème",
+      "label": "Positionnement technique",
+      "title": "Pourquoi cette page existe",
+      "problemTitle": "Ce que le marché montre souvent",
       "problemPoints": [
-        "Les frameworks d'agents IA sont des outils de prototypage, pas des systèmes de production",
-        "Aucune garantie de convergence — les résultats varient de façon imprévisible",
-        "La sécurité est une réflexion après coup, pas un principe de conception",
-        "Passer d'une démo à l'entreprise exige une réécriture complète"
+        "Des vitrines propres, mais peu de preuve de profondeur technique",
+        "Des promesses IA vagues sans outillage réel derrière",
+        "Des stacks fragiles, difficiles à maintenir ou à faire évoluer",
+        "Une séparation artificielle entre site web, automatisation et système métier"
       ],
-      "solutionTitle": "La solution",
+      "solutionTitle": "Comment Mark Systems opère",
       "solutionPoints": [
-        "Système d'exploitation IA conçu à cet effet avec 35+ agents spécialisés",
-        "Moteur de convergence SOIC avec preuve mathématique (μ=9.94/10)",
-        "Sécurité d'entreprise intégrée dès le premier jour",
-        "Infrastructure native Kubernetes — mise à l'échelle sans réécriture"
+        "Des actifs réels: sites clients, estimateurs, workflows, stack propriétaire",
+        "Une couche qualité: SOIC, audits, tooling réel, auto-correction",
+        "Une orchestration web: NEXOS pour structurer, générer, valider et corriger",
+        "Une approche full-stack: front-end, logique métier, automation et architecture"
       ]
     },
     "features": {
       "label": "Capacités fondamentales",
-      "title": "Ce qui propulse AiNova OS",
-      "description": "Six capacités fondamentales qui font d'AiNova OS un système d'exploitation IA de qualité production.",
+      "title": "Ce qui propulse Mark Systems",
+      "description": "Six blocs qui résument comment la firme passe du site stratégique à la stack opérationnelle.",
       "soic": {
-        "title": "Moteur de convergence SOIC",
-        "description": "Self-Optimizing Intelligence Convergence — convergence de qualité mathématiquement prouvée sur 9 dimensions avec certification Gold Master μ=9.94/10."
+        "title": "SOIC",
+        "description": "Moteur de scoring et de convergence qualité utilisé pour mesurer, comparer et faire monter les livrables avant livraison."
       },
       "tot": {
-        "title": "Tree-of-Thoughts",
-        "description": "Exploration décisionnelle avancée évaluant simultanément plusieurs chemins de raisonnement, sélectionnant les solutions optimales par délibération structurée."
+        "title": "Produits interactifs",
+        "description": "Estimateurs, calculateurs et outils front-end utiles pour vendre, qualifier et transformer la visite en opportunité concrète."
       },
       "agents": {
-        "title": "35+ agents spécialisés",
-        "description": "12 agents core et 9 agents BMAD dédiés pour chaque fonction — de la génération de code et tests à l'audit de sécurité et documentation — orchestrés par un coordinateur central."
+        "title": "NEXOS",
+        "description": "Pipeline web multi-phase orienté création, audit, build et QA avec agents spécialisés, manifests, tooling réel et auto-fix."
       },
       "security": {
-        "title": "Sécurité d'entreprise",
-        "description": "Contrôle d'accès basé sur les rôles, pistes d'audit, validation des entrées et exécution sandboxée — la sécurité est un principe de conception, pas un correctif."
+        "title": "OSIRIS",
+        "description": "Couche d'audit et de contrôle pour renforcer les vérifications qualité, sécurité, conformité et robustesse opérationnelle."
       },
       "multi-llm": {
-        "title": "Architecture multi-LLM",
-        "description": "Conception agnostique aux fournisseurs supportant OpenAI, Anthropic, Groq et Ollama — routage intelligent basé sur le coût, la latence et les capacités."
+        "title": "Automatisation n8n",
+        "description": "Workflows métier, traitement documentaire, notifications, qualification et orchestration des opérations dans des contextes réels."
       },
       "k8s": {
-        "title": "Natif Kubernetes",
-        "description": "Conteneurisé avec Docker et manifests Kubernetes, monitoring Prometheus et tableaux de bord Grafana — conçu pour la mise à l'échelle horizontale dès le premier jour."
+        "title": "Architecture full-stack",
+        "description": "Next.js, TypeScript, APIs, automatisation, données, déploiement et instrumentation dans une logique cohérente de système."
       }
     },
     "architecture": {
-      "label": "Architecture système",
-      "title": "Architecture en cinq couches",
+      "label": "Architecture d'exécution",
+      "title": "Cinq couches d'exécution",
       "layers": {
         "api": {
-          "title": "Passerelle API",
-          "description": "Points d'accès FastAPI avec authentification, limitation de débit et validation des requêtes"
+          "title": "Couche interface",
+          "description": "Sites web, pages stratégiques, outils interactifs et expériences de conversion côté front-end"
         },
         "orchestration": {
-          "title": "Moteur d'orchestration",
-          "description": "Moteur de convergence SOIC + exploration décisionnelle Tree-of-Thoughts"
+          "title": "Couche orchestration",
+          "description": "Pipelines NEXOS, logique métier, cadencement des phases et boucle de validation"
         },
         "agents": {
-          "title": "Couche agents",
-          "description": "35+ agents spécialisés avec capacités basées sur les rôles et exécution sandboxée"
+          "title": "Couche agents et règles",
+          "description": "Agents spécialisés, manifests, gates SOIC et outillage d'auto-correction"
         },
         "infra": {
-          "title": "Infrastructure",
-          "description": "PostgreSQL, Redis, Docker, Kubernetes avec monitoring Prometheus/Grafana"
+          "title": "Couche infrastructure",
+          "description": "Services, stockage, conteneurs, CI/CD et déploiement selon le besoin réel du mandat ou du produit"
         },
         "integration": {
-          "title": "Couche d'intégration",
-          "description": "Ponts protocole MCP, APIs REST, connexions WebSocket, workflows n8n"
+          "title": "Couche intégration",
+          "description": "Workflows n8n, APIs, LLMs, formulaires, CRM, documents et autres systèmes connectés"
         }
       }
     },
     "metrics": {
       "label": "En chiffres",
-      "title": "Métriques de production",
-      "qualityScore": "Score de qualité",
-      "linesOfCode": "Lignes de code",
-      "testFunctions": "Fonctions de test",
-      "agents": "Agents spécialisés",
-      "qualityDimensions": "Dimensions de qualité"
-    },
-    "comparison": {
-      "label": "Paysage concurrentiel",
-      "title": "AiNova OS vs. les alternatives",
-      "description": "Comment AiNova OS se compare aux frameworks d'agents IA populaires sur 7 dimensions critiques.",
-      "ainovaOs": "AiNova OS",
-      "langraph": "LangGraph",
-      "autogen": "AutoGen",
-      "crewai": "CrewAI",
-      "dimensions": {
-        "convergenceEngine": "Moteur de convergence",
-        "agentCount": "Support multi-agents",
-        "productionReady": "Prêt pour la production",
-        "mathProof": "Preuve mathématique",
-        "multiLlm": "Support multi-LLM",
-        "k8sNative": "Natif Kubernetes",
-        "mcpBridge": "Pont protocole MCP"
-      }
+      "title": "Quelques métriques utiles",
+      "qualityScore": "Score SOIC",
+      "linesOfCode": "Lignes estimées",
+      "testFunctions": "Tests / validations",
+      "agents": "Agents / rôles",
+      "qualityDimensions": "Dimensions qualité"
     },
     "techStack": {
       "label": "Technologie",

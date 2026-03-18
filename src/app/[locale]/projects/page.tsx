@@ -16,25 +16,25 @@ export async function generateMetadata({
 function CaseStudyJsonLd({ locale }: { locale: string }) {
   const studies = PROJECT_IDS.map((id) => {
     const titles: Record<string, Record<string, string>> = {
-      "ainova-os": {
-        fr: "AINOVA OS — Système d'exploitation IA",
-        en: "AINOVA OS — AI Operating System",
+      "usine-rh": {
+        fr: "L'Usine RH — Site conseil RH PME",
+        en: "HR Factory — SMB HR Consulting Website",
       },
-      "winterpulse": {
-        fr: "WinterPulse 2026 — Plateforme Jeux Olympiques d'hiver",
-        en: "WinterPulse 2026 — Winter Olympics Platform",
+      "beaumont-avocats": {
+        fr: "Beaumont Avocats — Refonte cabinet juridique",
+        en: "Beaumont Lawyers — Law Firm Redesign",
+      },
+      "estimaweb-qc": {
+        fr: "EstimaWeb QC — Estimateur de projets web",
+        en: "EstimaWeb QC — Website Cost Estimator",
+      },
+      "nexos-soic-stack": {
+        fr: "NEXOS + SOIC + OSIRIS — Stack propriétaire",
+        en: "NEXOS + SOIC + OSIRIS — Proprietary Stack",
       },
       "n8n-ecosystem": {
         fr: "Écosystème n8n d'entreprise — 195 workflows",
         en: "Enterprise n8n Ecosystem — 195 Workflows",
-      },
-      "osiris-scanner": {
-        fr: "OSIRIS Scanner — Audit de sécurité web",
-        en: "OSIRIS Scanner — Web Security Audit",
-      },
-      "stark-portfolio": {
-        fr: "Portfolio 3D immersif",
-        en: "Immersive 3D Portfolio",
       },
     };
 
