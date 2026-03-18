@@ -1,14 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { ArrowRight, Bot, Gauge, Network, ShieldCheck } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { GlowOrb } from "@/components/motion/GlowOrb";
 import { staggerContainer } from "@/lib/animations";
 
 export function Hero() {
   const t = useTranslations("hero");
+  const locale = useLocale();
+  const systemPanels =
+    locale === "fr"
+      ? [
+          { label: "MODE", title: "Operator console", text: "Refonte, automation, systèmes et architecture dans une seule chaîne.", icon: Network },
+          { label: "STATUS", title: "SOIC armed", text: "Qualité outillée, phases séquentielles et correction avant livraison.", icon: ShieldCheck },
+          { label: "THROUGHPUT", title: "Build velocity", text: "Sites, workflows, estimateurs et assets techniques alignés.", icon: Gauge },
+          { label: "AUX", title: "AI layer live", text: "LLMs, n8n, NEXOS, OSIRIS et logique métier connectés.", icon: Bot },
+        ]
+      : [
+          { label: "MODE", title: "Operator console", text: "Redesign, automation, systems, and architecture in one chain.", icon: Network },
+          { label: "STATUS", title: "SOIC armed", text: "Instrumented quality, sequential phases, and correction before shipping.", icon: ShieldCheck },
+          { label: "THROUGHPUT", title: "Build velocity", text: "Websites, workflows, estimators, and technical assets aligned.", icon: Gauge },
+          { label: "AUX", title: "AI layer live", text: "LLMs, n8n, NEXOS, OSIRIS, and business logic connected.", icon: Bot },
+        ];
 
   return (
     <section className="relative overflow-hidden border-b border-surface-border/60">
@@ -32,7 +47,7 @@ export function Hero() {
         animate="visible"
         className="relative z-10 mx-auto max-w-7xl px-6 pb-16 pt-24 md:pb-24 md:pt-32"
       >
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_420px] lg:items-end">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_460px] lg:items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -65,7 +80,7 @@ export function Hero() {
                   Positionnement actif
                 </span>
                 <span className="rounded-full border border-accent/20 bg-accent/10 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
-                  Web / Loi 25 / IA
+                  Web / Automation / Systems
                 </span>
               </div>
               <p className="text-base leading-relaxed text-text-secondary md:text-lg">
@@ -90,29 +105,51 @@ export function Hero() {
             </motion.div>
           </div>
 
-          <div className="grid gap-4">
-            <div className="industrial-panel p-5">
-              <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">Entrée client</div>
-              <div className="mt-3 text-2xl font-bold uppercase tracking-tight text-text-primary">Refonte web</div>
-              <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-                On clarifie l&apos;offre, on remet le site à niveau et on construit une présence plus crédible.
-              </p>
+          <aside className="industrial-panel p-5">
+            <div className="flex items-center justify-between border-b border-surface-border pb-3">
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">Live operator map</div>
+                <div className="mt-1 text-sm font-semibold text-text-primary">System topology</div>
+              </div>
+              <div className="rounded-sm border border-emerald-400/25 bg-emerald-400/10 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-300">
+                online
+              </div>
             </div>
-            <div className="industrial-panel bg-accent/10 p-5">
-              <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">Base sérieuse</div>
-              <div className="mt-3 text-2xl font-bold uppercase tracking-tight text-text-primary">Loi 25</div>
-              <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-                Consentement, collecte, politique, formulaires et fondations numériques plus propres.
-              </p>
+
+            <div className="mt-4 space-y-3">
+              {systemPanels.map(({ label, title, text, icon: Icon }, index) => (
+                <div
+                  key={title}
+                  className="grid grid-cols-[auto_1fr] gap-3 rounded-sm border border-surface-border bg-background/70 p-3"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-accent/20 bg-accent/10">
+                    <Icon className="h-4 w-4 text-accent" />
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-text-tertiary">
+                      {`${label} // ${String(index + 1).padStart(2, "0")}`}
+                    </div>
+                    <div className="mt-1 text-sm font-semibold text-text-primary">{title}</div>
+                    <div className="mt-1 text-sm leading-relaxed text-text-secondary">{text}</div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="industrial-panel p-5">
-              <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">Suite logique</div>
-              <div className="mt-3 text-2xl font-bold uppercase tracking-tight text-text-primary">Automatisation IA</div>
-              <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-                Workflows, documents, qualification, notifications et outils internes qui enlèvent du travail manuel.
-              </p>
+
+            <div className="mt-4 rounded-sm border border-dashed border-accent/20 bg-accent/5 p-4">
+              <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">Execution map</div>
+              <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                {["Web", "Automation", "Systems", "QA", "Deploy", "Cases"].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-sm border border-surface-border bg-background/70 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-text-tertiary"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </aside>
         </div>
       </motion.div>
     </section>
