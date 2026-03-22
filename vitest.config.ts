@@ -6,6 +6,11 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     setupFiles: ["./tests/setup.ts"],
+    coverage: {
+      provider: "v8",
+      include: ["src/lib/**"],
+      thresholds: { lines: 70 },
+    },
   },
   resolve: {
     alias: {

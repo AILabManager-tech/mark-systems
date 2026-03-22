@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -46,6 +47,8 @@ const config: Config = {
         subtle: "0 1px 3px rgba(0, 0, 0, 0.5)",
         card: "0 2px 8px rgba(0, 0, 0, 0.3)",
         elevated: "0 4px 16px rgba(0, 0, 0, 0.4)",
+        "glow-accent": "0 0 15px rgba(0, 161, 155, 0.15), 0 0 30px rgba(0, 161, 155, 0.05)",
+        "glow-accent-lg": "0 0 25px rgba(0, 161, 155, 0.2), 0 0 50px rgba(0, 161, 155, 0.08)",
       },
       borderRadius: {
         sm: "4px",
