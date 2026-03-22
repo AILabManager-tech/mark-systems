@@ -164,6 +164,10 @@ export default async function LocaleLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+        <link rel="preconnect" href="https://formspree.io" />
+        <link rel="dns-prefetch" href="https://formspree.io" />
+        <link rel="preconnect" href="https://va.vercel-scripts.com" />
+        <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
         <OrganizationJsonLd locale={locale} />
       </head>
       <body className="noise-overlay relative min-h-screen font-sans antialiased">

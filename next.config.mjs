@@ -7,6 +7,11 @@ const nextConfig = {
   output: 'export',
   poweredByHeader: false,
 
+  images: {
+    unoptimized: true,
+    formats: ['image/webp'],
+  },
+
   // Note: With output: 'export', headers only apply in dev mode (next dev).
   // For production, configure headers in your hosting provider (Netlify, Vercel, etc.).
   async headers() {
