@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing, locales, type Locale } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { CookieConsent } from "@/components/ui/CookieConsent";
 import { SITE } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -90,8 +91,8 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
     logo: `${SITE.url}/logo.png`,
     description:
       locale === "fr"
-        ? "Mark Systems — Automatisation IA & Ingénierie Décisionnelle à Montréal. Conception de systèmes IA de production, automatisation de workflows et plateformes intelligentes. Ne pas confondre avec ECI Mark Systems (ERP construction)."
-        : "Mark Systems — AI Automation & Decision Engineering in Montreal. Production-grade AI systems, workflow automation, and intelligent platforms. Not affiliated with ECI Mark Systems (construction ERP).",
+        ? "Mark Systems — agence web stratégique au Québec. Nous concevons des sites web stratégiques, des automatisations métier, des systèmes IA appliqués et des architectures techniques robustes."
+        : "Mark Systems — strategic web agency in Quebec. We design strategic websites, business automation workflows, applied AI systems, and robust technical architectures.",
     foundingDate: "2024",
     areaServed: {
       "@type": "Place",
@@ -99,17 +100,19 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Montréal",
+      addressLocality: "Québec",
       addressRegion: "QC",
       addressCountry: "CA",
     },
     sameAs: [],
     knowsAbout: [
       "AI Automation",
+      "Applied AI",
       "Workflow Automation",
       "n8n",
-      "Multi-Agent Systems",
-      "Industrial Automation",
+      "Web Architecture",
+      "Technical Architecture",
+      "Strategic Websites",
       "PLC Programming",
       "Full-Stack Development",
       "IoT",
@@ -117,9 +120,8 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
     serviceType: [
       "AI Workflow Automation",
       "AI Systems Architecture",
-      "Full-Stack Web Development",
-      "Industrial Automation",
-      "IoT Intelligence",
+      "Strategic Website Development",
+      "Technical Consulting",
       "Custom AI Tools",
     ],
   };
@@ -143,19 +145,20 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
   return (
     <html
       lang={locale}
       className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <OrganizationJsonLd locale={locale} />
       </head>
       <body className="noise-overlay relative min-h-screen font-sans antialiased">
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
@@ -165,6 +168,7 @@ export default async function LocaleLayout({
           <Navbar />
           <main id="main-content" className="pt-16 lg:pt-20">{children}</main>
           <Footer />
+          <CookieConsent />
           <Analytics />
           <SpeedInsights />
         </NextIntlClientProvider>

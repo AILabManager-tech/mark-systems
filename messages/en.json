@@ -1,8 +1,9 @@
 {
   "common": {
     "siteName": "Mark Systems",
-    "tagline": "AI Automation & Intelligent Systems",
-    "siteDescription": "We engineer production-grade AI systems, workflow automation, and intelligent platforms for businesses that demand measurable results."
+    "tagline": "Strategic Web Agency · Automation · Applied AI · Architecture",
+    "siteDescription": "Mark Systems builds strategic websites, business automation systems, and custom AI tools for companies that want digital assets that convert and operate.",
+    "skipToContent": "Skip to main content"
   },
   "nav": {
     "home": "Home",
@@ -13,95 +14,95 @@
     "contact": "Contact"
   },
   "hero": {
-    "badge": "AI Automation & Intelligent Systems",
-    "titleStart": "Automate Smarter.",
-    "titleAccent": "Build Faster.",
-    "description": "We design and deploy AI-powered automation systems, production-grade workflows, and intelligent platforms — from multi-agent orchestration to industrial automation. Engineered in Quebec, deployed worldwide.",
+    "badge": "Websites · Automation · Applied AI · Architecture",
+    "titleStart": "Websites that convert.",
+    "titleAccent": "Systems that automate.",
+    "description": "We design strategic websites, business workflow automation, and custom AI systems — from the landing page that captures leads to the pipeline that runs your operations. Built in Quebec, deployed everywhere.",
     "ctaPrimary": "Start a Project",
     "ctaSecondary": "Explore Our Services"
   },
   "servicesSection": {
     "label": "What We Build",
-    "title": "From Automation to Intelligence",
-    "description": "Six core capabilities backed by real deployments, real code, and measurable outcomes.",
+    "title": "From Website to Full Automation",
+    "description": "Strategic digital assets — websites, business automations, and AI systems — designed to convert, operate, and scale.",
     "viewAll": "View All Services"
   },
   "servicesPage": {
     "label": "Our Services",
     "title": "Engineering That Delivers",
-    "description": "Every service is grounded in production experience — 195+ workflows deployed, 84K+ lines of AI infrastructure, 10+ years of industrial engineering."
+    "description": "Every service is grounded in production experience — sites deployed, workflows running, AI systems live. No demos, no prototypes."
   },
   "services": {
-    "ai-workflow-automation": {
-      "title": "AI Workflow Automation",
-      "shortDescription": "Production n8n pipelines integrating LLMs, RAG systems, and business tools — 195+ workflows across 14 domains.",
-      "longDescription": "We build end-to-end automation pipelines on n8n that connect AI models (GPT-4, Claude, Whisper, Ollama) to your business stack — CRM, email, documents, voice, IoT. Each workflow includes error handling, audit trails, and human-in-the-loop gates when confidence thresholds are not met.",
+    "fullstack-development": {
+      "title": "Strategic Websites",
+      "shortDescription": "Landing pages, showcase sites, and bilingual websites — Next.js 15+, TypeScript strict, Tailwind, App Router. Built to convert and perform.",
+      "longDescription": "We build professional websites that are also conversion assets: targeted landing pages, custom showcase sites, FR/EN bilingual sites with next-intl, and sites with blogs or interactive calculators. Modern stack (Next.js 15+ App Router, strict TypeScript, Tailwind CSS), solid technical SEO, security headers, Law 25 compliance, and Vercel deployment included.",
       "capabilities": [
-        "n8n pipeline design",
-        "RAG & AI agent integration",
-        "Voice pipelines (STT/TTS)",
-        "CRM & email automation",
-        "Document OCR & classification"
+        "Conversion landing pages",
+        "Custom showcase sites (4–6 pages)",
+        "Bilingual FR/EN sites (next-intl)",
+        "Blogs & content management",
+        "Calculators & interactive components"
+      ]
+    },
+    "ai-workflow-automation": {
+      "title": "Automation & Integrations",
+      "shortDescription": "Production n8n workflows, automated onboarding, lead pipelines, and custom integrations for your operations.",
+      "longDescription": "We automate your recurring operations: client onboarding, reminders, prospect qualification, tool synchronization, report generation, and internal alerts. Each automation is built on reliable components (n8n, Make, webhooks, REST APIs) with error handling, audit trails, and human checkpoints when needed.",
+      "capabilities": [
+        "Automated client onboarding",
+        "Lead pipeline & qualification",
+        "Lightweight CRM (Notion, Sheets, Airtable)",
+        "Automated notifications & reminders",
+        "Reports and tool synchronization"
       ]
     },
     "ai-systems-architecture": {
-      "title": "AI Systems Architecture",
-      "shortDescription": "Multi-agent orchestration platforms with mathematically proven convergence and enterprise-grade infrastructure.",
-      "longDescription": "Our flagship AINOVA OS is a production AI operating system with 35+ specialized agents, a self-optimizing convergence engine (SOIC), and Tree-of-Thoughts decision exploration. Built on FastAPI, PostgreSQL, Redis, and Kubernetes — designed for teams that need AI they can trust and scale.",
+      "title": "Architecture & Technical Consulting",
+      "shortDescription": "Stack scoping, technical audits, roadmaps, and strategic consulting for digital projects that require rigor and clarity.",
+      "longDescription": "Before writing a line of code, we structure. We offer scoping workshops, stack audits, performance and security diagnostics, and prioritized recommendations. For growing teams that need a senior perspective on their architecture or development plan.",
       "capabilities": [
-        "Multi-agent orchestration",
-        "SOIC convergence engine",
-        "Tree-of-Thoughts optimization",
-        "Kubernetes deployment",
-        "MCP protocol bridges"
-      ]
-    },
-    "fullstack-development": {
-      "title": "Full-Stack Web Development",
-      "shortDescription": "Modern web applications and immersive sites — React, Next.js, Three.js — from financial platforms to 3D portfolios.",
-      "longDescription": "We deliver production websites and web apps using modern stacks: React 19, Next.js 14, TypeScript, Tailwind CSS. From a financial advisor platform with AI chatbot and Canadian-compliant calculators to an immersive 3D portfolio with WebGL — we build what the brief demands.",
-      "capabilities": [
-        "React & Next.js applications",
-        "Three.js & WebGL experiences",
-        "TypeScript & Tailwind CSS",
-        "AI chatbot integration",
-        "Financial calculator development"
+        "Scoping workshops & structuring",
+        "Stack audit & technical diagnosis",
+        "UX, performance & security audit",
+        "Roadmap & prioritization",
+        "Senior strategic consulting"
       ]
     },
     "industrial-automation": {
-      "title": "Industrial Automation & Electrical Engineering",
-      "shortDescription": "10+ years designing and commissioning PLC/CNC systems, industrial production lines, and power grid protection.",
-      "longDescription": "Senior electrical engineering expertise across heavy industry: programming and commissioning PLCs and CNCs, designing complex production lines (including defense-sector clients), and engineering HV/MV/LV power grid protection and coordination systems. We bring field-tested rigor to every project.",
+      "title": "Field Expertise — Industrial Engineering",
+      "shortDescription": "10+ years in industrial electrical engineering: PLC/CNC, production lines, power grid protection. Battle-tested rigor.",
+      "longDescription": "Mark Systems' expertise is not theoretical. 10+ years of field commissioning: PLC and CNC programming and startup, complex production line design (defense-sector clients included), and HV/MV/LV power grid protection and coordination system engineering. This field-tested rigor informs every project we deliver.",
       "capabilities": [
         "PLC & CNC programming",
         "Production line design",
         "Power grid protection",
-        "Electrical system coordination",
+        "HV/MV/LV system coordination",
         "Industrial commissioning"
       ]
     },
     "iot-smart-home": {
-      "title": "IoT & Smart Home Intelligence",
-      "shortDescription": "AI-coordinated home automation, local camera streaming, and edge computing — privacy-first, cloud-independent.",
-      "longDescription": "We build intelligent IoT systems that operate locally: AI-coordinated motion detection, contextual automation based on time and presence, voice-controlled devices, and reverse-engineered camera streaming that bypasses cloud dependencies. All data stays on your network.",
+      "title": "Maintenance & Monthly Support",
+      "shortDescription": "Scalable maintenance plans — monitoring, updates, routine modifications, analytics reports, and continuous recommendations.",
+      "longDescription": "We don't deliver and disappear. Our maintenance plans cover site monitoring, technical updates, routine modifications, analytics reports, and continuous improvement recommendations. From light support to a monthly development partnership — based on your needs and growth pace.",
       "capabilities": [
-        "AI-coordinated automation",
-        "Local RTSP streaming",
-        "Voice control integration",
-        "Edge computing deployment",
-        "Privacy-first architecture"
+        "Monitoring & technical updates",
+        "Routine modifications & adjustments",
+        "Analytics & Core Web Vitals reports",
+        "Continuous improvement recommendations",
+        "New feature development"
       ]
     },
     "custom-ai-tools": {
-      "title": "Custom AI Tools & Integration",
-      "shortDescription": "Vendor-agnostic LLM toolkits, local-first code assistants, and multi-provider routing — built for zero lock-in.",
-      "longDescription": "We build custom AI tools that solve specific problems: a multi-LLM abstraction layer supporting 6+ providers with zero vendor lock-in, a local code assistant using open-source models at zero cost, and an intelligent router that balances requests across OpenAI, Anthropic, Groq, and Ollama based on cost, latency, and capability.",
+      "title": "Applied AI & Business Assistants",
+      "shortDescription": "AI chatbots, business assistants, RAG knowledge bases, and document processing — integrated into your existing tools.",
+      "longDescription": "We integrate AI where it creates real value: an assistant that answers your clients' questions, a knowledge base built on your internal documents, a prospect qualification system powered by an LLM. Vendor-agnostic (OpenAI, Anthropic, Groq, Ollama) — your data, your rules, zero dependency.",
       "capabilities": [
-        "Multi-LLM abstraction layers",
-        "Local model deployment",
-        "Intelligent request routing",
-        "MCP server development",
-        "Voice-to-LLM pipelines"
+        "AI chatbots & business assistants",
+        "RAG knowledge bases",
+        "Document processing & classification",
+        "AI-powered prospect qualification",
+        "Multi-LLM integration, zero lock-in"
       ]
     }
   },
@@ -132,17 +133,17 @@
     "winterpulse": {
       "title": "WinterPulse 2026",
       "industry": "Sports & Events",
-      "clientSize": "Showcase project — Winter Olympics 2026",
-      "timeline": "3 weeks of development",
+      "clientSize": "Editorial showcase project — coverage of the Milano Cortina 2026 Winter Olympics",
+      "timeline": "3 weeks (MVP) + post-launch iterations",
       "methodology": "Next.js App Router + Ice & Summit design system",
-      "challenge": "Build a comprehensive web platform for the 2026 Winter Olympics in Milano-Cortina — covering 16 disciplines, 115 events, ~140 athletes, and 9 competition venues with real-time search and an interactive 17-day calendar.",
-      "solution": "Built a Next.js 14 application with TypeScript, Tailwind CSS, and Framer Motion. Fuzzy search system (Fuse.js) with Ctrl+K shortcut, Leaflet interactive venue map, daily event calendar, detailed athlete profiles, and an 'Ice & Summit' design system with glacial blue theme. 51 unit and integration tests.",
-      "result": "Complete application covering 16 Olympic disciplines. 115 events with interactive 17-day calendar. Instant fuzzy search. 9 competition venues on map. 51 tests. Lighthouse score 95+.",
+      "challenge": "Deliver a reliable platform on a tight timeline to cover the 2026 Winter Olympics (Milano Cortina), with clear navigation across disciplines, athletes, venues, and schedule while keeping a smooth experience on mobile and desktop.",
+      "solution": "Designed and shipped a Next.js 14 application with TypeScript, Tailwind CSS, and Framer Motion. Implemented fuzzy search (Fuse.js), an interactive Leaflet venue map, a competition schedule, and detailed athlete pages, all within the Ice & Summit design system.",
+      "result": "Production-ready WinterPulse 2026 platform: 16 disciplines covered, 115 events indexed, 9 venues mapped, instant search, and 51 unit/integration tests. Lighthouse performance remained at 95+ on key pages.",
       "metricValue": "16",
-      "metricLabel": "Disciplines"
+      "metricLabel": "Disciplines covered"
     },
     "n8n-ecosystem": {
-      "title": "Enterprise n8n Ecosystem",
+      "title": "n8n Automation Ecosystem",
       "industry": "Business Automation",
       "clientSize": "Multi-domain infrastructure (14 departments)",
       "timeline": "12+ months of continuous development",
@@ -159,8 +160,8 @@
       "clientSize": "Internal tool — website auditing",
       "timeline": "2 months of development",
       "methodology": "Multi-axis scoring + empirical calibration",
-      "challenge": "Systematically assess the security posture, performance, and resilience of websites — existing tools (Lighthouse, Observatory) provide partial scores without a unified vision or global scoring.",
-      "solution": "Engineered a 4-axis audit scanner: Performance (20%), Security (30%), Intrusion (30%), Resources (20%). Integrates Lighthouse and Mozilla Observatory, analyzes 110+ known trackers, detects common vulnerabilities (XSS, clickjacking, missing headers). Calibrated grade system: Exemplary / Compliant / At Risk / Critical.",
+      "challenge": "Systematically assess the security posture, performance, and resilience of websites — existing tools provide partial scores without a unified vision or global scoring.",
+      "solution": "Engineered a 4-axis audit scanner: Performance (20%), Security (30%), Intrusion (30%), Resources (20%). Integrates Lighthouse and Mozilla Observatory, analyzes 110+ known trackers, detects common vulnerabilities. Calibrated grade system: Exemplary / Compliant / At Risk / Critical.",
       "result": "Operational scanner with 4 weighted axes. 110+ trackers in blocklist. Detailed reports with Rich CLI interface. Grades calibrated on real-world data. Scan time < 60s per site.",
       "metricValue": "4-Axis",
       "metricLabel": "Scoring"
@@ -172,7 +173,7 @@
       "timeline": "6 weeks of development",
       "methodology": "Cinematic design + WebGL performance testing",
       "challenge": "Standard portfolio sites blend into the noise. The client needed a site that demonstrates technical mastery through the experience itself — not just screenshots.",
-      "solution": "Built a cinematic portfolio with React 19, Three.js (3D Arc Reactor with WebGL shaders), Framer Motion animations, Howler.js procedural audio (6 interactive sounds), and a full 'Overclock Mode' that transforms the entire UI — colors, speed, sounds, messaging — in real time.",
+      "solution": "Built a cinematic portfolio with React 19, Three.js (3D Arc Reactor with WebGL shaders), Framer Motion animations, Howler.js procedural audio (6 interactive sounds), and a full 'Overclock Mode' that transforms the entire UI in real time.",
       "result": "Live on Netlify. 373KB gzipped JS bundle. 10 complete sections. Real-time 3D rendering with mode transformation. 7-second build time on CI/CD.",
       "metricValue": "LIVE",
       "metricLabel": "Production"
@@ -184,11 +185,11 @@
   },
   "about": {
     "missionLabel": "Our Mission",
-    "missionTitle": "Automation That Actually Works",
-    "mission": "Mark Systems exists to turn complex AI capabilities into production systems that deliver measurable results. We don't sell demos — we ship workflows, agents, and platforms that run 24/7 and prove their value in numbers. Built by an engineer with 10+ years of field experience, every solution is designed for the real world.",
+    "missionTitle": "Digital Assets That Work for You",
+    "mission": "Mark Systems exists to turn your digital needs into systems that deliver measurable results. Not demos — websites that convert, automations that run, and AI tools that solve real problems. Built by an engineer with 10+ years of field experience, every solution is designed for the real world.",
     "teamLabel": "The Founder",
     "teamTitle": "Engineering-First, Always",
-    "teamDescription": "One engineer. 10+ years in the field. From industrial production lines to AI operating systems.",
+    "teamDescription": "One engineer. 10+ years in the field. From industrial production lines to strategic web systems.",
     "valuesLabel": "Our Principles",
     "valuesTitle": "How We Operate",
     "valuesDescription": "Four non-negotiable principles that define every engagement."
@@ -196,36 +197,36 @@
   "team": {
     "founder": {
       "role": "Founder & Lead Engineer",
-      "bio": "Senior electrical engineer with 10+ years in industrial automation (PLC/CNC, defense-sector production lines, HV power grid protection). Now building AI automation systems — from a 84K-line AI operating system to 195 production n8n workflows. Based in Quebec, Canada."
+      "bio": "Senior electrical engineer with 10+ years in industrial automation (PLC/CNC, defense-sector production lines, HV power grid protection). Founder of Mark Systems — strategic web agency specializing in Next.js 15+ sites, business automation, and applied AI for Quebec and Canadian SMBs."
     }
   },
   "values": {
     "0": {
       "title": "Precision Over Hype",
-      "description": "We ship measurable results, not promises. Every system is benchmarked with real metrics before delivery — no buzzwords, no magic, just engineering."
+      "description": "We ship measurable results, not promises. Every site is benchmarked, every automation validated before delivery — no buzzwords, no magic, just engineering."
     },
     "1": {
       "title": "Systems Thinking",
-      "description": "Every component is designed for the whole. We build solutions that integrate into existing infrastructure — not isolated prototypes that break on contact with reality."
+      "description": "Every component is designed for the whole. We build solutions that integrate into your existing infrastructure — not isolated prototypes that break on contact with reality."
     },
     "2": {
-      "title": "Battle-Tested Engineering",
-      "description": "10+ years of industrial field experience means we build for failure modes, not just happy paths. PLC rigor applied to AI systems."
+      "title": "Battle-Tested Rigor",
+      "description": "10+ years of industrial field experience means we build for failure modes, not just happy paths. That rigor applies to every site and system we deliver."
     },
     "3": {
-      "title": "Zero Vendor Lock-In",
-      "description": "Multi-LLM, multi-cloud, open-source first. Your systems run on your terms — we build abstraction layers, not dependencies."
+      "title": "Your Data, Your Rules",
+      "description": "Multi-LLM, open-source first, zero lock-in. Your systems run on your terms — we build abstraction layers, not vendor dependencies."
     }
   },
   "contact": {
     "label": "Get in Touch",
     "title": "Start a Conversation",
-    "description": "Tell us about your automation challenges and we'll engineer the system to solve them.",
+    "description": "Tell us about your project — website, automation, or AI system — and we'll design the right solution.",
     "emailLabel": "Email",
-    "emailAddress": "contact@marksystems.ai",
+    "emailAddress": "contact@marksystems.ca",
     "locationLabel": "Location",
     "locationCity": "Quebec, Canada",
-    "locationDetail": "Remote-first — serving clients worldwide"
+    "locationDetail": "Remote-first — serving clients across Canada and internationally"
   },
   "contactForm": {
     "name": "Name",
@@ -242,7 +243,7 @@
     "sending": "Sending...",
     "successTitle": "Message Sent",
     "successMessage": "Thank you for reaching out. We'll get back to you within 24 hours.",
-    "errorMessage": "Something went wrong. Please try again or email us directly at contact@marksystems.ai.",
+    "errorMessage": "Something went wrong. Please try again or email us at contact@marksystems.ca.",
     "required": "*"
   },
   "validation": {
@@ -254,9 +255,9 @@
     "messageMinLength": "Message must be at least 10 characters"
   },
   "cta": {
-    "label": "Ready to Automate?",
+    "label": "Ready to Take Action?",
     "title": "Let's Build Something That Works",
-    "description": "Tell us about your automation challenges. We'll design the intelligent system that turns them into competitive leverage.",
+    "description": "Tell us about your project — website, automation, or applied AI. We'll design the system that turns your challenges into competitive advantage.",
     "button": "Start a Conversation"
   },
   "notFound": {
@@ -266,31 +267,50 @@
     "back": "Back to Home"
   },
   "footer": {
-    "description": "Engineering AI automation systems that deliver measurable results.",
+    "description": "Strategic websites, business automation, and applied AI — built to convert and operate.",
     "navLabel": "Navigation",
+    "legalLabel": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
     "connectLabel": "Connect",
-    "copyright": "© {year} Mark Systems. All rights reserved."
+    "copyright": "© {year} Mark Systems. All rights reserved.",
+    "loi25": "Compliant with Quebec Law 25"
+  },
+  "cookie": {
+    "title": "Cookie Management",
+    "description": "This site uses cookies to improve your experience. In compliance with Quebec Law 25, you can choose which cookie categories you accept.",
+    "privacyLink": "Privacy Policy",
+    "essential": "Essential",
+    "essentialDesc": "Required for the site to function. Cannot be disabled.",
+    "analyticsLabel": "Analytics",
+    "analyticsDesc": "Help us understand how you use the site (Vercel Analytics).",
+    "marketingLabel": "Marketing",
+    "marketingDesc": "Used to measure the effectiveness of our communications.",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "saveChoices": "Save My Choices",
+    "customize": "Customize"
   },
   "metadata": {
     "home": {
-      "title": "Mark Systems — AI Automation & Decision Engineering | Montreal",
-      "description": "Mark Systems builds production-grade AI automation systems in Montreal: multi-agent orchestration, 195+ n8n workflows, intelligent platforms. AI engineering firm — not affiliated with ECI Mark Systems (construction ERP)."
+      "title": "Mark Systems — Strategic Web Agency, Automation, AI & Architecture | Quebec",
+      "description": "Mark Systems builds strategic websites (Next.js 15+), business automations, custom AI systems, and technical architecture for SMBs in Quebec and across Canada."
     },
     "services": {
-      "title": "AI Automation Services — Montreal",
-      "description": "AI automation services in Montreal: n8n workflows, AINOVA OS multi-agent architecture, full-stack web development, PLC/CNC industrial automation, IoT, and custom AI tools."
+      "title": "Services — Websites, Automation & AI | Mark Systems",
+      "description": "Bilingual showcase sites, landing pages, n8n automations, AI assistants, technical architecture, and monthly maintenance — Mark Systems, Quebec."
     },
     "projects": {
-      "title": "AI Automation Case Studies",
-      "description": "Real AI automation case studies: AINOVA OS (AI operating system, μ=9.94), n8n ecosystem (195 workflows), financial platform, and immersive 3D portfolio."
+      "title": "Case Studies — Mark Systems",
+      "description": "Web and AI projects in production: AINOVA OS (μ=9.94), 195 n8n workflows, 3D WebGL portfolio and more. Measurable results, live systems."
     },
     "about": {
-      "title": "About — AI Engineering Montreal",
-      "description": "Mark Systems — 10+ years of engineering, from industrial PLC/CNC production lines to AI operating systems. AI automation firm based in Montreal, Quebec."
+      "title": "About — Mark Systems | Quebec",
+      "description": "Mark Systems — strategic web agency founded by an engineer with 10+ years of experience. Next.js 15+ websites, automation, applied AI, and technical architecture for Quebec SMBs."
     },
     "contact": {
-      "title": "Contact — AI Automation Montreal",
-      "description": "Contact Mark Systems in Montreal to discuss your AI automation challenges, intelligent workflows, and production systems."
+      "title": "Contact — Mark Systems | Quebec",
+      "description": "Contact Mark Systems for a strategic website, business automation, applied AI implementation, or technical architecture scoping."
     },
     "ainova": {
       "title": "AiNova OS — Production AI Operating System | Mark Systems",
@@ -298,36 +318,44 @@
     },
     "brief": {
       "title": "Project Brief — Mark Systems",
-      "description": "Brief form for your web project."
+      "description": "Start your web project with Mark Systems. Quick and structured brief form."
     }
   },
   "faq": {
     "label": "Frequently Asked Questions",
-    "title": "FAQ — AI Automation",
+    "title": "FAQ",
     "items": {
       "0": {
-        "question": "What is Mark Systems and how is it related to ECI Mark Systems?",
-        "answer": "Mark Systems is an AI engineering firm specializing in workflow automation, multi-agent orchestration, and intelligent systems, based in Montreal. We have no affiliation with ECI Mark Systems, which is a residential construction ERP software provider."
+        "question": "What is Mark Systems?",
+        "answer": "Mark Systems is a strategic web agency based in Quebec, specializing in website creation (Next.js 15+, TypeScript), business automation, and applied AI for Quebec and Canadian SMBs. We have no affiliation with ECI Mark Systems, a residential construction ERP software provider."
       },
       "1": {
-        "question": "What types of AI automation do you offer?",
-        "answer": "We offer AI workflow automation via n8n (195+ deployed workflows), multi-agent system architecture (AINOVA OS), full-stack web development, industrial automation (PLC/CNC), IoT intelligence, and custom AI tools with multi-LLM routing."
+        "question": "What types of websites do you build?",
+        "answer": "We build conversion landing pages, custom showcase sites (4–6 pages), bilingual FR/EN sites, and sites with blogs or interactive calculators — all built on Next.js 15+ App Router, strict TypeScript, Tailwind CSS, deployed on Vercel with technical SEO and Law 25 compliance included."
       },
       "2": {
-        "question": "How much does an AI automation project cost?",
-        "answer": "Every project is unique. Cost depends on complexity, number of workflows, required integrations, and level of customization. Contact us for a free assessment of your automation needs."
+        "question": "What's included in a website package?",
+        "answer": "All our packages include: custom design (palette, typography, components), responsive development (mobile/tablet/desktop), basic technical SEO, deployment with SSL, and up to 3 revision rounds per phase. Interactive modules (booking, calculator, AI chatbot) are available as add-ons."
       },
       "3": {
-        "question": "Do you work with clients outside Quebec?",
-        "answer": "Yes, we operate remote-first and serve clients worldwide. Our expertise in AI automation, web development, and industrial engineering is available internationally."
+        "question": "Do you offer maintenance after launch?",
+        "answer": "Yes. We offer monthly maintenance plans covering monitoring, technical updates, routine modifications, analytics reports, and continuous improvement recommendations — from light support to a monthly development partnership."
       },
       "4": {
-        "question": "What is AINOVA OS?",
-        "answer": "AINOVA OS is our production AI operating system: 35+ specialized agents, a self-optimizing SOIC convergence engine (μ=9.94/10), Tree-of-Thoughts decision exploration, and Kubernetes infrastructure. It's 84,000+ lines of production Python."
+        "question": "What types of automation do you offer?",
+        "answer": "We automate recurring operations: client onboarding, lead qualification and pipeline, automated reminders, lightweight CRM (Notion, Sheets, Airtable), tool synchronization, and report generation. We primarily work with n8n and Make, integrated into your existing tools."
       },
       "5": {
-        "question": "What is your industrial automation expertise?",
-        "answer": "Our founder has 10+ years of industrial electrical engineering experience: PLC/CNC programming, production line design (including defense sector), and HV/MV/LV power grid protection system engineering."
+        "question": "What does applied AI mean concretely?",
+        "answer": "Applied AI means tools that solve a specific problem: an AI assistant that answers your clients' questions, a knowledge base built from your internal documents, or an LLM-powered prospect qualification system. We work with OpenAI, Anthropic, Groq, and open-source models depending on your needs."
+      },
+      "6": {
+        "question": "Do you work with clients outside Quebec?",
+        "answer": "Yes, we operate remote-first and serve clients across Canada and internationally. Our expertise in web development, automation, and AI is available regardless of your location."
+      },
+      "7": {
+        "question": "How do I start a project with Mark Systems?",
+        "answer": "With a free 15–30 min discovery call to scope your needs. We then propose a detailed quote with phases and deliverables. We require a 50% deposit to start and the balance on delivery."
       }
     }
   },
@@ -348,7 +376,7 @@
       "subtitle": "Production AI Operating System",
       "description": "35+ specialized agents, a self-optimizing convergence engine, and enterprise-grade infrastructure — engineered for teams that need AI they can trust in production.",
       "ctaPrimary": "Contact Us",
-      "ctaSecondary": "View on GitHub"
+      "ctaSecondary": "Request a Demo"
     },
     "overview": {
       "label": "The Problem & Solution",
@@ -476,7 +504,7 @@
     "nav": {
       "previous": "Previous",
       "next": "Next",
-      "submit": "Submit brief",
+      "submit": "Submit Brief",
       "submitting": "Sending...",
       "stepOf": "Step {current} of {total}"
     },
@@ -489,9 +517,9 @@
       "neq": "NEQ (optional)",
       "neqPlaceholder": "10 digits",
       "address": "Headquarters address",
-      "addressPlaceholder": "123 Example St, Montreal QC",
+      "addressPlaceholder": "123 Example St, Quebec QC",
       "phone": "Phone",
-      "phonePlaceholder": "514-555-0000",
+      "phonePlaceholder": "418-555-0000",
       "email": "Main email",
       "emailPlaceholder": "info@company.ca"
     },
@@ -569,7 +597,7 @@
       "competitors": "Competitor URLs (optional)",
       "competitorsPlaceholder": "e.g. competitor1.ca, competitor2.com",
       "keywords": "Priority SEO keywords (optional)",
-      "keywordsPlaceholder": "e.g. montreal bakery, artisan bread",
+      "keywordsPlaceholder": "e.g. web agency quebec, sme website",
       "freeText": "Free context / notes",
       "freeTextPlaceholder": "Describe your business, goals, anything that could help us..."
     },
@@ -582,8 +610,8 @@
       "sectionLegal": "Law 25",
       "sectionDesign": "Design",
       "sectionSeo": "SEO",
-      "successTitle": "Brief submitted!",
-      "successMessage": "Your brief has been sent to the Mark Systems team. We will process it shortly. A summary PDF has been downloaded to your device.",
+      "successTitle": "Brief Submitted!",
+      "successMessage": "Your brief has been sent to the Mark Systems team. We will be in touch shortly. A summary PDF has been downloaded to your device.",
       "errorMessage": "An error occurred while sending. Please try again."
     },
     "validation": {
@@ -606,6 +634,40 @@
       "yes": "Yes",
       "no": "No",
       "required": "*"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "metaDescription": "Mark Systems Privacy Policy — compliant with Quebec Law 25 on the protection of personal information.",
+    "lastUpdated": "Last updated: March 22, 2026",
+    "intro": "Mark Systems is committed to protecting personal information in accordance with Quebec Law 25 (Act to modernize legislative provisions as regards the protection of personal information). This policy describes the information we collect, how we use it, and your rights.",
+    "dataCollected": {
+      "title": "1. Information Collected",
+      "content": "We collect the following information:\n\n• First and last name (contact form and brief)\n• Email address (contact form and brief)\n• Company name (optional)\n• Phone number (brief)\n• Mailing address (brief)\n• Message content and project descriptions\n• Anonymized browsing data (Vercel Analytics)"
+    },
+    "purposes": {
+      "title": "2. Processing Purposes",
+      "content": "Your information is used exclusively to:\n\n• Respond to your contact requests\n• Prepare service proposals\n• Improve our website (anonymized data)\n• Comply with our legal obligations"
+    },
+    "cookies": {
+      "title": "3. Cookies",
+      "content": "Our site uses cookies in three categories:\n\n• Essential: required for the site to function (language preferences, cookie consent). Cannot be disabled.\n• Analytics: Vercel Analytics to understand site usage. Anonymized data, no personal information transmitted.\n• Marketing: no marketing cookies are currently used.\n\nYou can manage your preferences via the consent banner displayed on your first visit. Your consent is stored for 6 months."
+    },
+    "thirdParties": {
+      "title": "4. Third-Party Services",
+      "content": "We use the following third-party services:\n\n• Formspree (form processing) — data is transmitted to Formspree Inc. for message routing\n• Vercel Analytics (anonymized traffic analysis)\n\nNo personal data is sold or shared for advertising purposes."
+    },
+    "retention": {
+      "title": "5. Data Retention",
+      "content": "Personal information is retained for a maximum of 24 months after the last contact, unless a legal obligation requires otherwise. Anonymized analytics data is retained indefinitely."
+    },
+    "rights": {
+      "title": "6. Your Rights (Law 25)",
+      "content": "Under Quebec Law 25, you have the right to:\n\n• Access your personal information\n• Correct inaccurate information\n• Withdraw your consent at any time\n• Request deletion of your data\n• File a complaint with the Commission d'accès à l'information du Québec (CAI)\n\nTo exercise these rights, contact our privacy officer."
+    },
+    "contact": {
+      "title": "7. Privacy Officer",
+      "content": "Marc-Antoine Bherer\nPrivacy Officer\nEmail: privacy@marksystems.ca\n\nMark Systems\nQuebec, QC, Canada"
     }
   }
 }
