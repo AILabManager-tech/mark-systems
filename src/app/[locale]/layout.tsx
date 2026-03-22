@@ -104,7 +104,16 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
       addressRegion: "QC",
       addressCountry: "CA",
     },
-    sameAs: [],
+    sameAs: [
+      "https://github.com/AILabManager-tech",
+      "https://www.linkedin.com/company/mark-systems-ca",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "contact@marksystems.ca",
+      contactType: "customer service",
+      availableLanguage: ["French", "English"],
+    },
     knowsAbout: [
       "AI Automation",
       "Applied AI",
