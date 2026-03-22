@@ -8,39 +8,9 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { locales, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-function FlagSvg({ children }: { children: React.ReactNode }) {
-  return (
-    <svg
-      viewBox="0 0 20 14"
-      className="h-3.5 w-5 shrink-0 overflow-hidden rounded-[2px] border border-white/10"
-      aria-hidden="true"
-    >
-      {children}
-    </svg>
-  );
-}
-
-const FLAGS: Record<Locale, React.ReactNode> = {
-  // England (St George's Cross)
-  en: (
-    <FlagSvg>
-      <rect width="20" height="14" fill="#FFF" />
-      <rect x="8.5" width="3" height="14" fill="#CE1124" />
-      <rect y="5.5" width="20" height="3" fill="#CE1124" />
-    </FlagSvg>
-  ),
-  // Canada
-  fr: (
-    <FlagSvg>
-      <rect width="5" height="14" fill="#FF0000" />
-      <rect x="5" width="10" height="14" fill="#FFF" />
-      <rect x="15" width="5" height="14" fill="#FF0000" />
-      <path
-        d="M10 3l.6 2h2l-1.5 1.2.5 1.8-1.6-1.2-1.6 1.2.5-1.8L7.4 5h2z"
-        fill="#FF0000"
-      />
-    </FlagSvg>
-  ),
+const SHORT_LABELS: Record<Locale, string> = {
+  en: "EN",
+  fr: "FR",
 };
 
 const LABELS: Record<Locale, string> = {
@@ -81,7 +51,7 @@ export function LanguageSwitcher() {
         aria-haspopup="listbox"
         aria-label="Change language"
       >
-        {FLAGS[locale]}
+        <span className="font-mono text-xs font-bold tracking-wider">{SHORT_LABELS[locale]}</span>
         <ChevronDown
           className={cn(
             "h-3 w-3 transition-transform duration-200",
@@ -118,7 +88,7 @@ export function LanguageSwitcher() {
                       : "text-text-secondary hover:bg-surface-light hover:text-text-primary"
                   )}
                 >
-                  {FLAGS[loc]}
+                  <span className="font-mono text-xs font-bold tracking-wider w-6">{SHORT_LABELS[loc]}</span>
                   <span>{LABELS[loc]}</span>
                 </Link>
               );
