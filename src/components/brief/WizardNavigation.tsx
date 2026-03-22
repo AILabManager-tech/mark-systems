@@ -33,6 +33,7 @@ export function WizardNavigation({ currentStep, onPrev, onNext, onSubmit, submit
       )}
 
       {isLast ? (
+        <div className="flex flex-col items-end gap-2">
         <Button type="button" onClick={onSubmit} disabled={submitting}>
           {submitting ? (
             <>
@@ -46,6 +47,11 @@ export function WizardNavigation({ currentStep, onPrev, onNext, onSubmit, submit
             </>
           )}
         </Button>
+        <p className="text-xs text-text-tertiary">
+          {t("privacyNotice")}{" "}
+          <a href="/fr/privacy" className="underline hover:text-text-secondary">{t("privacyLink")}</a>
+        </p>
+        </div>
       ) : (
         <Button type="button" onClick={onNext}>
           {t("next")}
