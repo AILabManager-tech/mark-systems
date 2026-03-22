@@ -21,8 +21,8 @@ function CaseStudyJsonLd({ locale }: { locale: string }) {
         en: "AINOVA OS — AI Operating System",
       },
       "winterpulse": {
-        fr: "WinterPulse 2026 — Plateforme Jeux Olympiques d'hiver",
-        en: "WinterPulse 2026 — Winter Olympics Platform",
+        fr: "WinterPulse 2026 — Plateforme éditoriale des JO d'hiver",
+        en: "WinterPulse 2026 — Winter Olympics Editorial Platform",
       },
       "n8n-ecosystem": {
         fr: "Écosystème n8n d'entreprise — 195 workflows",
@@ -80,7 +80,7 @@ export default function ProjectsPage({
       <CaseStudyJsonLd locale={locale} />
       <section className="section-padding">
         <div className="section-container">
-          <SectionHeader ns="projectsPage" />
+          <SectionHeader ns="projectsPage" as="h1" />
           <ProjectGrid />
         </div>
       </section>

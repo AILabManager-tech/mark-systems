@@ -42,7 +42,7 @@ export function Navbar() {
         className={cn(
           "fixed left-0 right-0 top-0 z-30 transition-all duration-300",
           scrolled
-            ? "border-b border-surface-border/50 bg-background/70 backdrop-blur-xl shadow-[0_1px_12px_rgba(0,161,155,0.05)]"
+            ? "border-b border-surface-border/50 bg-background/60 backdrop-blur-xl shadow-[0_1px_20px_rgba(0,161,155,0.07)]"
             : "bg-transparent"
         )}
       >
@@ -51,7 +51,7 @@ export function Navbar() {
             href="/"
             className="flex items-center gap-2.5 text-xl font-bold uppercase tracking-tighter text-text-primary"
           >
-            <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8" />
+            <Image src="/logo.png" alt="Mark Systems logo" width={32} height={32} className="h-8 w-8" />
             {tCommon("siteName")}
           </Link>
 
@@ -87,7 +87,7 @@ export function Navbar() {
             <LanguageSwitcher />
             <Link
               href="/contact"
-              className="hidden rounded-sm bg-text-primary px-5 py-2 text-sm font-bold text-background transition-colors hover:bg-accent hover:text-text-primary md:inline-block"
+              className="hidden rounded-sm bg-text-primary px-5 py-2 text-sm font-bold text-background transition-all duration-300 hover:bg-accent hover:text-text-primary hover:shadow-glow-accent-lg md:inline-block"
             >
               {tNav("contact")}
             </Link>

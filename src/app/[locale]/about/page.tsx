@@ -30,14 +30,14 @@ function AboutJsonLd({ locale }: { locale: string }) {
       },
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Montréal",
+        addressLocality: "Québec",
         addressRegion: "QC",
         addressCountry: "CA",
       },
       description:
         locale === "fr"
-          ? "Mark Systems conçoit des systèmes d'automatisation IA de production — orchestration multi-agents, workflows intelligents et plateformes d'entreprise."
-          : "Mark Systems builds production-grade AI automation systems — multi-agent orchestration, intelligent workflows, and enterprise platforms.",
+          ? "Mark Systems conçoit des sites web stratégiques, des automatisations métier, des systèmes IA appliqués et des architectures techniques pour les entreprises en croissance."
+          : "Mark Systems designs strategic websites, business automation workflows, applied AI systems, and technical architectures for growing companies.",
     },
   };
 
@@ -64,6 +64,7 @@ export default function AboutPage({
           <SectionHeader
             label={t("missionLabel")}
             title={t("missionTitle")}
+            as="h1"
           />
           <p className="mx-auto max-w-3xl text-center text-body-lg leading-relaxed text-text-secondary">
             {t("mission")}

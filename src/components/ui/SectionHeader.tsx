@@ -9,6 +9,7 @@ interface SectionHeaderWithNsProps {
   ns: string;
   centered?: boolean;
   className?: string;
+  as?: "h1" | "h2";
   label?: never;
   title?: never;
   description?: never;
@@ -21,12 +22,13 @@ interface SectionHeaderWithPropsProps {
   description?: string;
   centered?: boolean;
   className?: string;
+  as?: "h1" | "h2";
 }
 
 type SectionHeaderProps = SectionHeaderWithNsProps | SectionHeaderWithPropsProps;
 
 export function SectionHeader(props: SectionHeaderProps) {
-  const { centered = true, className } = props;
+  const { centered = true, className, as: Heading = "h2" } = props;
   const t = useTranslations(props.ns || "common");
 
   const label = props.ns ? t("label") : props.label;
@@ -48,9 +50,9 @@ export function SectionHeader(props: SectionHeaderProps) {
           {"// "}{label}
         </span>
       )}
-      <h2 className="text-h2 font-bold text-text-primary lg:text-h1">
+      <Heading className="text-h2 font-bold text-text-primary lg:text-h1">
         {title}
-      </h2>
+      </Heading>
       {description && (
         <p className="mt-4 max-w-2xl text-body-lg text-text-secondary lg:mt-6 mx-auto">
           {description}

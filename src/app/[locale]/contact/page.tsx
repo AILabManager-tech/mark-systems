@@ -23,10 +23,10 @@ function ContactJsonLd({ locale }: { locale: string }) {
     mainEntity: {
       "@type": "Organization",
       name: "Mark Systems",
-      email: "contact@marksystems.ai",
+      email: "contact@marksystems.ca",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Montréal",
+        addressLocality: "Québec",
         addressRegion: "QC",
         addressCountry: "CA",
       },
@@ -58,6 +58,7 @@ export default function ContactPage({
             label={t("label")}
             title={t("title")}
             description={t("description")}
+            as="h1"
           />
           <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-5">
             <div className="lg:col-span-3">

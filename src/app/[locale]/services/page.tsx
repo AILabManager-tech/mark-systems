@@ -64,7 +64,7 @@ export default function ServicesPage({
       <ServicesJsonLd locale={locale} />
       <section className="section-padding">
         <div className="section-container">
-          <SectionHeader ns="servicesPage" />
+          <SectionHeader ns="servicesPage" as="h1" />
           <ServiceGrid />
         </div>
       </section>
