@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 text-lg font-bold text-text-primary tracking-tight">
-              <Image src="/logo.png" alt="Mark Systems logo" width={28} height={28} className="h-7 w-7" />
+              <Image src="/logo.webp" alt="Mark Systems logo" width={28} height={28} className="h-7 w-7" />
               {tCommon("siteName")}
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-text-secondary">

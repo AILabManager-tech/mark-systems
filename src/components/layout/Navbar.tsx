@@ -52,7 +52,7 @@ export function Navbar() {
             href="/"
             className="flex items-center gap-2.5 text-xl font-bold uppercase tracking-tighter text-text-primary"
           >
-            <Image src="/logo.png" alt="Mark Systems logo" width={32} height={32} className="h-8 w-8" />
+            <Image src="/logo.webp" alt="Mark Systems logo" width={32} height={32} className="h-8 w-8" />
             {tCommon("siteName")}
           </Link>
 
