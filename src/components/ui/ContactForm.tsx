@@ -93,7 +93,7 @@ export function ContactForm() {
 
   if (submitState === "success") {
     return (
-      <div className="card-base py-16 text-center">
+      <div className="card-base py-16 text-center" aria-live="polite">
         <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-accent/10 text-accent">
           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
@@ -108,7 +108,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate aria-label="Formulaire de contact">
       {submitState === "error" && (
-        <div className="rounded-sm border border-red-500/30 bg-red-500/5 px-4 py-3 text-sm text-red-400">
+        <div role="alert" aria-live="assertive" className="rounded-sm border border-red-500/30 bg-red-500/5 px-4 py-3 text-sm text-red-400">
           {t("errorMessage")}
         </div>
       )}
@@ -151,6 +151,12 @@ export function ContactForm() {
         />
         {errors.message && <p id="contact-message-error" className="mt-1 text-xs text-red-400">{errors.message}</p>}
       </div>
+      <p className="text-xs text-text-tertiary">
+        {t("privacyNotice")}{" "}
+        <a href="/fr/privacy" className="underline hover:text-text-secondary">
+          {t("privacyLink")}
+        </a>
+      </p>
       <Button type="submit" className="w-full sm:w-auto" disabled={submitState === "submitting"}>
         {submitState === "submitting" ? (
           <>

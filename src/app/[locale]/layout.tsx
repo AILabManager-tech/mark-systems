@@ -170,7 +170,7 @@ export default async function LocaleLayout({
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
         <OrganizationJsonLd locale={locale} />
       </head>
-      <body className="noise-overlay relative min-h-screen font-sans antialiased">
+      <body className="noise-overlay relative min-h-screen font-sans antialiased dark">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <a
             href="#main-content"

@@ -188,6 +188,12 @@ export function BriefWizard() {
         {state.currentStep === 5 && <StepSeoContext state={state} dispatch={dispatch} />}
         {state.currentStep === 6 && <StepReview state={state} onEditStep={(step) => dispatch({ type: "SET_STEP", step })} />}
 
+        <p className="mt-4 text-xs text-text-tertiary text-center">
+          {t("nav.privacyNotice")}{" "}
+          <a href="/fr/privacy" className="underline hover:text-text-secondary">
+            {t("nav.privacyLink")}
+          </a>
+        </p>
         <WizardNavigation
           currentStep={state.currentStep}
           onPrev={handlePrev}

@@ -241,6 +241,8 @@
     "messagePlaceholder": "Tell us about your project or challenge...",
     "submit": "Send Message",
     "sending": "Sending...",
+    "privacyNotice": "By submitting this form, you agree to our",
+    "privacyLink": "privacy policy",
     "successTitle": "Message Sent",
     "successMessage": "Thank you for reaching out. We'll get back to you within 24 hours.",
     "errorMessage": "Something went wrong. Please try again or email us at contact@marksystems.ca.",
@@ -506,6 +508,8 @@
       "next": "Next",
       "submit": "Submit Brief",
       "submitting": "Sending...",
+      "privacyNotice": "By submitting, you agree to our",
+      "privacyLink": "privacy policy",
       "stepOf": "Step {current} of {total}"
     },
     "company": {

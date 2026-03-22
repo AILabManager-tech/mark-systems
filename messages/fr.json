@@ -241,6 +241,8 @@
     "messagePlaceholder": "Parlez-nous de votre projet ou défi...",
     "submit": "Envoyer le message",
     "sending": "Envoi en cours...",
+    "privacyNotice": "En soumettant ce formulaire, vous acceptez notre",
+    "privacyLink": "politique de confidentialité",
     "successTitle": "Message envoyé",
     "successMessage": "Merci pour votre message. Nous vous répondrons dans les 24 heures.",
     "errorMessage": "Une erreur est survenue. Réessayez ou écrivez-nous directement à contact@marksystems.ca.",
@@ -506,6 +508,8 @@
       "next": "Suivant",
       "submit": "Soumettre le brief",
       "submitting": "Envoi en cours...",
+      "privacyNotice": "En soumettant, vous acceptez notre",
+      "privacyLink": "politique de confidentialité",
       "stepOf": "Étape {current} de {total}"
     },
     "company": {
