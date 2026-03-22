@@ -361,6 +361,18 @@
       }
     }
   },
+  "auditBanner": {
+    "label": "SaaS Product",
+    "title": "NEXOS Audit Toolkit",
+    "description": "Deep-audit any website — security, performance, SEO, accessibility, Law 25 compliance and more. 14 scanners, 9 certifiable badges, multilingual PDF reports. Enter your Git repo and get a /10 score in 30 seconds.",
+    "metric1Value": "14",
+    "metric1Label": "Scanners",
+    "metric2Value": "9",
+    "metric2Label": "Badges",
+    "metric3Value": "8.72",
+    "metric3Label": "Our Score",
+    "button": "Run a Free Audit"
+  },
   "ainovaBanner": {
     "label": "Flagship Product",
     "title": "AiNova OS",

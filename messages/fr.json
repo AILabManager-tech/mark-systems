@@ -361,6 +361,18 @@
       }
     }
   },
+  "auditBanner": {
+    "label": "Produit SaaS",
+    "title": "NEXOS Audit Toolkit",
+    "description": "Auditez n'importe quel site web en profondeur — sécurité, performance, SEO, accessibilité, Loi 25 et plus. 14 scanners, 9 badges certifiables, rapports PDF multilingues. Entrez votre repo Git et obtenez un score /10 en 30 secondes.",
+    "metric1Value": "14",
+    "metric1Label": "Scanners",
+    "metric2Value": "9",
+    "metric2Label": "Badges",
+    "metric3Value": "8.72",
+    "metric3Label": "Notre score",
+    "button": "Lancer un audit gratuit"
+  },
   "ainovaBanner": {
     "label": "Produit phare",
     "title": "AiNova OS",
