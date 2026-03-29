@@ -309,8 +309,18 @@
         "name": "NEXOS",
         "tagline": "56 agents IA, 6 phases, quality gates intégrés.",
         "description": "Pipeline de création de sites web assisté par IA. Coordonne 56 agents spécialisés à travers 6 phases séquentielles avec quality gates SOIC.",
-        "features": ["Multi-stack (Next.js, Nuxt, Astro)", "Loi 25 intégrée", "Auto-fix sécurité", "Scoring SOIC μ ≥ 8.5"],
-        "stack": ["Python", "Next.js 15", "TypeScript", "SOIC v3"],
+        "features": [
+          "Multi-stack (Next.js, Nuxt, Astro)",
+          "Loi 25 intégrée",
+          "Auto-fix sécurité",
+          "Scoring SOIC μ ≥ 8.5"
+        ],
+        "stack": [
+          "Python",
+          "Next.js 15",
+          "TypeScript",
+          "SOIC v3"
+        ],
         "proof": "7 sites livrés — moyenne 9.33/10, tous Lighthouse 95+",
         "link": "https://github.com/AILabManager-tech/nexos-v3",
         "linkLabel": "GitHub"
@@ -319,8 +329,18 @@
         "name": "GENCORE",
         "tagline": "Plateforme d'agents IA. Local-first, sécurisée.",
         "description": "Plateforme d'agents IA pour entreprises. Sandbox Docker, 14 fournisseurs LLM, gouvernance par policies, audit trail immuable.",
-        "features": ["14 fournisseurs LLM", "Docker rootless sandbox", "Skill forge (9 skills)", "Multi-persona + RBAC"],
-        "stack": ["Python", "FastAPI", "Docker", "SQLite/PostgreSQL"],
+        "features": [
+          "14 fournisseurs LLM",
+          "Docker rootless sandbox",
+          "Skill forge (9 skills)",
+          "Multi-persona + RBAC"
+        ],
+        "stack": [
+          "Python",
+          "FastAPI",
+          "Docker",
+          "SQLite/PostgreSQL"
+        ],
         "proof": "918 tests (100% pass), 9 compétences intégrées",
         "link": "https://github.com/AILabManager-tech/GENCORE",
         "linkLabel": "GitHub"
@@ -329,8 +349,17 @@
         "name": "SOIC v3",
         "tagline": "9 dimensions qualité, un score global.",
         "description": "Moteur de scoring qualité web (0-10). Évalue Architecture, Documentation, Tests, Sécurité, Performance, Accessibilité, SEO, Conformité Loi 25, Code Quality.",
-        "features": ["Quality gates automatisés", "Feedback router correctif", "Convergence itérative", "Multi-profils (web, API, Python)"],
-        "stack": ["Python", "YAML Profiles", "JSON Persistence"],
+        "features": [
+          "Quality gates automatisés",
+          "Feedback router correctif",
+          "Convergence itérative",
+          "Multi-profils (web, API, Python)"
+        ],
+        "stack": [
+          "Python",
+          "YAML Profiles",
+          "JSON Persistence"
+        ],
         "proof": "Intégré dans NEXOS, GENCORE et les outils Mark Systems",
         "link": "",
         "linkLabel": ""
@@ -339,8 +368,18 @@
         "name": "OSIRIS Scanner",
         "tagline": "Score de santé web sur 4 axes.",
         "description": "Score composite (0-10) mesurant la santé opérationnelle d'un site web : performance, sécurité, intrusion, ressources.",
-        "features": ["Mode fast + deep (Playwright)", "Multi-run Lighthouse", "Historique + tendances", "Export JSON/PDF"],
-        "stack": ["Python", "Lighthouse", "Mozilla Observatory", "Playwright"],
+        "features": [
+          "Mode fast + deep (Playwright)",
+          "Multi-run Lighthouse",
+          "Historique + tendances",
+          "Export JSON/PDF"
+        ],
+        "stack": [
+          "Python",
+          "Lighthouse",
+          "Mozilla Observatory",
+          "Playwright"
+        ],
         "proof": "Utilisé en production sur tous les clients NEXOS",
         "link": "https://github.com/AILabManager-tech/osiris-scanner",
         "linkLabel": "GitHub"
@@ -349,8 +388,19 @@
         "name": "One-Click Report AI",
         "tagline": "Données brutes vers rapport PDF en un clic.",
         "description": "Transforme Excel, PDF, images (OCR) en rapports PDF visuels avec résumés IA. 4 langues supportées.",
-        "features": ["Upload multi-format", "Graphiques automatiques", "Résumés IA", "Export PDF, 4 langues"],
-        "stack": ["FastAPI", "Next.js 14", "WeasyPrint", "OpenAI", "Docker"],
+        "features": [
+          "Upload multi-format",
+          "Graphiques automatiques",
+          "Résumés IA",
+          "Export PDF, 4 langues"
+        ],
+        "stack": [
+          "FastAPI",
+          "Next.js 14",
+          "WeasyPrint",
+          "OpenAI",
+          "Docker"
+        ],
         "proof": "En production — rapports clients générés automatiquement",
         "link": "https://github.com/AILabManager-tech/one-click-report",
         "linkLabel": "GitHub"
@@ -359,8 +409,18 @@
         "name": "Financial Intelligence Suite",
         "tagline": "Dashboard financier avec scoring hybride IA.",
         "description": "Tableau de bord d'intelligence financière avec KPIs, scoring, graphiques interactifs et analyse de portefeuille.",
-        "features": ["Market pulse temps réel", "Top performers", "Safety badges", "Filtres avancés"],
-        "stack": ["React 19", "Vite", "Recharts", "Tailwind CSS"],
+        "features": [
+          "Market pulse temps réel",
+          "Top performers",
+          "Safety badges",
+          "Filtres avancés"
+        ],
+        "stack": [
+          "React 19",
+          "Vite",
+          "Recharts",
+          "Tailwind CSS"
+        ],
         "proof": "Score SOIC μ = 9.62/10",
         "link": "https://github.com/AILabManager-tech/financial-intelligence-suite",
         "linkLabel": "GitHub"
@@ -369,8 +429,17 @@
         "name": "NEXOS Architecture Viewer",
         "tagline": "Visualiseur interactif des 56 agents et 6 phases NEXOS.",
         "description": "Outil de navigation master-detail dans l'architecture NEXOS. Exploration des agents, phases et dimensions SOIC.",
-        "features": ["Master-detail interactif", "Navigation arborescente", "Aucune dépendance", "Vanilla HTML/CSS/JS"],
-        "stack": ["HTML", "CSS", "JavaScript"],
+        "features": [
+          "Master-detail interactif",
+          "Navigation arborescente",
+          "Aucune dépendance",
+          "Vanilla HTML/CSS/JS"
+        ],
+        "stack": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
         "proof": "Documentation vivante du pipeline NEXOS",
         "link": "https://github.com/AILabManager-tech/nexos-architecture-viewer",
         "linkLabel": "GitHub"
@@ -477,7 +546,7 @@
     "hero": {
       "label": "Outils gratuits",
       "title": "Nos outils",
-      "description": "8 outils développés en interne — gratuits ou en démonstration. Calculateurs, IA, scanners et rapports automatisés."
+      "description": "8 outils développés en interne — calculateurs, IA, scanners et rapports automatisés."
     },
     "items": {
       "estimaweb": {
@@ -528,6 +597,14 @@
         "url": "",
         "cta": "En savoir plus"
       }
+    },
+    "sections": {
+      "available": "En ligne",
+      "upcoming": "Bientôt disponible"
+    },
+    "badges": {
+      "online": "En ligne",
+      "upcoming": "Bientôt disponible"
     }
   },
   "about": {
@@ -570,12 +647,30 @@
       }
     },
     "stats": {
-      "agents": { "value": "56", "label": "agents NEXOS" },
-      "tests": { "value": "918", "label": "tests GENCORE" },
-      "workflows": { "value": "195", "label": "workflows n8n" },
-      "soicAvg": { "value": "9.33", "label": "score SOIC moyen" },
-      "sites": { "value": "7", "label": "sites en production" },
-      "dimensions": { "value": "9", "label": "dimensions qualité" }
+      "agents": {
+        "value": "56",
+        "label": "agents NEXOS"
+      },
+      "tests": {
+        "value": "918",
+        "label": "tests GENCORE"
+      },
+      "workflows": {
+        "value": "195",
+        "label": "workflows n8n"
+      },
+      "soicAvg": {
+        "value": "9.33",
+        "label": "score SOIC moyen"
+      },
+      "sites": {
+        "value": "7",
+        "label": "sites en production"
+      },
+      "dimensions": {
+        "value": "9",
+        "label": "dimensions qualité"
+      }
     }
   },
   "contact": {
@@ -592,14 +687,38 @@
       "subject": "Comment peut-on vous aider ?",
       "subjectPlaceholder": "Choisissez un service…",
       "subjects": {
-        "site-web": { "label": "Création de site web", "hint": "Nouveau site Next.js, landing page, e-commerce. Conforme Loi 25, bilingue FR/EN." },
-        "refonte": { "label": "Refonte / migration de site", "hint": "Modernisation de votre site existant vers Next.js. Audit SOIC inclus." },
-        "agents-ia": { "label": "Agents IA sur mesure", "hint": "Agents intelligents pour automatiser vos processus métier. Local-first ou cloud." },
-        "automatisation": { "label": "Automatisation (n8n / workflows)", "hint": "195+ workflows en production. Connectez vos outils et éliminez le travail manuel." },
-        "audit-qualite": { "label": "Audit qualité SOIC", "hint": "Score 0-10 sur 9 dimensions. Performance, sécurité, SEO, accessibilité, Loi 25." },
-        "consulting": { "label": "Consulting technique", "hint": "Architecture, choix de stack, revue de code, optimisation performance." },
-        "solution-custom": { "label": "Solution sur mesure", "hint": "Dashboard, SaaS, API, outil interne — on construit ce dont vous avez besoin." },
-        "autre": { "label": "Autre / Question générale", "hint": "Partenariat, information, presse, ou toute autre demande." }
+        "site-web": {
+          "label": "Création de site web",
+          "hint": "Nouveau site Next.js, landing page, e-commerce. Conforme Loi 25, bilingue FR/EN."
+        },
+        "refonte": {
+          "label": "Refonte / migration de site",
+          "hint": "Modernisation de votre site existant vers Next.js. Audit SOIC inclus."
+        },
+        "agents-ia": {
+          "label": "Agents IA sur mesure",
+          "hint": "Agents intelligents pour automatiser vos processus métier. Local-first ou cloud."
+        },
+        "automatisation": {
+          "label": "Automatisation (n8n / workflows)",
+          "hint": "195+ workflows en production. Connectez vos outils et éliminez le travail manuel."
+        },
+        "audit-qualite": {
+          "label": "Audit qualité SOIC",
+          "hint": "Score 0-10 sur 9 dimensions. Performance, sécurité, SEO, accessibilité, Loi 25."
+        },
+        "consulting": {
+          "label": "Consulting technique",
+          "hint": "Architecture, choix de stack, revue de code, optimisation performance."
+        },
+        "solution-custom": {
+          "label": "Solution sur mesure",
+          "hint": "Dashboard, SaaS, API, outil interne — on construit ce dont vous avez besoin."
+        },
+        "autre": {
+          "label": "Autre / Question générale",
+          "hint": "Partenariat, information, presse, ou toute autre demande."
+        }
       },
       "budget": "Budget estimé",
       "budgetPlaceholder": "Sélectionnez une fourchette",

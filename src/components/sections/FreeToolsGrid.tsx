@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { ExternalLink, Lock } from "lucide-react";
+import { ExternalLink, Clock } from "lucide-react";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { StaggerContainer } from "@/components/motion/StaggerContainer";
@@ -35,7 +35,7 @@ export function FreeToolsGrid() {
         {/* Public tools — grid 2 cols */}
         <FadeIn>
           <h2 className="mt-16 font-mono text-xs uppercase tracking-[0.28em] text-cyber-neon">
-            Accès libre
+            {t("sections.available")}
           </h2>
         </FadeIn>
         <StaggerContainer className="mt-6 grid gap-6 md:grid-cols-2">
@@ -48,7 +48,7 @@ export function FreeToolsGrid() {
                     <h3 className="font-mono text-lg font-bold uppercase tracking-[0.06em] text-txt-primary">
                       {t(`items.${key}.name`)}
                     </h3>
-                    <NeonBadge variant="neon">Gratuit</NeonBadge>
+                    <NeonBadge variant="neon">{t("badges.online")}</NeonBadge>
                   </div>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-txt-secondary">
                     {t(`items.${key}.description`)}
@@ -70,29 +70,28 @@ export function FreeToolsGrid() {
           })}
         </StaggerContainer>
 
-        {/* Internal tools */}
+        {/* Upcoming tools */}
         <FadeIn>
           <h2 className="mt-16 font-mono text-xs uppercase tracking-[0.28em] text-cyber-violet">
-            Outils internes
+            {t("sections.upcoming")}
           </h2>
         </FadeIn>
         <StaggerContainer className="mt-6 grid gap-6 md:grid-cols-3">
           {FREE_TOOL_KEYS.filter((k) => INTERNAL_KEYS.includes(k)).map((key) => (
             <FadeIn key={key}>
-              <GlowCard className="flex h-full flex-col p-6">
+              <GlowCard className="flex h-full flex-col p-6 opacity-75">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="font-mono text-base font-bold uppercase tracking-[0.06em] text-txt-primary">
                     {t(`items.${key}.name`)}
                   </h3>
-                  <Lock className="h-4 w-4 shrink-0 text-txt-tertiary" />
+                  <NeonBadge variant="violet">
+                    <Clock className="mr-1 inline-block h-3 w-3" />
+                    {t("badges.upcoming")}
+                  </NeonBadge>
                 </div>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-txt-secondary">
                   {t(`items.${key}.description`)}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-txt-tertiary">
-                  <Lock className="h-3 w-3" />
-                  Self-hosted · sur demande
-                </span>
               </GlowCard>
             </FadeIn>
           ))}
