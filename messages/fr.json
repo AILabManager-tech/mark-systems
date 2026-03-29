@@ -5,7 +5,7 @@
     "siteDescription": "Mark Systems conçoit des sites web, des agents IA et des workflows d'automatisation pour les PME québécoises. Basé à Longueuil.",
     "skipToContent": "Aller au contenu principal",
     "learnMore": "En savoir plus",
-    "tryFree": "Essayer gratuitement",
+    "tryFree": "Essayer",
     "startProject": "Démarrer un projet",
     "viewAll": "Voir tout",
     "back": "Retour",
@@ -37,15 +37,15 @@
     },
     "products": {
       "title": "Produits | Mark Systems",
-      "description": "7 outils développés en interne : NEXOS, GENCORE, SOIC v3, OSIRIS Scanner, One-Click Report, Financial Intelligence Suite et Architecture Viewer."
+      "description": "7 produits conçus, construits et maintenus par Mark Systems : NEXOS, GENCORE, SOIC v3, OSIRIS Scanner, One-Click Report, Financial Intelligence Suite et Architecture Viewer."
     },
     "projects": {
       "title": "Portfolio | Mark Systems",
       "description": "7 sites clients générés par NEXOS avec scores qualité SOIC réels (moyenne 9.33/10). Next.js, TypeScript, Loi 25, WCAG 2.1 AA."
     },
     "freeTools": {
-      "title": "Outils gratuits | Mark Systems",
-      "description": "3 outils gratuits : EstimaWeb QC (estimation coût site web), Impôts 2025 (calculateur fiscal), SAAQ Prep (examen permis classe 5)."
+      "title": "Nos outils | Mark Systems",
+      "description": "8 outils développés en interne : EstimaWeb QC, Impôts 2025, SAAQ Prep, One-Click Report, Financial Intelligence, SumMeet, Inbox Zero, OSIRIS."
     },
     "about": {
       "title": "À propos | Mark Systems",
@@ -87,11 +87,41 @@
       "line2": "construits avec rigueur.",
       "subtitle": "7 sites livrés · score qualité moyen 9.33/10 · conformes Loi 25.",
       "ctaPrimary": "Démarrer un projet",
-      "ctaSecondary": "Voir les produits"
+      "ctaSecondary": "Voir les produits",
+      "eyebrow": "Sites web · Automatisation · IA appliquée · Architecture",
+      "description": "On conçoit des sites web stratégiques, des automatisations métier et des systèmes IA sur mesure — de la page qui capte des leads au pipeline qui opère vos processus. Construit à Longueuil.",
+      "ctaServices": "Explorer les services",
+      "stats": {
+        "agents": {
+          "value": "56",
+          "label": "agents IA",
+          "sub": "pipeline NEXOS"
+        },
+        "score": {
+          "value": "9.33",
+          "label": "score moyen",
+          "sub": "SOIC qualité"
+        },
+        "sites": {
+          "value": "7",
+          "label": "sites livrés",
+          "sub": "μ ≥ 8.5"
+        },
+        "workflows": {
+          "value": "195+",
+          "label": "workflows",
+          "sub": "n8n production"
+        }
+      },
+      "bridge": {
+        "eyebrow": "Ce qu'on construit",
+        "title": "Du site web à l'automatisation complète",
+        "description": "Sites web stratégiques, automatisations métier et systèmes IA — conçus pour convertir, opérer et évoluer avec votre entreprise."
+      }
     },
     "services": {
-      "label": "Ce qu'on fait",
-      "title": "Nos services",
+      "label": "Services",
+      "title": "Ce qu'on fait",
       "items": {
         "web": {
           "title": "Sites web",
@@ -121,8 +151,8 @@
       "viewAll": "Tous les services"
     },
     "products": {
-      "label": "Nos outils",
-      "title": "Trois produits principaux",
+      "label": "Produits",
+      "title": "Nos produits phares",
       "nexos": {
         "name": "NEXOS",
         "tagline": "Pipeline de création web",
@@ -144,7 +174,7 @@
       "viewAll": "Tous les produits"
     },
     "portfolio": {
-      "label": "Portfolio",
+      "label": "Projets",
       "title": "7 sites livrés. Score moyen 9.33/10.",
       "viewAll": "Voir tous les projets",
       "soicScore": "Score SOIC",
@@ -154,12 +184,18 @@
         "typescript": "TypeScript",
         "loi25": "Loi 25",
         "wcag": "WCAG 2.1 AA"
-      }
+      },
+      "badges": [
+        "Next.js 15",
+        "TypeScript",
+        "Loi 25",
+        "WCAG 2.1 AA"
+      ]
     },
     "freeTools": {
-      "label": "Gratuit",
+      "label": "Outils",
       "title": "Outils en libre accès",
-      "description": "Calculateurs et préparation d'examen — gratuits, sans inscription.",
+      "description": "Calculateurs, rapports IA et préparation d'examen — en accès libre, sans inscription.",
       "viewAll": "Tous les outils"
     },
     "faq": {
@@ -452,7 +488,13 @@
       "title": "Sites clients générés par NEXOS",
       "description": "7 sites en production. Score qualité SOIC moyen 9.33/10. Tous conformes Loi 25, WCAG 2.1 AA, 0 vulnérabilité."
     },
-    "commonStack": "Tous : Next.js 15, TypeScript strict, Tailwind CSS, bilingue FR/EN, Loi 25, WCAG 2.1 AA",
+    "commonStack": [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind CSS",
+      "Loi 25",
+      "WCAG AA"
+    ],
     "items": {
       "clinique-aura": {
         "name": "Clinique Aura",
@@ -540,11 +582,17 @@
           "result": "Utilisé en production sur tous les clients NEXOS. Mode fast + deep avec historique."
         }
       }
+    },
+    "labels": {
+      "viewSite": "Voir le site",
+      "challenge": "Défi",
+      "solution": "Solution",
+      "result": "Résultat"
     }
   },
   "freeTools": {
     "hero": {
-      "label": "Outils gratuits",
+      "label": "Nos outils",
       "title": "Nos outils",
       "description": "8 outils développés en interne — calculateurs, IA, scanners et rapports automatisés."
     },
@@ -553,19 +601,19 @@
         "name": "EstimaWeb QC",
         "description": "Estimez le coût de votre projet web en 5 minutes. Questionnaire interactif adapté au marché québécois.",
         "url": "https://estimaweb-qc.vercel.app",
-        "cta": "Essayer gratuitement"
+        "cta": "Lancer l'outil"
       },
       "impots": {
         "name": "Impôts 2025",
         "description": "Calculateur d'impôts pour le Québec et les 13 provinces canadiennes. Fédéral + provincial, crédits et déductions.",
         "url": "https://impots-2025.vercel.app",
-        "cta": "Essayer gratuitement"
+        "cta": "Lancer l'outil"
       },
       "saaq": {
         "name": "SAAQ Prep B++",
         "description": "Préparation à l'examen théorique du permis de conduire classe 5. 250+ questions avec explications détaillées. Mode examen simulé, progression par niveaux.",
         "url": "https://saaq-prep.vercel.app",
-        "cta": "Essayer gratuitement"
+        "cta": "Lancer l'outil"
       },
       "oneclick": {
         "name": "One-Click Report AI",
@@ -708,7 +756,7 @@
           "hint": "Score 0-10 sur 9 dimensions. Performance, sécurité, SEO, accessibilité, Loi 25."
         },
         "consulting": {
-          "label": "Consulting technique",
+          "label": "Conseil technique",
           "hint": "Architecture, choix de stack, revue de code, optimisation performance."
         },
         "solution-custom": {
@@ -735,14 +783,21 @@
         "urgent": "Urgent — quelques semaines",
         "soon": "Bientôt — 1 à 2 mois",
         "standard": "Standard — 2 à 3 mois",
-        "flexible": "Flexible — pas de deadline"
+        "flexible": "Flexible — pas d'échéance"
       },
       "message": "Message",
       "messagePlaceholder": "Décrivez votre besoin en quelques lignes…",
       "submit": "Envoyer le message",
       "sending": "Envoi en cours…",
       "success": "Message envoyé. On vous revient sous 24h.",
-      "error": "Erreur lors de l'envoi. Réessayez ou écrivez directement à marc@marksystems.ca."
+      "error": "Erreur lors de l'envoi. Réessayez ou écrivez directement à marc@marksystems.ca.",
+      "successTitle": "Message envoyé !",
+      "successDescription": "Nous vous répondrons sous 24 heures. Vérifiez votre boîte de réception pour la confirmation automatique.",
+      "sendAnother": "Envoyer un autre message",
+      "phone": "Téléphone (optionnel)",
+      "phonePlaceholder": "(514) 555-1234",
+      "company": "Entreprise (optionnel)",
+      "companyPlaceholder": "Nom de votre entreprise"
     },
     "info": {
       "emailLabel": "Courriel",
@@ -836,15 +891,39 @@
     "messages": {
       "home": "Bienvenue ! Je suis Bowler, votre guide chez Mark Systems.",
       "services": "Sites web, IA, automatisation — on fait tout ça. Explorez !",
-      "products": "Tous nos outils sont construits en interne. Zéro dépendance externe.",
+      "products": "Tous nos outils sont construits en interne. Code maison.",
       "projects": "Chaque site a un score qualité SOIC réel. Pas de truquage.",
       "brief": "5 minutes pour décrire votre projet. Je vous guide !",
       "contact": "Une question ? On vous revient sous 24h. Promis.",
       "about": "Fondé par un ingénieur électrique reconverti en développeur.",
-      "freeTools": "100% gratuits, sans inscription. Essayez-les !",
+      "freeTools": "Nos outils en ligne, sans inscription. Essayez-les !",
       "default": "Besoin d'aide ? Cliquez sur moi !"
     },
     "heroGreeting": "Bienvenue !",
     "notFound": "Oups ! Cette page semble introuvable. Retournons à l'accueil."
+  },
+  "notFound": {
+    "bowlerMessage": "Oups ! Cette page semble introuvable.",
+    "title": "Page introuvable",
+    "description": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil"
+  },
+  "consent": {
+    "ariaLabel": "Gestion des cookies",
+    "title": "Gestion des témoins (cookies)",
+    "description": "Nous utilisons des témoins pour améliorer votre expérience. Conformément à la Loi 25 du Québec, seuls les témoins essentiels sont actifs par défaut.",
+    "essential": "Essentiels",
+    "essentialNote": "(toujours actifs)",
+    "essentialDesc": "Nécessaires au fonctionnement du site.",
+    "analytics": "Analytiques",
+    "analyticsDesc": "Comprendre l'utilisation du site.",
+    "marketing": "Marketing",
+    "marketingDesc": "Publicités pertinentes.",
+    "rejectAll": "Tout refuser",
+    "savePreferences": "Sauvegarder mes choix",
+    "customize": "Personnaliser",
+    "acceptAll": "Tout accepter",
+    "manageLabel": "Modifier mes préférences de témoins",
+    "manageCookies": "Gérer les témoins"
   }
 }

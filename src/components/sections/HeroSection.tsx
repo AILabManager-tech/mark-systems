@@ -244,7 +244,7 @@ export function HeroSection() {
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 lg:py-40">
           {/* Eyebrow */}
           <p className="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan/70 md:text-sm">
-            {"// Sites web · Automatisation · IA appliquée · Architecture"}
+            {"// "}{t("eyebrow")}
           </p>
 
           {/* Big name */}
@@ -257,19 +257,17 @@ export function HeroSection() {
 
           {/* Description paragraph — style image 1 */}
           <p className="mt-8 max-w-xl text-base leading-relaxed text-txt-secondary md:text-lg">
-            On conçoit des sites web stratégiques, des automatisations métier
-            et des systèmes IA sur mesure — de la page qui capte des leads
-            au pipeline qui opère vos processus. Construit à Longueuil.
+            {t("description")}
           </p>
 
           {/* CTAs — filled + outline style */}
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href="/services" size="lg">
-              Explorer les services
+              {t("ctaServices")}
               <ArrowRight className="h-4 w-4" />
             </Button>
             <Button href="/brief" size="lg" variant="secondary">
-              Démarrer un projet
+              {t("ctaPrimary")}
             </Button>
           </div>
 
@@ -280,21 +278,16 @@ export function HeroSection() {
 
           {/* Stats strip */}
           <div className="mt-12 flex flex-wrap gap-10 border-t border-white/[0.06] pt-8">
-            {[
-              { value: "56", label: "agents IA", sub: "pipeline NEXOS" },
-              { value: "9.33", label: "score moyen", sub: "SOIC qualité" },
-              { value: "7", label: "sites livrés", sub: "μ ≥ 8.5" },
-              { value: "195+", label: "workflows", sub: "n8n production" },
-            ].map((s) => (
-              <div key={s.label}>
+            {(["agents", "score", "sites", "workflows"] as const).map((key) => (
+              <div key={key}>
                 <span className="block font-mono text-3xl font-bold text-cyber-cyan text-glow-cyan">
-                  {s.value}
+                  {t(`stats.${key}.value`)}
                 </span>
                 <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-txt-secondary">
-                  {s.label}
+                  {t(`stats.${key}.label`)}
                 </span>
                 <span className="block font-mono text-[9px] uppercase tracking-[0.15em] text-txt-tertiary">
-                  {s.sub}
+                  {t(`stats.${key}.sub`)}
                 </span>
               </div>
             ))}
@@ -302,18 +295,17 @@ export function HeroSection() {
         </div>
       </section>
 
-      {/* ── BRIDGE SECTION — "Du site web à l'automatisation complète" — style image 1 ── */}
+      {/* ── BRIDGE SECTION ── */}
       <section className="relative border-t border-white/[0.06] bg-background py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <p className="font-mono text-xs uppercase tracking-[0.35em] text-cyber-cyan/70">
-            {"// Ce qu'on construit"}
+            {"// "}{t("bridge.eyebrow")}
           </p>
           <h2 className="mt-4 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-tight text-txt-primary">
-            Du site web à l&apos;automatisation complète
+            {t("bridge.title")}
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-txt-secondary">
-            Sites web stratégiques, automatisations métier et systèmes IA
-            — conçus pour convertir, opérer et évoluer avec votre entreprise.
+            {t("bridge.description")}
           </p>
         </div>
       </section>

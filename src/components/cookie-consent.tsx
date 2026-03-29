@@ -6,6 +6,7 @@
  */
 
 import { useState, useEffect, useCallback } from "react";
+import { useTranslations } from "next-intl";
 
 type CookieCategory = "essential" | "analytics" | "marketing";
 
@@ -56,6 +57,7 @@ export function CookieConsent() {
   const { saveConsent, hasConsented, loaded } = useConsent();
   const [showDetails, setShowDetails] = useState(false);
   const [preferences, setPreferences] = useState<ConsentState>(DEFAULT_CONSENT);
+  const t = useTranslations("consent");
 
   // Don't render anything until we've checked localStorage
   if (!loaded || hasConsented) return null;
@@ -80,7 +82,7 @@ export function CookieConsent() {
   return (
     <div
       role="dialog"
-      aria-label="Gestion des cookies"
+      aria-label={t("ariaLabel")}
       aria-modal="true"
       className="fixed bottom-0 left-0 right-0 z-[60] border-t border-cyber-cyan/20 bg-surface/95 p-4 shadow-[0_-4px_30px_rgba(0,0,0,0.5)] backdrop-blur-xl md:p-6"
     >
@@ -88,13 +90,10 @@ export function CookieConsent() {
         {/* Message */}
         <div className="mb-4">
           <h2 className="mb-2 font-mono text-lg font-semibold text-txt-primary">
-            Gestion des témoins (cookies)
+            {t("title")}
           </h2>
           <p className="text-sm text-txt-secondary">
-            Nous utilisons des témoins pour améliorer votre expérience.
-            Conformément à la{" "}
-            <strong className="text-txt-primary">Loi 25 du Québec</strong>, seuls les témoins essentiels sont
-            actifs par défaut.
+            {t("description")}
           </p>
         </div>
 
@@ -102,25 +101,25 @@ export function CookieConsent() {
         {showDetails && (
           <div className="mb-4 space-y-3">
             <label className="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-background/60 p-3">
-              <input type="checkbox" checked disabled className="h-4 w-4 accent-cyber-cyan" aria-label="Essentiels" />
+              <input type="checkbox" checked disabled className="h-4 w-4 accent-cyber-cyan" aria-label={t("essential")} />
               <div>
-                <span className="font-medium text-txt-primary">Essentiels</span>
-                <span className="ml-2 text-xs text-txt-tertiary">(toujours actifs)</span>
-                <p className="mt-1 text-xs text-txt-tertiary">Nécessaires au fonctionnement du site.</p>
+                <span className="font-medium text-txt-primary">{t("essential")}</span>
+                <span className="ml-2 text-xs text-txt-tertiary">{t("essentialNote")}</span>
+                <p className="mt-1 text-xs text-txt-tertiary">{t("essentialDesc")}</p>
               </div>
             </label>
             <label className="flex cursor-pointer items-center gap-3 rounded-lg border border-white/[0.06] bg-background/60 p-3">
-              <input type="checkbox" checked={preferences.analytics} onChange={() => toggleCategory("analytics")} className="h-4 w-4 accent-cyber-cyan" aria-label="Analytiques" />
+              <input type="checkbox" checked={preferences.analytics} onChange={() => toggleCategory("analytics")} className="h-4 w-4 accent-cyber-cyan" aria-label={t("analytics")} />
               <div>
-                <span className="font-medium text-txt-primary">Analytiques</span>
-                <p className="mt-1 text-xs text-txt-tertiary">Comprendre l&apos;utilisation du site.</p>
+                <span className="font-medium text-txt-primary">{t("analytics")}</span>
+                <p className="mt-1 text-xs text-txt-tertiary">{t("analyticsDesc")}</p>
               </div>
             </label>
             <label className="flex cursor-pointer items-center gap-3 rounded-lg border border-white/[0.06] bg-background/60 p-3">
-              <input type="checkbox" checked={preferences.marketing} onChange={() => toggleCategory("marketing")} className="h-4 w-4 accent-cyber-cyan" aria-label="Marketing" />
+              <input type="checkbox" checked={preferences.marketing} onChange={() => toggleCategory("marketing")} className="h-4 w-4 accent-cyber-cyan" aria-label={t("marketing")} />
               <div>
-                <span className="font-medium text-txt-primary">Marketing</span>
-                <p className="mt-1 text-xs text-txt-tertiary">Publicités pertinentes.</p>
+                <span className="font-medium text-txt-primary">{t("marketing")}</span>
+                <p className="mt-1 text-xs text-txt-tertiary">{t("marketingDesc")}</p>
               </div>
             </label>
           </div>
@@ -132,28 +131,28 @@ export function CookieConsent() {
             onClick={handleRejectAll}
             className="flex-1 rounded-lg border border-white/10 bg-background/60 px-4 py-2.5 font-mono text-sm font-medium text-txt-secondary transition-colors hover:border-white/20 hover:text-txt-primary"
           >
-            Tout refuser
+            {t("rejectAll")}
           </button>
           {showDetails ? (
             <button
               onClick={handleSavePreferences}
               className="flex-1 rounded-lg bg-cyber-cyan px-4 py-2.5 font-mono text-sm font-semibold text-background transition-colors hover:brightness-110"
             >
-              Sauvegarder mes choix
+              {t("savePreferences")}
             </button>
           ) : (
             <button
               onClick={() => setShowDetails(true)}
               className="flex-1 rounded-lg border border-cyber-cyan/30 px-4 py-2.5 font-mono text-sm font-medium text-cyber-cyan transition-colors hover:bg-cyber-cyan/10"
             >
-              Personnaliser
+              {t("customize")}
             </button>
           )}
           <button
             onClick={handleAcceptAll}
             className="flex-1 rounded-lg bg-cyber-cyan px-4 py-2.5 font-mono text-sm font-semibold text-background transition-colors hover:brightness-110"
           >
-            Tout accepter
+            {t("acceptAll")}
           </button>
         </div>
       </div>
@@ -162,6 +161,8 @@ export function CookieConsent() {
 }
 
 export function CookieSettingsButton() {
+  const t = useTranslations("consent");
+
   const handleOpen = () => {
     localStorage.removeItem(CONSENT_KEY);
     window.location.reload();
@@ -171,9 +172,9 @@ export function CookieSettingsButton() {
     <button
       onClick={handleOpen}
       className="text-sm text-txt-tertiary underline hover:text-txt-secondary"
-      aria-label="Modifier mes préférences de témoins"
+      aria-label={t("manageLabel")}
     >
-      Gérer les témoins
+      {t("manageCookies")}
     </button>
   );
 }

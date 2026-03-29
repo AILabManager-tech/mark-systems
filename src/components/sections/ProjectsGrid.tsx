@@ -13,7 +13,7 @@ import { PORTFOLIO_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { SectionBackground } from "@/components/ui/SectionBackground";
 
-const COMMON_STACK = ["Next.js 15", "TypeScript", "Tailwind CSS", "Loi 25", "WCAG AA"];
+const COMMON_STACK_KEYS = ["nextjs", "typescript", "tailwind", "law25", "wcag"] as const;
 const CASE_STUDY_KEYS = ["nexosPipeline", "gencorePlatform", "n8nEcosystem", "osirisScanner"] as const;
 
 export function ProjectsGrid() {
@@ -62,7 +62,7 @@ export function ProjectsGrid() {
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-1.5 font-mono text-xs text-cyber-cyan transition-colors hover:text-cyber-cyan/70"
                   >
-                    Voir le site
+                    {t("labels.viewSite")}
                     <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 )}
@@ -73,9 +73,9 @@ export function ProjectsGrid() {
 
         {/* Common stack banner */}
         <FadeIn className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          {COMMON_STACK.map((tech) => (
-            <NeonBadge key={tech} variant="violet">
-              {tech}
+          {COMMON_STACK_KEYS.map((key, i) => (
+            <NeonBadge key={key} variant="violet">
+              {t(`commonStack.${i}`)}
             </NeonBadge>
           ))}
         </FadeIn>
@@ -118,19 +118,19 @@ export function ProjectsGrid() {
                       >
                         <div className="space-y-4 border-t border-white/[0.06] px-6 py-5">
                           <div>
-                            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan">Défi</h4>
+                            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-cyan">{t("labels.challenge")}</h4>
                             <p className="mt-2 text-sm text-txt-secondary">
                               {t(`caseStudies.items.${key}.challenge`)}
                             </p>
                           </div>
                           <div>
-                            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-neon">Solution</h4>
+                            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-neon">{t("labels.solution")}</h4>
                             <p className="mt-2 text-sm text-txt-secondary">
                               {t(`caseStudies.items.${key}.solution`)}
                             </p>
                           </div>
                           <div>
-                            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-violet">Résultat</h4>
+                            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-violet">{t("labels.result")}</h4>
                             <p className="mt-2 text-sm text-txt-secondary">
                               {t(`caseStudies.items.${key}.result`)}
                             </p>

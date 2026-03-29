@@ -78,12 +78,12 @@ export function PortfolioPreview() {
 
         {/* Common stack badges */}
         <div className="mt-8 flex flex-wrap justify-center gap-2">
-          {["Next.js 15", "TypeScript", "Loi 25", "WCAG 2.1 AA"].map((badge) => (
+          {[0, 1, 2, 3].map((i) => (
             <span
-              key={badge}
+              key={i}
               className="rounded-full border border-cyber-cyan/20 bg-cyber-cyan/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-cyber-cyan"
             >
-              {badge}
+              {t(`badges.${i}`)}
             </span>
           ))}
         </div>

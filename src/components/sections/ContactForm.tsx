@@ -82,8 +82,17 @@ export function ContactForm() {
                     </svg>
                   </div>
                   <p className="text-lg font-semibold text-cyber-neon">
-                    {t("form.success")}
+                    {t("form.successTitle")}
                   </p>
+                  <p className="mt-2 text-sm text-txt-secondary">
+                    {t("form.successDescription")}
+                  </p>
+                  <button
+                    onClick={() => setStatus("idle")}
+                    className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-cyber-cyan transition-colors hover:text-cyber-cyan/70"
+                  >
+                    {t("form.sendAnother")} &rarr;
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -100,6 +109,22 @@ export function ContactForm() {
                         {t("form.email")}
                       </label>
                       <input id="email" name="email" type="email" required className={inputClass} placeholder={t("form.emailPlaceholder")} />
+                    </div>
+                  </div>
+
+                  {/* Company + Phone */}
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <label htmlFor="company" className="mb-2 block font-mono text-xs uppercase tracking-[0.18em] text-txt-secondary">
+                        {t("form.company")}
+                      </label>
+                      <input id="company" name="company" type="text" className={inputClass} placeholder={t("form.companyPlaceholder")} />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="mb-2 block font-mono text-xs uppercase tracking-[0.18em] text-txt-secondary">
+                        {t("form.phone")}
+                      </label>
+                      <input id="phone" name="phone" type="tel" className={inputClass} placeholder={t("form.phonePlaceholder")} />
                     </div>
                   </div>
 
