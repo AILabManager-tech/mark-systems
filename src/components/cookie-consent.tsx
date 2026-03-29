@@ -1,28 +1,16 @@
 "use client";
 
 /**
- * NEXOS v3.0 — Composant Bandeau de Consentement Cookies
- *
- * Conforme Loi 25 du Quebec (art. 8.1) :
- * - Par defaut : seuls cookies essentiels actifs
- * - Consentement manifeste, libre et eclaire
- * - Bouton "Refuser" aussi visible que "Accepter"
- * - Categories : Essentiels / Analytics / Marketing
- * - Choix modifiable ulterieurement
- *
- * Usage :
- *   import { CookieConsent } from "@/components/cookie-consent";
- *   // Dans layout.tsx : <CookieConsent />
+ * NEXOS v4.0 — Bandeau Consentement Cookies (Stark Lab theme)
+ * Conforme Loi 25 du Quebec (art. 8.1)
  */
 
 import { useState, useEffect, useCallback } from "react";
 
-// ── Types ──────────────────────────────────────────────────────────
-
 type CookieCategory = "essential" | "analytics" | "marketing";
 
 interface ConsentState {
-  essential: boolean; // Toujours true — non desactivable
+  essential: boolean;
   analytics: boolean;
   marketing: boolean;
   timestamp: string;
@@ -37,10 +25,9 @@ const DEFAULT_CONSENT: ConsentState = {
   timestamp: "",
 };
 
-// ── Hook useConsent ────────────────────────────────────────────────
-
 export function useConsent() {
   const [consent, setConsent] = useState<ConsentState | null>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(CONSENT_KEY);
@@ -51,60 +38,34 @@ export function useConsent() {
         setConsent(null);
       }
     }
+    setLoaded(true);
   }, []);
 
   const saveConsent = useCallback((newConsent: ConsentState) => {
     const withTimestamp = { ...newConsent, timestamp: new Date().toISOString() };
     localStorage.setItem(CONSENT_KEY, JSON.stringify(withTimestamp));
     setConsent(withTimestamp);
-
-    // Activer/desactiver Google Analytics selon le consentement
-    if (typeof window !== "undefined") {
-      if (newConsent.analytics && window.gtag) {
-        window.gtag("consent", "update", {
-          analytics_storage: "granted",
-        });
-      } else if (window.gtag) {
-        window.gtag("consent", "update", {
-          analytics_storage: "denied",
-        });
-      }
-    }
   }, []);
 
   const hasConsented = consent !== null;
-  const isAnalyticsAllowed = consent?.analytics ?? false;
-  const isMarketingAllowed = consent?.marketing ?? false;
 
-  return { consent, saveConsent, hasConsented, isAnalyticsAllowed, isMarketingAllowed };
+  return { consent, saveConsent, hasConsented, loaded };
 }
 
-// ── Composant CookieConsent ───────────────────────────────────────
-
 export function CookieConsent() {
-  const { saveConsent, hasConsented } = useConsent();
+  const { saveConsent, hasConsented, loaded } = useConsent();
   const [showDetails, setShowDetails] = useState(false);
   const [preferences, setPreferences] = useState<ConsentState>(DEFAULT_CONSENT);
 
-  // Ne pas afficher si deja consenti
-  if (hasConsented) return null;
+  // Don't render anything until we've checked localStorage
+  if (!loaded || hasConsented) return null;
 
   const handleAcceptAll = () => {
-    saveConsent({
-      essential: true,
-      analytics: true,
-      marketing: true,
-      timestamp: "",
-    });
+    saveConsent({ essential: true, analytics: true, marketing: true, timestamp: "" });
   };
 
   const handleRejectAll = () => {
-    saveConsent({
-      essential: true,
-      analytics: false,
-      marketing: false,
-      timestamp: "",
-    });
+    saveConsent({ essential: true, analytics: false, marketing: false, timestamp: "" });
   };
 
   const handleSavePreferences = () => {
@@ -112,7 +73,7 @@ export function CookieConsent() {
   };
 
   const toggleCategory = (category: CookieCategory) => {
-    if (category === "essential") return; // Non desactivable
+    if (category === "essential") return;
     setPreferences((prev) => ({ ...prev, [category]: !prev[category] }));
   };
 
@@ -121,134 +82,84 @@ export function CookieConsent() {
       role="dialog"
       aria-label="Gestion des cookies"
       aria-modal="true"
-      className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg p-4 md:p-6"
+      className="fixed bottom-0 left-0 right-0 z-[60] border-t border-cyber-cyan/20 bg-surface/95 p-4 shadow-[0_-4px_30px_rgba(0,0,0,0.5)] backdrop-blur-xl md:p-6"
     >
-      <div className="max-w-4xl mx-auto">
-        {/* ── Message principal ── */}
+      <div className="mx-auto max-w-4xl">
+        {/* Message */}
         <div className="mb-4">
-          <h2 className="text-lg font-semibold text-gray-900 mb-2">
-            Gestion des temoins (cookies)
+          <h2 className="mb-2 font-mono text-lg font-semibold text-txt-primary">
+            Gestion des témoins (cookies)
           </h2>
-          <p className="text-sm text-gray-600">
-            Nous utilisons des temoins pour ameliorer votre experience sur notre site.
-            Conformement a la{" "}
-            <strong>Loi 25 du Quebec</strong>, seuls les temoins essentiels sont
-            actifs par defaut. Vous pouvez accepter ou refuser les temoins optionnels.
+          <p className="text-sm text-txt-secondary">
+            Nous utilisons des témoins pour améliorer votre expérience.
+            Conformément à la{" "}
+            <strong className="text-txt-primary">Loi 25 du Québec</strong>, seuls les témoins essentiels sont
+            actifs par défaut.
           </p>
         </div>
 
-        {/* ── Details (si ouverts) ── */}
+        {/* Details */}
         {showDetails && (
           <div className="mb-4 space-y-3">
-            {/* Essentiels */}
-            <label className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-              <input
-                type="checkbox"
-                checked={true}
-                disabled
-                aria-label="Temoins essentiels (toujours actifs)"
-                className="w-4 h-4 accent-blue-600"
-              />
+            <label className="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-background/60 p-3">
+              <input type="checkbox" checked disabled className="h-4 w-4 accent-cyber-cyan" aria-label="Essentiels" />
               <div>
-                <span className="font-medium text-gray-900">Essentiels</span>
-                <span className="ml-2 text-xs text-gray-500">(toujours actifs)</span>
-                <p className="text-xs text-gray-500 mt-1">
-                  Necessaires au fonctionnement du site. Ne peuvent pas etre desactives.
-                </p>
+                <span className="font-medium text-txt-primary">Essentiels</span>
+                <span className="ml-2 text-xs text-txt-tertiary">(toujours actifs)</span>
+                <p className="mt-1 text-xs text-txt-tertiary">Nécessaires au fonctionnement du site.</p>
               </div>
             </label>
-
-            {/* Analytics */}
-            <label className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg cursor-pointer">
-              <input
-                type="checkbox"
-                checked={preferences.analytics}
-                onChange={() => toggleCategory("analytics")}
-                aria-label="Temoins analytiques"
-                className="w-4 h-4 accent-blue-600"
-              />
+            <label className="flex cursor-pointer items-center gap-3 rounded-lg border border-white/[0.06] bg-background/60 p-3">
+              <input type="checkbox" checked={preferences.analytics} onChange={() => toggleCategory("analytics")} className="h-4 w-4 accent-cyber-cyan" aria-label="Analytiques" />
               <div>
-                <span className="font-medium text-gray-900">Analytiques</span>
-                <p className="text-xs text-gray-500 mt-1">
-                  Nous aident a comprendre comment les visiteurs utilisent le site
-                  (ex : Google Analytics).
-                </p>
+                <span className="font-medium text-txt-primary">Analytiques</span>
+                <p className="mt-1 text-xs text-txt-tertiary">Comprendre l&apos;utilisation du site.</p>
               </div>
             </label>
-
-            {/* Marketing */}
-            <label className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg cursor-pointer">
-              <input
-                type="checkbox"
-                checked={preferences.marketing}
-                onChange={() => toggleCategory("marketing")}
-                aria-label="Temoins marketing"
-                className="w-4 h-4 accent-blue-600"
-              />
+            <label className="flex cursor-pointer items-center gap-3 rounded-lg border border-white/[0.06] bg-background/60 p-3">
+              <input type="checkbox" checked={preferences.marketing} onChange={() => toggleCategory("marketing")} className="h-4 w-4 accent-cyber-cyan" aria-label="Marketing" />
               <div>
-                <span className="font-medium text-gray-900">Marketing</span>
-                <p className="text-xs text-gray-500 mt-1">
-                  Utilises pour afficher des publicites pertinentes et mesurer leur efficacite.
-                </p>
+                <span className="font-medium text-txt-primary">Marketing</span>
+                <p className="mt-1 text-xs text-txt-tertiary">Publicités pertinentes.</p>
               </div>
             </label>
           </div>
         )}
 
-        {/* ── Boutons ── */}
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+        {/* Buttons */}
+        <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
           <button
             onClick={handleRejectAll}
-            className="flex-1 px-4 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
-            aria-label="Refuser tous les temoins optionnels"
+            className="flex-1 rounded-lg border border-white/10 bg-background/60 px-4 py-2.5 font-mono text-sm font-medium text-txt-secondary transition-colors hover:border-white/20 hover:text-txt-primary"
           >
             Tout refuser
           </button>
-
           {showDetails ? (
             <button
               onClick={handleSavePreferences}
-              className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              aria-label="Sauvegarder mes preferences de temoins"
+              className="flex-1 rounded-lg bg-cyber-cyan px-4 py-2.5 font-mono text-sm font-semibold text-background transition-colors hover:brightness-110"
             >
               Sauvegarder mes choix
             </button>
           ) : (
             <button
               onClick={() => setShowDetails(true)}
-              className="flex-1 px-4 py-2.5 text-sm font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              aria-label="Personnaliser les preferences de temoins"
+              className="flex-1 rounded-lg border border-cyber-cyan/30 px-4 py-2.5 font-mono text-sm font-medium text-cyber-cyan transition-colors hover:bg-cyber-cyan/10"
             >
               Personnaliser
             </button>
           )}
-
           <button
             onClick={handleAcceptAll}
-            className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            aria-label="Accepter tous les temoins"
+            className="flex-1 rounded-lg bg-cyber-cyan px-4 py-2.5 font-mono text-sm font-semibold text-background transition-colors hover:brightness-110"
           >
             Tout accepter
           </button>
         </div>
-
-        {/* ── Lien politique ── */}
-        <p className="mt-3 text-xs text-gray-500 text-center">
-          Pour en savoir plus, consultez notre{" "}
-          <a
-            href="/politique-confidentialite"
-            className="underline hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            politique de confidentialite
-          </a>
-          .
-        </p>
       </div>
     </div>
   );
 }
-
-// ── Composant pour modifier le consentement (footer) ──────────────
 
 export function CookieSettingsButton() {
   const handleOpen = () => {
@@ -259,15 +170,13 @@ export function CookieSettingsButton() {
   return (
     <button
       onClick={handleOpen}
-      className="text-sm text-gray-500 hover:text-gray-700 underline focus:outline-none focus:ring-2 focus:ring-blue-500"
-      aria-label="Modifier mes preferences de temoins"
+      className="text-sm text-txt-tertiary underline hover:text-txt-secondary"
+      aria-label="Modifier mes préférences de témoins"
     >
-      Gestion des temoins
+      Gérer les témoins
     </button>
   );
 }
-
-// ── Types globaux pour gtag ───────────────────────────────────────
 
 declare global {
   interface Window {

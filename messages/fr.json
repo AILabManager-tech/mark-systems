@@ -1,588 +1,701 @@
 {
   "common": {
     "siteName": "Mark Systems",
-    "tagline": "Sites web stratégiques, conformité Loi 25 et automatisation IA",
-    "siteDescription": "Mark Systems conçoit des sites web stratégiques, des fondations numériques conformes à la Loi 25 et des automatisations IA concrètes pour les PME québécoises.",
+    "tagline": "Sites web, automatisation et IA",
+    "siteDescription": "Mark Systems conçoit des sites web, des agents IA et des workflows d'automatisation pour les PME québécoises. Basé à Longueuil.",
     "skipToContent": "Aller au contenu principal",
+    "learnMore": "En savoir plus",
+    "tryFree": "Essayer gratuitement",
+    "startProject": "Démarrer un projet",
+    "viewAll": "Voir tout",
+    "back": "Retour",
     "consent": {
-      "cookieBanner": "Nous utilisons des témoins pour améliorer votre expérience.",
-      "accept": "Accepter",
+      "title": "Gestion des témoins",
+      "description": "Ce site utilise des témoins (cookies) pour améliorer votre expérience. Vos données sont protégées conformément à la Loi 25 du Québec.",
+      "accept": "Accepter tout",
       "decline": "Refuser",
       "customize": "Personnaliser",
-      "privacyNotice": "Vos données sont protégées conformément à la Loi 25 du Québec.",
-      "privacyLink": "Politique de confidentialité"
+      "essential": "Essentiels",
+      "essentialDesc": "Nécessaires au fonctionnement du site.",
+      "analytics": "Analytiques",
+      "analyticsDesc": "Nous aident à comprendre l'utilisation du site.",
+      "marketing": "Marketing",
+      "marketingDesc": "Utilisés pour la publicité ciblée.",
+      "save": "Sauvegarder mes choix",
+      "privacyLink": "Politique de confidentialité",
+      "manageCookies": "Gérer les témoins"
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Mark Systems — Sites web, automatisation et IA | Longueuil",
+      "description": "Sites web, agents IA et automatisation pour PME québécoises. Pipeline NEXOS — score qualité moyen 9.33/10 sur 7 sites livrés."
+    },
+    "services": {
+      "title": "Services | Mark Systems",
+      "description": "Sites web, agents IA, automatisation n8n, audit qualité, conseil technique et solutions sur mesure. Basé à Longueuil."
+    },
+    "products": {
+      "title": "Produits | Mark Systems",
+      "description": "7 outils développés en interne : NEXOS, GENCORE, SOIC v3, OSIRIS Scanner, One-Click Report, Financial Intelligence Suite et Architecture Viewer."
+    },
+    "projects": {
+      "title": "Portfolio | Mark Systems",
+      "description": "7 sites clients générés par NEXOS avec scores qualité SOIC réels (moyenne 9.33/10). Next.js, TypeScript, Loi 25, WCAG 2.1 AA."
+    },
+    "freeTools": {
+      "title": "Outils gratuits | Mark Systems",
+      "description": "3 outils gratuits : EstimaWeb QC (estimation coût site web), Impôts 2025 (calculateur fiscal), SAAQ Prep (examen permis classe 5)."
+    },
+    "about": {
+      "title": "À propos | Mark Systems",
+      "description": "Fondé par un ingénieur électrique avec 10+ ans d'expérience industrielle. Mark Systems livre des sites web et des systèmes IA qui fonctionnent."
+    },
+    "contact": {
+      "title": "Contact | Mark Systems",
+      "description": "Contactez Mark Systems pour votre projet web, IA ou automatisation. Longueuil, QC, Canada."
+    },
+    "brief": {
+      "title": "Brief — Décrivez votre projet | Mark Systems",
+      "description": "Wizard interactif en 7 étapes pour décrire votre projet web. Entreprise, site, design, Loi 25, SEO — générez un brief complet en PDF."
+    },
+    "privacy": {
+      "title": "Politique de confidentialité | Mark Systems",
+      "description": "Politique de confidentialité conforme à la Loi 25 du Québec. Protection des renseignements personnels, droits d'accès et gestion des témoins."
+    },
+    "legal": {
+      "title": "Mentions légales | Mark Systems",
+      "description": "Mentions légales de Mark Systems. Dénomination sociale, coordonnées, hébergement et conditions d'utilisation."
     }
   },
   "nav": {
     "home": "Accueil",
     "services": "Services",
-    "systems": "Systems",
+    "products": "Produits",
     "projects": "Projets",
+    "freeTools": "Outils",
     "about": "À propos",
-    "contact": "Contact"
+    "contact": "Contact",
+    "brief": "Brief",
+    "privacy": "Confidentialité",
+    "legal": "Mentions légales",
+    "startBrief": "Démarrer un brief"
   },
-  "hero": {
-    "badge": "Web stratégique, automatisation, IA appliquée, architecture",
-    "titleStart": "Mark Systems construit",
-    "titleAccent": "des systèmes qui livrent.",
-    "description": "Sites web stratégiques, automatisations métier, produits interactifs, systèmes IA appliqués et architecture technique: Mark Systems aide les PME québécoises à vendre plus clairement, opérer plus vite et reprendre le contrôle sur leur stack numérique.",
-    "ctaPrimary": "Discuter de votre projet",
-    "ctaSecondary": "Voir les services"
-  },
-  "servicesSection": {
-    "label": "Offre principale",
-    "title": "Quatre leviers numériques qui font avancer une PME",
-    "description": "Une offre plus simple, plus lisible et plus vendable: site web, conformité, automatisation et outils sur mesure.",
-    "viewAll": "Voir tous les services"
-  },
-  "servicesPage": {
-    "label": "Nos services",
-    "title": "Des services pensés pour vendre aujourd'hui et automatiser demain",
-    "description": "Mark Systems aide d'abord à clarifier la présence numérique, à remettre un site en état et à bâtir une base conforme à la Loi 25, puis à automatiser ce qui ralentit vraiment l'entreprise."
-  },
-  "services": {
-    "web-strategy-redesign": {
-      "title": "Sites web stratégiques & refonte",
-      "shortDescription": "Sites vitrine et refontes complètes ou partielles pour mieux expliquer votre valeur, inspirer confiance et convertir davantage.",
-      "longDescription": "On conçoit ou refond des sites web qui servent un objectif d'affaires clair: mieux positionner votre offre, mieux filtrer les demandes, améliorer l'expérience mobile et donner une présence numérique crédible. Le travail inclut l'architecture de contenu, le design, le développement et l'optimisation du parcours client.",
-      "capabilities": [
-        "Site vitrine et site de services",
-        "Refonte complète ou partielle",
-        "Architecture de contenu orientée conversion",
-        "Design responsive et performance web",
-        "SEO local Québec et bilingue FR/EN"
-      ]
-    },
-    "law-25-digital-foundation": {
-      "title": "Conformité numérique & Loi 25",
-      "shortDescription": "Mise à niveau rapide des éléments essentiels pour réduire le risque: formulaires, consentement, politique, collecte et fondations web.",
-      "longDescription": "On remet en ordre les éléments visibles et prioritaires d'un site en matière de conformité: formulaires mieux cadrés, mentions de consentement, politique de confidentialité, bandeau de témoins, parcours de collecte plus propre et cohérence des informations de contact. L'objectif n'est pas de produire du jargon juridique, mais une base numérique plus sérieuse et plus rassurante.",
-      "capabilities": [
-        "Révision des formulaires et consentements",
-        "Politique de confidentialité web",
-        "Bandeau témoins et préférences",
-        "Parcours de collecte plus clair",
-        "Alignement contact, hébergement et mentions"
-      ]
-    },
-    "ai-automation-workflows": {
-      "title": "Automatisation IA & workflows",
-      "shortDescription": "Automatisations utiles et mesurables pour enlever du travail manuel, accélérer les suivis et mieux exploiter vos données.",
-      "longDescription": "C'est ici que se trouve la vocation principale de Mark Systems. On connecte vos outils, vos documents, vos courriels et vos processus pour automatiser les tâches répétitives, résumer l'information utile, qualifier des demandes, orchestrer des suivis et créer des flux de travail assistés par IA qui restent compréhensibles et contrôlables.",
-      "capabilities": [
-        "Workflows n8n et orchestrations métier",
-        "Qualification de demandes et tri intelligent",
-        "Traitement de documents et résumés IA",
-        "Automatisation courriel, CRM et notifications",
-        "Intégrations LLM, RAG et garde-fous humains"
-      ]
-    },
-    "custom-platforms-tools": {
-      "title": "Outils internes & plateformes sur mesure",
-      "shortDescription": "Quand un site web ne suffit plus, on conçoit l'outil ou la plateforme qui soutient réellement vos opérations.",
-      "longDescription": "Pour certains mandats, la bonne réponse n'est ni un simple site ni une automatisation isolée. On construit alors des tableaux de bord, portails, configurateurs, formulaires avancés ou mini-plateformes qui soutiennent une opération concrète. C'est l'espace entre la présence web, l'outil interne et le produit numérique sur mesure.",
-      "capabilities": [
-        "Portails et tableaux de bord",
-        "Formulaires avancés et calculateurs",
-        "Espaces clients ou outils internes",
-        "Ponts entre site web et opérations",
-        "Développement sur mesure avec IA intégrée"
-      ]
-    }
-  },
-  "projectsSection": {
-    "label": "Études de cas",
-    "title": "Des livrables réels, du site client à la stack propriétaire",
-    "description": "Des mandats web livrés, des outils de lead generation, une couche d'automatisation n8n et une stack propriétaire qui sert de preuve de profondeur technique.",
-    "viewAll": "Voir tous les projets"
-  },
-  "projectsPage": {
-    "label": "Études de cas",
-    "title": "Portfolio Mark Systems",
-    "description": "Une sélection de sites clients, de produits interactifs et de systèmes propriétaires qui montrent comment Mark Systems exécute du front-end jusqu'à l'orchestration."
-  },
-  "projects": {
-    "usine-rh": {
-      "title": "L'Usine RH",
-      "industry": "Services-conseils RH",
-      "clientSize": "PME industrielles et manufacturières",
-      "timeline": "Mandat site vitrine + fondations conformité",
-      "methodology": "Positionnement, structure d'offre et parcours de confiance",
-      "challenge": "Transformer une offre de consultation RH en un site clair, crédible et orienté PME, capable d'expliquer rapidement la valeur, les services et la méthode sans surcharger la visite.",
-      "solution": "Conçu une présence web structurée autour d'un message fort, d'une offre en 10 services, d'un parcours simple pour les PME et d'éléments de conformité visibles: politique, consentement, gestion des témoins et mentions liées à la Loi 25.",
-      "result": "Un site plus lisible et plus crédible pour une clientèle PME, avec une architecture de contenu claire, un déploiement bilingue FR/EN et une base numérique prête pour les prochaines couches d'automatisation.",
-      "metricValue": "10",
-      "metricLabel": "services structurés"
-    },
-    "beaumont-avocats": {
-      "title": "Beaumont Avocats",
-      "industry": "Cabinet juridique",
-      "clientSize": "Cabinet établi à Québec",
-      "timeline": "Refonte de vitrine professionnelle",
-      "methodology": "Clarté éditoriale, crédibilité et conversion",
-      "challenge": "Présenter un cabinet multidisciplinaire de manière plus claire, plus actuelle et plus rassurante, tout en simplifiant l'accès aux expertises et à la prise de contact.",
-      "solution": "Refondu l'expérience autour de quatre expertises principales, d'un discours plus net, d'un parcours d'évaluation de situation et d'une présence web mieux alignée avec les standards actuels de confiance et de conformité.",
-      "result": "Une vitrine plus stratégique pour un cabinet de plus de 25 ans, avec une meilleure hiérarchie de contenu, des points d'entrée plus clairs et des fondations de collecte plus sérieuses.",
-      "metricValue": "4",
-      "metricLabel": "expertises clés"
-    },
-    "estimaweb-qc": {
-      "title": "EstimaWeb QC",
-      "industry": "Produit interactif / lead generation",
-      "clientSize": "Produit propriétaire Mark Systems",
-      "timeline": "Estimateur web en production continue",
-      "methodology": "UX wizard, logique de chiffrage et capture de leads",
-      "challenge": "Transformer une demande vague de type “combien coûte un site?” en un outil crédible, localisé Québec, capable d'éduquer le prospect tout en qualifiant l'opportunité.",
-      "solution": "Conçu un estimateur complet en Next.js avec parcours multi-étapes, scénarios économique/recommandé/premium, logique sectorielle, export PDF et base de tarification alignée à l'offre Mark Systems.",
-      "result": "Un actif de vente qui combine UX, logique métier et conversion. Le visiteur obtient une estimation structurée; Mark Systems récupère un lead beaucoup mieux qualifié.",
-      "metricValue": "3",
-      "metricLabel": "scénarios chiffrés"
-    },
-    "nexos-soic-stack": {
-      "title": "NEXOS + SOIC + OSIRIS",
-      "industry": "Stack propriétaire",
-      "clientSize": "R&D et production interne",
-      "timeline": "Évolution continue",
-      "methodology": "Convergence qualité, agents spécialisés et tooling réel",
-      "challenge": "Passer d'une logique de prototype à une chaîne capable de cadrer, générer, auditer, corriger et livrer des systèmes web de manière beaucoup plus rigoureuse que l'approche agence standard.",
-      "solution": "Assemblé une stack propriétaire articulée autour de NEXOS pour l'orchestration web, SOIC pour les gates qualité et OSIRIS pour l'audit. Le tout s'appuie sur des agents spécialisés, du tooling réel et des boucles d'auto-correction.",
-      "result": "Une colonne vertébrale technique qui accélère la production, standardise la qualité et sert directement les mandats clients comme les produits internes.",
-      "metricValue": "46",
-      "metricLabel": "agents NEXOS"
-    },
-    "n8n-ecosystem": {
-      "title": "Écosystème n8n d'entreprise",
-      "industry": "Automatisation d'affaires",
-      "clientSize": "Infrastructure multi-domaines (14 départements)",
-      "timeline": "12+ mois de développement continu",
-      "methodology": "Déploiement itératif + gouvernance SOIC (9.90/10)",
-      "challenge": "Gérer des opérations d'affaires disparates — CRM, finance, documents, communications, IoT — à travers 14+ domaines fonctionnels sans couche d'automatisation unifiée.",
-      "solution": "Conçu et déployé 195 workflows de production sur n8n : 52 propulsés par IA (RAG, agents, classificateurs), 24 automatisations de communications, 18 pipelines de traitement de documents, 17 workflows financiers, 16 pipelines vocaux (Whisper + Piper) et 7 orchestrations IoT. Cadre de gouvernance noté 9.90/10 sur l'audit SOIC.",
-      "result": "195 workflows en production. 57% propulsés par IA. 12 nœuds communautaires personnalisés installés. Gouvernance complète avec 35+ champs de métadonnées par workflow.",
-      "metricValue": "195",
-      "metricLabel": "workflows"
-    }
-  },
-  "projectCard": {
-    "challenge": "Défi :",
-    "solution": "Solution :"
-  },
-  "about": {
-    "missionLabel": "Notre mission",
-    "missionTitle": "Rendre le numérique plus utile, puis plus intelligent",
-    "mission": "Mark Systems aide les PME à se doter d'une présence numérique plus claire, plus crédible et plus conforme, puis à automatiser les opérations qui ralentissent la croissance. Le site web n'est pas la fin du parcours: c'est souvent la première brique avant des workflows, des outils internes et des systèmes IA réellement utiles.",
-    "teamLabel": "Le fondateur",
-    "teamTitle": "Un profil hybride, rare et très terrain",
-    "teamDescription": "Conception web, rigueur d'ingénierie et automatisation IA dans une même pratique.",
-    "valuesLabel": "Nos principes",
-    "valuesTitle": "Comment on opère",
-    "valuesDescription": "Quatre principes non-négociables qui définissent chaque engagement."
-  },
-  "team": {
-    "founder": {
-      "role": "Fondateur & Ingénieur principal",
-      "bio": "Ingénieur senior basé au Québec, avec 10+ ans de terrain en automatisation et systèmes industriels. Cette rigueur se transpose aujourd'hui dans la conception de sites web stratégiques, l'automatisation métier, les outils interactifs et la construction de systèmes numériques plus robustes que le simple site vitrine."
-    }
-  },
-  "values": {
-    "0": {
-      "title": "Précision plutôt que battage",
-      "description": "On livre des résultats mesurables, pas des promesses. Chaque système est benchmarké avec de vraies métriques avant la livraison — pas de mots à la mode, pas de magie, juste de l'ingénierie."
-    },
-    "1": {
-      "title": "Pensée systémique",
-      "description": "Chaque composant est conçu pour l'ensemble. On construit des solutions qui s'intègrent dans l'infrastructure existante — pas des prototypes isolés qui cassent au contact de la réalité."
-    },
-    "2": {
-      "title": "Ingénierie éprouvée au combat",
-      "description": "10+ ans d'expérience sur le terrain industriel signifie qu'on construit pour les modes de défaillance, pas juste les chemins heureux. Rigueur PLC appliquée aux systèmes IA."
-    },
-    "3": {
-      "title": "Zéro dépendance aux fournisseurs",
-      "description": "Multi-LLM, multi-cloud, open-source d'abord. Vos systèmes roulent selon vos termes — on construit des couches d'abstraction, pas des dépendances."
-    }
-  },
-  "contact": {
-    "label": "Nous joindre",
-    "title": "Commencer une conversation",
-    "description": "Parlez-nous de votre site, de votre refonte, de vos enjeux Loi 25 ou d'une automatisation IA que vous voulez enfin rendre concrète.",
-    "emailLabel": "Courriel",
-    "emailAddress": "contact@marksystems.ca",
-    "locationLabel": "Emplacement",
-    "locationCity": "Québec, Canada",
-    "locationDetail": "Télétravail d'abord — au service de clients partout dans le monde"
-  },
-  "contactForm": {
-    "name": "Nom",
-    "namePlaceholder": "Votre nom",
-    "email": "Courriel",
-    "emailPlaceholder": "vous@entreprise.com",
-    "company": "Entreprise",
-    "companyPlaceholder": "Votre entreprise",
-    "serviceInterest": "Service d'intérêt",
-    "selectService": "Sélectionnez un service",
-    "message": "Message",
-    "messagePlaceholder": "Parlez-nous de votre projet ou défi...",
-    "submit": "Envoyer le message",
-    "sending": "Envoi en cours...",
-    "successTitle": "Message envoyé",
-    "successMessage": "Merci pour votre message. Nous vous répondrons dans les 24 heures.",
-    "errorMessage": "Une erreur est survenue. Réessayez ou écrivez-nous directement à contact@marksystems.ca.",
-    "required": "*"
-  },
-  "validation": {
-    "nameRequired": "Le nom est requis",
-    "nameMinLength": "Le nom doit contenir au moins 2 caractères",
-    "emailRequired": "Le courriel est requis",
-    "emailInvalid": "Veuillez entrer une adresse courriel valide",
-    "messageRequired": "Le message est requis",
-    "messageMinLength": "Le message doit contenir au moins 10 caractères"
-  },
-  "cta": {
-    "label": "Prêt à passer au prochain niveau?",
-    "title": "Commençons par le bon point d'entrée",
-    "description": "Refonte de site, conformité Loi 25, automatisation de tâches ou outil sur mesure: on peut commencer là où le gain est le plus rapide, puis élargir intelligemment.",
-    "button": "Réserver un échange"
-  },
-  "notFound": {
-    "code": "404",
-    "title": "Page non trouvée",
-    "description": "La page que vous cherchez n'existe pas ou a été déplacée.",
-    "back": "Retour à l'accueil"
-  },
-  "footer": {
-    "description": "Sites web stratégiques, fondations numériques conformes et automatisation IA pour PME québécoises.",
-    "navLabel": "Navigation",
-    "connectLabel": "Connecter",
-    "copyright": "© {year} Mark Systems. Tous droits réservés."
-  },
-  "metadata": {
-    "home": {
-      "title": "Sites Web, Loi 25 & Automatisation IA | Mark Systems",
-      "description": "Mark Systems aide les PME du Québec avec la refonte de site web, la mise à niveau numérique conforme à la Loi 25 et l'automatisation IA utile. Sans lien avec ECI Mark Systems."
+  "home": {
+    "hero": {
+      "line1": "Sites web, automatisation et IA",
+      "line2": "construits avec rigueur.",
+      "subtitle": "7 sites livrés · score qualité moyen 9.33/10 · conformes Loi 25.",
+      "ctaPrimary": "Démarrer un projet",
+      "ctaSecondary": "Voir les produits"
     },
     "services": {
-      "title": "Refonte Web, Loi 25 & IA | Mark Systems Québec",
-      "description": "Services Mark Systems au Québec: sites web stratégiques, refonte, fondations conformes à la Loi 25, automatisation IA, workflows n8n et outils numériques sur mesure."
-    },
-    "projects": {
-      "title": "Études de cas Web & Automatisation | Mark Systems",
-      "description": "Découvrez des projets réels livrés par Mark Systems: sites clients, fondations numériques conformes à la Loi 25, automatisation IA et workflows n8n."
-    },
-    "about": {
-      "title": "À propos — Web, Loi 25 & IA | Mark Systems Québec",
-      "description": "Mark Systems réunit conception web, rigueur d'ingénierie et automatisation IA. Basé au Québec, au service des PME qui veulent bâtir plus solide."
-    },
-    "contact": {
-      "title": "Contact — Refonte Web, Loi 25 & IA | Mark Systems Québec",
-      "description": "Contactez Mark Systems pour discuter d'une refonte de site, d'une mise à niveau conforme à la Loi 25 ou d'une automatisation IA adaptée à votre réalité."
-    },
-    "systems": {
-      "title": "Systems — Stack, produits et architecture | Mark Systems",
-      "description": "Découvrez la couche technique Mark Systems: NEXOS, SOIC, OSIRIS, automatisation n8n, produits interactifs et stack d'exécution conçue pour livrer du concret."
-    },
-    "brief": {
-      "title": "Brief Projet — Mark Systems",
-      "description": "Formulaire de brief pour votre projet web."
-    }
-  },
-  "faq": {
-    "label": "Questions fréquentes",
-    "title": "FAQ — Sites web, Loi 25 et IA",
-    "items": {
-      "0": {
-        "question": "Qu'est-ce que Mark Systems et quel est le lien avec ECI Mark Systems?",
-        "answer": "Mark Systems est une firme d'ingénierie IA spécialisée en automatisation de workflows, orchestration multi-agents et systèmes intelligents, basée à Québec. Nous n'avons aucun lien avec ECI Mark Systems, qui est un fournisseur de logiciels ERP pour la construction résidentielle."
-      },
-      "1": {
-        "question": "Par quoi commencer si mon entreprise a surtout besoin d'un nouveau site?",
-        "answer": "C'est souvent le bon point de départ. Nous pouvons commencer par une refonte complète ou partielle, clarifier votre offre, remettre vos formulaires et parcours en ordre, intégrer les éléments prioritaires liés à la Loi 25, puis ajouter des automatisations IA quand la base numérique est solide."
-      },
-      "2": {
-        "question": "Pouvez-vous aider avec la conformité Loi 25 sans refaire tout le site?",
-        "answer": "Oui. Dans plusieurs cas, une mise à niveau partielle suffit: formulaires, consentement, politique de confidentialité, bannière témoins, collecte de données et cohérence des pages légales. Si une refonte plus large est nécessaire, nous le dirons clairement."
-      },
-      "3": {
-        "question": "Quels types d'automatisation IA proposez-vous réellement?",
-        "answer": "Nous concevons des workflows n8n, des automatisations de courriels et de suivi, du traitement de documents, des intégrations LLM, des résumés et classifications IA, ainsi que des outils plus avancés quand un simple workflow ne suffit plus. L'objectif reste toujours concret: gagner du temps, réduire les oublis et mieux exploiter l'information."
-      },
-      "4": {
-        "question": "Travaillez-vous avec des clients hors du Québec?",
-        "answer": "Oui, mais le cœur du positionnement est clairement orienté vers les PME québécoises. Cela dit, les mandats peuvent être réalisés à distance et le savoir-faire en conception web, conformité numérique et automatisation IA s'applique aussi ailleurs."
-      },
-      "5": {
-        "question": "Pourquoi montrer une page Systems sur un site de services?",
-        "answer": "Parce que Mark Systems ne vend pas seulement du design ou du copywriting. La page Systems montre la couche technique réelle derrière les mandats: outils internes, stack propriétaire, automatisation n8n, qualité outillée et capacité à construire bien plus qu'une simple vitrine."
-      }
-    }
-  },
-  "systemsBanner": {
-    "label": "Couche technique",
-    "title": "Systems",
-    "description": "Une vitrine publique de la profondeur technique Mark Systems: NEXOS, SOIC, OSIRIS, workflows n8n, estimateurs interactifs et stack de livraison full-stack.",
-    "metric1Label": "Workflows n8n",
-    "metric1Value": "195",
-    "metric2Label": "Agents NEXOS",
-    "metric2Value": "46",
-    "button": "Explorer Systems"
-  },
-  "ainovaBanner": {
-    "label": "Couche technique",
-    "title": "Systems",
-    "description": "Une vitrine publique de la profondeur technique Mark Systems: NEXOS, SOIC, OSIRIS, workflows n8n, estimateurs interactifs et stack de livraison full-stack.",
-    "metric1Label": "Workflows n8n",
-    "metric1Value": "195",
-    "metric2Label": "Agents NEXOS",
-    "metric2Value": "46",
-    "button": "Explorer Systems"
-  },
-  "systems": {
-    "hero": {
-      "badge": "Stack propriétaire Mark Systems",
-      "title": "Systems",
-      "subtitle": "Web, automatisation, qualité et orchestration",
-      "description": "La couche technique publique de Mark Systems. On y retrouve les systèmes, produits et pipelines qui soutiennent les mandats: NEXOS, SOIC, OSIRIS, workflows n8n, estimateurs interactifs et outillage de production.",
-      "ctaPrimary": "Nous contacter",
-      "ctaSecondary": "Voir les projets"
-    },
-    "overview": {
-      "label": "Positionnement technique",
-      "title": "Pourquoi cette page existe",
-      "problemTitle": "Ce que le marché montre souvent",
-      "problemPoints": [
-        "Des vitrines propres, mais peu de preuve de profondeur technique",
-        "Des promesses IA vagues sans outillage réel derrière",
-        "Des stacks fragiles, difficiles à maintenir ou à faire évoluer",
-        "Une séparation artificielle entre site web, automatisation et système métier"
-      ],
-      "solutionTitle": "Comment Mark Systems opère",
-      "solutionPoints": [
-        "Des actifs réels: sites clients, estimateurs, workflows, stack propriétaire",
-        "Une couche qualité: SOIC, audits, tooling réel, auto-correction",
-        "Une orchestration web: NEXOS pour structurer, générer, valider et corriger",
-        "Une approche full-stack: front-end, logique métier, automation et architecture"
-      ]
-    },
-    "features": {
-      "label": "Capacités fondamentales",
-      "title": "Ce qui propulse Mark Systems",
-      "description": "Six blocs qui résument comment la firme passe du site stratégique à la stack opérationnelle.",
-      "soic": {
-        "title": "SOIC",
-        "description": "Moteur de scoring et de convergence qualité utilisé pour mesurer, comparer et faire monter les livrables avant livraison."
-      },
-      "tot": {
-        "title": "Produits interactifs",
-        "description": "Estimateurs, calculateurs et outils front-end utiles pour vendre, qualifier et transformer la visite en opportunité concrète."
-      },
-      "agents": {
-        "title": "NEXOS",
-        "description": "Pipeline web multi-phase orienté création, audit, build et QA avec agents spécialisés, manifests, tooling réel et auto-fix."
-      },
-      "security": {
-        "title": "OSIRIS",
-        "description": "Couche d'audit et de contrôle pour renforcer les vérifications qualité, sécurité, conformité et robustesse opérationnelle."
-      },
-      "multi-llm": {
-        "title": "Automatisation n8n",
-        "description": "Workflows métier, traitement documentaire, notifications, qualification et orchestration des opérations dans des contextes réels."
-      },
-      "k8s": {
-        "title": "Architecture full-stack",
-        "description": "Next.js, TypeScript, APIs, automatisation, données, déploiement et instrumentation dans une logique cohérente de système."
-      }
-    },
-    "architecture": {
-      "label": "Architecture d'exécution",
-      "title": "Cinq couches d'exécution",
-      "layers": {
-        "api": {
-          "title": "Couche interface",
-          "description": "Sites web, pages stratégiques, outils interactifs et expériences de conversion côté front-end"
-        },
-        "orchestration": {
-          "title": "Couche orchestration",
-          "description": "Pipelines NEXOS, logique métier, cadencement des phases et boucle de validation"
+      "label": "Ce qu'on fait",
+      "title": "Nos services",
+      "items": {
+        "web": {
+          "title": "Sites web",
+          "description": "Sites vitrines et applications web générés par le pipeline NEXOS (56 agents IA, quality gates SOIC). Conformes Loi 25, bilingues FR/EN."
         },
         "agents": {
-          "title": "Couche agents et règles",
-          "description": "Agents spécialisés, manifests, gates SOIC et outillage d'auto-correction"
+          "title": "Agents IA",
+          "description": "Chatbots contextuels, RAG sur vos documents, classification automatique. 14 fournisseurs LLM supportés, sandbox Docker, gouvernance intégrée."
         },
-        "infra": {
-          "title": "Couche infrastructure",
-          "description": "Services, stockage, conteneurs, CI/CD et déploiement selon le besoin réel du mandat ou du produit"
+        "automation": {
+          "title": "Automatisation",
+          "description": "195+ workflows n8n en production. Acquisition de clients, onboarding, rapports PDF automatisés, intégrations CRM."
         },
-        "integration": {
-          "title": "Couche intégration",
-          "description": "Workflows n8n, APIs, LLMs, formulaires, CRM, documents et autres systèmes connectés"
+        "audit": {
+          "title": "Audit et scoring",
+          "description": "OSIRIS Scanner (score santé web 0-10), SOIC v3 (9 dimensions qualité), audits sécurité, performance et accessibilité."
+        },
+        "consulting": {
+          "title": "Conseil technique",
+          "description": "Ateliers de cadrage, audit de stack, roadmap technique. Expérience : 10+ ans en ingénierie industrielle (PLC/CNC, défense)."
+        },
+        "custom": {
+          "title": "Solutions sur mesure",
+          "description": "Dashboards, plateformes SaaS multi-tenant, outils de scraping, calculateurs interactifs, applications PWA."
+        }
+      },
+      "viewAll": "Tous les services"
+    },
+    "products": {
+      "label": "Nos outils",
+      "title": "Trois produits principaux",
+      "nexos": {
+        "name": "NEXOS",
+        "tagline": "Pipeline de création web",
+        "stat": "56",
+        "statLabel": "agents IA"
+      },
+      "gencore": {
+        "name": "GENCORE",
+        "tagline": "Plateforme d'agents IA",
+        "stat": "918",
+        "statLabel": "tests"
+      },
+      "soic": {
+        "name": "SOIC v3",
+        "tagline": "Moteur de scoring qualité",
+        "stat": "9",
+        "statLabel": "dimensions"
+      },
+      "viewAll": "Tous les produits"
+    },
+    "portfolio": {
+      "label": "Portfolio",
+      "title": "7 sites livrés. Score moyen 9.33/10.",
+      "viewAll": "Voir tous les projets",
+      "soicScore": "Score SOIC",
+      "lighthousePerf": "Lighthouse",
+      "commonBadges": {
+        "nextjs": "Next.js 15",
+        "typescript": "TypeScript",
+        "loi25": "Loi 25",
+        "wcag": "WCAG 2.1 AA"
+      }
+    },
+    "freeTools": {
+      "label": "Gratuit",
+      "title": "Outils en libre accès",
+      "description": "Calculateurs et préparation d'examen — gratuits, sans inscription.",
+      "viewAll": "Tous les outils"
+    },
+    "faq": {
+      "label": "Questions fréquentes",
+      "title": "FAQ",
+      "items": [
+        {
+          "question": "Qu'est-ce que Mark Systems ?",
+          "answer": "Une entreprise de services numériques basée à Longueuil. On conçoit des sites web, des agents IA, des workflows d'automatisation et des outils de scoring qualité. Nos outils principaux sont NEXOS, GENCORE et SOIC."
+        },
+        {
+          "question": "Est-ce que Mark Systems est lié à ECI Mark Systems ?",
+          "answer": "Non. ECI Mark Systems est un fournisseur de solutions ERP basé aux États-Unis. Mark Systems est une entreprise québécoise indépendante. Aucun lien commercial ou corporatif."
+        },
+        {
+          "question": "Comment fonctionne le pipeline NEXOS ?",
+          "answer": "NEXOS coordonne 56 agents IA spécialisés à travers 6 phases (discovery, stratégie, design, contenu, build, QA). Chaque transition passe par un quality gate SOIC. Le résultat : un site Next.js complet, conforme Loi 25, avec un score qualité vérifié."
+        },
+        {
+          "question": "Vous travaillez avec quel type de clients ?",
+          "answer": "Surtout des PME et startups québécoises qui ont besoin d'un site solide, d'automatisation ou d'un agent IA. On fait aussi des mandats techniques pour des entreprises plus grandes."
+        },
+        {
+          "question": "Quel est le délai pour un site web ?",
+          "answer": "Un site vitrine (10-15 pages, bilingue FR/EN, conforme Loi 25) est livré en 2 à 4 semaines. Les projets plus complexes (SaaS, dashboard, intégrations multiples) prennent 4 à 8 semaines."
+        },
+        {
+          "question": "Est-ce que les sites sont conformes à la Loi 25 ?",
+          "answer": "Oui. Chaque site inclut un bandeau de consentement opt-in, une politique de confidentialité, des mentions légales et un processus d'incident. La conformité est vérifiée automatiquement par le quality gate D8 de SOIC avant le déploiement."
+        },
+        {
+          "question": "Est-ce que le code source est accessible ?",
+          "answer": "Oui. Les sites clients sont livrés avec le code source complet (Next.js, TypeScript). Plusieurs de nos produits sont open-source sur GitHub (NEXOS, GENCORE, OSIRIS Scanner)."
+        },
+        {
+          "question": "Comment démarrer un projet ?",
+          "answer": "Remplissez le brief interactif (7 étapes, 5 minutes) ou envoyez un courriel à marc@marksystems.ca. On vous revient sous 24h."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Un projet en tête ?",
+      "description": "Décrivez votre besoin en quelques étapes. On analyse et on vous revient avec une proposition concrète.",
+      "button": "Démarrer un brief"
+    }
+  },
+  "services": {
+    "hero": {
+      "label": "Nos services",
+      "title": "Ce qu'on fait",
+      "description": "Six domaines de services pour les PME qui veulent du numérique bien construit."
+    },
+    "items": {
+      "web": {
+        "title": "Sites web — Pipeline NEXOS",
+        "description": "Sites vitrines, landing pages, applications web — générés par 56 agents IA à travers 6 phases avec quality gates SOIC.",
+        "features": [
+          "Next.js 15+, TypeScript strict, Tailwind CSS",
+          "Quality gates SOIC (seuil μ ≥ 8.5)",
+          "Conformité Loi 25 intégrée (consentement, politique, mentions)",
+          "Bilingue FR/EN",
+          "0 vulnérabilité npm, headers sécurité complets",
+          "Déploiement Vercel optimisé"
+        ],
+        "highlight": "Chaque site passe par le même pipeline de 56 agents et les mêmes contrôles qualité."
+      },
+      "agents": {
+        "title": "Agents IA et assistants métier",
+        "description": "Chatbots contextuels, RAG sur documents internes, classification automatique. Plateforme GENCORE : données locales, respect de la vie privée, aucun verrouillage fournisseur.",
+        "features": [
+          "14 fournisseurs LLM (Claude, GPT, Gemini, Groq, Ollama…)",
+          "Sandbox Docker rootless sécurisé",
+          "Skill forge : 9 compétences intégrées",
+          "Multi-persona avec gouvernance par policies",
+          "Voice STT/TTS, browser automation, MCP Server",
+          "918 tests (100% pass), audit trail immuable"
+        ],
+        "highlight": "Des agents déployés en production, testés et documentés."
+      },
+      "automation": {
+        "title": "Automatisation et pipelines",
+        "description": "Workflows n8n en production : acquisition de clients, onboarding, CRM léger, rapports PDF générés par IA.",
+        "features": [
+          "195+ workflows n8n en production",
+          "Pipelines acquisition : scraping → scoring → outreach",
+          "Onboarding client automatisé",
+          "Rapports PDF générés par IA",
+          "Intégrations : Notion, Airtable, Brevo, Slack, Telegram",
+          "Webhooks et API sur mesure"
+        ],
+        "highlight": "Des workflows qui tournent au quotidien, pas des prototypes."
+      },
+      "audit": {
+        "title": "Audit, scoring et conformité",
+        "description": "Évaluez la qualité de vos actifs numériques avec OSIRIS Scanner et SOIC v3 : deux moteurs de scoring complémentaires.",
+        "features": [
+          "OSIRIS Scanner : score santé web composite (0-10) sur 4 axes",
+          "SOIC v3 : scoring qualité sur 9 dimensions",
+          "Audit sécurité (headers, CVE, XSS)",
+          "Audit performance (Lighthouse multi-run)",
+          "Audit accessibilité (pa11y, WCAG 2.1 AA)",
+          "Rapports PDF exportables"
+        ],
+        "highlight": "On mesure d'abord, on recommande ensuite."
+      },
+      "consulting": {
+        "title": "Conseil technique",
+        "description": "Ateliers de cadrage, audit de stack, roadmap technique. Background : 10+ ans en ingénierie électrique industrielle (PLC/CNC, défense).",
+        "features": [
+          "Ateliers de cadrage et priorisation",
+          "Audit UX, performance et sécurité",
+          "Roadmap technique et stratégie produit",
+          "Background : PLC/CNC, défense, HT/MT/BT",
+          "Consultation ponctuelle ou mandat récurrent",
+          "Expertise full-stack (frontend, backend, infra, IA)"
+        ],
+        "highlight": "10+ ans d'expérience industrielle avant le virage numérique."
+      },
+      "custom": {
+        "title": "Solutions sur mesure",
+        "description": "Dashboards, plateformes SaaS, outils de scraping, calculateurs interactifs — ce qui ne rentre pas dans les catégories précédentes.",
+        "features": [
+          "Dashboards exécutifs avec scoring hybride IA + quantitatif",
+          "Plateformes SaaS multi-tenant (auth JWT, rate limiting)",
+          "Outils de scraping intelligents",
+          "Calculateurs interactifs (financier, fiscal, estimation)",
+          "PWA mobile et applications offline-first",
+          "API keys, webhooks, intégrations tierces"
+        ],
+        "highlight": "Si ça n'existe pas sur le marché, on peut le construire."
+      }
+    },
+    "cta": {
+      "title": "Vous avez un besoin concret ?",
+      "description": "Décrivez votre projet en 7 étapes — on vous revient avec une analyse et une proposition.",
+      "button": "Démarrer un brief"
+    }
+  },
+  "products": {
+    "hero": {
+      "label": "Nos produits",
+      "title": "Outils développés en interne",
+      "description": "7 produits conçus, construits et maintenus par Mark Systems."
+    },
+    "items": {
+      "nexos": {
+        "name": "NEXOS",
+        "tagline": "56 agents IA, 6 phases, quality gates intégrés.",
+        "description": "Pipeline de création de sites web assisté par IA. Coordonne 56 agents spécialisés à travers 6 phases séquentielles avec quality gates SOIC.",
+        "features": ["Multi-stack (Next.js, Nuxt, Astro)", "Loi 25 intégrée", "Auto-fix sécurité", "Scoring SOIC μ ≥ 8.5"],
+        "stack": ["Python", "Next.js 15", "TypeScript", "SOIC v3"],
+        "proof": "7 sites livrés — moyenne 9.33/10, tous Lighthouse 95+",
+        "link": "https://github.com/AILabManager-tech/nexos-v3",
+        "linkLabel": "GitHub"
+      },
+      "gencore": {
+        "name": "GENCORE",
+        "tagline": "Plateforme d'agents IA. Local-first, sécurisée.",
+        "description": "Plateforme d'agents IA pour entreprises. Sandbox Docker, 14 fournisseurs LLM, gouvernance par policies, audit trail immuable.",
+        "features": ["14 fournisseurs LLM", "Docker rootless sandbox", "Skill forge (9 skills)", "Multi-persona + RBAC"],
+        "stack": ["Python", "FastAPI", "Docker", "SQLite/PostgreSQL"],
+        "proof": "918 tests (100% pass), 9 compétences intégrées",
+        "link": "https://github.com/AILabManager-tech/GENCORE",
+        "linkLabel": "GitHub"
+      },
+      "soic": {
+        "name": "SOIC v3",
+        "tagline": "9 dimensions qualité, un score global.",
+        "description": "Moteur de scoring qualité web (0-10). Évalue Architecture, Documentation, Tests, Sécurité, Performance, Accessibilité, SEO, Conformité Loi 25, Code Quality.",
+        "features": ["Quality gates automatisés", "Feedback router correctif", "Convergence itérative", "Multi-profils (web, API, Python)"],
+        "stack": ["Python", "YAML Profiles", "JSON Persistence"],
+        "proof": "Intégré dans NEXOS, GENCORE et les outils Mark Systems",
+        "link": "",
+        "linkLabel": ""
+      },
+      "osiris": {
+        "name": "OSIRIS Scanner",
+        "tagline": "Score de santé web sur 4 axes.",
+        "description": "Score composite (0-10) mesurant la santé opérationnelle d'un site web : performance, sécurité, intrusion, ressources.",
+        "features": ["Mode fast + deep (Playwright)", "Multi-run Lighthouse", "Historique + tendances", "Export JSON/PDF"],
+        "stack": ["Python", "Lighthouse", "Mozilla Observatory", "Playwright"],
+        "proof": "Utilisé en production sur tous les clients NEXOS",
+        "link": "https://github.com/AILabManager-tech/osiris-scanner",
+        "linkLabel": "GitHub"
+      },
+      "oneclick": {
+        "name": "One-Click Report AI",
+        "tagline": "Données brutes vers rapport PDF en un clic.",
+        "description": "Transforme Excel, PDF, images (OCR) en rapports PDF visuels avec résumés IA. 4 langues supportées.",
+        "features": ["Upload multi-format", "Graphiques automatiques", "Résumés IA", "Export PDF, 4 langues"],
+        "stack": ["FastAPI", "Next.js 14", "WeasyPrint", "OpenAI", "Docker"],
+        "proof": "En production — rapports clients générés automatiquement",
+        "link": "https://github.com/AILabManager-tech/one-click-report",
+        "linkLabel": "GitHub"
+      },
+      "finance": {
+        "name": "Financial Intelligence Suite",
+        "tagline": "Dashboard financier avec scoring hybride IA.",
+        "description": "Tableau de bord d'intelligence financière avec KPIs, scoring, graphiques interactifs et analyse de portefeuille.",
+        "features": ["Market pulse temps réel", "Top performers", "Safety badges", "Filtres avancés"],
+        "stack": ["React 19", "Vite", "Recharts", "Tailwind CSS"],
+        "proof": "Score SOIC μ = 9.62/10",
+        "link": "https://github.com/AILabManager-tech/financial-intelligence-suite",
+        "linkLabel": "GitHub"
+      },
+      "archviewer": {
+        "name": "NEXOS Architecture Viewer",
+        "tagline": "Visualiseur interactif des 56 agents et 6 phases NEXOS.",
+        "description": "Outil de navigation master-detail dans l'architecture NEXOS. Exploration des agents, phases et dimensions SOIC.",
+        "features": ["Master-detail interactif", "Navigation arborescente", "Aucune dépendance", "Vanilla HTML/CSS/JS"],
+        "stack": ["HTML", "CSS", "JavaScript"],
+        "proof": "Documentation vivante du pipeline NEXOS",
+        "link": "https://github.com/AILabManager-tech/nexos-architecture-viewer",
+        "linkLabel": "GitHub"
+      }
+    }
+  },
+  "projects": {
+    "hero": {
+      "label": "Portfolio",
+      "title": "Sites clients générés par NEXOS",
+      "description": "7 sites en production. Score qualité SOIC moyen 9.33/10. Tous conformes Loi 25, WCAG 2.1 AA, 0 vulnérabilité."
+    },
+    "commonStack": "Tous : Next.js 15, TypeScript strict, Tailwind CSS, bilingue FR/EN, Loi 25, WCAG 2.1 AA",
+    "items": {
+      "clinique-aura": {
+        "name": "Clinique Aura",
+        "sector": "Santé / Physiothérapie",
+        "soicScore": "9.47",
+        "lighthousePerf": "96",
+        "url": "https://clinique-aura.vercel.app",
+        "description": "Site vitrine pour une clinique de physiothérapie. Prise de rendez-vous, équipe, services."
+      },
+      "collectif-nova": {
+        "name": "Collectif Nova",
+        "sector": "Agence créative",
+        "soicScore": "9.48",
+        "lighthousePerf": "98",
+        "url": "https://collectif-nova.vercel.app",
+        "description": "Portfolio pour une agence créative. Projets, services, équipe."
+      },
+      "table-marguerite": {
+        "name": "La Table de Marguerite",
+        "sector": "Restauration",
+        "soicScore": "9.41",
+        "lighthousePerf": "95",
+        "url": "https://table-de-marguerite.vercel.app",
+        "description": "Site vitrine pour un restaurant. Menu, réservations, ambiance."
+      },
+      "vertex-pmo": {
+        "name": "Vertex PMO",
+        "sector": "Gestion de projet",
+        "soicScore": "9.23",
+        "lighthousePerf": "87",
+        "url": "https://vertex-pmo.vercel.app",
+        "description": "Site vitrine pour une firme de gestion de projet. Services, méthodologie, équipe."
+      },
+      "beaumont-avocats": {
+        "name": "Beaumont Avocats",
+        "sector": "Droit / Juridique",
+        "soicScore": "9.38",
+        "lighthousePerf": "97",
+        "url": "https://beaumont-avocats.vercel.app",
+        "description": "Site vitrine pour un cabinet d'avocats. Domaines de pratique, équipe, contact."
+      },
+      "electro-maitre": {
+        "name": "Électro-Maître Industriel",
+        "sector": "Électrique industriel",
+        "soicScore": "8.72",
+        "lighthousePerf": "95",
+        "url": "",
+        "description": "Site vitrine pour un entrepreneur électricien industriel. Services, projets, certifications."
+      },
+      "usine-rh": {
+        "name": "L'Usine RH",
+        "sector": "Ressources humaines",
+        "soicScore": "9.39",
+        "lighthousePerf": "94",
+        "url": "https://usinerh.ca",
+        "description": "Plateforme de services RH. Design cyberpunk industriel, outils interactifs, blog."
+      }
+    },
+    "caseStudies": {
+      "label": "Études de cas",
+      "title": "Comment c'est construit",
+      "items": {
+        "nexosPipeline": {
+          "title": "Pipeline NEXOS — de la demande au site livré",
+          "challenge": "Générer des sites web de qualité professionnelle de façon systématique et reproductible.",
+          "solution": "Pipeline coordonné par 56 agents IA spécialisés, avec quality gates SOIC entre chaque phase. Corrections automatiques pour la sécurité et la conformité Loi 25.",
+          "result": "7 sites en production. Score moyen 9.33/10. Délai de livraison réduit de 60%."
+        },
+        "gencorePlatform": {
+          "title": "GENCORE — agents IA avec gouvernance",
+          "challenge": "Déployer des agents IA en entreprise avec sécurité, audit trail et contrôle des accès.",
+          "solution": "Architecture multi-LLM avec sandbox Docker rootless, RBAC, policies de gouvernance et audit trail immuable.",
+          "result": "918 tests, 14 fournisseurs LLM, 9 compétences. Données locales, aucun verrouillage fournisseur."
+        },
+        "n8nEcosystem": {
+          "title": "Écosystème n8n — 195+ workflows en production",
+          "challenge": "Automatiser les processus récurrents d'acquisition, d'onboarding et de reporting.",
+          "solution": "Bibliothèque de 195+ workflows n8n : scraping, scoring, outreach, CRM, rapports PDF et intégrations multiples.",
+          "result": "Acquisition automatisée, onboarding en 24h, rapports PDF sans intervention manuelle."
+        },
+        "osirisScanner": {
+          "title": "OSIRIS Scanner — scoring de santé web",
+          "challenge": "Mesurer objectivement la santé d'un site web sur plusieurs axes.",
+          "solution": "Score composite (0-10) combinant performance (Lighthouse), sécurité (headers + CVE), intrusion (ports) et ressources (sobriété).",
+          "result": "Utilisé en production sur tous les clients NEXOS. Mode fast + deep avec historique."
+        }
+      }
+    }
+  },
+  "freeTools": {
+    "hero": {
+      "label": "Outils gratuits",
+      "title": "Calculateurs en libre accès",
+      "description": "Trois outils gratuits, sans inscription. Conçus au Québec, pour le Québec."
+    },
+    "items": {
+      "estimaweb": {
+        "name": "EstimaWeb QC",
+        "description": "Estimez le coût de votre projet web en 5 minutes. Questionnaire interactif adapté au marché québécois.",
+        "url": "https://estimaweb-qc.vercel.app",
+        "cta": "Essayer gratuitement"
+      },
+      "impots": {
+        "name": "Impôts 2025",
+        "description": "Calculateur d'impôts pour le Québec et les 13 provinces canadiennes. Fédéral + provincial, crédits et déductions.",
+        "url": "https://impots-2025.vercel.app",
+        "cta": "Essayer gratuitement"
+      },
+      "saaq": {
+        "name": "SAAQ Prep B++",
+        "description": "Préparation à l'examen théorique du permis de conduire classe 5. 250+ questions avec explications détaillées.",
+        "url": "https://saaq-prep.vercel.app",
+        "cta": "Essayer gratuitement"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "label": "À propos",
+      "title": "L'ingénierie derrière les résultats.",
+      "description": "Mark Systems est une entreprise de services numériques basée à Longueuil. On construit des sites web, des agents IA et des systèmes d'automatisation pour les PME."
+    },
+    "founder": {
+      "label": "Fondateur",
+      "name": "Marc-André",
+      "title": "Ingénieur électrique · Fondateur de Mark Systems",
+      "bio": "10+ ans en ingénierie électrique industrielle — PLC/CNC, lignes de production, systèmes de protection, défense. Même approche appliquée au numérique : mesurer, documenter, livrer.",
+      "background": "Du câblage industriel à la création de sites web par IA — le fil conducteur, c'est la rigueur d'ingénierie."
+    },
+    "mission": {
+      "label": "Mission",
+      "title": "Des outils numériques qui fonctionnent.",
+      "description": "Construire des actifs numériques concrets pour les PME québécoises : sites web qui génèrent des leads, systèmes IA qui réduisent la charge de travail, outils de scoring qui vérifient la qualité."
+    },
+    "values": {
+      "label": "Valeurs",
+      "items": {
+        "rigor": {
+          "title": "Rigueur mesurable",
+          "description": "Chaque livrable est scoré sur des critères objectifs : SOIC 9 dimensions, Lighthouse, OSIRIS."
+        },
+        "transparency": {
+          "title": "Transparence",
+          "description": "Scores publics, code open-source, rapports accessibles. Le travail parle de lui-même."
+        },
+        "results": {
+          "title": "Les résultats d'abord",
+          "description": "7 sites en production, 918 tests, 195+ workflows. Ce sont les chiffres qui comptent."
+        },
+        "compliance": {
+          "title": "Conformité intégrée",
+          "description": "La Loi 25 est dans le pipeline dès le départ, pas ajoutée à la fin."
         }
       }
     },
-    "metrics": {
-      "label": "En chiffres",
-      "title": "Quelques métriques utiles",
-      "qualityScore": "Score SOIC",
-      "linesOfCode": "Lignes estimées",
-      "testFunctions": "Tests / validations",
-      "agents": "Agents / rôles",
-      "qualityDimensions": "Dimensions qualité"
+    "stats": {
+      "agents": { "value": "56", "label": "agents NEXOS" },
+      "tests": { "value": "918", "label": "tests GENCORE" },
+      "workflows": { "value": "195", "label": "workflows n8n" },
+      "soicAvg": { "value": "9.33", "label": "score SOIC moyen" },
+      "sites": { "value": "7", "label": "sites en production" },
+      "dimensions": { "value": "9", "label": "dimensions qualité" }
+    }
+  },
+  "contact": {
+    "hero": {
+      "label": "Contact",
+      "title": "Discutons de votre projet.",
+      "description": "Projet web, automatisation, agent IA ou question technique — écrivez-nous."
     },
-    "techStack": {
-      "label": "Technologie",
-      "title": "Stack technique",
-      "categories": {
-        "core": "Core",
-        "infra": "Infrastructure",
-        "ai": "IA & LLM",
-        "integration": "Intégration"
-      }
+    "form": {
+      "name": "Nom complet",
+      "namePlaceholder": "Votre nom",
+      "email": "Courriel",
+      "emailPlaceholder": "vous@entreprise.ca",
+      "subject": "Comment peut-on vous aider ?",
+      "subjectPlaceholder": "Choisissez un service…",
+      "subjects": {
+        "site-web": { "label": "Création de site web", "hint": "Nouveau site Next.js, landing page, e-commerce. Conforme Loi 25, bilingue FR/EN." },
+        "refonte": { "label": "Refonte / migration de site", "hint": "Modernisation de votre site existant vers Next.js. Audit SOIC inclus." },
+        "agents-ia": { "label": "Agents IA sur mesure", "hint": "Agents intelligents pour automatiser vos processus métier. Local-first ou cloud." },
+        "automatisation": { "label": "Automatisation (n8n / workflows)", "hint": "195+ workflows en production. Connectez vos outils et éliminez le travail manuel." },
+        "audit-qualite": { "label": "Audit qualité SOIC", "hint": "Score 0-10 sur 9 dimensions. Performance, sécurité, SEO, accessibilité, Loi 25." },
+        "consulting": { "label": "Consulting technique", "hint": "Architecture, choix de stack, revue de code, optimisation performance." },
+        "solution-custom": { "label": "Solution sur mesure", "hint": "Dashboard, SaaS, API, outil interne — on construit ce dont vous avez besoin." },
+        "autre": { "label": "Autre / Question générale", "hint": "Partenariat, information, presse, ou toute autre demande." }
+      },
+      "budget": "Budget estimé",
+      "budgetPlaceholder": "Sélectionnez une fourchette",
+      "budgets": {
+        "less-3k": "Moins de 3 000 $",
+        "3k-10k": "3 000 $ — 10 000 $",
+        "10k-25k": "10 000 $ — 25 000 $",
+        "25k-50k": "25 000 $ — 50 000 $",
+        "50k-plus": "50 000 $+ / Sur devis"
+      },
+      "timeline": "Échéancier",
+      "timelinePlaceholder": "Quand voulez-vous démarrer ?",
+      "timelines": {
+        "urgent": "Urgent — quelques semaines",
+        "soon": "Bientôt — 1 à 2 mois",
+        "standard": "Standard — 2 à 3 mois",
+        "flexible": "Flexible — pas de deadline"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Décrivez votre besoin en quelques lignes…",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours…",
+      "success": "Message envoyé. On vous revient sous 24h.",
+      "error": "Erreur lors de l'envoi. Réessayez ou écrivez directement à marc@marksystems.ca."
+    },
+    "info": {
+      "emailLabel": "Courriel",
+      "email": "marc@marksystems.ca",
+      "locationLabel": "Localisation",
+      "location": "Longueuil, QC, Canada",
+      "githubLabel": "GitHub",
+      "github": "AILabManager-tech",
+      "githubUrl": "https://github.com/AILabManager-tech",
+      "linkedinLabel": "LinkedIn",
+      "linkedinUrl": "https://linkedin.com/company/mark-systems",
+      "briefLabel": "Brief interactif",
+      "briefDescription": "Décrivez votre projet en 7 étapes — 5 minutes.",
+      "briefLink": "Remplir le brief"
     }
   },
   "brief": {
-    "title": "Brief Projet",
-    "subtitle": "Complétez ce formulaire pour démarrer votre projet web avec Mark Systems.",
+    "hero": {
+      "title": "Décrivez votre projet",
+      "description": "7 étapes pour cadrer votre besoin numérique. À la fin, vous recevez un brief structuré en PDF."
+    },
+    "title": "Décrivez votre projet",
+    "subtitle": "Remplissez ce formulaire en 5 minutes. On génère automatiquement un brief complet en PDF — prêt à démarrer.",
     "steps": {
       "company": "Entreprise",
-      "site": "Site",
-      "adaptive": "Détails",
+      "site": "Site web",
+      "adaptive": "Adaptative",
       "legal": "Loi 25",
       "design": "Design",
-      "seo": "SEO",
-      "review": "Récap"
+      "seo": "SEO & Contexte",
+      "review": "Résumé"
     },
-    "nav": {
+    "stepDescriptions": {
+      "company": "Coordonnées de votre entreprise. Ces infos apparaîtront sur votre site et dans les documents légaux.",
+      "site": "Quel type de site ? Quelles pages ? Quelles fonctionnalités ? On s'adapte à vos besoins.",
+      "adaptive": "Options spécifiques selon le type de site choisi — paiement, blog, portfolio, authentification, etc.",
+      "legal": "La Loi 25 du Québec exige une politique de confidentialité et un responsable des données. On s'en occupe.",
+      "design": "Vos préférences visuelles : couleurs, typographie, style. Avez-vous déjà un logo ?",
+      "seo": "Vos concurrents, vos mots-clés cibles et toute information utile pour positionner votre site.",
+      "review": "Vérifiez vos réponses avant de générer le brief. Vous pourrez modifier chaque section."
+    },
+    "navigation": {
       "previous": "Précédent",
       "next": "Suivant",
-      "submit": "Soumettre le brief",
-      "submitting": "Envoi en cours...",
-      "stepOf": "Étape {current} de {total}"
-    },
-    "company": {
-      "title": "Informations de l'entreprise",
-      "name": "Nom de l'entreprise",
-      "namePlaceholder": "ex: Boulangerie Tremblay",
-      "slug": "Slug (URL-friendly)",
-      "slugHelp": "Auto-généré. Lettres minuscules, chiffres et tirets.",
-      "neq": "NEQ (optionnel)",
-      "neqPlaceholder": "10 chiffres",
-      "address": "Adresse du siège",
-      "addressPlaceholder": "123 rue Exemple, Montréal QC",
-      "phone": "Téléphone",
-      "phonePlaceholder": "514-555-0000",
-      "email": "Courriel principal",
-      "emailPlaceholder": "info@entreprise.ca"
-    },
-    "site": {
-      "title": "Configuration du site",
-      "type": "Type de site",
-      "typePlaceholder": "Sélectionnez un type",
-      "pages": "Pages souhaitées",
-      "pagesHelp": "Les pages légales (politique de confidentialité, mentions légales) seront ajoutées automatiquement.",
-      "features": "Fonctionnalités",
-      "languages": "Langues du site",
-      "hosting": "Hébergement",
-      "domain": "Domaine cible (optionnel)",
-      "domainPlaceholder": "monsite.ca"
-    },
-    "adaptive": {
-      "title": "Configuration spécifique",
-      "noQuestions": "Aucune question supplémentaire pour ce type de site.",
-      "paymentProvider": "Fournisseur de paiement",
-      "productCount": "Nombre approximatif de produits",
-      "productCountPlaceholder": "ex: 10-50",
-      "shipping": "Livraison physique requise ?",
-      "shippingZones": "Zones de livraison",
-      "shippingZonesPlaceholder": "Québec, Canada",
-      "inventory": "Gestion d'inventaire requise ?",
-      "displayMode": "Affichage des projets",
-      "caseStudies": "Études de cas détaillées ?",
-      "publishFrequency": "Fréquence de publication",
-      "comments": "Activer les commentaires ?",
-      "categoriesTags": "Catégories et tags ?",
-      "authRequired": "Authentification requise ?",
-      "authMethods": "Méthodes d'authentification",
-      "userTypes": "Types d'utilisateurs",
-      "userTypesPlaceholder": "admin, utilisateur",
-      "realtime": "Fonctionnalités temps réel ?",
-      "newsletterProvider": "Fournisseur infolettre",
-      "analyticsProvider": "Fournisseur analytics"
-    },
-    "legal": {
-      "title": "Conformité Loi 25 du Québec",
-      "mandatory": "OBLIGATOIRE",
-      "rppTitle": "Responsable de la protection des renseignements personnels (RPP)",
-      "rppName": "Nom du RPP",
-      "rppNamePlaceholder": "Jean Tremblay",
-      "rppEmail": "Courriel du RPP",
-      "rppEmailPlaceholder": "confidentialite@entreprise.ca",
-      "rppFunction": "Titre / Fonction",
-      "rppFunctionDefault": "Responsable de la protection des renseignements personnels",
-      "dataCollected": "Types de données collectées",
-      "sensitiveWarning": "La Loi 25 impose des obligations renforcées pour les données sensibles : EFVP obligatoire, consentement explicite requis, mesures de sécurité renforcées.",
-      "purposes": "Finalités du traitement",
-      "retention": "Durée de rétention des données",
-      "retentionPlaceholder": "24 mois",
-      "transferOutsideQc": "Transfert de données hors Québec ?",
-      "transferCountries": "Pays/régions de transfert",
-      "thirdPartyDetected": "Services tiers détectés",
-      "consentMode": "Mode de consentement cookies",
-      "incidentProcess": "Processus d'incident en place ?",
-      "incidentEmail": "Courriel de notification d'incident",
-      "incidentEmailHelp": "Par défaut, le courriel du RPP."
-    },
-    "design": {
-      "title": "Design & Identité visuelle",
-      "palette": "Palette de couleurs (optionnel)",
-      "palettePlaceholder": "ex: #1a1a2e, #16213e, #e94560",
-      "typography": "Typographies préférées (optionnel)",
-      "typographyPlaceholder": "ex: Inter, Playfair Display",
-      "style": "Style visuel",
-      "logoProvided": "Logo fourni ?",
-      "references": "URLs de référence (optionnel)",
-      "referencesPlaceholder": "ex: site1.com, site2.com"
-    },
-    "seo": {
-      "title": "Contexte & SEO",
-      "competitors": "URLs concurrents (optionnel)",
-      "competitorsPlaceholder": "ex: concurrent1.ca, concurrent2.com",
-      "keywords": "Mots-clés SEO prioritaires (optionnel)",
-      "keywordsPlaceholder": "ex: boulangerie montréal, pain artisanal",
-      "freeText": "Contexte libre / notes",
-      "freeTextPlaceholder": "Décrivez votre entreprise, vos objectifs, tout ce qui pourrait nous aider..."
-    },
-    "review": {
-      "title": "Récapitulatif du brief",
-      "edit": "Modifier",
-      "sectionCompany": "Entreprise",
-      "sectionSite": "Site",
-      "sectionAdaptive": "Détails",
-      "sectionLegal": "Loi 25",
-      "sectionDesign": "Design",
-      "sectionSeo": "SEO",
-      "successTitle": "Brief envoyé !",
-      "successMessage": "Votre brief a été envoyé à l'équipe Mark Systems. Nous le traiterons dans les plus brefs délais. Un PDF récapitulatif a été téléchargé sur votre appareil.",
-      "errorMessage": "Une erreur est survenue lors de l'envoi. Veuillez réessayer."
+      "submit": "Générer le brief",
+      "downloadPdf": "Télécharger le PDF"
     },
     "validation": {
-      "nameRequired": "Le nom est requis (min. 2 caractères)",
-      "emailInvalid": "Courriel invalide",
-      "neqInvalid": "Le NEQ doit contenir exactement 10 chiffres",
-      "addressRequired": "L'adresse est requise (min. 5 caractères)",
-      "phoneRequired": "Le téléphone est requis",
-      "slugInvalid": "Slug invalide (lettres minuscules, chiffres, tirets)",
-      "typeRequired": "Sélectionnez un type de site",
-      "pagesRequired": "Sélectionnez au moins une page",
-      "languagesRequired": "Sélectionnez au moins une langue",
-      "rppNameRequired": "Le nom du RPP est requis",
-      "rppEmailInvalid": "Le courriel du RPP est invalide",
-      "dataRequired": "Sélectionnez au moins un type de données",
-      "purposesRequired": "Sélectionnez au moins une finalité",
-      "retentionRequired": "La durée de rétention est requise"
+      "nameRequired": "Le nom de l'entreprise est requis (min. 2 caractères).",
+      "emailInvalid": "L'adresse courriel est invalide.",
+      "neqInvalid": "Le NEQ doit contenir exactement 10 chiffres.",
+      "addressRequired": "L'adresse est requise (min. 5 caractères).",
+      "phoneRequired": "Le numéro de téléphone est requis.",
+      "slugInvalid": "Le slug ne peut contenir que des lettres minuscules, chiffres et tirets.",
+      "typeRequired": "Veuillez choisir un type de site.",
+      "pagesRequired": "Sélectionnez au moins une page.",
+      "languagesRequired": "Sélectionnez au moins une langue.",
+      "rppNameRequired": "Le nom du responsable est requis.",
+      "rppEmailInvalid": "Le courriel du responsable est invalide.",
+      "dataRequired": "Sélectionnez au moins un type de donnée collectée.",
+      "purposesRequired": "Sélectionnez au moins une finalité.",
+      "retentionRequired": "La durée de conservation est requise."
     },
-    "labels": {
-      "yes": "Oui",
-      "no": "Non",
-      "required": "*"
+    "review": {
+      "successTitle": "Brief généré avec succès !",
+      "successMessage": "Le PDF a été téléchargé automatiquement. On vous contacte sous 24h.",
+      "errorMessage": "Erreur lors de l'envoi. Réessayez ou écrivez à marc@marksystems.ca."
     }
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour : 2026-03-25"
+  },
+  "legal": {
+    "title": "Mentions légales",
+    "lastUpdated": "Dernière mise à jour : 2026-03-25"
+  },
+  "footer": {
+    "description": "Sites web, agents IA et automatisation pour PME québécoises.",
+    "navigation": "Navigation",
+    "resources": "Ressources",
+    "legal": "Légal",
+    "contact": "Contact",
+    "allRights": "Tous droits réservés.",
+    "madeWith": "Généré par",
+    "nexos": "NEXOS"
+  },
+  "bowler": {
+    "name": "Bowler",
+    "alt": "Bowler — mascotte Mark Systems",
+    "messages": {
+      "home": "Bienvenue ! Je suis Bowler, votre guide chez Mark Systems.",
+      "services": "Sites web, IA, automatisation — on fait tout ça. Explorez !",
+      "products": "Tous nos outils sont construits en interne. Zéro dépendance externe.",
+      "projects": "Chaque site a un score qualité SOIC réel. Pas de truquage.",
+      "brief": "5 minutes pour décrire votre projet. Je vous guide !",
+      "contact": "Une question ? On vous revient sous 24h. Promis.",
+      "about": "Fondé par un ingénieur électrique reconverti en développeur.",
+      "freeTools": "100% gratuits, sans inscription. Essayez-les !",
+      "default": "Besoin d'aide ? Cliquez sur moi !"
+    },
+    "heroGreeting": "Bienvenue !",
+    "notFound": "Oups ! Cette page semble introuvable. Retournons à l'accueil."
   }
 }

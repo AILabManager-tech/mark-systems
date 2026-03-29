@@ -1,24 +1,20 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
-import { Cpu, Menu, ShieldCheck, Workflow } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { NAV_KEYS, NAV_HREFS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./MobileMenu";
-import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { LanguageToggle } from "./LanguageToggle";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  const locale = useLocale();
-  const tCommon = useTranslations("common");
-  const tNav = useTranslations("nav");
+  const t = useTranslations("nav");
 
   useEffect(() => {
     function onScroll() {
@@ -32,106 +28,86 @@ export function Navbar() {
     setMenuOpen(false);
   }, [pathname]);
 
-  const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}(-[A-Za-z]+)?/, "") || "/";
-  const statusItems = [
-    { icon: Cpu, label: locale === "fr" ? "Systems online" : "Systems online" },
-    { icon: Workflow, label: locale === "fr" ? "Automation active" : "Automation active" },
-    { icon: ShieldCheck, label: locale === "fr" ? "QA gates armed" : "QA gates armed" },
-  ];
+  const visibleKeys = NAV_KEYS.filter((k) => k !== "home");
 
   return (
     <>
-      <motion.header
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+      <header
         className={cn(
-          "fixed left-0 right-0 top-0 z-30 transition-all duration-300",
+          "fixed left-0 right-0 top-0 z-50 border-b transition-all duration-300",
           scrolled
-            ? "border-b border-accent/10 bg-background/92 backdrop-blur-xl shadow-[0_1px_18px_rgba(0,161,155,0.06)]"
-            : "bg-background/86 backdrop-blur-md"
+            ? "border-cyber-cyan/20 bg-background shadow-[0_2px_20px_rgba(0,255,213,0.08)]"
+            : "border-white/[0.06] bg-background/95 backdrop-blur-sm"
         )}
       >
-        <div className="hidden border-b border-accent/10 md:block">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
-            <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent">
-              Operator mode // Mark Systems
-            </div>
-            <div className="flex items-center gap-3">
-              {statusItems.map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="inline-flex items-center gap-2 rounded-sm border border-surface-border bg-surface/70 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-text-tertiary"
-                >
-                  <Icon className="h-3.5 w-3.5 text-accent" />
-                  <span>{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:h-[74px]">
+        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:h-20">
+          {/* Logo + Name */}
           <Link
             href="/"
-            className="flex items-center gap-3 text-xl font-bold uppercase tracking-tight text-text-primary"
+            className="flex items-center gap-3 transition-opacity hover:opacity-80"
           >
-            <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8" />
-            <div className="leading-none">
-              <div>{tCommon("siteName")}</div>
-              <div className="mt-1 font-mono text-[10px] font-medium uppercase tracking-[0.28em] text-text-tertiary">
-                Web / Automation / Systems
-              </div>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Mark Systems"
+              width={42}
+              height={42}
+              className="h-[42px] w-[42px]"
+            />
+            <span className="hidden font-mono text-sm font-bold uppercase tracking-[0.2em] text-txt-primary sm:inline">
+              Mark Systems
+            </span>
           </Link>
 
-          <div className="hidden items-center gap-6 md:flex">
-            {NAV_KEYS.filter((k) => k !== "home").map((key, index) => {
+          {/* Desktop nav links */}
+          <div className="hidden items-center gap-0.5 md:flex">
+            {visibleKeys.map((key) => {
               const href = NAV_HREFS[key];
-              const isActive = pathWithoutLocale === href;
+              const isActive = pathname === href;
               return (
                 <Link
                   key={key}
                   href={href}
                   className={cn(
-                    "relative flex items-center gap-2 border-l border-surface-border pl-4 font-mono text-[12px] uppercase tracking-[0.22em] transition-colors",
+                    "relative px-5 py-2.5 font-mono text-sm font-semibold uppercase tracking-[0.12em] transition-all duration-200",
                     isActive
-                      ? "text-text-primary"
-                      : "text-text-secondary hover:text-text-primary"
+                      ? "text-cyber-cyan"
+                      : "text-txt-tertiary hover:text-white"
                   )}
                 >
-                  <span className="text-[10px] text-accent/80">{String(index + 1).padStart(2, "0")}</span>
-                  <span>{tNav(key)}</span>
-                  {isActive && (
+                  {t(key)}
+                  {isActive ? (
                     <motion.span
-                      layoutId="nav-indicator"
-                      className="absolute -bottom-4 left-4 right-0 h-px bg-accent"
+                      layoutId="nav-underline"
+                      className="absolute inset-x-2 bottom-0 h-[3px] rounded-full bg-cyber-cyan shadow-[0_0_10px_rgba(0,255,213,0.6),0_0_20px_rgba(0,255,213,0.3)]"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
+                  ) : (
+                    <span className="absolute inset-x-4 bottom-0 h-px bg-white/0 transition-all duration-200 group-hover:bg-white/10" />
                   )}
                 </Link>
               );
             })}
           </div>
 
+          {/* Right side: CTA + Lang + Hamburger */}
           <div className="flex items-center gap-3">
-            <LanguageSwitcher />
             <Link
-              href="/contact"
-              className="hidden rounded-sm border border-accent/30 bg-accent/10 px-5 py-2 font-mono text-[12px] font-semibold uppercase tracking-[0.2em] text-text-primary transition-colors hover:border-accent hover:bg-accent hover:text-background md:inline-block"
+              href="/brief"
+              className="hidden rounded-lg bg-gradient-to-b from-[#1a5c4a] via-[#0f3d2e] to-[#0a2a1f] px-6 py-2.5 font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyber-neon shadow-[0_4px_0_0_#061a13,0_6px_14px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(0,255,136,0.15)] border border-[#1a5c4a]/60 transition-all duration-150 hover:translate-y-[1px] hover:shadow-[0_3px_0_0_#061a13,0_4px_10px_rgba(0,0,0,0.5),0_0_20px_rgba(0,255,136,0.2)] hover:border-cyber-neon/40 active:translate-y-[3px] active:shadow-[0_1px_0_0_#061a13,inset_0_2px_4px_rgba(0,0,0,0.4)] md:inline-block"
             >
-              {tNav("contact")}
+              {t("brief")}
             </Link>
+            <LanguageToggle />
             <button
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
-              className="rounded-sm border border-surface-border p-2 text-text-secondary hover:border-accent/40 hover:text-text-primary md:hidden"
+              className="rounded-sm border border-surface-border/80 bg-surface/60 p-2 text-txt-secondary hover:border-cyber-cyan/40 hover:text-txt-primary md:hidden"
             >
               <Menu className="h-5 w-5" />
             </button>
           </div>
         </nav>
-      </motion.header>
+      </header>
 
       <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </>

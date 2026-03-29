@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Bot, Gauge, Network, ShieldCheck } from "lucide-react";
+import { ArrowRight, Bot, Gauge, Network, Radar, ShieldCheck, Sparkles } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { GlowOrb } from "@/components/motion/GlowOrb";
@@ -24,17 +24,22 @@ export function Hero() {
           { label: "THROUGHPUT", title: "Build velocity", text: "Websites, workflows, estimators, and technical assets aligned.", icon: Gauge },
           { label: "AUX", title: "AI layer live", text: "LLMs, n8n, NEXOS, OSIRIS, and business logic connected.", icon: Bot },
         ];
+  const telemetry =
+    locale === "fr"
+      ? [
+          { value: "24/7", label: "surveillance active" },
+          { value: "FR/EN", label: "interface bilingue" },
+          { value: "SOIC", label: "gates de qualite" },
+        ]
+      : [
+          { value: "24/7", label: "active monitoring" },
+          { value: "FR/EN", label: "bilingual interface" },
+          { value: "SOIC", label: "quality gates" },
+        ];
 
   return (
-    <section className="relative overflow-hidden border-b border-surface-border/60">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(248,250,252,0.6) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(248,250,252,0.6) 1px, transparent 1px)`,
-          backgroundSize: "72px 72px",
-        }}
-      />
+    <section className="starfield relative overflow-hidden border-b border-surface-border/60">
+      <div className="holo-grid pointer-events-none absolute inset-0 opacity-[0.18]" />
       <div className="scan-stripes pointer-events-none absolute inset-0 opacity-30" />
       <GlowOrb className="-right-32 top-10" size="600px" delay={0} duration={7} />
       <GlowOrb className="-left-40 bottom-0" size="460px" delay={3} duration={9} />
@@ -63,21 +68,21 @@ export function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="mt-6 max-w-5xl text-[3.3rem] font-bold uppercase leading-[0.88] tracking-[-0.04em] text-text-primary md:text-[5.7rem]"
+              className="mt-6 max-w-5xl font-display text-[3.6rem] font-bold uppercase leading-[0.84] tracking-[0.02em] text-text-primary md:text-[6rem]"
             >
               <span className="block">{t("titleStart")}</span>
-              <span className="mt-2 block text-accent">{t("titleAccent")}</span>
+              <span className="mt-2 block text-gradient-accent">{t("titleAccent")}</span>
             </motion.h1>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="industrial-panel mt-8 max-w-3xl p-6 md:p-8"
+              className="industrial-panel hud-frame screen-glow mt-8 max-w-3xl p-6 md:p-8"
             >
               <div className="mb-4 flex items-center justify-between gap-3 border-b border-surface-border pb-4">
                 <span className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">
-                  Positionnement actif
+                  {locale === "fr" ? "Canal strategique actif" : "Strategic channel active"}
                 </span>
                 <span className="rounded-full border border-accent/20 bg-accent/10 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
                   Web / Automation / Systems
@@ -86,6 +91,14 @@ export function Hero() {
               <p className="text-base leading-relaxed text-text-secondary md:text-lg">
                 {t("description")}
               </p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                {telemetry.map(({ value, label }) => (
+                  <div key={label} className="rounded-sm border border-surface-border/80 bg-background/40 px-4 py-3">
+                    <div className="font-display text-xl tracking-[0.18em] text-accent">{value}</div>
+                    <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-text-tertiary">{label}</div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
 
             <motion.div
@@ -105,22 +118,33 @@ export function Hero() {
             </motion.div>
           </div>
 
-          <aside className="industrial-panel p-5">
+          <aside className="industrial-panel hud-frame screen-glow p-5">
             <div className="flex items-center justify-between border-b border-surface-border pb-3">
               <div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">Live operator map</div>
-                <div className="mt-1 text-sm font-semibold text-text-primary">System topology</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">
+                  {locale === "fr" ? "Carte du pont principal" : "Bridge telemetry map"}
+                </div>
+                <div className="mt-1 text-sm font-semibold text-text-primary">
+                  {locale === "fr" ? "Topologie systeme" : "System topology"}
+                </div>
               </div>
               <div className="rounded-sm border border-emerald-400/25 bg-emerald-400/10 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-300">
                 online
               </div>
             </div>
 
-            <div className="mt-4 space-y-3">
+            <div className="radar-sweep relative mx-auto mt-5 flex aspect-square max-w-[210px] items-center justify-center rounded-full border border-accent/20 bg-[radial-gradient(circle,rgba(98,248,255,0.18)_0%,rgba(98,248,255,0.04)_38%,transparent_70%)]">
+              <div className="absolute inset-5 rounded-full border border-accent/15" />
+              <div className="absolute inset-10 rounded-full border border-accent/10" />
+              <div className="absolute inset-0 rounded-full border border-accent/20" />
+              <Radar className="relative z-10 h-10 w-10 text-accent" />
+            </div>
+
+            <div className="mt-5 space-y-3">
               {systemPanels.map(({ label, title, text, icon: Icon }, index) => (
                 <div
                   key={title}
-                  className="grid grid-cols-[auto_1fr] gap-3 rounded-sm border border-surface-border bg-background/70 p-3"
+                  className="grid grid-cols-[auto_1fr] gap-3 rounded-sm border border-surface-border/80 bg-background/70 p-3"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-accent/20 bg-accent/10">
                     <Icon className="h-4 w-4 text-accent" />
@@ -137,7 +161,10 @@ export function Hero() {
             </div>
 
             <div className="mt-4 rounded-sm border border-dashed border-accent/20 bg-accent/5 p-4">
-              <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">Execution map</div>
+              <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.24em] text-accent">
+                <Sparkles className="h-3.5 w-3.5" />
+                {locale === "fr" ? "Carte d'execution" : "Execution map"}
+              </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 {["Web", "Automation", "Systems", "QA", "Deploy", "Cases"].map((item) => (
                   <div

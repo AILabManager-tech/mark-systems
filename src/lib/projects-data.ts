@@ -1,30 +1,9 @@
-export const PROJECT_IDS = [
-  "usine-rh",
-  "beaumont-avocats",
-  "estimaweb-qc",
-  "nexos-soic-stack",
-  "n8n-ecosystem",
-] as const;
+import type { ProductDemoId } from "@/lib/product-demos";
 
-export type ProjectId = (typeof PROJECT_IDS)[number];
+export { PRODUCT_DEMO_IDS as PROJECT_IDS } from "@/lib/product-demos";
+export type ProjectId = ProductDemoId;
 
 export const projectTechnologies: Record<ProjectId, string[]> = {
-  "usine-rh": [
-    "Next.js 14",
-    "TypeScript",
-    "next-intl",
-    "Vercel",
-    "Loi 25",
-    "SEO local",
-  ],
-  "beaumont-avocats": [
-    "Next.js 14",
-    "TypeScript",
-    "UX writing",
-    "Formulaire qualifiant",
-    "Loi 25",
-    "SEO local",
-  ],
   "estimaweb-qc": [
     "Next.js 15",
     "TypeScript",
@@ -33,20 +12,44 @@ export const projectTechnologies: Record<ProjectId, string[]> = {
     "Lead generation",
     "Vercel",
   ],
-  "nexos-soic-stack": [
+  "osiris-scanner": [
     "Python",
-    "Next.js",
-    "FastAPI",
-    "SOIC",
-    "NEXOS",
-    "OSIRIS",
+    "Lighthouse",
+    "Playwright",
+    "Security headers",
+    "Reports",
+    "Scoring",
   ],
-  "n8n-ecosystem": [
-    "n8n",
-    "GPT-4",
-    "Claude",
+  "one-click-report": [
+    "FastAPI",
+    "Next.js",
+    "OCR",
+    "PDF export",
+    "Charts",
+    "Executive summaries",
+  ],
+  "inbox-zero": [
+    "Python",
+    "IMAP",
+    "Gmail API",
+    "Graph API",
+    "LLM classification",
+    "Web dashboard",
+  ],
+  summeet: [
+    "Flask",
     "Whisper",
-    "PostgreSQL",
-    "Docker",
+    "OpenAI",
+    "Anthropic",
+    "SQLite",
+    "Markdown export",
+  ],
+  "financial-intelligence-suite": [
+    "React 19",
+    "Vite 7",
+    "Recharts",
+    "Tailwind CSS 4",
+    "Scoring",
+    "Executive KPIs",
   ],
 };

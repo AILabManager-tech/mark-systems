@@ -5,7 +5,9 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  trailingSlash: true,
   poweredByHeader: false,
+  images: { unoptimized: true },
 
   // Note: With output: 'export', headers only apply in dev mode (next dev).
   // For production, configure headers in your hosting provider (Netlify, Vercel, etc.).
@@ -42,11 +44,12 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: blob:",
+              "img-src 'self' data: blob: https://*.openstreetmap.org https://*.tile.openstreetmap.org",
               "font-src 'self' data:",
               "connect-src 'self' https://formspree.io",
+              "frame-src 'self' https://www.openstreetmap.org",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",

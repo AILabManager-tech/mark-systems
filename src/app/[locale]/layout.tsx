@@ -6,11 +6,12 @@ import { notFound } from "next/navigation";
 import { routing, locales, type Locale } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { CookieConsent } from "@/components/cookie-consent";
+import { BowlerGuide } from "@/components/mascot/BowlerGuide";
 import { SITE } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import "@/styles/globals.css";
-import { CookieConsent } from "@/components/cookie-consent";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,23 +25,21 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+  const { locale } = await props.params;
   const t = await getTranslations({ locale, namespace: "metadata.home" });
 
   const languages: Record<string, string> = {};
   for (const loc of locales) {
     languages[loc] = `${SITE.url}/${loc}`;
   }
-  languages["x-default"] = `${SITE.url}/en`;
+  languages["x-default"] = `${SITE.url}/fr`;
 
   return {
     title: {
@@ -83,7 +82,7 @@ export async function generateMetadata({
 }
 
 function OrganizationJsonLd({ locale }: { locale: string }) {
-  const jsonLd = {
+  const organizationData = {
     "@context": "https://schema.org",
     "@type": ["Organization", "ProfessionalService"],
     name: "Mark Systems",
@@ -91,8 +90,8 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
     logo: `${SITE.url}/logo.png`,
     description:
       locale === "fr"
-        ? "Mark Systems aide les PME du Québec avec la refonte de site web, la mise à niveau numérique conforme à la Loi 25 et l'automatisation IA utile. Ne pas confondre avec ECI Mark Systems."
-        : "Mark Systems helps Quebec SMBs with website redesigns, Law 25-ready digital upgrades, and practical AI automation. Not affiliated with ECI Mark Systems.",
+        ? "Mark Systems aide les PME du Québec avec la refonte de site web, la mise à niveau numérique conforme à la Loi 25 et l'automatisation IA utile."
+        : "Mark Systems helps Quebec SMBs with website redesigns, Law 25-ready digital upgrades, and practical AI automation.",
     foundingDate: "2024",
     areaServed: {
       "@type": "Place",
@@ -100,77 +99,84 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Québec",
+      addressLocality: "Longueuil",
       addressRegion: "QC",
       addressCountry: "CA",
     },
-    sameAs: [],
+    sameAs: [SITE.github, SITE.linkedin],
     knowsAbout: [
-      "Website Redesign",
-      "Law 25 Compliance",
-      "AI Automation",
-      "Workflow Automation",
-      "n8n",
-      "Lead Qualification",
-      "Document Automation",
-      "Custom Platforms",
-      "Quebec SMB Digital Strategy",
-    ],
-    serviceType: [
-      "Strategic Website Design",
-      "Website Redesign",
-      "Law 25 Digital Compliance",
-      "AI Workflow Automation",
-      "n8n Automation",
-      "Custom Digital Tools",
+      "advanced digital solutions",
+      "AI agents",
+      "NEXOS pipeline",
+      "SOIC scoring",
     ],
   };
 
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Mark Systems",
+    url: SITE.url,
+    inLanguage: [locale],
+  };
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
+      />
+    </>
   );
 }
 
-export default async function LocaleLayout({
-  children,
-  params: { locale },
-}: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) {
+export default async function LocaleLayout(
+  props: {
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
+  }
+) {
+  const { locale } = await props.params;
+  const { children } = props;
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
+
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} dark`}
     >
       <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <OrganizationJsonLd locale={locale} />
       </head>
-      <body className="noise-overlay relative min-h-screen font-sans antialiased">
+      <body className="bg-background text-txt-primary font-sans antialiased min-h-screen">
         <NextIntlClientProvider messages={messages}>
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
           >
-            {(messages as Record<string, Record<string, string>>)?.common?.skipToContent ?? "Skip to content"}
+            {(messages as Record<string, Record<string, string>>)?.common
+              ?.skipToContent ?? "Skip to content"}
           </a>
           <Navbar />
-          <main id="main-content" className="pt-16 lg:pt-20">{children}</main>
+          <main id="main-content" className="relative z-10 pt-16 lg:pt-20">
+            {children}
+          </main>
           <Footer />
+          <BowlerGuide />
+          <CookieConsent />
           <Analytics />
           <SpeedInsights />
         </NextIntlClientProvider>
-              <CookieConsent />
       </body>
     </html>
   );

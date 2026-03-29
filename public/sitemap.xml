@@ -2,104 +2,156 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- EN (default locale) -->
   <url>
-    <loc>https://marksystems.ca/en</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en"/>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.marksystems.ca/fr</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.marksystems.ca/fr"/>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://marksystems.ca/en/services</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/services"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/services"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/services"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://marksystems.ca/en/projects</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/projects"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/projects"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/projects"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://marksystems.ca/en/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/about"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/about"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/about"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://marksystems.ca/en/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/contact"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/contact"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/contact"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://marksystems.ca/en/systems</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/systems"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/systems"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/systems"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.marksystems.ca/en</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.marksystems.ca/fr"/>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
   </url>
 
-  <!-- FR -->
   <url>
-    <loc>https://marksystems.ca/fr</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en"/>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://marksystems.ca/fr/services</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/services"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/services"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/services"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://marksystems.ca/fr/projects</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/projects"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/projects"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/projects"/>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.marksystems.ca/fr/services</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/services"/>
     <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marksystems.ca/fr/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/about"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/about"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/about"/>
+    <loc>https://www.marksystems.ca/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/services"/>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.marksystems.ca/fr/produits</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/produits"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/produits"/>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marksystems.ca/fr/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/contact"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/contact"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/contact"/>
+    <loc>https://www.marksystems.ca/en/produits</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/produits"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/produits"/>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.marksystems.ca/fr/projets</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/projets"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/projets"/>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marksystems.ca/fr/systems</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marksystems.ca/en/systems"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marksystems.ca/fr/systems"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://marksystems.ca/en/systems"/>
+    <loc>https://www.marksystems.ca/en/projets</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/projets"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/projets"/>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.marksystems.ca/fr/outils-gratuits</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/outils-gratuits"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/outils-gratuits"/>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.marksystems.ca/en/outils-gratuits</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/outils-gratuits"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/outils-gratuits"/>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.marksystems.ca/fr/a-propos</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/a-propos"/>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.marksystems.ca/en/a-propos</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/a-propos"/>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.marksystems.ca/fr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/contact"/>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.marksystems.ca/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/contact"/>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.marksystems.ca/fr/brief</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/brief"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/brief"/>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.marksystems.ca/en/brief</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/brief"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/brief"/>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.marksystems.ca/fr/politique-confidentialite</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/politique-confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/politique-confidentialite"/>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.marksystems.ca/en/politique-confidentialite</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/politique-confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/politique-confidentialite"/>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.marksystems.ca/fr/mentions-legales</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/mentions-legales"/>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.marksystems.ca/en/mentions-legales</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.marksystems.ca/fr/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.marksystems.ca/en/mentions-legales"/>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
   </url>
 
 </urlset>

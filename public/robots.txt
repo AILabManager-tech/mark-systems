@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marksystems.ca/sitemap.xml
+Sitemap: https://www.marksystems.ca/sitemap.xml
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /

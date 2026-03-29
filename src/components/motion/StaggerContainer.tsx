@@ -1,22 +1,43 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { staggerContainer } from "@/lib/animations";
+import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface StaggerContainerProps {
   children: React.ReactNode;
+  staggerDelay?: number;
   className?: string;
 }
 
 export function StaggerContainer({
   children,
+  staggerDelay = 0.1,
   className,
 }: StaggerContainerProps) {
+  const reduced = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted || reduced) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
-      variants={staggerContainer}
-      initial="visible"
-      animate="visible"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-60px" }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: staggerDelay,
+          },
+        },
+      }}
       className={className}
     >
       {children}

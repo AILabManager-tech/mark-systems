@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,21 +10,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#050505",
+        background: "#050508",
         surface: {
-          DEFAULT: "#0F0F11",
-          light: "#161618",
-          border: "#1E293B",
+          DEFAULT: "#111118",
+          hover: "#1a1a24",
+          elevated: "#16161f",
+          border: "rgba(255, 255, 255, 0.06)",
         },
-        accent: {
-          DEFAULT: "#00A19B",
-          muted: "#008C87",
-          dim: "#006B67",
+        cyber: {
+          cyan: "#00ffd5",
+          "cyan-dark": "#00a19b",
+          violet: "#0e7490",
+          "violet-dark": "#0c5f78",
+          neon: "#00ff88",
+          "neon-dark": "#22c55e",
+          danger: "#ef4444",
+          amber: "#f59e0b",
         },
-        text: {
-          primary: "#F8FAFC",
-          secondary: "#94A3B8",
-          tertiary: "#475569",
+        txt: {
+          primary: "#e8e8ed",
+          secondary: "#8b8b9e",
+          tertiary: "#5a5a6e",
         },
       },
       fontFamily: {
@@ -31,24 +38,73 @@ const config: Config = {
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       fontSize: {
-        hero: ["6rem", { lineHeight: "1.0", letterSpacing: "-0.04em" }],
-        "hero-lg": ["8rem", { lineHeight: "0.95", letterSpacing: "-0.04em" }],
-        display: ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
-        h1: ["3rem", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
-        h2: ["2.25rem", { lineHeight: "1.3", letterSpacing: "-0.01em" }],
-        h3: ["1.5rem", { lineHeight: "1.4" }],
-        "body-lg": ["1.125rem", { lineHeight: "1.7" }],
+        hero: [
+          "clamp(2.5rem, 6vw, 4.5rem)",
+          { lineHeight: "1.1", letterSpacing: "-0.03em" },
+        ],
+        h1: [
+          "clamp(2rem, 4vw, 3rem)",
+          { lineHeight: "1.2", letterSpacing: "-0.02em" },
+        ],
+        h2: [
+          "clamp(1.5rem, 3vw, 2.25rem)",
+          { lineHeight: "1.3", letterSpacing: "-0.01em" },
+        ],
+        h3: ["clamp(1.25rem, 2vw, 1.75rem)", { lineHeight: "1.4" }],
+      },
+      boxShadow: {
+        "glow-cyan":
+          "0 0 20px rgba(0,255,213,0.3), 0 0 60px rgba(0,255,213,0.1)",
+        "glow-violet":
+          "0 0 20px rgba(14,116,144,0.3), 0 0 60px rgba(14,116,144,0.1)",
+        "glow-neon":
+          "0 0 20px rgba(0,255,136,0.3), 0 0 60px rgba(0,255,136,0.1)",
+        "glow-hover":
+          "0 0 30px rgba(0,255,213,0.2), 0 0 80px rgba(0,255,213,0.05)",
+        "glow-danger": "0 0 20px rgba(239,68,68,0.3)",
+      },
+      animation: {
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "gradient-shift": "gradient-shift 6s ease infinite",
+        float: "float 6s ease-in-out infinite",
+        scan: "scan 4s linear infinite",
+        "border-glow": "border-glow 3s ease-in-out infinite",
+        "bg-drift": "bg-drift 30s ease-in-out infinite",
+      },
+      keyframes: {
+        "pulse-glow": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "1" },
+        },
+        "gradient-shift": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        scan: {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100vh)" },
+        },
+        "border-glow": {
+          "0%, 100%": { borderColor: "rgba(0, 255, 213, 0.2)" },
+          "50%": { borderColor: "rgba(0, 255, 213, 0.6)" },
+        },
+        "bg-drift": {
+          "0%": { transform: "scale(1.05) translate(0px, 0px)" },
+          "25%": { transform: "scale(1.08) translate(-10px, -5px)" },
+          "50%": { transform: "scale(1.05) translate(5px, -10px)" },
+          "75%": { transform: "scale(1.08) translate(-5px, 5px)" },
+          "100%": { transform: "scale(1.05) translate(0px, 0px)" },
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      },
-      boxShadow: {
-        subtle: "0 1px 3px rgba(0, 0, 0, 0.5)",
-        card: "0 2px 8px rgba(0, 0, 0, 0.3)",
-        elevated: "0 4px 16px rgba(0, 0, 0, 0.4)",
-      },
-      borderRadius: {
-        sm: "4px",
+        "cyber-gradient":
+          "linear-gradient(135deg, #00ffd5, #0e7490, #00ff88)",
       },
     },
   },

@@ -1,52 +1,62 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { useInView, useReducedMotion } from "framer-motion";
 
 interface AnimatedCounterProps {
-  value: string;
+  target: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
   className?: string;
 }
 
-function parseNumericPart(value: string): { prefix: string; number: number; suffix: string } | null {
-  const match = value.match(/^([^\d]*?)([\d,.]+)(.*)$/);
-  if (!match) return null;
-  const num = parseFloat(match[2].replace(/,/g, ""));
-  if (isNaN(num)) return null;
-  return { prefix: match[1], number: num, suffix: match[3] };
-}
-
-export function AnimatedCounter({ value, className }: AnimatedCounterProps) {
+export function AnimatedCounter({
+  target,
+  duration = 1.5,
+  prefix = "",
+  suffix = "",
+  decimals = 0,
+  className,
+}: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
-  const [display, setDisplay] = useState(value);
-  const parsed = useMemo(() => parseNumericPart(value), [value]);
+  const reduced = useReducedMotion();
+  const [value, setValue] = useState(0);
 
   useEffect(() => {
-    if (!isInView || !parsed) return;
+    if (!isInView) return;
 
-    const duration = 1200;
-    const steps = 40;
-    const stepTime = duration / steps;
-    const { prefix, number, suffix } = parsed;
+    if (reduced) {
+      setValue(target);
+      return;
+    }
+
+    const steps = 60;
+    const stepTime = (duration * 1000) / steps;
     let step = 0;
 
     const interval = setInterval(() => {
       step++;
       const progress = step / steps;
+      // Ease-out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(eased * number);
-      const formatted = number >= 1000 ? current.toLocaleString() : String(current);
-      setDisplay(`${prefix}${formatted}${suffix}`);
-      if (step >= steps) clearInterval(interval);
+      setValue(eased * target);
+      if (step >= steps) {
+        setValue(target);
+        clearInterval(interval);
+      }
     }, stepTime);
 
     return () => clearInterval(interval);
-  }, [isInView, parsed]);
+  }, [isInView, target, duration, reduced]);
 
   return (
-    <span ref={ref} className={className}>
-      {display}
+    <span ref={ref} className={className ?? "font-mono"}>
+      {prefix}
+      {value.toFixed(decimals)}
+      {suffix}
     </span>
   );
 }

@@ -1,18 +1,20 @@
-import { Hero } from "@/components/sections/Hero";
+import { HeroSection } from "@/components/sections/HeroSection";
 import { ServicesPreview } from "@/components/sections/ServicesPreview";
-import { AinovaOSBanner } from "@/components/sections/AinovaOSBanner";
-import { ProjectsPreview } from "@/components/sections/ProjectsPreview";
+import { FeaturedProducts } from "@/components/sections/FeaturedProducts";
+import { PortfolioPreview } from "@/components/sections/PortfolioPreview";
+import { FreeToolsPreview } from "@/components/sections/FreeToolsPreview";
+import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
-import { FAQ } from "@/components/sections/FAQ";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <HeroSection />
       <ServicesPreview />
-      <AinovaOSBanner />
-      <ProjectsPreview />
-      <FAQ />
+      <FeaturedProducts />
+      <PortfolioPreview />
+      <FreeToolsPreview />
+      <FAQSection />
       <CTASection />
     </>
   );

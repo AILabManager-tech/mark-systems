@@ -1,11 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { NAV_KEYS, NAV_HREFS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { LanguageToggle } from "./LanguageToggle";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -14,20 +15,22 @@ interface MobileMenuProps {
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const pathname = usePathname();
-  const tNav = useTranslations("nav");
-  const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}(-[A-Za-z]+)?/, "") || "/";
+  const t = useTranslations("nav");
 
   return (
     <AnimatePresence>
       {isOpen && (
         <>
+          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-50 bg-background/60 backdrop-blur-sm md:hidden"
           />
+
+          {/* Slide-in panel */}
           <motion.nav
             role="dialog"
             aria-modal="true"
@@ -36,39 +39,54 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed right-0 top-0 z-50 flex h-full w-72 flex-col border-l border-surface-border bg-surface p-8 md:hidden"
+            className="fixed right-0 top-0 z-50 flex h-full w-80 flex-col border-l border-cyber-cyan/10 bg-surface/95 backdrop-blur-xl p-8 md:hidden"
           >
+            {/* Close button */}
             <button
               onClick={onClose}
-              aria-label="Close menu"
-              className="mb-8 self-end text-text-secondary hover:text-text-primary"
+              aria-label="Fermer le menu"
+              className="mb-8 self-end rounded-sm border border-surface-border/80 p-2 text-txt-secondary transition-colors hover:border-cyber-cyan/40 hover:text-txt-primary"
             >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <X className="h-5 w-5" />
             </button>
-            <ul className="space-y-1">
+
+            {/* Nav links */}
+            <ul className="flex-1 space-y-1">
               {NAV_KEYS.map((key) => {
                 const href = NAV_HREFS[key];
-                const isActive = pathWithoutLocale === href;
+                const isActive = pathname === href;
                 return (
                   <li key={key}>
                     <Link
                       href={href}
                       onClick={onClose}
                       className={cn(
-                        "block rounded-sm px-4 py-3 text-lg font-medium transition-colors",
+                        "block rounded-sm px-4 py-3 font-mono text-sm uppercase tracking-[0.14em] transition-colors",
                         isActive
-                          ? "bg-surface-light text-text-primary"
-                          : "text-text-secondary hover:bg-surface-light hover:text-text-primary"
+                          ? "border-l-2 border-cyber-cyan bg-cyber-cyan/10 text-cyber-cyan"
+                          : "text-txt-secondary hover:bg-surface-hover hover:text-txt-primary"
                       )}
                     >
-                      {tNav(key)}
+                      {t(key)}
                     </Link>
                   </li>
                 );
               })}
             </ul>
+
+            {/* CTA button */}
+            <Link
+              href="/brief"
+              onClick={onClose}
+              className="mt-4 block rounded-sm border border-cyber-cyan/40 bg-cyber-cyan/10 px-5 py-3 text-center font-mono text-sm font-semibold uppercase tracking-[0.18em] text-cyber-cyan transition-all hover:bg-cyber-cyan/20"
+            >
+              {t("brief")}
+            </Link>
+
+            {/* Language toggle */}
+            <div className="mt-6 flex justify-center">
+              <LanguageToggle />
+            </div>
           </motion.nav>
         </>
       )}

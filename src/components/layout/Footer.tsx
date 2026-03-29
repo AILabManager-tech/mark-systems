@@ -1,39 +1,46 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { NAV_KEYS, NAV_HREFS } from "@/lib/constants";
+import { NAV_KEYS, NAV_HREFS, SITE } from "@/lib/constants";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
-  const tCommon = useTranslations("common");
-  const tNav = useTranslations("nav");
   const tFooter = useTranslations("footer");
+  const tNav = useTranslations("nav");
 
   return (
-    <footer className="border-t border-surface-border">
-      <div className="section-container py-16">
-        <div className="grid gap-12 md:grid-cols-2">
+    <footer className="relative border-t border-cyber-cyan/10 bg-background">
+      {/* Top glow line */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyber-cyan/30 to-transparent" />
+
+      <div className="mx-auto max-w-7xl px-6 py-16">
+        {/* 4-column grid */}
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Col 1: About */}
           <div>
-            <Link href="/" className="flex items-center gap-2 text-lg font-bold text-text-primary tracking-tight">
-              <Image src="/logo.png" alt="" width={28} height={28} className="h-7 w-7" />
-              {tCommon("siteName")}
-            </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-text-secondary">
-              {tCommon("tagline")}. {tFooter("description")}
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="Mark Systems" width={32} height={32} className="h-8 w-8" />
+              <span className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-txt-primary">
+                Mark Systems
+              </span>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-txt-secondary">
+              {tFooter("description")}
             </p>
           </div>
 
+          {/* Col 2: Navigation */}
           <div>
-            <h4 className="mb-4 font-mono text-xs uppercase tracking-widest text-text-tertiary">
-              {tFooter("navLabel")}
+            <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">
+              {tFooter("navigation")}
             </h4>
             <ul className="space-y-2">
-              {NAV_KEYS.map((key) => (
+              {NAV_KEYS.filter((k) => k !== "home").map((key) => (
                 <li key={key}>
                   <Link
                     href={NAV_HREFS[key]}
-                    className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                    className="text-sm text-txt-secondary transition-colors hover:text-txt-primary"
                   >
                     {tNav(key)}
                   </Link>
@@ -41,11 +48,80 @@ export function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Col 3: Legal */}
+          <div>
+            <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">
+              {tFooter("legal")}
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/politique-confidentialite"
+                  className="text-sm text-txt-secondary transition-colors hover:text-txt-primary"
+                >
+                  {tNav("privacy")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/mentions-legales"
+                  className="text-sm text-txt-secondary transition-colors hover:text-txt-primary"
+                >
+                  {tNav("legal")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Contact */}
+          <div>
+            <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">
+              {tFooter("contact")}
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="inline-flex items-center gap-2 text-sm text-txt-secondary transition-colors hover:text-cyber-cyan"
+                >
+                  <Mail className="h-4 w-4" />
+                  {SITE.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={SITE.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-txt-secondary transition-colors hover:text-cyber-cyan"
+                >
+                  <Github className="h-4 w-4" />
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href={SITE.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-txt-secondary transition-colors hover:text-cyber-cyan"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-12 border-t border-surface-border pt-8 text-center">
-          <p className="text-xs text-text-tertiary">
-            {tFooter("copyright", { year: new Date().getFullYear() })}
+        {/* Bottom bar */}
+        <div className="mt-12 flex flex-col items-center gap-4 border-t border-white/[0.06] pt-8 sm:flex-row sm:justify-between">
+          <p className="font-mono text-xs text-txt-tertiary">
+            &copy; {new Date().getFullYear()} Mark Systems. {tFooter("allRights")}
+          </p>
+          <p className="font-mono text-xs text-cyber-cyan/60 [text-shadow:0_0_12px_rgba(0,255,213,0.3)]">
+            {tFooter("madeWith")} {tFooter("nexos")}
           </p>
         </div>
       </div>

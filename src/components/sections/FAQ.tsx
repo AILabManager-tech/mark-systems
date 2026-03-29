@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { sanitizeHTML } from '@/utils/sanitize';
+
 
 const FAQ_COUNT = 6;
 
@@ -28,7 +30,7 @@ export function FAQ() {
     <section className="section-padding border-t border-surface-border">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: sanitizeHTML(JSON.stringify(faqJsonLd)) }}
       />
       <div className="section-container">
         <span className="mb-4 block font-mono text-sm uppercase tracking-widest text-accent">

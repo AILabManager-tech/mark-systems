@@ -19,6 +19,8 @@ import { StepDesign } from "@/components/brief/StepDesign";
 import { StepSeoContext } from "@/components/brief/StepSeoContext";
 import { StepReview } from "@/components/brief/StepReview";
 
+const STEP_KEYS = ["company", "site", "adaptive", "legal", "design", "seo", "review"] as const;
+
 const INITIAL_STATE: BriefState = {
   currentStep: 0,
   company: { name: "", slug: "", neq: "", address: "", phone: "", email: "" },
@@ -180,6 +182,18 @@ export function BriefWizard() {
       )}
 
       <div className="card-base p-6 sm:p-8">
+        {/* Step description */}
+        {state.currentStep < STEP_KEYS.length && (
+          <div className="mb-6 rounded-lg border border-cyber-cyan/10 bg-cyber-cyan/5 px-4 py-3">
+            <p className="font-mono text-xs font-semibold uppercase tracking-wider text-cyber-cyan">
+              {t(`steps.${STEP_KEYS[state.currentStep]}`)}
+            </p>
+            <p className="mt-1 text-sm text-txt-secondary">
+              {t(`stepDescriptions.${STEP_KEYS[state.currentStep]}`)}
+            </p>
+          </div>
+        )}
+
         {state.currentStep === 0 && <StepCompanyInfo state={state} dispatch={dispatch} errors={errors} />}
         {state.currentStep === 1 && <StepSiteConfig state={state} dispatch={dispatch} errors={errors} />}
         {state.currentStep === 2 && <StepAdaptive state={state} dispatch={dispatch} />}

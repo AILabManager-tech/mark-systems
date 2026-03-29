@@ -1,68 +1,61 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
-import { Button } from "@/components/ui/Button";
-import { services } from "@/lib/services-data";
+import { useTranslations } from "next-intl";
+import { Globe, Bot, Workflow, Shield, Lightbulb, Wrench } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { SERVICES } from "@/lib/constants";
+import { SectionBackground } from "@/components/ui/SectionBackground";
+
+const ICON_MAP: Record<string, React.ElementType> = {
+  Globe, Bot, Workflow, Shield, Lightbulb, Wrench,
+};
 
 export function ServicesPreview() {
-  const t = useTranslations("servicesSection");
-  const tServices = useTranslations("services");
-  const locale = useLocale();
+  const t = useTranslations("home.services");
 
   return (
-    <section className="section-padding border-t border-surface-border">
-      <div className="section-container">
-        <div className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)]">
-          <div className="industrial-panel p-5">
-            <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">
-              {t("label")}
-            </div>
-            <h2 className="mt-4 text-3xl font-bold leading-tight text-text-primary md:text-4xl">
-              {t("title")}
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-text-secondary">
-              {t("description")}
-            </p>
-            <div className="mt-6 space-y-2 border-t border-surface-border pt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-text-tertiary">
-              <div>01 // Positioning</div>
-              <div>02 // Compliance</div>
-              <div>03 // Automation</div>
-              <div>04 // Custom systems</div>
-            </div>
-          </div>
+    <section className="relative border-t border-white/[0.06] py-20 md:py-28">
+      <SectionBackground src="/backgrounds/services.jpg" opacity={0.38} />
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        {/* Header */}
+        <span className="mb-3 block font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">
+          {t("label")}
+        </span>
+        <h2 className="text-h2 font-bold text-txt-primary">
+          {t("title")}
+        </h2>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <div key={service.id} className="industrial-panel p-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">
-                        Module // {String(index + 1).padStart(2, "0")}
-                      </div>
-                      <h3 className="mt-3 text-xl font-semibold text-text-primary">
-                        {tServices(`${service.id}.title`)}
-                      </h3>
-                    </div>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-accent/20 bg-accent/10">
-                      <Icon className="h-4 w-4 text-accent" />
-                    </div>
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-text-secondary">
-                    {tServices(`${service.id}.shortDescription`)}
-                  </p>
+        {/* 3-col grid */}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map((service) => {
+            const Icon = ICON_MAP[service.icon];
+            return (
+              <div
+                key={service.key}
+                className="group rounded-xl border border-white/[0.06] bg-surface/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyber-cyan/30 hover:shadow-glow-cyan"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg border border-cyber-cyan/20 bg-cyber-cyan/10 transition-colors group-hover:bg-cyber-cyan/20">
+                  {Icon && <Icon className="h-5 w-5 text-cyber-cyan" />}
                 </div>
-              );
-            })}
-          </div>
+                <h3 className="font-mono text-base font-semibold uppercase tracking-[0.06em] text-txt-primary">
+                  {t(`items.${service.key}.title`)}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-txt-secondary">
+                  {t(`items.${service.key}.description`)}
+                </p>
+              </div>
+            );
+          })}
         </div>
-        <div className="mt-8 flex justify-end">
-          <Button href="/services" variant="secondary" className="font-mono uppercase tracking-[0.18em]">
-            {locale === "fr" ? "Ouvrir le registre services" : "Open services registry"}
-            <ArrowRight className="h-4 w-4" />
-          </Button>
+
+        {/* Link */}
+        <div className="mt-10 text-center">
+          <Link
+            href="/services"
+            className="font-mono text-sm uppercase tracking-[0.18em] text-cyber-cyan transition-colors hover:text-cyber-cyan/70"
+          >
+            {t("viewAll")} &rarr;
+          </Link>
         </div>
       </div>
     </section>
