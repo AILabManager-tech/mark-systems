@@ -476,8 +476,8 @@
   "freeTools": {
     "hero": {
       "label": "Outils gratuits",
-      "title": "Calculateurs en libre accès",
-      "description": "Trois outils gratuits, sans inscription. Conçus au Québec, pour le Québec."
+      "title": "Nos outils",
+      "description": "8 outils développés en interne — gratuits ou en démonstration. Calculateurs, IA, scanners et rapports automatisés."
     },
     "items": {
       "estimaweb": {
@@ -494,9 +494,39 @@
       },
       "saaq": {
         "name": "SAAQ Prep B++",
-        "description": "Préparation à l'examen théorique du permis de conduire classe 5. 250+ questions avec explications détaillées.",
+        "description": "Préparation à l'examen théorique du permis de conduire classe 5. 250+ questions avec explications détaillées. Mode examen simulé, progression par niveaux.",
         "url": "https://saaq-prep.vercel.app",
         "cta": "Essayer gratuitement"
+      },
+      "oneclick": {
+        "name": "One-Click Report AI",
+        "description": "Transformez vos données brutes (Excel, PDF, images) en rapports visuels PDF avec résumés IA. 4 langues supportées (FR, EN, ES, DE). Génération en un clic.",
+        "url": "https://report.marksystems.ca",
+        "cta": "Générer un rapport"
+      },
+      "finance": {
+        "name": "Financial Intelligence Suite",
+        "description": "Dashboard financier exécutif avec scoring hybride IA + quantitatif. KPIs interactifs, analyse de portefeuille, indicateurs de sécurité. Score SOIC 9.62/10.",
+        "url": "https://financial-intelligence-suite.vercel.app",
+        "cta": "Voir le dashboard"
+      },
+      "summeet": {
+        "name": "SumMeet",
+        "description": "Résumés de réunions propulsés par IA. 3 modes : enregistrement audio, collage de texte, ou upload fichier. Transcription Whisper + résumé structuré via Claude ou Ollama.",
+        "url": "",
+        "cta": "En savoir plus"
+      },
+      "inbox-zero": {
+        "name": "Inbox Zero",
+        "description": "Triage automatique de courriels par IA. 5 catégories (urgent, action, info, déléguer, supprimer). Règles + fallback IA. Supporte Gmail, IMAP et Microsoft.",
+        "url": "",
+        "cta": "En savoir plus"
+      },
+      "osiris": {
+        "name": "OSIRIS Scanner",
+        "description": "Score de santé web composite (0-10) sur 4 axes : Performance, Sécurité, Intrusion et Ressources. 156 tests automatisés. Rapports JSON + Markdown.",
+        "url": "",
+        "cta": "En savoir plus"
       }
     }
   },

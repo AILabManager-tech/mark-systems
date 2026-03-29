@@ -56,4 +56,7 @@ export const PRODUCT_KEYS = [
   "archviewer",
 ] as const;
 
-export const FREE_TOOL_KEYS = ["estimaweb", "impots", "saaq"] as const;
+export const FREE_TOOL_KEYS = [
+  "estimaweb", "impots", "saaq",
+  "oneclick", "finance", "summeet", "inbox-zero", "osiris",
+] as const;

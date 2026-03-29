@@ -1,12 +1,16 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Lock } from "lucide-react";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { StaggerContainer } from "@/components/motion/StaggerContainer";
 import { FREE_TOOL_KEYS } from "@/lib/constants";
 import { SectionBackground } from "@/components/ui/SectionBackground";
+import { NeonBadge } from "@/components/ui/NeonBadge";
+
+const PUBLIC_KEYS = ["estimaweb", "impots", "saaq", "oneclick", "finance"];
+const INTERNAL_KEYS = ["summeet", "inbox-zero", "osiris"];
 
 export function FreeToolsGrid() {
   const t = useTranslations("freeTools");
@@ -28,26 +32,67 @@ export function FreeToolsGrid() {
           </p>
         </FadeIn>
 
-        {/* 3 large tool cards (1 column) */}
-        <StaggerContainer className="mt-16 space-y-8">
-          {FREE_TOOL_KEYS.map((key, index) => (
+        {/* Public tools — grid 2 cols */}
+        <FadeIn>
+          <h2 className="mt-16 font-mono text-xs uppercase tracking-[0.28em] text-cyber-neon">
+            Accès libre
+          </h2>
+        </FadeIn>
+        <StaggerContainer className="mt-6 grid gap-6 md:grid-cols-2">
+          {FREE_TOOL_KEYS.filter((k) => PUBLIC_KEYS.includes(k)).map((key) => {
+            const url = t(`items.${key}.url`);
+            return (
+              <FadeIn key={key}>
+                <GlowCard className="flex h-full flex-col p-6 md:p-8">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-mono text-lg font-bold uppercase tracking-[0.06em] text-txt-primary">
+                      {t(`items.${key}.name`)}
+                    </h3>
+                    <NeonBadge variant="neon">Gratuit</NeonBadge>
+                  </div>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-txt-secondary">
+                    {t(`items.${key}.description`)}
+                  </p>
+                  {url && (
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-5 inline-flex items-center gap-2 rounded-sm border border-cyber-cyan/40 bg-cyber-cyan/10 px-5 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyber-cyan transition-all hover:bg-cyber-cyan/20 hover:shadow-glow-cyan"
+                    >
+                      {t(`items.${key}.cta`)}
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  )}
+                </GlowCard>
+              </FadeIn>
+            );
+          })}
+        </StaggerContainer>
+
+        {/* Internal tools */}
+        <FadeIn>
+          <h2 className="mt-16 font-mono text-xs uppercase tracking-[0.28em] text-cyber-violet">
+            Outils internes
+          </h2>
+        </FadeIn>
+        <StaggerContainer className="mt-6 grid gap-6 md:grid-cols-3">
+          {FREE_TOOL_KEYS.filter((k) => INTERNAL_KEYS.includes(k)).map((key) => (
             <FadeIn key={key}>
-              <GlowCard className="p-8 md:p-10">
-                <h2 className="font-mono text-2xl font-bold uppercase tracking-[0.08em] text-txt-primary">
-                  {t(`items.${key}.name`)}
-                </h2>
-                <p className="mt-4 max-w-3xl text-base leading-relaxed text-txt-secondary">
+              <GlowCard className="flex h-full flex-col p-6">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="font-mono text-base font-bold uppercase tracking-[0.06em] text-txt-primary">
+                    {t(`items.${key}.name`)}
+                  </h3>
+                  <Lock className="h-4 w-4 shrink-0 text-txt-tertiary" />
+                </div>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-txt-secondary">
                   {t(`items.${key}.description`)}
                 </p>
-                <a
-                  href={t(`items.${key}.url`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 rounded-sm border border-cyber-cyan/40 bg-cyber-cyan/10 px-6 py-3 font-mono text-sm font-semibold uppercase tracking-[0.18em] text-cyber-cyan transition-all hover:bg-cyber-cyan/20 hover:shadow-glow-cyan"
-                >
-                  {t(`items.${key}.cta`)}
-                  <ExternalLink className="h-4 w-4" />
-                </a>
+                <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-txt-tertiary">
+                  <Lock className="h-3 w-3" />
+                  Self-hosted · sur demande
+                </span>
               </GlowCard>
             </FadeIn>
           ))}

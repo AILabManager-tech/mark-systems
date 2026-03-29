@@ -476,8 +476,8 @@
   "freeTools": {
     "hero": {
       "label": "Free tools",
-      "title": "Open-access calculators",
-      "description": "Three free tools, no sign-up required. Built in Quebec, for Quebec."
+      "title": "Our tools",
+      "description": "8 tools built in-house — free or demo. Calculators, AI, scanners and automated reports."
     },
     "items": {
       "estimaweb": {
@@ -494,9 +494,39 @@
       },
       "saaq": {
         "name": "SAAQ Prep B++",
-        "description": "Class 5 driving license theoretical exam prep. 250+ questions with detailed explanations.",
+        "description": "Class 5 driving license theoretical exam prep. 250+ questions with detailed explanations. Simulated exam mode, progressive difficulty levels.",
         "url": "https://saaq-prep.vercel.app",
         "cta": "Try for free"
+      },
+      "oneclick": {
+        "name": "One-Click Report AI",
+        "description": "Transform raw data (Excel, PDF, images) into visual PDF reports with AI summaries. 4 languages supported (FR, EN, ES, DE). One-click generation.",
+        "url": "https://report.marksystems.ca",
+        "cta": "Generate a report"
+      },
+      "finance": {
+        "name": "Financial Intelligence Suite",
+        "description": "Executive financial dashboard with hybrid AI + quantitative scoring. Interactive KPIs, portfolio analysis, security indicators. SOIC score 9.62/10.",
+        "url": "https://financial-intelligence-suite.vercel.app",
+        "cta": "View dashboard"
+      },
+      "summeet": {
+        "name": "SumMeet",
+        "description": "AI-powered meeting summaries. 3 modes: audio recording, text paste, or file upload. Whisper transcription + structured summary via Claude or Ollama.",
+        "url": "",
+        "cta": "Learn more"
+      },
+      "inbox-zero": {
+        "name": "Inbox Zero",
+        "description": "AI-powered email triage. 5 categories (urgent, action, info, delegate, delete). Rules + AI fallback. Supports Gmail, IMAP, and Microsoft.",
+        "url": "",
+        "cta": "Learn more"
+      },
+      "osiris": {
+        "name": "OSIRIS Scanner",
+        "description": "Composite web health score (0-10) across 4 axes: Performance, Security, Intrusion, and Resources. 156 automated tests. JSON + Markdown reports.",
+        "url": "",
+        "cta": "Learn more"
       }
     }
   },
