@@ -8,6 +8,16 @@ export const PROJECT_IDS = [
 
 export type ProjectId = (typeof PROJECT_IDS)[number];
 
+export type ProjectBadge = "internal" | "demo" | "client";
+
+export const projectBadges: Record<ProjectId, ProjectBadge> = {
+  "ainova-os": "internal",
+  "winterpulse": "demo",
+  "n8n-ecosystem": "internal",
+  "osiris-scanner": "internal",
+  "stark-portfolio": "client",
+};
+
 export const projectTechnologies: Record<ProjectId, string[]> = {
   "ainova-os": [
     "Python",

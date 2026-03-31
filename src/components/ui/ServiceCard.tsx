@@ -22,10 +22,10 @@ export function ServiceCard({
   return (
     <motion.div
       variants={fadeInUp}
-      className="card-base group relative flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-card"
+      className="card-base group relative flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-glow-accent"
     >
       {/* Hover glow */}
-      <div className="pointer-events-none absolute -inset-px rounded-sm bg-gradient-to-b from-accent/0 via-accent/0 to-accent/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:from-accent/10 group-hover:via-transparent group-hover:to-accent/5" />
+      <div className="pointer-events-none absolute -inset-px rounded-sm bg-gradient-to-b from-accent/15 via-accent/0 to-accent/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       <div className="relative">
       <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-sm bg-surface-light text-accent transition-colors duration-200 group-hover:bg-accent/10 group-hover:text-accent-muted">
         <Icon className="h-5 w-5" strokeWidth={1.5} />

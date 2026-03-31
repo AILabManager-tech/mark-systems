@@ -42,7 +42,7 @@ export function FAQ() {
           {Array.from({ length: FAQ_COUNT }, (_, i) => (
             <div
               key={i}
-              className="rounded-sm border border-surface-border bg-surface-light/50"
+              className="rounded-sm border border-surface-border bg-surface-light/50 transition-colors duration-200 hover:border-accent/20"
             >
               <button
                 id={`faq-question-${i}`}

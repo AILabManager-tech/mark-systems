@@ -28,9 +28,9 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-text-primary text-background font-semibold hover:bg-white",
+    "bg-text-primary text-background font-semibold hover:bg-white hover:shadow-glow-accent-lg",
   secondary:
-    "border border-surface-border text-text-primary hover:border-text-tertiary hover:bg-surface-light",
+    "border border-surface-border text-text-primary hover:border-accent/40 hover:bg-surface-light hover:shadow-glow-accent",
   ghost: "text-text-secondary hover:text-text-primary hover:bg-surface-light",
 };
 

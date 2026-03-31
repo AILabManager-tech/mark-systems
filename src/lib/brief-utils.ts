@@ -26,7 +26,7 @@ export function assembleBrief(state: BriefState): BriefOutput {
 
   return {
     _meta: {
-      generator: "nexos-v4.0-web-wizard",
+      generator: "mark-systems-brief-wizard",
       created_at: new Date().toISOString(),
       mode: "create",
     },

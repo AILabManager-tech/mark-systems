@@ -13,7 +13,7 @@ export function AinovaOSBanner() {
     <section className="section-padding border-t border-surface-border">
       <div className="section-container">
         <FadeIn>
-          <div className="group relative overflow-hidden rounded-sm border border-accent/20 bg-accent/5 p-8 md:p-12">
+          <div className="group relative overflow-hidden rounded-sm border border-accent/20 bg-accent/5 p-8 shadow-glow-accent md:p-12">
             {/* Animated accent line at top */}
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
             <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">

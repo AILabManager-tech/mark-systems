@@ -43,7 +43,7 @@ export async function generateBriefPdf(brief: BriefOutput, locale: string): Prom
   // Title
   doc.setFontSize(20);
   doc.setTextColor(0, 161, 155);
-  doc.text("NEXOS — Brief Client", 20, y);
+  doc.text("Mark Systems — Brief Client", 20, y);
   y += 8;
   doc.setFontSize(9);
   doc.setTextColor(120);

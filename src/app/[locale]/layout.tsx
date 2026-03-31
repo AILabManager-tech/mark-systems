@@ -7,6 +7,7 @@ import { routing, locales, type Locale } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/ui/CookieConsent";
+import { ConstructionBanner } from "@/components/ui/ConstructionBanner";
 import { SITE } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -179,6 +180,7 @@ export default async function LocaleLayout({
           >
             {(messages as Record<string, Record<string, string>>)?.common?.skipToContent ?? "Skip to content"}
           </a>
+          <ConstructionBanner />
           <Navbar />
           <main id="main-content" className="pt-16 lg:pt-20">{children}</main>
           <Footer />

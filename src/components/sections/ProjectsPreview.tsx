@@ -10,6 +10,7 @@ import { PROJECT_IDS } from "@/lib/projects-data";
 
 export function ProjectsPreview() {
   const t = useTranslations("projectsSection");
+  const tPage = useTranslations("projectsPage");
   const featured = PROJECT_IDS.slice(0, 2);
 
   return (
@@ -25,7 +26,10 @@ export function ProjectsPreview() {
             <ProjectCard key={id} projectId={id} compact />
           ))}
         </StaggerContainer>
-        <div className="mt-12 text-center">
+        <p className="mt-4 text-center text-xs text-text-tertiary">
+          {tPage("disclaimer")}
+        </p>
+        <div className="mt-8 text-center">
           <Button href="/projects" variant="secondary">
             {t("viewAll")}
             <ArrowRight className="h-4 w-4" />

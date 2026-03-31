@@ -1,4 +1,7 @@
 {
+  "constructionBanner": {
+    "message": "Site en construction — Lancement bientôt!"
+  },
   "common": {
     "siteName": "Mark Systems",
     "tagline": "Agence web stratégique · Automatisation · IA appliquée · Architecture",
@@ -115,7 +118,8 @@
   "projectsPage": {
     "label": "Études de cas",
     "title": "Systèmes de production, résultats prouvés",
-    "description": "Chaque projet ci-dessous roule en production. Le code existe, les métriques sont réelles, les systèmes sont en ligne."
+    "description": "Chaque projet ci-dessous roule en production. Le code existe, les métriques sont réelles, les systèmes sont en ligne.",
+    "disclaimer": "Projets internes et démos techniques — réalisés et maintenus par Mark Systems."
   },
   "projects": {
     "ainova-os": {
@@ -181,7 +185,10 @@
   },
   "projectCard": {
     "challenge": "Défi :",
-    "solution": "Solution :"
+    "solution": "Solution :",
+    "badgeInternal": "Projet interne",
+    "badgeDemo": "Démo technique",
+    "badgeClient": "Mandat client"
   },
   "about": {
     "missionLabel": "Notre mission",
@@ -190,14 +197,30 @@
     "teamLabel": "Le fondateur",
     "teamTitle": "Ingénierie d'abord, toujours",
     "teamDescription": "Un ingénieur. 10+ ans sur le terrain. Des lignes de production industrielles aux systèmes web stratégiques.",
+    "metricsLabel": "En chiffres",
+    "metricsTitle": "Ce qu'on a construit",
+    "metric1Value": "55",
+    "metric1Label": "Agents IA (pipeline)",
+    "metric2Value": "6",
+    "metric2Label": "Sites livrés",
+    "metric3Value": "9.28",
+    "metric3Label": "Score SOIC moyen",
+    "metric4Value": "170+",
+    "metric4Label": "Workflows n8n",
+    "metric5Value": "580+",
+    "metric5Label": "Tests automatisés",
+    "metric6Value": "9",
+    "metric6Label": "Dimensions qualité",
     "valuesLabel": "Nos principes",
     "valuesTitle": "Comment on opère",
     "valuesDescription": "Quatre principes non-négociables qui définissent chaque engagement."
   },
   "team": {
     "founder": {
+      "name": "Marc-André Roy, ing.",
       "role": "Fondateur & Ingénieur principal",
-      "bio": "Ingénieur électrique senior avec 10+ ans en automatisation industrielle (PLC/CNC, lignes de production secteur défense, protection de réseaux électriques HT). Fondateur de Mark Systems — agence web stratégique spécialisée en sites Next.js 15+, automatisations métier et IA appliquée pour les PMEs québécoises et canadiennes."
+      "bio": "Ingénieur électrique senior (OIQ) avec 10+ ans en automatisation industrielle — PLC/CNC, lignes de production secteur défense, protection de réseaux électriques HT. Fondateur de Mark Systems, agence web stratégique spécialisée en sites Next.js 15+, automatisations métier et IA appliquée pour les PMEs québécoises et canadiennes.",
+      "linkedin": "https://www.linkedin.com/in/marc-andre-roy-ing/"
     }
   },
   "values": {
@@ -270,6 +293,7 @@
   },
   "footer": {
     "description": "Sites web stratégiques, automatisation métier et IA appliquée — conçus pour convertir et opérer.",
+    "founderLine": "Marc-André Roy, ing. — Fondateur",
     "navLabel": "Navigation",
     "legalLabel": "Juridique",
     "privacy": "Politique de confidentialité",
@@ -299,27 +323,27 @@
       "description": "Mark Systems conçoit des sites web stratégiques (Next.js 15+), des automatisations métier, des systèmes IA sur mesure et de l’architecture technique pour les PMEs au Québec et au Canada."
     },
     "services": {
-      "title": "Services — Sites web, Automatisation & IA | Mark Systems",
+      "title": "Services — Sites web, Automatisation & IA",
       "description": "Sites vitrines bilingues, landing pages, automatisations n8n, assistants IA, architecture technique et maintenance mensuelle — Mark Systems, Québec."
     },
     "projects": {
-      "title": "Études de cas — Mark Systems",
+      "title": "Études de cas — Projets web & IA",
       "description": "Projets web et IA en production : AINOVA OS (μ=9.94), 195 workflows n8n, portfolio 3D WebGL et plus. Résultats mesurables, systèmes en ligne."
     },
     "about": {
-      "title": "À propos — Mark Systems | Québec",
+      "title": "À propos — Agence web stratégique Québec",
       "description": "Mark Systems — agence web stratégique fondée par un ingénieur avec 10+ ans d'expérience. Sites Next.js 15+, automatisation, IA appliquée et architecture technique pour PMEs au Québec."
     },
     "contact": {
-      "title": "Contact — Mark Systems | Québec",
+      "title": "Contact — Démarrer un projet",
       "description": "Contactez Mark Systems pour un site web stratégique, une automatisation métier, un projet IA appliquée ou un cadrage d'architecture technique."
     },
     "ainova": {
-      "title": "AiNova OS — Système d'exploitation IA de production | Mark Systems",
+      "title": "AiNova OS — Système d'exploitation IA de production",
       "description": "AiNova OS : 35+ agents IA, moteur de convergence SOIC (μ=9.94/10), Tree-of-Thoughts, natif Kubernetes. Le système d'exploitation IA de production par Mark Systems."
     },
     "brief": {
-      "title": "Brief Projet — Mark Systems",
+      "title": "Brief Projet — Décrivez votre besoin",
       "description": "Démarrez votre projet web avec Mark Systems. Formulaire de brief rapide et structuré."
     }
   },
@@ -358,12 +382,16 @@
       "7": {
         "question": "Comment démarre un projet avec Mark Systems?",
         "answer": "Par un appel découverte gratuit de 15–30 min pour qualifier vos besoins. Ensuite, on vous propose un devis détaillé avec les phases et livrables. On demande un dépôt de 50% au démarrage et le solde à la livraison."
+      },
+      "8": {
+        "question": "Combien coûte un site web ou un projet d'automatisation?",
+        "answer": "Sites vitrines à partir de 2 500 $, landing pages de conversion à partir de 1 200 $, automatisations n8n à partir de 1 500 $. Chaque projet est chiffré sur mesure après l'appel découverte. On offre aussi des plans de maintenance à partir de 250 $/mois. Financement disponible via le programme ESSOR du gouvernement du Québec."
       }
     }
   },
   "auditBanner": {
     "label": "Produit SaaS",
-    "title": "NEXOS Audit Toolkit",
+    "title": "Web Audit Toolkit",
     "description": "Auditez n'importe quel site web en profondeur — sécurité, performance, SEO, accessibilité, Loi 25 et plus. 14 scanners, 9 badges certifiables, rapports PDF multilingues. Entrez votre repo Git et obtenez un score /10 en 30 secondes.",
     "metric1Value": "14",
     "metric1Label": "Scanners",

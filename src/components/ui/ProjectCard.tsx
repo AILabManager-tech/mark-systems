@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { fadeInUp } from "@/lib/animations";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
-import { projectTechnologies, type ProjectId } from "@/lib/projects-data";
+import { projectTechnologies, projectBadges, type ProjectId, type ProjectBadge } from "@/lib/projects-data";
 
 interface ProjectCardProps {
   projectId: string;
@@ -15,19 +15,37 @@ export function ProjectCard({ projectId, compact = false }: ProjectCardProps) {
   const t = useTranslations(`projects.${projectId}`);
   const tCard = useTranslations("projectCard");
   const technologies = projectTechnologies[projectId as ProjectId] ?? [];
+  const badge = projectBadges[projectId as ProjectId] ?? "demo";
+
+  const badgeStyles: Record<ProjectBadge, string> = {
+    client: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
+    internal: "border-accent/30 bg-accent/10 text-accent",
+    demo: "border-text-tertiary/30 bg-surface-light text-text-tertiary",
+  };
+
+  const badgeKey: Record<ProjectBadge, string> = {
+    client: "badgeClient",
+    internal: "badgeInternal",
+    demo: "badgeDemo",
+  };
 
   return (
     <motion.div
       variants={fadeInUp}
-      className="card-base group relative flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-card"
+      className="card-base group relative flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-glow-accent"
     >
       {/* Hover glow effect */}
-      <div className="pointer-events-none absolute -inset-px rounded-sm bg-gradient-to-b from-accent/0 via-accent/0 to-accent/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:from-accent/10 group-hover:via-transparent group-hover:to-accent/5" />
+      <div className="pointer-events-none absolute -inset-px rounded-sm bg-gradient-to-b from-accent/15 via-accent/0 to-accent/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       <div className="relative">
-        <span className="mb-2 font-mono text-xs uppercase tracking-wider text-accent">
-          {t("industry")}
-        </span>
+        <div className="mb-2 flex items-center gap-2">
+          <span className="font-mono text-xs uppercase tracking-wider text-accent">
+            {t("industry")}
+          </span>
+          <span className={`rounded-sm border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider ${badgeStyles[badge]}`}>
+            {tCard(badgeKey[badge])}
+          </span>
+        </div>
         <h3 className="mb-3 text-h3 font-semibold text-text-primary">
           {t("title")}
         </h3>

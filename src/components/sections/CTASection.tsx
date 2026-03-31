@@ -12,7 +12,7 @@ export function CTASection() {
   return (
     <section className="section-padding">
       <div className="section-container">
-        <FadeIn className="relative overflow-hidden rounded-sm border border-accent/20 bg-surface p-12 text-center md:p-20">
+        <FadeIn className="relative overflow-hidden rounded-sm border border-accent/20 bg-surface/80 backdrop-blur-sm p-12 text-center shadow-glow-accent md:p-20">
           <GlowOrb className="-right-20 -top-20" size="300px" delay={0} duration={5} />
           <GlowOrb className="-bottom-20 -left-20" size="300px" delay={2.5} duration={5} />
           <div className="relative z-10">

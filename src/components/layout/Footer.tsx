@@ -20,7 +20,10 @@ export function Footer() {
               <Image src="/logo.webp" alt="Mark Systems logo" width={28} height={28} className="h-7 w-7" />
               {tCommon("siteName")}
             </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-text-secondary">
+            <p className="mt-2 text-xs font-medium text-text-tertiary">
+              {tFooter("founderLine")}
+            </p>
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-text-secondary">
               {tCommon("tagline")}. {tFooter("description")}
             </p>
             <div className="mt-4 flex gap-3">
@@ -37,10 +40,19 @@ export function Footer() {
                 href="https://www.linkedin.com/company/mark-systems-ca"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
+                aria-label="LinkedIn Company"
                 className="text-text-tertiary hover:text-text-primary transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/marc-andre-roy-ing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Marc-André Roy"
+                className="text-text-tertiary hover:text-text-primary transition-colors text-xs font-mono"
+              >
+                in/mar
               </a>
               <a
                 href="mailto:contact@marksystems.ca"

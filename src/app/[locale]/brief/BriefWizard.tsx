@@ -132,7 +132,7 @@ export function BriefWizard() {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          _subject: `[NEXOS Brief] ${state.company.name}`,
+          _subject: `[Mark Systems Brief] ${state.company.name}`,
           name: state.company.name,
           email: state.company.email,
           type: "brief-wizard",

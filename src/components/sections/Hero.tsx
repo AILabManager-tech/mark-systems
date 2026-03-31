@@ -34,7 +34,7 @@ export function Hero() {
 
       {/* Animated scan line */}
       <motion.div
-        className="pointer-events-none absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"
+        className="pointer-events-none absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent"
         animate={{ top: ["10%", "90%", "10%"] }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
       />

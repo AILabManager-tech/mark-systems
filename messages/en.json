@@ -1,4 +1,7 @@
 {
+  "constructionBanner": {
+    "message": "Under construction — Launching soon!"
+  },
   "common": {
     "siteName": "Mark Systems",
     "tagline": "Strategic Web Agency · Automation · Applied AI · Architecture",
@@ -115,7 +118,8 @@
   "projectsPage": {
     "label": "Case Studies",
     "title": "Production Systems, Proven Results",
-    "description": "Every project below runs in production. The code exists, the metrics are real, the systems are live."
+    "description": "Every project below runs in production. The code exists, the metrics are real, the systems are live.",
+    "disclaimer": "Internal projects and technical demos — built and maintained by Mark Systems."
   },
   "projects": {
     "ainova-os": {
@@ -181,7 +185,10 @@
   },
   "projectCard": {
     "challenge": "Challenge:",
-    "solution": "Solution:"
+    "solution": "Solution:",
+    "badgeInternal": "Internal Project",
+    "badgeDemo": "Technical Demo",
+    "badgeClient": "Client Engagement"
   },
   "about": {
     "missionLabel": "Our Mission",
@@ -190,14 +197,30 @@
     "teamLabel": "The Founder",
     "teamTitle": "Engineering-First, Always",
     "teamDescription": "One engineer. 10+ years in the field. From industrial production lines to strategic web systems.",
+    "metricsLabel": "By the Numbers",
+    "metricsTitle": "What We've Built",
+    "metric1Value": "55",
+    "metric1Label": "AI Pipeline Agents",
+    "metric2Value": "6",
+    "metric2Label": "Sites Delivered",
+    "metric3Value": "9.28",
+    "metric3Label": "Avg. SOIC Score",
+    "metric4Value": "170+",
+    "metric4Label": "n8n Workflows",
+    "metric5Value": "580+",
+    "metric5Label": "Automated Tests",
+    "metric6Value": "9",
+    "metric6Label": "Quality Dimensions",
     "valuesLabel": "Our Principles",
     "valuesTitle": "How We Operate",
     "valuesDescription": "Four non-negotiable principles that define every engagement."
   },
   "team": {
     "founder": {
+      "name": "Marc-André Roy, ing.",
       "role": "Founder & Lead Engineer",
-      "bio": "Senior electrical engineer with 10+ years in industrial automation (PLC/CNC, defense-sector production lines, HV power grid protection). Founder of Mark Systems — strategic web agency specializing in Next.js 15+ sites, business automation, and applied AI for Quebec and Canadian SMBs."
+      "bio": "Senior electrical engineer (OIQ) with 10+ years in industrial automation — PLC/CNC, defense-sector production lines, HV power grid protection. Founder of Mark Systems, a strategic web agency specializing in Next.js 15+ sites, business automation, and applied AI for Quebec and Canadian SMBs.",
+      "linkedin": "https://www.linkedin.com/in/marc-andre-roy-ing/"
     }
   },
   "values": {
@@ -270,6 +293,7 @@
   },
   "footer": {
     "description": "Strategic websites, business automation, and applied AI — built to convert and operate.",
+    "founderLine": "Marc-André Roy, ing. — Founder",
     "navLabel": "Navigation",
     "legalLabel": "Legal",
     "privacy": "Privacy Policy",
@@ -299,27 +323,27 @@
       "description": "Mark Systems builds strategic websites (Next.js 15+), business automations, custom AI systems, and technical architecture for SMBs in Quebec and across Canada."
     },
     "services": {
-      "title": "Services — Websites, Automation & AI | Mark Systems",
+      "title": "Services — Websites, Automation & AI",
       "description": "Bilingual showcase sites, landing pages, n8n automations, AI assistants, technical architecture, and monthly maintenance — Mark Systems, Quebec."
     },
     "projects": {
-      "title": "Case Studies — Mark Systems",
+      "title": "Case Studies — Web & AI Projects",
       "description": "Web and AI projects in production: AINOVA OS (μ=9.94), 195 n8n workflows, 3D WebGL portfolio and more. Measurable results, live systems."
     },
     "about": {
-      "title": "About — Mark Systems | Quebec",
+      "title": "About — Strategic Web Agency Quebec",
       "description": "Mark Systems — strategic web agency founded by an engineer with 10+ years of experience. Next.js 15+ websites, automation, applied AI, and technical architecture for Quebec SMBs."
     },
     "contact": {
-      "title": "Contact — Mark Systems | Quebec",
+      "title": "Contact — Start a Project",
       "description": "Contact Mark Systems for a strategic website, business automation, applied AI implementation, or technical architecture scoping."
     },
     "ainova": {
-      "title": "AiNova OS — Production AI Operating System | Mark Systems",
+      "title": "AiNova OS — Production AI Operating System",
       "description": "AiNova OS: 35+ AI agents, SOIC convergence engine (μ=9.94/10), Tree-of-Thoughts, Kubernetes-native. The production AI operating system by Mark Systems."
     },
     "brief": {
-      "title": "Project Brief — Mark Systems",
+      "title": "Project Brief — Describe Your Needs",
       "description": "Start your web project with Mark Systems. Quick and structured brief form."
     }
   },
@@ -358,12 +382,16 @@
       "7": {
         "question": "How do I start a project with Mark Systems?",
         "answer": "With a free 15–30 min discovery call to scope your needs. We then propose a detailed quote with phases and deliverables. We require a 50% deposit to start and the balance on delivery."
+      },
+      "8": {
+        "question": "How much does a website or automation project cost?",
+        "answer": "Showcase websites start at $2,500, conversion landing pages from $1,200, n8n automations from $1,500. Every project is custom-quoted after the discovery call. We also offer maintenance plans starting at $250/month. Financing available through Quebec's ESSOR program."
       }
     }
   },
   "auditBanner": {
     "label": "SaaS Product",
-    "title": "NEXOS Audit Toolkit",
+    "title": "Web Audit Toolkit",
     "description": "Deep-audit any website — security, performance, SEO, accessibility, Law 25 compliance and more. 14 scanners, 9 certifiable badges, multilingual PDF reports. Enter your Git repo and get a /10 score in 30 seconds.",
     "metric1Value": "14",
     "metric1Label": "Scanners",
