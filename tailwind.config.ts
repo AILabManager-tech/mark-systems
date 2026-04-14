@@ -30,7 +30,7 @@ const config: Config = {
         txt: {
           primary: "#e8e8ed",
           secondary: "#8b8b9e",
-          tertiary: "#5a5a6e",
+          tertiary: "#7f7f94", // was #5a5a6e — lightened for WCAG AA 4.5:1 on #050508
         },
       },
       fontFamily: {

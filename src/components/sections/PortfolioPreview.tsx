@@ -47,18 +47,31 @@ export function PortfolioPreview() {
                 key={item.key}
                 className="group rounded-xl border border-white/[0.06] bg-surface/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-cyber-cyan/30 hover:shadow-glow-cyan"
               >
-                <div className="flex items-start justify-between">
+                <div className="flex items-start justify-between gap-2">
                   <h3 className="font-mono text-sm font-semibold uppercase tracking-[0.06em] text-txt-primary">
                     {tProjects(`${item.key}.name`)}
                   </h3>
+                  <span
+                    className={`shrink-0 rounded-full px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.12em] ${
+                      item.type === "client"
+                        ? "border border-cyber-cyan/40 bg-cyber-cyan/10 text-cyber-cyan"
+                        : "border border-amber-400/30 bg-amber-400/10 text-amber-400"
+                    }`}
+                  >
+                    {item.type === "client" ? "Client" : "Demo"}
+                  </span>
+                </div>
+                <div className="flex items-start justify-between">
+                  <span />
                   {url && (
                     <a
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Voir le site ${tProjects(`${item.key}.name`)}`}
                       className="text-txt-tertiary transition-colors hover:text-cyber-cyan"
                     >
-                      <ExternalLink className="h-3.5 w-3.5" />
+                      <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                     </a>
                   )}
                 </div>

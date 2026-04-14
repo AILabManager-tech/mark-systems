@@ -158,8 +158,9 @@ export default async function LocaleLayout(
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <OrganizationJsonLd locale={locale} />
       </head>
-      <body className="bg-background text-txt-primary font-sans antialiased min-h-screen">
+      <body className="bg-background text-txt-primary font-sans antialiased min-h-screen pt-8">
         <NextIntlClientProvider messages={messages}>
+          {/* ConstructionBanner removed — site en production */}
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"

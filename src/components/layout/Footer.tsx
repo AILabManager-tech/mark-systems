@@ -32,9 +32,9 @@ export function Footer() {
 
           {/* Col 2: Navigation */}
           <div>
-            <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">
               {tFooter("navigation")}
-            </h4>
+            </p>
             <ul className="space-y-2">
               {NAV_KEYS.filter((k) => k !== "home").map((key) => (
                 <li key={key}>
@@ -49,12 +49,20 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Legal */}
+          {/* Col 3: Resources + Legal */}
           <div>
-            <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">
-              {tFooter("legal")}
-            </h4>
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">
+              {tFooter("resources")}
+            </p>
             <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/financement"
+                  className="text-sm text-txt-secondary transition-colors hover:text-txt-primary"
+                >
+                  {tNav("financing")}
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/politique-confidentialite"
@@ -76,9 +84,9 @@ export function Footer() {
 
           {/* Col 4: Contact */}
           <div>
-            <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">
               {tFooter("contact")}
-            </h4>
+            </p>
             <ul className="space-y-3">
               <li>
                 <a
