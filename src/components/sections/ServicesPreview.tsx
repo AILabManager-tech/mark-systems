@@ -15,7 +15,7 @@ export function ServicesPreview() {
 
   return (
     <section className="relative border-t border-white/[0.06] py-20 md:py-28">
-      <SectionBackground src="/backgrounds/services.jpg" opacity={0.38} />
+      <SectionBackground src="/backgrounds/hero-services.jpg" opacity={0.38} priority />
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header */}
         <span className="mb-3 block font-mono text-xs uppercase tracking-[0.28em] text-cyber-cyan">

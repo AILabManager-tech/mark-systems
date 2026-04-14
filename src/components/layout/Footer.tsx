@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { NAV_KEYS, NAV_HREFS, SITE } from "@/lib/constants";
@@ -20,7 +21,7 @@ export function Footer() {
           {/* Col 1: About */}
           <div>
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="Mark Systems" width={32} height={32} className="h-8 w-8" />
+              <Image src="/logo.png" alt="Mark Systems" width={32} height={32} className="h-8 w-8" />
               <span className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-txt-primary">
                 Mark Systems
               </span>
