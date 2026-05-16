@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
-import { BowlerMascot } from "@/components/mascot/BowlerMascot";
 import { ArrowRight } from "lucide-react";
 
 const CIRCUIT_SCRIPT = `
@@ -247,11 +246,12 @@ export function HeroSection() {
             {"// "}{t("eyebrow")}
           </p>
 
-          {/* Big name */}
-          <h1 className="mt-6 text-[clamp(3.5rem,10vw,8rem)] font-bold leading-[0.95] tracking-tight">
-            <span className="text-txt-primary/25">Mark </span>
+          {/* H1 value prop — pôle simple (blanc cassé) → pôle complexe (cyan gradient) */}
+          <h1 className="mt-6 max-w-5xl text-[clamp(2.25rem,5.5vw,4.5rem)] font-bold leading-[1.1] tracking-tight">
+            <span className="text-txt-primary/85">{t("line1")}</span>
+            <br className="hidden md:block" />{" "}
             <span className="bg-gradient-to-r from-txt-primary/50 via-cyber-cyan to-cyber-cyan bg-clip-text text-transparent">
-              Systems
+              {t("line2")}
             </span>
           </h1>
 
@@ -269,11 +269,6 @@ export function HeroSection() {
             <Button href="/brief" size="lg" variant="secondary">
               {t("ctaPrimary")}
             </Button>
-          </div>
-
-          {/* Bowler mascot */}
-          <div className="mt-10 flex items-center gap-4">
-            <BowlerMascot mood="waving" size="lg" message={t("ctaSecondary")} showBubbleOnHover />
           </div>
 
           {/* Stats strip */}

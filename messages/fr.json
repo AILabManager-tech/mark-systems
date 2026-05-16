@@ -29,7 +29,7 @@
   "metadata": {
     "home": {
       "title": "Mark Systems — Sites web, automatisation et IA | Longueuil",
-      "description": "Sites web, agents IA et automatisation pour PME québécoises. Pipeline NEXOS — score qualité moyen 9.33/10 sur 7 sites livrés."
+      "description": "Sites web, agents IA et automatisation pour PME québécoises. Pipeline NEXOS — score qualité moyen 9.33/10."
     },
     "services": {
       "title": "Services | Mark Systems",
@@ -41,7 +41,7 @@
     },
     "projects": {
       "title": "Portfolio | Mark Systems",
-      "description": "7 sites clients générés par NEXOS avec scores qualité SOIC réels (moyenne 9.33/10). Next.js, TypeScript, Loi 25, WCAG 2.1 AA."
+      "description": "Sites générés par le pipeline NEXOS avec scores qualité SOIC réels (moyenne 9.33/10). Démos techniques + projets clients. Next.js, TypeScript, Loi 25, WCAG 2.1 AA."
     },
     "freeTools": {
       "title": "Nos outils | Mark Systems",
@@ -54,6 +54,10 @@
     "contact": {
       "title": "Contact | Mark Systems",
       "description": "Contactez Mark Systems pour votre projet web, IA ou automatisation. Longueuil, QC, Canada."
+    },
+    "financing": {
+      "title": "Financement — Subventions numériques PME | Mark Systems",
+      "description": "Programmes d'aide gouvernementaux pour financer votre projet web au Québec : PCAN, PME en ligne, BDC, CDAE. Mark Systems vous accompagne."
     },
     "brief": {
       "title": "Brief — Décrivez votre projet | Mark Systems",
@@ -77,19 +81,20 @@
     "about": "À propos",
     "contact": "Contact",
     "brief": "Brief",
+    "financing": "Financement",
     "privacy": "Confidentialité",
     "legal": "Mentions légales",
     "startBrief": "Démarrer un brief"
   },
   "home": {
     "hero": {
-      "line1": "Sites web, automatisation et IA",
-      "line2": "construits avec rigueur.",
-      "subtitle": "7 sites livrés · score qualité moyen 9.33/10 · conformes Loi 25.",
+      "line1": "De la page qui capte des leads",
+      "line2": "au pipeline qui opère vos opérations",
+      "subtitle": "6 démos techniques + 1 client réel · score qualité moyen 9.33/10 · conformes Loi 25.",
       "ctaPrimary": "Démarrer un projet",
       "ctaSecondary": "Voir les produits",
       "eyebrow": "Sites web · Automatisation · IA appliquée · Architecture",
-      "description": "On conçoit des sites web stratégiques, des automatisations métier et des systèmes IA sur mesure — de la page qui capte des leads au pipeline qui opère vos processus. Construit à Longueuil.",
+      "description": "Sites web, agents IA et automatisations sur mesure. 7 sites livrés · score moyen 9.33/10. Construit à Longueuil.",
       "ctaServices": "Explorer les services",
       "stats": {
         "agents": {
@@ -104,7 +109,7 @@
         },
         "sites": {
           "value": "7",
-          "label": "sites livrés",
+          "label": "sites générés",
           "sub": "μ ≥ 8.5"
         },
         "workflows": {
@@ -175,7 +180,7 @@
     },
     "portfolio": {
       "label": "Projets",
-      "title": "7 sites livrés. Score moyen 9.33/10.",
+      "title": "7 sites générés par NEXOS. Score moyen 9.33/10.",
       "viewAll": "Voir tous les projets",
       "soicScore": "Score SOIC",
       "lighthousePerf": "Lighthouse",
@@ -228,7 +233,7 @@
         },
         {
           "question": "Est-ce que le code source est accessible ?",
-          "answer": "Oui. Les sites clients sont livrés avec le code source complet (Next.js, TypeScript). Plusieurs de nos produits sont open-source sur GitHub (NEXOS, GENCORE, OSIRIS Scanner)."
+          "answer": "Oui. Les sites sont livrés avec le code source complet (Next.js, TypeScript). Plusieurs de nos produits sont open-source sur GitHub (NEXOS, GENCORE, OSIRIS Scanner)."
         },
         {
           "question": "Comment démarrer un projet ?",
@@ -357,7 +362,7 @@
           "TypeScript",
           "SOIC v3"
         ],
-        "proof": "7 sites livrés — moyenne 9.33/10, tous Lighthouse 95+",
+        "proof": "7 sites générés — moyenne 9.33/10, tous Lighthouse 95+",
         "link": "https://github.com/AILabManager-tech/nexos-v3",
         "linkLabel": "GitHub"
       },
@@ -485,8 +490,8 @@
   "projects": {
     "hero": {
       "label": "Portfolio",
-      "title": "Sites clients générés par NEXOS",
-      "description": "7 sites en production. Score qualité SOIC moyen 9.33/10. Tous conformes Loi 25, WCAG 2.1 AA, 0 vulnérabilité."
+      "title": "Sites générés par NEXOS",
+      "description": "6 démonstrations techniques + 1 projet client. Score qualité SOIC moyen 9.33/10. Tous conformes Loi 25, WCAG 2.1 AA, 0 vulnérabilité."
     },
     "commonStack": [
       "Next.js 15",
@@ -561,7 +566,7 @@
           "title": "Pipeline NEXOS — de la demande au site livré",
           "challenge": "Générer des sites web de qualité professionnelle de façon systématique et reproductible.",
           "solution": "Pipeline coordonné par 56 agents IA spécialisés, avec quality gates SOIC entre chaque phase. Corrections automatiques pour la sécurité et la conformité Loi 25.",
-          "result": "7 sites en production. Score moyen 9.33/10. Délai de livraison réduit de 60%."
+          "result": "7 sites générés (6 démos + 1 client). Score moyen 9.33/10. Délai de livraison réduit de 60%."
         },
         "gencorePlatform": {
           "title": "GENCORE — agents IA avec gouvernance",
@@ -686,7 +691,7 @@
         },
         "results": {
           "title": "Les résultats d'abord",
-          "description": "7 sites en production, 918 tests, 195+ workflows. Ce sont les chiffres qui comptent."
+          "description": "7 sites générés, 918 tests, 195+ workflows. Ce sont les chiffres qui comptent."
         },
         "compliance": {
           "title": "Conformité intégrée",
@@ -713,7 +718,7 @@
       },
       "sites": {
         "value": "7",
-        "label": "sites en production"
+        "label": "sites générés"
       },
       "dimensions": {
         "value": "9",
@@ -867,6 +872,133 @@
       "errorMessage": "Erreur lors de l'envoi. Réessayez ou écrivez à marc@marksystems.ca."
     }
   },
+  "financing": {
+    "hero": {
+      "label": "Financement",
+      "title": "Financez votre projet numérique.",
+      "description": "Plusieurs programmes gouvernementaux québécois et canadiens aident les PME à financer la création de sites web, la numérisation et la transformation numérique. Voici les principaux — et comment on vous accompagne."
+    },
+    "topWarning": "Information à titre indicatif seulement — Mark Systems n'est pas un conseiller financier. Vérifiez les conditions directement auprès des organismes gouvernementaux.",
+    "keyMessage": {
+      "title": "Jusqu'à 70 % de votre projet peut être subventionné",
+      "description": "Les PME québécoises ont accès à des aides substantielles pour leurs projets numériques. Mark Systems vous aide à aligner votre devis avec les critères d'admissibilité des programmes, maximisant vos chances d'approbation."
+    },
+    "programs": {
+      "label": "Programmes disponibles",
+      "title": "Aides gouvernementales actives",
+      "eligibleLabel": "Admissibilité",
+      "coveredLabel": "Dépenses couvertes",
+      "visitSite": "Voir le programme",
+      "items": {
+        "pcan": {
+          "name": "PCAN",
+          "provider": "Gouvernement du Canada — Innovation Canada",
+          "description": "Le Programme canadien d'adoption du numérique aide les PME à adopter les technologies numériques : site web, e-commerce, outils de gestion. Volet 1 (Développez) offre un diagnostic et un plan numérique gratuit. Volet 2 (Croissance) offre un prêt sans intérêt pour implanter le plan.",
+          "amount": "Jusqu'à 15 000 $ (volet 2)",
+          "delay": "4-8 semaines",
+          "url": "https://ised-isde.canada.ca/site/programme-canadien-adoption-numerique/fr",
+          "eligible": [
+            "Entreprise canadienne à but lucratif",
+            "1 à 499 employés",
+            "Revenus annuels de 500 000 $ à 100 M$"
+          ],
+          "covered": [
+            "Création ou refonte de site web",
+            "Intégration e-commerce",
+            "Outils CRM et automatisation",
+            "Formation numérique des employés"
+          ]
+        },
+        "pme20": {
+          "name": "PME en ligne",
+          "provider": "Gouvernement du Québec — MEI",
+          "description": "Ce programme du Ministère de l'Économie, de l'Innovation et de l'Énergie aide les PME québécoises à améliorer leur présence en ligne et leur compétitivité numérique. Subvention non remboursable couvrant une partie des coûts de réalisation.",
+          "amount": "Jusqu'à 50 % (max ~15 000 $)",
+          "delay": "6-10 semaines",
+          "url": "https://www.economie.gouv.qc.ca/objectifs/numerique/pme-en-ligne",
+          "eligible": [
+            "PME québécoise (5 à 250 employés)",
+            "Immatriculée au REQ",
+            "Projet de présence web ou de commerce en ligne"
+          ],
+          "covered": [
+            "Conception et développement de site web",
+            "Stratégie de marketing numérique",
+            "Vente en ligne et intégration de paiement",
+            "Référencement (SEO) et analyse web"
+          ]
+        },
+        "bdc": {
+          "name": "Prêt BDC — Technologie",
+          "provider": "Banque de développement du Canada",
+          "description": "La BDC offre du financement spécifique pour les projets technologiques et numériques des PME. Ce n'est pas une subvention mais un prêt à taux avantageux, souvent combinable avec les subventions PCAN ou PME en ligne pour maximiser le budget.",
+          "amount": "Prêt de 50 000 $ à 2 M$",
+          "delay": "2-4 semaines",
+          "url": "https://www.bdc.ca/fr/financement/prets-entreprises/prets-technologie",
+          "eligible": [
+            "PME canadienne en croissance",
+            "Projet technologique documenté",
+            "Historique financier démontrable"
+          ],
+          "covered": [
+            "Développement web et applications",
+            "Infrastructure technologique",
+            "Logiciels et licences",
+            "Services-conseil en technologie"
+          ]
+        },
+        "cdae": {
+          "name": "CDAE — Aide régionale",
+          "provider": "Centres de développement des affaires — réseau régional",
+          "description": "Les CDAE (ou SADC/CAE selon les régions) offrent du financement et de l'accompagnement aux PME de leur territoire. Les programmes varient selon la MRC, mais plusieurs incluent des volets numérisation avec aide non remboursable.",
+          "amount": "Variable (1 000 $ à 10 000 $)",
+          "delay": "2-6 semaines",
+          "url": "https://www.sadc-cae.ca/fr",
+          "eligible": [
+            "PME située dans la MRC couverte",
+            "Projet de développement ou numérisation",
+            "Respect des critères régionaux"
+          ],
+          "covered": [
+            "Site web et présence numérique",
+            "Automatisation des processus",
+            "Formation et accompagnement",
+            "Équipement technologique"
+          ]
+        }
+      }
+    },
+    "disclaimer": "Les informations présentées sont à titre indicatif. Les critères d'admissibilité, montants et délais peuvent varier. Mark Systems n'est pas un conseiller financier — nous vous orientons vers les bonnes ressources et alignons nos devis avec les exigences des programmes. Vérifiez toujours les conditions directement auprès des organismes.",
+    "howItWorks": {
+      "label": "Notre accompagnement",
+      "title": "Comment on vous aide",
+      "description": "On ne vous laisse pas naviguer seul. Voici comment Mark Systems intègre les subventions dans votre projet.",
+      "steps": {
+        "check": {
+          "title": "Vérification",
+          "description": "On identifie ensemble les programmes auxquels votre entreprise est admissible."
+        },
+        "brief": {
+          "title": "Brief aligné",
+          "description": "Votre brief est structuré pour répondre aux critères des programmes ciblés."
+        },
+        "quote": {
+          "title": "Devis conforme",
+          "description": "Le devis détaillé distingue les dépenses admissibles pour simplifier votre demande."
+        },
+        "apply": {
+          "title": "Soumission",
+          "description": "Vous soumettez votre demande — on fournit les documents techniques requis."
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à explorer vos options ?",
+      "description": "Décrivez votre projet dans notre brief — on identifiera les programmes pertinents et on adaptera le devis en conséquence.",
+      "briefButton": "Démarrer un brief",
+      "contactButton": "Nous contacter"
+    }
+  },
   "privacy": {
     "title": "Politique de confidentialité",
     "lastUpdated": "Dernière mise à jour : 2026-03-25"
@@ -896,6 +1028,7 @@
       "brief": "5 minutes pour décrire votre projet. Je vous guide !",
       "contact": "Une question ? On vous revient sous 24h. Promis.",
       "about": "Fondé par un ingénieur électrique reconverti en développeur.",
+      "financing": "Des subventions existent pour votre projet web. On vous guide !",
       "freeTools": "Nos outils en ligne, sans inscription. Essayez-les !",
       "default": "Besoin d'aide ? Cliquez sur moi !"
     },
