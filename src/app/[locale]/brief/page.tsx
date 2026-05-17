@@ -1,18 +1,20 @@
 import { Suspense } from "react";
-import { getTranslations } from "next-intl/server";
+import { BriefEditorial } from "@/components/sections/BriefEditorial";
 import { BriefWizard } from "./BriefWizard";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const t = await getTranslations({ locale, namespace: "metadata.brief" });
-  return {
-    title: t("title"),
-    description: t("description"),
+  const { locale } = await params;
+  return buildPageMetadata({
+    locale,
+    namespace: "metadata.brief",
+    path: "brief",
     robots: { index: false, follow: false },
-  };
+  });
 }
 
 function BriefSkeleton() {
@@ -34,6 +36,7 @@ export default function BriefPage() {
   return (
     <section className="section-padding">
       <div className="section-container max-w-3xl">
+        <BriefEditorial />
         <Suspense fallback={<BriefSkeleton />}>
           <BriefWizard />
         </Suspense>

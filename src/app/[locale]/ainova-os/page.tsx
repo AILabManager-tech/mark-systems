@@ -1,4 +1,3 @@
-import { getTranslations } from "next-intl/server";
 import { SITE } from "@/lib/constants";
 import { AinovaHero } from "./AinovaHero";
 import { AinovaOverview } from "./AinovaOverview";
@@ -8,14 +7,15 @@ import { AinovaMetrics } from "./AinovaMetrics";
 import { AinovaComparison } from "./AinovaComparison";
 import { AinovaTechStack } from "./AinovaTechStack";
 import { CTASection } from "@/components/sections/CTASection";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const t = await getTranslations({ locale, namespace: "metadata.ainova" });
-  return { title: t("title"), description: t("description") };
+  const { locale } = await params;
+  return buildPageMetadata({ locale, namespace: "metadata.ainova", path: "ainova-os" });
 }
 
 function AinovaJsonLd({ locale }: { locale: string }) {
@@ -52,11 +52,13 @@ function AinovaJsonLd({ locale }: { locale: string }) {
   );
 }
 
-export default function AinovaOsPage({
-  params: { locale },
+export default async function AinovaOsPage({
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
   return (
     <>
       <AinovaJsonLd locale={locale} />

@@ -1,16 +1,15 @@
-import { getTranslations } from "next-intl/server";
-import { useTranslations } from "next-intl";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { AboutEditorial } from "@/components/sections/AboutEditorial";
 import { AboutContent } from "./AboutContent";
 import { SITE } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const t = await getTranslations({ locale, namespace: "metadata.about" });
-  return { title: t("title"), description: t("description") };
+  const { locale } = await params;
+  return buildPageMetadata({ locale, namespace: "metadata.about", path: "about" });
 }
 
 function AboutJsonLd({ locale }: { locale: string }) {
@@ -49,28 +48,17 @@ function AboutJsonLd({ locale }: { locale: string }) {
   );
 }
 
-export default function AboutPage({
-  params: { locale },
+export default async function AboutPage({
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const t = useTranslations("about");
+  const { locale } = await params;
 
   return (
     <>
       <AboutJsonLd locale={locale} />
-      <section className="section-padding">
-        <div className="section-container">
-          <SectionHeader
-            label={t("missionLabel")}
-            title={t("missionTitle")}
-            as="h1"
-          />
-          <p className="mx-auto max-w-3xl text-center text-body-lg leading-relaxed text-text-secondary">
-            {t("mission")}
-          </p>
-        </div>
-      </section>
+      <AboutEditorial />
       <AboutContent />
     </>
   );

@@ -3,7 +3,7 @@ import { SITE, NAV_KEYS, NAV_HREFS } from "@/lib/constants";
 
 describe("SITE config", () => {
   it("has valid URL", () => {
-    expect(SITE.url).toBe("https://marksystems.ca");
+    expect(SITE.url).toBe("https://www.marksystems.ca");
   });
 
   it("has a formspree ID", () => {

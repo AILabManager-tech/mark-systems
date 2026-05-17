@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing, locales, type Locale } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/ui/CookieConsent";
+import { ConsentAnalytics } from "@/components/compliance/ConsentAnalytics";
 import { ConstructionBanner } from "@/components/ui/ConstructionBanner";
 import { SITE } from "@/lib/constants";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -30,58 +29,9 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: "metadata.home" });
-
-  const languages: Record<string, string> = {};
-  for (const loc of locales) {
-    languages[loc] = `${SITE.url}/${loc}`;
-  }
-  languages["x-default"] = `${SITE.url}/en`;
-
-  return {
-    title: {
-      default: t("title"),
-      template: `%s | ${SITE.name}`,
-    },
-    description: t("description"),
-    metadataBase: new URL(SITE.url),
-    alternates: {
-      canonical: `${SITE.url}/${locale}`,
-      languages,
-    },
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      siteName: SITE.name,
-      type: "website",
-      locale: locale,
-      url: `${SITE.url}/${locale}`,
-      images: [{ url: `${SITE.url}/og-image.png`, width: 1200, height: 630 }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: [`${SITE.url}/og-image.png`],
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
-  };
-}
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+};
 
 function OrganizationJsonLd({ locale }: { locale: string }) {
   const jsonLd = {
@@ -146,11 +96,13 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
@@ -168,8 +120,6 @@ export default async function LocaleLayout({
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <link rel="preconnect" href="https://formspree.io" />
         <link rel="dns-prefetch" href="https://formspree.io" />
-        <link rel="preconnect" href="https://va.vercel-scripts.com" />
-        <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
         <OrganizationJsonLd locale={locale} />
       </head>
       <body className="noise-overlay relative min-h-screen font-sans antialiased dark">
@@ -185,8 +135,7 @@ export default async function LocaleLayout({
           <main id="main-content" className="pt-16 lg:pt-20">{children}</main>
           <Footer />
           <CookieConsent />
-          <Analytics />
-          <SpeedInsights />
+          <ConsentAnalytics />
         </NextIntlClientProvider>
       </body>
     </html>

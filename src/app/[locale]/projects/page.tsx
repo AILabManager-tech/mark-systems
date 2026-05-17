@@ -1,16 +1,16 @@
-import { getTranslations } from "next-intl/server";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ProjectsEditorial } from "@/components/sections/ProjectsEditorial";
 import { ProjectGrid } from "./ProjectGrid";
 import { SITE } from "@/lib/constants";
 import { PROJECT_IDS } from "@/lib/projects-data";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const t = await getTranslations({ locale, namespace: "metadata.projects" });
-  return { title: t("title"), description: t("description") };
+  const { locale } = await params;
+  return buildPageMetadata({ locale, namespace: "metadata.projects", path: "projects" });
 }
 
 function CaseStudyJsonLd({ locale }: { locale: string }) {
@@ -70,17 +70,19 @@ function CaseStudyJsonLd({ locale }: { locale: string }) {
   );
 }
 
-export default function ProjectsPage({
-  params: { locale },
+export default async function ProjectsPage({
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
   return (
     <>
       <CaseStudyJsonLd locale={locale} />
-      <section className="section-padding">
+      <ProjectsEditorial />
+      <section className="section-padding border-t border-surface-border">
         <div className="section-container">
-          <SectionHeader ns="projectsPage" as="h1" />
           <ProjectGrid />
         </div>
       </section>

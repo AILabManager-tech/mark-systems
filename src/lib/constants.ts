@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Mark Systems",
-  url: "https://marksystems.ca",
+  url: "https://www.marksystems.ca",
   formspreeId: "xpwdjkql",
 } as const;
 

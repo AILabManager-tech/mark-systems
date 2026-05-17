@@ -1,17 +1,17 @@
 import { getTranslations } from "next-intl/server";
-import { useTranslations } from "next-intl";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ContactEditorial } from "@/components/sections/ContactEditorial";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { Mail, MapPin } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const t = await getTranslations({ locale, namespace: "metadata.contact" });
-  return { title: t("title"), description: t("description") };
+  const { locale } = await params;
+  return buildPageMetadata({ locale, namespace: "metadata.contact", path: "contact" });
 }
 
 function ContactJsonLd({ locale }: { locale: string }) {
@@ -42,24 +42,21 @@ function ContactJsonLd({ locale }: { locale: string }) {
   );
 }
 
-export default function ContactPage({
-  params: { locale },
+export default async function ContactPage({
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const t = useTranslations("contact");
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+  const isFrench = locale === "fr";
 
   return (
     <>
       <ContactJsonLd locale={locale} />
-      <section className="section-padding">
+      <ContactEditorial />
+      <section className="section-padding border-t border-surface-border">
         <div className="section-container">
-          <SectionHeader
-            label={t("label")}
-            title={t("title")}
-            description={t("description")}
-            as="h1"
-          />
           <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-5">
             <div className="lg:col-span-3">
               <ContactForm />
@@ -87,6 +84,16 @@ export default function ContactPage({
                   {t("locationCity")}
                   <br />
                   {t("locationDetail")}
+                </p>
+              </div>
+              <div className="card-base">
+                <h3 className="mb-1 font-semibold text-text-primary">
+                  {isFrench ? "Profil typique" : "Typical fit"}
+                </h3>
+                <p className="text-sm leading-relaxed text-text-secondary">
+                  {isFrench
+                    ? "PME, fondateurs et équipes qui ont besoin d'une présence numérique plus nette, d'une automatisation plus solide ou d'un système interne mieux structuré."
+                    : "SMBs, founders, and teams that need a sharper digital presence, stronger automation, or a better-structured internal system."}
                 </p>
               </div>
             </div>

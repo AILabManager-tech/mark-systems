@@ -1,16 +1,16 @@
-import { getTranslations } from "next-intl/server";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ServicesEditorial } from "@/components/sections/ServicesEditorial";
 import { ServiceGrid } from "./ServiceGrid";
 import { SITE } from "@/lib/constants";
 import { SERVICE_IDS } from "@/lib/services-data";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const t = await getTranslations({ locale, namespace: "metadata.services" });
-  return { title: t("title"), description: t("description") };
+  const { locale } = await params;
+  return buildPageMetadata({ locale, namespace: "metadata.services", path: "services" });
 }
 
 function ServicesJsonLd({ locale }: { locale: string }) {
@@ -54,17 +54,19 @@ function ServicesJsonLd({ locale }: { locale: string }) {
   );
 }
 
-export default function ServicesPage({
-  params: { locale },
+export default async function ServicesPage({
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
   return (
     <>
       <ServicesJsonLd locale={locale} />
-      <section className="section-padding">
+      <ServicesEditorial />
+      <section className="section-padding border-t border-surface-border">
         <div className="section-container">
-          <SectionHeader ns="servicesPage" as="h1" />
           <ServiceGrid />
         </div>
       </section>
