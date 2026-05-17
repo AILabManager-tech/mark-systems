@@ -1,15 +1,17 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { NAV_KEYS, NAV_HREFS } from "@/lib/constants";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
+  const locale = useLocale();
   const tCommon = useTranslations("common");
   const tNav = useTranslations("nav");
   const tFooter = useTranslations("footer");
+  const isFrench = locale === "fr";
 
   return (
     <footer className="border-t border-surface-border">
@@ -25,6 +27,11 @@ export function Footer() {
             </p>
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-text-secondary">
               {tCommon("tagline")}. {tFooter("description")}
+            </p>
+            <p className="mt-4 max-w-xs font-mono text-[11px] uppercase tracking-[0.18em] text-accent/80">
+              {isFrench
+                ? "Sites web. automatisation. ia appliquee. systemes."
+                : "Websites. automation. applied ai. systems."}
             </p>
             <div className="mt-4 flex gap-3">
               <a
@@ -49,7 +56,7 @@ export function Footer() {
                 href="https://www.linkedin.com/in/marc-andre-roy-ing/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn Marc-André Roy"
+                aria-label="in/mar — LinkedIn Marc-André Roy"
                 className="text-text-tertiary hover:text-text-primary transition-colors text-xs font-mono"
               >
                 in/mar
@@ -65,9 +72,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-mono text-xs uppercase tracking-widest text-text-tertiary">
+            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-text-tertiary">
               {tFooter("navLabel")}
-            </h4>
+            </p>
             <ul className="space-y-2">
               {NAV_KEYS.map((key) => (
                 <li key={key}>
@@ -83,41 +90,44 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-mono text-xs uppercase tracking-widest text-text-tertiary">
-              {tFooter("legalLabel")}
-            </h4>
+            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-text-tertiary">
+              {isFrench ? "Points d'entrée" : "Entry points"}
+            </p>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/privacy"
+                  href="/brief"
                   className="text-sm text-text-secondary transition-colors hover:text-text-primary"
                 >
-                  {tFooter("privacy")}
+                  {isFrench ? "Brief projet" : "Brief"}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/terms"
+                  href="/projects"
                   className="text-sm text-text-secondary transition-colors hover:text-text-primary"
                 >
-                  {tFooter("terms")}
+                  {tNav("projects")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services"
+                  className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                >
+                  {tNav("services")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-4 font-mono text-xs uppercase tracking-widest text-text-tertiary">
-              {tFooter("connectLabel")}
-            </h4>
+            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-text-tertiary">
+              {tFooter("legalLabel")}
+            </p>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:contact@marksystems.ca" className="text-sm text-text-secondary transition-colors hover:text-text-primary">
-                  contact@marksystems.ca
-                </a>
-              </li>
-              <li className="text-sm text-text-secondary">
-                Québec, Canada
+                <Link href="/privacy" className="text-sm text-text-secondary transition-colors hover:text-text-primary">{tFooter("privacy")}</Link>
               </li>
             </ul>
           </div>
