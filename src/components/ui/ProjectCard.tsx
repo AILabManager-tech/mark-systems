@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { fadeInUp } from "@/lib/animations";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
 import { projectTechnologies, projectBadges, type ProjectId, type ProjectBadge } from "@/lib/projects-data";
@@ -12,10 +12,34 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ projectId, compact = false }: ProjectCardProps) {
+  const locale = useLocale();
   const t = useTranslations(`projects.${projectId}`);
   const tCard = useTranslations("projectCard");
   const technologies = projectTechnologies[projectId as ProjectId] ?? [];
   const badge = projectBadges[projectId as ProjectId] ?? "demo";
+  const businessImpact: Record<string, { fr: string; en: string }> = {
+    "ainova-os": {
+      fr: "Prouve une capacité de plateforme et d'orchestration à haut niveau.",
+      en: "Proves high-level platform and orchestration capability.",
+    },
+    "winterpulse": {
+      fr: "Montre une exécution éditoriale premium, rapide et orientée expérience.",
+      en: "Shows premium editorial execution with strong experience design.",
+    },
+    "n8n-ecosystem": {
+      fr: "Démontre une vraie profondeur d'automatisation et d'intégration opérationnelle.",
+      en: "Demonstrates real automation and operational integration depth.",
+    },
+    "osiris-scanner": {
+      fr: "Transforme l'audit technique en lecture exploitable pour décisions produit.",
+      en: "Turns technical audit into usable product-level decision support.",
+    },
+    "stark-portfolio": {
+      fr: "Montre une capacité à produire des interfaces immersives qui restent maîtrisées.",
+      en: "Shows the ability to produce immersive interfaces while keeping control.",
+    },
+  };
+  const impact = businessImpact[projectId]?.[locale === "fr" ? "fr" : "en"];
 
   const badgeStyles: Record<ProjectBadge, string> = {
     client: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
@@ -71,6 +95,17 @@ export function ProjectCard({ projectId, compact = false }: ProjectCardProps) {
         <p className={`text-sm text-text-secondary ${compact ? "mb-4" : ""}`}>
           {compact ? t("challenge") : t("result")}
         </p>
+
+        {impact && (
+          <div className="mt-4 rounded-sm border border-accent/15 bg-accent/5 px-3 py-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+              Business read
+            </p>
+            <p className="mt-2 text-xs leading-relaxed text-text-secondary">
+              {impact}
+            </p>
+          </div>
+        )}
 
         <div className="mt-auto pt-4">
           <div className="inline-flex items-baseline gap-2 rounded-sm border border-surface-border bg-surface-light px-3 py-1.5">

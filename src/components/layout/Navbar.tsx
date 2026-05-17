@@ -18,6 +18,8 @@ export function Navbar() {
   const pathname = usePathname();
   const tCommon = useTranslations("common");
   const tNav = useTranslations("nav");
+  const isFrench = pathname.startsWith("/fr");
+  const briefLabel = isFrench ? "Démarrer un brief" : "Start a brief";
 
   useEffect(() => {
     function onScroll() {
@@ -37,7 +39,7 @@ export function Navbar() {
     <>
       <motion.header
         role="banner"
-        initial={{ y: -20, opacity: 0 }}
+        initial={false}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
         className={cn(
@@ -53,7 +55,12 @@ export function Navbar() {
             className="flex items-center gap-2.5 text-xl font-bold uppercase tracking-tighter text-text-primary"
           >
             <Image src="/logo.webp" alt="Mark Systems logo" width={32} height={32} className="h-8 w-8" />
-            {tCommon("siteName")}
+            <div className="flex flex-col leading-none">
+              <span>{tCommon("siteName")}</span>
+              <span className="mt-1 hidden font-mono text-[10px] font-normal uppercase tracking-[0.24em] text-text-tertiary lg:block">
+                {isFrench ? "systemes pour la croissance" : "systems for growth"}
+              </span>
+            </div>
           </Link>
 
           <div className="hidden items-center gap-6 md:flex">
@@ -87,10 +94,10 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <Link
-              href="/contact"
+              href="/brief"
               className="hidden rounded-sm bg-text-primary px-5 py-2 text-sm font-bold text-background transition-all duration-300 hover:bg-accent hover:text-text-primary hover:shadow-glow-accent-lg md:inline-block"
             >
-              {tNav("contact")}
+              {briefLabel}
             </Link>
             <button
               onClick={() => setMenuOpen(true)}
