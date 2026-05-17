@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { ArrowLeft, ArrowRight, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { TOTAL_STEPS } from "./WizardProgress";
@@ -14,6 +14,7 @@ interface Props {
 }
 
 export function WizardNavigation({ currentStep, onPrev, onNext, onSubmit, submitting }: Props) {
+  const locale = useLocale();
   const t = useTranslations("brief.nav");
   const isLast = currentStep === TOTAL_STEPS - 1;
 
@@ -49,7 +50,7 @@ export function WizardNavigation({ currentStep, onPrev, onNext, onSubmit, submit
         </Button>
         <p className="text-xs text-text-tertiary">
           {t("privacyNotice")}{" "}
-          <a href="/fr/privacy" className="underline hover:text-text-secondary">{t("privacyLink")}</a>
+          <a href={`/${locale}/privacy`} className="underline hover:text-text-secondary">{t("privacyLink")}</a>
         </p>
         </div>
       ) : (

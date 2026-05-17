@@ -190,7 +190,7 @@ export function BriefWizard() {
 
         <p className="mt-4 text-xs text-text-tertiary text-center">
           {t("nav.privacyNotice")}{" "}
-          <a href="/fr/privacy" className="underline hover:text-text-secondary">
+          <a href={`/${locale}/privacy`} className="underline hover:text-text-secondary">
             {t("nav.privacyLink")}
           </a>
         </p>

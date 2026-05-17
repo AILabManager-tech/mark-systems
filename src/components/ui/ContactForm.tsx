@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { SERVICE_IDS } from "@/lib/services-data";
 import { SITE } from "@/lib/constants";
 import { Button } from "./Button";
@@ -27,6 +27,7 @@ type SubmitState = "idle" | "submitting" | "success" | "error";
 const INITIAL: FormData = { name: "", email: "", company: "", service: "", message: "" };
 
 export function ContactForm() {
+  const locale = useLocale();
   const t = useTranslations("contactForm");
   const tV = useTranslations("validation");
   const tS = useTranslations("services");
@@ -153,7 +154,7 @@ export function ContactForm() {
       </div>
       <p className="text-xs text-text-tertiary">
         {t("privacyNotice")}{" "}
-        <a href="/fr/privacy" className="underline hover:text-text-secondary">
+        <a href={`/${locale}/privacy`} className="underline hover:text-text-secondary">
           {t("privacyLink")}
         </a>
       </p>

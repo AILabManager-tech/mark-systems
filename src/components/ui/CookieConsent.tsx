@@ -1,42 +1,11 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useTranslations } from "next-intl";
-
-type ConsentState = {
-  essential: true;
-  analytics: boolean;
-  marketing: boolean;
-};
-
-const CONSENT_KEY = "ms-cookie-consent";
-const CONSENT_TTL_MS = 180 * 24 * 60 * 60 * 1000; // 6 months (Loi 25)
-
-function loadConsent(): ConsentState | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = localStorage.getItem(CONSENT_KEY);
-    if (!raw) return null;
-    const { consent, expires } = JSON.parse(raw);
-    if (Date.now() > expires) {
-      localStorage.removeItem(CONSENT_KEY);
-      return null;
-    }
-    return consent;
-  } catch {
-    return null;
-  }
-}
-
-function saveConsent(consent: ConsentState) {
-  localStorage.setItem(
-    CONSENT_KEY,
-    JSON.stringify({ consent, expires: Date.now() + CONSENT_TTL_MS })
-  );
-  window.dispatchEvent(new CustomEvent("consent-update", { detail: consent }));
-}
+import { useLocale, useTranslations } from "next-intl";
+import { loadConsent, saveConsent, type ConsentState } from "@/lib/consent";
 
 export function CookieConsent() {
+  const locale = useLocale();
   const t = useTranslations("cookie");
   const [visible, setVisible] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
@@ -82,7 +51,7 @@ export function CookieConsent() {
             <h3 className="text-sm font-bold text-text-primary">{t("title")}</h3>
             <p className="mt-1 text-xs text-text-secondary leading-relaxed">
               {t("description")}{" "}
-              <a href="/fr/privacy" className="underline text-accent-primary hover:text-accent-secondary">
+              <a href={`/${locale}/privacy`} className="underline text-accent-primary hover:text-accent-secondary">
                 {t("privacyLink")}
               </a>
             </p>
