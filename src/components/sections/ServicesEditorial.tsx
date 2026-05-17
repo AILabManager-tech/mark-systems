@@ -1,12 +1,12 @@
-"use client";
-
-import { useLocale } from "next-intl";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { getBrandContent } from "@/lib/brand-content";
 
-export function ServicesEditorial() {
-  const locale = useLocale();
+interface ServicesEditorialProps {
+  locale: string;
+}
+
+export function ServicesEditorial({ locale }: ServicesEditorialProps) {
   const { services } = getBrandContent(locale);
 
   return (

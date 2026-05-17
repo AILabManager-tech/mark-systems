@@ -32,11 +32,16 @@ function BriefSkeleton() {
   );
 }
 
-export default function BriefPage() {
+export default async function BriefPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <section className="section-padding">
       <div className="section-container max-w-3xl">
-        <BriefEditorial />
+        <BriefEditorial locale={locale} />
         <Suspense fallback={<BriefSkeleton />}>
           <BriefWizard />
         </Suspense>

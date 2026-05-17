@@ -1,12 +1,12 @@
-"use client";
-
-import { useLocale } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getBrandContent } from "@/lib/brand-content";
 
-export function ContactEditorial() {
-  const locale = useLocale();
+interface ContactEditorialProps {
+  locale: string;
+}
+
+export function ContactEditorial({ locale }: ContactEditorialProps) {
   const { contact } = getBrandContent(locale);
   const isFrench = locale === "fr";
 

@@ -80,7 +80,7 @@ export default async function ProjectsPage({
   return (
     <>
       <CaseStudyJsonLd locale={locale} />
-      <ProjectsEditorial />
+      <ProjectsEditorial locale={locale} />
       <section className="section-padding border-t border-surface-border">
         <div className="section-container">
           <ProjectGrid />

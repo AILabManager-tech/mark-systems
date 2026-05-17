@@ -54,7 +54,7 @@ export default async function ContactPage({
   return (
     <>
       <ContactJsonLd locale={locale} />
-      <ContactEditorial />
+      <ContactEditorial locale={locale} />
       <section className="section-padding border-t border-surface-border">
         <div className="section-container">
           <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-5">

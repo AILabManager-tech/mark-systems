@@ -64,7 +64,7 @@ export default async function ServicesPage({
   return (
     <>
       <ServicesJsonLd locale={locale} />
-      <ServicesEditorial />
+      <ServicesEditorial locale={locale} />
       <section className="section-padding border-t border-surface-border">
         <div className="section-container">
           <ServiceGrid />

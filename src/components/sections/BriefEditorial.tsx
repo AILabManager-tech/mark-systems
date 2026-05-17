@@ -1,11 +1,11 @@
-"use client";
-
-import { useLocale } from "next-intl";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getBrandContent } from "@/lib/brand-content";
 
-export function BriefEditorial() {
-  const locale = useLocale();
+interface BriefEditorialProps {
+  locale: string;
+}
+
+export function BriefEditorial({ locale }: BriefEditorialProps) {
   const { brief } = getBrandContent(locale);
 
   return (

@@ -58,7 +58,7 @@ export default async function AboutPage({
   return (
     <>
       <AboutJsonLd locale={locale} />
-      <AboutEditorial />
+      <AboutEditorial locale={locale} />
       <AboutContent />
     </>
   );
