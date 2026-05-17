@@ -33,7 +33,8 @@ export function Navbar() {
     setMenuOpen(false);
   }, [pathname]);
 
-  const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}(-[A-Za-z]+)?/, "") || "/";
+  const normalizedPath = pathname.replace(/\.html$/, "").replace(/\/+$/, "") || "/";
+  const pathWithoutLocale = normalizedPath.replace(/^\/[a-z]{2}(-[A-Za-z]+)?/, "") || "/";
 
   return (
     <>
