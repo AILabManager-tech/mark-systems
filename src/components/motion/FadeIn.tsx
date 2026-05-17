@@ -19,7 +19,7 @@ export function FadeIn({
   return (
     <motion.div
       variants={variants}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={VIEWPORT_CONFIG}
       transition={{ delay }}

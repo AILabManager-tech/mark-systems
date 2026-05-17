@@ -40,7 +40,7 @@ export function SectionHeader(props: SectionHeaderProps) {
   return (
     <motion.div
       variants={fadeInUp}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={VIEWPORT_CONFIG}
       className={cn("mb-16", centered && "text-center", className)}
