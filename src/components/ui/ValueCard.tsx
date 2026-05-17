@@ -12,7 +12,7 @@ export function ValueCard({ index }: ValueCardProps) {
   const t = useTranslations(`values.${index}`);
 
   return (
-    <motion.div variants={fadeInUp} className="card-base">
+    <motion.div variants={fadeInUp} initial={false} className="card-base">
       <span className="mb-3 inline-block font-mono text-2xl font-bold text-text-tertiary">
         {String(index + 1).padStart(2, "0")}
       </span>

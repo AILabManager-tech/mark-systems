@@ -22,6 +22,7 @@ export function ServiceCard({
   return (
     <motion.div
       variants={fadeInUp}
+      initial={false}
       className="card-base group relative flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-glow-accent"
     >
       {/* Hover glow */}

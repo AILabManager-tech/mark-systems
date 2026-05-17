@@ -14,7 +14,7 @@ export function TeamCard({ memberId, name, initials }: TeamCardProps) {
   const t = useTranslations(`team.${memberId}`);
 
   return (
-    <motion.div variants={fadeInUp} className="card-base text-center">
+    <motion.div variants={fadeInUp} initial={false} className="card-base text-center">
       <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-surface-light font-mono text-sm font-bold text-text-primary">
         {initials}
       </div>

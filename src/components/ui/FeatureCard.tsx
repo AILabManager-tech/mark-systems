@@ -12,7 +12,7 @@ interface FeatureCardProps {
 
 export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   return (
-    <motion.div variants={fadeInUp} className="card-base group relative flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-glow-accent">
+    <motion.div variants={fadeInUp} initial={false} className="card-base group relative flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-glow-accent">
       {/* Hover glow */}
       <div className="pointer-events-none absolute -inset-px rounded-sm bg-gradient-to-b from-accent/15 via-accent/0 to-accent/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       <div className="relative">
