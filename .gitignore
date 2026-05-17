@@ -24,10 +24,17 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
 
 # local env files
 .env*.local
 deploy/ionos.env
+
+# local agent / tooling config (machine-specific paths, not for repo)
+.mcp.json
+
+# local working docs (not for the public repo)
+ENSEMBLE DES OUTILS EXPLOITABLES.md
 
 # vercel
 .vercel
