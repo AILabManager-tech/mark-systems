@@ -76,16 +76,15 @@ describe("validateSite", () => {
 
 describe("validateLegal", () => {
   const valid: LegalLoi25 = {
-    rpp: { name: "John Doe", email: "john@test.ca", function: "RPP" },
+    rpp: { name: "John Doe", email: "john@test.ca", title: "RPP" },
     dataCollected: ["name", "email"],
-    sensitiveData: false,
     purposes: ["contact"],
     retention: "24 months",
     transferOutsideQc: false,
-    transferCountries: "",
+    transferCountries: [],
+    thirdPartyServices: [],
     consentMode: "opt-in",
-    incidentProcess: false,
-    incidentEmail: "",
+    incident: { processInPlace: false, notificationEmail: "" },
   };
 
   it("returns no errors for valid data", () => {
