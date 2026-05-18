@@ -1,9 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
+import dynamic from "next/dynamic";
 import { CONSENT_UPDATE_EVENT, loadConsent, normalizeConsent, type ConsentState } from "@/lib/consent";
+
+const Analytics = dynamic(
+  () => import("@vercel/analytics/react").then((m) => m.Analytics),
+  { ssr: false }
+);
+const SpeedInsights = dynamic(
+  () => import("@vercel/speed-insights/react").then((m) => m.SpeedInsights),
+  { ssr: false }
+);
 
 export function ConsentAnalytics() {
   const [consent, setConsent] = useState<ConsentState | null>(null);
