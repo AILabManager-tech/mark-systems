@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Menu } from "lucide-react";
-import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { NAV_KEYS, NAV_HREFS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -38,11 +37,8 @@ export function Navbar() {
 
   return (
     <>
-      <motion.header
+      <header
         role="banner"
-        initial={false}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
         className={cn(
           "fixed left-0 right-0 top-0 z-30 transition-all duration-300",
           scrolled
@@ -81,10 +77,9 @@ export function Navbar() {
                 >
                   {tNav(key)}
                   {isActive && (
-                    <motion.span
-                      layoutId="nav-indicator"
+                    <span
+                      aria-hidden="true"
                       className="absolute -bottom-1 left-0 right-0 h-px bg-accent"
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
                 </Link>
@@ -109,7 +104,7 @@ export function Navbar() {
             </button>
           </div>
         </nav>
-      </motion.header>
+      </header>
 
       <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
