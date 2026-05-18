@@ -118,8 +118,6 @@ export default async function LocaleLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
-        <link rel="preconnect" href="https://formspree.io" />
-        <link rel="dns-prefetch" href="https://formspree.io" />
         <OrganizationJsonLd locale={locale} />
       </head>
       <body className="noise-overlay relative min-h-screen font-sans antialiased dark">

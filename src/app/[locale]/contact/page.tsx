@@ -53,6 +53,8 @@ export default async function ContactPage({
 
   return (
     <>
+      <link rel="preconnect" href="https://formspree.io" />
+      <link rel="dns-prefetch" href="https://formspree.io" />
       <ContactJsonLd locale={locale} />
       <ContactEditorial locale={locale} />
       <section className="section-padding border-t border-surface-border">

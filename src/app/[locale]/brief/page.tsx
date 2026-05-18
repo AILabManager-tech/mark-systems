@@ -40,6 +40,8 @@ export default async function BriefPage({
   const { locale } = await params;
   return (
     <section className="section-padding">
+      <link rel="preconnect" href="https://formspree.io" />
+      <link rel="dns-prefetch" href="https://formspree.io" />
       <div className="section-container max-w-3xl">
         <BriefEditorial locale={locale} />
         <Suspense fallback={<BriefSkeleton />}>
