@@ -177,8 +177,8 @@ export function getHomeContent(locale: string) {
               summary: "Vision plateforme pour des systèmes IA gouvernés, auditables et durables.",
             },
             {
-              name: "NEXOS",
-              summary: "Pipeline premium de production web et d'audit qualité, utile comme preuve de rigueur et d'exécution.",
+              name: "NEXOS v4.4.0",
+              summary: "Pipeline web 6 phases, 57 agents spécialisés, 595 tests, conformité Loi 25 native et déploiement Next.js 15 sur Vercel — l'asset technique sous chaque livraison Mark Systems.",
             },
           ],
         },
@@ -201,8 +201,8 @@ export function getHomeContent(locale: string) {
               summary: "A platform vision for governed, auditable, durable AI systems.",
             },
             {
-              name: "NEXOS",
-              summary: "A premium web production and quality-audit pipeline that proves rigor and execution capacity.",
+              name: "NEXOS v4.4.0",
+              summary: "A 6-phase web pipeline with 57 specialized agents, 595 tests, native Law 25 compliance, and Next.js 15 deployment on Vercel — the technical asset behind every Mark Systems delivery.",
             },
           ],
         },

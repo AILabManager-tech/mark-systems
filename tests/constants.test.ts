@@ -12,8 +12,15 @@ describe("SITE config", () => {
 });
 
 describe("Navigation", () => {
-  it("has 6 nav keys", () => {
-    expect(NAV_KEYS).toHaveLength(6);
+  it("has 7 nav keys", () => {
+    expect(NAV_KEYS).toHaveLength(7);
+  });
+
+  it("includes nexos and ainova-os product pages", () => {
+    expect(NAV_KEYS).toContain("nexos");
+    expect(NAV_KEYS).toContain("ainova-os");
+    expect(NAV_HREFS.nexos).toBe("/nexos");
+    expect(NAV_HREFS["ainova-os"]).toBe("/ainova-os");
   });
 
   it("every nav key has a corresponding href", () => {
