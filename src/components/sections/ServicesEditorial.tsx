@@ -22,7 +22,7 @@ export function ServicesEditorial({ locale }: ServicesEditorialProps) {
           <div className="grid gap-6 lg:grid-cols-3">
             {services.pillars.map((pillar) => (
               <article key={pillar.title} className="card-base">
-                <h3 className="text-h3 font-semibold text-text-primary">{pillar.title}</h3>
+                <h2 className="text-h3 font-semibold text-text-primary">{pillar.title}</h2>
                 <p className="mt-4 text-sm leading-relaxed text-text-secondary">{pillar.text}</p>
               </article>
             ))}

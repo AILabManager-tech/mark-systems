@@ -19,7 +19,7 @@ export function BriefEditorial({ locale }: BriefEditorialProps) {
       <div className="grid gap-5 lg:grid-cols-3">
         {brief.points.map((point) => (
           <article key={point.title} className="rounded-sm border border-surface-border bg-surface p-5">
-            <h3 className="text-lg font-semibold text-text-primary">{point.title}</h3>
+            <h2 className="text-lg font-semibold text-text-primary">{point.title}</h2>
             <p className="mt-3 text-sm leading-relaxed text-text-secondary">{point.text}</p>
           </article>
         ))}

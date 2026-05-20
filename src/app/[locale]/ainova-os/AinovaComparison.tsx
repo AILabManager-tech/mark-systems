@@ -25,11 +25,13 @@ export function AinovaComparison() {
         <FadeIn>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[600px] border-collapse">
+              <caption className="sr-only">{t("title")}</caption>
               <thead>
                 <tr className="border-b border-surface-border">
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-text-tertiary" />
+                  <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-text-tertiary" />
                   {COMPETITORS.map((c) => (
                     <th
+                      scope="col"
                       key={c}
                       className={`px-4 py-3 text-center text-xs font-medium uppercase tracking-wider ${
                         c === "ainovaOs"
@@ -48,9 +50,9 @@ export function AinovaComparison() {
                     key={dim}
                     className="border-b border-surface-border/50 transition-colors hover:bg-surface-light/30"
                   >
-                    <td className="px-4 py-3 text-sm text-text-secondary">
+                    <th scope="row" className="px-4 py-3 text-left text-sm font-normal text-text-secondary">
                       {t(`dimensions.${dim}`)}
-                    </td>
+                    </th>
                     {COMPETITORS.map((c) => (
                       <td key={c} className="px-4 py-3 text-center">
                         {comparisonData[dim][c] ? (
