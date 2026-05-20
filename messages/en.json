@@ -12,6 +12,7 @@
     "home": "Home",
     "services": "Services",
     "ainova-os": "AiNova OS",
+    "nexos": "NEXOS",
     "projects": "Projects",
     "about": "About",
     "contact": "Contact"
@@ -345,6 +346,10 @@
     "brief": {
       "title": "Project Brief — Describe Your Needs",
       "description": "Start your web project with Mark Systems. Quick and structured brief form."
+    },
+    "nexos": {
+      "title": "NEXOS — Autonomous web builder | Mark Systems",
+      "description": "NEXOS v4.4.0: a 6-phase web pipeline with SOIC quality audits, native Law 25 compliance, and Next.js 15 deployment on Vercel. Mark Systems' technical asset."
     }
   },
   "faq": {
@@ -529,6 +534,137 @@
         "ai": "AI & LLM",
         "integration": "Integration"
       }
+    }
+  },
+  "nexos": {
+    "hero": {
+      "badge": "Production web pipeline — v4.4.0",
+      "title": "NEXOS",
+      "subtitle": "Autonomous web builder with quality audits built in",
+      "description": "A reproducible 6-phase pipeline that ships Next.js 15 sites compliant with Quebec's Law 25 — with objective SOIC gates between phases and a Lighthouse audit that has to pass before the site goes live.",
+      "ctaPrimary": "Start a brief",
+      "ctaSecondary": "See projects"
+    },
+    "overview": {
+      "label": "The problem & the solution",
+      "title": "Why NEXOS exists",
+      "problemTitle": "The problem",
+      "problemPoints": [
+        "Sites built on no-code platforms (Webflow, Wix) are rented, not owned — proprietary, opaque code",
+        "Traditional agencies ship from instinct, without reproducible quality gates",
+        "Law 25 compliance is treated as an option, bolted on after the fact when asked",
+        "Lighthouse audits arrive at the end of the road, when fixes cost 10× more"
+      ],
+      "solutionTitle": "The solution",
+      "solutionPoints": [
+        "Next.js 15 + strict TypeScript source code delivered and deployed on your own Vercel",
+        "6 pipeline phases with a SOIC μ ≥ 8.0 gate between each — nothing passes without objective proof",
+        "Law 25 compliance auto-injected and auto-fixed at build time (D4/D8 rules)",
+        "Lighthouse + axe-core audits in the QA phase — deployment blocked if Performance < 90 or A11y < 95"
+      ]
+    },
+    "features": {
+      "label": "Core capabilities",
+      "title": "What sets NEXOS apart",
+      "description": "Six pillars that make NEXOS a reproducible web pipeline rather than a template or a hand-rolled site.",
+      "phases": {
+        "title": "6 gated pipeline phases",
+        "description": "ph0-Discovery → ph1-Strategy → ph2-Design → ph3-Content → ph4-Build → ph5-QA+Deploy. Each phase produces verifiable artifacts validated by a SOIC gate."
+      },
+      "loi25": {
+        "title": "Native Law 25 compliance",
+        "description": "Cookie opt-in banner, privacy policy, legal mentions, and PPR auto-injected and auto-fixed at build time. Not an add-on — the default."
+      },
+      "agents": {
+        "title": "57 specialized agents",
+        "description": "Each phase orchestrates narrow-scope agents (6 to 24 per phase) — discovery, strategy, design, content, build, QA — instead of one generalist agent that hallucinates."
+      },
+      "modes": {
+        "title": "7 operational modes",
+        "description": "create, audit, modify, content, doctor, fix, report. A client is not just an initial build — it's a site you audit, patch, and enrich over time."
+      },
+      "stack": {
+        "title": "Modern owned stack",
+        "description": "Next.js 15 App Router, strict TypeScript, Tailwind, bilingual FR/EN via next-intl, Vercel deployment. No page builder, no Bootstrap, no lock-in."
+      },
+      "audit": {
+        "title": "Built-in quality audit",
+        "description": "SOIC multi-dimension scoring, OSIRIS operational scanner (perf/security/resources), Lighthouse as a deployment gate. Objective score, not a designer's gut feeling."
+      }
+    },
+    "architecture": {
+      "label": "NEXOS pipeline",
+      "title": "Six phases, six gates",
+      "phases": {
+        "discovery": {
+          "title": "01 · Discovery",
+          "description": "Need qualification, business context, technical constraints. Canonical brief with verified Law 25 coverage."
+        },
+        "strategy": {
+          "title": "02 · Strategy",
+          "description": "Information architecture, sitemap, pattern recommender, typology choices. NEXOS Web Patterns reference."
+        },
+        "design": {
+          "title": "03 · Design",
+          "description": "Visual system, tokens, components. Consistency checked mechanically, not by eye."
+        },
+        "content": {
+          "title": "04 · Content",
+          "description": "Bilingual FR/EN copywriting, on-page SEO, editorial structure. Linguistic parity enforced."
+        },
+        "build": {
+          "title": "05 · Build",
+          "description": "Next.js 15 + strict TypeScript + Tailwind code. Unit tests, type-check, lint. CumulativeLayoutShift gate."
+        },
+        "qa": {
+          "title": "06 · QA + Deploy",
+          "description": "Lighthouse, axe-core, pa11y audits, OSIRIS scan, Law 25 compliance. Ph4↔Ph5 reconciliation active. Vercel push if joint verdict is OK."
+        }
+      }
+    },
+    "metrics": {
+      "label": "By the numbers",
+      "title": "Pipeline state (v4.4.0)",
+      "version": "Current version",
+      "phases": "Pipeline phases",
+      "agents": "Specialized agents",
+      "tests": "Automated tests",
+      "modes": "Operational modes"
+    },
+    "comparison": {
+      "label": "Competitive landscape",
+      "title": "NEXOS vs. other ways to ship a site",
+      "description": "How NEXOS compares to common alternatives across 7 critical dimensions for a site that has to perform and last.",
+      "nexos": "NEXOS",
+      "webflow": "Webflow / Wix",
+      "agency": "Traditional agency",
+      "boilerplate": "Starter kit",
+      "dimensions": {
+        "ownCode": "Source code delivered",
+        "reproducible": "Reproducible pipeline",
+        "loi25Auto": "Automatic Law 25",
+        "qualityGates": "Objective quality gates",
+        "modernStack": "Modern stack (Next.js 15)",
+        "bilingual": "Native FR/EN bilingual",
+        "lighthouseGate": "Lighthouse as deployment gate"
+      }
+    },
+    "techStack": {
+      "label": "Technology",
+      "title": "Internal stack and shipped stack",
+      "categories": {
+        "delivered": "Site delivered",
+        "pipeline": "NEXOS pipeline",
+        "quality": "Quality & compliance",
+        "ops": "Ops & CI"
+      }
+    },
+    "cta": {
+      "label": "For prospects",
+      "title": "The pipeline already runs — start a brief",
+      "description": "NEXOS is the technical asset Mark Systems uses to ship client sites. If your project needs a reproducible, compliant site from the very first version, let's talk.",
+      "primary": "Start a brief",
+      "secondary": "See projects"
     }
   },
   "brief": {
