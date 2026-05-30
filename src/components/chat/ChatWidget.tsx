@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
+import { MessageCircle, X, Send, User } from 'lucide-react';
+import Image from 'next/image';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
@@ -11,7 +12,7 @@ interface ChatMessage {
 }
 
 const SYSTEM_PROMPT =
-  'You are Mark AI, the virtual assistant for Mark Systems. Mark Systems is a Quebec-based digital agency that designs websites, business automations, AI systems, and cloud infrastructure. Be helpful, professional, and concise. Answer in the same language the user writes in.';
+  'You are N.O.V.A., the virtual assistant for Mark Systems. Mark Systems is a Quebec-based digital agency that designs websites, business automations, AI systems, and cloud infrastructure. Be helpful, professional, and concise. Answer in the same language the user writes in.';
 
 const API_URL = 'http://localhost:11434/v1/chat/completions';
 const MODEL = 'qwen2.5:32b';
@@ -41,15 +42,15 @@ function getFallbackResponse(userMessage: string): string {
   // Greeting check
   if (/\b(bonjour|hello|hi|salut|hey|bonsoir|allô|allo)\b/i.test(lower)) {
     return isFr
-      ? 'Bonjour ! 👋 Je suis Mark AI, l\'assistant virtuel de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
-      : 'Hello! 👋 I\'m Mark AI, the virtual assistant for Mark Systems. How can I help you today?';
+      ? 'Bonjour ! 👋 Je suis N.O.V.A., l\'assistante virtuelle de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
+      : 'Hello! 👋 I\'m N.O.V.A., the virtual assistant for Mark Systems. How can I help you today?';
   }
 
   // Price / cost check
   if (/\b(price|prix|cost|coût|cout|tarif|pricing|quote|devis|combien|how much|estimate|estimation)\b/i.test(lower)) {
     return isFr
-      ? 'Chaque projet est unique ! Nos tarifs dépendent de la portée et de la complexité de votre projet. Contactez-nous à info@marksystems.ca ou au +1 581-986-4267 pour obtenir une soumission personnalisée gratuite.'
-      : 'Every project is unique! Our pricing depends on the scope and complexity of your project. Contact us at info@marksystems.ca or +1 581-986-4267 for a free custom quote.';
+      ? 'Chaque projet est unique ! Nos tarifs dépendent de la portée et de la complexité de votre projet. Essayez notre estimateur en ligne ou contactez-nous à info@marksystems.ca pour une soumission personnalisée gratuite.'
+      : 'Every project is unique! Our pricing depends on the scope and complexity. Try our online estimator or contact us at info@marksystems.ca for a free custom quote.';
   }
 
   // Services check
@@ -204,11 +205,17 @@ export function ChatWidget() {
             {/* Header */}
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 bg-white/5">
               <div className="flex items-center gap-3">
-                <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600">
-                  <Bot className="h-5 w-5 text-white" />
+                <div className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-accent/30">
+                  <Image
+                    src="/images/nova/nova-avatar.jpg"
+                    alt="N.O.V.A."
+                    fill
+                    className="object-cover"
+                    sizes="36px"
+                  />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-white">Mark AI</h3>
+                  <h3 className="text-sm font-semibold text-white">N.O.V.A.</h3>
                   <div className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full bg-green-500" />
                     <span className="text-xs text-green-400">{t('online')}</span>
@@ -228,8 +235,14 @@ export function ChatWidget() {
             <div className="flex-1 overflow-y-auto px-4 py-3 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
               {messages.length === 0 && (
                 <div className="flex flex-col items-center justify-center h-full text-center px-4 gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500/20 to-purple-600/20 border border-white/10">
-                    <Bot className="h-6 w-6 text-blue-400" />
+                  <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-accent/20">
+                    <Image
+                      src="/images/nova/nova-avatar.jpg"
+                      alt="N.O.V.A."
+                      fill
+                      className="object-cover"
+                      sizes="48px"
+                    />
                   </div>
                   <p className="text-sm text-gray-400">{t('welcomeMessage')}</p>
                 </div>
@@ -241,16 +254,22 @@ export function ChatWidget() {
                   className={`flex gap-2.5 ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
                 >
                   <div
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full overflow-hidden ${
                       msg.role === 'user'
                         ? 'bg-blue-600'
-                        : 'bg-gradient-to-br from-blue-500 to-purple-600'
+                        : ''
                     }`}
                   >
                     {msg.role === 'user' ? (
                       <User className="h-4 w-4 text-white" />
                     ) : (
-                      <Bot className="h-4 w-4 text-white" />
+                      <Image
+                        src="/images/nova/nova-avatar.jpg"
+                        alt="N.O.V.A."
+                        width={28}
+                        height={28}
+                        className="object-cover"
+                      />
                     )}
                   </div>
                   <div
@@ -272,8 +291,14 @@ export function ChatWidget() {
 
               {isLoading && (
                 <div className="flex gap-2.5">
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600">
-                    <Bot className="h-4 w-4 text-white" />
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full overflow-hidden">
+                    <Image
+                      src="/images/nova/nova-avatar.jpg"
+                      alt="N.O.V.A."
+                      width={28}
+                      height={28}
+                      className="object-cover"
+                    />
                   </div>
                   <div className="rounded-2xl rounded-bl-md bg-white/10 border border-white/5 px-4 py-3">
                     <div className="flex items-center gap-1.5">
