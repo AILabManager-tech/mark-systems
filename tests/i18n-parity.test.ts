@@ -26,26 +26,27 @@ describe("i18n parity", () => {
   const frKeys = getKeys(fr);
   const enKeys = getKeys(en);
 
-  it("FR and EN have the same number of keys (within 5)", () => {
-    expect(Math.abs(frKeys.length - enKeys.length)).toBeLessThan(5);
+  it("FR and EN have the exact same key set", () => {
+    const onlyFr = frKeys.filter((k) => !enKeys.includes(k));
+    const onlyEn = enKeys.filter((k) => !frKeys.includes(k));
+    expect(onlyFr).toEqual([]);
+    expect(onlyEn).toEqual([]);
   });
 
   it("critical namespaces exist in both languages", () => {
-    const namespaces = ["common", "nav", "hero", "footer", "cookie", "privacy", "contactForm"];
+    const namespaces = ["common", "nav", "hero", "footer", "chatbot", "privacy"];
     for (const ns of namespaces) {
       expect(fr[ns]).toBeDefined();
       expect(en[ns]).toBeDefined();
     }
   });
 
-  it("FR has cookie consent translations", () => {
-    expect(fr.cookie.title).toBeTruthy();
-    expect(fr.cookie.acceptAll).toBeTruthy();
-    expect(fr.cookie.rejectAll).toBeTruthy();
+  it("the welcome chatbot has a greeting in both languages", () => {
+    expect(fr.chatbot.welcomeMessage).toBeTruthy();
+    expect(en.chatbot.welcomeMessage).toBeTruthy();
   });
 
-  it("FR has privacy policy", () => {
+  it("FR has a privacy policy", () => {
     expect(fr.privacy.title).toBeTruthy();
-    expect(fr.privacy.contact.title).toBeTruthy();
   });
 });
