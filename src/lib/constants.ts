@@ -21,6 +21,7 @@ export const NAV_LINKS = [
   { key: "home", href: "/" },
   { key: "services", href: "/services" },
   { key: "projects", href: "/projects" },
+  { key: "estimateur", href: "/estimateur" },
   { key: "about", href: "/about" },
   { key: "contact", href: "/contact" },
 ] as const;
@@ -33,3 +34,71 @@ export const SERVICE_KEYS = [
 ] as const;
 
 export type ServiceKey = (typeof SERVICE_KEYS)[number];
+
+// --- RÉALISATIONS : vrais sites clients ---
+export const REALISATIONS = [
+  {
+    key: "cliniqueAura",
+    url: "https://clinique-aura.vercel.app/fr",
+    image: "/images/realisations/clinique-aura.jpg",
+  },
+  {
+    key: "collectifNova",
+    url: "https://collectif-nova.vercel.app/fr",
+    image: "/images/realisations/collectif-nova.jpg",
+  },
+  {
+    key: "tableMarguerite",
+    url: "https://table-de-marguerite.vercel.app/fr",
+    image: "/images/realisations/table-marguerite.jpg",
+  },
+  {
+    key: "vertexPmo",
+    url: "https://vertex-pmo.vercel.app/fr",
+    image: "/images/realisations/vertex-pmo.jpg",
+  },
+  {
+    key: "beaumontAvocats",
+    url: "https://beaumont-avocats.vercel.app",
+    image: "/images/realisations/beaumont-avocats.jpg",
+  },
+  {
+    key: "usineRh",
+    url: "https://usinerh.ca",
+    image: "/images/realisations/usine-rh.jpg",
+  },
+] as const;
+
+// --- OUTILS / LAB : apps testables ---
+export const OUTILS = [
+  {
+    key: "estimateur",
+    url: "https://estimaweb-qc.vercel.app/fr",
+    image: "/images/outils/estimateur-web.jpg",
+    featured: true,
+  },
+  {
+    key: "saaq",
+    url: "https://saaq-prep.vercel.app",
+    image: "/images/outils/prep-saaq.jpg",
+    featured: false,
+  },
+  {
+    key: "impots",
+    url: "https://impots-2025.vercel.app",
+    image: "/images/outils/calculateur-impots.jpg",
+    featured: false,
+  },
+  {
+    key: "dashboard",
+    url: "https://financial-intelligence-suite.vercel.app",
+    image: "/images/outils/dashboard-financier.jpg",
+    featured: false,
+  },
+  {
+    key: "portfolio",
+    url: "https://ainova-freelancer-portfolio.vercel.app",
+    image: "/images/outils/portfolio-chatbot.jpg",
+    featured: false,
+  },
+] as const;

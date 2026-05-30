@@ -29,6 +29,7 @@ const serviceLinks = [
 const companyLinks = [
   { key: 'about' as const, href: '/about' },
   { key: 'projects' as const, href: '/projects' },
+  { key: 'estimateur' as const, href: '/estimateur' },
   { key: 'contact' as const, href: '/contact' },
 ];
 

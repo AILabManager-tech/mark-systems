@@ -6,7 +6,8 @@
     "about": "About",
     "contact": "Contact",
     "cta": "Start a project",
-    "switchLang": "Switch language"
+    "switchLang": "Switch language",
+    "estimateur": "Estimator"
   },
   "hero": {
     "badge": "Digital Architects",
@@ -560,7 +561,7 @@
     "openChat": "Open chat",
     "closeChat": "Close chat",
     "online": "Online",
-    "welcomeMessage": "Hello! I'm Mark AI, your virtual assistant. How can I help you?",
+    "welcomeMessage": "Hello! 👋 I'm N.O.V.A., Mark Systems' virtual assistant. How can I help you?",
     "inputPlaceholder": "Type your message...",
     "send": "Send",
     "poweredBy": "Powered by Mark AI"
@@ -572,7 +573,8 @@
         "title": "Company",
         "about": "About",
         "projects": "Projects",
-        "contact": "Contact"
+        "contact": "Contact",
+        "estimateur": "Estimator"
       },
       "services": {
         "title": "Services",
@@ -595,5 +597,213 @@
     "notFoundDescription": "The page you're looking for doesn't exist or has been moved.",
     "backHome": "Back to home",
     "contactUs": "Contact us"
+  },
+  "realisations": {
+    "tag": "Portfolio",
+    "title": "Real projects, testable right now",
+    "description": "Delivered and live websites. Click and visit — experience is the best proof.",
+    "viewSite": "Visit site",
+    "items": {
+      "cliniqueAura": {
+        "name": "Clinique Aura",
+        "description": "Multidisciplinary clinic — appointment booking, team, and services."
+      },
+      "collectifNova": {
+        "name": "Collectif Nova",
+        "description": "Creative agency — dynamic portfolio and strong visual identity."
+      },
+      "tableMarguerite": {
+        "name": "Table de Marguerite",
+        "description": "Gourmet bistro — menu, reservations, and immersive atmosphere."
+      },
+      "vertexPmo": {
+        "name": "Vertex PMO",
+        "description": "Project management — dashboard, methodologies, and expertise."
+      },
+      "beaumontAvocats": {
+        "name": "Beaumont Avocats",
+        "description": "Law firm — practice areas, team, and consultations."
+      },
+      "usineRh": {
+        "name": "Usine RH",
+        "description": "HR consulting — HR strategies and organizational transformation."
+      }
+    }
+  },
+  "outils": {
+    "tag": "Tools / Lab",
+    "title": "Free tools to try, right now",
+    "description": "Functional apps built by our team. Try them and judge for yourself.",
+    "tryTool": "Try the tool",
+    "featured": "Featured",
+    "items": {
+      "estimateur": {
+        "name": "Website Cost Estimator",
+        "description": "Estimate your web project cost in a few clicks. Price range in CAD $, no commitment."
+      },
+      "saaq": {
+        "name": "SAAQ Prep",
+        "description": "Prepare your driving test with practice questions and instant results."
+      },
+      "impots": {
+        "name": "Tax Calculator",
+        "description": "Calculate your 2025 federal and provincial taxes in seconds."
+      },
+      "dashboard": {
+        "name": "Financial Dashboard",
+        "description": "Financial intelligence dashboard with real-time data visualization."
+      },
+      "portfolio": {
+        "name": "Portfolio + AI Chatbot",
+        "description": "Freelancer portfolio enhanced with a conversational AI chatbot."
+      }
+    }
+  },
+  "estimateur": {
+    "tag": "Free estimate",
+    "title": "Estimate your website cost",
+    "subtitle": "Answer a few questions to get a personalized estimate in CAD $. No commitment, 100% transparent.",
+    "prev": "Previous",
+    "next": "Next",
+    "calculate": "See estimate",
+    "recommended": "Recommended",
+    "initialCost": "Initial cost",
+    "perMonth": "/mo",
+    "ctaLaunch": "Start my project",
+    "featuresTitle": "Desired features",
+    "sectorModulesTitle": "Sector-specific modules",
+    "steps": {
+      "0": {
+        "label": "Your industry"
+      },
+      "1": {
+        "label": "Website type"
+      },
+      "2": {
+        "label": "Features and modules"
+      },
+      "3": {
+        "label": "Additional options"
+      },
+      "4": {
+        "label": "Your estimate"
+      }
+    },
+    "sectors": {
+      "JUR": {
+        "name": "Legal",
+        "desc": "Law firms, notaries, mediators"
+      },
+      "MED": {
+        "name": "Medical",
+        "desc": "Clinics, healthcare professionals"
+      },
+      "PRO": {
+        "name": "Regulated professions",
+        "desc": "Accountants, engineers, architects"
+      },
+      "PME": {
+        "name": "SMB / Retail",
+        "desc": "Stores, restaurants, general services"
+      }
+    },
+    "siteTypes": {
+      "S01": {
+        "name": "Showcase site (1-5 pages)",
+        "desc": "Perfect to present your business and contact info."
+      },
+      "S02": {
+        "name": "Showcase site (6-15 pages)",
+        "desc": "More complete site with detailed sections and blog."
+      },
+      "S03": {
+        "name": "Basic e-commerce",
+        "desc": "Online store up to 100 products."
+      },
+      "S04": {
+        "name": "Advanced e-commerce",
+        "desc": "Online store 100+ products with advanced features."
+      },
+      "S05": {
+        "name": "Custom platform",
+        "desc": "Full web application with custom features."
+      },
+      "S06": {
+        "name": "Landing page",
+        "desc": "Single page optimized for conversion."
+      }
+    },
+    "features": {
+      "M03": "Online booking",
+      "M04": "Client portal",
+      "M05": "CRM integration",
+      "M06": "AI Chatbot",
+      "M07": "SGQRI accessibility",
+      "M08": "Law 25 compliance",
+      "M09": "Complex forms",
+      "M10": "Data migration",
+      "M11": "Online payment",
+      "M12": "Advanced animations"
+    },
+    "modules": {
+      "JUR01": "Quebec Bar compliance",
+      "JUR02": "Practice areas architecture",
+      "JUR03": "Confidential client portal",
+      "JUR04": "Legal blog + newsletters",
+      "JUR05": "Local legal SEO",
+      "JUR06": "Clio integration",
+      "MED01": "Online appointments",
+      "MED02": "Law 25 health data",
+      "MED03": "Secure patient portal",
+      "MED04": "EMR integration",
+      "MED05": "Patient educational content",
+      "MED06": "Multi-practitioner",
+      "PRO01": "Professional order compliance",
+      "PRO02": "Calculators / simulators",
+      "PRO03": "Business software integration",
+      "PRO04": "Client document portal",
+      "PRO05": "Online quote system",
+      "PME01": "Product / service catalog",
+      "PME02": "Quote request form",
+      "PME03": "Google Business / Maps / reviews",
+      "PME04": "Careers section",
+      "PME05": "Online menu / ordering",
+      "PME06": "Portfolio gallery",
+      "PME07": "Social media integration"
+    },
+    "extras": {
+      "bilingual": "Bilingual site (FR/EN)",
+      "multilingual": "Multilingual (3+ languages)",
+      "urgent": "Rush delivery (< 4 weeks)"
+    },
+    "scenarios": {
+      "eco": {
+        "name": "Economy",
+        "desc": "Essential to get started on a tight budget."
+      },
+      "rec": {
+        "name": "Recommended",
+        "desc": "Best value for most projects."
+      },
+      "premium": {
+        "name": "Premium",
+        "desc": "High-end solution, no compromises."
+      }
+    },
+    "breakdown": {
+      "base": "Base cost",
+      "addons": "Features",
+      "sector": "Sector modules",
+      "contingency": "Contingency (15%)",
+      "monthly": "Monthly recurring",
+      "year1": "Year 1 total"
+    },
+    "transparency": {
+      "title": "Transparency",
+      "note1": "This estimate is indicative and does not constitute a final quote.",
+      "note2": "The 15% contingency covers common technical unforeseen events.",
+      "note3": "Monthly fees include hosting, domain, and maintenance.",
+      "note4": "Contact us for a detailed and personalized quote."
+    }
   }
 }

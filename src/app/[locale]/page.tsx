@@ -4,6 +4,8 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { AutomationShowcase } from "@/components/sections/AutomationShowcase";
 import { ProcessSection } from "@/components/sections/ProcessSection";
+import { RealisationsSection } from "@/components/sections/RealisationsSection";
+import { OutilsSection } from "@/components/sections/OutilsSection";
 import { ProjectsPreview } from "@/components/sections/ProjectsPreview";
 import { TrustSection } from "@/components/sections/TrustSection";
 import { FAQSection } from "@/components/sections/FAQSection";
@@ -14,6 +16,8 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <ServicesSection />
+      <RealisationsSection />
+      <OutilsSection />
       <AutomationShowcase />
       <ProcessSection />
       <ProjectsPreview />

@@ -34,19 +34,45 @@ describe("i18n parity", () => {
   });
 
   it("critical namespaces exist in both languages", () => {
-    const namespaces = ["common", "nav", "hero", "footer", "chatbot", "privacy"];
+    const namespaces = [
+      "common", "nav", "hero", "footer", "chatbot", "privacy",
+      "realisations", "outils", "estimateur",
+    ];
     for (const ns of namespaces) {
       expect(fr[ns]).toBeDefined();
       expect(en[ns]).toBeDefined();
     }
   });
 
-  it("the welcome chatbot has a greeting in both languages", () => {
-    expect(fr.chatbot.welcomeMessage).toBeTruthy();
-    expect(en.chatbot.welcomeMessage).toBeTruthy();
+  it("the welcome chatbot has a N.O.V.A. greeting in both languages", () => {
+    expect(fr.chatbot.welcomeMessage).toContain("N.O.V.A.");
+    expect(en.chatbot.welcomeMessage).toContain("N.O.V.A.");
   });
 
   it("FR has a privacy policy", () => {
     expect(fr.privacy.title).toBeTruthy();
+  });
+
+  it("realisations has 6 items in both languages", () => {
+    expect(Object.keys(fr.realisations.items)).toHaveLength(6);
+    expect(Object.keys(en.realisations.items)).toHaveLength(6);
+  });
+
+  it("outils has 5 items in both languages", () => {
+    expect(Object.keys(fr.outils.items)).toHaveLength(5);
+    expect(Object.keys(en.outils.items)).toHaveLength(5);
+  });
+
+  it("estimateur has all sector translations", () => {
+    const sectors = ["JUR", "MED", "PRO", "PME"];
+    for (const s of sectors) {
+      expect(fr.estimateur.sectors[s].name).toBeTruthy();
+      expect(en.estimateur.sectors[s].name).toBeTruthy();
+    }
+  });
+
+  it("nav includes estimateur link key", () => {
+    expect(fr.nav.estimateur).toBeTruthy();
+    expect(en.nav.estimateur).toBeTruthy();
   });
 });

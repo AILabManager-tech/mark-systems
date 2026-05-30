@@ -6,7 +6,8 @@
     "about": "À propos",
     "contact": "Contact",
     "cta": "Démarrer un projet",
-    "switchLang": "Changer de langue"
+    "switchLang": "Changer de langue",
+    "estimateur": "Estimateur"
   },
   "hero": {
     "badge": "Architectes du Digital",
@@ -560,7 +561,7 @@
     "openChat": "Ouvrir le chat",
     "closeChat": "Fermer le chat",
     "online": "En ligne",
-    "welcomeMessage": "Bonjour ! Je suis Mark AI, votre assistant virtuel. Comment puis-je vous aider ?",
+    "welcomeMessage": "Bonjour ! 👋 Je suis N.O.V.A., l'assistante virtuelle de Mark Systems. Comment puis-je vous aider ?",
     "inputPlaceholder": "Tapez votre message...",
     "send": "Envoyer",
     "poweredBy": "Propulsé par Mark AI"
@@ -572,7 +573,8 @@
         "title": "Entreprise",
         "about": "À propos",
         "projects": "Projets",
-        "contact": "Contact"
+        "contact": "Contact",
+        "estimateur": "Estimateur"
       },
       "services": {
         "title": "Services",
@@ -595,5 +597,213 @@
     "notFoundDescription": "La page que vous cherchez n'existe pas ou a été déplacée.",
     "backHome": "Retour à l'accueil",
     "contactUs": "Nous contacter"
+  },
+  "realisations": {
+    "tag": "Réalisations",
+    "title": "Des projets concrets, testables maintenant",
+    "description": "Sites livrés et en ligne. Cliquez et visitez — la meilleure preuve, c'est l'expérience.",
+    "viewSite": "Voir le site",
+    "items": {
+      "cliniqueAura": {
+        "name": "Clinique Aura",
+        "description": "Clinique multidisciplinaire — prise de rendez-vous, équipe et services."
+      },
+      "collectifNova": {
+        "name": "Collectif Nova",
+        "description": "Agence créative — portfolio dynamique et identité visuelle forte."
+      },
+      "tableMarguerite": {
+        "name": "Table de Marguerite",
+        "description": "Bistro gastronomique — menu, réservation et ambiance immersive."
+      },
+      "vertexPmo": {
+        "name": "Vertex PMO",
+        "description": "Gestion de projet — tableau de bord, méthodologies et expertise."
+      },
+      "beaumontAvocats": {
+        "name": "Beaumont Avocats",
+        "description": "Cabinet d'avocats — domaines de pratique, équipe et consultations."
+      },
+      "usineRh": {
+        "name": "Usine RH",
+        "description": "Conseil en ressources humaines — stratégies RH et transformation organisationnelle."
+      }
+    }
+  },
+  "outils": {
+    "tag": "Outils / Lab",
+    "title": "Des outils à tester, gratuitement",
+    "description": "Applications fonctionnelles développées par notre équipe. Essayez-les et jugez par vous-même.",
+    "tryTool": "Tester l'outil",
+    "featured": "Vedette",
+    "items": {
+      "estimateur": {
+        "name": "Estimateur de site web",
+        "description": "Estimez le coût de votre projet web en quelques clics. Fourchette de prix en $ CAD, sans engagement."
+      },
+      "saaq": {
+        "name": "Prép SAAQ",
+        "description": "Préparez votre examen de conduite avec des questions pratiques et résultats instantanés."
+      },
+      "impots": {
+        "name": "Calculateur d'impôts",
+        "description": "Calculez vos impôts fédéraux et provinciaux 2025 en quelques secondes."
+      },
+      "dashboard": {
+        "name": "Dashboard financier",
+        "description": "Tableau de bord d'intelligence financière avec visualisation de données en temps réel."
+      },
+      "portfolio": {
+        "name": "Portfolio + Chatbot IA",
+        "description": "Portfolio de freelance augmenté d'un chatbot IA conversationnel."
+      }
+    }
+  },
+  "estimateur": {
+    "tag": "Estimation gratuite",
+    "title": "Estimez le coût de votre site web",
+    "subtitle": "Répondez à quelques questions pour obtenir une estimation personnalisée en $ CAD. Sans engagement, 100 % transparent.",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "calculate": "Voir l'estimation",
+    "recommended": "Recommandé",
+    "initialCost": "Coût initial",
+    "perMonth": "/mois",
+    "ctaLaunch": "Lancer mon projet",
+    "featuresTitle": "Fonctionnalités souhaitées",
+    "sectorModulesTitle": "Modules spécifiques à votre secteur",
+    "steps": {
+      "0": {
+        "label": "Votre secteur d'activité"
+      },
+      "1": {
+        "label": "Type de site web"
+      },
+      "2": {
+        "label": "Fonctionnalités et modules"
+      },
+      "3": {
+        "label": "Options supplémentaires"
+      },
+      "4": {
+        "label": "Votre estimation"
+      }
+    },
+    "sectors": {
+      "JUR": {
+        "name": "Juridique",
+        "desc": "Cabinets d'avocats, notaires, médiateurs"
+      },
+      "MED": {
+        "name": "Médical",
+        "desc": "Cliniques, professionnels de la santé"
+      },
+      "PRO": {
+        "name": "Professions réglementées",
+        "desc": "Comptables, ingénieurs, architectes"
+      },
+      "PME": {
+        "name": "PME / Commerce",
+        "desc": "Commerces, restaurants, services généraux"
+      }
+    },
+    "siteTypes": {
+      "S01": {
+        "name": "Site vitrine (1-5 pages)",
+        "desc": "Idéal pour présenter votre activité et vos coordonnées."
+      },
+      "S02": {
+        "name": "Site vitrine (6-15 pages)",
+        "desc": "Site plus complet avec sections détaillées et blog."
+      },
+      "S03": {
+        "name": "E-commerce de base",
+        "desc": "Boutique en ligne jusqu'à 100 produits."
+      },
+      "S04": {
+        "name": "E-commerce avancé",
+        "desc": "Boutique en ligne 100+ produits avec fonctions avancées."
+      },
+      "S05": {
+        "name": "Plateforme sur mesure",
+        "desc": "Application web complète avec fonctionnalités personnalisées."
+      },
+      "S06": {
+        "name": "Landing page",
+        "desc": "Page unique optimisée pour la conversion."
+      }
+    },
+    "features": {
+      "M03": "Réservation en ligne",
+      "M04": "Portail client",
+      "M05": "Intégration CRM",
+      "M06": "Chatbot IA",
+      "M07": "Accessibilité SGQRI",
+      "M08": "Conformité Loi 25",
+      "M09": "Formulaires complexes",
+      "M10": "Migration de données",
+      "M11": "Paiement en ligne",
+      "M12": "Animations avancées"
+    },
+    "modules": {
+      "JUR01": "Conformité Barreau du Québec",
+      "JUR02": "Architecture domaines de pratique",
+      "JUR03": "Portail client confidentiel",
+      "JUR04": "Blogue juridique + infolettres",
+      "JUR05": "SEO juridique local",
+      "JUR06": "Intégration Clio",
+      "MED01": "Rendez-vous en ligne",
+      "MED02": "Loi 25 données de santé",
+      "MED03": "Portail patient sécurisé",
+      "MED04": "Intégration DMÉ",
+      "MED05": "Contenu éducatif patient",
+      "MED06": "Multi-praticiens",
+      "PRO01": "Conformité ordre professionnel",
+      "PRO02": "Calculateurs / simulateurs",
+      "PRO03": "Intégration logiciel métier",
+      "PRO04": "Portail documents client",
+      "PRO05": "Système de soumission en ligne",
+      "PME01": "Catalogue produits / services",
+      "PME02": "Formulaire de demande de soumission",
+      "PME03": "Google Business / Maps / avis",
+      "PME04": "Section carrières",
+      "PME05": "Menu en ligne / commande",
+      "PME06": "Galerie portfolio",
+      "PME07": "Intégration réseaux sociaux"
+    },
+    "extras": {
+      "bilingual": "Site bilingue (FR/EN)",
+      "multilingual": "Multilingue (3+ langues)",
+      "urgent": "Livraison urgente (< 4 semaines)"
+    },
+    "scenarios": {
+      "eco": {
+        "name": "Économique",
+        "desc": "Essentiel pour démarrer avec un budget serré."
+      },
+      "rec": {
+        "name": "Recommandé",
+        "desc": "Le meilleur rapport qualité-prix pour la plupart des projets."
+      },
+      "premium": {
+        "name": "Premium",
+        "desc": "Solution haut de gamme, sans compromis."
+      }
+    },
+    "breakdown": {
+      "base": "Coût de base",
+      "addons": "Fonctionnalités",
+      "sector": "Modules sectoriels",
+      "contingency": "Contingence (15 %)",
+      "monthly": "Récurrent mensuel",
+      "year1": "Total année 1"
+    },
+    "transparency": {
+      "title": "Transparence",
+      "note1": "Cette estimation est indicative et ne constitue pas un devis final.",
+      "note2": "La contingence de 15 % couvre les imprévus techniques courants.",
+      "note3": "Les frais mensuels incluent l'hébergement, le domaine et la maintenance.",
+      "note4": "Contactez-nous pour une soumission détaillée et personnalisée."
+    }
   }
 }
