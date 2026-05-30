@@ -42,3 +42,4 @@ ENSEMBLE DES OUTILS EXPLOITABLES.md
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.gstack/
