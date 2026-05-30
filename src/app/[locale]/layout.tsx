@@ -29,14 +29,14 @@ export function generateStaticParams() {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Mark Systems — Architectes du Digital",
-    template: "%s | Mark Systems",
+    default: "NorbeX Systems — Architectes du Digital",
+    template: "%s | NorbeX Systems",
   },
   description:
     "Sites web, automatisations, systèmes IA et architectures cloud. On conçoit. On automatise. On livre.",
   openGraph: {
     type: "website",
-    siteName: "Mark Systems",
+    siteName: "NorbeX Systems",
     images: [{ url: "/og-image.webp", width: 1200, height: 630 }],
   },
   twitter: {

@@ -182,7 +182,7 @@
       "response": "Temps de réponse"
     },
     "testimonial": {
-      "quote": "Mark Systems a transformé notre façon de travailler. Leur automatisation nous fait gagner des dizaines d'heures chaque semaine.",
+      "quote": "NorbeX Systems a transformé notre façon de travailler. Leur automatisation nous fait gagner des dizaines d'heures chaque semaine.",
       "author": "Client satisfait",
       "role": "PME au Québec"
     },
@@ -342,7 +342,7 @@
     "heroTitle": "Ingénieurs du digital, artisans du résultat",
     "heroMission": "Nous concevons des solutions technologiques qui fonctionnent — pas des prototypes, pas des POC, des systèmes en production.",
     "heroSubtext": "Basés au Québec, nous accompagnons des entreprises de toutes tailles dans leur transformation numérique.",
-    "heroImageAlt": "L'équipe Mark Systems",
+    "heroImageAlt": "L'équipe NorbeX Systems",
     "valuesLabel": "Nos valeurs",
     "valuesTitle": "Ce qui nous guide",
     "valuesDescription": "Quatre principes fondamentaux qui définissent notre approche.",
@@ -358,7 +358,7 @@
     "storyTitle": "De l'idée à la réalité",
     "storyDescription": "Chaque étape a renforcé notre expertise.",
     "foundingTitle": "Fondation",
-    "foundingDescription": "Création de Mark Systems avec une vision claire : rendre la technologie accessible.",
+    "foundingDescription": "Création de NorbeX Systems avec une vision claire : rendre la technologie accessible.",
     "growthTitle": "Croissance",
     "growthDescription": "Premiers clients majeurs et développement de nos offres d'automatisation.",
     "expansionTitle": "Expansion",
@@ -369,7 +369,7 @@
     "techTitle": "Nos outils de prédilection",
     "techDescription": "Des technologies éprouvées pour des résultats fiables.",
     "milestone1Title": "Fondation",
-    "milestone1Description": "Création de Mark Systems avec une vision claire : rendre la technologie accessible aux PME.",
+    "milestone1Description": "Création de NorbeX Systems avec une vision claire : rendre la technologie accessible aux PME.",
     "milestone2Title": "Premiers clients",
     "milestone2Description": "Premiers mandats en développement web et automatisation pour des entreprises québécoises.",
     "milestone3Title": "Expansion IA",
@@ -510,7 +510,7 @@
       "required": "Ce champ est requis",
       "emailInvalid": "L'email n'est pas valide"
     },
-    "pdfTitle": "Brief Projet — Mark Systems",
+    "pdfTitle": "Brief Projet — NorbeX Systems",
     "placeholders": {
       "companyName": "Nom de votre entreprise",
       "contactName": "Votre nom complet",
@@ -530,7 +530,7 @@
   "privacy": {
     "title": "Politique de confidentialité",
     "lastUpdated": "Dernière mise à jour : janvier 2025",
-    "intro": "Mark Systems s'engage à protéger votre vie privée. Cette politique décrit comment nous collectons, utilisons et protégeons vos données personnelles.",
+    "intro": "NorbeX Systems s'engage à protéger votre vie privée. Cette politique décrit comment nous collectons, utilisons et protégeons vos données personnelles.",
     "dataCollected": {
       "title": "Données collectées",
       "content": "Nous collectons les informations que vous nous fournissez directement : nom, email, numéro de téléphone et détails de projet via nos formulaires de contact et de brief. Nous collectons aussi automatiquement des données techniques (adresse IP, type de navigateur, pages visitées) via des cookies analytiques."
@@ -565,10 +565,10 @@
     "openChat": "Ouvrir le chat",
     "closeChat": "Fermer le chat",
     "online": "En ligne",
-    "welcomeMessage": "Bonjour ! 👋 Je suis N.O.V.A., l'assistante virtuelle de Mark Systems. Comment puis-je vous aider ?",
+    "welcomeMessage": "Bonjour ! 👋 Je suis N.O.V.A., l'assistante virtuelle de NorbeX Systems. Comment puis-je vous aider ?",
     "inputPlaceholder": "Tapez votre message...",
     "send": "Envoyer",
-    "poweredBy": "Propulsé par Mark AI"
+    "poweredBy": "Propulsé par NorbeX AI"
   },
   "footer": {
     "tagline": "Solutions web, automatisations et systèmes IA — de la conception au déploiement.",
@@ -594,7 +594,7 @@
       }
     },
     "madeWith": "Conçu avec passion au Québec",
-    "copyright": "© {year} Mark Systems. Tous droits réservés."
+    "copyright": "© {year} NorbeX Systems. Tous droits réservés."
   },
   "common": {
     "notFoundTitle": "Page introuvable",

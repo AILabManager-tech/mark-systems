@@ -12,7 +12,7 @@ interface ChatMessage {
 }
 
 const SYSTEM_PROMPT =
-  'You are N.O.V.A., the virtual assistant for Mark Systems. Mark Systems is a Quebec-based digital agency that designs websites, business automations, AI systems, and cloud infrastructure. Be helpful, professional, and concise. Answer in the same language the user writes in.';
+  'You are N.O.V.A., the virtual assistant for NorbeX Systems. NorbeX Systems is a Quebec-based digital agency that designs websites, business automations, AI systems, and cloud infrastructure. Be helpful, professional, and concise. Answer in the same language the user writes in.';
 
 const API_URL = 'http://localhost:11434/v1/chat/completions';
 const MODEL = 'qwen2.5:32b';
@@ -42,8 +42,8 @@ function getFallbackResponse(userMessage: string): string {
   // Greeting check
   if (/\b(bonjour|hello|hi|salut|hey|bonsoir|allô|allo)\b/i.test(lower)) {
     return isFr
-      ? 'Bonjour ! 👋 Je suis N.O.V.A., l\'assistante virtuelle de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
-      : 'Hello! 👋 I\'m N.O.V.A., the virtual assistant for Mark Systems. How can I help you today?';
+      ? 'Bonjour ! 👋 Je suis N.O.V.A., l\'assistante virtuelle de NorbeX Systems. Comment puis-je vous aider aujourd\'hui ?'
+      : 'Hello! 👋 I\'m N.O.V.A., the virtual assistant for NorbeX Systems. How can I help you today?';
   }
 
   // Price / cost check
@@ -56,8 +56,8 @@ function getFallbackResponse(userMessage: string): string {
   // Services check
   if (/\b(service|web|site|automation|automat|design|développement|development|cloud|ai |ia |intelligence|infrastructure|what do you do|que faites)\b/i.test(lower)) {
     return isFr
-      ? 'Mark Systems offre une gamme complète de services numériques :\n\n🌐 Conception et développement de sites web\n⚙️ Automatisations d\'affaires\n🤖 Systèmes d\'intelligence artificielle\n☁️ Infrastructure cloud\n\nNous concevons des solutions sur mesure pour propulser votre entreprise. Souhaitez-vous en savoir plus sur un service en particulier ?'
-      : 'Mark Systems offers a full range of digital services:\n\n🌐 Website design & development\n⚙️ Business automations\n🤖 AI systems\n☁️ Cloud infrastructure\n\nWe build custom solutions to propel your business forward. Would you like to learn more about a specific service?';
+      ? 'NorbeX Systems offre une gamme complète de services numériques :\n\n🌐 Conception et développement de sites web\n⚙️ Automatisations d\'affaires\n🤖 Systèmes d\'intelligence artificielle\n☁️ Infrastructure cloud\n\nNous concevons des solutions sur mesure pour propulser votre entreprise. Souhaitez-vous en savoir plus sur un service en particulier ?'
+      : 'NorbeX Systems offers a full range of digital services:\n\n🌐 Website design & development\n⚙️ Business automations\n🤖 AI systems\n☁️ Cloud infrastructure\n\nWe build custom solutions to propel your business forward. Would you like to learn more about a specific service?';
   }
 
   // Contact check
@@ -69,8 +69,8 @@ function getFallbackResponse(userMessage: string): string {
 
   // Default fallback
   return isFr
-    ? 'Merci pour votre message ! Mark Systems est une agence numérique basée au Québec spécialisée dans la conception de sites web, les automatisations d\'affaires, les systèmes d\'IA et l\'infrastructure cloud. N\'hésitez pas à nous contacter à info@marksystems.ca ou au +1 581-986-4267 pour discuter de votre projet.'
-    : 'Thanks for your message! Mark Systems is a Quebec-based digital agency specializing in website design, business automations, AI systems, and cloud infrastructure. Feel free to reach out to us at info@marksystems.ca or +1 581-986-4267 to discuss your project.';
+    ? 'Merci pour votre message ! NorbeX Systems est une agence numérique basée au Québec spécialisée dans la conception de sites web, les automatisations d\'affaires, les systèmes d\'IA et l\'infrastructure cloud. N\'hésitez pas à nous contacter à info@marksystems.ca ou au +1 581-986-4267 pour discuter de votre projet.'
+    : 'Thanks for your message! NorbeX Systems is a Quebec-based digital agency specializing in website design, business automations, AI systems, and cloud infrastructure. Feel free to reach out to us at info@marksystems.ca or +1 581-986-4267 to discuss your project.';
 }
 
 export function ChatWidget() {

@@ -182,7 +182,7 @@
       "response": "Response time"
     },
     "testimonial": {
-      "quote": "Mark Systems transformed the way we work. Their automation saves us dozens of hours every week.",
+      "quote": "NorbeX Systems transformed the way we work. Their automation saves us dozens of hours every week.",
       "author": "Satisfied client",
       "role": "SMB in Quebec"
     },
@@ -342,7 +342,7 @@
     "heroTitle": "Digital engineers, results craftsmen",
     "heroMission": "We build technology solutions that work — not prototypes, not POCs, production systems.",
     "heroSubtext": "Based in Quebec, we support businesses of all sizes in their digital transformation.",
-    "heroImageAlt": "The Mark Systems team",
+    "heroImageAlt": "The NorbeX Systems team",
     "valuesLabel": "Our values",
     "valuesTitle": "What guides us",
     "valuesDescription": "Four core principles that define our approach.",
@@ -358,7 +358,7 @@
     "storyTitle": "From idea to reality",
     "storyDescription": "Every step has strengthened our expertise.",
     "foundingTitle": "Foundation",
-    "foundingDescription": "Creation of Mark Systems with a clear vision: making technology accessible.",
+    "foundingDescription": "Creation of NorbeX Systems with a clear vision: making technology accessible.",
     "growthTitle": "Growth",
     "growthDescription": "First major clients and development of our automation offerings.",
     "expansionTitle": "Expansion",
@@ -369,7 +369,7 @@
     "techTitle": "Our tools of choice",
     "techDescription": "Proven technologies for reliable results.",
     "milestone1Title": "Foundation",
-    "milestone1Description": "Creation of Mark Systems with a clear vision: making technology accessible to SMBs.",
+    "milestone1Description": "Creation of NorbeX Systems with a clear vision: making technology accessible to SMBs.",
     "milestone2Title": "First clients",
     "milestone2Description": "First web development and automation mandates for Quebec businesses.",
     "milestone3Title": "AI Expansion",
@@ -510,7 +510,7 @@
       "required": "This field is required",
       "emailInvalid": "Email is not valid"
     },
-    "pdfTitle": "Project Brief — Mark Systems",
+    "pdfTitle": "Project Brief — NorbeX Systems",
     "placeholders": {
       "companyName": "Your company name",
       "contactName": "Your full name",
@@ -530,7 +530,7 @@
   "privacy": {
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: January 2025",
-    "intro": "Mark Systems is committed to protecting your privacy. This policy describes how we collect, use, and protect your personal data.",
+    "intro": "NorbeX Systems is committed to protecting your privacy. This policy describes how we collect, use, and protect your personal data.",
     "dataCollected": {
       "title": "Data Collected",
       "content": "We collect information you provide directly: name, email, phone number, and project details through our contact and brief forms. We also automatically collect technical data (IP address, browser type, pages visited) through analytical cookies."
@@ -565,10 +565,10 @@
     "openChat": "Open chat",
     "closeChat": "Close chat",
     "online": "Online",
-    "welcomeMessage": "Hello! 👋 I'm N.O.V.A., Mark Systems' virtual assistant. How can I help you?",
+    "welcomeMessage": "Hello! 👋 I'm N.O.V.A., NorbeX Systems' virtual assistant. How can I help you?",
     "inputPlaceholder": "Type your message...",
     "send": "Send",
-    "poweredBy": "Powered by Mark AI"
+    "poweredBy": "Powered by NorbeX AI"
   },
   "footer": {
     "tagline": "Web solutions, automations, and AI systems — from design to deployment.",
@@ -594,7 +594,7 @@
       }
     },
     "madeWith": "Crafted with passion in Quebec",
-    "copyright": "© {year} Mark Systems. All rights reserved."
+    "copyright": "© {year} NorbeX Systems. All rights reserved."
   },
   "common": {
     "notFoundTitle": "Page not found",
