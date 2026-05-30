@@ -1,0 +1,322 @@
+'use client';
+
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { useTranslations } from 'next-intl';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
+
+interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+const SYSTEM_PROMPT =
+  'You are Mark AI, the virtual assistant for Mark Systems. Mark Systems is a Quebec-based digital agency that designs websites, business automations, AI systems, and cloud infrastructure. Be helpful, professional, and concise. Answer in the same language the user writes in.';
+
+const API_URL = 'http://localhost:11434/v1/chat/completions';
+const MODEL = 'qwen2.5:32b';
+const API_TIMEOUT = 5000;
+
+function detectFrench(text: string): boolean {
+  const frenchIndicators = [
+    'bonjour', 'salut', 'merci', 'comment', 'je', 'nous', 'vous', 'est-ce',
+    'qu\'', 'que ', 'quel', 'une', 'des', 'les', 'sur', 'pour', 'avec',
+    'dans', 'mon', 'votre', 'notre', 'sont', 'fait', 'avoir', 'être',
+    'prix', 'coût', 'tarif', 'combien', 'appel', 'site web', 'automatisation',
+    'ça', 'cela', 'aussi', 'mais', 'donc', 'très', 'bien', 'oui', 'non',
+    'puis-je', 'pouvez', 'aimeriez', 'vouloir', 'besoin', 'aide',
+  ];
+  const lower = text.toLowerCase();
+  let score = 0;
+  for (const word of frenchIndicators) {
+    if (lower.includes(word)) score++;
+  }
+  return score >= 1;
+}
+
+function getFallbackResponse(userMessage: string): string {
+  const lower = userMessage.toLowerCase();
+  const isFr = detectFrench(lower);
+
+  // Greeting check
+  if (/\b(bonjour|hello|hi|salut|hey|bonsoir|allô|allo)\b/i.test(lower)) {
+    return isFr
+      ? 'Bonjour ! 👋 Je suis Mark AI, l\'assistant virtuel de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
+      : 'Hello! 👋 I\'m Mark AI, the virtual assistant for Mark Systems. How can I help you today?';
+  }
+
+  // Price / cost check
+  if (/\b(price|prix|cost|coût|cout|tarif|pricing|quote|devis|combien|how much|estimate|estimation)\b/i.test(lower)) {
+    return isFr
+      ? 'Chaque projet est unique ! Nos tarifs dépendent de la portée et de la complexité de votre projet. Contactez-nous à info@marksystems.ca ou au +1 581-986-4267 pour obtenir une soumission personnalisée gratuite.'
+      : 'Every project is unique! Our pricing depends on the scope and complexity of your project. Contact us at info@marksystems.ca or +1 581-986-4267 for a free custom quote.';
+  }
+
+  // Services check
+  if (/\b(service|web|site|automation|automat|design|développement|development|cloud|ai |ia |intelligence|infrastructure|what do you do|que faites)\b/i.test(lower)) {
+    return isFr
+      ? 'Mark Systems offre une gamme complète de services numériques :\n\n🌐 Conception et développement de sites web\n⚙️ Automatisations d\'affaires\n🤖 Systèmes d\'intelligence artificielle\n☁️ Infrastructure cloud\n\nNous concevons des solutions sur mesure pour propulser votre entreprise. Souhaitez-vous en savoir plus sur un service en particulier ?'
+      : 'Mark Systems offers a full range of digital services:\n\n🌐 Website design & development\n⚙️ Business automations\n🤖 AI systems\n☁️ Cloud infrastructure\n\nWe build custom solutions to propel your business forward. Would you like to learn more about a specific service?';
+  }
+
+  // Contact check
+  if (/\b(contact|email|phone|téléphone|telephone|appel|call|reach|joindre|rejoindre|parler|talk|message)\b/i.test(lower)) {
+    return isFr
+      ? 'Vous pouvez nous joindre facilement :\n\n📧 Email : info@marksystems.ca\n📞 Téléphone : +1 581-986-4267\n\nNotre équipe se fera un plaisir de discuter de votre projet !'
+      : 'You can easily reach us:\n\n📧 Email: info@marksystems.ca\n📞 Phone: +1 581-986-4267\n\nOur team will be happy to discuss your project!';
+  }
+
+  // Default fallback
+  return isFr
+    ? 'Merci pour votre message ! Mark Systems est une agence numérique basée au Québec spécialisée dans la conception de sites web, les automatisations d\'affaires, les systèmes d\'IA et l\'infrastructure cloud. N\'hésitez pas à nous contacter à info@marksystems.ca ou au +1 581-986-4267 pour discuter de votre projet.'
+    : 'Thanks for your message! Mark Systems is a Quebec-based digital agency specializing in website design, business automations, AI systems, and cloud infrastructure. Feel free to reach out to us at info@marksystems.ca or +1 581-986-4267 to discuss your project.';
+}
+
+export function ChatWidget() {
+  const t = useTranslations('chatbot');
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const scrollToBottom = useCallback(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, scrollToBottom]);
+
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isOpen]);
+
+  const sendMessage = useCallback(async () => {
+    const trimmed = input.trim();
+    if (!trimmed || isLoading) return;
+
+    const userMessage: ChatMessage = { role: 'user', content: trimmed };
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
+    setInput('');
+    setIsLoading(true);
+
+    let assistantContent: string;
+
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT);
+
+      const apiMessages = [
+        { role: 'system' as const, content: SYSTEM_PROMPT },
+        ...updatedMessages.map((m) => ({ role: m.role, content: m.content })),
+      ];
+
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: MODEL,
+          messages: apiMessages,
+          temperature: 0.7,
+          max_tokens: 512,
+        }),
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      assistantContent =
+        data?.choices?.[0]?.message?.content ?? getFallbackResponse(trimmed);
+    } catch {
+      // Deterministic fallback - chat never appears broken
+      assistantContent = getFallbackResponse(trimmed);
+    }
+
+    const assistantMessage: ChatMessage = {
+      role: 'assistant',
+      content: assistantContent,
+    };
+    setMessages((prev) => [...prev, assistantMessage]);
+    setIsLoading(false);
+  }, [input, isLoading, messages]);
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    },
+    [sendMessage],
+  );
+
+  return (
+    <>
+      {/* Floating Chat Bubble */}
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.button
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+            onClick={() => setIsOpen(true)}
+            className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-shadow duration-300"
+            aria-label={t('openChat')}
+          >
+            <MessageCircle className="h-6 w-6" />
+            {/* Pulse indicator */}
+            <span className="absolute -top-1 -right-1 flex h-4 w-4">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex h-4 w-4 rounded-full bg-green-500" />
+            </span>
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      {/* Chat Panel */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+            className="fixed bottom-6 right-6 z-50 flex flex-col overflow-hidden rounded-2xl border border-white/20 shadow-2xl"
+            style={{
+              width: '400px',
+              height: '500px',
+              background: 'rgba(15, 23, 42, 0.85)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+            }}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 bg-white/5">
+              <div className="flex items-center gap-3">
+                <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600">
+                  <Bot className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-white">Mark AI</h3>
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2 w-2 rounded-full bg-green-500" />
+                    <span className="text-xs text-green-400">{t('online')}</span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="flex h-8 w-8 items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-white/10 hover:text-white"
+                aria-label={t('closeChat')}
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Messages Area */}
+            <div className="flex-1 overflow-y-auto px-4 py-3 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+              {messages.length === 0 && (
+                <div className="flex flex-col items-center justify-center h-full text-center px-4 gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500/20 to-purple-600/20 border border-white/10">
+                    <Bot className="h-6 w-6 text-blue-400" />
+                  </div>
+                  <p className="text-sm text-gray-400">{t('welcomeMessage')}</p>
+                </div>
+              )}
+
+              {messages.map((msg, idx) => (
+                <div
+                  key={idx}
+                  className={`flex gap-2.5 ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
+                >
+                  <div
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
+                      msg.role === 'user'
+                        ? 'bg-blue-600'
+                        : 'bg-gradient-to-br from-blue-500 to-purple-600'
+                    }`}
+                  >
+                    {msg.role === 'user' ? (
+                      <User className="h-4 w-4 text-white" />
+                    ) : (
+                      <Bot className="h-4 w-4 text-white" />
+                    )}
+                  </div>
+                  <div
+                    className={`max-w-[75%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
+                      msg.role === 'user'
+                        ? 'bg-blue-600 text-white rounded-br-md'
+                        : 'bg-white/10 text-gray-200 rounded-bl-md border border-white/5'
+                    }`}
+                  >
+                    {msg.content.split('\n').map((line, i) => (
+                      <span key={i}>
+                        {line}
+                        {i < msg.content.split('\n').length - 1 && <br />}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              {isLoading && (
+                <div className="flex gap-2.5">
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600">
+                    <Bot className="h-4 w-4 text-white" />
+                  </div>
+                  <div className="rounded-2xl rounded-bl-md bg-white/10 border border-white/5 px-4 py-3">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-2 w-2 rounded-full bg-gray-400 animate-bounce [animation-delay:0ms]" />
+                      <span className="h-2 w-2 rounded-full bg-gray-400 animate-bounce [animation-delay:150ms]" />
+                      <span className="h-2 w-2 rounded-full bg-gray-400 animate-bounce [animation-delay:300ms]" />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Input Area */}
+            <div className="border-t border-white/10 bg-white/5 px-3 py-3">
+              <div className="flex items-center gap-2 rounded-xl bg-white/10 border border-white/10 px-3 py-1.5 focus-within:border-blue-500/50 transition-colors">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  placeholder={t('inputPlaceholder')}
+                  disabled={isLoading}
+                  className="flex-1 bg-transparent text-sm text-white placeholder-gray-500 outline-none disabled:opacity-50"
+                />
+                <button
+                  onClick={sendMessage}
+                  disabled={!input.trim() || isLoading}
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white transition-all hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed"
+                  aria-label={t('send')}
+                >
+                  <Send className="h-4 w-4" />
+                </button>
+              </div>
+              <p className="mt-1.5 text-center text-[10px] text-gray-600">
+                {t('poweredBy')}
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

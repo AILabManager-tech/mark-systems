@@ -1,853 +1,599 @@
 {
-  "constructionBanner": {
-    "message": "Under construction — Launching soon!"
-  },
-  "common": {
-    "siteName": "Mark Systems",
-    "tagline": "Strategic Web Agency · Automation · Applied AI · Architecture",
-    "siteDescription": "Mark Systems builds strategic websites, business automation systems, and custom AI tools for companies that want digital assets that convert and operate.",
-    "skipToContent": "Skip to main content"
-  },
   "nav": {
     "home": "Home",
     "services": "Services",
-    "ainova-os": "AiNova OS",
-    "nexos": "NEXOS",
     "projects": "Projects",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "cta": "Start a project",
+    "switchLang": "Switch language"
   },
   "hero": {
-    "badge": "Websites · Automation · Applied AI · Architecture",
-    "titleStart": "Websites that convert.",
-    "titleAccent": "Systems that automate.",
-    "description": "We design strategic websites, business workflow automation, and custom AI systems — from the landing page that captures leads to the pipeline that runs your operations. Built in Quebec, deployed everywhere.",
-    "ctaPrimary": "Start a Project",
-    "ctaSecondary": "Explore Our Services"
-  },
-  "servicesSection": {
-    "label": "What We Build",
-    "title": "From Website to Full Automation",
-    "description": "Strategic digital assets — websites, business automations, and AI systems — designed to convert, operate, and scale.",
-    "viewAll": "View All Services"
-  },
-  "servicesPage": {
-    "label": "Our Services",
-    "title": "Engineering That Delivers",
-    "description": "Every service is grounded in production experience — sites deployed, workflows running, AI systems live. No demos, no prototypes."
+    "badge": "Digital Architects",
+    "titleLine1": "We Design.",
+    "titleLine2": "We Automate. We Deliver.",
+    "subtitle": "Websites, business automations, AI systems, and cloud architectures — from vision to production.",
+    "cta1": "Start your project",
+    "cta2": "See our work",
+    "stat1": {
+      "value": "50+",
+      "label": "Projects delivered"
+    },
+    "stat2": {
+      "value": "99%",
+      "label": "Satisfaction"
+    },
+    "stat3": {
+      "value": "24/7",
+      "label": "Monitoring"
+    },
+    "stat4": {
+      "value": "<2h",
+      "label": "Response time"
+    }
   },
   "services": {
-    "fullstack-development": {
-      "title": "Strategic Websites",
-      "shortDescription": "Landing pages, showcase sites, and bilingual websites — Next.js 15+, TypeScript strict, Tailwind, App Router. Built to convert and perform.",
-      "longDescription": "We build professional websites that are also conversion assets: targeted landing pages, custom showcase sites, FR/EN bilingual sites with next-intl, and sites with blogs or interactive calculators. Modern stack (Next.js 15+ App Router, strict TypeScript, Tailwind CSS), solid technical SEO, security headers, Law 25 compliance, and Vercel deployment included.",
-      "capabilities": [
-        "Conversion landing pages",
-        "Custom showcase sites (4–6 pages)",
-        "Bilingual FR/EN sites (next-intl)",
-        "Blogs & content management",
-        "Calculators & interactive components"
-      ]
+    "tag": "Our expertise",
+    "title": "End-to-end solutions",
+    "description": "From design to deployment, we cover the full technology spectrum.",
+    "learnMore": "Learn more",
+    "web": {
+      "title": "Web Development",
+      "description": "Showcase sites, web apps, and e-commerce — fast, accessible, and SEO-optimized.",
+      "tags": {
+        "0": "Next.js",
+        "1": "React",
+        "2": "TypeScript"
+      }
     },
-    "ai-workflow-automation": {
-      "title": "Automation & Integrations",
-      "shortDescription": "Production n8n workflows, automated onboarding, lead pipelines, and custom integrations for your operations.",
-      "longDescription": "We automate your recurring operations: client onboarding, reminders, prospect qualification, tool synchronization, report generation, and internal alerts. Each automation is built on reliable components (n8n, Make, webhooks, REST APIs) with error handling, audit trails, and human checkpoints when needed.",
-      "capabilities": [
-        "Automated client onboarding",
-        "Lead pipeline & qualification",
-        "Lightweight CRM (Notion, Sheets, Airtable)",
-        "Automated notifications & reminders",
-        "Reports and tool synchronization"
-      ]
+    "automation": {
+      "title": "Automation",
+      "description": "n8n workflows, API integrations, and data pipelines that eliminate repetitive work.",
+      "tags": {
+        "0": "n8n",
+        "1": "REST API",
+        "2": "Webhooks"
+      }
     },
-    "ai-systems-architecture": {
-      "title": "Architecture & Technical Consulting",
-      "shortDescription": "Stack scoping, technical audits, roadmaps, and strategic consulting for digital projects that require rigor and clarity.",
-      "longDescription": "Before writing a line of code, we structure. We offer scoping workshops, stack audits, performance and security diagnostics, and prioritized recommendations. For growing teams that need a senior perspective on their architecture or development plan.",
-      "capabilities": [
-        "Scoping workshops & structuring",
-        "Stack audit & technical diagnosis",
-        "UX, performance & security audit",
-        "Roadmap & prioritization",
-        "Senior strategic consulting"
-      ]
+    "ai": {
+      "title": "AI Systems",
+      "description": "Chatbots, data analysis, and predictive models integrated into your business processes.",
+      "tags": {
+        "0": "LLM",
+        "1": "RAG",
+        "2": "Python"
+      }
     },
-    "industrial-automation": {
-      "title": "Field Expertise — Industrial Engineering",
-      "shortDescription": "10+ years in industrial electrical engineering: PLC/CNC, production lines, power grid protection. Battle-tested rigor.",
-      "longDescription": "Mark Systems' expertise is not theoretical. 10+ years of field commissioning: PLC and CNC programming and startup, complex production line design (defense-sector clients included), and HV/MV/LV power grid protection and coordination system engineering. This field-tested rigor informs every project we deliver.",
-      "capabilities": [
-        "PLC & CNC programming",
-        "Production line design",
-        "Power grid protection",
-        "HV/MV/LV system coordination",
-        "Industrial commissioning"
-      ]
-    },
-    "iot-smart-home": {
-      "title": "Maintenance & Monthly Support",
-      "shortDescription": "Scalable maintenance plans — monitoring, updates, routine modifications, analytics reports, and continuous recommendations.",
-      "longDescription": "We don't deliver and disappear. Our maintenance plans cover site monitoring, technical updates, routine modifications, analytics reports, and continuous improvement recommendations. From light support to a monthly development partnership — based on your needs and growth pace.",
-      "capabilities": [
-        "Monitoring & technical updates",
-        "Routine modifications & adjustments",
-        "Analytics & Core Web Vitals reports",
-        "Continuous improvement recommendations",
-        "New feature development"
-      ]
-    },
-    "custom-ai-tools": {
-      "title": "Applied AI & Business Assistants",
-      "shortDescription": "AI chatbots, business assistants, RAG knowledge bases, and document processing — integrated into your existing tools.",
-      "longDescription": "We integrate AI where it creates real value: an assistant that answers your clients' questions, a knowledge base built on your internal documents, a prospect qualification system powered by an LLM. Vendor-agnostic (OpenAI, Anthropic, Groq, Ollama) — your data, your rules, zero dependency.",
-      "capabilities": [
-        "AI chatbots & business assistants",
-        "RAG knowledge bases",
-        "Document processing & classification",
-        "AI-powered prospect qualification",
-        "Multi-LLM integration, zero lock-in"
-      ]
+    "cloud": {
+      "title": "Cloud Infrastructure",
+      "description": "Architecture, deployment, and monitoring — Kubernetes, Docker, and custom CI/CD.",
+      "tags": {
+        "0": "Docker",
+        "1": "Kubernetes",
+        "2": "CI/CD"
+      }
     }
   },
-  "projectsSection": {
-    "label": "Case Studies",
-    "title": "Built, Deployed, Measured",
-    "description": "Real projects with real metrics — not demos, not prototypes.",
-    "viewAll": "View All Projects"
-  },
-  "projectsPage": {
-    "label": "Case Studies",
-    "title": "Production Systems, Proven Results",
-    "description": "Every project below runs in production. The code exists, the metrics are real, the systems are live.",
-    "disclaimer": "Internal projects and technical demos — built and maintained by Mark Systems."
-  },
-  "projects": {
-    "ainova-os": {
-      "title": "AINOVA OS",
-      "industry": "AI Infrastructure",
-      "clientSize": "Internal R&D project",
-      "timeline": "8 months of development",
-      "methodology": "BMAD architecture + iterative SOIC convergence",
-      "challenge": "Existing AI agent frameworks are prototyping tools — they lack convergence guarantees, enterprise security, and production-grade orchestration for complex multi-agent workflows.",
-      "solution": "Engineered a full AI operating system: 35+ specialized agents, a self-optimizing SOIC convergence engine with mathematical proof, Tree-of-Thoughts decision exploration, BMAD methodology integration, and MCP bridges for Claude Code — deployed on Kubernetes with Prometheus monitoring.",
-      "result": "84,000+ lines of production Python. Quality convergence μ = 9.94/10 (Gold Master certified). 1,030+ test functions. Fully containerized with Docker and Kubernetes manifests.",
-      "metricValue": "μ 9.94",
-      "metricLabel": "Quality Score"
+  "automation": {
+    "tag": "Pipeline in action",
+    "title": "Automation, visualized",
+    "description": "See how we transform your manual processes into automated, reliable workflows.",
+    "steps": {
+      "trigger": {
+        "title": "Trigger",
+        "desc": "Event, webhook, or schedule"
+      },
+      "process": {
+        "title": "Processing",
+        "desc": "Data transformation and validation"
+      },
+      "automate": {
+        "title": "Automation",
+        "desc": "Business action execution"
+      },
+      "notify": {
+        "title": "Notification",
+        "desc": "Email, Slack, or SMS alerts"
+      },
+      "report": {
+        "title": "Report",
+        "desc": "Document generation and logging"
+      },
+      "analyze": {
+        "title": "Analysis",
+        "desc": "Metrics, KPIs, and dashboards"
+      }
     },
-    "winterpulse": {
-      "title": "WinterPulse 2026",
-      "industry": "Sports & Events",
-      "clientSize": "Editorial showcase project — coverage of the Milano Cortina 2026 Winter Olympics",
-      "timeline": "3 weeks (MVP) + post-launch iterations",
-      "methodology": "Next.js App Router + Ice & Summit design system",
-      "challenge": "Deliver a reliable platform on a tight timeline to cover the 2026 Winter Olympics (Milano Cortina), with clear navigation across disciplines, athletes, venues, and schedule while keeping a smooth experience on mobile and desktop.",
-      "solution": "Designed and shipped a Next.js 14 application with TypeScript, Tailwind CSS, and Framer Motion. Implemented fuzzy search (Fuse.js), an interactive Leaflet venue map, a competition schedule, and detailed athlete pages, all within the Ice & Summit design system.",
-      "result": "Production-ready WinterPulse 2026 platform: 16 disciplines covered, 115 events indexed, 9 venues mapped, instant search, and 51 unit/integration tests. Lighthouse performance remained at 95+ on key pages.",
-      "metricValue": "16",
-      "metricLabel": "Disciplines covered"
-    },
-    "n8n-ecosystem": {
-      "title": "n8n Automation Ecosystem",
-      "industry": "Business Automation",
-      "clientSize": "Multi-domain infrastructure (14 departments)",
-      "timeline": "12+ months of continuous development",
-      "methodology": "Iterative deployment + SOIC governance (9.90/10)",
-      "challenge": "Managing disparate business operations — CRM, finance, documents, communications, IoT — across 14+ functional domains with no unified automation layer.",
-      "solution": "Designed and deployed 195 production workflows on n8n: 52 AI-powered (RAG, agents, classifiers), 24 communication automations, 18 document processing pipelines, 17 finance workflows, 16 voice pipelines (Whisper + Piper), and 7 IoT orchestrations. Governance framework scored 9.90/10 on SOIC audit.",
-      "result": "195 workflows in production. 57% AI-powered. 12 custom community nodes installed. Complete governance with 35+ metadata fields per workflow.",
-      "metricValue": "195",
-      "metricLabel": "Workflows"
-    },
-    "osiris-scanner": {
-      "title": "OSIRIS Scanner",
-      "industry": "Security & Audit",
-      "clientSize": "Internal tool — website auditing",
-      "timeline": "2 months of development",
-      "methodology": "Multi-axis scoring + empirical calibration",
-      "challenge": "Systematically assess the security posture, performance, and resilience of websites — existing tools provide partial scores without a unified vision or global scoring.",
-      "solution": "Engineered a 4-axis audit scanner: Performance (20%), Security (30%), Intrusion (30%), Resources (20%). Integrates Lighthouse and Mozilla Observatory, analyzes 110+ known trackers, detects common vulnerabilities. Calibrated grade system: Exemplary / Compliant / At Risk / Critical.",
-      "result": "Operational scanner with 4 weighted axes. 110+ trackers in blocklist. Detailed reports with Rich CLI interface. Grades calibrated on real-world data. Scan time < 60s per site.",
-      "metricValue": "4-Axis",
-      "metricLabel": "Scoring"
-    },
-    "stark-portfolio": {
-      "title": "Immersive 3D Portfolio",
-      "industry": "Web & Creative",
-      "clientSize": "Individual client — tech professional",
-      "timeline": "6 weeks of development",
-      "methodology": "Cinematic design + WebGL performance testing",
-      "challenge": "Standard portfolio sites blend into the noise. The client needed a site that demonstrates technical mastery through the experience itself — not just screenshots.",
-      "solution": "Built a cinematic portfolio with React 19, Three.js (3D Arc Reactor with WebGL shaders), Framer Motion animations, Howler.js procedural audio (6 interactive sounds), and a full 'Overclock Mode' that transforms the entire UI in real time.",
-      "result": "Live on Netlify. 373KB gzipped JS bundle. 10 complete sections. Real-time 3D rendering with mode transformation. 7-second build time on CI/CD.",
-      "metricValue": "LIVE",
-      "metricLabel": "Production"
+    "metrics": {
+      "metric1": {
+        "value": "10x",
+        "label": "Faster"
+      },
+      "metric2": {
+        "value": "0",
+        "label": "Human errors"
+      },
+      "metric3": {
+        "value": "24/7",
+        "label": "Availability"
+      }
     }
   },
-  "projectCard": {
-    "challenge": "Challenge:",
-    "solution": "Solution:",
-    "badgeInternal": "Internal Project",
-    "badgeDemo": "Technical Demo",
-    "badgeClient": "Client Engagement"
-  },
-  "about": {
-    "missionLabel": "Our Mission",
-    "missionTitle": "Digital Assets That Work for You",
-    "mission": "Mark Systems exists to turn your digital needs into systems that deliver measurable results. Not demos — websites that convert, automations that run, and AI tools that solve real problems. Built by an engineer with 10+ years of field experience, every solution is designed for the real world.",
-    "teamLabel": "The Founder",
-    "teamTitle": "Engineering-First, Always",
-    "teamDescription": "One engineer. 10+ years in the field. From industrial production lines to strategic web systems.",
-    "metricsLabel": "By the Numbers",
-    "metricsTitle": "What We've Built",
-    "metric1Value": "55",
-    "metric1Label": "AI Pipeline Agents",
-    "metric2Value": "6",
-    "metric2Label": "Sites Delivered",
-    "metric3Value": "9.28",
-    "metric3Label": "Avg. SOIC Score",
-    "metric4Value": "170+",
-    "metric4Label": "n8n Workflows",
-    "metric5Value": "580+",
-    "metric5Label": "Automated Tests",
-    "metric6Value": "9",
-    "metric6Label": "Quality Dimensions",
-    "valuesLabel": "Our Principles",
-    "valuesTitle": "How We Operate",
-    "valuesDescription": "Four non-negotiable principles that define every engagement."
-  },
-  "team": {
-    "founder": {
-      "name": "Marc-André Roy, ing.",
-      "role": "Founder & Lead Engineer",
-      "bio": "Senior electrical engineer (OIQ) with 10+ years in industrial automation — PLC/CNC, defense-sector production lines, HV power grid protection. Founder of Mark Systems, a strategic web agency specializing in Next.js 15+ sites, business automation, and applied AI for Quebec and Canadian SMBs.",
-      "linkedin": "https://www.linkedin.com/in/marc-andre-roy-ing/"
+  "process": {
+    "tag": "Our method",
+    "title": "From brief to production",
+    "description": "A structured process to deliver reliable solutions, on time.",
+    "steps": {
+      "discover": {
+        "title": "Discover",
+        "description": "Analyzing your needs, auditing existing systems, and defining objectives."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Wireframes, technical architecture, and user journey validation."
+      },
+      "build": {
+        "title": "Build",
+        "description": "Iterative development with regular reviews and continuous testing."
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "Deployment, monitoring, and post-launch support."
+      }
     }
   },
-  "values": {
-    "0": {
-      "title": "Precision Over Hype",
-      "description": "We ship measurable results, not promises. Every site is benchmarked, every automation validated before delivery — no buzzwords, no magic, just engineering."
-    },
-    "1": {
-      "title": "Systems Thinking",
-      "description": "Every component is designed for the whole. We build solutions that integrate into your existing infrastructure — not isolated prototypes that break on contact with reality."
-    },
-    "2": {
-      "title": "Battle-Tested Rigor",
-      "description": "10+ years of industrial field experience means we build for failure modes, not just happy paths. That rigor applies to every site and system we deliver."
-    },
-    "3": {
-      "title": "Your Data, Your Rules",
-      "description": "Multi-LLM, open-source first, zero lock-in. Your systems run on your terms — we build abstraction layers, not vendor dependencies."
+  "projectsPreview": {
+    "tag": "Portfolio",
+    "title": "What we've built",
+    "description": "Real projects, delivered and in production.",
+    "viewAll": "View all projects",
+    "items": {
+      "pipeline": {
+        "title": "CI/CD Pipeline",
+        "category": "Automation",
+        "description": "Continuous deployment pipeline with automated testing."
+      },
+      "dashboard": {
+        "title": "Analytics Dashboard",
+        "category": "Web App",
+        "description": "Real-time dashboard for KPI monitoring."
+      },
+      "dockerStack": {
+        "title": "Docker Stack",
+        "category": "Infrastructure",
+        "description": "Multi-service containerized infrastructure."
+      },
+      "smartCity": {
+        "title": "IoT Network",
+        "category": "AI / IoT",
+        "description": "Smart urban monitoring system."
+      }
     }
   },
-  "contact": {
-    "label": "Get in Touch",
-    "title": "Start a Conversation",
-    "description": "Tell us about your project — website, automation, or AI system — and we'll design the right solution.",
-    "emailLabel": "Email",
-    "emailAddress": "contact@marksystems.ca",
-    "locationLabel": "Location",
-    "locationCity": "Quebec, Canada",
-    "locationDetail": "Remote-first — serving clients across Canada and internationally"
-  },
-  "contactForm": {
-    "name": "Name",
-    "namePlaceholder": "Your name",
-    "email": "Email",
-    "emailPlaceholder": "you@company.com",
-    "company": "Company",
-    "companyPlaceholder": "Your company",
-    "serviceInterest": "Service Interest",
-    "selectService": "Select a service",
-    "message": "Message",
-    "messagePlaceholder": "Tell us about your project or challenge...",
-    "submit": "Send Message",
-    "sending": "Sending...",
-    "privacyNotice": "By submitting this form, you agree to our",
-    "privacyLink": "privacy policy",
-    "successTitle": "Message Sent",
-    "successMessage": "Thank you for reaching out. We'll get back to you within 24 hours.",
-    "errorMessage": "Something went wrong. Please try again or email us at contact@marksystems.ca.",
-    "required": "*"
-  },
-  "validation": {
-    "nameRequired": "Name is required",
-    "nameMinLength": "Name must be at least 2 characters",
-    "emailRequired": "Email is required",
-    "emailInvalid": "Please enter a valid email address",
-    "messageRequired": "Message is required",
-    "messageMinLength": "Message must be at least 10 characters"
-  },
-  "cta": {
-    "label": "Ready to Take Action?",
-    "title": "Let's Build Something That Works",
-    "description": "Tell us about your project — website, automation, or applied AI. We'll design the system that turns your challenges into competitive advantage.",
-    "button": "Start a Conversation"
-  },
-  "notFound": {
-    "code": "404",
-    "title": "Page Not Found",
-    "description": "The page you're looking for doesn't exist or has been moved.",
-    "back": "Back to Home"
-  },
-  "footer": {
-    "description": "Strategic websites, business automation, and applied AI — built to convert and operate.",
-    "founderLine": "Marc-André Roy, ing. — Founder",
-    "navLabel": "Navigation",
-    "legalLabel": "Legal",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "connectLabel": "Connect",
-    "copyright": "© {year} Mark Systems. All rights reserved.",
-    "loi25": "Compliant with Quebec Law 25"
-  },
-  "cookie": {
-    "title": "Cookie Management",
-    "description": "This site uses cookies to improve your experience. In compliance with Quebec Law 25, you can choose which cookie categories you accept.",
-    "privacyLink": "Privacy Policy",
-    "essential": "Essential",
-    "essentialDesc": "Required for the site to function. Cannot be disabled.",
-    "analyticsLabel": "Analytics",
-    "analyticsDesc": "Help us understand how you use the site (Vercel Analytics).",
-    "marketingLabel": "Marketing",
-    "marketingDesc": "Used to measure the effectiveness of our communications.",
-    "acceptAll": "Accept All",
-    "rejectAll": "Reject All",
-    "saveChoices": "Save My Choices",
-    "customize": "Customize"
-  },
-  "metadata": {
-    "home": {
-      "title": "Mark Systems — Strategic Web Agency, Automation, AI & Architecture | Quebec",
-      "description": "Mark Systems builds strategic websites (Next.js 15+), business automations, custom AI systems, and technical architecture for SMBs in Quebec and across Canada."
+  "trust": {
+    "tag": "Why us",
+    "title": "Results, not promises",
+    "description": "Every project is a commitment to quality.",
+    "metrics": {
+      "projects": "Projects delivered",
+      "satisfaction": "Client satisfaction",
+      "uptime": "Uptime",
+      "response": "Response time"
     },
-    "services": {
-      "title": "Services — Websites, Automation & AI",
-      "description": "Bilingual showcase sites, landing pages, n8n automations, AI assistants, technical architecture, and monthly maintenance — Mark Systems, Quebec."
+    "testimonial": {
+      "quote": "Mark Systems transformed the way we work. Their automation saves us dozens of hours every week.",
+      "author": "Satisfied client",
+      "role": "SMB in Quebec"
     },
-    "projects": {
-      "title": "Case Studies — Web & AI Projects",
-      "description": "Web and AI projects in production: AINOVA OS (μ=9.94), 195 n8n workflows, 3D WebGL portfolio and more. Measurable results, live systems."
-    },
-    "about": {
-      "title": "About — Strategic Web Agency Quebec",
-      "description": "Mark Systems — strategic web agency founded by an engineer with 10+ years of experience. Next.js 15+ websites, automation, applied AI, and technical architecture for Quebec SMBs."
-    },
-    "contact": {
-      "title": "Contact — Start a Project",
-      "description": "Contact Mark Systems for a strategic website, business automation, applied AI implementation, or technical architecture scoping."
-    },
-    "ainova": {
-      "title": "AiNova OS — Production AI Operating System",
-      "description": "AiNova OS: 35+ AI agents, SOIC convergence engine (μ=9.94/10), Tree-of-Thoughts, Kubernetes-native. The production AI operating system by Mark Systems."
-    },
-    "brief": {
-      "title": "Project Brief — Describe Your Needs",
-      "description": "Start your web project with Mark Systems. Quick and structured brief form."
-    },
-    "nexos": {
-      "title": "NEXOS — Autonomous web builder | Mark Systems",
-      "description": "NEXOS v4.4.0: a 6-phase web pipeline with SOIC quality audits, native Law 25 compliance, and Next.js 15 deployment on Vercel. Mark Systems' technical asset."
-    }
+    "techTitle": "Technologies we master"
   },
   "faq": {
-    "label": "Frequently Asked Questions",
-    "title": "FAQ",
+    "label": "FAQ",
+    "title": "Frequently asked questions",
+    "subtitle": "Everything you need to know before getting started.",
     "items": {
       "0": {
-        "question": "What is Mark Systems?",
-        "answer": "Mark Systems is a strategic web agency based in Quebec, specializing in website creation (Next.js 15+, TypeScript), business automation, and applied AI for Quebec and Canadian SMBs. We have no affiliation with ECI Mark Systems, a residential construction ERP software provider."
+        "question": "How much does a web project cost?",
+        "answer": "Every project is unique. A showcase website starts around $3,000, a custom web application between $10,000 and $50,000+. We provide a free estimate after an initial discussion."
       },
       "1": {
-        "question": "What types of websites do you build?",
-        "answer": "We build conversion landing pages, custom showcase sites (4–6 pages), bilingual FR/EN sites, and sites with blogs or interactive calculators — all built on Next.js 15+ App Router, strict TypeScript, Tailwind CSS, deployed on Vercel with technical SEO and Law 25 compliance included."
+        "question": "What are your delivery timelines?",
+        "answer": "A showcase site takes 2 to 4 weeks. A complex application, 2 to 4 months. We work in sprints with visible deliverables every week."
       },
       "2": {
-        "question": "What's included in a website package?",
-        "answer": "All our packages include: custom design (palette, typography, components), responsive development (mobile/tablet/desktop), basic technical SEO, deployment with SSL, and up to 3 revision rounds per phase. Interactive modules (booking, calculator, AI chatbot) are available as add-ons."
+        "question": "Do you offer hosting?",
+        "answer": "Yes. We manage hosting, monitoring, and updates on reliable infrastructure (Vercel, IONOS, AWS, or self-hosted)."
       },
       "3": {
-        "question": "Do you offer maintenance after launch?",
-        "answer": "Yes. We offer monthly maintenance plans covering monitoring, technical updates, routine modifications, analytics reports, and continuous improvement recommendations — from light support to a monthly development partnership."
+        "question": "How does automation work?",
+        "answer": "We analyze your repetitive processes and transform them into automated workflows with n8n, APIs, and scripts. The result: fewer errors, more time for what matters."
       },
       "4": {
-        "question": "What types of automation do you offer?",
-        "answer": "We automate recurring operations: client onboarding, lead qualification and pipeline, automated reminders, lightweight CRM (Notion, Sheets, Airtable), tool synchronization, and report generation. We primarily work with n8n and Make, integrated into your existing tools."
+        "question": "Do you work with clients outside Quebec?",
+        "answer": "Absolutely. We work remotely with clients across Canada, France, and internationally. Everything is done online, efficiently."
       },
       "5": {
-        "question": "What does applied AI mean concretely?",
-        "answer": "Applied AI means tools that solve a specific problem: an AI assistant that answers your clients' questions, a knowledge base built from your internal documents, or an LLM-powered prospect qualification system. We work with OpenAI, Anthropic, Groq, and open-source models depending on your needs."
-      },
-      "6": {
-        "question": "Do you work with clients outside Quebec?",
-        "answer": "Yes, we operate remote-first and serve clients across Canada and internationally. Our expertise in web development, automation, and AI is available regardless of your location."
-      },
-      "7": {
-        "question": "How do I start a project with Mark Systems?",
-        "answer": "With a free 15–30 min discovery call to scope your needs. We then propose a detailed quote with phases and deliverables. We require a 50% deposit to start and the balance on delivery."
-      },
-      "8": {
-        "question": "How much does a website or automation project cost?",
-        "answer": "Showcase websites start at $2,500, conversion landing pages from $1,200, n8n automations from $1,500. Every project is custom-quoted after the discovery call. We also offer maintenance plans starting at $250/month. Financing available through Quebec's ESSOR program."
+        "question": "Can I see examples of your work?",
+        "answer": "Of course! Check out our Projects page to see our recent work, or contact us for a personalized demo."
       }
     }
   },
-  "auditBanner": {
-    "label": "SaaS Product",
-    "title": "Web Audit Toolkit",
-    "description": "Deep-audit any website — security, performance, SEO, accessibility, Law 25 compliance and more. 14 scanners, 9 certifiable badges, multilingual PDF reports. Enter your Git repo and get a /10 score in 30 seconds.",
-    "metric1Value": "14",
-    "metric1Label": "Scanners",
-    "metric2Value": "9",
-    "metric2Label": "Badges",
-    "metric3Value": "8.72",
-    "metric3Label": "Our Score",
-    "button": "Run a Free Audit"
+  "ctaSection": {
+    "tag": "Ready to start?",
+    "title": "Turn your vision into reality",
+    "subtitle": "Let's talk about your project. Free consultation, no commitment.",
+    "primaryButton": "Let's discuss your project",
+    "secondaryButton": "View our services",
+    "trustLine": "Response guaranteed within 24h — Free estimate"
   },
-  "ainovaBanner": {
-    "label": "Flagship Product",
-    "title": "AiNova OS",
-    "description": "A production AI operating system with 35+ agents, SOIC convergence engine, and Kubernetes-native infrastructure.",
-    "metric1Label": "Quality Score",
-    "metric1Value": "μ 9.94/10",
-    "metric2Label": "Production Lines",
-    "metric2Value": "84K+",
-    "button": "Explore AiNova OS"
+  "servicesPage": {
+    "heroLabel": "Services",
+    "heroTitle": "Complete technology solutions",
+    "heroDescription": "From web design to cloud infrastructure, including automation and AI — we cover the full spectrum.",
+    "webLabel": "01",
+    "webTitle": "Web Development",
+    "webDescription": "High-performance websites, SaaS applications, and e-commerce platforms built with modern technologies. Every line of code is optimized for speed, accessibility, and SEO.",
+    "webFeature0": "Showcase sites and landing pages",
+    "webFeature1": "Custom web applications (SaaS)",
+    "webFeature2": "E-commerce and marketplaces",
+    "webFeature3": "Progressive Web Apps (PWA)",
+    "webFeature4": "Technical SEO optimization",
+    "webFeature5": "Headless CMS integration",
+    "webTech0": "Next.js",
+    "webTech1": "React",
+    "webTech2": "TypeScript",
+    "webTech3": "Tailwind CSS",
+    "automationLabel": "02",
+    "automationTitle": "Business Automation",
+    "automationDescription": "Eliminate repetitive tasks and human errors. We design intelligent workflows that connect your tools and accelerate your processes.",
+    "automationFeature0": "n8n and Make workflows",
+    "automationFeature1": "Bidirectional API integrations",
+    "automationFeature2": "ETL data pipelines",
+    "automationFeature3": "Report automation",
+    "automationFeature4": "Multi-system synchronization",
+    "automationFeature5": "Real-time alerts and notifications",
+    "automationTech0": "n8n",
+    "automationTech1": "Python",
+    "automationTech2": "REST API",
+    "automationTech3": "Webhooks",
+    "aiLabel": "03",
+    "aiTitle": "Applied AI Systems",
+    "aiDescription": "Integrate artificial intelligence into your business processes. Not science fiction — AI that works for you, today.",
+    "aiFeature0": "Chatbots and AI assistants",
+    "aiFeature1": "Document analysis and classification",
+    "aiFeature2": "RAG (Retrieval-Augmented Generation)",
+    "aiFeature3": "Custom predictive models",
+    "aiFeature4": "Natural language processing",
+    "aiFeature5": "Computer vision",
+    "aiTech0": "Python",
+    "aiTech1": "LangChain",
+    "aiTech2": "Ollama",
+    "aiTech3": "HuggingFace",
+    "cloudLabel": "04",
+    "cloudTitle": "Cloud Infrastructure",
+    "cloudDescription": "Architecture, deployment, and monitoring — solid foundations for your applications. Scalable, secure, monitored 24/7.",
+    "cloudFeature0": "Custom cloud architecture",
+    "cloudFeature1": "Docker containerization",
+    "cloudFeature2": "Kubernetes orchestration",
+    "cloudFeature3": "CI/CD pipelines",
+    "cloudFeature4": "Monitoring and alerting",
+    "cloudFeature5": "Security and compliance",
+    "cloudTech0": "Docker",
+    "cloudTech1": "Kubernetes",
+    "cloudTech2": "GitHub Actions",
+    "cloudTech3": "Terraform",
+    "ctaTitle": "Have a project in mind?",
+    "ctaDescription": "Let's talk about your needs. Free consultation, no commitment.",
+    "ctaButton": "Contact us"
   },
-  "ainova": {
-    "hero": {
-      "badge": "AI Operating System",
-      "title": "AiNova OS",
-      "subtitle": "Production AI Operating System",
-      "description": "35+ specialized agents, a self-optimizing convergence engine, and enterprise-grade infrastructure — engineered for teams that need AI they can trust in production.",
-      "ctaPrimary": "Contact Us",
-      "ctaSecondary": "Request a Demo"
-    },
-    "overview": {
-      "label": "The Problem & Solution",
-      "title": "Why AiNova OS Exists",
-      "problemTitle": "The Problem",
-      "problemPoints": [
-        "AI agent frameworks are prototyping tools, not production systems",
-        "No convergence guarantees — outputs vary unpredictably",
-        "Security is an afterthought, not a design principle",
-        "Scaling from demo to enterprise requires a complete rewrite"
-      ],
-      "solutionTitle": "The Solution",
-      "solutionPoints": [
-        "Purpose-built AI operating system with 35+ specialized agents",
-        "SOIC convergence engine with mathematical proof (μ=9.94/10)",
-        "Enterprise security baked in from day one",
-        "Kubernetes-native infrastructure — scales without rewrites"
-      ]
-    },
-    "features": {
-      "label": "Core Capabilities",
-      "title": "What Powers AiNova OS",
-      "description": "Six foundational capabilities that make AiNova OS a production-grade AI operating system.",
-      "soic": {
-        "title": "SOIC Convergence Engine",
-        "description": "Self-Optimizing Intelligence Convergence — mathematically proven quality convergence across 9 dimensions with μ=9.94/10 Gold Master certification."
-      },
-      "tot": {
-        "title": "Tree-of-Thoughts",
-        "description": "Advanced decision exploration that evaluates multiple reasoning paths simultaneously, selecting optimal solutions through structured deliberation."
-      },
-      "agents": {
-        "title": "35+ Specialized Agents",
-        "description": "Purpose-built agents for every function — from code generation and testing to security auditing and documentation — orchestrated by a central coordinator."
-      },
-      "security": {
-        "title": "Enterprise Security",
-        "description": "Role-based access control, audit trails, input validation, and sandboxed execution — security is a design principle, not a patch."
-      },
-      "multi-llm": {
-        "title": "Multi-LLM Architecture",
-        "description": "Vendor-agnostic design supporting OpenAI, Anthropic, Groq, and Ollama — intelligent routing based on cost, latency, and capability."
-      },
-      "k8s": {
-        "title": "Kubernetes Native",
-        "description": "Docker-containerized with Kubernetes manifests, Prometheus monitoring, and Grafana dashboards — built for horizontal scaling from day one."
-      }
-    },
-    "architecture": {
-      "label": "System Architecture",
-      "title": "Five-Layer Architecture",
-      "layers": {
-        "api": {
-          "title": "API Gateway",
-          "description": "FastAPI endpoints with authentication, rate limiting, and request validation"
-        },
-        "orchestration": {
-          "title": "Orchestration Engine",
-          "description": "SOIC convergence engine + Tree-of-Thoughts decision exploration"
-        },
-        "agents": {
-          "title": "Agent Layer",
-          "description": "35+ specialized agents with role-based capabilities and sandboxed execution"
-        },
-        "infra": {
-          "title": "Infrastructure",
-          "description": "PostgreSQL, Redis, Docker, Kubernetes with Prometheus/Grafana monitoring"
-        },
-        "integration": {
-          "title": "Integration Layer",
-          "description": "MCP protocol bridges, REST APIs, WebSocket connections, n8n workflows"
-        }
-      }
-    },
-    "metrics": {
-      "label": "By the Numbers",
-      "title": "Production Metrics",
-      "qualityScore": "Quality Score",
-      "linesOfCode": "Lines of Code",
-      "testFunctions": "Test Functions",
-      "agents": "Specialized Agents",
-      "qualityDimensions": "Quality Dimensions"
-    },
-    "comparison": {
-      "label": "Competitive Landscape",
-      "title": "AiNova OS vs. The Alternatives",
-      "description": "How AiNova OS compares to popular AI agent frameworks across 7 critical dimensions.",
-      "ainovaOs": "AiNova OS",
-      "langraph": "LangGraph",
-      "autogen": "AutoGen",
-      "crewai": "CrewAI",
-      "dimensions": {
-        "convergenceEngine": "Convergence Engine",
-        "agentCount": "Multi-Agent Support",
-        "productionReady": "Production Ready",
-        "mathProof": "Mathematical Proof",
-        "multiLlm": "Multi-LLM Support",
-        "k8sNative": "Kubernetes Native",
-        "mcpBridge": "MCP Protocol Bridge"
-      }
-    },
-    "techStack": {
-      "label": "Technology",
-      "title": "Tech Stack",
-      "categories": {
-        "core": "Core",
-        "infra": "Infrastructure",
-        "ai": "AI & LLM",
-        "integration": "Integration"
-      }
-    }
+  "projectsPage": {
+    "heroLabel": "Portfolio",
+    "heroTitle": "Our work",
+    "heroDescription": "Real projects, from design to deployment.",
+    "filterAll": "All",
+    "filterWeb": "Web",
+    "filterAutomation": "Automation",
+    "filterAI": "AI",
+    "noProjects": "No projects in this category.",
+    "pipelineTitle": "Automated CI/CD Pipeline",
+    "pipelineCategory": "Automation",
+    "pipelineDescription": "Continuous deployment pipeline with automated tests, Docker builds, and Kubernetes deployment.",
+    "pipelineTech0": "GitHub Actions",
+    "pipelineTech1": "Docker",
+    "pipelineTech2": "K8s",
+    "dashboardTitle": "Real-Time Analytics Dashboard",
+    "dashboardCategory": "Web App",
+    "dashboardDescription": "Interactive dashboard for business KPI monitoring with advanced visualizations.",
+    "dashboardTech0": "Next.js",
+    "dashboardTech1": "D3.js",
+    "dashboardTech2": "PostgreSQL",
+    "dockerStackTitle": "Multi-Service Infrastructure",
+    "dockerStackCategory": "Infrastructure",
+    "dockerStackDescription": "Complete Docker stack with reverse proxy, monitoring, databases, and application services.",
+    "dockerStackTech0": "Docker",
+    "dockerStackTech1": "Traefik",
+    "dockerStackTech2": "Grafana",
+    "smartCityTitle": "Urban IoT Network",
+    "smartCityCategory": "AI / IoT",
+    "smartCityDescription": "Connected sensor system with AI analysis for urban environmental monitoring.",
+    "smartCityTech0": "Python",
+    "smartCityTech1": "MQTT",
+    "smartCityTech2": "TensorFlow",
+    "webAutomationTitle": "Web Automation Portal",
+    "webAutomationCategory": "Automation",
+    "webAutomationDescription": "Centralized platform for managing and monitoring business automation workflows.",
+    "webAutomationTech0": "React",
+    "webAutomationTech1": "n8n",
+    "webAutomationTech2": "Node.js",
+    "n8nWorkflowTitle": "Workflow Orchestrator",
+    "n8nWorkflowCategory": "Automation",
+    "n8nWorkflowDescription": "Complex workflow orchestration system with visual interface and integrated monitoring.",
+    "n8nWorkflowTech0": "n8n",
+    "n8nWorkflowTech1": "PostgreSQL",
+    "n8nWorkflowTech2": "Redis"
   },
-  "nexos": {
-    "hero": {
-      "badge": "Production web pipeline — v4.4.0",
-      "title": "NEXOS",
-      "subtitle": "Autonomous web builder with quality audits built in",
-      "description": "A reproducible 6-phase pipeline that ships Next.js 15 sites compliant with Quebec's Law 25 — with objective SOIC gates between phases and a Lighthouse audit that has to pass before the site goes live.",
-      "ctaPrimary": "Start a brief",
-      "ctaSecondary": "See projects"
-    },
-    "overview": {
-      "label": "The problem & the solution",
-      "title": "Why NEXOS exists",
-      "problemTitle": "The problem",
-      "problemPoints": [
-        "Sites built on no-code platforms (Webflow, Wix) are rented, not owned — proprietary, opaque code",
-        "Traditional agencies ship from instinct, without reproducible quality gates",
-        "Law 25 compliance is treated as an option, bolted on after the fact when asked",
-        "Lighthouse audits arrive at the end of the road, when fixes cost 10× more"
-      ],
-      "solutionTitle": "The solution",
-      "solutionPoints": [
-        "Next.js 15 + strict TypeScript source code delivered and deployed on your own Vercel",
-        "6 pipeline phases with a SOIC μ ≥ 8.0 gate between each — nothing passes without objective proof",
-        "Law 25 compliance auto-injected and auto-fixed at build time (D4/D8 rules)",
-        "Lighthouse + axe-core audits in the QA phase — deployment blocked if Performance < 90 or A11y < 95"
-      ]
-    },
-    "features": {
-      "label": "Core capabilities",
-      "title": "What sets NEXOS apart",
-      "description": "Six pillars that make NEXOS a reproducible web pipeline rather than a template or a hand-rolled site.",
-      "phases": {
-        "title": "6 gated pipeline phases",
-        "description": "ph0-Discovery → ph1-Strategy → ph2-Design → ph3-Content → ph4-Build → ph5-QA+Deploy. Each phase produces verifiable artifacts validated by a SOIC gate."
-      },
-      "loi25": {
-        "title": "Native Law 25 compliance",
-        "description": "Cookie opt-in banner, privacy policy, legal mentions, and PPR auto-injected and auto-fixed at build time. Not an add-on — the default."
-      },
-      "agents": {
-        "title": "57 specialized agents",
-        "description": "Each phase orchestrates narrow-scope agents (6 to 24 per phase) — discovery, strategy, design, content, build, QA — instead of one generalist agent that hallucinates."
-      },
-      "modes": {
-        "title": "7 operational modes",
-        "description": "create, audit, modify, content, doctor, fix, report. A client is not just an initial build — it's a site you audit, patch, and enrich over time."
-      },
-      "stack": {
-        "title": "Modern owned stack",
-        "description": "Next.js 15 App Router, strict TypeScript, Tailwind, bilingual FR/EN via next-intl, Vercel deployment. No page builder, no Bootstrap, no lock-in."
-      },
-      "audit": {
-        "title": "Built-in quality audit",
-        "description": "SOIC multi-dimension scoring, OSIRIS operational scanner (perf/security/resources), Lighthouse as a deployment gate. Objective score, not a designer's gut feeling."
-      }
-    },
-    "architecture": {
-      "label": "NEXOS pipeline",
-      "title": "Six phases, six gates",
-      "phases": {
-        "discovery": {
-          "title": "01 · Discovery",
-          "description": "Need qualification, business context, technical constraints. Canonical brief with verified Law 25 coverage."
-        },
-        "strategy": {
-          "title": "02 · Strategy",
-          "description": "Information architecture, sitemap, pattern recommender, typology choices. NEXOS Web Patterns reference."
-        },
-        "design": {
-          "title": "03 · Design",
-          "description": "Visual system, tokens, components. Consistency checked mechanically, not by eye."
-        },
-        "content": {
-          "title": "04 · Content",
-          "description": "Bilingual FR/EN copywriting, on-page SEO, editorial structure. Linguistic parity enforced."
-        },
-        "build": {
-          "title": "05 · Build",
-          "description": "Next.js 15 + strict TypeScript + Tailwind code. Unit tests, type-check, lint. CumulativeLayoutShift gate."
-        },
-        "qa": {
-          "title": "06 · QA + Deploy",
-          "description": "Lighthouse, axe-core, pa11y audits, OSIRIS scan, Law 25 compliance. Ph4↔Ph5 reconciliation active. Vercel push if joint verdict is OK."
-        }
-      }
-    },
-    "metrics": {
-      "label": "By the numbers",
-      "title": "Pipeline state (v4.4.0)",
-      "version": "Current version",
-      "phases": "Pipeline phases",
-      "agents": "Specialized agents",
-      "tests": "Automated tests",
-      "modes": "Operational modes"
-    },
-    "comparison": {
-      "label": "Competitive landscape",
-      "title": "NEXOS vs. other ways to ship a site",
-      "description": "How NEXOS compares to common alternatives across 7 critical dimensions for a site that has to perform and last.",
-      "nexos": "NEXOS",
-      "webflow": "Webflow / Wix",
-      "agency": "Traditional agency",
-      "boilerplate": "Starter kit",
-      "dimensions": {
-        "ownCode": "Source code delivered",
-        "reproducible": "Reproducible pipeline",
-        "loi25Auto": "Automatic Law 25",
-        "qualityGates": "Objective quality gates",
-        "modernStack": "Modern stack (Next.js 15)",
-        "bilingual": "Native FR/EN bilingual",
-        "lighthouseGate": "Lighthouse as deployment gate"
-      }
-    },
-    "techStack": {
-      "label": "Technology",
-      "title": "Internal stack and shipped stack",
-      "categories": {
-        "delivered": "Site delivered",
-        "pipeline": "NEXOS pipeline",
-        "quality": "Quality & compliance",
-        "ops": "Ops & CI"
-      }
-    },
-    "cta": {
-      "label": "For prospects",
-      "title": "The pipeline already runs — start a brief",
-      "description": "NEXOS is the technical asset Mark Systems uses to ship client sites. If your project needs a reproducible, compliant site from the very first version, let's talk.",
-      "primary": "Start a brief",
-      "secondary": "See projects"
-    }
+  "aboutPage": {
+    "heroLabel": "About",
+    "heroTitle": "Digital engineers, results craftsmen",
+    "heroMission": "We build technology solutions that work — not prototypes, not POCs, production systems.",
+    "heroSubtext": "Based in Quebec, we support businesses of all sizes in their digital transformation.",
+    "heroImageAlt": "The Mark Systems team",
+    "valuesLabel": "Our values",
+    "valuesTitle": "What guides us",
+    "valuesDescription": "Four core principles that define our approach.",
+    "innovationTitle": "Innovation",
+    "innovationDescription": "We constantly explore new technologies to deliver the best solutions.",
+    "qualityTitle": "Quality",
+    "qualityDescription": "Every line of code is tested, reviewed, and optimized. No shortcuts.",
+    "partnershipTitle": "Partnership",
+    "partnershipDescription": "We work with you, not just for you. Your success is ours.",
+    "transparencyTitle": "Transparency",
+    "transparencyDescription": "Clear communication, detailed quotes, no surprises. You always know where things stand.",
+    "storyLabel": "Our journey",
+    "storyTitle": "From idea to reality",
+    "storyDescription": "Every step has strengthened our expertise.",
+    "foundingTitle": "Foundation",
+    "foundingDescription": "Creation of Mark Systems with a clear vision: making technology accessible.",
+    "growthTitle": "Growth",
+    "growthDescription": "First major clients and development of our automation offerings.",
+    "expansionTitle": "Expansion",
+    "expansionDescription": "Integration of AI and cloud systems into our portfolio.",
+    "todayTitle": "Today",
+    "todayDescription": "A solid team, dozens of delivered projects, and an ever more ambitious vision.",
+    "techLabel": "Tech stack",
+    "techTitle": "Our tools of choice",
+    "techDescription": "Proven technologies for reliable results.",
+    "milestone1Title": "Foundation",
+    "milestone1Description": "Creation of Mark Systems with a clear vision: making technology accessible to SMBs.",
+    "milestone2Title": "First clients",
+    "milestone2Description": "First web development and automation mandates for Quebec businesses.",
+    "milestone3Title": "AI Expansion",
+    "milestone3Description": "Integration of artificial intelligence solutions into our service offering.",
+    "milestone4Title": "Today",
+    "milestone4Description": "A solid team, dozens of delivered projects, and an ever more ambitious vision."
   },
-  "brief": {
-    "title": "Project Brief",
-    "subtitle": "Complete this form to start your web project with Mark Systems.",
-    "steps": {
+  "contactPage": {
+    "label": "Contact",
+    "title": "Let's talk about your project",
+    "subtitle": "Fill out the form or contact us directly. Response guaranteed within 24h.",
+    "info": {
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "locationLabel": "Location",
+      "locationValue": "Quebec, Canada",
+      "availabilityTitle": "Availability",
+      "availabilityText": "Monday — Friday, 9am — 6pm (EST). Emergencies: 24/7 support."
+    },
+    "form": {
+      "heading": "Send us a message",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
       "company": "Company",
-      "site": "Site",
-      "adaptive": "Details",
-      "legal": "Law 25",
-      "design": "Design",
-      "seo": "SEO",
-      "review": "Review"
+      "companyPlaceholder": "Your company name (optional)",
+      "subject": "Subject",
+      "selectSubject": "Select a subject",
+      "subjects": {
+        "webDevelopment": "Web Development",
+        "automation": "Automation",
+        "aiSolutions": "AI Solutions",
+        "cloudArchitecture": "Cloud Architecture",
+        "consulting": "Consulting",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Describe your project or needs...",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "successTitle": "Message sent!",
+      "successMessage": "Thank you for your message. We'll get back to you within 24 hours.",
+      "errorMessage": "An error occurred. Please try again or contact us directly by email."
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email is not valid",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters"
+    }
+  },
+  "briefPage": {
+    "label": "Project Brief",
+    "title": "Describe your project",
+    "subtitle": "Fill out this form to give us a clear vision of your needs. The more precise you are, the more relevant our proposal will be.",
+    "companyStep": {
+      "description": "Information about your company"
+    },
+    "steps": {
+      "companyInfo": "Company",
+      "projectType": "Project",
+      "designPrefs": "Design",
+      "review": "Summary"
+    },
+    "stepOf": "Step {current} of {total}",
+    "fields": {
+      "companyName": "Company name",
+      "contactName": "Contact name",
+      "email": "Email",
+      "phone": "Phone",
+      "website": "Current website",
+      "projectType": "Project type",
+      "budget": "Estimated budget",
+      "timeline": "Desired timeline",
+      "description": "Project description",
+      "features": "Desired features",
+      "style": "Visual style",
+      "colors": "Preferred colors",
+      "references": "Reference websites",
+      "logoProvided": "Logo provided?",
+      "additionalNotes": "Additional notes"
+    },
+    "projectTypes": {
+      "website": "Showcase website",
+      "webapp": "Web application",
+      "ecommerce": "E-commerce",
+      "automation": "Automation",
+      "aiSystem": "AI System",
+      "other": "Other"
+    },
+    "budgets": {
+      "under5k": "Under $5,000",
+      "5k15k": "$5,000 — $15,000",
+      "15k30k": "$15,000 — $30,000",
+      "30k50k": "$30,000 — $50,000",
+      "over50k": "Over $50,000"
+    },
+    "timelines": {
+      "1month": "Less than a month",
+      "1to3months": "1 to 3 months",
+      "3to6months": "3 to 6 months",
+      "over6months": "Over 6 months",
+      "flexible": "Flexible"
+    },
+    "styles": {
+      "modern": "Modern and minimalist",
+      "corporate": "Corporate",
+      "creative": "Creative and bold",
+      "tech": "Tech / Futuristic",
+      "elegant": "Elegant and refined",
+      "other": "Other"
+    },
+    "features": {
+      "responsive": "Responsive design",
+      "seo": "SEO optimization",
+      "analytics": "Analytics and tracking",
+      "cms": "Content management (CMS)",
+      "blog": "Blog",
+      "multiLang": "Multilingual",
+      "auth": "User authentication",
+      "payment": "Online payment",
+      "api": "API integrations",
+      "chat": "Live chat"
     },
     "nav": {
-      "previous": "Previous",
       "next": "Next",
-      "submit": "Submit Brief",
-      "submitting": "Sending...",
-      "privacyNotice": "By submitting, you agree to our",
-      "privacyLink": "privacy policy",
-      "stepOf": "Step {current} of {total}"
+      "prev": "Previous",
+      "submit": "Submit brief",
+      "submitting": "Submitting..."
     },
-    "company": {
-      "title": "Company Information",
-      "name": "Company name",
-      "namePlaceholder": "e.g. Tremblay Bakery",
-      "slug": "Slug (URL-friendly)",
-      "slugHelp": "Auto-generated. Lowercase letters, numbers and hyphens.",
-      "neq": "NEQ (optional)",
-      "neqPlaceholder": "10 digits",
-      "address": "Headquarters address",
-      "addressPlaceholder": "123 Example St, Quebec QC",
-      "phone": "Phone",
-      "phonePlaceholder": "418-555-0000",
-      "email": "Main email",
-      "emailPlaceholder": "info@company.ca"
+    "yes": "Yes",
+    "no": "No",
+    "a": "a",
+    "errorMessage": "Please fill in all required fields.",
+    "errors": {
+      "required": "This field is required",
+      "emailInvalid": "Email is not valid"
     },
-    "site": {
-      "title": "Site Configuration",
-      "type": "Site type",
-      "typePlaceholder": "Select a type",
-      "pages": "Desired pages",
-      "pagesHelp": "Legal pages (privacy policy, legal notices) will be added automatically.",
-      "features": "Features",
-      "languages": "Site languages",
-      "hosting": "Hosting",
-      "domain": "Target domain (optional)",
-      "domainPlaceholder": "mysite.ca"
+    "pdfTitle": "Project Brief — Mark Systems",
+    "placeholders": {
+      "companyName": "Your company name",
+      "contactName": "Your full name",
+      "email": "your@email.com",
+      "phone": "+1 (xxx) xxx-xxxx",
+      "website": "https://yoursite.com",
+      "selectBudget": "Select a budget",
+      "selectTimeline": "Select a timeline",
+      "description": "Describe your project in a few lines...",
+      "colors": "E.g.: blue, white, black...",
+      "references": "URLs of sites that inspire you...",
+      "additionalNotes": "Other useful information..."
     },
-    "adaptive": {
-      "title": "Specific Configuration",
-      "noQuestions": "No additional questions for this site type.",
-      "paymentProvider": "Payment provider",
-      "productCount": "Approximate number of products",
-      "productCountPlaceholder": "e.g. 10-50",
-      "shipping": "Physical shipping required?",
-      "shippingZones": "Shipping zones",
-      "shippingZonesPlaceholder": "Quebec, Canada",
-      "inventory": "Inventory management required?",
-      "displayMode": "Project display",
-      "caseStudies": "Detailed case studies?",
-      "publishFrequency": "Publishing frequency",
-      "comments": "Enable comments?",
-      "categoriesTags": "Categories and tags?",
-      "authRequired": "Authentication required?",
-      "authMethods": "Authentication methods",
-      "userTypes": "User types",
-      "userTypesPlaceholder": "admin, user",
-      "realtime": "Real-time features?",
-      "newsletterProvider": "Newsletter provider",
-      "analyticsProvider": "Analytics provider"
-    },
-    "legal": {
-      "title": "Quebec Law 25 Compliance",
-      "mandatory": "MANDATORY",
-      "rppTitle": "Privacy Officer (RPP)",
-      "rppName": "RPP name",
-      "rppNamePlaceholder": "John Smith",
-      "rppEmail": "RPP email",
-      "rppEmailPlaceholder": "privacy@company.ca",
-      "rppFunction": "Title / Function",
-      "rppFunctionDefault": "Privacy Officer",
-      "dataCollected": "Types of data collected",
-      "sensitiveWarning": "Law 25 imposes enhanced obligations for sensitive data: mandatory privacy impact assessment, explicit consent required, enhanced security measures.",
-      "purposes": "Processing purposes",
-      "retention": "Data retention period",
-      "retentionPlaceholder": "24 months",
-      "transferOutsideQc": "Data transfer outside Quebec?",
-      "transferCountries": "Transfer countries/regions",
-      "thirdPartyDetected": "Detected third-party services",
-      "consentMode": "Cookie consent mode",
-      "incidentProcess": "Incident process in place?",
-      "incidentEmail": "Incident notification email",
-      "incidentEmailHelp": "Defaults to RPP email."
-    },
-    "design": {
-      "title": "Design & Visual Identity",
-      "palette": "Color palette (optional)",
-      "palettePlaceholder": "e.g. #1a1a2e, #16213e, #e94560",
-      "typography": "Preferred fonts (optional)",
-      "typographyPlaceholder": "e.g. Inter, Playfair Display",
-      "style": "Visual style",
-      "logoProvided": "Logo provided?",
-      "references": "Reference URLs (optional)",
-      "referencesPlaceholder": "e.g. site1.com, site2.com"
-    },
-    "seo": {
-      "title": "Context & SEO",
-      "competitors": "Competitor URLs (optional)",
-      "competitorsPlaceholder": "e.g. competitor1.ca, competitor2.com",
-      "keywords": "Priority SEO keywords (optional)",
-      "keywordsPlaceholder": "e.g. web agency quebec, sme website",
-      "freeText": "Free context / notes",
-      "freeTextPlaceholder": "Describe your business, goals, anything that could help us..."
-    },
-    "review": {
-      "title": "Brief Summary",
-      "edit": "Edit",
-      "sectionCompany": "Company",
-      "sectionSite": "Site",
-      "sectionAdaptive": "Details",
-      "sectionLegal": "Law 25",
-      "sectionDesign": "Design",
-      "sectionSeo": "SEO",
-      "successTitle": "Brief Submitted!",
-      "successMessage": "Your brief has been sent to the Mark Systems team. We will be in touch shortly. A summary PDF has been downloaded to your device.",
-      "errorMessage": "An error occurred while sending. Please try again."
-    },
-    "validation": {
-      "nameRequired": "Name is required (min. 2 characters)",
-      "emailInvalid": "Invalid email",
-      "neqInvalid": "NEQ must contain exactly 10 digits",
-      "addressRequired": "Address is required (min. 5 characters)",
-      "phoneRequired": "Phone is required",
-      "slugInvalid": "Invalid slug (lowercase letters, numbers, hyphens)",
-      "typeRequired": "Select a site type",
-      "pagesRequired": "Select at least one page",
-      "languagesRequired": "Select at least one language",
-      "rppNameRequired": "RPP name is required",
-      "rppEmailInvalid": "RPP email is invalid",
-      "dataRequired": "Select at least one data type",
-      "purposesRequired": "Select at least one purpose",
-      "retentionRequired": "Retention period is required"
-    },
-    "labels": {
-      "yes": "Yes",
-      "no": "No",
-      "required": "*"
-    }
+    "successTitle": "Brief submitted successfully!",
+    "successMessage": "Thank you! We'll analyze your brief and contact you within 48 hours with a proposal."
   },
   "privacy": {
     "title": "Privacy Policy",
-    "metaDescription": "Mark Systems Privacy Policy — compliant with Quebec Law 25 on the protection of personal information.",
-    "lastUpdated": "Last updated: March 22, 2026",
-    "intro": "Mark Systems is committed to protecting personal information in accordance with Quebec Law 25 (Act to modernize legislative provisions as regards the protection of personal information). This policy describes the information we collect, how we use it, and your rights.",
+    "lastUpdated": "Last updated: January 2025",
+    "intro": "Mark Systems is committed to protecting your privacy. This policy describes how we collect, use, and protect your personal data.",
     "dataCollected": {
-      "title": "1. Information Collected",
-      "content": "We collect the following information:\n\n• First and last name (contact form and brief)\n• Email address (contact form and brief)\n• Company name (optional)\n• Phone number (brief)\n• Mailing address (brief)\n• Message content and project descriptions\n• Anonymized browsing data (Vercel Analytics)"
+      "title": "Data Collected",
+      "content": "We collect information you provide directly: name, email, phone number, and project details through our contact and brief forms. We also automatically collect technical data (IP address, browser type, pages visited) through analytical cookies."
     },
     "purposes": {
-      "title": "2. Processing Purposes",
-      "content": "Your information is used exclusively to:\n\n• Respond to your contact requests\n• Prepare service proposals\n• Improve our website (anonymized data)\n• Comply with our legal obligations"
+      "title": "Use of Data",
+      "content": "Your data is used to respond to your inquiries, provide our services, improve our website, and, with your consent, send you relevant marketing communications."
     },
     "cookies": {
-      "title": "3. Cookies",
-      "content": "Our site uses cookies in three categories:\n\n• Essential: required for the site to function (language preferences, cookie consent). Cannot be disabled.\n• Analytics: Vercel Analytics to understand site usage. Anonymized data, no personal information transmitted.\n• Marketing: no marketing cookies are currently used.\n\nYou can manage your preferences via the consent banner displayed on your first visit. Your consent is stored for 6 months."
+      "title": "Cookies",
+      "content": "We use essential cookies for site functionality and analytical cookies (with your consent) to understand site usage. You can manage your preferences at any time."
     },
     "thirdParties": {
-      "title": "4. Third-Party Services",
-      "content": "We use the following third-party services:\n\n• Formspree (form processing) — data is transmitted to Formspree Inc. for message routing\n• Vercel Analytics (anonymized traffic analysis)\n\nNo personal data is sold or shared for advertising purposes."
+      "title": "Third-Party Sharing",
+      "content": "We never sell your data. We share information only with trusted service providers necessary for our services (hosting, analytics) and in compliance with legal requirements."
     },
     "retention": {
-      "title": "5. Data Retention",
-      "content": "Personal information is retained for a maximum of 24 months after the last contact, unless a legal obligation requires otherwise. Anonymized analytics data is retained indefinitely."
+      "title": "Data Retention",
+      "content": "We retain your personal data as long as necessary for the purposes described, or as required by law. Project data is kept for the duration of our business relationship."
     },
     "rights": {
-      "title": "6. Your Rights (Law 25)",
-      "content": "Under Quebec Law 25, you have the right to:\n\n• Access your personal information\n• Correct inaccurate information\n• Withdraw your consent at any time\n• Request deletion of your data\n• File a complaint with the Commission d'accès à l'information du Québec (CAI)\n\nTo exercise these rights, contact our privacy officer."
+      "title": "Your Rights",
+      "content": "In accordance with Quebec's Law 25 and GDPR, you have the right to access, rectify, delete your personal data, and withdraw your consent. Contact us at info@marksystems.ca to exercise these rights."
     },
     "contact": {
-      "title": "7. Privacy Officer",
-      "content": "Marc-Antoine Bherer\nPrivacy Officer\nEmail: privacy@marksystems.ca\n\nMark Systems\nQuebec, QC, Canada"
-    }
+      "title": "Contact Us",
+      "content": "For any questions about this policy or your personal data, contact us at info@marksystems.ca or +1 (581) 986-4267."
+    },
+    "footerNote": "This policy may be updated periodically. We will notify you of any significant changes."
+  },
+  "chatbot": {
+    "openChat": "Open chat",
+    "closeChat": "Close chat",
+    "online": "Online",
+    "welcomeMessage": "Hello! I'm Mark AI, your virtual assistant. How can I help you?",
+    "inputPlaceholder": "Type your message...",
+    "send": "Send",
+    "poweredBy": "Powered by Mark AI"
+  },
+  "footer": {
+    "tagline": "Web solutions, automations, and AI systems — from design to deployment.",
+    "columns": {
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact"
+      },
+      "services": {
+        "title": "Services",
+        "web": "Web Development",
+        "automation": "Automation",
+        "ai": "AI Systems",
+        "cloud": "Cloud Infrastructure"
+      },
+      "legal": {
+        "privacy": "Privacy",
+        "terms": "Terms",
+        "cookies": "Cookies"
+      }
+    },
+    "madeWith": "Crafted with passion in Quebec",
+    "copyright": "© {year} Mark Systems. All rights reserved."
+  },
+  "common": {
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to home",
+    "contactUs": "Contact us"
   }
 }

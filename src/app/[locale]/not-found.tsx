@@ -1,27 +1,44 @@
+"use client";
+
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/Button";
-import { ArrowLeft } from "lucide-react";
+import { motion } from "framer-motion";
+import { Home, ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
-  const t = useTranslations("notFound");
+  const t = useTranslations("common");
 
   return (
-    <section className="flex min-h-[70vh] items-center justify-center">
-      <div className="section-container text-center">
-        <span className="mb-4 block font-mono text-8xl font-bold text-text-tertiary/30">
-          {t("code")}
-        </span>
-        <h1 className="mb-4 text-h2 font-bold text-text-primary">
-          {t("title")}
+    <main className="min-h-screen flex items-center justify-center px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center"
+      >
+        <div className="text-8xl md:text-9xl font-bold gradient-text mb-4">404</div>
+        <h1 className="text-2xl md:text-3xl font-bold text-text-primary mb-4">
+          {t("notFoundTitle")}
         </h1>
-        <p className="mx-auto mb-8 max-w-md text-text-secondary">
-          {t("description")}
+        <p className="text-text-secondary mb-8 max-w-md mx-auto">
+          {t("notFoundDescription")}
         </p>
-        <Button href="/" variant="secondary">
-          <ArrowLeft className="h-4 w-4" />
-          {t("back")}
-        </Button>
-      </div>
-    </section>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent/90 text-white font-medium rounded-lg transition-colors"
+          >
+            <Home className="w-4 h-4" />
+            {t("backHome")}
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent/50 text-text-primary font-medium rounded-lg transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            {t("contactUs")}
+          </Link>
+        </div>
+      </motion.div>
+    </main>
   );
 }

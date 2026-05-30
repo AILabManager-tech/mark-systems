@@ -1,60 +1,46 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { fadeInUp } from "@/lib/animations";
 import { cn } from "@/lib/utils";
-import { fadeInUp, VIEWPORT_CONFIG } from "@/lib/animations";
 
-interface SectionHeaderWithNsProps {
-  ns: string;
-  centered?: boolean;
-  className?: string;
-  as?: "h1" | "h2";
-  label?: never;
-  title?: never;
-  description?: never;
-}
-
-interface SectionHeaderWithPropsProps {
-  ns?: never;
-  label?: string;
+interface SectionHeaderProps {
+  tag?: string;
   title: string;
   description?: string;
-  centered?: boolean;
+  align?: "left" | "center";
   className?: string;
-  as?: "h1" | "h2";
 }
 
-type SectionHeaderProps = SectionHeaderWithNsProps | SectionHeaderWithPropsProps;
-
-export function SectionHeader(props: SectionHeaderProps) {
-  const { centered = true, className, as: Heading = "h2" } = props;
-  const t = useTranslations(props.ns || "common");
-
-  const label = props.ns ? t("label") : props.label;
-  const title = props.ns ? t("title") : props.title;
-  const description = props.ns
-    ? (t.has("description") ? t("description") : undefined)
-    : props.description;
-
+export function SectionHeader({
+  tag,
+  title,
+  description,
+  align = "center",
+  className,
+}: SectionHeaderProps) {
   return (
     <motion.div
-      variants={fadeInUp}
-      initial={false}
+      initial="hidden"
       whileInView="visible"
-      viewport={VIEWPORT_CONFIG}
-      className={cn("mb-16", centered && "text-center", className)}
+      viewport={{ once: true, margin: "-100px" }}
+      variants={fadeInUp}
+      className={cn(
+        "mb-12 md:mb-16",
+        align === "center" && "text-center",
+        className
+      )}
     >
-      {label && (
-        <span className="mb-4 inline-block font-mono text-xs uppercase tracking-widest text-accent">
-          {"// "}{label}
+      {tag && (
+        <span className="inline-block px-4 py-1.5 mb-4 text-xs font-mono font-medium tracking-widest uppercase text-accent bg-accent/10 border border-accent/20 rounded-full">
+          {tag}
         </span>
       )}
-      <Heading className="text-h2 font-bold text-text-primary lg:text-h1">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary leading-tight text-balance">
         {title}
-      </Heading>
+      </h2>
       {description && (
-        <p className="mt-4 max-w-2xl text-body-lg text-text-secondary lg:mt-6 mx-auto">
+        <p className="mt-4 max-w-2xl text-lg text-text-secondary leading-relaxed mx-auto">
           {description}
         </p>
       )}
