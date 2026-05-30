@@ -6,70 +6,53 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 import { ExternalLink } from 'lucide-react';
+import { REALISATIONS, OUTILS } from '@/lib/constants';
 
-type FilterCategory = 'all' | 'web' | 'automation' | 'ai';
+type FilterCategory = 'all' | 'sites' | 'outils';
 
-interface Project {
-  id: string;
+interface CatalogItem {
+  key: string;
+  url: string;
   image: string;
-  category: FilterCategory;
-  techStack: string[];
+  category: 'sites' | 'outils';
+  ns: 'realisations' | 'outils';
+  featured?: boolean;
 }
 
-const projects: Project[] = [
-  {
-    id: 'pipeline',
-    image: '/images/projects/pipeline.jpg',
-    category: 'ai',
-    techStack: ['Python', 'LangChain', 'OpenAI', 'FastAPI'],
-  },
-  {
-    id: 'dashboard',
-    image: '/images/projects/dashboard.jpg',
-    category: 'web',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma'],
-  },
-  {
-    id: 'dockerStack',
-    image: '/images/projects/docker-stack.jpg',
-    category: 'automation',
-    techStack: ['Docker', 'Kubernetes', 'Terraform', 'CI/CD'],
-  },
-  {
-    id: 'smartCity',
-    image: '/images/projects/smart-city.jpg',
-    category: 'ai',
-    techStack: ['IoT', 'Python', 'TensorFlow', 'MQTT'],
-  },
-  {
-    id: 'webAutomation',
-    image: '/images/projects/web-automation.jpg',
-    category: 'automation',
-    techStack: ['n8n', 'Puppeteer', 'Node.js', 'REST API'],
-  },
-  {
-    id: 'n8nWorkflow',
-    image: '/images/projects/n8n-workflow.jpg',
-    category: 'automation',
-    techStack: ['n8n', 'Webhooks', 'PostgreSQL', 'Make'],
-  },
+// Catalogue unifié — vrais projets en ligne (sites clients + outils testables).
+const catalog: CatalogItem[] = [
+  ...REALISATIONS.map((r) => ({
+    key: r.key,
+    url: r.url,
+    image: r.image,
+    category: 'sites' as const,
+    ns: 'realisations' as const,
+  })),
+  ...OUTILS.map((o) => ({
+    key: o.key,
+    url: o.url,
+    image: o.image,
+    category: 'outils' as const,
+    ns: 'outils' as const,
+    featured: o.featured,
+  })),
 ];
 
 const filterTabs: { key: FilterCategory; labelKey: string }[] = [
   { key: 'all', labelKey: 'filterAll' },
-  { key: 'web', labelKey: 'filterWeb' },
-  { key: 'automation', labelKey: 'filterAutomation' },
-  { key: 'ai', labelKey: 'filterAI' },
+  { key: 'sites', labelKey: 'filterSites' },
+  { key: 'outils', labelKey: 'filterOutils' },
 ];
 
 export default function ProjectsPage() {
   const t = useTranslations('projectsPage');
+  const tr = useTranslations();
   const [activeFilter, setActiveFilter] = useState<FilterCategory>('all');
 
-  const filteredProjects =
+  const filtered =
     activeFilter === 'all'
-      ? projects
-      : projects.filter((p) => p.category === activeFilter);
+      ? catalog
+      : catalog.filter((p) => p.category === activeFilter);
 
   return (
     <main>
@@ -132,70 +115,79 @@ export default function ProjectsPage() {
           </motion.div>
 
           {/* Project Grid */}
-          <motion.div
-            layout
-            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          >
+          <motion.div layout className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project) => (
-                <motion.article
-                  key={project.id}
-                  layout
-                  variants={fadeInUp}
-                  initial="hidden"
-                  animate="visible"
-                  exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
-                  className="group relative overflow-hidden rounded-sm border border-surface-border bg-surface transition-all duration-500 hover:border-accent/30 hover:shadow-glow-accent"
-                >
-                  {/* Image */}
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={t(`${project.id}Title`)}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-background/80 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent">
-                        <ExternalLink className="h-5 w-5" strokeWidth={1.5} />
+              {filtered.map((project) => {
+                const name = tr(`${project.ns}.items.${project.key}.name`);
+                const description = tr(`${project.ns}.items.${project.key}.description`);
+                const action =
+                  project.category === 'sites'
+                    ? tr('realisations.viewSite')
+                    : tr('outils.tryTool');
+                const badge =
+                  project.category === 'sites'
+                    ? t('badgeSite')
+                    : t('badgeOutil');
+                return (
+                  <motion.a
+                    key={project.key}
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    layout
+                    variants={fadeInUp}
+                    initial="hidden"
+                    animate="visible"
+                    exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
+                    className="group relative flex flex-col overflow-hidden rounded-sm border border-surface-border bg-surface transition-all duration-500 hover:border-accent/30 hover:shadow-glow-accent"
+                  >
+                    {/* Image */}
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={name}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center bg-background/80 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent">
+                          <ExternalLink className="h-5 w-5" strokeWidth={1.5} />
+                        </div>
                       </div>
-                    </div>
-                    {/* Category badge */}
-                    <span className="absolute left-3 top-3 rounded-sm bg-surface/80 px-2.5 py-1 font-mono text-xs text-accent backdrop-blur-sm">
-                      {t(`${project.id}Category`)}
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-text-primary transition-colors group-hover:text-accent">
-                      {t(`${project.id}Title`)}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-text-secondary line-clamp-3">
-                      {t(`${project.id}Description`)}
-                    </p>
-
-                    {/* Tech stack tags */}
-                    <div className="mt-4 flex flex-wrap gap-1.5">
-                      {project.techStack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="rounded-sm border border-surface-border bg-surface-light px-2 py-1 font-mono text-xs text-text-tertiary"
-                        >
-                          {tech}
+                      {/* Category badge */}
+                      <span className="absolute left-3 top-3 rounded-sm bg-surface/80 px-2.5 py-1 font-mono text-xs text-accent backdrop-blur-sm">
+                        {badge}
+                      </span>
+                      {project.featured && (
+                        <span className="absolute right-3 top-3 rounded-sm bg-accent px-2.5 py-1 font-mono text-xs text-white">
+                          {tr('outils.featured')}
                         </span>
-                      ))}
+                      )}
                     </div>
-                  </div>
-                </motion.article>
-              ))}
+
+                    {/* Content */}
+                    <div className="flex flex-1 flex-col p-6">
+                      <h3 className="text-lg font-bold text-text-primary transition-colors group-hover:text-accent">
+                        {name}
+                      </h3>
+                      <p className="mt-2 flex-1 text-sm leading-relaxed text-text-secondary line-clamp-3">
+                        {description}
+                      </p>
+                      <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-sm text-accent">
+                        {action}
+                        <ExternalLink className="h-4 w-4" strokeWidth={1.5} />
+                      </span>
+                    </div>
+                  </motion.a>
+                );
+              })}
             </AnimatePresence>
           </motion.div>
 
           {/* Empty state */}
-          {filteredProjects.length === 0 && (
+          {filtered.length === 0 && (
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

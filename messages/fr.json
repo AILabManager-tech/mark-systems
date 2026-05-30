@@ -289,8 +289,8 @@
   },
   "projectsPage": {
     "heroLabel": "Portfolio",
-    "heroTitle": "Nos réalisations",
-    "heroDescription": "Des projets concrets, de la conception au déploiement.",
+    "heroTitle": "Nos projets, en ligne et testables",
+    "heroDescription": "Sites clients livrés et outils fonctionnels. Cliquez, visitez, jugez par vous-même.",
     "filterAll": "Tout",
     "filterWeb": "Web",
     "filterAutomation": "Automatisation",
@@ -331,7 +331,11 @@
     "n8nWorkflowDescription": "Système d'orchestration de workflows complexes avec interface visuelle et monitoring intégré.",
     "n8nWorkflowTech0": "n8n",
     "n8nWorkflowTech1": "PostgreSQL",
-    "n8nWorkflowTech2": "Redis"
+    "n8nWorkflowTech2": "Redis",
+    "filterSites": "Sites clients",
+    "filterOutils": "Outils & apps",
+    "badgeSite": "Site client",
+    "badgeOutil": "Outil"
   },
   "aboutPage": {
     "heroLabel": "À propos",

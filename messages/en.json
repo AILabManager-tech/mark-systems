@@ -289,8 +289,8 @@
   },
   "projectsPage": {
     "heroLabel": "Portfolio",
-    "heroTitle": "Our work",
-    "heroDescription": "Real projects, from design to deployment.",
+    "heroTitle": "Our projects, live and testable",
+    "heroDescription": "Delivered client sites and working tools. Click, visit, judge for yourself.",
     "filterAll": "All",
     "filterWeb": "Web",
     "filterAutomation": "Automation",
@@ -331,7 +331,11 @@
     "n8nWorkflowDescription": "Complex workflow orchestration system with visual interface and integrated monitoring.",
     "n8nWorkflowTech0": "n8n",
     "n8nWorkflowTech1": "PostgreSQL",
-    "n8nWorkflowTech2": "Redis"
+    "n8nWorkflowTech2": "Redis",
+    "filterSites": "Client sites",
+    "filterOutils": "Tools & apps",
+    "badgeSite": "Client site",
+    "badgeOutil": "Tool"
   },
   "aboutPage": {
     "heroLabel": "About",
