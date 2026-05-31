@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "NorbeX Systems",
+  name: "Mark Systems",
   tagline: {
     fr: "On conçoit. On automatise. On livre.",
     en: "We Design. We Automate. We Deliver.",
