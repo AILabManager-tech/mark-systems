@@ -138,6 +138,7 @@ export const LOGICIELS = [
   },
   {
     key: "gencore",
+    url: "/demos/gencore/",
     image: "/images/services/ai-systems.jpg",
   },
   {

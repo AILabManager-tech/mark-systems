@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GENCORE — Plateforme d'agents IA (Démo)</title>
+<meta name="description" content="GENCORE : plateforme d'agents IA local-first, sécurisée et gouvernée. 14 LLM, sandbox Docker rootless, 49 endpoints, 7 couches de sécurité.">
+<style>
+  :root{--bg:#0a0e16;--panel:#121826;--panel2:#0d1320;--border:#1f2937;--txt:#e5e9f0;--dim:#94a3b8;--accent:#38bdf8;--accent2:#818cf8;--ok:#34d399;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 system-ui,-apple-system,sans-serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 1.2rem;}
+  a{color:var(--accent);}
+  /* Hero */
+  .hero{padding:4rem 0 2.5rem;text-align:center;border-bottom:1px solid var(--border);
+        background:radial-gradient(800px 300px at 50% -10%,rgba(56,189,248,.12),transparent);}
+  .hero h1{font-size:3rem;margin:0;letter-spacing:-1px;background:linear-gradient(90deg,#38bdf8,#818cf8);
+           -webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero .tag{color:var(--dim);font-size:1.15rem;max-width:680px;margin:1rem auto 0;}
+  .badge{display:inline-block;margin-top:1.2rem;padding:.25rem .7rem;border:1px solid var(--accent);color:var(--accent);
+         border-radius:5px;font-size:.75rem;font-family:monospace;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2.5rem 0;}
+  .stat{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center;}
+  .stat b{display:block;font-size:1.9rem;background:linear-gradient(90deg,#38bdf8,#818cf8);-webkit-background-clip:text;
+          background-clip:text;color:transparent;}
+  .stat span{color:var(--dim);font-size:.82rem;}
+  section{padding:2.5rem 0;border-bottom:1px solid var(--border);}
+  h2{font-size:1.5rem;margin:0 0 .3rem;}
+  .lead{color:var(--dim);margin:0 0 1.6rem;}
+  /* Capabilities grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;}
+  .feat{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:1.2rem;transition:border-color .3s;}
+  .feat:hover{border-color:rgba(56,189,248,.4);}
+  .feat h3{margin:0 0 .4rem;font-size:1.05rem;color:var(--accent);}
+  .feat p{margin:0;color:var(--dim);font-size:.9rem;}
+  /* Architecture */
+  .arch{display:flex;flex-direction:column;gap:.6rem;}
+  .layer{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:1rem 1.2rem;}
+  .layer b{color:var(--txt);}
+  .layer small{color:var(--dim);}
+  /* tables */
+  table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:.5rem;}
+  th,td{text-align:left;padding:.55rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  th{color:var(--dim);font-weight:600;}
+  code{font-family:ui-monospace,monospace;color:var(--accent2);font-size:.85em;}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr);}.two{grid-template-columns:1fr;}.hero h1{font-size:2.2rem;}}
+  ul.sec{list-style:none;padding:0;margin:0;display:grid;gap:.55rem;}
+  ul.sec li{background:var(--panel2);border:1px solid var(--border);border-radius:7px;padding:.7rem .9rem;font-size:.9rem;}
+  ul.sec b{color:var(--accent);}
+  footer{padding:2rem 0;text-align:center;color:var(--dim);font-size:.82rem;}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <h1>GENCORE</h1>
+    <p class="tag">Plateforme d'agents IA <strong>local-first</strong>, conçue pour la sécurité, la fiabilité et le contrôle — chaque skill s'exécute dans un sandbox Docker rootless, chaque action est auditée, chaque secret est chiffré.</p>
+    <span class="badge">DÉMO — présentation produit</span>
+    <div class="stats">
+      <div class="stat"><b>14</b><span>fournisseurs LLM</span></div>
+      <div class="stat"><b>49</b><span>endpoints API</span></div>
+      <div class="stat"><b>918</b><span>tests (100% ✓)</span></div>
+      <div class="stat"><b>7</b><span>couches de sécurité</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+  <h2>Capacités</h2>
+  <p class="lead">Ce que la plateforme fait, concrètement.</p>
+  <div class="grid">
+    <div class="feat"><h3>Multi-LLM (14 fournisseurs)</h3><p>Ollama, Claude (SDK + CLI), OpenAI, Gemini, Groq, DeepSeek, Mistral, Together, Fireworks, OpenRouter… avec chaîne de repli et circuit breaker automatique.</p></div>
+    <div class="feat"><h3>Sandbox Docker rootless</h3><p>Chaque skill isolé en conteneur éphémère : réseau refusé par défaut, limites mémoire/CPU, volumes en lecture seule.</p></div>
+    <div class="feat"><h3>Governance Engine</h3><p>Moteur de politiques first-match (priorités, règle P999 inviolable), budgets de tokens par scope, journal d'audit append-only immuable.</p></div>
+    <div class="feat"><h3>Skill Forge (NL → code)</h3><p>Génération de skills en langage naturel, playground sandbox, galerie notée et chaînes de templates.</p></div>
+    <div class="feat"><h3>Multi-agent</h3><p>Décomposition d'objectif en sous-tâches, exécution parallèle (asyncio), auto-réflexion de l'agent sur sa sortie.</p></div>
+    <div class="feat"><h3>Browser automation</h3><p>Playwright : navigation, extraction texte/liens/tableaux, capture d'écran, mode furtif et isolation par contexte.</p></div>
+    <div class="feat"><h3>Voix (STT + TTS)</h3><p>Reconnaissance et synthèse vocale avec repli local → cloud (faster-whisper, Edge TTS 300+ voix). Coût local nul.</p></div>
+    <div class="feat"><h3>Multi-canal</h3><p>Telegram natif + framework d'adaptateurs (Discord, Slack, WhatsApp), sessions cross-plateforme, rate limiting par utilisateur.</p></div>
+    <div class="feat"><h3>Daemon &amp; Cron</h3><p>Services systemd (install/start/stop), planificateur SQLite, et supervision santé (heartbeat 6 sondes).</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Architecture — 4 couches</h2>
+  <p class="lead">Séparation nette des responsabilités, du point d'entrée à l'infrastructure.</p>
+  <div class="arch">
+    <div class="layer"><b>Interface</b> — <small>CLI (Typer), dashboard PWA, bot Telegram, serveur MCP, routes API.</small></div>
+    <div class="layer"><b>Orchestration</b> — <small>Gateway FastAPI (port 9001), routeur d'intention (exact → skill → LLM), personas, multi-agent (planning + parallèle + réflexion), boucle ReAct (5 tours).</small></div>
+    <div class="layer"><b>Execution</b> — <small>Adaptateur LLM unifié (14 fournisseurs), SkillStore avec vetting, Runner Docker rootless, automation navigateur, voix.</small></div>
+    <div class="layer"><b>Infrastructure</b> — <small>Gouvernance SQLite (WAL), vault chiffré + RBAC, mémoire vectorielle Qdrant (RAG), cron, heartbeat, daemon.</small></div>
+  </div>
+</section>
+
+<section>
+  <h2>Sécurité — défense en profondeur</h2>
+  <p class="lead">7 couches, du réseau à la qualité de sortie.</p>
+  <ul class="sec">
+    <li><b>InjectionShield</b> — neutralise les patterns d'injection de prompt et encapsule les données externes.</li>
+    <li><b>SecretsVault</b> — chiffrement Fernet (AES), clé dérivée PBKDF2 ; aucun secret en clair.</li>
+    <li><b>SkillVetter</b> — 21 patterns à risque détectés (exécution shell, accès fichiers système…), score 0-100, zéro CRITICAL toléré.</li>
+    <li><b>RBAC + PolicyEngine</b> — rôles admin/operator/viewer, politiques first-match, règle anti-auto-modification inviolable.</li>
+    <li><b>SOICGate</b> — scoring qualité de la sortie + détection de fuites de credentials (clés API, tokens).</li>
+    <li><b>HeartbeatMonitor</b> — 6 sondes (disque, RAM, latence LLM, canaux, gateway, GPU) + routeur d'alertes anti-flapping.</li>
+    <li><b>AuditLog</b> — journal append-only immuable (SQLite WAL) de chaque action.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="two">
+    <div>
+      <h2>API</h2>
+      <p class="lead">49 endpoints FastAPI, 12 catégories, streaming SSE.</p>
+      <table>
+        <thead><tr><th>Endpoint</th><th>Rôle</th></tr></thead>
+        <tbody>
+          <tr><td><code>POST /chat/stream</code></td><td>Raisonnement en streaming (SSE, 8 types d'événements)</td></tr>
+          <tr><td><code>POST /forge/generate</code></td><td>Génère un skill depuis une description NL</td></tr>
+          <tr><td><code>POST /agent/plan</code></td><td>Décompose un objectif en sous-tâches</td></tr>
+          <tr><td><code>GET /governance/audit</code></td><td>Journal d'audit append-only</td></tr>
+          <tr><td><code>POST /governance/budgets</code></td><td>Crée un budget de tokens par scope</td></tr>
+          <tr><td><code>GET /security/audit</code></td><td>Scan de configuration automatisé</td></tr>
+          <tr><td><code>GET /heartbeat</code></td><td>État des 6 sondes de santé</td></tr>
+          <tr><td><code>POST /browser/navigate</code></td><td>Automation web (Playwright)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h2>CLI</h2>
+      <p class="lead">9 commandes (Typer + Rich).</p>
+      <table>
+        <thead><tr><th>Commande</th><th>Rôle</th></tr></thead>
+        <tbody>
+          <tr><td><code>gencore chat</code></td><td>REPL interactif (streaming)</td></tr>
+          <tr><td><code>gencore doctor</code></td><td>Diagnostic complet</td></tr>
+          <tr><td><code>gencore fix</code></td><td>Auto-correction des problèmes</td></tr>
+          <tr><td><code>gencore status</code></td><td>État des services (gateway, runner, Ollama…)</td></tr>
+          <tr><td><code>gencore skills</code></td><td>Liste / active / désactive les skills</td></tr>
+          <tr><td><code>gencore llm</code></td><td>Fournisseurs, latence, bascule par défaut</td></tr>
+          <tr><td><code>gencore sessions</code></td><td>Sessions actives</td></tr>
+          <tr><td><code>gencore report</code></td><td>Rapport agrégé (runs, skills, erreurs)</td></tr>
+          <tr><td><code>gencore mcp</code></td><td>Outils &amp; ressources MCP</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  GENCORE v3.0.0 — Mark Systems · démo de présentation produit (plateforme propriétaire)
+</footer>
+
+</div>
+</body>
+</html>
