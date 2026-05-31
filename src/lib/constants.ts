@@ -141,6 +141,11 @@ export const LOGICIELS = [
     image: "/images/services/ai-systems.jpg",
   },
   {
+    key: "ainova",
+    url: "/demos/ainova/",
+    image: "/images/about/server-tower.jpg",
+  },
+  {
     key: "taxAgent",
     image: "/images/outils/calculateur-impots.jpg",
   },

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AINOVA OS — Observability (Démo)</title>
+<style>
+  :root { --bg:#0a0e16; --panel:#121826; --border:#1f2937; --txt:#e5e9f0; --dim:#94a3b8; --accent:#38bdf8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt); font:15px/1.5 system-ui,sans-serif; padding:2rem 1rem; }
+  .wrap { max-width:1080px; margin:0 auto; }
+  header { margin-bottom:2rem; }
+  h1 { font-size:1.8rem; margin:0 0 .25rem; }
+  .sub { color:var(--dim); }
+  .badge { display:inline-block; margin-top:.6rem; padding:.2rem .6rem; border:1px solid var(--accent); color:var(--accent);
+           border-radius:4px; font-size:.75rem; font-family:monospace; }
+  .card { background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:1.25rem 1.5rem; margin-bottom:1.25rem; }
+  .card h2 { font-size:1.1rem; margin:0 0 1rem; color:var(--accent); }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:.75rem; }
+  .kpi { background:#0d1320; border:1px solid var(--border); border-radius:6px; padding:.8rem; text-align:center; }
+  .kpi-val { font-size:1.4rem; font-weight:700; }
+  .kpi-lbl { color:var(--dim); font-size:.8rem; margin-top:.2rem; }
+  .bars { margin-top:1rem; display:flex; flex-direction:column; gap:.6rem; }
+  .bar-head { display:flex; justify-content:space-between; font-size:.85rem; margin-bottom:.25rem; }
+  .bar-track { height:8px; background:#0d1320; border-radius:4px; overflow:hidden; }
+  .bar-fill { height:100%; background:linear-gradient(90deg,#0ea5e9,#38bdf8); }
+  table { width:100%; border-collapse:collapse; margin-top:1rem; font-size:.88rem; }
+  th,td { text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--border); }
+  th { color:var(--dim); font-weight:600; }
+  footer { color:var(--dim); font-size:.8rem; text-align:center; margin-top:2rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AINOVA OS</h1>
+    <div class="sub">AI Operating System — Runtime · Gouvernance · Produit · observabilité multi-tenant</div>
+    <span class="badge">DÉMO — données illustratives</span>
+  </header>
+  <section class='card'><h2>System Health</h2><div class='kpis'><div class='kpi'><div class='kpi-val'>critical</div><div class='kpi-lbl'>Statut</div></div><div class='kpi'><div class='kpi-val'>0/100</div><div class='kpi-lbl'>Score global</div></div><div class='kpi'><div class='kpi-val'>0 h</div><div class='kpi-lbl'>Uptime</div></div><div class='kpi'><div class='kpi-val'>S4.2-Enhanced</div><div class='kpi-lbl'>Version</div></div></div><div class='bars'><div class='bar'><div class='bar-head'><span>system</span><span>0/100</span></div><div class='bar-track'><div class='bar-fill' style='width:0%'></div></div></div><div class='bar'><div class='bar-head'><span>agents</span><span>0/100</span></div><div class='bar-track'><div class='bar-fill' style='width:0%'></div></div></div><div class='bar'><div class='bar-head'><span>missions</span><span>1/100</span></div><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div></div><div class='bar'><div class='bar-head'><span>api</span><span>1/100</span></div><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div></div></div></section>
+  <section class='card'><h2>Performance</h2><div class='kpis'><div class='kpi'><div class='kpi-val'>0 ms</div><div class='kpi-lbl'>Latence p95</div></div><div class='kpi'><div class='kpi-val'>100%</div><div class='kpi-lbl'>Taux de succès</div></div><div class='kpi'><div class='kpi-val'>0</div><div class='kpi-lbl'>Agents actifs</div></div><div class='kpi'><div class='kpi-val'>0</div><div class='kpi-lbl'>Requêtes concur.</div></div></div></section>
+  <section class='card'><h2>SLA Compliance</h2><div class='kpis'><div class='kpi'><div class='kpi-val'>100%</div><div class='kpi-lbl'>Conformité</div></div><div class='kpi'><div class='kpi-val'>4</div><div class='kpi-lbl'>Services</div></div><div class='kpi'><div class='kpi-val'>3</div><div class='kpi-lbl'>Incidents 24h</div></div></div><table><thead><tr><th>Service</th><th>Disponibilité</th><th>SLA</th></tr></thead><tbody><tr><td>system</td><td>0%</td><td>✅</td></tr><tr><td>api</td><td>0%</td><td>✅</td></tr><tr><td>missions</td><td>0%</td><td>✅</td></tr><tr><td>agents</td><td>0%</td><td>✅</td></tr></tbody></table></section>
+  <section class='card'><h2>Tenant Analytics</h2><div class='kpis'><div class='kpi'><div class='kpi-val'>2</div><div class='kpi-lbl'>Tenants</div></div><div class='kpi'><div class='kpi-val'>2</div><div class='kpi-lbl'>Actifs</div></div><div class='kpi'><div class='kpi-val'>$16.70</div><div class='kpi-lbl'>Revenu/jour</div></div><div class='kpi'><div class='kpi-val'>65</div><div class='kpi-lbl'>Missions/jour</div></div></div><table><thead><tr><th>Tenant</th><th>Plan</th><th>Agents</th><th>Missions</th><th>Coût</th></tr></thead><tbody><tr><td>acme-corp</td><td>pro</td><td>15</td><td>45</td><td>$12.5</td></tr><tr><td>startup-x</td><td>starter</td><td>8</td><td>20</td><td>$4.2</td></tr></tbody></table></section>
+  <section class='card'><h2>Real-Time Monitoring</h2><div class='bars'><div class='bar'><div class='bar-head'><span>CPU</span><span>0%</span></div><div class='bar-track'><div class='bar-fill' style='width:0%'></div></div></div><div class='bar'><div class='bar-head'><span>Mémoire</span><span>0.0 Go</span></div><div class='bar-track'><div class='bar-fill' style='width:0%'></div></div></div></div><div class='kpis'><div class='kpi'><div class='kpi-val'>0</div><div class='kpi-lbl'>Connexions DB</div></div><div class='kpi'><div class='kpi-val'>30 s</div><div class='kpi-lbl'>Rafraîchissement</div></div></div></section>
+  <footer>AINOVA OS — Mark Systems · démo statique d'observabilité (données illustratives)</footer>
+</div>
+</body>
+</html>

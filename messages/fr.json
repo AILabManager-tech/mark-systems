@@ -866,6 +866,10 @@
       "genesis": {
         "name": "GENESIS",
         "description": "Noyau d'agent autonome modulaire et gouverné : pipeline intake → plan → execute → verify → finalize, runs persistants, gates explicites et mémoire continue. Démo : tableau de bord des runs."
+      },
+      "ainova": {
+        "name": "AINOVA OS",
+        "description": "AI Operating System en 3 couches (runtime, gouvernance, produit) : orchestration d'agents, audit immuable et multi-tenant. Démo : tableau de bord d'observabilité (santé, performance, SLA, tenants)."
       }
     }
   }

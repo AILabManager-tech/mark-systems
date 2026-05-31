@@ -866,6 +866,10 @@
       "genesis": {
         "name": "GENESIS",
         "description": "Modular, governed autonomous agent core: intake → plan → execute → verify → finalize pipeline, persistent runs, explicit gates and continuous memory. Demo: run dashboard."
+      },
+      "ainova": {
+        "name": "AINOVA OS",
+        "description": "Three-layer AI Operating System (runtime, governance, product): agent orchestration, immutable audit and multi-tenancy. Demo: observability dashboard (health, performance, SLA, tenants)."
       }
     }
   }
