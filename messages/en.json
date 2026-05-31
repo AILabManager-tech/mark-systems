@@ -335,7 +335,9 @@
     "filterSites": "Client sites",
     "filterOutils": "Tools & apps",
     "badgeSite": "Client site",
-    "badgeOutil": "Tool"
+    "badgeOutil": "Tool",
+    "filterConcepts": "Design concepts",
+    "badgeConcept": "Concept"
   },
   "aboutPage": {
     "heroLabel": "About",
@@ -808,6 +810,27 @@
       "note2": "The 15% contingency covers common technical unforeseen events.",
       "note3": "Monthly fees include hosting, domain, and maintenance.",
       "note4": "Contact us for a detailed and personalized quote."
+    }
+  },
+  "concepts": {
+    "viewDemo": "View the demo",
+    "items": {
+      "editorial": {
+        "name": "Editorial",
+        "description": "Clean design, refined typography, calm reading."
+      },
+      "brutalist": {
+        "name": "Brutalist",
+        "description": "Bold contrasts, oversized headings, strong graphic stance."
+      },
+      "console": {
+        "name": "Console / Ops",
+        "description": "Terminal aesthetic, data and operations focused."
+      },
+      "neon": {
+        "name": "Neon",
+        "description": "Dark mood, neon accents, techno energy."
+      }
     }
   }
 }

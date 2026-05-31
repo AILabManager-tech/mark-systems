@@ -102,3 +102,27 @@ export const OUTILS = [
     featured: false,
   },
 ] as const;
+
+// --- CONCEPTS DE DESIGN : variantes de la marque, démos live ---
+export const CONCEPTS = [
+  {
+    key: "editorial",
+    url: "https://norbex-systemes.vercel.app/fr",
+    image: "/images/concepts/editorial.jpg",
+  },
+  {
+    key: "brutalist",
+    url: "https://norbex-brutal.vercel.app/fr",
+    image: "/images/concepts/brutalist.jpg",
+  },
+  {
+    key: "console",
+    url: "https://norbex-console.vercel.app/fr",
+    image: "/images/concepts/console.jpg",
+  },
+  {
+    key: "neon",
+    url: "https://norbex-mars.vercel.app/fr",
+    image: "/images/concepts/neon.jpg",
+  },
+] as const;

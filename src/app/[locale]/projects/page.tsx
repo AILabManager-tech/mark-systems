@@ -6,20 +6,20 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 import { ExternalLink } from 'lucide-react';
-import { REALISATIONS, OUTILS } from '@/lib/constants';
+import { REALISATIONS, OUTILS, CONCEPTS } from '@/lib/constants';
 
-type FilterCategory = 'all' | 'sites' | 'outils';
+type FilterCategory = 'all' | 'sites' | 'outils' | 'concepts';
 
 interface CatalogItem {
   key: string;
   url: string;
   image: string;
-  category: 'sites' | 'outils';
-  ns: 'realisations' | 'outils';
+  category: 'sites' | 'outils' | 'concepts';
+  ns: 'realisations' | 'outils' | 'concepts';
   featured?: boolean;
 }
 
-// Catalogue unifié — vrais projets en ligne (sites clients + outils testables).
+// Catalogue unifié — vrais projets en ligne (sites clients + outils testables + concepts de design).
 const catalog: CatalogItem[] = [
   ...REALISATIONS.map((r) => ({
     key: r.key,
@@ -36,12 +36,20 @@ const catalog: CatalogItem[] = [
     ns: 'outils' as const,
     featured: o.featured,
   })),
+  ...CONCEPTS.map((c) => ({
+    key: c.key,
+    url: c.url,
+    image: c.image,
+    category: 'concepts' as const,
+    ns: 'concepts' as const,
+  })),
 ];
 
 const filterTabs: { key: FilterCategory; labelKey: string }[] = [
   { key: 'all', labelKey: 'filterAll' },
   { key: 'sites', labelKey: 'filterSites' },
   { key: 'outils', labelKey: 'filterOutils' },
+  { key: 'concepts', labelKey: 'filterConcepts' },
 ];
 
 export default function ProjectsPage() {
@@ -123,11 +131,15 @@ export default function ProjectsPage() {
                 const action =
                   project.category === 'sites'
                     ? tr('realisations.viewSite')
-                    : tr('outils.tryTool');
+                    : project.category === 'outils'
+                      ? tr('outils.tryTool')
+                      : tr('concepts.viewDemo');
                 const badge =
                   project.category === 'sites'
                     ? t('badgeSite')
-                    : t('badgeOutil');
+                    : project.category === 'outils'
+                      ? t('badgeOutil')
+                      : t('badgeConcept');
                 return (
                   <motion.a
                     key={project.key}

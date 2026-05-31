@@ -335,7 +335,9 @@
     "filterSites": "Sites clients",
     "filterOutils": "Outils & apps",
     "badgeSite": "Site client",
-    "badgeOutil": "Outil"
+    "badgeOutil": "Outil",
+    "filterConcepts": "Concepts de design",
+    "badgeConcept": "Concept"
   },
   "aboutPage": {
     "heroLabel": "À propos",
@@ -808,6 +810,27 @@
       "note2": "La contingence de 15 % couvre les imprévus techniques courants.",
       "note3": "Les frais mensuels incluent l'hébergement, le domaine et la maintenance.",
       "note4": "Contactez-nous pour une soumission détaillée et personnalisée."
+    }
+  },
+  "concepts": {
+    "viewDemo": "Voir la démo",
+    "items": {
+      "editorial": {
+        "name": "Éditorial",
+        "description": "Design épuré, typographie soignée, lecture posée."
+      },
+      "brutalist": {
+        "name": "Brutaliste",
+        "description": "Contrastes francs, gros titres, parti pris graphique fort."
+      },
+      "console": {
+        "name": "Console / Ops",
+        "description": "Esthétique terminal, orientée données et opérations."
+      },
+      "neon": {
+        "name": "Néon",
+        "description": "Ambiance sombre, accents néon, énergie techno."
+      }
     }
   }
 }
