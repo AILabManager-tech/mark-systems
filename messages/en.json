@@ -870,6 +870,10 @@
       "ainova": {
         "name": "AINOVA OS",
         "description": "Three-layer AI Operating System (runtime, governance, product): agent orchestration, immutable audit and multi-tenancy. Demo: observability dashboard (health, performance, SLA, tenants)."
+      },
+      "hermes": {
+        "name": "Hermes — AI Agent",
+        "description": "Deployed autonomous AI agent: takes a natural-language mission, uses tools (files, browser…) and produces a real deliverable. Demo: a real run, captured live."
       }
     }
   }

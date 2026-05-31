@@ -147,6 +147,12 @@ export const LOGICIELS = [
     image: "/images/about/server-tower.jpg",
   },
   {
+    key: "hermes",
+    url: "/demos/hermes/",
+    image: "/images/services/automation.jpg",
+    featured: true,
+  },
+  {
     key: "taxAgent",
     image: "/images/outils/calculateur-impots.jpg",
   },

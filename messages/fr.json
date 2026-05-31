@@ -870,6 +870,10 @@
       "ainova": {
         "name": "AINOVA OS",
         "description": "AI Operating System en 3 couches (runtime, gouvernance, produit) : orchestration d'agents, audit immuable et multi-tenant. Démo : tableau de bord d'observabilité (santé, performance, SLA, tenants)."
+      },
+      "hermes": {
+        "name": "Hermes — Agent IA",
+        "description": "Agent IA autonome déployé : reçoit une mission en langage naturel, utilise des outils (fichiers, navigateur…) et produit un livrable. Démo : une exécution réelle, captée en direct."
       }
     }
   }

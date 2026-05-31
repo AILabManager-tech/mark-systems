@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes — Agent IA en action (Démo)</title>
+<meta name="description" content="Démonstration réelle d'un agent IA autonome (Hermes / Nous Research) déployé localement : il reçoit une mission, utilise des outils et produit un livrable.">
+<style>
+  :root{--bg:#0a0e16;--panel:#121826;--panel2:#0d1320;--border:#1f2937;--txt:#e5e9f0;--dim:#94a3b8;--accent:#34d399;--accent2:#38bdf8;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 system-ui,-apple-system,sans-serif;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 1.2rem;}
+  .hero{padding:3.5rem 0 2rem;text-align:center;border-bottom:1px solid var(--border);
+        background:radial-gradient(700px 280px at 50% -10%,rgba(52,211,153,.12),transparent);}
+  .hero h1{font-size:2.5rem;margin:0;letter-spacing:-1px;}
+  .hero .tag{color:var(--dim);font-size:1.1rem;max-width:640px;margin:.9rem auto 0;}
+  .badge{display:inline-block;margin-top:1rem;padding:.25rem .7rem;border:1px solid var(--accent);color:var(--accent);
+         border-radius:5px;font-size:.74rem;font-family:monospace;}
+  section{padding:2.2rem 0;border-bottom:1px solid var(--border);}
+  h2{font-size:1.4rem;margin:0 0 .3rem;color:var(--accent);}
+  .lead{color:var(--dim);margin:0 0 1.4rem;}
+  .shot{width:100%;border:1px solid var(--border);border-radius:10px;display:block;}
+  .cap{color:var(--dim);font-size:.82rem;text-align:center;margin-top:.6rem;}
+  .flow{display:grid;gap:.7rem;}
+  .step{display:flex;gap:.9rem;align-items:flex-start;background:var(--panel);border:1px solid var(--border);
+        border-left:3px solid var(--accent);border-radius:8px;padding:.9rem 1.1rem;}
+  .step .n{flex:0 0 auto;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);color:#06281d;
+           font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
+  .step b{color:var(--txt);}
+  .step small{color:var(--dim);}
+  .tool{font-family:ui-monospace,monospace;color:var(--accent2);font-size:.82em;}
+  .deliverable{background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.4rem;margin-top:1rem;}
+  .deliverable h3{margin:0 0 .8rem;font-size:1.05rem;}
+  .deliverable .item{margin-bottom:.9rem;}
+  .deliverable .pb{color:#f87171;font-weight:600;}
+  .deliverable .so{color:var(--accent);font-weight:600;}
+  .quote{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem 1.2rem;
+         font-style:italic;color:var(--dim);margin-top:1rem;}
+  .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.7rem;margin-top:1.2rem;}
+  .spec{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.8rem;font-size:.85rem;}
+  .spec b{color:var(--accent);}
+  footer{padding:2rem 0;text-align:center;color:var(--dim);font-size:.82rem;}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <h1>Hermes — un agent IA <em>au travail</em></h1>
+    <p class="tag">Un agent autonome (moteur Nous Research Hermes) déployé en local : il reçoit une mission en langage naturel, utilise des outils, et produit un vrai livrable. Voici une exécution réelle.</p>
+    <span class="badge">DÉMO — exécution réelle, modèle local</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+  <h2>L'interface</h2>
+  <p class="lead">Le tableau de bord de l'agent : sessions, modèles, outils, journaux — tout est piloté et tracé.</p>
+  <img class="shot" src="dashboard.png" alt="Tableau de bord de l'agent Hermes — sessions, modèles, outils">
+  <p class="cap">Tableau de bord Hermes, instance déployée localement (isolée).</p>
+</section>
+
+<section>
+  <h2>Une mission, exécutée pour vrai</h2>
+  <p class="lead">On confie une tâche à l'agent en une phrase. Il la décompose, agit avec ses outils, vérifie, et rend compte.</p>
+
+  <div class="quote">« Crée un rapport de 3 idées d'automatisation à fort ROI pour une PME (problème + solution chacune), relis-le, puis résume-le pour le dirigeant. »</div>
+
+  <div class="flow" style="margin-top:1.4rem;">
+    <div class="step"><span class="n">1</span><div><b>Compréhension</b> — <small>l'agent décompose la mission en étapes.</small></div></div>
+    <div class="step"><span class="n">2</span><div><b>Action</b> — <small>il rédige et écrit le fichier <span class="tool">rapport_automatisation.md</span> (outil <span class="tool">write_file</span>).</small></div></div>
+    <div class="step"><span class="n">3</span><div><b>Vérification</b> — <small>il relit le fichier produit (outil <span class="tool">read_file</span>).</small></div></div>
+    <div class="step"><span class="n">4</span><div><b>Compte rendu</b> — <small>il livre un résumé exécutif au dirigeant.</small></div></div>
+  </div>
+
+  <div class="deliverable">
+    <h3>📄 Livrable produit par l'agent — <span class="tool">rapport_automatisation.md</span></h3>
+    <div class="item"><span class="pb">Problème :</span> gestion des tâches administratives manuelle.<br><span class="so">Solution :</span> logiciel de gestion de projet avec automatisation par API pour planifier et suivre les tâches.</div>
+    <div class="item"><span class="pb">Problème :</span> analyse manuelle des données commerciales.<br><span class="so">Solution :</span> pipeline ETL (Extract-Transform-Load) pour automatiser l'analyse des données commerciales.</div>
+    <div class="item"><span class="pb">Problème :</span> validation manuelle des formulaires et demandes.<br><span class="so">Solution :</span> bot de validation automatique pour un traitement rapide et précis.</div>
+  </div>
+
+  <div class="quote">Résumé au dirigeant — « Trois solutions d'automatisation qui amélioreront la productivité : gestion de projets, analyse des données commerciales et validation des formulaires. »</div>
+</section>
+
+<section>
+  <h2>Sous le capot</h2>
+  <p class="lead">Déployé proprement, sans dépendance cloud pour la démo.</p>
+  <div class="specs">
+    <div class="spec"><b>Moteur</b><br>Nous Research Hermes Agent</div>
+    <div class="spec"><b>Modèle</b><br>LLM local (Ollama, 64K contexte)</div>
+    <div class="spec"><b>Isolation</b><br>conteneur Docker dédié</div>
+    <div class="spec"><b>Outils</b><br>fichiers, navigateur, voix, multi-agent</div>
+  </div>
+</section>
+
+<footer>
+  Hermes — Mark Systems · démonstration d'un agent IA autonome déployé (exécution réelle, modèle local)
+</footer>
+
+</div>
+</body>
+</html>
