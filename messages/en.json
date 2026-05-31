@@ -841,6 +841,7 @@
   },
   "logiciels": {
     "viewCode": "View the code",
+    "viewDemo": "View the demo",
     "items": {
       "osiris": {
         "name": "OSIRIS",

@@ -841,6 +841,7 @@
   },
   "logiciels": {
     "viewCode": "Voir le code",
+    "viewDemo": "Voir la démo",
     "items": {
       "osiris": {
         "name": "OSIRIS",

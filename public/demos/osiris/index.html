@@ -1,0 +1,469 @@
+
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OSIRIS v4.0 - Diagnostic de Souveraineté</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+            body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+            .card-novice { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+            .detail-panel { transition: all 0.5s ease; max-height: 0; overflow: hidden; opacity: 0; }
+            .detail-panel.open { max-height: 3000px; opacity: 1; }
+            .tab-active { border-bottom: 4px solid #3b82f6; color: #1e40af; }
+        </style>
+    </head>
+    <body class="bg-slate-50 text-slate-900 pb-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <header class="py-16 text-center">
+                <div class="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-wider text-blue-600 uppercase bg-blue-100 rounded-full">
+                    Souveraineté & Performance — Version 4.0
+                </div>
+                <h1 class="text-6xl font-extrabold tracking-tight mb-4">Indice <span class="text-blue-600">OSIRIS</span></h1>
+                <p class="text-xl text-slate-500 max-w-2xl mx-auto">
+                    Diagnostic complet sur <b>8 piliers d'excellence</b>. 
+                    Découvrez votre score de souveraineté numérique.
+                </p>
+            </header>
+
+            <div class="grid grid-cols-1 gap-8">
+    
+        <div id="card-0" class="card-novice bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-blue-200 group">
+            <div class="p-8 md:p-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-20 h-20 flex items-center justify-center rounded-3xl text-4xl shadow-inner" style="background-color: #2ecc7122">
+                            🌟
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-800">www.marksystems.ca</h2>
+                            <p class="text-lg text-slate-500 font-medium">Votre site est un modèle de souveraineté.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <div class="text-6xl font-black" style="color: #2ecc71">9.4<span class="text-2xl text-slate-300">/10</span></div>
+                        <div class="px-4 py-1 mt-2 rounded-full font-bold text-xs uppercase tracking-widest text-white shadow-lg" style="background-color: #2ecc71">
+                            Excellent
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+        
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🚀 Vitesse</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 92.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">9.2</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🛡️ Sécurité</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 91.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">9.1</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🕵️ Privacy</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 100.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">10.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🌱 Éco</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 72.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">7.2</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">⚜️ Souverain</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 100.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">10.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">⚖️ Légal</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 100.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">10.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">♿ Accès</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 94.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">9.4</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🔍 SEO</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 92.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">9.2</span>
+                    </div>
+            
+                </div>
+
+                <div class="mt-8">
+                    <button onclick="toggleNovice('card-0')" class="w-full py-5 bg-slate-900 text-white rounded-2xl font-extrabold hover:bg-blue-600 transition-all shadow-xl hover:shadow-blue-200 flex items-center justify-center space-x-3 group">
+                        <span>VOIR LE RAPPORT DÉTAILLÉ DES 8 PILIERS</span>
+                        <svg class="w-6 h-6 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+
+                <div id="details-card-0" class="detail-panel">
+                    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-2 bg-slate-100 p-1 rounded-2xl">
+                        <button onclick="switchTab('card-0', 'O')" id="tab-card-0-O" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Vitesse</button>
+                        <button onclick="switchTab('card-0', 'S')" id="tab-card-0-S" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Sécurité</button>
+                        <button onclick="switchTab('card-0', 'I')" id="tab-card-0-I" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Privacy</button>
+                        <button onclick="switchTab('card-0', 'R')" id="tab-card-0-R" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Éco</button>
+                        <button onclick="switchTab('card-0', 'V')" id="tab-card-0-V" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn text-blue-600">Souverain</button>
+                        <button onclick="switchTab('card-0', 'L')" id="tab-card-0-L" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Légal</button>
+                        <button onclick="switchTab('card-0', 'A')" id="tab-card-0-A" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Accès</button>
+                        <button onclick="switchTab('card-0', 'E')" id="tab-card-0-E" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">SEO</button>
+                    </div>
+
+                    <div id="content-card-0" class="mt-8 p-8 bg-white border border-slate-100 rounded-[2rem] shadow-inner min-h-[300px]">
+                        <p class="text-center text-slate-400 mt-20 italic">Choisissez un pilier pour voir vos conseils personnalisés.</p>
+                    </div>
+
+                    <script type="application/json" id="data-card-0">
+                    {
+                        "O": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\ude80</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Vitesse & Performance</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 9.2/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Un site lent fait fuir vos clients potentiels en quelques secondes.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre site est extr\u00eamement r\u00e9actif.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Compresser les images</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Optimiser le cache</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>R\u00e9duire le JavaScript</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "S": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\udee1\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>S\u00e9curit\u00e9 Native</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 9.1/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"La confiance client repose sur une protection technique invisible mais solide.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre protection est moderne et robuste.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Activer HSTS strict</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Configurer une CSP</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Mettre \u00e0 jour le TLS</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "I": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\udd75\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Intrusion & Vie Priv\u00e9e</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 10.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Moins vous avez de trackers tiers, plus votre site est \u00e9thique et rapide.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            F\u00e9licitations pour votre respect de la vie priv\u00e9e.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Supprimer les trackers inutiles</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Auto-h\u00e9berger les stats</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Limiter les scripts GAFAM</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "R": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83c\udf31</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Ressources & \u00c9cologie</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 7.2/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Un site l\u00e9ger consomme moins d'\u00e9nergie et de batterie.\"</p>\n        <div class='p-3 rounded-lg bg-red-50 text-red-800 text-sm font-medium'>\n            Votre site d\u00e9passe les standards de poids moderne.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>R\u00e9duire le poids sous 1.5Mo</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Utiliser le format WebP</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Nettoyer les polices lourdes</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "V": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\u269c\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Souverainet\u00e9 Digitale</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 10.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"H\u00e9berger vos donn\u00e9es localement \u00e9vite les juridictions \u00e9trang\u00e8res.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre ind\u00e9pendance technologique est exemplaire.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Migrer vers des CDNs locaux</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Auto-h\u00e9berger les polices</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Prioriser l'h\u00e9bergement QC/CA</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "L": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\u2696\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>L\u00e9galit\u00e9 (Loi 25)</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 10.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"La conformit\u00e9 Loi 25 est obligatoire pour prot\u00e9ger vos clients qu\u00e9b\u00e9cois.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Vos \u00e9l\u00e9ments l\u00e9gaux sont bien visibles.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Publier la politique de confidentialit\u00e9</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Ajouter un consentement cookies</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Nommer un responsable RPP</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "A": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\u267f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Accessibilit\u00e9 (WCAG)</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 9.4/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Un site accessible peut \u00eatre utilis\u00e9 par tout le monde, incluant les malvoyants.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre site respecte les standards d'inclusion.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Am\u00e9liorer les contrastes</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Ajouter des textes ALT sur images</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>V\u00e9rifier la navigation clavier</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "E": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\udd0d</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>SEO & Visibilit\u00e9</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 9.2/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Sans SEO, vos clients ne vous trouveront jamais sur Google.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre structure est optimis\u00e9e pour les moteurs.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Ajouter des balises Meta</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Optimiser les titres H1</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>G\u00e9n\u00e9rer un Sitemap.xml</li>\n            </ul>\n        </div>\n    </div>\n    "
+                    }
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="card-1" class="card-novice bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-blue-200 group">
+            <div class="p-8 md:p-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-20 h-20 flex items-center justify-center rounded-3xl text-4xl shadow-inner" style="background-color: #3498db22">
+                            ✅
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-800">www.wikipedia.org</h2>
+                            <p class="text-lg text-slate-500 font-medium">C'est du bon travail, performant et pro.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <div class="text-6xl font-black" style="color: #3498db">8.3<span class="text-2xl text-slate-300">/10</span></div>
+                        <div class="px-4 py-1 mt-2 rounded-full font-bold text-xs uppercase tracking-widest text-white shadow-lg" style="background-color: #3498db">
+                            Bon
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+        
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🚀 Vitesse</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 95.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">9.5</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🛡️ Sécurité</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 55.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">5.5</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🕵️ Privacy</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 100.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">10.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🌱 Éco</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 100.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">10.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">⚜️ Souverain</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 100.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">10.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">⚖️ Légal</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 40.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">4.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">♿ Accès</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 95.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">9.5</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🔍 SEO</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 100.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">10.0</span>
+                    </div>
+            
+                </div>
+
+                <div class="mt-8">
+                    <button onclick="toggleNovice('card-1')" class="w-full py-5 bg-slate-900 text-white rounded-2xl font-extrabold hover:bg-blue-600 transition-all shadow-xl hover:shadow-blue-200 flex items-center justify-center space-x-3 group">
+                        <span>VOIR LE RAPPORT DÉTAILLÉ DES 8 PILIERS</span>
+                        <svg class="w-6 h-6 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+
+                <div id="details-card-1" class="detail-panel">
+                    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-2 bg-slate-100 p-1 rounded-2xl">
+                        <button onclick="switchTab('card-1', 'O')" id="tab-card-1-O" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Vitesse</button>
+                        <button onclick="switchTab('card-1', 'S')" id="tab-card-1-S" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Sécurité</button>
+                        <button onclick="switchTab('card-1', 'I')" id="tab-card-1-I" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Privacy</button>
+                        <button onclick="switchTab('card-1', 'R')" id="tab-card-1-R" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Éco</button>
+                        <button onclick="switchTab('card-1', 'V')" id="tab-card-1-V" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn text-blue-600">Souverain</button>
+                        <button onclick="switchTab('card-1', 'L')" id="tab-card-1-L" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Légal</button>
+                        <button onclick="switchTab('card-1', 'A')" id="tab-card-1-A" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Accès</button>
+                        <button onclick="switchTab('card-1', 'E')" id="tab-card-1-E" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">SEO</button>
+                    </div>
+
+                    <div id="content-card-1" class="mt-8 p-8 bg-white border border-slate-100 rounded-[2rem] shadow-inner min-h-[300px]">
+                        <p class="text-center text-slate-400 mt-20 italic">Choisissez un pilier pour voir vos conseils personnalisés.</p>
+                    </div>
+
+                    <script type="application/json" id="data-card-1">
+                    {
+                        "O": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\ude80</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Vitesse & Performance</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 9.5/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Un site lent fait fuir vos clients potentiels en quelques secondes.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre site est extr\u00eamement r\u00e9actif.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Compresser les images</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Optimiser le cache</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>R\u00e9duire le JavaScript</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "S": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\udee1\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>S\u00e9curit\u00e9 Native</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 5.5/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"La confiance client repose sur une protection technique invisible mais solide.\"</p>\n        <div class='p-3 rounded-lg bg-red-50 text-red-800 text-sm font-medium'>\n            Des failles de configuration ont \u00e9t\u00e9 d\u00e9tect\u00e9es (Headers).\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Activer HSTS strict</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Configurer une CSP</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Mettre \u00e0 jour le TLS</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "I": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\udd75\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Intrusion & Vie Priv\u00e9e</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 10.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Moins vous avez de trackers tiers, plus votre site est \u00e9thique et rapide.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            F\u00e9licitations pour votre respect de la vie priv\u00e9e.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Supprimer les trackers inutiles</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Auto-h\u00e9berger les stats</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Limiter les scripts GAFAM</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "R": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83c\udf31</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Ressources & \u00c9cologie</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 10.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Un site l\u00e9ger consomme moins d'\u00e9nergie et de batterie.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre site est tr\u00e8s \u00e9co-responsable.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>R\u00e9duire le poids sous 1.5Mo</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Utiliser le format WebP</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Nettoyer les polices lourdes</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "V": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\u269c\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Souverainet\u00e9 Digitale</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 10.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"H\u00e9berger vos donn\u00e9es localement \u00e9vite les juridictions \u00e9trang\u00e8res.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre ind\u00e9pendance technologique est exemplaire.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Migrer vers des CDNs locaux</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Auto-h\u00e9berger les polices</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Prioriser l'h\u00e9bergement QC/CA</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "L": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\u2696\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>L\u00e9galit\u00e9 (Loi 25)</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 4.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"La conformit\u00e9 Loi 25 est obligatoire pour prot\u00e9ger vos clients qu\u00e9b\u00e9cois.\"</p>\n        <div class='p-3 rounded-lg bg-red-50 text-red-800 text-sm font-medium'>\n            Manque de politique de confidentialit\u00e9 ou de bandeau.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Publier la politique de confidentialit\u00e9</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Ajouter un consentement cookies</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Nommer un responsable RPP</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "A": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\u267f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Accessibilit\u00e9 (WCAG)</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 9.5/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Un site accessible peut \u00eatre utilis\u00e9 par tout le monde, incluant les malvoyants.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre site respecte les standards d'inclusion.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Am\u00e9liorer les contrastes</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Ajouter des textes ALT sur images</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>V\u00e9rifier la navigation clavier</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "E": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\udd0d</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>SEO & Visibilit\u00e9</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 10.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Sans SEO, vos clients ne vous trouveront jamais sur Google.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre structure est optimis\u00e9e pour les moteurs.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Ajouter des balises Meta</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Optimiser les titres H1</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>G\u00e9n\u00e9rer un Sitemap.xml</li>\n            </ul>\n        </div>\n    </div>\n    "
+                    }
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="card-2" class="card-novice bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-blue-200 group">
+            <div class="p-8 md:p-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-20 h-20 flex items-center justify-center rounded-3xl text-4xl shadow-inner" style="background-color: #3498db22">
+                            ✅
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-800">github.com</h2>
+                            <p class="text-lg text-slate-500 font-medium">C'est du bon travail, performant et pro.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <div class="text-6xl font-black" style="color: #3498db">8.3<span class="text-2xl text-slate-300">/10</span></div>
+                        <div class="px-4 py-1 mt-2 rounded-full font-bold text-xs uppercase tracking-widest text-white shadow-lg" style="background-color: #3498db">
+                            Bon
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+        
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🚀 Vitesse</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 39.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">3.9</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🛡️ Sécurité</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 91.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">9.1</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🕵️ Privacy</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 100.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">10.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🌱 Éco</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 70.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">7.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">⚜️ Souverain</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 90.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">9.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">⚖️ Légal</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 70.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">7.0</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">♿ Accès</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 97.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">9.7</span>
+                    </div>
+            
+                    <div class="text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-tighter mb-1 truncate">🔍 SEO</span>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500" style="width: 100.0%"></div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-600 mt-1">10.0</span>
+                    </div>
+            
+                </div>
+
+                <div class="mt-8">
+                    <button onclick="toggleNovice('card-2')" class="w-full py-5 bg-slate-900 text-white rounded-2xl font-extrabold hover:bg-blue-600 transition-all shadow-xl hover:shadow-blue-200 flex items-center justify-center space-x-3 group">
+                        <span>VOIR LE RAPPORT DÉTAILLÉ DES 8 PILIERS</span>
+                        <svg class="w-6 h-6 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+
+                <div id="details-card-2" class="detail-panel">
+                    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-2 bg-slate-100 p-1 rounded-2xl">
+                        <button onclick="switchTab('card-2', 'O')" id="tab-card-2-O" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Vitesse</button>
+                        <button onclick="switchTab('card-2', 'S')" id="tab-card-2-S" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Sécurité</button>
+                        <button onclick="switchTab('card-2', 'I')" id="tab-card-2-I" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Privacy</button>
+                        <button onclick="switchTab('card-2', 'R')" id="tab-card-2-R" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Éco</button>
+                        <button onclick="switchTab('card-2', 'V')" id="tab-card-2-V" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn text-blue-600">Souverain</button>
+                        <button onclick="switchTab('card-2', 'L')" id="tab-card-2-L" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Légal</button>
+                        <button onclick="switchTab('card-2', 'A')" id="tab-card-2-A" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">Accès</button>
+                        <button onclick="switchTab('card-2', 'E')" id="tab-card-2-E" class="py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-xl tab-btn">SEO</button>
+                    </div>
+
+                    <div id="content-card-2" class="mt-8 p-8 bg-white border border-slate-100 rounded-[2rem] shadow-inner min-h-[300px]">
+                        <p class="text-center text-slate-400 mt-20 italic">Choisissez un pilier pour voir vos conseils personnalisés.</p>
+                    </div>
+
+                    <script type="application/json" id="data-card-2">
+                    {
+                        "O": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\ude80</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Vitesse & Performance</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 3.9/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Un site lent fait fuir vos clients potentiels en quelques secondes.\"</p>\n        <div class='p-3 rounded-lg bg-red-50 text-red-800 text-sm font-medium'>\n            Votre site est lourd \u00e0 charger, surtout sur mobile.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Compresser les images</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Optimiser le cache</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>R\u00e9duire le JavaScript</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "S": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\udee1\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>S\u00e9curit\u00e9 Native</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 9.1/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"La confiance client repose sur une protection technique invisible mais solide.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre protection est moderne et robuste.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Activer HSTS strict</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Configurer une CSP</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Mettre \u00e0 jour le TLS</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "I": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\udd75\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Intrusion & Vie Priv\u00e9e</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 10.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Moins vous avez de trackers tiers, plus votre site est \u00e9thique et rapide.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            F\u00e9licitations pour votre respect de la vie priv\u00e9e.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Supprimer les trackers inutiles</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Auto-h\u00e9berger les stats</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Limiter les scripts GAFAM</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "R": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83c\udf31</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Ressources & \u00c9cologie</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 7.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Un site l\u00e9ger consomme moins d'\u00e9nergie et de batterie.\"</p>\n        <div class='p-3 rounded-lg bg-red-50 text-red-800 text-sm font-medium'>\n            Votre site d\u00e9passe les standards de poids moderne.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>R\u00e9duire le poids sous 1.5Mo</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Utiliser le format WebP</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Nettoyer les polices lourdes</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "V": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\u269c\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Souverainet\u00e9 Digitale</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 9.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"H\u00e9berger vos donn\u00e9es localement \u00e9vite les juridictions \u00e9trang\u00e8res.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre ind\u00e9pendance technologique est exemplaire.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Migrer vers des CDNs locaux</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Auto-h\u00e9berger les polices</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Prioriser l'h\u00e9bergement QC/CA</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "L": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\u2696\ufe0f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>L\u00e9galit\u00e9 (Loi 25)</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 7.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"La conformit\u00e9 Loi 25 est obligatoire pour prot\u00e9ger vos clients qu\u00e9b\u00e9cois.\"</p>\n        <div class='p-3 rounded-lg bg-red-50 text-red-800 text-sm font-medium'>\n            Manque de politique de confidentialit\u00e9 ou de bandeau.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Publier la politique de confidentialit\u00e9</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Ajouter un consentement cookies</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Nommer un responsable RPP</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "A": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\u267f</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>Accessibilit\u00e9 (WCAG)</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 9.7/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Un site accessible peut \u00eatre utilis\u00e9 par tout le monde, incluant les malvoyants.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre site respecte les standards d'inclusion.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Am\u00e9liorer les contrastes</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Ajouter des textes ALT sur images</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>V\u00e9rifier la navigation clavier</li>\n            </ul>\n        </div>\n    </div>\n    ",
+                        "E": "\n    <div class='space-y-4'>\n        <div class='flex items-center space-x-3'>\n            <span class='text-3xl'>\ud83d\udd0d</span>\n            <div>\n                <h4 class='font-bold text-gray-800'>SEO & Visibilit\u00e9</h4>\n                <p class='text-[10px] text-blue-600 font-bold uppercase tracking-widest'>Score : 10.0/10</p>\n            </div>\n        </div>\n        <p class='text-sm text-gray-600 italic'>\"Sans SEO, vos clients ne vous trouveront jamais sur Google.\"</p>\n        <div class='p-3 rounded-lg bg-green-50 text-green-800 text-sm font-medium'>\n            Votre structure est optimis\u00e9e pour les moteurs.\n        </div>\n        <div>\n            <p class='text-xs font-bold text-gray-400 mb-2 uppercase'>\ud83d\udd27 3 \u00c9tapes pour progresser :</p>\n            <ul class='text-xs space-y-1 text-gray-700'>\n                <li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Ajouter des balises Meta</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>Optimiser les titres H1</li><li class='flex items-center'><span class='mr-2 text-blue-500'>\u2022</span>G\u00e9n\u00e9rer un Sitemap.xml</li>\n            </ul>\n        </div>\n    </div>\n    "
+                    }
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+            </div>
+
+            <section class="mt-24 p-12 bg-blue-600 rounded-[3rem] text-white shadow-2xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-4xl font-black mb-6 italic">L'excellence Mark Systems</h2>
+                    <p class="text-xl text-blue-100 mb-8 max-w-2xl leading-relaxed">
+                        Notre méthodologie OSIRIS v4.0 est la plus exigeante du Québec. Nous ne nous contentons pas de sites "qui marchent", nous créons des infrastructures <b>souveraines, rapides et éthiques</b>.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://marksystems.ca" class="inline-block bg-white text-blue-600 px-10 py-4 rounded-2xl font-black text-lg hover:scale-105 transition-transform shadow-xl">
+                            Parler à un Expert
+                        </a>
+                    </div>
+                </div>
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500 rounded-full opacity-50 blur-3xl"></div>
+            </section>
+        </div>
+
+        <script>
+            function toggleNovice(cardId) {
+                const panel = document.getElementById('details-' + cardId);
+                const isOpen = panel.classList.contains('open');
+                
+                if (isOpen) {
+                    panel.classList.remove('open');
+                } else {
+                    // Fermer les autres
+                    document.querySelectorAll('.detail-panel').forEach(p => p.classList.remove('open'));
+                    
+                    panel.classList.add('open');
+                    switchTab(cardId, 'V'); // Ouvrir Souveraineté par défaut
+                    setTimeout(() => {
+                        document.getElementById(cardId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            }
+
+            function switchTab(cardId, axis) {
+                const data = JSON.parse(document.getElementById('data-' + cardId).textContent);
+                const contentDiv = document.getElementById('content-' + cardId);
+                
+                contentDiv.innerHTML = data[axis];
+                
+                document.querySelectorAll('#details-' + cardId + ' .tab-btn').forEach(btn => {
+                    btn.classList.remove('bg-white', 'shadow-sm', 'text-blue-600');
+                    btn.classList.add('text-slate-400');
+                });
+                
+                const activeTab = document.getElementById('tab-' + cardId + '-' + axis);
+                activeTab.classList.add('bg-white', 'shadow-sm', 'text-blue-600');
+                activeTab.classList.remove('text-slate-400');
+            }
+        </script>
+    </body>
+    </html>
+    

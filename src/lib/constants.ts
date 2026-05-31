@@ -132,6 +132,7 @@ export const CONCEPTS = [
 export const LOGICIELS = [
   {
     key: "osiris",
+    url: "/demos/osiris/",
     image: "/images/hero/datacenter-corridor.jpg",
     featured: true,
   },

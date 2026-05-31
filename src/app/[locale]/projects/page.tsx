@@ -137,13 +137,17 @@ export default function ProjectsPage() {
               {filtered.map((project) => {
                 const name = tr(`${project.ns}.items.${project.key}.name`);
                 const description = tr(`${project.ns}.items.${project.key}.description`);
+                // Logiciel : lien GitHub → « Voir le code », lien interne → « Voir la démo ».
+                const isCodeLink = Boolean(project.url?.includes('github.com'));
                 const action =
                   project.category === 'sites'
                     ? tr('realisations.viewSite')
                     : project.category === 'outils'
                       ? tr('outils.tryTool')
                       : project.category === 'logiciels'
-                        ? tr('logiciels.viewCode')
+                        ? isCodeLink
+                          ? tr('logiciels.viewCode')
+                          : tr('logiciels.viewDemo')
                         : tr('concepts.viewDemo');
                 const badge =
                   project.category === 'sites'
@@ -184,7 +188,7 @@ export default function ProjectsPage() {
                       {hasLink && (
                         <div className="absolute inset-0 flex items-center justify-center bg-background/80 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
                           <div className="flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent">
-                            {project.category === 'logiciels' ? (
+                            {isCodeLink ? (
                               <Code2 className="h-5 w-5" strokeWidth={1.5} />
                             ) : (
                               <ExternalLink className="h-5 w-5" strokeWidth={1.5} />
@@ -214,7 +218,7 @@ export default function ProjectsPage() {
                       {hasLink && (
                         <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-sm text-accent">
                           {action}
-                          {project.category === 'logiciels' ? (
+                          {isCodeLink ? (
                             <Code2 className="h-4 w-4" strokeWidth={1.5} />
                           ) : (
                             <ExternalLink className="h-4 w-4" strokeWidth={1.5} />
