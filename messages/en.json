@@ -337,7 +337,9 @@
     "badgeSite": "Client site",
     "badgeOutil": "Tool",
     "filterConcepts": "Design concepts",
-    "badgeConcept": "Concept"
+    "badgeConcept": "Concept",
+    "filterLogiciels": "Software",
+    "badgeLogiciel": "Software"
   },
   "aboutPage": {
     "heroLabel": "About",
@@ -834,6 +836,31 @@
       "neon": {
         "name": "Neon",
         "description": "Dark mood, neon accents, techno energy."
+      }
+    }
+  },
+  "logiciels": {
+    "viewCode": "View the code",
+    "items": {
+      "osiris": {
+        "name": "OSIRIS",
+        "description": "Operational health scanner for websites. Composite score across 8 pillars (performance, security, accessibility, Law 25 compliance…) powered by Lighthouse and in-house analysis."
+      },
+      "gencore": {
+        "name": "GENCORE",
+        "description": "AI employee platform: autonomous agents powered by a local LLM (Qwen) with retrieval-augmented generation (RAG) over business knowledge bases."
+      },
+      "taxAgent": {
+        "name": "QC Tax Agent",
+        "description": "2025 income tax computation (federal + Quebec) via deterministic formulas — RRSP, FHSA and common credits."
+      },
+      "nexos": {
+        "name": "NEXOS",
+        "description": "Autonomous web builder: a multi-agent pipeline that designs, generates and deploys complete websites end-to-end."
+      },
+      "soic": {
+        "name": "SOIC",
+        "description": "Quality & security gate engine for LLM pipelines (format, truthfulness, ethics, security). Open-source."
       }
     }
   }

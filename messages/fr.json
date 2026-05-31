@@ -337,7 +337,9 @@
     "badgeSite": "Site client",
     "badgeOutil": "Outil",
     "filterConcepts": "Concepts de design",
-    "badgeConcept": "Concept"
+    "badgeConcept": "Concept",
+    "filterLogiciels": "Logiciels",
+    "badgeLogiciel": "Logiciel"
   },
   "aboutPage": {
     "heroLabel": "À propos",
@@ -834,6 +836,31 @@
       "neon": {
         "name": "Néon",
         "description": "Ambiance sombre, accents néon, énergie techno."
+      }
+    }
+  },
+  "logiciels": {
+    "viewCode": "Voir le code",
+    "items": {
+      "osiris": {
+        "name": "OSIRIS",
+        "description": "Scanner de santé opérationnelle de sites web. Score composite sur 8 piliers (performance, sécurité, accessibilité, conformité Loi 25…) via Lighthouse et analyses maison."
+      },
+      "gencore": {
+        "name": "GENCORE",
+        "description": "Plateforme d'employés IA : agents autonomes propulsés par un LLM local (Qwen) avec recherche augmentée (RAG) sur des bases de connaissances métier."
+      },
+      "taxAgent": {
+        "name": "Agent fiscal QC",
+        "description": "Calcul d'impôts 2025 (fédéral + Québec) par formules déterministes — REER, CELIAPP et crédits courants."
+      },
+      "nexos": {
+        "name": "NEXOS",
+        "description": "Web builder autonome : pipeline multi-agents qui conçoit, génère et déploie des sites complets de bout en bout."
+      },
+      "soic": {
+        "name": "SOIC",
+        "description": "Moteur de gates qualité et sécurité pour pipelines LLM (format, véracité, éthique, sécurité). Open-source."
       }
     }
   }

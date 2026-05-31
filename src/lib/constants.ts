@@ -126,3 +126,30 @@ export const CONCEPTS = [
     image: "/images/concepts/neon.jpg",
   },
 ] as const;
+
+// --- LOGICIELS : outils/plateformes développés en interne ---
+// url optionnelle : présente seulement quand un repo public ou une démo existe.
+export const LOGICIELS = [
+  {
+    key: "osiris",
+    image: "/images/hero/datacenter-corridor.jpg",
+    featured: true,
+  },
+  {
+    key: "gencore",
+    image: "/images/services/ai-systems.jpg",
+  },
+  {
+    key: "taxAgent",
+    image: "/images/outils/calculateur-impots.jpg",
+  },
+  {
+    key: "nexos",
+    image: "/images/hero/neural-tunnel.jpg",
+  },
+  {
+    key: "soic",
+    url: "https://github.com/AILabManager-tech/soic",
+    image: "/images/services/cloud-infra.jpg",
+  },
+] as const;

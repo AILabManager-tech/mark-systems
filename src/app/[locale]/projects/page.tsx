@@ -5,17 +5,17 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
-import { ExternalLink } from 'lucide-react';
-import { REALISATIONS, OUTILS, CONCEPTS } from '@/lib/constants';
+import { ExternalLink, Code2 } from 'lucide-react';
+import { REALISATIONS, OUTILS, CONCEPTS, LOGICIELS } from '@/lib/constants';
 
-type FilterCategory = 'all' | 'sites' | 'outils' | 'concepts';
+type FilterCategory = 'all' | 'sites' | 'outils' | 'concepts' | 'logiciels';
 
 interface CatalogItem {
   key: string;
-  url: string;
+  url?: string;
   image: string;
-  category: 'sites' | 'outils' | 'concepts';
-  ns: 'realisations' | 'outils' | 'concepts';
+  category: 'sites' | 'outils' | 'concepts' | 'logiciels';
+  ns: 'realisations' | 'outils' | 'concepts' | 'logiciels';
   featured?: boolean;
 }
 
@@ -43,12 +43,21 @@ const catalog: CatalogItem[] = [
     category: 'concepts' as const,
     ns: 'concepts' as const,
   })),
+  ...LOGICIELS.map((l) => ({
+    key: l.key,
+    url: 'url' in l ? l.url : undefined,
+    image: l.image,
+    category: 'logiciels' as const,
+    ns: 'logiciels' as const,
+    featured: 'featured' in l ? l.featured : undefined,
+  })),
 ];
 
 const filterTabs: { key: FilterCategory; labelKey: string }[] = [
   { key: 'all', labelKey: 'filterAll' },
   { key: 'sites', labelKey: 'filterSites' },
   { key: 'outils', labelKey: 'filterOutils' },
+  { key: 'logiciels', labelKey: 'filterLogiciels' },
   { key: 'concepts', labelKey: 'filterConcepts' },
 ];
 
@@ -133,19 +142,28 @@ export default function ProjectsPage() {
                     ? tr('realisations.viewSite')
                     : project.category === 'outils'
                       ? tr('outils.tryTool')
-                      : tr('concepts.viewDemo');
+                      : project.category === 'logiciels'
+                        ? tr('logiciels.viewCode')
+                        : tr('concepts.viewDemo');
                 const badge =
                   project.category === 'sites'
                     ? t('badgeSite')
                     : project.category === 'outils'
                       ? t('badgeOutil')
-                      : t('badgeConcept');
+                      : project.category === 'logiciels'
+                        ? t('badgeLogiciel')
+                        : t('badgeConcept');
+                // Carte cliquable si une URL existe (site/outil/concept, ou logiciel avec repo public),
+                // sinon carte descriptive statique (logiciel propriétaire sans démo).
+                const hasLink = Boolean(project.url);
+                const Card = hasLink ? motion.a : motion.div;
+                const linkProps = hasLink
+                  ? { href: project.url, target: '_blank', rel: 'noopener noreferrer' }
+                  : {};
                 return (
-                  <motion.a
+                  <Card
                     key={project.key}
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...linkProps}
                     layout
                     variants={fadeInUp}
                     initial="hidden"
@@ -162,12 +180,18 @@ export default function ProjectsPage() {
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center bg-background/80 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent">
-                          <ExternalLink className="h-5 w-5" strokeWidth={1.5} />
+                      {/* Hover Overlay — seulement si la carte est cliquable */}
+                      {hasLink && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-background/80 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent">
+                            {project.category === 'logiciels' ? (
+                              <Code2 className="h-5 w-5" strokeWidth={1.5} />
+                            ) : (
+                              <ExternalLink className="h-5 w-5" strokeWidth={1.5} />
+                            )}
+                          </div>
                         </div>
-                      </div>
+                      )}
                       {/* Category badge */}
                       <span className="absolute left-3 top-3 rounded-sm bg-surface/80 px-2.5 py-1 font-mono text-xs text-accent backdrop-blur-sm">
                         {badge}
@@ -187,12 +211,18 @@ export default function ProjectsPage() {
                       <p className="mt-2 flex-1 text-sm leading-relaxed text-text-secondary line-clamp-3">
                         {description}
                       </p>
-                      <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-sm text-accent">
-                        {action}
-                        <ExternalLink className="h-4 w-4" strokeWidth={1.5} />
-                      </span>
+                      {hasLink && (
+                        <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-sm text-accent">
+                          {action}
+                          {project.category === 'logiciels' ? (
+                            <Code2 className="h-4 w-4" strokeWidth={1.5} />
+                          ) : (
+                            <ExternalLink className="h-4 w-4" strokeWidth={1.5} />
+                          )}
+                        </span>
+                      )}
                     </div>
-                  </motion.a>
+                  </Card>
                 );
               })}
             </AnimatePresence>
