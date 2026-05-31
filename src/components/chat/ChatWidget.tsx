@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, User } from 'lucide-react';
+import { X, Send, User } from 'lucide-react';
 import Image from 'next/image';
 
 interface ChatMessage {
@@ -172,14 +172,30 @@ export function ChatWidget() {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 260, damping: 20 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-shadow duration-300"
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full border border-accent/30 bg-surface/80 shadow-glow-accent backdrop-blur-md transition-shadow duration-300 hover:shadow-glow-accent-lg"
             aria-label={t('openChat')}
           >
-            <MessageCircle className="h-6 w-6" />
-            {/* Pulse indicator */}
-            <span className="absolute -top-1 -right-1 flex h-4 w-4">
+            {/* Bowler, la mascotte — lanceur du chat N.O.V.A. */}
+            <motion.span
+              animate={{ y: [0, -4, 0] }}
+              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+              className="block h-14 w-14"
+            >
+              <Image
+                src="/bowler.jpg"
+                alt="Bowler — NorbeX Systems"
+                width={56}
+                height={56}
+                className="h-14 w-14 rounded-full object-cover"
+                priority
+              />
+            </motion.span>
+            {/* Pulse indicator (en ligne) */}
+            <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex h-4 w-4 rounded-full bg-green-500" />
+              <span className="relative inline-flex h-4 w-4 rounded-full bg-green-500 ring-2 ring-background" />
             </span>
           </motion.button>
         )}
