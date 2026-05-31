@@ -862,6 +862,10 @@
       "soic": {
         "name": "SOIC",
         "description": "Moteur de gates qualité et sécurité pour pipelines LLM (format, véracité, éthique, sécurité). Open-source."
+      },
+      "genesis": {
+        "name": "GENESIS",
+        "description": "Noyau d'agent autonome modulaire et gouverné : pipeline intake → plan → execute → verify → finalize, runs persistants, gates explicites et mémoire continue. Démo : tableau de bord des runs."
       }
     }
   }

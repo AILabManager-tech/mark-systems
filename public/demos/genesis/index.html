@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GENESIS — Agent Run Dashboard</title>
+  <style>
+    :root {
+      --bg: #0c1117;
+      --panel: #111a23;
+      --line: #243244;
+      --text: #e9f1f7;
+      --muted: #9cb0c4;
+      --accent: #70d6ff;
+      --ok: #65d68d;
+      --warn: #f7c46c;
+      --bad: #ff7a90;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(112,214,255,0.10), transparent 35%),
+        linear-gradient(180deg, #081018, var(--bg));
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2 { margin: 0 0 12px; }
+    .sub {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .panel {
+      background: rgba(17,26,35,0.9);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.28);
+    }
+    .metric {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      padding: 10px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    li:first-child { border-top: 0; }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-right: 8px;
+      background: rgba(112,214,255,0.15);
+      color: var(--accent);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    small {
+      color: var(--muted);
+    }
+    .run-card {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 14px 0;
+    }
+    .run-card:first-child { border-top: 0; }
+    .run-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .run-card-header code {
+      color: var(--accent);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.9rem;
+    }
+    .timeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0 4px;
+    }
+    .phase-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .phase-chip.done { color: var(--text); }
+    .phase-chip .gate {
+      font-size: 0.72rem;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+    }
+    .phase-chip.gate-pass .gate { background: rgba(101,214,141,0.22); color: var(--ok); }
+    .phase-chip.gate-retry .gate { background: rgba(247,196,108,0.22); color: var(--warn); }
+    .phase-chip.gate-fail .gate { background: rgba(255,122,144,0.22); color: var(--bad); }
+    .artifact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .artifact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.82rem;
+    }
+    .artifact-links a:hover { text-decoration: underline; }
+    .outcome-success { color: var(--ok); }
+    .outcome-failed { color: var(--bad); }
+    .artifact-drawer {
+      margin-top: 10px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+    }
+    .artifact-drawer summary {
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .artifact-drawer summary:hover { color: var(--text); }
+    .artifact-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.82rem;
+    }
+    .artifact-table th, .artifact-table td {
+      text-align: left;
+      padding: 4px 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .artifact-table th {
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .artifact-table td.version {
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+    .artifact-table tr.multi-version td.version {
+      color: var(--warn);
+      font-weight: 600;
+    }
+    .convergence-card {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border: 1px solid rgba(112,214,255,0.18);
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(112,214,255,0.08), rgba(255,255,255,0.02));
+    }
+    .convergence-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+    .convergence-label {
+      color: var(--accent);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .convergence-status {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .convergence-status.is-converged { color: var(--ok); }
+    .convergence-status.not-converged { color: var(--warn); }
+    .convergence-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .convergence-metrics span {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .policy-counters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .policy-counter {
+      flex: 1 1 110px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+    .policy-counter-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+    .policy-counter-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
+    .policy-counter.policy-allow .policy-counter-value { color: var(--ok); }
+    .policy-counter.policy-escalate .policy-counter-value { color: var(--warn); }
+    .policy-counter.policy-deny .policy-counter-value { color: var(--bad); }
+    .policy-counter.policy-total .policy-counter-value { color: var(--accent); }
+    .policy-subtitle {
+      margin: 8px 0 6px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .policy-breakdowns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .policy-breakdown-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .policy-breakdown-list li:first-child { border-top: 0; }
+    .policy-count {
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+    .policy-list { list-style: none; padding: 0; margin: 0; }
+    .policy-entry {
+      display: grid;
+      grid-template-columns: 80px 160px 60px 1fr;
+      gap: 10px;
+      align-items: baseline;
+      padding: 6px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .policy-entry:first-child { border-top: 0; }
+    .policy-entry-decision {
+      display: inline-block;
+      padding: 1px 8px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-align: center;
+    }
+    .policy-entry.policy-allow .policy-entry-decision { background: rgba(101,214,141,0.18); color: var(--ok); }
+    .policy-entry.policy-escalate .policy-entry-decision { background: rgba(247,196,108,0.22); color: var(--warn); }
+    .policy-entry.policy-deny .policy-entry-decision { background: rgba(255,122,144,0.22); color: var(--bad); }
+    .policy-entry-scope { color: var(--text); }
+    .policy-entry-level { color: var(--muted); font-size: 0.78rem; }
+    .policy-entry-reason { color: var(--muted); }
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .memory-subtitle {
+      margin: 0 0 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .state-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .state-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .state-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+    }
+    .state-bar-label span:first-child { color: var(--text); }
+    .state-bar-label span:last-child { color: var(--accent); font-variant-numeric: tabular-nums; }
+    .state-bar-track {
+      height: 6px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .state-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--ok));
+      border-radius: 999px;
+    }
+    .state-bar.state-load .state-bar-fill {
+      background: linear-gradient(90deg, var(--warn), var(--bad));
+    }
+    .state-timestamp {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 8px;
+      display: block;
+    }
+    .identity-summary {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.5;
+      margin: 0 0 10px;
+    }
+    .identity-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .identity-meta span strong { color: var(--accent); font-weight: 600; }
+    .episode-list { list-style: none; padding: 0; margin: 0; }
+    .episode-list li {
+      padding: 8px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .episode-list li:first-child { border-top: 0; }
+    .episode-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 2px;
+    }
+    .episode-phase { color: var(--accent); font-variant-numeric: tabular-nums; }
+    .episode-outcome { color: var(--muted); font-size: 0.78rem; }
+    .episode-outcome.outcome-success { color: var(--ok); }
+    .episode-outcome.outcome-failed { color: var(--bad); }
+    .semantic-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin: 8px 0 4px;
+    }
+    .semantic-list { list-style: none; padding: 0; margin: 0 0 8px; }
+    .semantic-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .semantic-list li:first-child { border-top: 0; }
+    .semantic-key { color: var(--text); }
+    .semantic-value { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>GENESIS Local Dashboard</h1>
+    <div class="sub">Vue statique locale, generee depuis les services de donnees du sandbox.</div>
+    <div class="grid">
+      <section class="panel">
+        <h2>Jobs</h2>
+        <div class="metric">0</div>
+      </section>
+      <section class="panel">
+        <h2>Bootstrap</h2>
+        <pre>{
+  &quot;operator&quot;: &quot;Mark Systems&quot;,
+  &quot;mission_focus&quot;: &quot;construction d&#x27;un noyau agentique isole&quot;,
+  &quot;preferred_mode&quot;: &quot;sandbox-first&quot;,
+  &quot;continuity_score&quot;: 1.0,
+  &quot;recent_episode_count&quot;: 5,
+  &quot;identity_summary&quot;: &quot;Je sers Mark Systems et je construis un noyau agentique isole. Mon mode prefere est sandbox-first. Ma continuite actuelle est 1.00.&quot;
+}</pre>
+      </section>
+    </div>
+    <div class="grid" style="margin-top:16px;">
+      <section class="panel">
+        <h2>Derniers Jobs</h2>
+        <ul><li>Aucun job.</li></ul>
+      </section>
+      <section class="panel">
+        <h2>Derniers Runs</h2>
+        <ul><li><span class='tag'>completed</span>run-b1018092b5<br><small>phase=finalize, tools=2</small></li><li><span class='tag'>completed</span>run-69f6cb13d4<br><small>phase=finalize, tools=2</small></li><li><span class='tag'>completed</span>run-fb68df0871<br><small>phase=finalize, tools=2</small></li><li><span class='tag'>completed</span>run-8b27fdd10e<br><small>phase=finalize, tools=2</small></li><li><span class='tag'>completed</span>run-bfbd6b615a<br><small>phase=finalize, tools=2</small></li></ul>
+      </section>
+    </div>
+    <div style="margin-top:16px;">
+      <section class="panel">
+        <h2>Timeline des Runs</h2>
+        <div class='run-card'><div class='run-card-header'><code>run-b1018092b5</code><span class='outcome-success'>success</span><small>2026-04-28T20:05:59</small><small>duree: 0.00s</small><small>artefacts: 16</small></div><div class='timeline'><span class='phase-chip done' title="Mission recue et normalisee.">intake</span><span class='phase-chip done gate-pass' title="Plan initial genere. | gate: Plan acceptable.">plan<span class='gate'>pass</span></span><span class='phase-chip done gate-pass' title="Execution du pipeline v1. | gate: Execution documentee.">execute<span class='gate'>pass</span></span><span class='phase-chip done gate-pass' title="Verification finale. | gate: Verification finale positive.">verify<span class='gate'>pass</span></span><span class='phase-chip done' title="Run termine avec statut completed.">finalize</span></div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small><div class='artifact-links'><a href='#'>run</a><a href='#'>pipeline</a><a href='#'>mission</a><a href='#'>final_report</a><a href='#'>metrics</a></div><details class='artifact-drawer'><summary>Artefacts (16) - 1 revisees</summary><table class='artifact-table'><thead><tr><th>Nom</th><th>Version</th><th>Mis a jour</th></tr></thead><tbody><tr class='multi-version'><td>pipeline</td><td class='version'>v6</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>mission</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>intake</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>plan</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>gate_plan</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>execute</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>gate_execute</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>verify</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>gate_verify</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>final_report</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>episodic_recent</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>semantic_memory</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>bootstrap_snapshot</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>metrics</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>telemetry</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr><tr class=''><td>cost_state</td><td class='version'>v1</td><td><small>2026-04-28T20:05:59</small></td></tr></tbody></table></details></div><div class='run-card'><div class='run-card-header'><code>run-69f6cb13d4</code><span class='outcome-success'>success</span><small>2026-04-25T10:57:27</small><small>duree: 0.00s</small><small>artefacts: 16</small></div><div class='timeline'><span class='phase-chip done' title="Mission recue et normalisee.">intake</span><span class='phase-chip done gate-pass' title="Plan initial genere. | gate: Plan acceptable.">plan<span class='gate'>pass</span></span><span class='phase-chip done gate-pass' title="Execution du pipeline v1. | gate: Execution documentee.">execute<span class='gate'>pass</span></span><span class='phase-chip done gate-pass' title="Verification finale. | gate: Verification finale positive.">verify<span class='gate'>pass</span></span><span class='phase-chip done' title="Run termine avec statut completed.">finalize</span></div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small><div class='artifact-links'><a href='#'>run</a><a href='#'>pipeline</a><a href='#'>mission</a><a href='#'>final_report</a><a href='#'>metrics</a></div><details class='artifact-drawer'><summary>Artefacts (16) - 1 revisees</summary><table class='artifact-table'><thead><tr><th>Nom</th><th>Version</th><th>Mis a jour</th></tr></thead><tbody><tr class='multi-version'><td>pipeline</td><td class='version'>v6</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>mission</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>intake</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>plan</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>gate_plan</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>execute</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>gate_execute</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>verify</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>gate_verify</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>final_report</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>episodic_recent</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>semantic_memory</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>bootstrap_snapshot</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>metrics</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>telemetry</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr><tr class=''><td>cost_state</td><td class='version'>v1</td><td><small>2026-04-25T10:57:27</small></td></tr></tbody></table></details></div><div class='run-card'><div class='run-card-header'><code>run-fb68df0871</code><span class='outcome-success'>success</span><small>2026-04-25T10:47:01</small><small>duree: 0.00s</small><small>artefacts: 16</small></div><div class='timeline'><span class='phase-chip done' title="Mission recue et normalisee.">intake</span><span class='phase-chip done gate-pass' title="Plan initial genere. | gate: Plan acceptable.">plan<span class='gate'>pass</span></span><span class='phase-chip done gate-pass' title="Execution du pipeline v1. | gate: Execution documentee.">execute<span class='gate'>pass</span></span><span class='phase-chip done gate-pass' title="Verification finale. | gate: Verification finale positive.">verify<span class='gate'>pass</span></span><span class='phase-chip done' title="Run termine avec statut completed.">finalize</span></div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small><div class='artifact-links'><a href='#'>run</a><a href='#'>pipeline</a><a href='#'>mission</a><a href='#'>final_report</a><a href='#'>metrics</a></div><details class='artifact-drawer'><summary>Artefacts (16) - 1 revisees</summary><table class='artifact-table'><thead><tr><th>Nom</th><th>Version</th><th>Mis a jour</th></tr></thead><tbody><tr class='multi-version'><td>pipeline</td><td class='version'>v6</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>mission</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>intake</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>plan</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>gate_plan</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>execute</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>gate_execute</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>verify</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>gate_verify</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>final_report</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>episodic_recent</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>semantic_memory</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>bootstrap_snapshot</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>metrics</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>telemetry</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr><tr class=''><td>cost_state</td><td class='version'>v1</td><td><small>2026-04-25T10:47:01</small></td></tr></tbody></table></details></div><div class='run-card'><div class='run-card-header'><code>run-8b27fdd10e</code><span class='outcome-success'>success</span><small>2026-04-25T10:38:47</small><small>duree: 0.00s</small><small>artefacts: 16</small></div><div class='timeline'><span class='phase-chip done' title="Mission recue et normalisee.">intake</span><span class='phase-chip done gate-pass' title="Plan initial genere. | gate: Plan acceptable.">plan<span class='gate'>pass</span></span><span class='phase-chip done gate-pass' title="Execution du pipeline v1. | gate: Execution documentee.">execute<span class='gate'>pass</span></span><span class='phase-chip done gate-pass' title="Verification finale. | gate: Verification finale positive.">verify<span class='gate'>pass</span></span><span class='phase-chip done' title="Run termine avec statut completed.">finalize</span></div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small><div class='artifact-links'><a href='#'>run</a><a href='#'>pipeline</a><a href='#'>mission</a><a href='#'>final_report</a><a href='#'>metrics</a></div><details class='artifact-drawer'><summary>Artefacts (16) - 1 revisees</summary><table class='artifact-table'><thead><tr><th>Nom</th><th>Version</th><th>Mis a jour</th></tr></thead><tbody><tr class='multi-version'><td>pipeline</td><td class='version'>v6</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>mission</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>intake</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>plan</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>gate_plan</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>execute</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>gate_execute</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>verify</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>gate_verify</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>final_report</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>episodic_recent</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>semantic_memory</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>bootstrap_snapshot</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>metrics</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>telemetry</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr><tr class=''><td>cost_state</td><td class='version'>v1</td><td><small>2026-04-25T10:38:47</small></td></tr></tbody></table></details></div><div class='run-card'><div class='run-card-header'><code>run-bfbd6b615a</code><span class='outcome-success'>success</span><small>2026-04-25T10:33:28</small><small>duree: 0.00s</small><small>artefacts: 16</small></div><div class='timeline'><span class='phase-chip done' title="Mission recue et normalisee.">intake</span><span class='phase-chip done gate-pass' title="Plan initial genere. | gate: Plan acceptable.">plan<span class='gate'>pass</span></span><span class='phase-chip done gate-pass' title="Execution du pipeline v1. | gate: Execution documentee.">execute<span class='gate'>pass</span></span><span class='phase-chip done gate-pass' title="Verification finale. | gate: Verification finale positive.">verify<span class='gate'>pass</span></span><span class='phase-chip done' title="Run termine avec statut completed.">finalize</span></div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small><div class='artifact-links'><a href='#'>run</a><a href='#'>pipeline</a><a href='#'>mission</a><a href='#'>final_report</a><a href='#'>metrics</a></div><details class='artifact-drawer'><summary>Artefacts (16) - 1 revisees</summary><table class='artifact-table'><thead><tr><th>Nom</th><th>Version</th><th>Mis a jour</th></tr></thead><tbody><tr class='multi-version'><td>pipeline</td><td class='version'>v6</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>mission</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>intake</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>plan</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>gate_plan</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>execute</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>gate_execute</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>verify</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>gate_verify</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>final_report</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>episodic_recent</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>semantic_memory</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>bootstrap_snapshot</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>metrics</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>telemetry</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr><tr class=''><td>cost_state</td><td class='version'>v1</td><td><small>2026-04-25T10:33:28</small></td></tr></tbody></table></details></div>
+      </section>
+    </div>
+    <div style="margin-top:16px;">
+      <section class="panel">
+        <h2>Policy Audit</h2>
+        <div class='policy-counters'><div class='policy-counter policy-allow'><span class='policy-counter-label'>allow</span><span class='policy-counter-value'>252</span></div><div class='policy-counter policy-escalate'><span class='policy-counter-label'>escalate</span><span class='policy-counter-value'>0</span></div><div class='policy-counter policy-deny'><span class='policy-counter-label'>deny</span><span class='policy-counter-value'>0</span></div><div class='policy-counter policy-total'><span class='policy-counter-label'>total</span><span class='policy-counter-value'>252</span></div></div><div class='policy-breakdowns'><div><h3 class='policy-subtitle'>Par scope</h3><ul class='policy-breakdown-list'><li><span>analysis</span><span class='policy-count'>84</span></li><li><span>filesystem_read</span><span class='policy-count'>84</span></li><li><span>shell_command</span><span class='policy-count'>84</span></li></ul></div><div><h3 class='policy-subtitle'>Par profil</h3><ul class='policy-breakdown-list'><li><span>A1</span><span class='policy-count'>228</span></li><li><span>A2</span><span class='policy-count'>24</span></li></ul></div></div><h3 class='policy-subtitle'>Decisions recentes</h3><ul class='policy-list'><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>analysis</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>analysis autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>shell_command</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>shell_command autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>filesystem_read</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>filesystem_read autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>analysis</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>analysis autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>shell_command</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>shell_command autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>filesystem_read</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>filesystem_read autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>analysis</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>analysis autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>shell_command</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>shell_command autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>filesystem_read</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>filesystem_read autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>analysis</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>analysis autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>shell_command</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>shell_command autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>filesystem_read</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>filesystem_read autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>analysis</span><span class='policy-entry-level'>A2</span><small class='policy-entry-reason'>analysis autorise au niveau A2</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>shell_command</span><span class='policy-entry-level'>A2</span><small class='policy-entry-reason'>shell_command autorise au niveau A2</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>filesystem_read</span><span class='policy-entry-level'>A2</span><small class='policy-entry-reason'>filesystem_read autorise au niveau A2</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>analysis</span><span class='policy-entry-level'>A2</span><small class='policy-entry-reason'>analysis autorise au niveau A2</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>shell_command</span><span class='policy-entry-level'>A2</span><small class='policy-entry-reason'>shell_command autorise au niveau A2</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>filesystem_read</span><span class='policy-entry-level'>A2</span><small class='policy-entry-reason'>filesystem_read autorise au niveau A2</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>analysis</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>analysis autorise au niveau A1</small></li><li class='policy-entry policy-allow'><span class='policy-entry-decision'>allow</span><span class='policy-entry-scope'>shell_command</span><span class='policy-entry-level'>A1</span><small class='policy-entry-reason'>shell_command autorise au niveau A1</small></li></ul>
+      </section>
+    </div>
+    <div style="margin-top:16px;">
+      <section class="panel">
+        <h2>Memoire et Etat</h2>
+        <div class='memory-grid'><div class='memory-cell memory-state'><h3 class='memory-subtitle'>Etat courant</h3><div class='state-bars'><div class='state-bar'><div class='state-bar-label'><span>energy</span><span>0.00</span></div><div class='state-bar-track'><div class='state-bar-fill' style='width: 0%;'></div></div></div><div class='state-bar'><div class='state-bar-label'><span>certainty</span><span>1.00</span></div><div class='state-bar-track'><div class='state-bar-fill' style='width: 100%;'></div></div></div><div class='state-bar'><div class='state-bar-label'><span>continuity</span><span>1.00</span></div><div class='state-bar-track'><div class='state-bar-fill' style='width: 100%;'></div></div></div><div class='state-bar state-load'><div class='state-bar-label'><span>load</span><span>1.00</span></div><div class='state-bar-track'><div class='state-bar-fill' style='width: 100%;'></div></div></div></div><small class='state-timestamp'>mis a jour : 2026-04-28T20:05:59</small></div><div class='memory-cell memory-identity'><h3 class='memory-subtitle'>Identite</h3><p class='identity-summary'>Je sers Mark Systems et je construis un noyau agentique isole. Mon mode prefere est sandbox-first. Ma continuite actuelle est 1.00.</p><div class='identity-meta'><span>operateur: <strong>Mark Systems</strong></span><span>mode: <strong>sandbox-first</strong></span><span>continuite: <strong>1.00</strong></span><span>episodes connus: <strong>5</strong></span></div></div><div class='memory-cell memory-episodes'><h3 class='memory-subtitle'>Episodes recents</h3><ul class='episode-list'><li><div class='episode-head'><span class='episode-phase'>finalize</span><span class='episode-outcome outcome-success'>success</span></div><small>2026-04-28T20:05:59 - run-b1018092b5</small><div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small></div></li><li><div class='episode-head'><span class='episode-phase'>finalize</span><span class='episode-outcome outcome-success'>success</span></div><small>2026-04-25T10:57:27 - run-69f6cb13d4</small><div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small></div></li><li><div class='episode-head'><span class='episode-phase'>finalize</span><span class='episode-outcome outcome-success'>success</span></div><small>2026-04-25T10:47:01 - run-fb68df0871</small><div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small></div></li><li><div class='episode-head'><span class='episode-phase'>finalize</span><span class='episode-outcome outcome-success'>success</span></div><small>2026-04-25T10:38:47 - run-8b27fdd10e</small><div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small></div></li><li><div class='episode-head'><span class='episode-phase'>finalize</span><span class='episode-outcome outcome-success'>success</span></div><small>2026-04-25T10:33:28 - run-bfbd6b615a</small><div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small></div></li><li><div class='episode-head'><span class='episode-phase'>finalize</span><span class='episode-outcome outcome-success'>success</span></div><small>2026-04-25T10:33:28 - run-ad13ff1fa1</small><div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small></div></li><li><div class='episode-head'><span class='episode-phase'>finalize</span><span class='episode-outcome outcome-success'>success</span></div><small>2026-04-25T10:32:55 - run-491264e7d7</small><div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small></div></li><li><div class='episode-head'><span class='episode-phase'>finalize</span><span class='episode-outcome outcome-success'>success</span></div><small>2026-04-25T10:12:07 - run-4acb7aad62</small><div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small></div></li><li><div class='episode-head'><span class='episode-phase'>finalize</span><span class='episode-outcome outcome-success'>success</span></div><small>2026-04-25T10:06:15 - run-1f2ccfcc8c</small><div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small></div></li><li><div class='episode-head'><span class='episode-phase'>finalize</span><span class='episode-outcome outcome-success'>success</span></div><small>2026-04-25T09:53:48 - run-3b3b4f95e7</small><div><small>Pipeline v1 execute dans un sandbox isole avec tools controles, providers configurables et gates explicites.</small></div></li></ul></div><div class='memory-cell memory-semantic'><h3 class='memory-subtitle'>Preferences</h3><div class='semantic-category'>identity</div><ul class='semantic-list'><li><span class='semantic-key'>operator</span><span class='semantic-value'>Mark Systems</span></li></ul><div class='semantic-category'>preference</div><ul class='semantic-list'><li><span class='semantic-key'>execution_mode</span><span class='semantic-value'>sandbox-first</span></li></ul></div></div>
+      </section>
+    </div>
+    <div class="grid-2">
+      <section class="panel">
+        <h2>Telemetry Providers</h2>
+        <div class='policy-counters'><div class='policy-counter policy-total'><span class='policy-counter-label'>Runs</span><span class='policy-counter-value'>31</span></div><div class='policy-counter policy-allow'><span class='policy-counter-label'>Calls</span><span class='policy-counter-value'>99</span></div><div class='policy-counter policy-total'><span class='policy-counter-label'>Tokens</span><span class='policy-counter-value'>5725</span></div><div class='policy-counter policy-escalate'><span class='policy-counter-label'>Cout USD</span><span class='policy-counter-value'>0.0321</span></div><div class='policy-counter policy-total'><span class='policy-counter-label'>Lat. moy ms</span><span class='policy-counter-value'>548.3</span></div></div><h3 class='policy-subtitle'>Par provider</h3><div class='artifact-links'><span class='tag'>anthropic: 3</span><span class='tag'>ollama: 3</span><span class='tag'>openai: 9</span><span class='tag'>sandbox: 84</span></div><h3 class='policy-subtitle'>Runs recents</h3><ul class='policy-list'><li><code>run-b1018092b5</code> <small>calls=3, tokens=0, cost=0.0000 USD, lat=0.0ms [sandbox:3]</small></li><li><code>run-69f6cb13d4</code> <small>calls=3, tokens=0, cost=0.0000 USD, lat=0.0ms [sandbox:3]</small></li><li><code>run-fb68df0871</code> <small>calls=3, tokens=0, cost=0.0000 USD, lat=0.0ms [sandbox:3]</small></li><li><code>run-8b27fdd10e</code> <small>calls=3, tokens=0, cost=0.0000 USD, lat=0.0ms [sandbox:3]</small></li><li><code>run-bfbd6b615a</code> <small>calls=3, tokens=0, cost=0.0000 USD, lat=0.0ms [sandbox:3]</small></li></ul>
+      </section>
+      <section class="panel">
+        <h2>Convergence Multi-Agent</h2>
+        <div class='policy-counters'><div class='policy-counter policy-total'><span class='policy-counter-label'>Runs</span><span class='policy-counter-value'>2</span></div><div class='policy-counter policy-allow'><span class='policy-counter-label'>Converges</span><span class='policy-counter-value'>2</span></div><div class='policy-counter policy-deny'><span class='policy-counter-label'>Non-converges</span><span class='policy-counter-value'>0</span></div><div class='policy-counter policy-total'><span class='policy-counter-label'>Taux</span><span class='policy-counter-value'>100%</span></div><div class='policy-counter policy-escalate'><span class='policy-counter-label'>Score moy.</span><span class='policy-counter-value'>8.75</span></div></div><h3 class='policy-subtitle'>Gate</h3><div class='artifact-links'><span class='tag'>pass: 2</span><span class='tag'>fail: 0</span></div><h3 class='policy-subtitle'>Runs recents</h3><ul class='policy-list'><li><code>run-79518411ff</code> <span class='outcome-success'>converged</span> <small>score=10.00, iterations=1, gate=pass</small></li><li><code>run-25974c7d57</code> <span class='outcome-success'>converged</span> <small>score=7.51, iterations=1, gate=pass</small></li></ul>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

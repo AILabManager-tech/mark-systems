@@ -149,6 +149,11 @@ export const LOGICIELS = [
     image: "/images/hero/neural-tunnel.jpg",
   },
   {
+    key: "genesis",
+    url: "/demos/genesis/",
+    image: "/images/hero/neural-city.jpg",
+  },
+  {
     key: "soic",
     url: "https://github.com/AILabManager-tech/soic",
     image: "/images/services/cloud-infra.jpg",

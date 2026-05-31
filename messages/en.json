@@ -862,6 +862,10 @@
       "soic": {
         "name": "SOIC",
         "description": "Quality & security gate engine for LLM pipelines (format, truthfulness, ethics, security). Open-source."
+      },
+      "genesis": {
+        "name": "GENESIS",
+        "description": "Modular, governed autonomous agent core: intake → plan → execute → verify → finalize pipeline, persistent runs, explicit gates and continuous memory. Demo: run dashboard."
       }
     }
   }
