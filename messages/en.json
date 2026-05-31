@@ -557,6 +557,10 @@
       "title": "Your Rights",
       "content": "In accordance with Quebec's Law 25 and GDPR, you have the right to access, rectify, delete your personal data, and withdraw your consent. Contact us at info@marksystems.ca to exercise these rights."
     },
+    "officer": {
+      "title": "Personal Information Protection Officer",
+      "content": "In accordance with Quebec's Law 25, Mark Systems has appointed a Personal Information Protection Officer responsible for ensuring compliance with this policy and handling your requests to access, rectify, or withdraw consent for your personal data. You can reach them at info@marksystems.ca or +1 (581) 986-4267. If you are not satisfied with how your request is handled, you may file a complaint with Quebec's Commission d'accès à l'information (CAI)."
+    },
     "contact": {
       "title": "Contact Us",
       "content": "For any questions about this policy or your personal data, contact us at info@marksystems.ca or +1 (581) 986-4267."

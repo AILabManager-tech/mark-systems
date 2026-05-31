@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Shield, Eye, Cookie, Users, Clock, UserCheck, Mail } from 'lucide-react';
+import { Shield, ShieldCheck, Eye, Cookie, Users, Clock, UserCheck, Mail } from 'lucide-react';
 
 const sectionIcons = {
   dataCollected: Eye,
@@ -11,6 +11,7 @@ const sectionIcons = {
   thirdParties: Shield,
   retention: Clock,
   rights: UserCheck,
+  officer: ShieldCheck,
   contact: Mail,
 } as const;
 
@@ -33,6 +34,7 @@ export default function PrivacyPage() {
     'thirdParties',
     'retention',
     'rights',
+    'officer',
     'contact',
   ] as const;
 
