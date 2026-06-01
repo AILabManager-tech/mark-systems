@@ -44,9 +44,9 @@ describe("i18n parity", () => {
     }
   });
 
-  it("the welcome chatbot has a Polar greeting in both languages", () => {
-    expect(fr.chatbot.welcomeMessage).toContain("Polar");
-    expect(en.chatbot.welcomeMessage).toContain("Polar");
+  it("the welcome chatbot has a Bowler greeting in both languages", () => {
+    expect(fr.chatbot.welcomeMessage).toContain("Bowler");
+    expect(en.chatbot.welcomeMessage).toContain("Bowler");
   });
 
   it("FR has a privacy policy", () => {
