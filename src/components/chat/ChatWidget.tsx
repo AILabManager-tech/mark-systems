@@ -3,8 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, User } from 'lucide-react';
-import Image from 'next/image';
+import { X, Send, User, Bot } from 'lucide-react';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
@@ -12,7 +11,7 @@ interface ChatMessage {
 }
 
 const SYSTEM_PROMPT =
-  'You are N.O.V.A., the virtual assistant for Mark Systems. Mark Systems is a Quebec-based digital agency that designs websites, business automations, AI systems, and cloud infrastructure. Be helpful, professional, and concise. Answer in the same language the user writes in.';
+  'You are Polar, the virtual assistant for Mark Systems. Mark Systems is a Quebec-based digital agency that designs websites, business automations, AI systems, and cloud infrastructure. Be helpful, professional, and concise. Answer in the same language the user writes in.';
 
 const API_URL = 'http://localhost:11434/v1/chat/completions';
 const MODEL = 'qwen2.5:32b';
@@ -42,8 +41,8 @@ function getFallbackResponse(userMessage: string): string {
   // Greeting check
   if (/\b(bonjour|hello|hi|salut|hey|bonsoir|allô|allo)\b/i.test(lower)) {
     return isFr
-      ? 'Bonjour ! 👋 Je suis N.O.V.A., l\'assistante virtuelle de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
-      : 'Hello! 👋 I\'m N.O.V.A., the virtual assistant for Mark Systems. How can I help you today?';
+      ? 'Bonjour ! 👋 Je suis Polar, l\'assistante virtuelle de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
+      : 'Hello! 👋 I\'m Polar, the virtual assistant for Mark Systems. How can I help you today?';
   }
 
   // Price / cost check
@@ -108,38 +107,50 @@ export function ChatWidget() {
 
     let assistantContent: string;
 
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT);
+    // L'API LLM locale (Ollama) n'est joignable qu'en dev local. En production,
+    // on n'appelle PAS localhost (bloqué par la CSP) — on sert directement le
+    // fallback déterministe. Évite les erreurs CSP en console à chaque message.
+    const isLocal =
+      typeof window !== 'undefined' &&
+      /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
 
-      const apiMessages = [
-        { role: 'system' as const, content: SYSTEM_PROMPT },
-        ...updatedMessages.map((m) => ({ role: m.role, content: m.content })),
-      ];
+    if (isLocal) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT);
 
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: MODEL,
-          messages: apiMessages,
-          temperature: 0.7,
-          max_tokens: 512,
-        }),
-        signal: controller.signal,
-      });
+        const apiMessages = [
+          { role: 'system' as const, content: SYSTEM_PROMPT },
+          ...updatedMessages.map((m) => ({ role: m.role, content: m.content })),
+        ];
 
-      clearTimeout(timeoutId);
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: MODEL,
+            messages: apiMessages,
+            temperature: 0.7,
+            max_tokens: 512,
+          }),
+          signal: controller.signal,
+        });
 
-      if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
+        clearTimeout(timeoutId);
+
+        if (!response.ok) {
+          throw new Error(`API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        assistantContent =
+          data?.choices?.[0]?.message?.content ?? getFallbackResponse(trimmed);
+      } catch {
+        // Deterministic fallback - chat never appears broken
+        assistantContent = getFallbackResponse(trimmed);
       }
-
-      const data = await response.json();
-      assistantContent =
-        data?.choices?.[0]?.message?.content ?? getFallbackResponse(trimmed);
-    } catch {
-      // Deterministic fallback - chat never appears broken
+    } else {
+      // Production : pas de LLM local accessible → fallback déterministe direct.
       assistantContent = getFallbackResponse(trimmed);
     }
 
@@ -177,20 +188,13 @@ export function ChatWidget() {
             className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full border border-accent/30 bg-surface/80 shadow-glow-accent backdrop-blur-md transition-shadow duration-300 hover:shadow-glow-accent-lg"
             aria-label={t('openChat')}
           >
-            {/* Bowler, la mascotte — lanceur du chat N.O.V.A. */}
+            {/* Polar, le petit robot — lanceur du chat */}
             <motion.span
               animate={{ y: [0, -4, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-              className="block h-14 w-14"
+              className="flex h-14 w-14 items-center justify-center"
             >
-              <Image
-                src="/bowler.jpg"
-                alt="Bowler — Mark Systems"
-                width={56}
-                height={56}
-                className="h-14 w-14 rounded-full object-cover"
-                priority
-              />
+              <Bot className="h-9 w-9 text-accent" strokeWidth={1.5} />
             </motion.span>
             {/* Pulse indicator (en ligne) */}
             <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4">
@@ -222,16 +226,10 @@ export function ChatWidget() {
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 bg-white/5">
               <div className="flex items-center gap-3">
                 <div className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-accent/30">
-                  <Image
-                    src="/images/nova/nova-avatar.jpg"
-                    alt="N.O.V.A."
-                    fill
-                    className="object-cover"
-                    sizes="36px"
-                  />
+                  <Bot className="h-full w-full p-1.5 text-accent" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-white">N.O.V.A.</h3>
+                  <h3 className="text-sm font-semibold text-white">Polar</h3>
                   <div className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full bg-green-500" />
                     <span className="text-xs text-green-400">{t('online')}</span>
@@ -252,13 +250,7 @@ export function ChatWidget() {
               {messages.length === 0 && (
                 <div className="flex flex-col items-center justify-center h-full text-center px-4 gap-3">
                   <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-accent/20">
-                    <Image
-                      src="/images/nova/nova-avatar.jpg"
-                      alt="N.O.V.A."
-                      fill
-                      className="object-cover"
-                      sizes="48px"
-                    />
+                    <Bot className="h-full w-full p-1.5 text-accent" strokeWidth={1.5} />
                   </div>
                   <p className="text-sm text-gray-400">{t('welcomeMessage')}</p>
                 </div>
@@ -279,13 +271,7 @@ export function ChatWidget() {
                     {msg.role === 'user' ? (
                       <User className="h-4 w-4 text-white" />
                     ) : (
-                      <Image
-                        src="/images/nova/nova-avatar.jpg"
-                        alt="N.O.V.A."
-                        width={28}
-                        height={28}
-                        className="object-cover"
-                      />
+                      <Bot className="h-full w-full p-1.5 text-accent" strokeWidth={1.5} />
                     )}
                   </div>
                   <div
@@ -308,13 +294,7 @@ export function ChatWidget() {
               {isLoading && (
                 <div className="flex gap-2.5">
                   <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full overflow-hidden">
-                    <Image
-                      src="/images/nova/nova-avatar.jpg"
-                      alt="N.O.V.A."
-                      width={28}
-                      height={28}
-                      className="object-cover"
-                    />
+                    <Bot className="h-full w-full p-1.5 text-accent" strokeWidth={1.5} />
                   </div>
                   <div className="rounded-2xl rounded-bl-md bg-white/10 border border-white/5 px-4 py-3">
                     <div className="flex items-center gap-1.5">

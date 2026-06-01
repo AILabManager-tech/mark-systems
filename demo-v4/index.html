@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculateur ROI & Multiplicateurs — NorbeX Systems (v4)</title>
+<meta name="description" content="Démo v4 / 5 — Panneau d'options gouvernance/risque/conformité, multiplicateurs déterministes, alerte seuil 25 000 $." />
+
+<!--
+  =====================================================================
+  PRM-0004-CODE-WEB-ANALYSIS v3.0 — Démo v4 / 5
+  Stack : HTML5 + Tailwind CSS (CDN) + Vanilla JS ES6+
+  Peau visuelle alignée sur la charte marksystems.ca (fond noir, accent
+  teal, Inter+JetBrains Mono, sharp 4px, glow accent).
+  Moteur de calcul = fonction pure déterministe (computeAdjustedPrice).
+  =====================================================================
+-->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          background: '#050505',
+          surface: { DEFAULT: '#0F0F11', light: '#161618', border: '#1E293B' },
+          accent: { DEFAULT: '#00A19B', muted: '#008C87', dim: '#006B67' },
+          ink: { primary: '#F8FAFC', secondary: '#94A3B8', tertiary: '#A5B4C7' },
+        },
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+        borderRadius: { sm: '4px' },
+        boxShadow: {
+          'glow-accent': '0 0 15px rgba(0,161,155,0.15), 0 0 30px rgba(0,161,155,0.05)',
+          'glow-accent-lg': '0 0 25px rgba(0,161,155,0.2), 0 0 50px rgba(0,161,155,0.08)',
+        },
+      },
+    },
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  :focus-visible { outline: 2px solid #00A19B; outline-offset: 2px; }
+
+  /* Tooltip natif */
+  .tooltip { position: relative; display: inline-flex; }
+  .tooltip-content {
+    position: absolute; bottom: calc(100% + 8px); left: 50%;
+    transform: translateX(-50%); white-space: normal; width: 240px;
+    background: #161618; color: #F8FAFC; font-size: 11px; line-height: 1.5;
+    padding: 10px 12px; border-radius: 4px; border: 1px solid #1E293B;
+    opacity: 0; pointer-events: none; transition: opacity 150ms ease-out; z-index: 30;
+    box-shadow: 0 0 15px rgba(0,161,155,0.1);
+  }
+  .tooltip:hover .tooltip-content, .tooltip:focus-within .tooltip-content { opacity: 1; }
+  .tooltip-content::after {
+    content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    border: 5px solid transparent; border-top-color: #161618;
+  }
+
+  /* Radio personnalisé compact dark */
+  input[type="radio"]:checked + .radio-card {
+    border-color: #00A19B;
+    background: rgba(0, 161, 155, 0.1);
+  }
+  input[type="radio"]:checked + .radio-card .radio-label { color: #F8FAFC; }
+  input[type="radio"]:checked + .radio-card .radio-badge {
+    background: #00A19B; color: #050505; border-color: #00A19B;
+  }
+  input[type="radio"]:focus-visible + .radio-card { outline: 2px solid #00A19B; outline-offset: 2px; }
+</style>
+</head>
+<body class="bg-background text-ink-primary min-h-screen antialiased">
+
+<!-- NAV DÉMO -->
+<header class="max-w-5xl mx-auto px-4 pt-8 pb-4 flex items-center justify-between font-mono text-xs text-ink-tertiary">
+  <a href="../" class="hover:text-accent transition-colors flex items-center gap-2">
+    <span class="inline-block w-2 h-2 bg-accent rounded-sm"></span>
+    ← NorbeX Systems · web-version
+  </a>
+  <span class="uppercase tracking-[0.22em] text-[10px]">Démo v4 / 5 — Calculateur ROI & multiplicateurs</span>
+</header>
+
+<main class="max-w-5xl mx-auto px-4 pb-16 space-y-6">
+
+  <!-- INTRO -->
+  <section class="rounded-sm border border-surface-border bg-surface/80 backdrop-blur-sm p-6 md:p-8">
+    <span class="inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.24em] text-accent mb-5">Options de cadrage</span>
+    <h1 class="mt-5 text-2xl md:text-3xl font-semibold tracking-[-0.03em] mb-3">Ajuste ton estimation selon ton contexte</h1>
+    <p class="text-sm text-ink-secondary max-w-2xl leading-relaxed">
+      Le panneau ci-dessous reprend la fourchette de prix de base (= somme des workflows du panier) et applique
+      des multiplicateurs déterministes selon ton CRM, tes contraintes Loi 25, ton hébergement, ta formation et
+      ton support. Au-delà de 25 000 $, on bascule en mode atelier de cadrage.
+    </p>
+  </section>
+
+  <!-- PRIX DE BASE -->
+  <section class="rounded-sm border border-surface-border bg-surface/80 backdrop-blur-sm p-6">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary">Prix de base estimé (somme workflows)</h2>
+      <span class="font-mono text-[10px] text-ink-tertiary/60">simule un panier v3</span>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2" id="base-price-selector"></div>
+  </section>
+
+  <!-- PANNEAU OPTIONS -->
+  <section class="rounded-sm border border-surface-border bg-surface/80 backdrop-blur-sm overflow-hidden">
+    <header class="flex items-center justify-between p-5 md:p-6 border-b border-surface-border">
+      <div>
+        <h2 class="text-base font-semibold text-ink-primary tracking-tight">Options de gouvernance & risque</h2>
+        <p class="text-xs text-ink-secondary mt-1">Ajuste les 5 dimensions ci-dessous pour cadrer ton intégration.</p>
+      </div>
+      <button id="reset-options-btn" class="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary hover:text-accent transition-colors px-3 py-1.5 rounded-sm border border-surface-border hover:border-accent/40 hover:bg-surface-light">
+        Reset défauts
+      </button>
+    </header>
+
+    <div id="options-grid" class="divide-y divide-surface-border"></div>
+  </section>
+
+  <!-- RÉSULTAT -->
+  <section class="rounded-sm border border-accent/40 bg-surface relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,161,155,0.12),transparent_50%)] pointer-events-none"></div>
+    <div class="relative p-6 md:p-8 grid md:grid-cols-3 gap-6 items-end">
+      <div class="md:col-span-2">
+        <span class="block font-mono text-[10px] uppercase tracking-[0.24em] text-accent mb-2">Estimation ajustée (CAD)</span>
+        <div class="text-3xl md:text-4xl font-extrabold tracking-[-0.04em] text-ink-primary">
+          <span id="adjusted-min">—</span>
+          <span class="text-ink-tertiary mx-2">–</span>
+          <span id="adjusted-max">—</span>
+        </div>
+        <p class="text-xs text-ink-secondary mt-3 font-mono">
+          Base <span id="recap-base" class="text-ink-primary">—</span>
+          <span class="text-ink-tertiary"> · mult </span><span id="recap-mult" class="text-ink-primary">×1.00</span>
+          <span class="text-ink-tertiary"> · add-ons </span><span id="recap-addons" class="text-ink-primary">+0 $</span>
+        </p>
+      </div>
+      <div class="text-left md:text-right">
+        <span class="block font-mono text-[10px] uppercase tracking-[0.24em] text-ink-tertiary mb-2">Variation vs base</span>
+        <div id="variation-percent" class="text-2xl font-bold text-accent">+0 %</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALERTE SEUIL 25K -->
+  <section id="threshold-alert" class="hidden rounded-sm border border-amber-500/40 bg-amber-500/8 p-6">
+    <div class="flex items-start gap-4">
+      <div class="flex-shrink-0 w-10 h-10 rounded-sm border border-amber-500/40 bg-amber-500/10 flex items-center justify-center">
+        <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <div class="flex-1">
+        <h3 class="text-base font-semibold text-amber-300 mb-1" id="alert-title">Projet stratégique détecté</h3>
+        <p class="text-sm text-amber-200/80 mb-4" id="alert-message">Notre équipe recommande un atelier de cadrage gratuit.</p>
+        <button id="alert-cta" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-amber-500 text-background font-semibold text-sm hover:bg-amber-400 transition-colors">
+          <span>Réserver l'atelier de cadrage</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEBUG -->
+  <details class="rounded-sm border border-surface-border bg-surface-light p-4 text-xs font-mono text-ink-secondary">
+    <summary class="cursor-pointer font-bold uppercase tracking-[0.22em] text-[10px] text-ink-tertiary hover:text-accent transition-colors">Détail du calcul (transparence ingénieur)</summary>
+    <pre id="debug-output" class="mt-4 whitespace-pre-wrap text-[11px] leading-relaxed text-ink-secondary"></pre>
+  </details>
+
+</main>
+
+<script>
+/* =====================================================================
+ * SECTION 1 — Spécification JSON (matrice multiplicateurs + add-ons)
+ * ===================================================================== */
+const PRICING_CONFIG = {
+  integration_crm: {
+    label: 'Intégration CRM',
+    help: 'Type de système CRM auquel les workflows doivent se connecter. Un CRM custom demande plus de mapping et de tests.',
+    options: {
+      none:       { multiplier: 1.00, label: 'Aucune',               badge: '—',     desc: 'Pas d\'intégration CRM.' },
+      standard:   { multiplier: 1.15, label: 'HubSpot / Pipedrive',  badge: '+15 %', desc: 'Connecteurs natifs.' },
+      enterprise: { multiplier: 1.40, label: 'CRM custom / SAP',     badge: '+40 %', desc: 'Mapping custom + tests d\'intégration approfondis.' },
+    },
+    default: 'none',
+  },
+  conformite_loi25: {
+    label: 'Conformité Loi 25 (Québec)',
+    help: 'Le standard est inclus de base. L\'option Audit + DPO produit la trace exigée pour audit officiel.',
+    options: {
+      standard:  { multiplier: 1.00, label: 'Standard inclus',       badge: '—',     desc: 'Conformité de base Loi 25.' },
+      audit_dpo: { multiplier: 1.20, label: 'Audit + DPO documenté', badge: '+20 %', desc: 'Documentation complète prête pour audit.' },
+    },
+    default: 'standard',
+  },
+  hebergement_souverain: {
+    label: 'Hébergement souverain',
+    help: 'Cloud international vs LLM locaux (Ollama) sur serveur québécois. Le local élimine tout transfert de données hors-Québec.',
+    options: {
+      cloud_standard: { multiplier: 1.00, label: 'Cloud standard',        badge: '—',     desc: 'Hébergement chez fournisseur cloud international.' },
+      ollama_quebec:  { multiplier: 1.30, label: 'Ollama local + Québec', badge: '+30 %', desc: 'Modèles LLM locaux + serveur hébergé au Québec.' },
+    },
+    default: 'cloud_standard',
+  },
+  formation: {
+    label: 'Formation de l\'équipe',
+    help: 'Frais fixes en CAD. Pas un multiplicateur — s\'ajoute en post-calcul.',
+    options: {
+      aucune:       { multiplier: 1.00, fixed:    0, label: 'Aucune',           badge: '—',         desc: 'Pas de formation prévue.' },
+      deux_heures:  { multiplier: 1.00, fixed:  800, label: 'Session 2 h',      badge: '+800 $',    desc: 'Atelier 2 h (1-5 personnes).' },
+      une_journee:  { multiplier: 1.00, fixed: 2400, label: 'Journée complète', badge: '+2 400 $',  desc: 'Formation 1 jour + supports + Q&R.' },
+    },
+    default: 'aucune',
+  },
+  support_post_livraison: {
+    label: 'Support post-livraison',
+    help: '90 jours sont inclus. Au-delà : veille, bug fix prioritaires, ajustements.',
+    options: {
+      '90j':    { multiplier: 1.00, label: '90 jours inclus', badge: '—',     desc: 'Bug fix + ajustements 90 jours.' },
+      '6mois':  { multiplier: 1.15, label: '6 mois',          badge: '+15 %', desc: 'Support actif 6 mois.' },
+      '12mois': { multiplier: 1.25, label: '12 mois',         badge: '+25 %', desc: 'Support actif 12 mois.' },
+    },
+    default: '90j',
+  },
+  alerte_seuil: {
+    seuil_cad: 25000,
+    title: 'Projet stratégique détecté',
+    message: 'Notre équipe recommande un atelier de cadrage gratuit.',
+    cta_label: 'Réserver l\'atelier de cadrage',
+  },
+};
+
+const BASE_PRICE_PRESETS = [
+  { id: 'small',      label: 'Démarrage',  min:  5000, max:  8000 },
+  { id: 'medium',     label: 'Standard',   min: 10000, max: 15000 },
+  { id: 'large',      label: 'Croissance', min: 15000, max: 22000 },
+  { id: 'enterprise', label: 'PME 50+',    min: 22000, max: 32000 },
+];
+
+/* =====================================================================
+ * SECTION 2 — Moteur de calcul (fonction pure déterministe)
+ * ===================================================================== */
+
+/**
+ * @typedef {{min: number, max: number}} PriceRange
+ * @typedef {Record<string, string>} SelectedOptions
+ * @typedef {{
+ *   base: PriceRange,
+ *   multiplierProduct: number,
+ *   fixedAddons: number,
+ *   adjusted: PriceRange,
+ *   breach25k: boolean,
+ *   breakdown: Array<{dimension: string, option: string, multiplier: number, fixed: number, label: string, badge: string}>
+ * }} ComputeResult
+ */
+
+/**
+ * @param {PriceRange} basePriceRange
+ * @param {SelectedOptions} selectedOptions
+ * @param {typeof PRICING_CONFIG} config
+ * @returns {ComputeResult}
+ */
+function computeAdjustedPrice(basePriceRange, selectedOptions, config) {
+  if (typeof basePriceRange?.min !== 'number' || typeof basePriceRange?.max !== 'number') {
+    throw new TypeError('basePriceRange doit contenir min/max numériques');
+  }
+  let multiplierProduct = 1.0;
+  let fixedAddons = 0;
+  const breakdown = [];
+  for (const [dimId, dim] of Object.entries(config)) {
+    if (dimId === 'alerte_seuil') continue;
+    const selectedId = selectedOptions[dimId] ?? dim.default;
+    const opt = dim.options[selectedId];
+    if (!opt) continue;
+    multiplierProduct *= opt.multiplier;
+    fixedAddons += (opt.fixed ?? 0);
+    breakdown.push({ dimension: dim.label, option: opt.label, multiplier: opt.multiplier, fixed: opt.fixed ?? 0, label: opt.label, badge: opt.badge });
+  }
+  const adjustedMin = Math.round(basePriceRange.min * multiplierProduct + fixedAddons);
+  const adjustedMax = Math.round(basePriceRange.max * multiplierProduct + fixedAddons);
+  return {
+    base: basePriceRange,
+    multiplierProduct: Math.round(multiplierProduct * 1000) / 1000,
+    fixedAddons,
+    adjusted: { min: adjustedMin, max: adjustedMax },
+    breach25k: adjustedMax > config.alerte_seuil.seuil_cad,
+    breakdown,
+  };
+}
+
+/* =====================================================================
+ * SECTION 3 — UI
+ * ===================================================================== */
+
+const STATE = {
+  basePreset: 'medium',
+  selectedOptions: Object.fromEntries(
+    Object.entries(PRICING_CONFIG).filter(([k]) => k !== 'alerte_seuil').map(([k, v]) => [k, v.default])
+  ),
+};
+
+function fmt(n) {
+  return new Intl.NumberFormat('fr-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
+}
+
+function renderBasePriceSelector() {
+  const ctr = document.getElementById('base-price-selector');
+  ctr.innerHTML = BASE_PRICE_PRESETS.map(p => `
+    <label class="block cursor-pointer">
+      <input type="radio" name="base-preset" value="${p.id}" class="sr-only" ${p.id === STATE.basePreset ? 'checked' : ''} />
+      <div class="radio-card rounded-sm border border-surface-border bg-surface/40 p-3 text-center transition-all hover:border-accent/40 hover:bg-surface-light">
+        <div class="radio-label font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary">${p.label}</div>
+        <div class="text-sm font-semibold text-ink-primary mt-1.5">${fmt(p.min)} – ${fmt(p.max)}</div>
+      </div>
+    </label>
+  `).join('');
+  ctr.querySelectorAll('input[name="base-preset"]').forEach(el => {
+    el.addEventListener('change', () => { STATE.basePreset = el.value; render(); });
+  });
+}
+
+function renderOptionsGrid() {
+  const ctr = document.getElementById('options-grid');
+  const sections = Object.entries(PRICING_CONFIG).filter(([k]) => k !== 'alerte_seuil');
+  ctr.innerHTML = sections.map(([dimId, dim]) => `
+    <div class="p-5 md:p-6">
+      <div class="flex items-start justify-between gap-3 mb-4">
+        <h3 class="text-sm font-semibold text-ink-primary flex items-center gap-2">
+          ${escapeHtml(dim.label)}
+          <span class="tooltip" tabindex="0">
+            <span class="inline-flex items-center justify-center w-4 h-4 rounded-full border border-surface-border text-[10px] text-ink-tertiary hover:border-accent hover:text-accent cursor-help transition-colors" aria-label="Aide">?</span>
+            <span class="tooltip-content">${escapeHtml(dim.help)}</span>
+          </span>
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+        ${Object.entries(dim.options).map(([optId, opt]) => `
+          <label class="block cursor-pointer">
+            <input type="radio" name="${dimId}" value="${optId}" class="sr-only" ${STATE.selectedOptions[dimId] === optId ? 'checked' : ''} />
+            <div class="radio-card rounded-sm border border-surface-border bg-surface/40 p-3 transition-all hover:border-accent/40 hover:bg-surface-light">
+              <div class="flex items-start justify-between gap-2 mb-1.5">
+                <span class="radio-label text-sm font-medium text-ink-secondary leading-tight">${escapeHtml(opt.label)}</span>
+                <span class="radio-badge font-mono text-[10px] px-1.5 py-0.5 rounded-sm border border-surface-border bg-surface text-ink-tertiary flex-shrink-0">${escapeHtml(opt.badge)}</span>
+              </div>
+              <p class="text-[11px] text-ink-tertiary leading-snug">${escapeHtml(opt.desc)}</p>
+            </div>
+          </label>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+  ctr.querySelectorAll('input[type="radio"]').forEach(el => {
+    el.addEventListener('change', () => { STATE.selectedOptions[el.name] = el.value; render(); });
+  });
+}
+
+function render() {
+  const base = BASE_PRICE_PRESETS.find(p => p.id === STATE.basePreset);
+  const result = computeAdjustedPrice({ min: base.min, max: base.max }, STATE.selectedOptions, PRICING_CONFIG);
+
+  document.getElementById('adjusted-min').textContent = fmt(result.adjusted.min);
+  document.getElementById('adjusted-max').textContent = fmt(result.adjusted.max);
+  document.getElementById('recap-base').textContent = `${fmt(result.base.min)} – ${fmt(result.base.max)}`;
+  document.getElementById('recap-mult').textContent = `×${result.multiplierProduct.toFixed(3)}`;
+  document.getElementById('recap-addons').textContent = `+${fmt(result.fixedAddons)}`;
+
+  const variationMin = ((result.adjusted.min / result.base.min) - 1) * 100;
+  const variationMax = ((result.adjusted.max / result.base.max) - 1) * 100;
+  const variationAvg = (variationMin + variationMax) / 2;
+  const varEl = document.getElementById('variation-percent');
+  varEl.textContent = (variationAvg >= 0 ? '+' : '') + variationAvg.toFixed(1) + ' %';
+  varEl.className = 'text-2xl font-bold ' + (variationAvg > 50 ? 'text-amber-400' : variationAvg > 20 ? 'text-yellow-300' : 'text-accent');
+
+  const alertSec = document.getElementById('threshold-alert');
+  if (result.breach25k) {
+    alertSec.classList.remove('hidden');
+    document.getElementById('alert-title').textContent = PRICING_CONFIG.alerte_seuil.title;
+    document.getElementById('alert-message').textContent = PRICING_CONFIG.alerte_seuil.message;
+    document.getElementById('alert-cta').querySelector('span').textContent = PRICING_CONFIG.alerte_seuil.cta_label;
+  } else {
+    alertSec.classList.add('hidden');
+  }
+
+  const dbg = [
+    `Prix base       : ${fmt(result.base.min)} – ${fmt(result.base.max)}`,
+    `Multiplicateurs :`,
+    ...result.breakdown.map(b => `  ${b.dimension.padEnd(28)} → ${b.label.padEnd(24)} ×${b.multiplier.toFixed(2)}${b.fixed ? ' + ' + fmt(b.fixed) : ''}`),
+    `Produit         : ×${result.multiplierProduct.toFixed(3)}`,
+    `Add-ons fixes   : +${fmt(result.fixedAddons)}`,
+    ``,
+    `Calcul min : ${fmt(result.base.min)} × ${result.multiplierProduct.toFixed(3)} + ${fmt(result.fixedAddons)} = ${fmt(result.adjusted.min)}`,
+    `Calcul max : ${fmt(result.base.max)} × ${result.multiplierProduct.toFixed(3)} + ${fmt(result.fixedAddons)} = ${fmt(result.adjusted.max)}`,
+    ``,
+    `Seuil 25 000 $  : ${result.breach25k ? '⚠️ DÉPASSÉ → alerte injectée' : 'OK'}`,
+  ].join('\n');
+  document.getElementById('debug-output').textContent = dbg;
+}
+
+function resetOptions() {
+  for (const [dimId, dim] of Object.entries(PRICING_CONFIG)) {
+    if (dimId === 'alerte_seuil') continue;
+    STATE.selectedOptions[dimId] = dim.default;
+  }
+  renderOptionsGrid();
+  render();
+}
+
+function escapeHtml(str) {
+  if (str == null) return '';
+  return String(str).replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderBasePriceSelector();
+  renderOptionsGrid();
+  render();
+  document.getElementById('reset-options-btn').addEventListener('click', resetOptions);
+  document.getElementById('alert-cta').addEventListener('click', () => {
+    alert('CTA atelier de cadrage — à brancher (form contact ou Calendly).');
+  });
+});
+
+/* SECTION 4 — Smoke tests (console au chargement) */
+(function selfTest() {
+  const cases = [
+    { name: 'tout aux défauts',                            base: { min: 10000, max: 15000 }, opts: {}, expect: { mult: 1.0, fixed: 0, breach: false } },
+    { name: 'CRM enterprise + Loi 25 audit + Ollama QC',   base: { min: 15000, max: 22000 }, opts: { integration_crm: 'enterprise', conformite_loi25: 'audit_dpo', hebergement_souverain: 'ollama_quebec' }, expect: { mult: 1.40 * 1.20 * 1.30, breach: true } },
+    { name: 'Petit projet + formation 1 jour',             base: { min: 5000, max: 8000 },   opts: { formation: 'une_journee' }, expect: { mult: 1.0, fixed: 2400, breach: false } },
+  ];
+  const results = cases.map(c => {
+    const r = computeAdjustedPrice(c.base, c.opts, PRICING_CONFIG);
+    const ok = Math.abs(r.multiplierProduct - c.expect.mult) < 0.001
+      && (c.expect.fixed === undefined || r.fixedAddons === c.expect.fixed)
+      && r.breach25k === c.expect.breach;
+    return { name: c.name, ok, computed: r };
+  });
+  const allOk = results.every(r => r.ok);
+  console.log(`[demo-v4] Smoke tests: ${allOk ? '✅ tous OK' : '❌ échec'}`, results);
+})();
+</script>
+
+</body>
+</html>

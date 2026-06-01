@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sidebar Panier Persistante — NorbeX Systems (v3)</title>
+<meta name="description" content="Démo v3 / 5 — Sidebar panier persistante avec compteur héros animé, calcul de payback déterministe, persistance localStorage." />
+
+<!--
+  =====================================================================
+  COMP-4012-WEB-CODE-INFRA v3.0 — Démo v3 / 5
+  Composant : Sidebar panier persistante + compteur héros animé
+  Stack : HTML5 + Tailwind CSS (CDN) + Vanilla JS ES6+
+  Peau visuelle alignée sur la charte marksystems.ca (fond noir, accent
+  teal #00A19B au lieu du vert flash original, Inter+JetBrains Mono,
+  sharp 4px, glow accent).
+  Persistance : localStorage (clé `mark_systems_selected_cart`).
+  =====================================================================
+-->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          background: '#050505',
+          surface: { DEFAULT: '#0F0F11', light: '#161618', border: '#1E293B' },
+          accent: { DEFAULT: '#00A19B', muted: '#008C87', dim: '#006B67' },
+          ink: { primary: '#F8FAFC', secondary: '#94A3B8', tertiary: '#A5B4C7' },
+        },
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+        borderRadius: { sm: '4px' },
+        boxShadow: {
+          'glow-accent': '0 0 15px rgba(0,161,155,0.15), 0 0 30px rgba(0,161,155,0.05)',
+          'glow-accent-lg': '0 0 25px rgba(0,161,155,0.2), 0 0 50px rgba(0,161,155,0.08)',
+        },
+      },
+    },
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .line-clamp-1 { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+  :focus-visible { outline: 2px solid #00A19B; outline-offset: 2px; }
+</style>
+</head>
+<body class="bg-background text-ink-primary min-h-screen antialiased">
+
+<!-- NAV DÉMO -->
+<header class="max-w-4xl mx-auto px-4 pt-8 pb-4 flex items-center justify-between font-mono text-xs text-ink-tertiary">
+  <a href="../" class="hover:text-accent transition-colors flex items-center gap-2">
+    <span class="inline-block w-2 h-2 bg-accent rounded-sm"></span>
+    ← NorbeX Systems · web-version
+  </a>
+  <span class="uppercase tracking-[0.22em] text-[10px]">Démo v3 / 5 — Sidebar panier persistante</span>
+</header>
+
+<!-- PANNEAU DÉMO -->
+<main class="max-w-4xl mx-auto px-4 pb-16 space-y-8">
+
+  <section class="rounded-sm border border-surface-border bg-surface/80 backdrop-blur-sm p-6 md:p-8">
+    <span class="inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.24em] text-accent mb-5">Test rapide</span>
+    <h1 class="mt-5 text-2xl md:text-3xl font-semibold tracking-[-0.03em] mb-3">Test rapide du panier</h1>
+    <p class="text-sm text-ink-secondary mb-6 leading-relaxed max-w-2xl">
+      Cette page démontre la sidebar isolée. Clique sur les workflows ci-dessous pour les ajouter
+      (équivalent de l'événement <code class="font-mono bg-surface-light text-accent px-1.5 py-0.5 rounded-sm text-[11px]">workflow:add</code> émis par le diagnostic IA).
+      Le compteur héros s'anime à chaque ajout. Recharge la page : le panier persiste via <code class="font-mono bg-surface-light text-accent px-1.5 py-0.5 rounded-sm text-[11px]">localStorage</code>.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="demo-workflow-buttons"></div>
+
+    <div class="mt-6 pt-6 border-t border-surface-border flex flex-wrap gap-3 text-xs">
+      <button onclick="document.dispatchEvent(new CustomEvent('cart:clear'))" class="px-3.5 py-2 rounded-sm border border-surface-border text-ink-secondary hover:text-accent hover:border-accent/40 hover:bg-surface-light transition-colors font-mono text-[10px] uppercase tracking-[0.22em]">
+        Vider le panier (event cart:clear)
+      </button>
+      <button onclick="localStorage.removeItem('mark_systems_selected_cart'); location.reload();" class="px-3.5 py-2 rounded-sm border border-surface-border text-ink-secondary hover:text-accent hover:border-accent/40 hover:bg-surface-light transition-colors font-mono text-[10px] uppercase tracking-[0.22em]">
+        Reset + reload (résilience localStorage)
+      </button>
+    </div>
+  </section>
+
+  <section class="rounded-sm border border-surface-border bg-surface-light p-5">
+    <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary mb-3">Formules SOIC déterministes appliquées</p>
+    <ul class="space-y-2 font-mono text-[11px] text-ink-secondary leading-relaxed">
+      <li><span class="text-accent">h<sub>mois</sub></span> = Σ(h<sub>sem</sub>) × 4.33</li>
+      <li><span class="text-accent">ÉquivalentSalaire</span> = h<sub>mois</sub> × 35 $/h <span class="text-ink-tertiary">(taux junior QC)</span></li>
+      <li><span class="text-accent">PaybackMois</span> = PrixMoyen / (h<sub>mois</sub> × 35) · PrixMoyen = (ΣBas + ΣHaut) / 2</li>
+      <li>Animation count-up : <code class="bg-background/60 px-1 rounded">requestAnimationFrame</code>, 600 ms, ease-out quad</li>
+    </ul>
+  </section>
+</main>
+
+<!-- ===========================================================
+     COMPOSANT SIDEBAR — logique inchangée, peau NorbeX Systems
+     =========================================================== -->
+<div id="mark-systems-cart-root" class="relative z-50 font-sans text-ink-primary">
+
+  <!-- BOUTON FLOTTANT -->
+  <button
+    id="cart-trigger-btn"
+    onclick="MarkSystemsCart.toggleOpen()"
+    class="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-ink-primary text-background px-5 py-4 rounded-sm hover:bg-white hover:scale-[1.05] hover:shadow-glow-accent-lg transition-all duration-200 flex items-center gap-3 z-40 font-semibold"
+    aria-label="Ouvrir le panier de diagnostic"
+  >
+    <div class="relative">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+      </svg>
+      <span id="cart-trigger-badge" class="absolute -top-2 -right-2 bg-accent text-background text-[10px] font-bold h-5 w-5 rounded-full flex items-center justify-center border-2 border-background transition-all duration-200 scale-0">0</span>
+    </div>
+    <span class="text-sm hidden md:inline">Mon estimation</span>
+  </button>
+
+  <!-- SIDEBAR -->
+  <div
+    id="cart-sidebar"
+    class="fixed inset-y-0 right-0 w-full sm:w-[400px] bg-background border-l border-surface-border shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cart-title"
+  >
+    <!-- HEADER SIDEBAR -->
+    <div class="p-5 border-b border-surface-border flex items-center justify-between bg-surface-light">
+      <div class="flex items-center gap-3">
+        <h3 id="cart-title" class="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">Plan d'automatisation</h3>
+        <span id="cart-items-count-badge" class="font-mono text-[10px] px-2 py-0.5 rounded-sm bg-surface-border text-ink-tertiary">0 sélectionné</span>
+      </div>
+      <button
+        onclick="MarkSystemsCart.toggleOpen()"
+        class="text-ink-tertiary hover:text-accent transition-colors p-1"
+        aria-label="Fermer le panier"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- CORPS -->
+    <div class="flex-1 overflow-y-auto p-5 space-y-6">
+
+      <!-- COMPTEUR HÉROS -->
+      <div class="bg-surface border border-surface-border rounded-sm p-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,161,155,0.12),transparent_70%)] pointer-events-none"></div>
+        <div class="relative">
+          <span class="block font-mono text-[10px] uppercase tracking-[0.24em] text-ink-tertiary mb-2">Rendement opérationnel estimé</span>
+          <div id="hero-hours-display" class="text-5xl md:text-6xl font-extrabold tracking-[-0.04em] my-2 text-accent" aria-live="polite">
+            0 <span class="text-sm font-medium text-ink-secondary tracking-normal">h / mois</span>
+          </div>
+          <div id="hero-financial-sub" class="text-xs text-ink-secondary border-t border-surface-border pt-3 mt-3">
+            Équivalent de 0 $ / mois économisé
+          </div>
+        </div>
+      </div>
+
+      <!-- LISTE WORKFLOWS -->
+      <div>
+        <h4 class="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary mb-3">Modèles retenus</h4>
+        <div id="cart-items-list" class="space-y-2.5">
+          <div id="cart-empty-state" class="text-center py-8 border border-dashed border-surface-border rounded-sm text-xs text-ink-tertiary leading-relaxed">
+            Aucun workflow sélectionné.<br>Utilise l'estimateur ou le diagnostic IA.
+          </div>
+        </div>
+      </div>
+
+      <!-- MÉTRIQUES -->
+      <div id="cart-metrics-panel" class="rounded-sm border border-surface-border bg-surface-light p-4 space-y-3 opacity-50 transition-opacity duration-200">
+        <div class="flex justify-between text-xs">
+          <span class="text-ink-secondary">Investissement global estimé</span>
+          <span id="metric-price-range" class="font-mono text-ink-primary">0 $ – 0 $</span>
+        </div>
+        <div class="flex justify-between text-xs border-t border-surface-border pt-2">
+          <span class="text-ink-secondary">Période de retour</span>
+          <span id="metric-payback" class="font-mono text-accent">N/A</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA BOTTOM -->
+    <div class="p-5 border-t border-surface-border bg-surface-light space-y-2">
+      <button
+        id="cart-cta-btn"
+        disabled
+        onclick="MarkSystemsCart.generateQuote()"
+        class="w-full rounded-sm bg-ink-primary text-background text-center py-3 font-semibold text-sm hover:bg-white hover:scale-[1.02] hover:shadow-glow-accent-lg transition-all duration-200 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+      >
+        Générer mon devis PDF
+      </button>
+      <button
+        onclick="MarkSystemsCart.clearCart()"
+        class="w-full text-center py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary hover:text-accent transition-colors"
+      >
+        Vider ma sélection
+      </button>
+    </div>
+  </div>
+
+  <!-- BACKDROP -->
+  <div
+    id="cart-backdrop"
+    onclick="MarkSystemsCart.toggleOpen()"
+    class="fixed inset-0 bg-background/70 opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+  ></div>
+</div>
+
+<script>
+  /**
+   * CONFIGURATION DU STORE (Gate C-04)
+   */
+  const CART_CONFIG = {
+    STORAGE_KEY: 'mark_systems_selected_cart',
+    WEEKS_PER_MONTH: 4.33,
+    HOURLY_RATE: 35,
+    ANIMATION_DURATION: 600,
+    CURRENCY: '$'
+  };
+
+  /**
+   * MOTEUR DE GESTION DU PANIER PERSISTANT (IIFE)
+   */
+  const MarkSystemsCart = (function() {
+    let items = [];
+    let currentTotalHoursMonth = 0;
+
+    /**
+     * @typedef {Object} WorkflowItem
+     * @property {string} code
+     * @property {string} title
+     * @property {number} h_sem_economisees
+     * @property {number} delai_jours
+     * @property {number} fourchette_prix_basse
+     * @property {number} fourchette_prix_haute
+     */
+
+    function init() {
+      try {
+        const stored = localStorage.getItem(CART_CONFIG.STORAGE_KEY);
+        if (stored) {
+          items = JSON.parse(stored);
+          if (!Array.isArray(items)) items = [];
+        }
+      } catch (e) {
+        console.warn("localStorage corrompu, initialisation vide.", e);
+        items = [];
+      }
+      document.addEventListener('workflow:add', (e) => { if (e.detail) addItem(e.detail); });
+      document.addEventListener('workflow:remove', (e) => { if (e.detail?.code) removeItem(e.detail.code); });
+      document.addEventListener('cart:clear', () => clearCart());
+      updateUI(false);
+    }
+
+    function persist() {
+      try { localStorage.setItem(CART_CONFIG.STORAGE_KEY, JSON.stringify(items)); }
+      catch (e) { console.error("Échec écriture localStorage.", e); }
+    }
+
+    /**
+     * @param {WorkflowItem} item
+     */
+    function addItem(item) {
+      if (!item.code || !item.title) return;
+      if (items.some(i => i.code === item.code)) return;
+      items.push({
+        code: String(item.code),
+        title: String(item.title),
+        h_sem_economisees: parseFloat(item.h_sem_economisees) || 0,
+        delai_jours: parseInt(item.delai_jours) || 0,
+        fourchette_prix_basse: parseFloat(item.fourchette_prix_basse) || 0,
+        fourchette_prix_haute: parseFloat(item.fourchette_prix_haute) || 0
+      });
+      persist();
+      updateUI(true);
+    }
+
+    /**
+     * @param {string} code
+     */
+    function removeItem(code) {
+      items = items.filter(i => i.code !== code);
+      persist();
+      updateUI(true);
+    }
+
+    function clearCart() {
+      items = [];
+      persist();
+      updateUI(true);
+    }
+
+    function toggleOpen() {
+      const sidebar = document.getElementById('cart-sidebar');
+      const backdrop = document.getElementById('cart-backdrop');
+      const isHidden = sidebar.classList.contains('translate-x-full');
+      if (isHidden) {
+        sidebar.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        sidebar.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    /**
+     * Count-up natif (Gate W-05)
+     * @param {string} elementId
+     * @param {number} start
+     * @param {number} end
+     * @param {number} duration
+     */
+    function animateCount(elementId, start, end, duration) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      const startTime = performance.now();
+      function updateNumber(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const easeProgress = progress * (2 - progress);
+        const current = start + easeProgress * (end - start);
+        el.innerHTML = `${current.toFixed(1)} <span class="text-sm font-medium text-ink-secondary tracking-normal">h / mois</span>`;
+        if (progress < 1) requestAnimationFrame(updateNumber);
+        else el.innerHTML = `${end.toFixed(1)} <span class="text-sm font-medium text-ink-secondary tracking-normal">h / mois</span>`;
+      }
+      requestAnimationFrame(updateNumber);
+    }
+
+    /**
+     * @param {boolean} shouldAnimate
+     */
+    function updateUI(shouldAnimate) {
+      const triggerBadge = document.getElementById('cart-trigger-badge');
+      const countBadge = document.getElementById('cart-items-count-badge');
+      const listContainer = document.getElementById('cart-items-list');
+      const metricsPanel = document.getElementById('cart-metrics-panel');
+      const priceDisplay = document.getElementById('metric-price-range');
+      const paybackDisplay = document.getElementById('metric-payback');
+      const financialSub = document.getElementById('hero-financial-sub');
+      const ctaBtn = document.getElementById('cart-cta-btn');
+      const count = items.length;
+
+      countBadge.textContent = `${count} sélectionné${count > 1 ? 's' : ''}`;
+      triggerBadge.textContent = count;
+      if (count > 0) {
+        triggerBadge.classList.remove('scale-0');
+        metricsPanel.classList.remove('opacity-50');
+        ctaBtn.removeAttribute('disabled');
+      } else {
+        triggerBadge.classList.add('scale-0');
+        metricsPanel.classList.add('opacity-50');
+        ctaBtn.setAttribute('disabled', 'true');
+      }
+
+      const totalHoursWeek = items.reduce((s, i) => s + i.h_sem_economisees, 0);
+      const targetHoursMonth = Math.round((totalHoursWeek * CART_CONFIG.WEEKS_PER_MONTH) * 10) / 10;
+      const totalLow = items.reduce((s, i) => s + i.fourchette_prix_basse, 0);
+      const totalHigh = items.reduce((s, i) => s + i.fourchette_prix_haute, 0);
+      const averagePrice = (totalLow + totalHigh) / 2;
+      const savingsFinancialMonth = Math.round(targetHoursMonth * CART_CONFIG.HOURLY_RATE);
+
+      if (shouldAnimate) {
+        animateCount('hero-hours-display', currentTotalHoursMonth, targetHoursMonth, CART_CONFIG.ANIMATION_DURATION);
+      } else {
+        document.getElementById('hero-hours-display').innerHTML = `${targetHoursMonth.toFixed(1)} <span class="text-sm font-medium text-ink-secondary tracking-normal">h / mois</span>`;
+      }
+      currentTotalHoursMonth = targetHoursMonth;
+
+      financialSub.textContent = `Équivalent de ${savingsFinancialMonth.toLocaleString()} ${CART_CONFIG.CURRENCY} / mois en temps libéré`;
+
+      if (count > 0) {
+        priceDisplay.textContent = `${totalLow.toLocaleString()} ${CART_CONFIG.CURRENCY} – ${totalHigh.toLocaleString()} ${CART_CONFIG.CURRENCY}`;
+        if (savingsFinancialMonth > 0) {
+          const paybackMonths = averagePrice / savingsFinancialMonth;
+          paybackDisplay.textContent = paybackMonths < 1 ? '< 30 jours' : `~ ${paybackMonths.toFixed(1)} mois`;
+        } else paybackDisplay.textContent = 'N/A';
+      } else {
+        priceDisplay.textContent = `0 ${CART_CONFIG.CURRENCY} – 0 ${CART_CONFIG.CURRENCY}`;
+        paybackDisplay.textContent = 'N/A';
+      }
+
+      // Reconstruction liste
+      listContainer.innerHTML = '';
+      if (count === 0) {
+        listContainer.innerHTML = `
+          <div id="cart-empty-state" class="text-center py-8 border border-dashed border-surface-border rounded-sm text-xs text-ink-tertiary leading-relaxed">
+            Aucun workflow sélectionné.<br>Utilise l'estimateur ou le diagnostic IA.
+          </div>`;
+      } else {
+        items.forEach(item => {
+          const cardHtml = `
+            <div class="flex items-center justify-between p-3 rounded-sm border border-surface-border bg-surface text-xs hover:border-accent/40 hover:shadow-glow-accent transition-all duration-200" data-cart-code="${escapeHtml(item.code)}">
+              <div class="space-y-0.5 pr-2">
+                <span class="font-mono text-[10px] text-ink-tertiary">${escapeHtml(item.code)}</span>
+                <h5 class="font-semibold text-ink-primary line-clamp-1">${escapeHtml(item.title)}</h5>
+                <p class="font-mono text-[11px] text-accent">+${item.h_sem_economisees} h/sem</p>
+              </div>
+              <button
+                onclick="MarkSystemsCart.removeItem('${escapeHtml(item.code)}')"
+                class="text-ink-tertiary hover:text-red-400 transition-colors p-1"
+                aria-label="Retirer ${escapeHtml(item.title)}"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                </svg>
+              </button>
+            </div>`;
+          listContainer.insertAdjacentHTML('beforeend', cardHtml);
+        });
+      }
+    }
+
+    function generateQuote() {
+      alert(`Génération du devis pour les ${items.length} workflows sélectionnés.`);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+    }
+
+    return { init, addItem, removeItem, clearCart, toggleOpen, generateQuote };
+  })();
+
+  document.addEventListener('DOMContentLoaded', MarkSystemsCart.init);
+</script>
+
+<!-- PANNEAU DÉMO : boutons d'ajout -->
+<script>
+  const DEMO_WORKFLOWS = [
+    { code: 'MS-LG-001', title: 'Lead scraper Google Maps + enrichissement IA', h_sem_economisees: 4, delai_jours: 5,  fourchette_prix_basse: 1500, fourchette_prix_haute: 2400 },
+    { code: 'MS-LG-003', title: 'Cold email machine (form → scrape → AI copy)', h_sem_economisees: 6, delai_jours: 7,  fourchette_prix_basse: 2000, fourchette_prix_haute: 3000 },
+    { code: 'MS-SC-013', title: 'Chatbot e-commerce GPT-4 + Supabase',          h_sem_economisees: 8, delai_jours: 10, fourchette_prix_basse: 2500, fourchette_prix_haute: 3500 },
+    { code: 'MS-SC-016', title: 'Auto-drafting réponses email support',         h_sem_economisees: 5, delai_jours: 4,  fourchette_prix_basse: 1200, fourchette_prix_haute: 1900 },
+    { code: 'MS-CM-034', title: 'Reviews aggregator + réponse auto (Google/Yelp/FB)', h_sem_economisees: 3, delai_jours: 3, fourchette_prix_basse: 900,  fourchette_prix_haute: 1500 },
+    { code: 'MS-FN-051', title: 'Réconciliation bancaire + rapports auto',      h_sem_economisees: 7, delai_jours: 8,  fourchette_prix_basse: 1800, fourchette_prix_haute: 2800 },
+  ];
+
+  function renderDemoButtons() {
+    const container = document.getElementById('demo-workflow-buttons');
+    container.innerHTML = DEMO_WORKFLOWS.map(w => `
+      <button
+        onclick='document.dispatchEvent(new CustomEvent("workflow:add", { detail: ${JSON.stringify(w)} }))'
+        class="text-left p-4 rounded-sm border border-surface-border bg-surface/60 backdrop-blur-sm hover:border-accent/40 hover:bg-surface hover:shadow-glow-accent hover:-translate-y-0.5 transition-all duration-300 group"
+      >
+        <div class="flex items-start justify-between gap-2 mb-2">
+          <span class="font-mono text-[10px] text-ink-tertiary">${w.code}</span>
+          <span class="font-mono text-[10px] text-accent">+${w.h_sem_economisees}h/sem</span>
+        </div>
+        <h3 class="text-sm font-semibold leading-snug mb-2 text-ink-primary">${w.title}</h3>
+        <div class="flex items-center justify-between text-[11px] text-ink-secondary font-mono">
+          <span>${w.fourchette_prix_basse.toLocaleString()} – ${w.fourchette_prix_haute.toLocaleString()} $</span>
+          <span class="text-accent font-bold opacity-0 group-hover:opacity-100 transition-opacity">+ Ajouter</span>
+        </div>
+      </button>
+    `).join('');
+  }
+  document.addEventListener('DOMContentLoaded', renderDemoButtons);
+</script>
+
+</body>
+</html>

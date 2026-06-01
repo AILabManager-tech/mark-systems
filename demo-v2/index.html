@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diagnostic IA — NorbeX Systems (v2)</title>
+<meta name="description" content="Diagnostic IA NorbeX Systems — démo v2 / 5 (UX 3 écrans séquentiels, Vanilla JS, conforme Loi 25)." />
+
+<!--
+  =====================================================================
+  COMP-3024-WEB-CODE-INFRA v3.0 — Démo v2 / 5
+  Stack : HTML5 + Tailwind CSS (CDN) + Vanilla JS ES6+
+  Origine : output d'un agent tiers, peau visuelle re-alignée sur
+  la charte officielle marksystems.ca (fond noir, accent teal,
+  Inter+JetBrains Mono, sharp 4px, glow accent).
+  Backend n8n : NON OPÉRATIONNEL — fallback déterministe côté client.
+  =====================================================================
+-->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          background: '#050505',
+          surface: { DEFAULT: '#0F0F11', light: '#161618', border: '#1E293B' },
+          accent: { DEFAULT: '#00A19B', muted: '#008C87', dim: '#006B67' },
+          ink: { primary: '#F8FAFC', secondary: '#94A3B8', tertiary: '#A5B4C7' },
+        },
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        },
+        borderRadius: { sm: '4px' },
+        boxShadow: {
+          'glow-accent': '0 0 15px rgba(0,161,155,0.15), 0 0 30px rgba(0,161,155,0.05)',
+          'glow-accent-lg': '0 0 25px rgba(0,161,155,0.2), 0 0 50px rgba(0,161,155,0.08)',
+        },
+      },
+    },
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  :focus-visible { outline: 2px solid #00A19B; outline-offset: 2px; }
+</style>
+</head>
+<body class="bg-background text-ink-primary min-h-screen py-12 antialiased">
+
+<!-- Header démo -->
+<header class="max-w-4xl mx-auto px-4 mb-8 flex items-center justify-between font-mono text-xs text-ink-tertiary">
+  <a href="../" class="hover:text-accent transition-colors flex items-center gap-2">
+    <span class="inline-block w-2 h-2 bg-accent rounded-sm"></span>
+    ← NorbeX Systems · web-version
+  </a>
+  <span class="uppercase tracking-[0.22em] text-[10px]">Démo v2 / 5 — 3 écrans séquentiels</span>
+</header>
+
+<!-- Diagnostic IA - Composant -->
+<div id="diagnostic-ia-root" class="w-full max-w-4xl mx-auto my-8 font-sans antialiased text-ink-primary">
+
+  <!-- ÉCRAN 1 : SAISIE -->
+  <div id="diagnostic-form-step" class="rounded-sm border border-surface-border bg-surface/80 backdrop-blur-sm p-6 md:p-8 transition-all duration-300">
+    <div class="mb-7">
+      <span class="inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.24em] text-accent mb-5">Diagnostic IA</span>
+      <h3 class="mt-5 text-2xl md:text-3xl font-semibold tracking-[-0.03em] leading-tight mb-3">Diagnostic d'Automatisation IA</h3>
+      <p class="text-sm text-ink-secondary leading-relaxed">Découvrez les workflows n8n du catalogue NorbeX Systems adaptés à vos douleurs opérationnelles.</p>
+    </div>
+
+    <form id="diagnostic-form" class="space-y-6" onsubmit="handleDiagnosticSubmit(event)">
+      <div>
+        <label for="company-description" class="block font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary mb-2.5">
+          Décris ton entreprise en 2 phrases (secteur, taille, douleur principale)
+        </label>
+        <textarea
+          id="company-description"
+          required
+          rows="3"
+          maxlength="500"
+          placeholder="Ex: Entreprise de services professionnels au Québec, 25 employés. Notre équipe perd 15 heures par semaine à copier-coller des données clients de HubSpot vers notre outil de facturation, ce qui crée des erreurs de saisie."
+          class="w-full bg-surface border border-surface-border rounded-sm px-4 py-3 text-sm text-ink-primary placeholder:text-ink-secondary/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-none"
+        ></textarea>
+        <div class="flex justify-end font-mono text-[10px] text-ink-tertiary mt-1.5">
+          <span id="char-counter">0</span>&nbsp;/&nbsp;500
+        </div>
+      </div>
+
+      <!-- Consentement Loi 25 -->
+      <div class="bg-surface-light border border-surface-border rounded-sm p-4">
+        <label class="flex items-start cursor-pointer select-none">
+          <input
+            type="checkbox"
+            id="loi25-consent"
+            required
+            class="mt-1 mr-3 h-4 w-4 rounded-sm border-surface-border accent-accent cursor-pointer"
+          />
+          <span class="text-xs text-ink-secondary leading-relaxed">
+            <strong class="text-ink-primary">Conformité Loi 25 :</strong> En cochant cette case, vous consentez au traitement de votre texte descriptif par notre outil d'analyse synchrone. Aucune donnée nominative, d'entreprise ou de saisie n'est stockée de façon persistante dans nos bases de données ou registres système (Logique <em class="text-accent">Read-Only First</em>).
+          </span>
+        </label>
+      </div>
+
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          id="submit-btn"
+          aria-busy="false"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-sm bg-ink-primary text-background font-semibold text-sm hover:bg-white hover:scale-[1.02] hover:shadow-glow-accent-lg transition-all duration-200 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+        >
+          Générer mon diagnostic
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ÉCRAN 2 : CHARGEMENT -->
+  <div id="diagnostic-loading-step" class="hidden rounded-sm border border-surface-border bg-surface/80 backdrop-blur-sm p-12 text-center">
+    <div class="flex flex-col items-center justify-center space-y-4">
+      <svg class="animate-spin h-10 w-10 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      <h4 class="text-base font-semibold text-ink-primary">Analyse du profil par l'ingénieur virtuel…</h4>
+      <p class="text-xs text-ink-secondary max-w-xs mx-auto leading-relaxed">Scoring SOIC en cours sur les 91 modèles du catalogue NorbeX Systems.</p>
+    </div>
+  </div>
+
+  <!-- ÉCRAN 3 : RÉSULTATS -->
+  <div id="diagnostic-results-step" class="hidden space-y-6" aria-live="polite">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-sm border border-surface-border bg-surface/80 backdrop-blur-sm p-5">
+      <div>
+        <h3 class="text-lg font-semibold text-ink-primary tracking-tight">Votre shortlist de workflows recommandés</h3>
+        <p id="results-subtitle" class="text-xs text-ink-secondary mt-1">Sélection optimisée basée sur vos goulots d'étranglement opérationnels.</p>
+      </div>
+      <button
+        onclick="resetDiagnostic()"
+        class="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary hover:text-accent transition-colors self-start sm:self-center"
+      >
+        Nouvelle analyse →
+      </button>
+    </div>
+
+    <div id="workflow-cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Injecté dynamiquement -->
+    </div>
+  </div>
+</div>
+
+<script>
+  /**
+   * CONFIGURATION GLOBALE (Gate C-04)
+   */
+  const DIAGNOSTIC_CONFIG = {
+    WEBHOOK_URL: 'https://n8n.votredomaine.com/webhook/diagnostic-ia',
+    TIMEOUT_MS: 3000,
+    SPINNER_MIN_DURATION: 2000,
+    FALLBACK_DATA: {
+      recommandations: [
+        { code: "MARK-T1-OPS", titre: "Saisie de données & synchronisation CRM", domaine: "Opérations", h_sem: 6, tier: "T1", justification: "Activé via fallback automatique. Idéal pour éliminer la double saisie de contacts et de factures entre vos silos logiciels." },
+        { code: "MARK-T1-FIN", titre: "Réconciliation bancaire & rapports automatisés", domaine: "Finance", h_sem: 4, tier: "T1", justification: "Activé via fallback automatique. Automatise l'extraction et l'appariement de vos flux financiers hebdomadaires." },
+        { code: "MARK-T1-RH",  titre: "Onboarding collaborateur & accès IT", domaine: "Ressources humaines", h_sem: 3, tier: "T1", justification: "Activé via fallback automatique. Centralise la création de comptes et l'envoi des documents légaux." },
+        { code: "MARK-T1-VNT", titre: "Relance de devis & qualification de leads", domaine: "Ventes", h_sem: 5, tier: "T1", justification: "Activé via fallback automatique. Maximise le taux de conversion en éliminant les délais de traitement." },
+        { code: "MARK-T1-SUP", titre: "Triage des billets & alerte d'urgence", domaine: "Support client", h_sem: 4, tier: "T1", justification: "Activé via fallback automatique. Analyse l'urgence des demandes entrantes pour prioriser la file d'attente." }
+      ]
+    }
+  };
+
+  const textarea = document.getElementById('company-description');
+  const counter = document.getElementById('char-counter');
+  textarea.addEventListener('input', () => { counter.textContent = textarea.value.length; });
+
+  /**
+   * @param {Event} event
+   */
+  async function handleDiagnosticSubmit(event) {
+    event.preventDefault();
+    const description = document.getElementById('company-description').value.trim();
+    const consentChecked = document.getElementById('loi25-consent').checked;
+    const submitBtn = document.getElementById('submit-btn');
+    if (!description || !consentChecked) return;
+
+    submitBtn.setAttribute('aria-busy', 'true');
+    submitBtn.disabled = true;
+    document.getElementById('diagnostic-form-step').classList.add('hidden');
+    document.getElementById('diagnostic-loading-step').classList.remove('hidden');
+
+    const startTime = Date.now();
+    let responseData = null;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), DIAGNOSTIC_CONFIG.TIMEOUT_MS);
+
+    try {
+      const response = await fetch(DIAGNOSTIC_CONFIG.WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ description, consentement_loi25: true, timestamp_utc: new Date().toISOString() }),
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
+      if (response.ok) {
+        const rawJson = await response.json();
+        if (rawJson && Array.isArray(rawJson.recommandations)) {
+          responseData = rawJson;
+        } else {
+          console.warn("Structure JSON invalide, fallback.");
+          responseData = DIAGNOSTIC_CONFIG.FALLBACK_DATA; responseData.isFallback = true;
+        }
+      } else {
+        console.warn(`HTTP ${response.status}, fallback.`);
+        responseData = DIAGNOSTIC_CONFIG.FALLBACK_DATA; responseData.isFallback = true;
+      }
+    } catch (error) {
+      clearTimeout(timeoutId);
+      console.warn("Timeout ou panne, fallback Tier-1.", error);
+      responseData = DIAGNOSTIC_CONFIG.FALLBACK_DATA; responseData.isFallback = true;
+    }
+
+    const elapsedTime = Date.now() - startTime;
+    const remainingTime = Math.max(0, DIAGNOSTIC_CONFIG.SPINNER_MIN_DURATION - elapsedTime);
+    setTimeout(() => {
+      renderWorkflowCards(responseData);
+      document.getElementById('diagnostic-loading-step').classList.add('hidden');
+      document.getElementById('diagnostic-results-step').classList.remove('hidden');
+      submitBtn.setAttribute('aria-busy', 'false');
+      submitBtn.disabled = false;
+    }, remainingTime);
+  }
+
+  /**
+   * @param {Object} data
+   */
+  function renderWorkflowCards(data) {
+    const container = document.getElementById('workflow-cards-container');
+    const subtitle = document.getElementById('results-subtitle');
+    container.innerHTML = '';
+
+    if (data.isFallback) {
+      subtitle.innerHTML = `<span class="inline-flex items-center px-2 py-0.5 rounded-sm font-mono text-[10px] uppercase tracking-[0.22em] border border-accent/30 bg-accent/10 text-accent mr-2">Mode hors-ligne</span> Profil standardisé basé sur les piliers Tier-1 de NorbeX Systems.`;
+    } else {
+      subtitle.textContent = "Sélection sur mesure générée dynamiquement par notre moteur IA.";
+    }
+
+    data.recommandations.forEach(wf => {
+      const safeTitle = escapeHtml(wf.titre);
+      const safeDomain = escapeHtml(wf.domaine);
+      const safeCode = escapeHtml(wf.code);
+      const safeJustification = escapeHtml(wf.justification);
+      const safeTier = escapeHtml(wf.tier);
+      const hours = parseFloat(wf.h_sem) || 0;
+
+      // Tiers traduits en variations accent (palette NorbeX Systems)
+      let tierBadgeClass = "border border-accent/40 bg-accent/15 text-accent";
+      if (safeTier === "T2") tierBadgeClass = "border border-accent/25 bg-accent/8 text-accent/80";
+      if (safeTier === "T3") tierBadgeClass = "border border-surface-border bg-surface-light text-ink-tertiary";
+
+      const cardHtml = `
+        <article class="group flex flex-col justify-between p-5 rounded-sm border border-surface-border bg-surface/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-glow-accent" data-code="${safeCode}">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-accent">${safeDomain}</span>
+              <span class="font-mono text-[10px] px-1.5 py-0.5 rounded-sm ${tierBadgeClass}">${safeTier}</span>
+            </div>
+            <h4 class="text-base font-semibold leading-snug text-ink-primary">${safeTitle}</h4>
+            <p class="text-xs text-ink-secondary leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">${safeJustification}</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-surface-border/60 flex items-center justify-between gap-2">
+            <div>
+              <span class="block font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary">Économie estimée</span>
+              <span class="text-sm font-semibold text-ink-primary mt-1 inline-block">${hours} h <span class="text-xs font-normal text-ink-tertiary">/ sem</span></span>
+            </div>
+            <button
+              onclick="handleAddToBasket('${safeCode}', '${safeTitle}')"
+              class="px-3.5 py-2 rounded-sm border border-surface-border text-ink-secondary hover:text-accent hover:border-accent/40 hover:bg-surface-light hover:shadow-glow-accent font-mono text-[10px] uppercase tracking-[0.22em] transition-all duration-200"
+            >
+              + Ajouter
+            </button>
+          </div>
+        </article>
+      `;
+      container.insertAdjacentHTML('beforeend', cardHtml);
+    });
+  }
+
+  /**
+   * @param {string} code
+   * @param {string} titre
+   */
+  function handleAddToBasket(code, titre) {
+    const event = new CustomEvent('workflow:add', { detail: { code, title: titre }, bubbles: true });
+    document.dispatchEvent(event);
+    const card = document.querySelector(`[data-code="${code}"]`);
+    if (card) {
+      card.classList.add('border-accent', 'shadow-glow-accent-lg');
+      const btn = card.querySelector('button');
+      const originalText = btn.textContent;
+      btn.textContent = '✓ Ajouté';
+      btn.classList.add('text-accent', 'border-accent/40');
+      setTimeout(() => {
+        card.classList.remove('border-accent', 'shadow-glow-accent-lg');
+        btn.textContent = originalText;
+        btn.classList.remove('text-accent', 'border-accent/40');
+      }, 1500);
+    }
+  }
+
+  function resetDiagnostic() {
+    document.getElementById('diagnostic-form').reset();
+    document.getElementById('char-counter').textContent = '0';
+    document.getElementById('diagnostic-results-step').classList.add('hidden');
+    document.getElementById('diagnostic-form-step').classList.remove('hidden');
+  }
+
+  /**
+   * @param {string} str
+   */
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+  }
+</script>
+
+</body>
+</html>

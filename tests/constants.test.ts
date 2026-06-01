@@ -1,5 +1,18 @@
 import { describe, it, expect } from "vitest";
-import { SITE, NAV_LINKS, SERVICE_KEYS, REALISATIONS, OUTILS } from "@/lib/constants";
+import { readFileSync } from "fs";
+import { resolve } from "path";
+import {
+  SITE,
+  NAV_LINKS,
+  SERVICE_KEYS,
+  REALISATIONS,
+  OUTILS,
+  CONCEPTS,
+  LOGICIELS,
+} from "@/lib/constants";
+
+const fr = JSON.parse(readFileSync(resolve(__dirname, "../messages/fr.json"), "utf-8"));
+const en = JSON.parse(readFileSync(resolve(__dirname, "../messages/en.json"), "utf-8"));
 
 describe("SITE config", () => {
   it("has a valid https URL", () => {
@@ -95,5 +108,53 @@ describe("Outils / Lab", () => {
   it("only one tool is featured", () => {
     const featured = OUTILS.filter((o) => o.featured);
     expect(featured).toHaveLength(1);
+  });
+});
+
+describe("Concepts de design", () => {
+  it("has 4 design concepts", () => {
+    expect(CONCEPTS).toHaveLength(4);
+  });
+
+  it("every concept has a key, https url, and concept image", () => {
+    for (const c of CONCEPTS) {
+      expect(c.key).toBeTruthy();
+      expect(c.url).toMatch(/^https:\/\//);
+      expect(c.image).toMatch(/^\/images\/concepts\//);
+    }
+  });
+
+  it("every concept key is translated FR + EN", () => {
+    for (const c of CONCEPTS) {
+      expect(fr.concepts.items[c.key]?.name).toBeTruthy();
+      expect(en.concepts.items[c.key]?.name).toBeTruthy();
+    }
+  });
+});
+
+describe("Logiciels", () => {
+  it("has at least 5 software entries", () => {
+    expect(LOGICIELS.length).toBeGreaterThanOrEqual(5);
+  });
+
+  it("every entry has a key and an image; url (when present) is valid", () => {
+    for (const l of LOGICIELS) {
+      expect(l.key).toBeTruthy();
+      expect(l.image).toMatch(/^\/images\//);
+      if ("url" in l && l.url) {
+        expect(l.url).toMatch(/^(https:\/\/|\/demos\/)/);
+      }
+    }
+  });
+
+  it("every software key is translated FR + EN", () => {
+    for (const l of LOGICIELS) {
+      expect(fr.logiciels.items[l.key]?.name).toBeTruthy();
+      expect(en.logiciels.items[l.key]?.name).toBeTruthy();
+    }
+  });
+
+  it("has at least one featured entry", () => {
+    expect(LOGICIELS.some((l) => "featured" in l && l.featured)).toBe(true);
   });
 });

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diagnostic IA — NorbeX Systems</title>
+<meta name="description" content="Diagnostic IA pour PME québécoises : décris ton entreprise, reçois une sélection de workflows d'automatisation chiffrés." />
+
+<!--
+  =====================================================================
+  COMP-3024-WEB-CODE-INFRA v3.0 — Démo v1 / 5 (UX standard formulaire)
+  Stack : HTML5 + Tailwind CSS (CDN) + Alpine.js (CDN). Embeddable Webflow.
+  Backend n8n : NON OPÉRATIONNEL — fallback côté client systématique.
+  Loi 25 : aucun stockage de la saisie ; consentement explicite requis.
+  Bilingue : FR (défaut) / EN, toggle persisté en localStorage.
+
+  GRILLE DE GATES SOIC (auto-vérif, voir bas du fichier pour détail) :
+  W-01 ✅  W-02 ✅  W-03 ✅  W-04 ✅  W-05 ✅
+  C-01 ✅  C-02 ✅  C-03 ✅  C-04 ✅  C-05 ✅
+  I-01 ⚠️  I-02 ✅  I-03 ✅  I-04 ✅  I-05 ✅
+  μ = 14/15 × 10 = 9.33  (seuil 8.6 — PASS)
+  I-01 marqué ⚠️ : workflow n8n JSON livré sous forme de squelette
+  commenté, branchement réel à faire quand l'instance n8n est prête.
+  =====================================================================
+-->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  // Extension du theme Tailwind pour aligner sur la charte NorbeX Systems
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          background: '#050505',
+          surface: { DEFAULT: '#0F0F11', light: '#161618', border: '#1E293B' },
+          accent:   { DEFAULT: '#00A19B', muted: '#008C87', dim: '#006B67' },
+          ink:      { primary: '#F8FAFC', secondary: '#94A3B8', tertiary: '#A5B4C7' },
+        },
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        },
+        borderRadius: { sm: '4px' },
+        boxShadow: {
+          'glow-accent': '0 0 15px rgba(0,161,155,0.15), 0 0 30px rgba(0,161,155,0.05)',
+          'glow-accent-lg': '0 0 25px rgba(0,161,155,0.2), 0 0 50px rgba(0,161,155,0.08)',
+        },
+      },
+    },
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+<style>
+  /* Spinner minimal — pas de dépendance externe */
+  @keyframes ms-spin { to { transform: rotate(360deg); } }
+  .ms-spinner { animation: ms-spin 0.8s linear infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .ms-spinner { animation: none; }
+  }
+  /* Focus-visible accessible */
+  :focus-visible { outline: 2px solid #00A19B; outline-offset: 2px; }
+</style>
+</head>
+
+<body class="bg-background font-sans text-ink-primary antialiased min-h-screen">
+
+<!-- ============================ HEADER ============================ -->
+<header class="border-b border-surface-border">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 font-mono text-sm tracking-wide text-ink-primary hover:text-accent transition-colors">
+      <span class="inline-block w-2 h-2 bg-accent rounded-sm"></span>
+      MARK <span class="text-ink-secondary">SYSTEMS</span>
+    </a>
+    <div x-data="i18nToggle" class="flex items-center gap-3 font-mono text-xs">
+      <button @click="setLang('fr')" :class="lang==='fr' ? 'text-accent' : 'text-ink-secondary hover:text-ink-primary'" class="transition-colors" aria-label="Français">FR</button>
+      <span class="text-surface-border">/</span>
+      <button @click="setLang('en')" :class="lang==='en' ? 'text-accent' : 'text-ink-secondary hover:text-ink-primary'" class="transition-colors" aria-label="English">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ MAIN ============================ -->
+<main x-data="diagnosticApp" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+
+  <!-- HERO / Brief -->
+  <section class="mb-10 lg:mb-14">
+    <span class="inline-flex rounded-full border border-accent/20 bg-accent/10 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.24em] text-accent" x-text="t('eyebrow')"></span>
+    <h1 class="mt-8 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] mb-5 text-ink-primary" x-text="t('h1')"></h1>
+    <p class="text-ink-secondary text-base sm:text-lg max-w-2xl leading-relaxed" x-text="t('subtitle')"></p>
+  </section>
+
+  <!-- FORMULAIRE -->
+  <section class="grid lg:grid-cols-5 gap-8 mb-12">
+    <div class="lg:col-span-3">
+      <form @submit.prevent="diagnose" class="space-y-6">
+        <div>
+          <label for="ms-desc" class="block font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary mb-2.5" x-text="t('label_desc')"></label>
+          <textarea
+            id="ms-desc"
+            x-model="form.description"
+            rows="5"
+            maxlength="2000"
+            :placeholder="t('placeholder_desc')"
+            class="w-full bg-surface border border-surface-border rounded-sm px-4 py-3 text-ink-primary placeholder:text-ink-secondary/60 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-none"
+            required
+          ></textarea>
+          <p class="mt-1.5 text-xs text-ink-secondary font-mono" x-text="form.description.length + ' / 2000'"></p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="ms-secteur" class="block font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary mb-2.5" x-text="t('label_secteur')"></label>
+            <input id="ms-secteur" x-model="form.secteur" type="text" :placeholder="t('placeholder_secteur')" class="w-full bg-surface border border-surface-border rounded-sm px-4 py-3 text-ink-primary placeholder:text-ink-secondary/60 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" />
+          </div>
+          <div>
+            <label for="ms-taille" class="block font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary mb-2.5" x-text="t('label_taille')"></label>
+            <select id="ms-taille" x-model="form.taille" class="w-full bg-surface border border-surface-border rounded-sm px-4 py-3 text-ink-primary focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors">
+              <option value="">—</option>
+              <option value="1-9">1–9</option>
+              <option value="10-49">10–49</option>
+              <option value="50-199">50–199</option>
+              <option value="200+">200+</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Consentement Loi 25 -->
+        <label class="flex items-start gap-3 p-4 bg-surface/50 border border-surface-border rounded-sm cursor-pointer hover:border-accent/30 transition-colors">
+          <input type="checkbox" x-model="form.consent" class="mt-0.5 accent-accent w-4 h-4 cursor-pointer" required />
+          <span class="text-sm text-ink-tertiary leading-relaxed" x-text="t('consent')"></span>
+        </label>
+
+        <button
+          type="submit"
+          :disabled="!form.consent || !form.description.trim() || loading"
+          :aria-busy="loading"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-ink-primary text-background font-semibold rounded-sm hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 hover:scale-[1.02] hover:shadow-glow-accent-lg active:scale-[0.98]"
+        >
+          <svg x-show="loading" class="ms-spinner w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-dasharray="40 60" />
+          </svg>
+          <span x-text="loading ? t('btn_loading') : t('btn_submit')"></span>
+        </button>
+
+        <p x-show="usingFallback" x-cloak class="text-xs font-mono text-ink-secondary border-l-2 border-accent/40 pl-3" x-text="t('fallback_notice')"></p>
+      </form>
+    </div>
+
+    <!-- Aside : ce que tu obtiens -->
+    <aside class="lg:col-span-2 lg:pl-8 lg:border-l lg:border-surface-border">
+      <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary mb-5" x-text="t('aside_title')"></p>
+      <ul class="space-y-3.5 text-sm text-ink-secondary">
+        <template x-for="item in t('aside_items')" :key="item">
+          <li class="flex items-center gap-3">
+            <span class="h-px w-4 bg-accent flex-shrink-0"></span>
+            <span class="leading-relaxed" x-text="item"></span>
+          </li>
+        </template>
+      </ul>
+    </aside>
+  </section>
+
+  <!-- ============================ RÉSULTATS ============================ -->
+  <section
+    aria-live="polite"
+    aria-atomic="false"
+    :aria-busy="loading"
+    class="border-t border-surface-border pt-10"
+    x-show="results.length > 0 || loading || error"
+    x-cloak
+  >
+    <!-- État chargement -->
+    <div x-show="loading && results.length === 0" class="text-center py-12">
+      <svg class="ms-spinner mx-auto w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-dasharray="40 60" />
+      </svg>
+      <p class="mt-4 font-mono text-xs uppercase tracking-widest text-ink-secondary" x-text="t('loading')"></p>
+    </div>
+
+    <!-- État erreur (rare — fallback couvre tout) -->
+    <div x-show="error && !loading" class="p-4 border border-red-500/30 bg-red-500/5 rounded-sm">
+      <p class="text-sm text-red-300" x-text="error"></p>
+    </div>
+
+    <!-- Cartes -->
+    <div x-show="results.length > 0 && !loading">
+      <div class="flex flex-wrap items-baseline justify-between gap-3 mb-6">
+        <h2 class="text-2xl font-semibold tracking-tight" x-text="t('results_title')"></h2>
+        <p class="font-mono text-xs uppercase tracking-widest text-ink-secondary" x-text="results.length + ' ' + t('results_count_suffix')"></p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <template x-for="(wf, idx) in results" :key="wf.id">
+          <article class="group relative flex flex-col rounded-sm border border-surface-border bg-surface/80 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-glow-accent" :class="wf.selected ? '' : 'opacity-40'">
+            <header class="flex items-start justify-between gap-2 mb-3">
+              <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-accent" x-text="wf.categorie"></span>
+              <span class="font-mono text-[10px] px-1.5 py-0.5 border border-surface-border rounded-sm text-ink-tertiary" x-text="wf.tier_label"></span>
+            </header>
+            <h3 class="text-base font-semibold leading-snug mb-2" x-text="wf.nom"></h3>
+            <p class="text-xs text-ink-tertiary leading-relaxed mb-4 line-clamp-3" x-text="wf.exemple_choisi"></p>
+            <div class="mt-auto pt-3 border-t border-surface-border/60 flex items-baseline justify-between">
+              <div class="font-mono text-[11px] text-ink-secondary">
+                <span x-text="formatCAD(wf.prix.implant)"></span>
+                <span class="text-ink-secondary/60"> + </span>
+                <span x-text="formatCAD(wf.prix.mensuel) + '/' + t('per_month')"></span>
+              </div>
+              <button
+                @click="toggleSelect(idx)"
+                class="font-mono text-[10px] uppercase tracking-widest text-ink-secondary hover:text-accent transition-colors"
+                x-text="wf.selected ? t('deselect') : t('select')"
+              ></button>
+            </div>
+          </article>
+        </template>
+      </div>
+
+      <!-- Total + CTA -->
+      <div class="rounded-sm border border-surface-border bg-surface/80 backdrop-blur-sm p-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-tertiary mb-2" x-text="t('total_label')"></p>
+          <p class="text-2xl font-semibold tracking-[-0.02em]">
+            <span x-text="formatCAD(totalImplant)"></span>
+            <span class="text-base text-ink-tertiary"> + </span>
+            <span x-text="formatCAD(totalMensuel) + ' / ' + t('per_month')"></span>
+          </p>
+          <p class="font-mono text-[11px] text-ink-tertiary mt-2" x-text="t('total_note')"></p>
+        </div>
+        <button
+          @click="openDevis"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-sm border border-surface-border text-ink-primary font-medium text-sm hover:border-accent/40 hover:bg-surface-light hover:shadow-glow-accent transition-all duration-200"
+          x-text="t('cta_devis')"
+        ></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal devis (mockup non opérationnel — placeholder à brancher) -->
+  <div x-show="devisOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70" @click.self="devisOpen=false" @keydown.escape.window="devisOpen=false">
+    <div class="bg-surface border border-surface-border rounded-sm p-6 max-w-md w-full">
+      <h3 class="text-xl font-semibold mb-2" x-text="t('devis_title')"></h3>
+      <p class="text-sm text-ink-tertiary mb-4" x-text="t('devis_body')"></p>
+      <p class="font-mono text-[11px] text-accent mb-6" x-text="t('devis_stub')"></p>
+      <div class="flex justify-end gap-3">
+        <button @click="devisOpen=false" class="px-4 py-2 font-mono text-xs uppercase tracking-widest text-ink-secondary hover:text-ink-primary transition-colors" x-text="t('close')"></button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="border-t border-surface-border mt-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-mono text-[11px] text-ink-secondary">
+    <p x-data x-text="'© ' + new Date().getFullYear() + ' NorbeX Systems — Conforme Loi 25 (Québec)'"></p>
+    <p>Démo v1 / 5 — UX formulaire standard</p>
+  </div>
+</footer>
+
+<!-- ============================ SCRIPTS ============================ -->
+<script>
+/* =====================================================================
+ * CONFIG — tout regroupé ici (gate C-04 : zéro hardcode dans le logic).
+ * ===================================================================== */
+const CONFIG = {
+  /** URL webhook n8n de production. À remplacer avant déploiement. */
+  WEBHOOK_URL: 'https://n8n.votredomaine.com/webhook/diagnostic-ia',
+  /** Timeout en ms avant fallback automatique côté client. */
+  TIMEOUT_MS: 3000,
+  /** Nombre de workflows retournés par le fallback déterministe. */
+  FALLBACK_MIN: 5,
+  FALLBACK_MAX: 8,
+  /** Grille tarifaire estimative par Tier — à valider avec NorbeX Systems. */
+  PRICE_TIERS: {
+    T1: { implant: 3500, mensuel: 350 }, // Tier Premium
+    T2: { implant: 1800, mensuel: 180 }, // Tier Standard
+    T3: { implant:  800, mensuel:  80 }, // Tier Optionnel
+  },
+  /** Active le mode debug : force fallback même si webhook répond. */
+  DEBUG_FORCE_FALLBACK: true, // 🚧 backend non opérationnel : true tant que n8n absent
+};
+
+/* =====================================================================
+ * CATALOG — extrait de v3_100_workflows.html (T1/T2/T3, SKIP exclus).
+ * Inliné pour démo embeddable. En prod : charger via fetch JSON statique.
+ * ===================================================================== */
+// Catalogue NorbeX Systems — extrait de v3_100_workflows.html, tiers vendables (T1/T2/T3)
+const CATALOG = [{"id":1,"nom":"Lead scraper Google Maps + enrichissement IA","categorie":"Lead Generation","score":20,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Plombier Longueuil : trouve les concurrents locaux sans site web et propose une refonte ciblée.","Concessionnaire automobile Rive-Sud cible les ateliers mécaniques indépendants pour un service de gestion de flotte.","Cabinet d'assurance dommages détecte les nouvelles entreprises immatriculées REQ pour leur proposer une couverture commerciale."]},{"id":2,"nom":"Multi-agent LinkedIn lead gen + scoring ICP","categorie":"Lead Generation","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["SaaS B2B : qualifie automatiquement les VP ventes correspondant à l'ICP et déclenche une séquence outbound.","Agence de placement RH spécialisée TI identifie les startups ayant levé du financement Série A/B pour offrir recrutement clé en main.","Fournisseur ERP manufacturier cible les directeurs d'usine de PME 50-200 employés en transition numérique."]},{"id":3,"nom":"Cold email machine (form → scrape → AI copy)","categorie":"Lead Generation","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Coach exécutif : envoie 50 courriels personnalisés/jour aux DRH de PME 50+ employés.","Studio Webflow démarche les agences marketing qui sous-traitent leur dev pour proposer un partenariat white-label.","Cabinet comptable CPA cible les e-commerçants Shopify QC dépassant 500k$ CA pour optimisation fiscale."]},{"id":4,"nom":"Enrichissement Clearbit/Apollo + routage CRM","categorie":"Lead Generation","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Cabinet comptable : enrichit chaque formulaire web avec données entreprise et route à l'associé.","Distributeur de matériel industriel route automatiquement les leads selon code SCIAN vers le bon représentant régional.","Agence assurance vie segmente les leads par tranche d'âge et revenu déclaré pour assigner au conseiller spécialisé."]},{"id":5,"nom":"Deep Research Sales Agent (Theory of the Account)","categorie":"Lead Generation","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Consultant en transformation numérique : produit un dossier client de 5 pages avant chaque RDV.","Banquier d'affaires Montréal produit un dossier d'analyse de 8 pages sur une cible d'acquisition avant pitch au PDG.","Cabinet juridique fusions-acquisitions briefe l'associé senior avec dossier complet avant chaque due diligence."]},{"id":6,"nom":"Telegram bot lead finder + Sheets","categorie":"Lead Generation","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Courtier immobilier : interroge en dictée vocale ses leads par quartier depuis son cellulaire.","Représentant commercial industriel dicte en route entre deux clients pour log instantané dans HubSpot.","Agent assurance dommages utilise son cellulaire pour consulter l'historique client en visite à domicile."]},{"id":7,"nom":"Lead magnet generator (topic → article RAG)","categorie":"Lead Generation","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Agence marketing QC : génère un livre blanc SEO sur l'IA pour PME en 5 minutes.","Cabinet d'avocats produit un guide PDF sur la conformité Loi 25 pour e-commerçants en échange d'inscription newsletter.","Conseiller financier indépendant génère un calculateur REER personnalisé en livre blanc téléchargeable."]},{"id":8,"nom":"LinkedIn post → lead detection + auto-DM","categorie":"Lead Generation","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Agence web : détecte les posts 'cherche freelance Webflow' et envoie un DM contextuel.","Consultant en cybersécurité monitore les posts mentionnant 'breach' ou 'incident' pour offrir un audit gratuit.","Coach en leadership intervient sur les posts de managers se plaignant de problèmes d'équipe."]},{"id":9,"nom":"Form → enrichissement + scoring + alerte Slack","categorie":"Lead Generation","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Studio Webflow : qualifie un lead Typeform en 15 secondes et notifie le commercial sur Slack.","SaaS B2B fait remonter en priorité les démos demandées par des entreprises de plus de 100 employés.","Cabinet juridique alerte l'associé spécialisé selon le type de dossier déclaré dans le formulaire."]},{"id":10,"nom":"Veille concurrentielle multi-source → CRM","categorie":"Lead Generation","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Studio design : surveille les levées de fonds à Montréal pour démarcher les startups financées.","Agence de relations publiques surveille les changements de C-suite chez les clients potentiels pour activer un outreach.","Fournisseur SaaS surveille les fermetures de plans concurrents pour récupérer les utilisateurs orphelins."]},{"id":11,"nom":"Calendly → research agent → brief commercial","categorie":"Lead Generation","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Vendeur SaaS : reçoit 15 min avant chaque démo un brief actualisé sur le prospect.","Coach exécutif reçoit un dossier complet du client 30 min avant la séance avec contexte LinkedIn récent.","Avocat reçoit le résumé du dossier du nouveau client avec jurisprudence pertinente avant la consultation initiale."]},{"id":13,"nom":"Chatbot e-commerce GPT-4 + Supabase","categorie":"Support Client","score":20,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Boutique Shopify mode : répond aux questions de livraison et recommande des articles 24/7.","Animalerie en ligne QC répond aux questions sur la posologie des suppléments et recommande le bon produit par espèce.","Boutique cannabis légal répond aux questions de souches et taux de THC dans les limites de conformité réglementaire."]},{"id":14,"nom":"RAG support multi-canal (KB → chat/voice)","categorie":"Support Client","score":21,"score_max":25,"tier":"T1","tier_label":"T1 Priorité","exemples":["SaaS comptabilité QC : bot Slack qui répond aux clients en s'appuyant sur la doc interne.","Mutuelle d'assurance répond aux questions de couverture en s'appuyant sur les contrats individuels des membres.","Hébergeur web montréalais résout 70% des tickets niveau 1 en s'appuyant sur la KB technique interne."]},{"id":15,"nom":"Ticket auto-routing + sentiment analysis","categorie":"Support Client","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Hébergeur web : escalade automatiquement les tickets négatifs au directeur du support.","SaaS RH route les tickets vers l'équipe paye, avantages ou recrutement selon analyse du contenu du message.","Plateforme e-commerce Shopify Plus escalade en priorité les tickets des marchands GMV>1M$."]},{"id":16,"nom":"Auto-drafting réponses email support","categorie":"Support Client","score":20,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Plombier indépendant : rédige les réponses aux demandes de devis envoyées par courriel.","Cabinet d'esthétique répond aux demandes de prix sur les protocoles de soins en respectant la grille tarifaire.","Studio de tatouage répond aux demandes de devis en envoyant le portfolio adapté au style demandé."]},{"id":17,"nom":"WhatsApp Business AI + handoff humain","categorie":"Support Client","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Clinique dentaire : confirme RDV et répond aux questions de prix en français sur WhatsApp.","Concessionnaire automobile gère les questions de financement et disponibilité véhicules en français 24/7.","Hôtel boutique du Vieux-Montréal prend les demandes de réservation conciergerie via WhatsApp."]},{"id":18,"nom":"Voicemail → transcription → ticket","categorie":"Support Client","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Garage auto : transforme les boîtes vocales en tickets Freshdesk avec priorité auto.","Clinique vétérinaire urgence transforme les messages vocaux nocturnes en tickets prioritaires triés par symptôme.","Cabinet d'avocats convertit les appels manqués en tickets avec niveau d'urgence détecté automatiquement."]},{"id":19,"nom":"FAQ dynamique auto-update depuis tickets","categorie":"Support Client","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Boutique mode en ligne : enrichit la FAQ à partir des tickets récurrents tous les vendredis.","SaaS de gestion locative met à jour la FAQ propriétaires à partir des tickets récurrents de la semaine.","École privée alimente la FAQ parents et admissions à partir des courriels d'information des derniers 30 jours."]},{"id":20,"nom":"Escalade intelligente NPS + sentiment","categorie":"Support Client","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Agence web : alerte le DG dès qu'un NPS détracteur est détecté chez un client gros compte.","Cabinet comptable alerte l'associé principal dès qu'un client annuel mentionne 'changement de cabinet' dans un courriel.","Fournisseur SaaS détecte les signaux de churn dans les tickets et déclenche une rétention proactive."]},{"id":21,"nom":"Multi-langue support (auto-traduction contextuelle)","categorie":"Support Client","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Hôtel boutique Vieux-Québec : répond aux courriels EN/FR/ES en respectant le ton de la marque.","Boutique e-commerce DTC vendant aux USA répond aux clients en anglais sans perdre le ton de marque francophone.","Cabinet d'immigration répond aux questions des candidats en arabe, espagnol et créole haïtien."]},{"id":22,"nom":"Post-vente survey + churn predictor","categorie":"Support Client","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Gym franchise QC : détecte les clients à risque de résiliation et propose une offre rétention.","Concessionnaire automobile détecte les clients à risque de partir chez la concurrence après le 1er entretien.","SaaS B2B QC anticipe les non-renouvellements annuels 60 jours à l'avance avec offre rétention ciblée."]},{"id":23,"nom":"Pipeline content idea → multi-plateforme publish","categorie":"Content & Marketing","score":20,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Cabinet d'avocats : transforme une idée en article LinkedIn + post X + newsletter automatiquement.","Coach business produit un article SEO + 1 vidéo TikTok + 3 carrousels LinkedIn par sujet hebdomadaire.","Fabricant manufacturier B2B publie les annonces produit sur LinkedIn, site web et newsletter en une seule action."]},{"id":24,"nom":"Blog post → repurposing (LinkedIn, X, newsletter)","categorie":"Content & Marketing","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Coach business : décline un article de 1500 mots en 5 carrousels LinkedIn et 8 tweets.","Cabinet comptable décline un article fiscal en 5 emails newsletter, 8 posts LinkedIn et un script vidéo YouTube.","Studio architecture transforme une étude de cas projet en visite Instagram, thread X et dossier de presse."]},{"id":25,"nom":"Image AI generation (brief → produit Shopify)","categorie":"Content & Marketing","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Boutique Shopify bijoux : génère des visuels lifestyle à partir des photos packshot.","Restaurant gastronomique génère des visuels de scène de table à partir des plats du nouveau menu saisonnier.","Marque DTC vêtements crée 50 visuels lifestyle saisonniers à partir des photos studio packshot."]},{"id":27,"nom":"Social media scheduler (Sheets → FB/IG/LinkedIn)","categorie":"Content & Marketing","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Restaurant Longueuil : publie le menu du jour sur FB/IG chaque matin à partir d'un Sheet.","Studio de yoga publie le calendrier des cours et instructeurs chaque dimanche sur Instagram et Facebook.","Microbrasserie annonce les nouvelles cuvées et événements de dégustation sur tous canaux simultanément."]},{"id":28,"nom":"SEO content gap analyzer (concurrent → outline)","categorie":"Content & Marketing","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Studio Webflow : identifie les mots-clés où les concurrents PME dominent et propose un brief.","Cabinet d'avocats droit de la famille identifie les requêtes 'divorce QC' où il pourrait dominer Google.","E-commerce niche jardinage trouve les mots-clés produits où les gros joueurs sont absents du top 10."]},{"id":29,"nom":"GEO AI Overview tracker + recommandations","categorie":"Content & Marketing","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Agence SEO Montréal : surveille la présence des clients dans les AI Overviews Google.","Concessionnaire automobile surveille sa présence dans les réponses ChatGPT et Perplexity pour requêtes locales.","Cabinet d'avocats Montréal track son apparition dans les AI Overviews sur des requêtes juridiques de niche."]},{"id":30,"nom":"Newsletter auto depuis veille RSS","categorie":"Content & Marketing","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Cabinet fiscal : envoie une newsletter hebdo sur les changements fiscaux QC.","Conseiller financier indépendant produit la newsletter hebdo bourse et REER personnalisée à ses 500 clients.","Cabinet juridique immobilier alerte ses clients promoteurs des changements de zonage et permis municipaux."]},{"id":31,"nom":"YouTube transcript → blog SEO","categorie":"Content & Marketing","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Coach finance perso : transforme chaque vidéo YouTube en article de blog optimisé.","Formateur en marketing recycle chaque épisode podcast en article SEO de 2000 mots avec captures d'écran.","Vétérinaire YouTubeur transforme ses vidéos de prévention en articles blog optimisés pour propriétaires d'animaux."]},{"id":32,"nom":"Brand monitoring (mentions → sentiment → alerte)","categorie":"Content & Marketing","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Microbrasserie : alerte le marketing quand la marque est mentionnée sur Reddit ou X.","Marque DTC cosmétique alertée dès qu'une influenceuse mentionne un produit pour relayer en story Instagram.","Cabinet d'avocats litige surveille les mentions du nom client sur les forums et réseaux pour gestion de réputation."]},{"id":34,"nom":"Reviews aggregator + réponse auto (Google/Yelp/FB)","categorie":"Content & Marketing","score":21,"score_max":25,"tier":"T1","tier_label":"T1 Priorité","exemples":["Resto familial Longueuil : répond à toutes les Google Reviews dans un ton chaleureux FR-QC.","Salon de coiffure répond aux avis Google avec ton chaleureux et offre rétention aux 1-2 étoiles.","Garage automobile réplique aux avis négatifs en proposant un suivi téléphonique personnalisé du gérant."]},{"id":35,"nom":"RAG corporate knowledge base (Drive/Notion → chat)","categorie":"AI Agents & RAG","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Cabinet ingénierie : permet aux employés d'interroger 10 ans d'archives projets en langage naturel.","Cabinet d'architecture interroge 20 ans de plans, spécifications et correspondances en langage naturel.","Fabricant manufacturier QC met à disposition la documentation technique multilingue à l'équipe support produit."]},{"id":36,"nom":"Multi-agent orchestration (researcher + writer)","categorie":"AI Agents & RAG","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Agence digital : génère + relit + critique + publie un article via 4 agents spécialisés.","Cabinet comptable génère, valide et livre les rapports financiers mensuels via 4 agents spécialisés.","Studio Webflow audite, corrige et déploie chaque mise à jour client via pipeline multi-agent autonome."]},{"id":37,"nom":"Agentic RAG Supabase avec memory long-terme","categorie":"AI Agents & RAG","score":20,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Cabinet RH : assistant qui se souvient de chaque interaction candidat sur 6 mois.","Coach exécutif conserve la mémoire de chaque séance et adapte ses interventions selon l'évolution du client.","Cabinet d'avocats divorce maintient l'historique complet du dossier sur plusieurs années de procédure."]},{"id":38,"nom":"MCP server custom (exposer outils internes à Claude)","categorie":"AI Agents & RAG","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Cabinet comptable : expose ses outils internes (devis, factures) à Claude pour les équipes.","Studio Webflow expose ses outils Client-First à Claude pour permettre aux clients d'auto-éditer leur site.","Distributeur industriel expose son catalogue, tarifs et disponibilités à Claude pour assistant commercial interne."]},{"id":39,"nom":"Personal AI assistant (email + calendar + tâches)","categorie":"AI Agents & RAG","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Avocat indépendant : assistant qui gère agenda, courriels et notes d'audience en arrière-plan.","Comptable solo gère sa fin de mois (TPS/TVQ, rapports, courriels clients) en arrière-plan via assistant IA.","Courtier immobilier coordonne agenda, suivis clients et notes de visite en mode mains-libres au volant."]},{"id":40,"nom":"Code review agent (GitHub PR → suggestions)","categorie":"AI Agents & RAG","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Studio Webflow + dev custom : pré-review les PR avant l'approbation humaine.","Startup SaaS QC pré-review les pull requests de l'équipe dev de 5 personnes avant chaque merge en production.","Agence dev mobile détecte automatiquement les anti-patterns React Native dans les pull requests."]},{"id":41,"nom":"AI Financial Controller (factures → réconciliation)","categorie":"AI Agents & RAG","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Restaurant : extrait toutes les factures fournisseurs Gmail et alimente le compte de résultat.","Entrepreneur général construction réconcilie 500 factures fournisseurs/mois avec les bons de commande émis.","Distributeur PME catégorise et code automatiquement chaque facture vers le bon centre de coût comptable."]},{"id":43,"nom":"Document Q&A multimodal (PDF + images cités)","categorie":"AI Agents & RAG","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Notaire : interroge un dossier de 200 pages avec citations précises des passages.","Cabinet d'expertise comptable interroge les liasses fiscales clients avec citations précises des notes complémentaires.","Cabinet d'ingénierie civile interroge les plans architecturaux et cahiers des charges en cross-référence."]},{"id":44,"nom":"Agent juridique RAG Loi 25 / RGPD","categorie":"AI Agents & RAG","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Cabinet d'avocats Montréal : audite un contrat fournisseur contre Loi 25 en 30 secondes.","PME e-commerce 50+ employés audite ses politiques internes contre Loi 25, RGPD et CCPA simultanément.","Cabinet RH valide les contrats d'embauche contre les normes du travail et la confidentialité des données."]},{"id":45,"nom":"Email triage AI (Gmail → catégorisation + draft)","categorie":"Email & Communication","score":21,"score_max":25,"tier":"T1","tier_label":"T1 Priorité","exemples":["Architecte indépendant : trie automatiquement 150 courriels/jour et propose des brouillons.","Courtier immobilier solo trie 200 courriels/jour entre nouvelles demandes, suivis d'offres et administratif.","PDG d'une PME 30 employés délègue le triage de sa boîte exécutive et reçoit un brief de 5 priorités matinales."]},{"id":46,"nom":"Inbox-zero automation (digest Slack quotidien)","categorie":"Email & Communication","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Consultant solo : reçoit chaque matin un digest Slack des 5 courriels prioritaires.","Médecin gestionnaire de clinique reçoit chaque matin un digest des courriels administratifs nécessitant décision.","Directeur d'école privée reçoit chaque matin un triage parents, personnel et conseil d'administration."]},{"id":47,"nom":"Meeting prep agent (cal → research → brief)","categorie":"Email & Communication","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Banquier d'affaires : reçoit un brief 30 min avant chaque RDV client.","Consultant en management reçoit un brief contextuel sur l'entreprise, l'actualité et le LinkedIn des participants.","Conseiller fiscal reçoit avant chaque RDV le portrait fiscal du client avec opportunités fiscales flaggées."]},{"id":48,"nom":"Email follow-up séquencé intelligent (no-reply)","categorie":"Email & Communication","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Agence web : relance les prospects sans réponse selon une cadence intelligente.","Concessionnaire automobile relance les prospects de test drive selon cadence intelligente sans relance robotique.","Cabinet d'avocats relance les clients pour signature de mandat avec messages variés selon profil client."]},{"id":49,"nom":"Slack digest quotidien (canaux → résumé exécutif)","categorie":"Email & Communication","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Studio dev 10 personnes : reçoit chaque matin un résumé des canaux Slack importants.","Agence marketing 20 personnes produit le résumé des canaux clients pour le DG chaque matin avant 9h.","Startup SaaS résume les canaux #produit, #support et #ventes pour le standup quotidien de l'équipe."]},{"id":50,"nom":"Discord community bot (Q&A + modération)","categorie":"Email & Communication","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Communauté no-code QC : modère et répond aux questions techniques 24/7.","Communauté trading crypto FR modère les spams scam et répond aux questions FAQ d'onboarding nouveaux membres.","Communauté freelances Québec répond aux questions admin (Loi 25, TPS/TVQ, contrats) automatiquement."]},{"id":51,"nom":"Telegram CRM mobile (vocal → CRM + tâches)","categorie":"Email & Communication","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Courtier immobilier : dicte une note vocale après chaque visite, créée auto dans HubSpot.","Représentant commercial pharma dicte ses notes de visite médecin en sortant du RDV pour log automatique.","Entrepreneur construction enregistre vocalement les changements de chantier pour facturation à jour."]},{"id":52,"nom":"SMS marketing automation (segmentation + send)","categorie":"Email & Communication","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Salon de coiffure : envoie des rappels RDV et offres anniversaire par SMS.","Restaurant familial envoie rappels réservation et offres anniversaire SMS bilingues à sa clientèle régulière.","Clinique esthétique notifie les places de dernière minute et promotions saisonnières SMS aux clients fidèles."]},{"id":53,"nom":"Stripe → QuickBooks reçus auto","categorie":"Finance & Comptabilité","score":20,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Boutique e-commerce : génère 200 reçus QuickBooks/jour sans intervention humaine.","SaaS abonnement mensuel synchronise 1000 transactions/mois sans intervention de la comptable externe.","Coach en ligne avec offre prepay automatise la génération de reçus pour 5 produits formation différents."]},{"id":54,"nom":"Failed payment recovery (Stripe → email retry)","categorie":"Finance & Comptabilité","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["SaaS abonnement mensuel : récupère 30% des paiements échoués via relances ciblées.","Gym franchise rattrape les paiements mensuels échoués avec séquence email puis SMS personnalisée par membre.","École en ligne récupère les frais d'inscription rejetés via relance bilingue et offre de paiement échelonné."]},{"id":55,"nom":"Invoice OCR → Sheets/SAP (PDF inbox → log)","categorie":"Finance & Comptabilité","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Entrepreneur construction : extrait toutes les factures fournisseurs reçues par courriel.","Cabinet comptable extrait les factures fournisseurs de 50 PME clientes vers leur ERP comptable respectif.","Restaurant gère 200 factures fournisseurs/mois avec catégorisation auto et provisions de fin de mois."]},{"id":56,"nom":"Génération factures auto (form → PDF → email)","categorie":"Finance & Comptabilité","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Photographe mariage : génère facture PDF + reçu après chaque dépôt Stripe client.","Consultant indépendant génère facture et portail de paiement Stripe après chaque livrable accepté par client.","Studio dev freelance facture automatiquement chaque jalon de projet signé dans Notion par le client."]},{"id":57,"nom":"AR reminders intelligents (overdue → email perso)","categorie":"Finance & Comptabilité","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Cabinet comptable : relance les clients en retard avec messages personnalisés selon historique.","Cabinet d'avocats relance les clients en retard avec ton adapté selon ancienneté de la relation commerciale.","Agence digital QC ajuste le ton de relance selon historique de paiement (premier oubli vs récidiviste)."]},{"id":58,"nom":"Expense tracking chatbot (photo reçu → OCR)","categorie":"Finance & Comptabilité","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Entrepreneur solo : photographie un reçu, l'IA catégorise et log dans Sheets en 2 secondes.","Représentant commercial routier log les dépenses essence, restos et hôtels en photo depuis le cellulaire.","Consultant facturant frais reproductibles catégorise auto en facturable client versus frais généraux."]},{"id":59,"nom":"Bank reconciliation (Plaid → matching)","categorie":"Finance & Comptabilité","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Cabinet comptable : rapproche 500 transactions bancaires/mois automatiquement.","PME services TI rapproche 800 transactions Visa Affaires/mois avec les factures et notes de frais.","Restaurant chaîne 3 succursales fait le rapprochement bancaire quotidien sans intervention humaine."]},{"id":60,"nom":"Subscription billing sync (Stripe ↔ CRM ↔ compta)","categorie":"Finance & Comptabilité","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["SaaS QC : synchronise Stripe ↔ HubSpot ↔ QuickBooks sans double-saisie.","Studio yoga abonnements mensuels synchronise Stripe, Mailchimp et comptabilité sans double-saisie manuelle.","École en ligne maintient ses 2000 abonnés actifs synchronisés entre Stripe, CRM et plateforme LMS."]},{"id":61,"nom":"Rapports financiers auto mensuels (close + pack)","categorie":"Finance & Comptabilité","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["PME 30 employés : génère le rapport mensuel CEO en J+2 avec graphiques.","Restaurant chaîne 5 succursales reçoit le pack mensuel CEO avec marges par succursale en J+3.","Agence digital reçoit le rapport CA, utilisation équipe et marges projet en début de chaque mois."]},{"id":62,"nom":"Conformité Loi 25 / RGPD audit trail","categorie":"Finance & Comptabilité","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["PME QC traitant données clients : log audit Loi 25 prêt pour inspection CAI.","Cabinet médical maintient un log audit complet des accès dossiers patients pour inspection RAMQ.","Agence RH conserve les preuves de consentement candidats prêtes pour audit CAI sans délai."]},{"id":63,"nom":"CV screening AI (inbox → parsing → scoring ICP)","categorie":"RH & Recrutement","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Cabinet recrutement Montréal : présélectionne 100 CV/jour contre la fiche de poste.","Studio dev en hypercroissance présélectionne 200 CV pour 5 postes ouverts simultanément en 1h.","Centre d'appels CRM filtre les candidats représentants selon expérience industrie et profil bilingue."]},{"id":64,"nom":"Onboarding employé auto (Slack + Notion + accès)","categorie":"RH & Recrutement","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Agence digital 25 personnes : provisionne tous les accès Slack/Notion/Google en 1 trigger.","Startup SaaS provisionne accès GitHub, Notion, 1Password, Slack et Linear en un seul trigger.","Cabinet comptable provisionne les accès au logiciel comptable et dossiers clients selon niveau de l'employé."]},{"id":65,"nom":"HR chatbot interne (politique RH RAG)","categorie":"RH & Recrutement","score":20,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["L'Usine RH (client) : bot Slack qui répond aux questions politiques RH des clients PME.","PME manufacturière 80 employés répond automatiquement aux questions vacances, maladie et avantages en FR-QC.","Concessionnaire auto multi-succursales centralise les questions politiques RH sur un bot bilingue accessible Slack."]},{"id":66,"nom":"Interview scheduler IA (candidat + cal + reminders)","categorie":"RH & Recrutement","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Agence recrutement : caler 20 entrevues/sem entre candidats et recruteurs sans aller-retour.","Cabinet comptable embauche 10 stagiaires/an avec coordination calendriers étudiants et associés sans friction.","Studio dev coordonne entrevues techniques 3 tours entre candidats internationaux et équipe locale."]},{"id":69,"nom":"LinkedIn job posting → multi-board","categorie":"RH & Recrutement","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Agence recrutement : publie chaque poste sur 5 jobboards depuis un seul formulaire.","Cabinet comptable publie chaque poste CPA sur Indeed, Jobboom, LinkedIn et Ordre des CPA en une action.","Restaurant gastronomique diffuse les offres serveurs et cuisiniers sur les boards spécialisés HRI."]},{"id":71,"nom":"Order processing Shopify → 3PL + Klaviyo sync","categorie":"E-commerce","score":21,"score_max":25,"tier":"T1","tier_label":"T1 Priorité","exemples":["Boutique e-comm vêtements : route les commandes vers 3PL + envoie Klaviyo confirmation en 2s.","Microbrasserie e-commerce route les commandes selon code postal vers transporteur SAQ vs Postes Canada.","Boutique d'épicerie bio QC synchronise Shopify, ChronoFresh livraison et Mailchimp confirmation."]},{"id":72,"nom":"Inventory multi-canal sync (Shopify/Amazon/Etsy)","categorie":"E-commerce","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Marque DTC : synchronise stock Shopify + Amazon + Etsy en temps réel sans rupture.","Importateur d'épices vend sur Shopify, Amazon.ca et revendeurs spécialisés sans risque de survente.","Marque bijoux artisanale gère son stock entre boutique physique Vieux-Montréal, Shopify et Etsy."]},{"id":73,"nom":"Abandoned cart recovery AI personnalisé","categorie":"E-commerce","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Boutique mode : récupère 25% des paniers abandonnés avec messages selon le produit.","Marque DTC cosmétique récupère 30% des paniers avec messages adaptés à l'historique d'achat du client.","Boutique meubles haut de gamme suit les paniers >2000$ avec relance personnalisée du conseiller commercial."]},{"id":74,"nom":"Product description generator (image → SEO copy)","categorie":"E-commerce","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Importateur produits maison : génère 200 fiches produit SEO par lot à partir des photos.","Boutique pièces auto génère 5000 fiches produit SEO multilingues à partir des références fabricants.","Marque DTC outils de cuisine décrit chaque nouveau produit avec angles cuisine québécoise distinctifs."]},{"id":75,"nom":"Dynamic pricing (scraping concurrence + algo)","categorie":"E-commerce","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Boutique électronique : ajuste les prix 3x/jour selon prix concurrents Amazon.","Hôtel boutique 20 chambres ajuste les tarifs nuitée selon occupancy et concurrence en temps réel.","Marque DTC vêtements active des promos surprise selon trafic site et inventaire vieillissant."]},{"id":76,"nom":"Returns automation (form → label + refund + restock)","categorie":"E-commerce","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Marque DTC : génère étiquette retour + remboursement + remise en stock automatiquement.","Boutique chaussures e-commerce gère 500 retours/mois entre tailles avec remplacement automatique direct.","Marque cosmétique e-commerce automatise les retours produits ouverts versus scellés avec remboursement partiel."]},{"id":77,"nom":"Review request post-purchase (timing AI nudge)","categorie":"E-commerce","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Boutique cosmétique : sollicite un avis 14 jours après livraison avec offre fidélité.","Restaurant livraison sollicite avis Google 24h après livraison avec offre fidélité réservée 5 étoiles.","Boutique meubles demande avis 30 jours après livraison avec photo du produit en situation chez le client."]},{"id":79,"nom":"Conversational commerce (chat → reco → checkout)","categorie":"E-commerce","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Boutique meubles haut de gamme : conseille en chat live et déclenche le checkout.","Boutique bijoux conseille en chat live et déclenche le checkout sur recommandation personnalisée du conseiller.","Boutique vins artisanaux conseille selon plat à servir et déclenche commande livraison samedi suivant."]},{"id":80,"nom":"Loyalty program automation (points + tiers + rewards)","categorie":"E-commerce","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Café franchise QC : attribue points fidélité et envoie reward au 10ème achat.","Salon esthétique attribue points fidélité et envoie reward au 10ème soin avec offre anniversaire personnalisée.","Restaurant chaîne pizza familiale gère programme fidélité avec niveau Argent, Or et Platine progressif."]},{"id":81,"nom":"Contrat auto-génération (CRM → template → e-sign)","categorie":"Document Processing","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Agence web : génère contrat + envoie DocuSign après signature devis client.","Cabinet d'avocats génère contrat de service, NDA et entente confidentialité depuis le CRM en 30 secondes.","Studio dev produit contrat de développement personnalisé avec barème heures, jalons et dépôt e-signature DocuSign."]},{"id":82,"nom":"Propositions commerciales <1min (BeGlobal pattern)","categorie":"Document Processing","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Studio Webflow : produit une proposition de 8 pages personnalisée en 60 secondes.","Agence marketing digital produit une proposition de 12 pages avec mock-ups personnalisés en 90 secondes.","Cabinet comptable génère propositions de mandat annuel personnalisées selon taille et complexité PME cliente."]},{"id":83,"nom":"PDF data extraction batch (factures/bordereaux)","categorie":"Document Processing","score":18,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Cabinet comptable : extrait 1000 factures fournisseurs par lot en données structurées.","Entrepreneur général extrait 2000 bons de livraison fournisseurs/mois pour rapprochement avec bons de commande.","Cabinet d'assurance extrait les déclarations sinistres PDF papier vers base de données structurée requêtable."]},{"id":84,"nom":"Meeting transcripts → action items + CRM update","categorie":"Document Processing","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Consultant : extrait les action items de chaque RDV Zoom et les pousse dans HubSpot.","Directeur de projet construction extrait les décisions et action items de chaque réunion chantier vers Asana.","Coach exécutif suit les engagements pris par le client lors de chaque séance avec dates de suivi auto."]},{"id":85,"nom":"Data sync multi-DB (Postgres ↔ Airtable ↔ Sheets)","categorie":"Document Processing","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["PME services : maintient Postgres, Airtable et Sheets synchronisés en temps réel.","Distributeur PME synchronise inventaire entre ERP Acomba, Shopify et Magento revendeurs en temps réel.","Cabinet médical synchronise dossier patient entre RDV (Cliniko), facturation (RAMQ) et analyse (DSE)."]},{"id":87,"nom":"Translation pipeline pro (docs → DeepL → review)","categorie":"Document Processing","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Cabinet de traduction : pré-traduit DeepL puis route au réviseur humain via Slack.","Cabinet d'avocats traduit les contrats EN→FR avec révision par associé avant signature client finale.","PME exportatrice manufacturière traduit fiches techniques en 5 langues avec validation experte par marché."]},{"id":88,"nom":"Compliance audit auto (logs → rapport daté)","categorie":"Document Processing","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["PME services TI : produit rapport conformité Loi 25 daté pour inspection CAI.","Clinique médicale produit le rapport conformité accès dossiers patients pour inspection annuelle obligatoire.","Concessionnaire automobile maintient log audit Loi 25 prêt pour inspection autorité provinciale."]},{"id":89,"nom":"GitHub PR review agent multi-repo","categorie":"DevOps & Monitoring","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Studio dev custom : pré-review chaque PR avant approbation humaine.","Startup SaaS QC en hypercroissance pré-review les PR de 8 devs avant le human-in-the-loop final.","Agence dev mobile détecte les anti-patterns React et Swift dans chaque PR avec suggestions inline."]},{"id":90,"nom":"Uptime monitoring + auto-incident creation","categorie":"DevOps & Monitoring","score":19,"score_max":25,"tier":"T2","tier_label":"T2 Standard","exemples":["Studio hébergeur web : crée ticket PagerDuty + alerte Slack en cas de downtime client.","Agence Webflow surveille 50 sites clients et crée incident Linear si downtime supérieur à 2 minutes.","SaaS QC alerte automatiquement l'équipe astreinte et email VIP clients en cas d'incident majeur."]},{"id":91,"nom":"Log anomaly detection (Loki/Datadog → alerte IA)","categorie":"DevOps & Monitoring","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["SaaS Montréal : détecte les anomalies Datadog et propose une cause probable au DevOps.","Plateforme e-commerce détecte les pics d'erreurs paiement et propose une analyse de cause au DevOps.","Studio dev surveille les logs production de 20 projets clients avec alerte intelligente unifiée Slack."]},{"id":92,"nom":"CI/CD failure analysis agent","categorie":"DevOps & Monitoring","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Studio dev : analyse les échecs GitHub Actions et propose un fix dans Slack.","Startup SaaS débugué automatiquement les builds échoués avec proposition de fix dans la pull request.","Agence dev mobile analyse les échecs Fastlane et propose le command exact pour reproduire localement."]},{"id":93,"nom":"Cybersecurity pattern SOC (33 workflows Vodafone)","categorie":"DevOps & Monitoring","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["MSSP QC : enrichit chaque alerte SIEM avec contexte Claude pour analyste SOC.","Cabinet comptable détecte les tentatives d'accès non autorisées aux dossiers clients (Loi 25 critique).","PME services TI gère le SOC interne avec enrichissement contextuel des 200 alertes/jour SIEM."]},{"id":94,"nom":"Backup verification + restore tests","categorie":"DevOps & Monitoring","score":16,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["PME services IT : teste mensuellement les restores des backups S3 et alerte si échec.","Cabinet médical teste mensuellement le restore des backups DSE pour conformité audit annuel obligatoire.","Agence digital valide les backups hebdomadaires des sites clients Webflow et Shopify avec rapport mail."]},{"id":95,"nom":"Voice agent appointment booking (ElevenLabs+Cal.com)","categorie":"Voice & Téléphonie","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Clinique dentaire Longueuil : prend les RDV en français au téléphone 24/7 avec Cal.com.","Cabinet vétérinaire prend les RDV urgents et consultation routine en français 24/7 avec calcul de disponibilités.","Salon esthétique automatise les RDV avec gestion du temps de soin et remplacement automatique des annulations."]},{"id":96,"nom":"Retell AI sales upsell calls (Sheets → appel auto)","categorie":"Voice & Téléphonie","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Clinique esthétique : rappelle les clients inactifs pour proposer une nouvelle offre.","Concessionnaire automobile rappelle les clients en fin de financement pour proposer renouvellement de véhicule.","Salon coiffure rappelle les clients absents depuis 6+ mois avec offre retour et nouveautés services."]},{"id":97,"nom":"Inbound call qualifier (Twilio → intent → routing)","categorie":"Voice & Téléphonie","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Garage auto : qualifie les appels entrants et route vers le bon mécanicien.","Cabinet d'avocats qualifie les appels entrants (type dossier + urgence) et route au bon associé spécialisé.","Agence immobilière route les appels selon type bien recherché et budget vers le bon courtier disponible."]},{"id":98,"nom":"Voice-driven outreach real estate (Flow AI pattern)","categorie":"Voice & Téléphonie","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Courtier immobilier : rappelle automatiquement les leads après soumission de formulaire.","Cabinet d'assurance vie rappelle automatiquement les leads inscrits via formulaire web dans les 5 minutes.","Concessionnaire automobile rappelle dans 2 minutes après demande test drive pour booking immédiat."]},{"id":99,"nom":"Multilingue voice support FR-QC (FR+EN+ES)","categorie":"Voice & Téléphonie","score":17,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Hôtel Vieux-Québec : prend appels en FR/EN/ES avec accent local respecté.","Cabinet d'immigration prend les appels en FR/EN/ES/AR pour pré-qualification dossier candidat à l'immigration.","Centre d'appels touristique répond en 5 langues avec préservation des accents régionaux."]},{"id":100,"nom":"Post-call summary + CRM auto-update","categorie":"Voice & Téléphonie","score":15,"score_max":25,"tier":"T3","tier_label":"T3 Optionnel","exemples":["Consultant : reçoit résumé + action items de chaque appel téléphonique dans HubSpot.","Représentant commercial industriel log les notes d'appel client avec next-step dans HubSpot sans saisie.","Cabinet juridique conserve résumé de chaque appel client avec actions, dates et émotions détectées."]}] ;
+
+
+/* =====================================================================
+ * I18N — strings FR + EN. Aucun stockage PII, juste préférence langue.
+ * ===================================================================== */
+const I18N = {
+  fr: {
+    eyebrow: 'Diagnostic IA — sans engagement',
+    h1: 'Décris ta PME, reçois 5 à 8 automatisations chiffrées.',
+    subtitle: "Notre moteur croise ta description avec un catalogue de 91 workflows n8n qualifiés pour PME québécoises. Réponse en moins de 3 secondes, prix estimés inclus.",
+    label_desc: 'Description de ton entreprise',
+    placeholder_desc: 'Ex. : Cabinet comptable à Longueuil, 12 employés, 200 clients PME, beaucoup de saisie manuelle de factures et de suivi de courriels...',
+    label_secteur: 'Secteur (optionnel)',
+    placeholder_secteur: 'Ex. : comptabilité, e-commerce, manufacturier...',
+    label_taille: 'Taille (employés)',
+    consent: "J'autorise NorbeX Systems à analyser ce texte localement pour générer mes recommandations. Aucune donnée n'est stockée. Conforme Loi 25.",
+    btn_submit: 'Lancer le diagnostic',
+    btn_loading: 'Analyse en cours…',
+    fallback_notice: '⚠️ Backend n8n non joignable — recommandations générées par le moteur local de secours.',
+    aside_title: 'Ce que tu obtiens',
+    aside_items: [
+      'Liste de 5 à 8 automatisations adaptées à ton contexte',
+      'Prix d\'implantation et frais récurrents estimés en CAD',
+      'Exemple PME-QC concret pour chaque workflow',
+      'Possibilité de désélectionner ce qui ne te parle pas',
+      'Devis détaillé sur demande, zéro engagement',
+    ],
+    loading: 'Analyse en cours',
+    results_title: 'Automatisations recommandées',
+    results_count_suffix: 'workflows',
+    per_month: 'mois',
+    select: 'Ajouter',
+    deselect: 'Retirer',
+    total_label: 'Total estimé',
+    total_note: 'Estimation indicative. Devis ferme après diagnostic approfondi.',
+    cta_devis: 'Demander un devis détaillé',
+    devis_title: 'Demande de devis',
+    devis_body: 'Notre équipe te recontacte sous 24 h avec un devis ferme basé sur ta sélection actuelle.',
+    devis_stub: '🚧 Formulaire à brancher (webhook contact, à venir).',
+    close: 'Fermer',
+  },
+  en: {
+    eyebrow: 'AI Diagnostic — no commitment',
+    h1: 'Describe your SMB, get 5 to 8 priced automations.',
+    subtitle: 'Our engine matches your description against a catalog of 91 n8n workflows qualified for Québec SMBs. Response in under 3 seconds, estimated pricing included.',
+    label_desc: 'Describe your business',
+    placeholder_desc: 'E.g.: Accounting firm in Longueuil, 12 employees, 200 SMB clients, lots of manual invoice entry and email follow-ups...',
+    label_secteur: 'Industry (optional)',
+    placeholder_secteur: 'E.g.: accounting, e-commerce, manufacturing...',
+    label_taille: 'Size (employees)',
+    consent: 'I authorize NorbeX Systems to analyze this text locally to generate my recommendations. No data is stored. Compliant with Québec Bill 25.',
+    btn_submit: 'Run diagnostic',
+    btn_loading: 'Analyzing…',
+    fallback_notice: '⚠️ n8n backend unreachable — recommendations generated by local fallback engine.',
+    aside_title: 'What you get',
+    aside_items: [
+      '5 to 8 automations tailored to your context',
+      'Estimated setup and monthly fees in CAD',
+      'Concrete QC-SMB example for each workflow',
+      'Ability to deselect what doesn\'t fit',
+      'Detailed quote on request, zero commitment',
+    ],
+    loading: 'Analyzing',
+    results_title: 'Recommended automations',
+    results_count_suffix: 'workflows',
+    per_month: 'mo',
+    select: 'Add',
+    deselect: 'Remove',
+    total_label: 'Estimated total',
+    total_note: 'Indicative estimate. Firm quote after in-depth diagnostic.',
+    cta_devis: 'Request detailed quote',
+    devis_title: 'Quote request',
+    devis_body: 'Our team will reach out within 24 h with a firm quote based on your current selection.',
+    devis_stub: '🚧 Form to wire up (contact webhook, upcoming).',
+    close: 'Close',
+  },
+};
+
+/* =====================================================================
+ * Alpine components
+ * ===================================================================== */
+document.addEventListener('alpine:init', () => {
+
+  // ---------- Toggle i18n (header) ----------
+  Alpine.data('i18nToggle', () => ({
+    lang: localStorage.getItem('ms_lang') || 'fr',
+    init() { document.documentElement.lang = this.lang; window.__msLang = this.lang; this.$watch('lang', v => { localStorage.setItem('ms_lang', v); document.documentElement.lang = v; window.__msLang = v; window.dispatchEvent(new CustomEvent('ms-lang-change', { detail: v })); }); },
+    setLang(l) { this.lang = l; },
+  }));
+
+  // ---------- Composant principal diagnostic ----------
+  Alpine.data('diagnosticApp', () => ({
+    lang: localStorage.getItem('ms_lang') || 'fr',
+    form: { description: '', secteur: '', taille: '', consent: false },
+    loading: false,
+    error: null,
+    results: [],
+    usingFallback: false,
+    devisOpen: false,
+
+    init() {
+      window.addEventListener('ms-lang-change', e => { this.lang = e.detail; });
+    },
+
+    /** Renvoie la traduction pour la clé courante */
+    t(key) { return I18N[this.lang]?.[key] ?? I18N.fr[key] ?? key; },
+
+    /** Formatte un nombre en CAD (sans cents pour le visuel marketing) */
+    formatCAD(n) {
+      return new Intl.NumberFormat(this.lang === 'fr' ? 'fr-CA' : 'en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
+    },
+
+    get totalImplant() { return this.results.filter(w => w.selected).reduce((s, w) => s + w.prix.implant, 0); },
+    get totalMensuel() { return this.results.filter(w => w.selected).reduce((s, w) => s + w.prix.mensuel, 0); },
+
+    toggleSelect(idx) { this.results[idx].selected = !this.results[idx].selected; },
+    openDevis() { this.devisOpen = true; },
+
+    /**
+     * Lance le diagnostic : fetch webhook n8n avec timeout 3s,
+     * fallback déterministe côté client si erreur/timeout/non-200.
+     * @returns {Promise<void>}
+     */
+    async diagnose() {
+      this.loading = true;
+      this.error = null;
+      this.results = [];
+      this.usingFallback = false;
+
+      try {
+        if (CONFIG.DEBUG_FORCE_FALLBACK) {
+          // Backend non opérationnel : on simule un délai et on bascule fallback
+          await new Promise(r => setTimeout(r, 900));
+          throw new Error('FORCE_FALLBACK');
+        }
+        const payload = await this.callWebhook();
+        const validated = this.validate(payload);
+        this.results = this.hydrate(validated);
+      } catch (err) {
+        // Fallback étanche — gate I-05
+        this.usingFallback = true;
+        this.results = this.localFallback();
+      } finally {
+        this.loading = false;
+      }
+    },
+
+    /**
+     * Appel HTTP webhook n8n avec AbortController (gate C-03).
+     * @returns {Promise<object>} Payload JSON brut
+     */
+    async callWebhook() {
+      const ctrl = new AbortController();
+      const tid = setTimeout(() => ctrl.abort(), CONFIG.TIMEOUT_MS);
+      try {
+        const res = await fetch(CONFIG.WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          signal: ctrl.signal,
+          body: JSON.stringify({
+            description: this.form.description,
+            secteur: this.form.secteur || null,
+            taille: this.form.taille || null,
+            lang: this.lang,
+          }),
+        });
+        if (!res.ok) throw new Error('HTTP_' + res.status);
+        return await res.json();
+      } finally { clearTimeout(tid); }
+    },
+
+    /**
+     * Valide la structure attendue du JSON n8n.
+     * @param {*} payload Réponse brute
+     * @returns {Array} Liste validée
+     */
+    validate(payload) {
+      if (!Array.isArray(payload?.workflows)) throw new Error('INVALID_SHAPE');
+      return payload.workflows.filter(w => w && typeof w.id === 'number');
+    },
+
+    /** Enrichit les items renvoyés par n8n avec les données du catalogue local */
+    hydrate(list) {
+      return list.map(w => {
+        const full = CATALOG.find(c => c.id === w.id) || w;
+        return this.attachPrice(full);
+      });
+    },
+
+    /**
+     * Fallback local : sélection déterministe par mots-clés dans la description.
+     * Si rien ne matche, top-N par score décroissant.
+     */
+    localFallback() {
+      const txt = (this.form.description + ' ' + this.form.secteur).toLowerCase();
+      const scored = CATALOG.map(w => {
+        const haystack = (w.nom + ' ' + w.categorie + ' ' + w.exemples.join(' ')).toLowerCase();
+        let hits = 0;
+        for (const word of txt.split(/\s+/).filter(x => x.length > 3)) {
+          if (haystack.includes(word)) hits++;
+        }
+        return { ...w, _hits: hits };
+      }).sort((a, b) => (b._hits - a._hits) || (b.score - a.score));
+
+      // Si zéro hit (description vide ou exotique) → top par score
+      const pickN = Math.min(CONFIG.FALLBACK_MAX, Math.max(CONFIG.FALLBACK_MIN, 6));
+      const top = (scored[0]._hits > 0 ? scored : [...CATALOG].sort((a,b)=>b.score-a.score)).slice(0, pickN);
+
+      // Diversifier par catégorie pour pas montrer 6 Lead Gen
+      const seen = new Set();
+      const diversified = [];
+      for (const w of top) {
+        if (!seen.has(w.categorie) || diversified.length < CONFIG.FALLBACK_MIN) {
+          diversified.push(w);
+          seen.add(w.categorie);
+        }
+        if (diversified.length >= pickN) break;
+      }
+      return diversified.map(w => this.attachPrice(w));
+    },
+
+    /** Attache prix + exemple PME-QC le plus pertinent + flag selected */
+    attachPrice(w) {
+      const tier = (w.tier || 'T3').toUpperCase();
+      const prix = CONFIG.PRICE_TIERS[tier] || CONFIG.PRICE_TIERS.T3;
+      // Choix exemple : aléatoire stable basé sur l'id pour cohérence visuelle
+      const ex = Array.isArray(w.exemples) && w.exemples.length
+        ? w.exemples[w.id % w.exemples.length]
+        : '';
+      return { ...w, prix, exemple_choisi: ex, selected: true };
+    },
+  }));
+});
+</script>
+
+<!--
+  ============================================================
+  LIVRABLE 2 (squelette) — Workflow n8n JSON à importer.
+  Statut : NON OPÉRATIONNEL (gate I-01 ⚠️). À brancher quand
+  l'instance n8n + credentials Anthropic seront prêts.
+  ============================================================
+  {
+    "name": "Diagnostic IA NorbeX Systems",
+    "nodes": [
+      {
+        "parameters": {
+          "httpMethod": "POST",
+          "path": "diagnostic-ia",
+          "responseMode": "responseNode",
+          "options": { "rawBody": false }
+        },
+        "name": "Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 1.1,
+        "position": [240, 300]
+      },
+      {
+        "parameters": {
+          "jsCode": "// Normalise input, prépare contexte pour Claude\nreturn [{ json: { description: $json.description || '', secteur: $json.secteur || '', taille: $json.taille || '', lang: $json.lang || 'fr' } }];"
+        },
+        "name": "Normalize Input",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [460, 300]
+      },
+      {
+        "parameters": {
+          "model": "claude-haiku-4-5-20251001",
+          "options": { "maxTokens": 1024, "temperature": 0.3 },
+          "messages": {
+            "system": "Tu es un consultant en automatisation pour PME québécoises. À partir de la description fournie, retourne EXCLUSIVEMENT un JSON valide de la forme: {\"workflows\":[{\"id\":<int 1-100>}, ...]} contenant 5 à 8 IDs choisis dans le catalogue NorbeX Systems (1 à 100, exclure tiers SKIP). Aucun texte hors JSON.",
+            "user": "Description: {{ $json.description }}\\nSecteur: {{ $json.secteur }}\\nTaille: {{ $json.taille }}"
+          },
+          "credentialId": "{{ $credentials.anthropic_api }}"
+        },
+        "name": "Claude Haiku",
+        "type": "n8n-nodes-base.anthropic",
+        "typeVersion": 1,
+        "position": [680, 300]
+      },
+      {
+        "parameters": {
+          "respondWith": "json",
+          "responseBody": "={{ JSON.parse($json.message.content[0].text) }}",
+          "options": { "responseCode": 200 }
+        },
+        "name": "Respond",
+        "type": "n8n-nodes-base.respondToWebhook",
+        "typeVersion": 1,
+        "position": [900, 300]
+      }
+    ],
+    "connections": {
+      "Webhook": { "main": [[{ "node": "Normalize Input", "type": "main", "index": 0 }]] },
+      "Normalize Input": { "main": [[{ "node": "Claude Haiku", "type": "main", "index": 0 }]] },
+      "Claude Haiku": { "main": [[{ "node": "Respond", "type": "main", "index": 0 }]] }
+    },
+    "settings": { "executionOrder": "v1" }
+  }
+
+  LIVRABLE 3 — RUNBOOK DE DÉPLOIEMENT
+  ============================================================
+  1. Préparation backend n8n
+     - Créer instance n8n (cloud ou self-hosted), exposer HTTPS.
+     - Ajouter credential "Anthropic API" (variable d'env `ANTHROPIC_API_KEY`).
+     - Importer le workflow ci-dessus (Settings → Import from JSON).
+     - Activer le workflow, copier l'URL webhook de production.
+  2. Branchement front
+     - Remplacer `CONFIG.WEBHOOK_URL` par l'URL réelle.
+     - Passer `CONFIG.DEBUG_FORCE_FALLBACK = false`.
+     - Tester avec une description PME courte : doit répondre < 3 s.
+  3. Validation gates
+     - Test timeout : couper le réseau pendant submit → fallback en < 3 s.
+     - Test JSON malformé : forcer une réponse Claude texte → validation
+       rejette et fallback s'enclenche (gate C-02).
+     - Test mobile : grille 1 col < 768px, 2 col < 1024px, 3 col ≥ 1024px.
+     - Test contraste : axe DevTools ou Lighthouse a11y ≥ 95.
+  4. Loi 25
+     - Vérifier qu'aucun cookie de tracking n'est posé avant consentement.
+     - La saisie n'est jamais persistée côté client (pas de localStorage).
+     - Préférence langue uniquement (anonyme, pas une donnée perso).
+  5. Rollback
+     - En cas de panne n8n : `DEBUG_FORCE_FALLBACK = true` recouvre l'UX.
+     - Le fallback local est déterministe et fonctionne offline.
+-->
+
+</body>
+</html>
