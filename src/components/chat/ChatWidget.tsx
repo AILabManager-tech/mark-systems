@@ -41,7 +41,7 @@ function getFallbackResponse(userMessage: string): string {
   // Greeting check
   if (/\b(bonjour|hello|hi|salut|hey|bonsoir|allô|allo)\b/i.test(lower)) {
     return isFr
-      ? 'Bonjour ! 👋 Je suis Polar, l\'assistante virtuelle de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
+      ? 'Bonjour ! 👋 Je suis Polar, l\'assistant virtuel de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
       : 'Hello! 👋 I\'m Polar, the virtual assistant for Mark Systems. How can I help you today?';
   }
 
@@ -225,8 +225,8 @@ export function ChatWidget() {
             {/* Header */}
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 bg-white/5">
               <div className="flex items-center gap-3">
-                <div className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-accent/30">
-                  <Bot className="h-full w-full p-1.5 text-accent" strokeWidth={1.5} />
+                <div className="flex h-9 w-9 items-center justify-center rounded-full ring-2 ring-accent/30 bg-gradient-to-br from-accent/40 to-accent/10">
+                  <Bot className="h-full w-full p-2 text-white" strokeWidth={1.75} />
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-white">Polar</h3>
@@ -249,8 +249,8 @@ export function ChatWidget() {
             <div className="flex-1 overflow-y-auto px-4 py-3 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
               {messages.length === 0 && (
                 <div className="flex flex-col items-center justify-center h-full text-center px-4 gap-3">
-                  <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-accent/20">
-                    <Bot className="h-full w-full p-1.5 text-accent" strokeWidth={1.5} />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full ring-2 ring-accent/20 bg-gradient-to-br from-accent/40 to-accent/10">
+                    <Bot className="h-full w-full p-2 text-white" strokeWidth={1.75} />
                   </div>
                   <p className="text-sm text-gray-400">{t('welcomeMessage')}</p>
                 </div>
@@ -271,7 +271,7 @@ export function ChatWidget() {
                     {msg.role === 'user' ? (
                       <User className="h-4 w-4 text-white" />
                     ) : (
-                      <Bot className="h-full w-full p-1.5 text-accent" strokeWidth={1.5} />
+                      <Bot className="h-full w-full p-2 text-white" strokeWidth={1.75} />
                     )}
                   </div>
                   <div
@@ -293,8 +293,8 @@ export function ChatWidget() {
 
               {isLoading && (
                 <div className="flex gap-2.5">
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full overflow-hidden">
-                    <Bot className="h-full w-full p-1.5 text-accent" strokeWidth={1.5} />
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent/40 to-accent/10">
+                    <Bot className="h-full w-full p-2 text-white" strokeWidth={1.75} />
                   </div>
                   <div className="rounded-2xl rounded-bl-md bg-white/10 border border-white/5 px-4 py-3">
                     <div className="flex items-center gap-1.5">
