@@ -35,6 +35,8 @@ deploy/ionos.env
 
 # local working docs (not for the public repo)
 ENSEMBLE DES OUTILS EXPLOITABLES.md
+SESSION_*_PROMPT.md
+LEONARDO_AI_IMAGE_CATALOG.md
 
 # vercel
 .vercel
