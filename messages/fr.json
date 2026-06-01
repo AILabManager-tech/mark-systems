@@ -417,14 +417,17 @@
       "sending": "Envoi en cours...",
       "successTitle": "Message envoyé !",
       "successMessage": "Merci pour votre message. Nous reviendrons vers vous dans les 24 prochaines heures.",
-      "errorMessage": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email."
+      "errorMessage": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.",
+      "consent": "J'accepte que mes informations soient utilisées pour répondre à ma demande, conformément à la",
+      "consentLink": "politique de confidentialité"
     },
     "errors": {
       "nameRequired": "Le nom est requis",
       "emailRequired": "L'email est requis",
       "emailInvalid": "L'email n'est pas valide",
       "messageRequired": "Le message est requis",
-      "messageMinLength": "Le message doit contenir au moins 10 caractères"
+      "messageMinLength": "Le message doit contenir au moins 10 caractères",
+      "consentRequired": "Vous devez accepter la politique de confidentialité"
     }
   },
   "briefPage": {
@@ -512,7 +515,8 @@
     "errorMessage": "Veuillez remplir tous les champs requis.",
     "errors": {
       "required": "Ce champ est requis",
-      "emailInvalid": "L'email n'est pas valide"
+      "emailInvalid": "L'email n'est pas valide",
+      "consentRequired": "Vous devez accepter la politique de confidentialité"
     },
     "pdfTitle": "Brief Projet — Mark Systems",
     "placeholders": {
@@ -529,7 +533,11 @@
       "additionalNotes": "Autres informations utiles..."
     },
     "successTitle": "Brief envoyé avec succès !",
-    "successMessage": "Merci ! Nous analyserons votre brief et vous contacterons dans les 48 prochaines heures avec une proposition."
+    "successMessage": "Merci ! Nous analyserons votre brief et vous contacterons dans les 48 prochaines heures avec une proposition.",
+    "consent": {
+      "text": "J'accepte que les informations de ce brief soient utilisées pour traiter ma demande de projet, conformément à la",
+      "link": "politique de confidentialité"
+    }
   },
   "privacy": {
     "title": "Politique de confidentialité",
@@ -876,5 +884,12 @@
         "description": "Agent IA autonome déployé : reçoit une mission en langage naturel, utilise des outils (fichiers, navigateur…) et produit un livrable. Démo : une exécution réelle, captée en direct."
       }
     }
+  },
+  "cookieConsent": {
+    "title": "Cookies et confidentialité",
+    "description": "Nous utilisons des cookies de mesure d'audience uniquement avec votre consentement. Aucun cookie de ce type n'est déposé tant que vous n'avez pas accepté.",
+    "privacyLink": "En savoir plus",
+    "accept": "Accepter",
+    "refuse": "Tout refuser"
   }
 }

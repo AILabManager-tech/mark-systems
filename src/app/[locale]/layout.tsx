@@ -7,6 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
+import { CookieConsent } from "@/components/legal/CookieConsent";
 import { SITE } from "@/lib/constants";
 import "@/styles/globals.css";
 
@@ -74,6 +75,7 @@ export default async function LocaleLayout({
           <div className="min-h-screen">{children}</div>
           <Footer />
           <ChatWidget />
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>

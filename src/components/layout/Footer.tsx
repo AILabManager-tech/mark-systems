@@ -36,8 +36,11 @@ const companyLinks = [
 const legalLinks = [
   { key: 'privacy' as const, href: '/privacy' },
   { key: 'terms' as const, href: '/privacy' },
-  { key: 'cookies' as const, href: '/privacy' },
 ];
+
+function openCookieSettings() {
+  window.dispatchEvent(new Event('ms:open-cookie-settings'));
+}
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -221,6 +224,14 @@ export function Footer() {
                 {t(`columns.legal.${link.key}`)}
               </Link>
             ))}
+            {/* Rouvre la bannière de consentement (Loi 25) */}
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="text-xs text-gray-600 transition-colors hover:text-gray-400"
+            >
+              {t('columns.legal.cookies')}
+            </button>
           </div>
         </motion.div>
       </div>

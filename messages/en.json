@@ -417,14 +417,17 @@
       "sending": "Sending...",
       "successTitle": "Message sent!",
       "successMessage": "Thank you for your message. We'll get back to you within 24 hours.",
-      "errorMessage": "An error occurred. Please try again or contact us directly by email."
+      "errorMessage": "An error occurred. Please try again or contact us directly by email.",
+      "consent": "I agree that my information may be used to respond to my request, in accordance with the",
+      "consentLink": "privacy policy"
     },
     "errors": {
       "nameRequired": "Name is required",
       "emailRequired": "Email is required",
       "emailInvalid": "Email is not valid",
       "messageRequired": "Message is required",
-      "messageMinLength": "Message must be at least 10 characters"
+      "messageMinLength": "Message must be at least 10 characters",
+      "consentRequired": "You must accept the privacy policy"
     }
   },
   "briefPage": {
@@ -512,7 +515,8 @@
     "errorMessage": "Please fill in all required fields.",
     "errors": {
       "required": "This field is required",
-      "emailInvalid": "Email is not valid"
+      "emailInvalid": "Email is not valid",
+      "consentRequired": "You must accept the privacy policy"
     },
     "pdfTitle": "Project Brief — Mark Systems",
     "placeholders": {
@@ -529,7 +533,11 @@
       "additionalNotes": "Other useful information..."
     },
     "successTitle": "Brief submitted successfully!",
-    "successMessage": "Thank you! We'll analyze your brief and contact you within 48 hours with a proposal."
+    "successMessage": "Thank you! We'll analyze your brief and contact you within 48 hours with a proposal.",
+    "consent": {
+      "text": "I agree that the information in this brief may be used to process my project request, in accordance with the",
+      "link": "privacy policy"
+    }
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -876,5 +884,12 @@
         "description": "Deployed autonomous AI agent: takes a natural-language mission, uses tools (files, browser…) and produces a real deliverable. Demo: a real run, captured live."
       }
     }
+  },
+  "cookieConsent": {
+    "title": "Cookies and privacy",
+    "description": "We use audience-measurement cookies only with your consent. No such cookie is set until you accept.",
+    "privacyLink": "Learn more",
+    "accept": "Accept",
+    "refuse": "Refuse all"
   }
 }

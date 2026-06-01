@@ -15,6 +15,7 @@ import {
   Loader2,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from '@/i18n/navigation';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -128,6 +129,7 @@ export default function BriefPage() {
   const [formState, setFormState] = useState<BriefFormState>(INITIAL_STATE);
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [consent, setConsent] = useState(false);
 
   const totalSteps = 4;
   const stepKeys = ['companyInfo', 'projectType', 'designPrefs', 'review'] as const;
@@ -256,6 +258,10 @@ export default function BriefPage() {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    if (!consent) {
+      setErrors({ consent: t('errors.consentRequired') });
+      return;
+    }
     setSubmitState('submitting');
 
     try {
@@ -438,6 +444,49 @@ export default function BriefPage() {
                   </motion.div>
                 </AnimatePresence>
               </div>
+
+              {/* Consentement Loi 25 — étape récapitulatif */}
+              {currentStep === totalSteps - 1 && (
+                <div className="mt-6">
+                  <label
+                    htmlFor="brief-consent"
+                    className="flex cursor-pointer items-start gap-3 text-sm text-text-secondary"
+                  >
+                    <input
+                      id="brief-consent"
+                      type="checkbox"
+                      checked={consent}
+                      onChange={(e) => {
+                        setConsent(e.target.checked);
+                        if (e.target.checked && errors.consent) {
+                          setErrors((prev) => {
+                            const next = { ...prev };
+                            delete next.consent;
+                            return next;
+                          });
+                        }
+                      }}
+                      aria-describedby={errors.consent ? 'brief-consent-error' : undefined}
+                      className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded-sm border-surface-border bg-surface accent-accent"
+                    />
+                    <span>
+                      {t('consent.text')}{' '}
+                      <Link
+                        href="/privacy"
+                        className="text-accent underline underline-offset-2 transition-opacity hover:opacity-80"
+                      >
+                        {t('consent.link')}
+                      </Link>
+                      . <span className="text-accent">*</span>
+                    </span>
+                  </label>
+                  {errors.consent && (
+                    <p id="brief-consent-error" className="mt-1 text-xs text-red-400">
+                      {errors.consent}
+                    </p>
+                  )}
+                </div>
+              )}
 
               {/* Navigation */}
               <div className="mt-6 flex items-center justify-between">

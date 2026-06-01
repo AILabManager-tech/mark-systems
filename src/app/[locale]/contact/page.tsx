@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import { SITE } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import { Link } from '@/i18n/navigation';
 
 interface FormData {
   name: string;
@@ -13,12 +14,14 @@ interface FormData {
   company: string;
   subject: string;
   message: string;
+  consent: boolean;
 }
 
 interface FormErrors {
   name?: string;
   email?: string;
   message?: string;
+  consent?: string;
 }
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
@@ -29,6 +32,7 @@ const INITIAL_FORM: FormData = {
   company: '',
   subject: '',
   message: '',
+  consent: false,
 };
 
 const fadeUp = {
@@ -61,7 +65,19 @@ export default function ContactPage() {
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) e.email = t('errors.emailInvalid');
     if (!data.message.trim()) e.message = t('errors.messageRequired');
     else if (data.message.trim().length < 10) e.message = t('errors.messageMinLength');
+    if (!data.consent) e.consent = t('errors.consentRequired');
     return e;
+  }
+
+  function handleConsentChange(checked: boolean) {
+    setFormData((prev) => ({ ...prev, consent: checked }));
+    if (errors.consent) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next.consent;
+        return next;
+      });
+    }
   }
 
   function handleChange(field: keyof FormData, value: string) {
@@ -385,6 +401,38 @@ export default function ContactPage() {
                       {errors.message && (
                         <p id="message-error" className="mt-1 text-xs text-red-400">
                           {errors.message}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Consentement Loi 25 */}
+                    <div>
+                      <label
+                        htmlFor="contact-consent"
+                        className="flex cursor-pointer items-start gap-3 text-sm text-text-secondary"
+                      >
+                        <input
+                          id="contact-consent"
+                          type="checkbox"
+                          checked={formData.consent}
+                          onChange={(e) => handleConsentChange(e.target.checked)}
+                          aria-describedby={errors.consent ? 'consent-error' : undefined}
+                          className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded-sm border-surface-border bg-surface accent-accent"
+                        />
+                        <span>
+                          {t('form.consent')}{' '}
+                          <Link
+                            href="/privacy"
+                            className="text-accent underline underline-offset-2 transition-opacity hover:opacity-80"
+                          >
+                            {t('form.consentLink')}
+                          </Link>
+                          . <span className="text-accent">*</span>
+                        </span>
+                      </label>
+                      {errors.consent && (
+                        <p id="consent-error" className="mt-1 text-xs text-red-400">
+                          {errors.consent}
                         </p>
                       )}
                     </div>
