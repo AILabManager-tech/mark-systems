@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, User, Bot } from 'lucide-react';
+import Image from 'next/image';
+import { X, Send, User } from 'lucide-react';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
@@ -11,7 +12,7 @@ interface ChatMessage {
 }
 
 const SYSTEM_PROMPT =
-  'You are Polar, the virtual assistant for Mark Systems. Mark Systems is a Quebec-based digital agency that designs websites, business automations, AI systems, and cloud infrastructure. Be helpful, professional, and concise. Answer in the same language the user writes in.';
+  'You are Bowler, the virtual assistant for Mark Systems. Mark Systems is a Quebec-based digital agency that designs websites, business automations, AI systems, and cloud infrastructure. Be helpful, professional, and concise. Answer in the same language the user writes in.';
 
 const API_URL = 'http://localhost:11434/v1/chat/completions';
 const MODEL = 'qwen2.5:32b';
@@ -41,8 +42,8 @@ function getFallbackResponse(userMessage: string): string {
   // Greeting check
   if (/\b(bonjour|hello|hi|salut|hey|bonsoir|allô|allo)\b/i.test(lower)) {
     return isFr
-      ? 'Bonjour ! 👋 Je suis Polar, l\'assistant virtuel de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
-      : 'Hello! 👋 I\'m Polar, the virtual assistant for Mark Systems. How can I help you today?';
+      ? 'Bonjour ! 👋 Je suis Bowler, l\'assistant virtuel de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
+      : 'Hello! 👋 I\'m Bowler, the virtual assistant for Mark Systems. How can I help you today?';
   }
 
   // Price / cost check
@@ -188,13 +189,13 @@ export function ChatWidget() {
             className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full border border-accent/30 bg-surface/80 shadow-glow-accent backdrop-blur-md transition-shadow duration-300 hover:shadow-glow-accent-lg"
             aria-label={t('openChat')}
           >
-            {/* Polar, le petit robot — lanceur du chat */}
+            {/* Bowler, le petit robot — lanceur du chat */}
             <motion.span
               animate={{ y: [0, -4, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
               className="flex h-14 w-14 items-center justify-center"
             >
-              <Bot className="h-9 w-9 text-accent" strokeWidth={1.5} />
+              <Image src="/bowler.jpg" alt="Bowler" width={56} height={56} className="h-14 w-14 rounded-full object-cover" />
             </motion.span>
             {/* Pulse indicator (en ligne) */}
             <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4">
@@ -226,10 +227,10 @@ export function ChatWidget() {
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 bg-white/5">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full ring-2 ring-accent/30 bg-gradient-to-br from-accent/40 to-accent/10">
-                  <Bot className="h-full w-full p-2 text-white" strokeWidth={1.75} />
+                  <Image src="/bowler.jpg" alt="Bowler" width={48} height={48} className="h-full w-full rounded-full object-cover" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-white">Polar</h3>
+                  <h3 className="text-sm font-semibold text-white">Bowler</h3>
                   <div className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full bg-green-500" />
                     <span className="text-xs text-green-400">{t('online')}</span>
@@ -250,7 +251,7 @@ export function ChatWidget() {
               {messages.length === 0 && (
                 <div className="flex flex-col items-center justify-center h-full text-center px-4 gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full ring-2 ring-accent/20 bg-gradient-to-br from-accent/40 to-accent/10">
-                    <Bot className="h-full w-full p-2 text-white" strokeWidth={1.75} />
+                    <Image src="/bowler.jpg" alt="Bowler" width={48} height={48} className="h-full w-full rounded-full object-cover" />
                   </div>
                   <p className="text-sm text-gray-400">{t('welcomeMessage')}</p>
                 </div>
@@ -271,7 +272,7 @@ export function ChatWidget() {
                     {msg.role === 'user' ? (
                       <User className="h-4 w-4 text-white" />
                     ) : (
-                      <Bot className="h-full w-full p-2 text-white" strokeWidth={1.75} />
+                      <Image src="/bowler.jpg" alt="Bowler" width={48} height={48} className="h-full w-full rounded-full object-cover" />
                     )}
                   </div>
                   <div
@@ -294,7 +295,7 @@ export function ChatWidget() {
               {isLoading && (
                 <div className="flex gap-2.5">
                   <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent/40 to-accent/10">
-                    <Bot className="h-full w-full p-2 text-white" strokeWidth={1.75} />
+                    <Image src="/bowler.jpg" alt="Bowler" width={48} height={48} className="h-full w-full rounded-full object-cover" />
                   </div>
                   <div className="rounded-2xl rounded-bl-md bg-white/10 border border-white/5 px-4 py-3">
                     <div className="flex items-center gap-1.5">
