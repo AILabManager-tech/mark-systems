@@ -29,6 +29,8 @@ function detectFrench(text: string): boolean {
     'puis-je', 'pouvez', 'aimeriez', 'vouloir', 'besoin', 'aide',
   ];
   const lower = text.toLowerCase();
+  // Signal fort : présence d'accents français (délais, réalisations, coût…)
+  if (/[àâäéèêëîïôöùûüç]/.test(lower)) return true;
   let score = 0;
   for (const word of frenchIndicators) {
     if (lower.includes(word)) score++;
