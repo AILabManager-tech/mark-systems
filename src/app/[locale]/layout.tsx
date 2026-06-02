@@ -75,7 +75,7 @@ export default async function LocaleLayout({
         <a href="#main-content" className="skip-link">
           {t("skipToContent")}
         </a>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <MotionConfig reducedMotion="user">
             <Navbar />
             <div id="main-content" tabIndex={-1} className="min-h-screen">
