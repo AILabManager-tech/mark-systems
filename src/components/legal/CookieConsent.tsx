@@ -77,9 +77,9 @@ export function CookieConsent() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.35, ease: 'easeOut' }}
-            className="fixed inset-x-0 bottom-0 z-[60] px-4 pb-4 sm:px-6 sm:pb-6"
+            className="pointer-events-none fixed inset-x-0 bottom-0 z-[60] px-4 pb-4 sm:px-6 sm:pb-6"
           >
-            <div className="mx-auto max-w-3xl rounded-md border border-surface-border bg-surface/95 p-5 shadow-2xl backdrop-blur-md sm:p-6">
+            <div className="pointer-events-auto mx-auto max-w-3xl rounded-md border border-surface-border bg-surface/95 p-5 shadow-2xl backdrop-blur-md sm:p-6">
               <div className="flex items-start gap-3">
                 <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-accent/10 text-accent">
                   <Cookie className="h-5 w-5" strokeWidth={1.5} />
