@@ -82,7 +82,7 @@ export function Navbar() {
               className="group flex items-center gap-1 text-xl font-semibold tracking-tight"
             >
               <span className="font-bold text-white transition-colors group-hover:text-[#00A19B]">
-                MARK SYSTEMS
+                MARK
               </span>
               <span className="font-light text-gray-400 transition-colors group-hover:text-gray-300">
                 SYSTEMS
@@ -188,7 +188,7 @@ export function Navbar() {
                     className="flex items-center gap-1 text-lg font-semibold"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <span className="font-bold text-white">MARK SYSTEMS</span>
+                    <span className="font-bold text-white">MARK</span>
                     <span className="font-light text-gray-400">SYSTEMS</span>
                   </Link>
                   <button

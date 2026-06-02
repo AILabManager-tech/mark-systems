@@ -40,38 +40,59 @@ function getFallbackResponse(userMessage: string): string {
   const lower = userMessage.toLowerCase();
   const isFr = detectFrench(lower);
 
-  // Greeting check
-  if (/\b(bonjour|hello|hi|salut|hey|bonsoir|allô|allo)\b/i.test(lower)) {
+  // Salutation
+  if (/\b(bonjour|hello|hi|salut|hey|bonsoir|all[oô]|coucou|yo)\b/i.test(lower)) {
     return isFr
-      ? 'Bonjour ! 👋 Je suis Bowler, l\'assistant virtuel de Mark Systems. Comment puis-je vous aider aujourd\'hui ?'
-      : 'Hello! 👋 I\'m Bowler, the virtual assistant for Mark Systems. How can I help you today?';
+      ? 'Bonjour ! 👋 Je suis Bowler, l\'assistant de Mark Systems. Posez-moi une question sur nos services, nos tarifs, nos réalisations ou comment nous joindre.'
+      : 'Hello! 👋 I\'m Bowler, the Mark Systems assistant. Ask me about our services, pricing, portfolio, or how to reach us.';
   }
 
-  // Price / cost check
-  if (/\b(price|prix|cost|coût|cout|tarif|pricing|quote|devis|combien|how much|estimate|estimation)\b/i.test(lower)) {
+  // Tarifs / estimation
+  if (/(prix|co[uû]ts?|tarif|devis|combien|estimat|budget|price|cost|pricing|quote|how much)/i.test(lower)) {
     return isFr
-      ? 'Chaque projet est unique ! Nos tarifs dépendent de la portée et de la complexité de votre projet. Essayez notre estimateur en ligne ou contactez-nous à info@marksystems.ca pour une soumission personnalisée gratuite.'
-      : 'Every project is unique! Our pricing depends on the scope and complexity. Try our online estimator or contact us at info@marksystems.ca for a free custom quote.';
+      ? 'Chaque projet est unique. Le mieux : notre estimateur en ligne (menu « Estimateur ») vous donne une fourchette en 2 minutes selon votre secteur et vos besoins. Pour une soumission précise et gratuite : info@marksystems.ca.'
+      : 'Every project is unique. Best bet: our online estimator (“Estimateur” in the menu) gives you a range in 2 minutes based on your sector and needs. For a precise free quote: info@marksystems.ca.';
   }
 
-  // Services check
-  if (/\b(service|web|site|automation|automat|design|développement|development|cloud|ai |ia |intelligence|infrastructure|what do you do|que faites)\b/i.test(lower)) {
+  // Réalisations / portfolio
+  if (/(r[eé]alisation|portfolio|exemple|projets?|travaux|case|work|example|demo|d[eé]mo)/i.test(lower)) {
     return isFr
-      ? 'Mark Systems offre une gamme complète de services numériques :\n\n🌐 Conception et développement de sites web\n⚙️ Automatisations d\'affaires\n🤖 Systèmes d\'intelligence artificielle\n☁️ Infrastructure cloud\n\nNous concevons des solutions sur mesure pour propulser votre entreprise. Souhaitez-vous en savoir plus sur un service en particulier ?'
-      : 'Mark Systems offers a full range of digital services:\n\n🌐 Website design & development\n⚙️ Business automations\n🤖 AI systems\n☁️ Cloud infrastructure\n\nWe build custom solutions to propel your business forward. Would you like to learn more about a specific service?';
+      ? 'Voyez la page « Projets » : sites clients, outils, concepts et 8 logiciels (dont 5 démos en ligne : OSIRIS, GENESIS, AINOVA, GENCORE, Hermes). De quoi juger concrètement ce qu\'on construit.'
+      : 'Check the “Projects” page: client sites, tools, concepts and 8 software products (5 live demos: OSIRIS, GENESIS, AINOVA, GENCORE, Hermes). A concrete look at what we build.';
   }
 
-  // Contact check
-  if (/\b(contact|email|phone|téléphone|telephone|appel|call|reach|joindre|rejoindre|parler|talk|message)\b/i.test(lower)) {
+  // Délais
+  if (/(d[eé]lai|combien de temps|dur[eé]e|[eé]ch[eé]anc|quand|timeline|how long|deadline|delivery)/i.test(lower)) {
     return isFr
-      ? 'Vous pouvez nous joindre facilement :\n\n📧 Email : info@marksystems.ca\n📞 Téléphone : +1 581-986-4267\n\nNotre équipe se fera un plaisir de discuter de votre projet !'
-      : 'You can easily reach us:\n\n📧 Email: info@marksystems.ca\n📞 Phone: +1 581-986-4267\n\nOur team will be happy to discuss your project!';
+      ? 'Les délais varient selon la portée : un site vitrine prend quelques semaines, une application ou un système IA quelques mois. On peut prioriser les urgences. Parlons-en : info@marksystems.ca.'
+      : 'Timelines depend on scope: a brochure site takes a few weeks, an app or AI system a few months. We can fast-track urgent work. Let’s talk: info@marksystems.ca.';
   }
 
-  // Default fallback
+  // Services
+  if (/(services?|web|site|automat|design|d[eé]veloppement|development|cloud|\bia\b|\bai\b|intelligence|infrastructure|que faites|what do you do|aide|help)/i.test(lower)) {
+    return isFr
+      ? 'Mark Systems couvre :\n\n🌐 Sites web (conception + développement)\n⚙️ Automatisations d\'affaires\n🤖 Systèmes d\'intelligence artificielle\n☁️ Infrastructure cloud\n\nSur quel volet souhaitez-vous des détails ?'
+      : 'Mark Systems covers:\n\n🌐 Websites (design + development)\n⚙️ Business automations\n🤖 AI systems\n☁️ Cloud infrastructure\n\nWhich one would you like details on?';
+  }
+
+  // Contact
+  if (/(contact|courriel|email|t[eé]l[eé]phone|appel|call|joindre|rejoindre|parler|talk|message|reach|rendez|meeting)/i.test(lower)) {
+    return isFr
+      ? 'On vous répond vite :\n\n📧 info@marksystems.ca\n📞 +1 581-986-4267\n\nOu remplissez le formulaire de la page « Contact ».'
+      : 'We reply fast:\n\n📧 info@marksystems.ca\n📞 +1 581-986-4267\n\nOr use the form on the “Contact” page.';
+  }
+
+  // À propos
+  if (/(qui [eê]tes|propos|about|who are|votre [eé]quipe|company|entreprise)/i.test(lower)) {
+    return isFr
+      ? 'Mark Systems est une micro-agence numérique québécoise : web, automatisation, IA et cloud. Conformité Loi 25 par défaut, code propre, livraisons concrètes. Voir la page « À propos ».'
+      : 'Mark Systems is a Quebec-based digital micro-agency: web, automation, AI and cloud. Law 25 compliant by default, clean code, real deliverables. See the “About” page.';
+  }
+
+  // Défaut — guide au lieu de répéter
   return isFr
-    ? 'Merci pour votre message ! Mark Systems est une agence numérique basée au Québec spécialisée dans la conception de sites web, les automatisations d\'affaires, les systèmes d\'IA et l\'infrastructure cloud. N\'hésitez pas à nous contacter à info@marksystems.ca ou au +1 581-986-4267 pour discuter de votre projet.'
-    : 'Thanks for your message! Mark Systems is a Quebec-based digital agency specializing in website design, business automations, AI systems, and cloud infrastructure. Feel free to reach out to us at info@marksystems.ca or +1 581-986-4267 to discuss your project.';
+    ? 'Bonne question ! Je peux vous orienter sur nos services, nos tarifs (essayez l\'estimateur), nos réalisations ou nos coordonnées. Pour une réponse détaillée à votre cas précis : info@marksystems.ca ou +1 581-986-4267.'
+    : 'Good question! I can point you to our services, pricing (try the estimator), portfolio, or contact details. For a detailed answer to your specific case: info@marksystems.ca or +1 581-986-4267.';
 }
 
 export function ChatWidget() {
