@@ -180,9 +180,9 @@ export function AutomationShowcase() {
                       </div>
 
                       {/* Label */}
-                      <h4 className="text-sm font-semibold text-text-primary mb-1">
+                      <h3 className="text-sm font-semibold text-text-primary mb-1">
                         {t(`steps.${node.key}.title`)}
-                      </h4>
+                      </h3>
                       <p className="text-xs text-text-secondary leading-relaxed">
                         {t(`steps.${node.key}.desc`)}
                       </p>
