@@ -95,7 +95,7 @@ export default function EstimateurPage() {
             <button
               onClick={est.next}
               disabled={!est.canNext}
-              className="flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent/90 disabled:opacity-30 disabled:cursor-not-allowed active:scale-95"
+              className="flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-background shadow-lg shadow-accent/25 transition-all hover:bg-accent/90 disabled:opacity-30 disabled:cursor-not-allowed active:scale-95"
             >
               {step === 3 ? t('calculate') : t('next')}
               <ChevronRight className="h-4 w-4" />

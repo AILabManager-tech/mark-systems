@@ -81,7 +81,7 @@ export function Footer() {
                 {SITE.name}
               </span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-gray-500 max-w-xs">
+            <p className="mt-4 text-sm leading-relaxed text-gray-400 max-w-xs">
               {t('tagline')}
             </p>
 
@@ -91,7 +91,7 @@ export function Footer() {
                 href={SITE.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-800 bg-gray-900/50 text-gray-500 transition-all hover:border-blue-500/50 hover:text-blue-400 hover:bg-blue-500/10"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-800 bg-gray-900/50 text-gray-400 transition-all hover:border-blue-500/50 hover:text-blue-400 hover:bg-blue-500/10"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-4 w-4" />
@@ -100,7 +100,7 @@ export function Footer() {
                 href={SITE.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-800 bg-gray-900/50 text-gray-500 transition-all hover:border-gray-600 hover:text-white hover:bg-gray-800"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-800 bg-gray-900/50 text-gray-400 transition-all hover:border-gray-600 hover:text-white hover:bg-gray-800"
                 aria-label="GitHub"
               >
                 <Github className="h-4 w-4" />
@@ -124,7 +124,7 @@ export function Footer() {
                 <li key={link.key}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-white"
+                    className="group inline-flex items-center gap-1 text-sm text-gray-400 transition-colors hover:text-white"
                   >
                     {t(`columns.company.${link.key}`)}
                     <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-0.5 translate-x-[-2px] transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0" />
@@ -150,7 +150,7 @@ export function Footer() {
                 <li key={link.key}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-white"
+                    className="group inline-flex items-center gap-1 text-sm text-gray-400 transition-colors hover:text-white"
                   >
                     {t(`columns.services.${link.key}`)}
                     <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-0.5 translate-x-[-2px] transition-all group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0" />
@@ -175,7 +175,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="group flex items-start gap-3 text-sm text-gray-500 transition-colors hover:text-white"
+                  className="group flex items-start gap-3 text-sm text-gray-400 transition-colors hover:text-white"
                 >
                   <Mail className="mt-0.5 h-4 w-4 shrink-0 text-blue-500" />
                   <span>{SITE.email}</span>
@@ -184,7 +184,7 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${SITE.phone.replace(/\s/g, '')}`}
-                  className="group flex items-start gap-3 text-sm text-gray-500 transition-colors hover:text-white"
+                  className="group flex items-start gap-3 text-sm text-gray-400 transition-colors hover:text-white"
                 >
                   <Phone className="mt-0.5 h-4 w-4 shrink-0 text-blue-500" />
                   <span>{SITE.phone}</span>
@@ -210,7 +210,7 @@ export function Footer() {
           custom={0}
           className="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row"
         >
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-400">
             {t('copyright', { year: currentYear })}
           </p>
 
@@ -219,7 +219,7 @@ export function Footer() {
               <Link
                 key={link.key}
                 href={link.href}
-                className="text-xs text-gray-600 transition-colors hover:text-gray-400"
+                className="text-xs text-gray-400 transition-colors hover:text-white"
               >
                 {t(`columns.legal.${link.key}`)}
               </Link>
@@ -228,7 +228,7 @@ export function Footer() {
             <button
               type="button"
               onClick={openCookieSettings}
-              className="text-xs text-gray-600 transition-colors hover:text-gray-400"
+              className="text-xs text-gray-400 transition-colors hover:text-white"
             >
               {t('columns.legal.cookies')}
             </button>

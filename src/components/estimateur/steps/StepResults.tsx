@@ -35,7 +35,7 @@ export function StepResults({ results }: StepResultsProps) {
             )}
           >
             {sc.tier === "rec" && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-background">
                 <Sparkles className="h-3 w-3" />
                 {t("recommended")}
               </div>
@@ -124,7 +124,7 @@ export function StepResults({ results }: StepResultsProps) {
       <div className="text-center">
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 text-base font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent/90 transition-all active:scale-95"
+          className="inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 text-base font-semibold text-background shadow-lg shadow-accent/25 hover:bg-accent/90 transition-all active:scale-95"
         >
           {t("ctaLaunch")}
           <ArrowRight className="h-5 w-5" />

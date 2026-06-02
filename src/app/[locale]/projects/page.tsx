@@ -122,7 +122,7 @@ export default function ProjectsPage() {
                 onClick={() => setActiveFilter(tab.key)}
                 className={`rounded-sm px-5 py-2.5 font-mono text-sm transition-all ${
                   activeFilter === tab.key
-                    ? 'bg-accent text-white shadow-glow-accent'
+                    ? 'bg-accent text-background shadow-glow-accent'
                     : 'border border-surface-border bg-surface text-text-secondary hover:border-accent/40 hover:text-text-primary'
                 }`}
               >
@@ -201,7 +201,7 @@ export default function ProjectsPage() {
                         {badge}
                       </span>
                       {project.featured && (
-                        <span className="absolute right-3 top-3 rounded-sm bg-accent px-2.5 py-1 font-mono text-xs text-white">
+                        <span className="absolute right-3 top-3 rounded-sm bg-accent px-2.5 py-1 font-mono text-xs text-background">
                           {tr('outils.featured')}
                         </span>
                       )}

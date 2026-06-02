@@ -20,7 +20,7 @@ export function EstimateurProgress({ step }: EstimateurProgressProps) {
               className={cn(
                 "flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-all",
                 i < step
-                  ? "bg-accent text-white"
+                  ? "bg-accent text-background"
                   : i === step
                     ? "bg-accent/20 text-accent border border-accent/40"
                     : "bg-white/5 text-gray-500 border border-white/10",

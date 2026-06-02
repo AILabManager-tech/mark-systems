@@ -236,7 +236,7 @@ export default function ServicesPage() {
               <motion.div variants={fadeInUp} className="mt-8">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-2 rounded-sm bg-accent px-8 py-3.5 font-semibold text-white transition-all hover:bg-accent-muted hover:shadow-glow-accent"
+                  className="group inline-flex items-center gap-2 rounded-sm bg-accent px-8 py-3.5 font-semibold text-background transition-all hover:bg-accent-muted hover:shadow-glow-accent"
                 >
                   {t('ctaButton')}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
