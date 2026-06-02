@@ -584,7 +584,8 @@
     "welcomeMessage": "Bonjour ! 👋 Je suis Bowler, l'assistant virtuel de Mark Systems. Comment puis-je vous aider ?",
     "inputPlaceholder": "Tapez votre message...",
     "send": "Envoyer",
-    "poweredBy": "Propulsé par Mark AI"
+    "poweredBy": "Propulsé par Mark AI",
+    "title": "Assistant Bowler"
   },
   "footer": {
     "tagline": "Solutions web, automatisations et systèmes IA — de la conception au déploiement.",
@@ -616,7 +617,8 @@
     "notFoundTitle": "Page introuvable",
     "notFoundDescription": "La page que vous cherchez n'existe pas ou a été déplacée.",
     "backHome": "Retour à l'accueil",
-    "contactUs": "Nous contacter"
+    "contactUs": "Nous contacter",
+    "skipToContent": "Aller au contenu principal"
   },
   "realisations": {
     "tag": "Réalisations",

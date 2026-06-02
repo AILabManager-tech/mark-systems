@@ -24,10 +24,16 @@ export function HeroSection() {
     video.addEventListener("canplaythrough", handleCanPlay);
     video.addEventListener("error", handleError);
 
-    // Try to play
-    video.play().catch(() => {
-      // Autoplay blocked, still show poster
-    });
+    // Respect de « réduire les animations » (WCAG 2.2.2/2.3.3) : on ne lance pas
+    // la vidéo de fond, le poster statique reste affiché.
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (!prefersReducedMotion) {
+      video.play().catch(() => {
+        // Autoplay bloqué : le poster reste affiché
+      });
+    }
 
     return () => {
       video.removeEventListener("canplaythrough", handleCanPlay);
@@ -54,7 +60,6 @@ export function HeroSection() {
         {/* Video */}
         <video
           ref={videoRef}
-          autoPlay
           loop
           muted
           playsInline
@@ -116,7 +121,7 @@ export function HeroSection() {
         >
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all duration-300 pulse-glow"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent/90 text-background font-semibold rounded-lg shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all duration-300 pulse-glow"
           >
             {t("cta1")}
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

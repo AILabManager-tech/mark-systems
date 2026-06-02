@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { X, Send, User } from 'lucide-react';
+import { useFocusTrap } from '@/lib/useFocusTrap';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
@@ -81,6 +82,9 @@ export function ChatWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  const closeChat = useCallback(() => setIsOpen(false), []);
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -90,11 +94,12 @@ export function ChatWidget() {
     scrollToBottom();
   }, [messages, scrollToBottom]);
 
-  useEffect(() => {
-    if (isOpen && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [isOpen]);
+  // Confine le focus dans le panneau, focus initial sur le champ, Échap ferme,
+  // focus restauré sur le lanceur à la fermeture. (a11y)
+  useFocusTrap(isOpen, panelRef, {
+    initialFocusRef: inputRef,
+    onEscape: closeChat,
+  });
 
   const sendMessage = useCallback(async () => {
     const trimmed = input.trim();
@@ -210,6 +215,10 @@ export function ChatWidget() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            ref={panelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={t('title')}
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -246,8 +255,13 @@ export function ChatWidget() {
               </button>
             </div>
 
-            {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto px-4 py-3 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+            {/* Messages Area — région live pour annonce des réponses (a11y) */}
+            <div
+              role="log"
+              aria-live="polite"
+              aria-atomic="false"
+              className="flex-1 overflow-y-auto px-4 py-3 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent"
+            >
               {messages.length === 0 && (
                 <div className="flex flex-col items-center justify-center h-full text-center px-4 gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full ring-2 ring-accent/20 bg-gradient-to-br from-accent/40 to-accent/10">

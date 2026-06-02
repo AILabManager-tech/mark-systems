@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
@@ -8,6 +8,7 @@ import { Link, usePathname } from '@/i18n/navigation';
 import { useRouter } from '@/i18n/navigation';
 import { NAV_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import { useFocusTrap } from '@/lib/useFocusTrap';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -58,6 +59,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const router = useRouter();
   const locale = useLocale();
   const t = useTranslations('nav');
+  const drawerRef = useRef<HTMLElement>(null);
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -71,16 +73,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     };
   }, [isOpen]);
 
-  // Close on Escape
-  useEffect(() => {
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose();
-    }
-    if (isOpen) {
-      window.addEventListener('keydown', handleKeyDown);
-      return () => window.removeEventListener('keydown', handleKeyDown);
-    }
-  }, [isOpen, onClose]);
+  // Confine le focus dans le tiroir, Échap ferme, focus restauré au déclencheur.
+  useFocusTrap(isOpen, drawerRef, { onEscape: onClose });
 
   const handleLanguageSwitch = () => {
     const targetLocale = locale === 'fr' ? 'en' : 'fr';
@@ -111,6 +105,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           {/* Drawer panel */}
           <motion.nav
             key="mobile-menu-drawer"
+            ref={drawerRef}
             variants={drawerVariants}
             initial="hidden"
             animate="visible"

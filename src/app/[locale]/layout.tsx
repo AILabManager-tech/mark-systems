@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { MotionConfig } from "framer-motion";
+import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
@@ -64,18 +65,26 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages({ locale });
+  const t = await getTranslations({ locale, namespace: "common" });
 
   return (
     <html lang={locale} className="dark" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-background text-text-primary antialiased`}
       >
+        <a href="#main-content" className="skip-link">
+          {t("skipToContent")}
+        </a>
         <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          <div className="min-h-screen">{children}</div>
-          <Footer />
-          <ChatWidget />
-          <CookieConsent />
+          <MotionConfig reducedMotion="user">
+            <Navbar />
+            <div id="main-content" tabIndex={-1} className="min-h-screen">
+              {children}
+            </div>
+            <Footer />
+            <ChatWidget />
+            <CookieConsent />
+          </MotionConfig>
         </NextIntlClientProvider>
       </body>
     </html>

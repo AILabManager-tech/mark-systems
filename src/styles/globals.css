@@ -23,6 +23,15 @@
     @apply bg-accent/30 text-white;
   }
 
+  /* Indicateur de focus clavier homogène et visible (WCAG 2.4.7).
+     !important assumé : neutralise les `outline-none` épars sur les champs et
+     boutons. Via :focus-visible → visible au clavier, pas au clic souris. */
+  *:focus-visible {
+    outline: 2px solid #00a19b !important;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
@@ -85,6 +94,17 @@
     mask-composite: exclude;
     -webkit-mask-composite: xor;
     pointer-events: none;
+  }
+
+  /* Lien d'évitement « Aller au contenu » (WCAG 2.4.1) — visible au focus. */
+  .skip-link {
+    @apply absolute left-4 z-[100] rounded-sm bg-accent px-4 py-2 text-sm font-medium text-background;
+    top: 0;
+    transform: translateY(-200%);
+    transition: transform 0.2s ease;
+  }
+  .skip-link:focus {
+    transform: translateY(0.5rem);
   }
 
   /* Section padding */
@@ -189,6 +209,22 @@
 
   .animate-pulse-slow {
     animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Respect de la préférence système « réduire les animations » (WCAG 2.3.3).
+     Neutralise les animations/transitions CSS ; framer-motion est géré via
+     <MotionConfig reducedMotion="user"> dans le layout. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   /* Fade in up */

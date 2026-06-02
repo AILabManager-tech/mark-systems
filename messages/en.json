@@ -584,7 +584,8 @@
     "welcomeMessage": "Hello! 👋 I'm Bowler, Mark Systems' virtual assistant. How can I help you?",
     "inputPlaceholder": "Type your message...",
     "send": "Send",
-    "poweredBy": "Powered by Mark AI"
+    "poweredBy": "Powered by Mark AI",
+    "title": "Bowler assistant"
   },
   "footer": {
     "tagline": "Web solutions, automations, and AI systems — from design to deployment.",
@@ -616,7 +617,8 @@
     "notFoundTitle": "Page not found",
     "notFoundDescription": "The page you're looking for doesn't exist or has been moved.",
     "backHome": "Back to home",
-    "contactUs": "Contact us"
+    "contactUs": "Contact us",
+    "skipToContent": "Skip to main content"
   },
   "realisations": {
     "tag": "Portfolio",
