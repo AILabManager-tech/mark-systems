@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname, Link } from '@/i18n/navigation';
@@ -8,6 +8,7 @@ import { Menu, X, Globe } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { NAV_LINKS } from '@/lib/constants';
+import { useFocusTrap } from '@/lib/useFocusTrap';
 
 export function Navbar() {
   const t = useTranslations('nav');
@@ -17,6 +18,9 @@ export function Navbar() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
+
+  const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 20);
@@ -44,6 +48,9 @@ export function Navbar() {
       document.body.style.overflow = '';
     };
   }, [isMobileMenuOpen]);
+
+  // Confine le focus dans le tiroir mobile, Échap ferme, focus restauré (a11y).
+  useFocusTrap(isMobileMenuOpen, drawerRef, { onEscape: closeMobileMenu });
 
   const toggleLocale = () => {
     const nextLocale = locale === 'fr' ? 'en' : 'fr';
@@ -131,8 +138,9 @@ export function Navbar() {
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="inline-flex items-center justify-center rounded-lg p-2 text-gray-300 transition-colors hover:bg-white/10 hover:text-white lg:hidden"
-                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-label={isMobileMenuOpen ? t('closeMenu') : t('openMenu')}
                 aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />
@@ -161,6 +169,11 @@ export function Navbar() {
 
             {/* Slide-out Drawer */}
             <motion.div
+              ref={drawerRef}
+              id="mobile-menu"
+              role="dialog"
+              aria-modal="true"
+              aria-label={t('menuLabel')}
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -181,7 +194,7 @@ export function Navbar() {
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white"
-                    aria-label="Close menu"
+                    aria-label={t('closeMenu')}
                   >
                     <X className="h-5 w-5" />
                   </button>

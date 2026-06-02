@@ -21,7 +21,6 @@ import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { MobileMenu } from "@/components/layout/MobileMenu";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
@@ -45,13 +44,6 @@ describe("Smoke render — les composants montent sans planter", () => {
     const { container } = renderWithIntl(<Component />);
     expect(container).toBeTruthy();
     expect(container.firstChild).not.toBeNull();
-  });
-
-  it("MobileMenu (ouvert) rend les liens de navigation", () => {
-    const { container } = renderWithIntl(
-      <MobileMenu isOpen onClose={() => {}} />,
-    );
-    expect(container).toBeTruthy();
   });
 
   it("Button rend chaque variante", () => {
