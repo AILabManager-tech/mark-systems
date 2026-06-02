@@ -150,7 +150,7 @@ export default function ContactPage() {
     <main className="relative min-h-screen">
       {/* Background image */}
       <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.06]"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-25"
         style={{
           backgroundImage: 'url(/images/bg/contact-flux.jpg)',
           backgroundSize: 'cover',
@@ -158,7 +158,7 @@ export default function ContactPage() {
           backgroundRepeat: 'no-repeat',
         }}
       />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-background/80 via-background/95 to-background" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-background/70 via-background/85 to-background" />
 
       <section className="section-padding">
         <div className="section-container">
