@@ -24,7 +24,7 @@ export function CTASection() {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/images/bg/vortex.jpg"
+          src="/images/bg/cta-network.jpg"
           alt=""
           fill
           className="object-cover"

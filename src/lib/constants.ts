@@ -133,41 +133,41 @@ export const LOGICIELS = [
   {
     key: "osiris",
     url: "/demos/osiris/",
-    image: "/images/hero/datacenter-corridor.jpg",
+    image: "/images/logiciels/osiris.jpg",
     featured: true,
   },
   {
     key: "gencore",
     url: "/demos/gencore/",
-    image: "/images/services/ai-systems.jpg",
+    image: "/images/logiciels/gencore.jpg",
   },
   {
     key: "ainova",
     url: "/demos/ainova/",
-    image: "/images/about/server-tower.jpg",
+    image: "/images/logiciels/ainova.jpg",
   },
   {
     key: "hermes",
     url: "/demos/hermes/",
-    image: "/images/services/automation.jpg",
+    image: "/images/logiciels/hermes.jpg",
     featured: true,
   },
   {
     key: "taxAgent",
-    image: "/images/outils/calculateur-impots.jpg",
+    image: "/images/logiciels/tax-agent.jpg",
   },
   {
     key: "nexos",
-    image: "/images/hero/neural-tunnel.jpg",
+    image: "/images/logiciels/nexos.jpg",
   },
   {
     key: "genesis",
     url: "/demos/genesis/",
-    image: "/images/hero/neural-city.jpg",
+    image: "/images/logiciels/genesis.jpg",
   },
   {
     key: "soic",
     url: "https://github.com/AILabManager-tech/soic",
-    image: "/images/services/cloud-infra.jpg",
+    image: "/images/logiciels/soic.jpg",
   },
 ] as const;

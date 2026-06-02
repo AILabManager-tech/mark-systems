@@ -152,7 +152,7 @@ export default function ContactPage() {
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.06]"
         style={{
-          backgroundImage: 'url(/images/bg/cloud-architecture.jpg)',
+          backgroundImage: 'url(/images/bg/contact-flux.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
